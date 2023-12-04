@@ -7,12 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-hwhwwhwhwhwh
-asd'asdas'[dsad']asd
-asd
-das
-das
-asd
-asdasduiasdgdasghudashui
+<h1>자 이제 모험을 떠나볼까 야호</h1>
 </body>
 </html>
