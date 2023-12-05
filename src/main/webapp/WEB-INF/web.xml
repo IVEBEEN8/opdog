@@ -2,13 +2,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
     <description></description>
-    <display-name>RegShopC</display-name>
-    <servlet-name>RegShopC</servlet-name>
-    <servlet-class>com.opdogkl.shop.RegShopC</servlet-class>
+    <display-name>FashionC</display-name>
+    <servlet-name>FashionC</servlet-name>
+    <servlet-class>com.opdogkl.shop.fashion.FashionC</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>RegShopC</servlet-name>
-    <url-pattern>/RegShopC</url-pattern>
+    <servlet-name>FashionC</servlet-name>
+    <url-pattern>/FashionC</url-pattern>
   </servlet-mapping>
   <display-name>opdog</display-name>
   <welcome-file-list>
@@ -19,4 +19,34 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>FeedC</display-name>
+    <servlet-name>FeedC</servlet-name>
+    <servlet-class>com.opdogkl.shop.feed.FeedC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>FeedC</servlet-name>
+    <url-pattern>/FeedC</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>SnackC</display-name>
+    <servlet-name>SnackC</servlet-name>
+    <servlet-class>com.opdogkl.shop.snack.SnackC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SnackC</servlet-name>
+    <url-pattern>/SnackC</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ToyC</display-name>
+    <servlet-name>ToyC</servlet-name>
+    <servlet-class>com.opdogkl.shop.toy.ToyC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ToyC</servlet-name>
+    <url-pattern>/ToyC</url-pattern>
+  </servlet-mapping>
 </web-app>
