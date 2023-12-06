@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+<<<<<<< HEAD
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://Java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <servlet>
     <description></description>
     <display-name>FashionC</display-name>
@@ -9,6 +10,18 @@
   <servlet-mapping>
     <servlet-name>FashionC</servlet-name>
     <url-pattern>/FashionC</url-pattern>
+=======
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://Java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <servlet>
+    <description></description>
+    <display-name>GetCenterInfoC</display-name>
+    <servlet-name>GetCenterInfoC</servlet-name>
+    <servlet-class>com.opdoghw.centerinfo.GetCenterInfoC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetCenterInfoC</servlet-name>
+    <url-pattern>/GetCenterInfoC</url-pattern>
+>>>>>>> 40d5d471eeff9b986b262abadede7c77e2653217
   </servlet-mapping>
   <display-name>opdog</display-name>
   <welcome-file-list>
@@ -21,6 +34,7 @@
   </welcome-file-list>
   <servlet>
     <description></description>
+<<<<<<< HEAD
     <display-name>FeedC</display-name>
     <servlet-name>FeedC</servlet-name>
     <servlet-class>com.opdogkl.shop.feed.FeedC</servlet-class>
@@ -48,5 +62,14 @@
   <servlet-mapping>
     <servlet-name>ToyC</servlet-name>
     <url-pattern>/ToyC</url-pattern>
+=======
+    <display-name>GetMarkerC</display-name>
+    <servlet-name>GetMarkerC</servlet-name>
+    <servlet-class>com.opdoghw.centerinfo.GetMarkerC</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetMarkerC</servlet-name>
+    <url-pattern>/GetMarkerC</url-pattern>
+>>>>>>> 40d5d471eeff9b986b262abadede7c77e2653217
   </servlet-mapping>
 </web-app>
