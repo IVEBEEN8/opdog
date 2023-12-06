@@ -30,7 +30,6 @@ public class DoginfoDAO {
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 			InputStream is = huc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-			System.out.println(isr);
 			
 			JSONParser jp = new JSONParser();
 			JSONObject sidos = (JSONObject) jp.parse(isr);
@@ -101,7 +100,6 @@ public class DoginfoDAO {
 			centers = (JSONObject) centers.get("body");
 			centers = (JSONObject) centers.get("items");
 			JSONArray center = (JSONArray) centers.get("item");
-			System.out.println(center);
 
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(center);
