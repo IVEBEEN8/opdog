@@ -17,44 +17,7 @@ import org.json.simple.parser.JSONParser;
 
 public class DoginfoDAO {
 	public static void main(String[] args) {
-		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
-		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/kind?up_kind_cd=417000&_type=json&serviceKey="+encodeKey;
 		
-		try {
-			URL u = new URL(url);
-			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
-			InputStream is = huc.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-			System.out.println(isr);
-			
-			JSONParser jp = new JSONParser();
-			JSONObject kind = (JSONObject) jp.parse(isr);
-			System.out.println(kind);
-			kind = (JSONObject) kind.get("response");
-			kind = (JSONObject) kind.get("body");
-			kind = (JSONObject) kind.get("items");
-			JSONArray kinds = (JSONArray) kind.get("item");
-			System.out.println(kinds.size());
-//			sidos = (JSONObject) sidos.get("response");
-//			sidos = (JSONObject) sidos.get("body");
-//			sidos = (JSONObject) sidos.get("items");
-//			JSONArray sido = (JSONArray) sidos.get("item");
-//			ArrayList<sidoB> sidoB = new ArrayList<sidoB>();
-//			sidoB s =  null;
-//			for (int i = 0; i < sido.size() ; i++) {
-//				JSONObject name = (JSONObject) sido.get(i);
-//				s = new sidoB();
-//				s.setOrgCd((String)name.get("orgCd"));
-//				s.setOrgdownNm((String)name.get("orgdownNm"));
-//				sidoB.add(s);
-//			}	
-//			request.setAttribute("sido", sidoB);
-//			
-			
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
 	}
 
 	public static void sido(HttpServletRequest request) {
