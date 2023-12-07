@@ -1,4 +1,4 @@
-package com.opdogkl.shop.snack;
+package com.opdogkl.shop.toy;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,20 +6,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opdogkl.shop.feed.FeedDAO;
+import com.opdogkl.shop.snack.SnackDAO;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/SnackC")
-public class SnackC extends HttpServlet {
+@WebServlet("/ToyPageC")
+public class ToyPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 강아지 간식 전체 조회하는일
-		SnackDAO.getAllSnack(request);
-		SnackDAO.paging(1, request);
+		// 강아지 장난감 전체 조회하는일
+		ToyDAO.getAllToy(request);
+		int p = Integer.parseInt(request.getParameter("p"));
+		ToyDAO.paging(p, request);
 		
-		request.setAttribute("contentPage", "snack.jsp");
+		request.setAttribute("contentPage", "toy.jsp");
 		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);
-	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

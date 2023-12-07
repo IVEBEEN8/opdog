@@ -5,6 +5,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.opdogkl.shop.snack.SnackDAO;
+
 import javax.servlet.annotation.WebServlet;
 
 @WebServlet("/ToyC")
@@ -12,6 +15,7 @@ public class ToyC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 강아지 장난감 전체 조회하는일
 		ToyDAO.getAllToy(request);
+		ToyDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "toy.jsp");
 		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);

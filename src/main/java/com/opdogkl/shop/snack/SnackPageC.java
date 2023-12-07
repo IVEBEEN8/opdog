@@ -10,12 +10,13 @@ import com.opdogkl.shop.feed.FeedDAO;
 
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/SnackC")
-public class SnackC extends HttpServlet {
+@WebServlet("/SnackPageC")
+public class SnackPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 강아지 간식 전체 조회하는일
 		SnackDAO.getAllSnack(request);
-		SnackDAO.paging(1, request);
+		int p = Integer.parseInt(request.getParameter("p"));
+		SnackDAO.paging(p, request);
 		
 		request.setAttribute("contentPage", "snack.jsp");
 		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);
