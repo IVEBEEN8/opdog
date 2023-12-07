@@ -7,12 +7,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.annotation.WebServlet;
 
-@WebServlet("/FashionC")
-public class FashionC extends HttpServlet {
+@WebServlet("/FashionPageC")
+public class FashionPageC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 강아지 패션 전체 조회하는일
+		// 강아지 패션 페이지 
+		
 		FashionDAO.getAllFashion(request);
-		FashionDAO.paging(1, request);
+		int p = Integer.parseInt(request.getParameter("p"));
+		FashionDAO.paging(p, request);
 		
 		request.setAttribute("contentPage", "fashion.jsp");
 		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);

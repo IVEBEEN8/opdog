@@ -71,6 +71,34 @@
 		</c:forEach>
 	</div>
 	
+	<hr>
+	
+	<!-- 페이지 처리 -->
+	<a href="FashionPageC?p=1">[맨처음]</a>
+	<c:choose>
+		<c:when test="${curPageNo != 1 }">
+		<a href = "FashionPageC?p=${curPageNo -1 }"><button>◀ 이전 </button></a>
+		</c:when>
+			<c:otherwise>
+				<button class="이전버튼">◀</button>
+			</c:otherwise>
+	</c:choose>
+	
+	<c:forEach begin="1" end="${pageCount }" var = "n">
+			<a href = "FashionPageC?p=${n }"> [${n }] </a>
+	</c:forEach>
+	
+	<c:choose>
+		<c:when test="${pageCount != curPageNo }">
+		<a href = "FashionPageC?p=${curPageNo +1 }"><button>다음 ▶</button></a>
+		</c:when>
+			<c:otherwise>
+				<button class="다음버튼">▶</button>
+			</c:otherwise>
+	</c:choose>
+	<a href="FashionPageC?p=${pageCount }">[맨끝]</a>
+	
+	
 	<!-- 푸터 -->
 	<footer>
 	</footer>

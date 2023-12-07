@@ -11,6 +11,7 @@ import com.opdogkl.shop.DBManager;
 
 public class FashionDAO {
 	// 강아지 패션 전체 조회하는 일
+	private static ArrayList<Fashion> fashions;
 	
 
 
@@ -29,7 +30,7 @@ public class FashionDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Fashion fs = null;
-			ArrayList<Fashion> fashions = new ArrayList<Fashion>();
+			fashions = new ArrayList<Fashion>();
 			
 			while(rs.next()) {
 				fs = new Fashion();
@@ -52,7 +53,26 @@ public class FashionDAO {
 		} finally {
 			DBManager.close(con, pstmt, rs);
 		}
+	}
+
+	public static void paging(int page, HttpServletRequest request) {
+		request.setAttribute("curPageNo", page);
+		int cnt = 10; 		// 한페이지당 보여줄 개수
+		int total = fashions.size();		// 총 데이터 개수 
+		// 총페이지수 
+		int pageCount = (int) Math.ceil((double)total/cnt);
+		request.setAttribute("pageCount", pageCount);
 		
+		
+		int start = total - (cnt * (page - 1));
+		
+		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+		
+		ArrayList<Fashion> items = new ArrayList<Fashion>();
+		for (int i = start-1; i > end; i--) {
+			items.add(fashions.get(i));
+		}
+		request.setAttribute("fashions", items);
 	}
 	
 }
