@@ -1,11 +1,10 @@
 $(document).ready(function() {
 	
-    $('input[type=radio][name="sido"]').change(function() {
+    $('input[type=radio][name="sido"]').on("change",function() {
 	/*
 		response = 시/군/구 배열
 		.orgCd = 도시 코드
 		.orgdownNm = 도시 이름
-		
 	 */
         var selectedValue = $(this).val();
 		if(selectedValue !=""){
@@ -32,12 +31,11 @@ $(document).ready(function() {
 		};	
     });
 
-    $('input[type=radio][name="sigungu"]').change(function() {
+    $('input[type=radio][name="sigungu"]').on("change",function() {
 	/*
 		response = 보호소 배열
 		...RegNo = 보호소 코드
 		...Nm = 보호소 이름
-		
 	 */
 		console.log(11);
         var selectedValue = $(this).val();
