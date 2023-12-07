@@ -14,12 +14,14 @@
 	<!-- 메인 -->
 	
 	<div class="쇼핑 카테고리">
+		<a onclick="location.href='SnackC">
 		<div class="패션 카테고리">
 			<div class="패션 카테고리 썸네일">
 				<img alt="" src="https://shop-phinf.pstatic.net/20220704_292/16569175721794ENar_PNG/icon_14.png">
 			</div>
 			<div class="패션 카테고리 텍스트">fashion</div>
 		</div>
+		</a>
 		<div class="사료 카테고리">
 			<div class="사료 카테고리 썸네일">
 				<img alt="" src="https://shop-phinf.pstatic.net/20230119_57/1674087418600eO0eX_PNG/icon_04.png">
