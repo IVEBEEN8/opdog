@@ -13,12 +13,14 @@ $(document).ready(function() {
     	        type: 'GET', 
         	    data: { value: selectedValue },
             	success: function(response) {
+	
 					$('label').remove('#sigungulabel');
+					$('label').remove('#centerlabel');
 					if (selectedValue==5690000) {
-						$('#sigungudiv').append('<label id="sigungulabel"><input type="radio" value="'+selectedValue+'!'+selectedValue+'" name="sigungu" id="sigunguradio">세종특별자치시</label>');
+						$('#sigungudiv').append('<label id="sigungulabel"><input type="radio" value="'+selectedValue+'!'+selectedValue+'" name="sigungu" checked="checked">세종특별자치시</label>');
 					}else {
 						for (var i = 0; i < response.length; i++) {
-							$('#sigungudiv').append('<label id="sigungulabel"><input type="radio" value="'+selectedValue+'!'+response[i].orgCd+'" name="sigungu" id="sigunguradio">'+response[i].orgdownNm+'</label>');
+							$('#sigungudiv').append('<label id="sigungulabel"><input type="radio" value="'+selectedValue+'!'+response[i].orgCd+'" name="sigungu" >'+response[i].orgdownNm+'</label>');
 						}
 					}
         	    },
@@ -28,16 +30,16 @@ $(document).ready(function() {
         	});
 		} else{
 			$('label').remove('#sigungulabel');
+			$('label').remove('#centerlabel');
 		};	
     });
-
-    $('input[type=radio][name="sigungu"]').on("change",function() {
+	
+    $(document).on("change", 'input[type=radio][name="sigungu"]' ,function() {
 	/*
 		response = 보호소 배열
 		...RegNo = 보호소 코드
 		...Nm = 보호소 이름
 	 */
-		console.log(11);
         var selectedValue = $(this).val();
 		if(selectedValue !=""){
         	$.ajax({
@@ -45,16 +47,17 @@ $(document).ready(function() {
     	        type: 'POST', 
         	    data: { value: selectedValue },
             	success: function(response) {
-				console.log(response);
 					$('label').remove('#centerlabel');
 						for (var i = 0; i < response.length; i++) {
-							$('#centerdiv').append('<label id="centerlabel"><input type="radio" value="'+selectedValue+'!'+response[i].orgCd+'" name="sigungu" checked="checked"  id="sigunguradio">'+response[i].orgdownNm+'</label>');
+							$('#centerdiv').append('<label id="centerlabel"><input type="radio" value="'+selectedValue+'!'+response[i].careRegNo+'" name="center" >'+response[i].careNm+'</label>');
 						}
         	    },
         	    error: function(error) {
             	    console.log('Ajax 요청 에러:', error);
            		}
         	});
+		} else{
+			$('label').remove('#centerlabel');
 		};	
     });
 
@@ -82,6 +85,8 @@ $(document).ready(function() {
 							$('#sigunSelect').append('<option value="'+selectedValue+'!'+response[i].orgCd+'" id="sigunop">'+response[i].orgdownNm+'</option>');
 						}
 					}
+					
+					
             	},
             	error: function(error) {
 	                console.log('Ajax 요청 에러:', error);

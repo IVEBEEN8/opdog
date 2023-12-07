@@ -24,22 +24,22 @@ ${sido} = 광역시 배열
 		<div class="#"><!-- 시/도 radiobox -->
 			<div class="#">시/도</div>
 			<div class="#">
-				<label id="sidolabel"><input type="radio" value="" name="sido" checked="checked" >시/도 선택</label>	  
+				<label id="sidolabel"><input type="radio" value="" checked="checked" name="sido" >시/도 선택</label>	  
 				<c:forEach var="sido" items="${sido }" >
-					<label id="sidolabel"><input type="radio" value="${sido.orgCd }" name="sido" id="sidoRadio">${sido.orgdownNm }</label>	
+					<label id="sidolabel"><input type="radio" value="${sido.orgCd }" name="sido">${sido.orgdownNm }</label>	
 				</c:forEach>
 			</div>
 		</div>
 		<div class="#"><!-- 시/군/구 radiobox -->
 			<div class="#">시/군/구</div>
 			<div class="#" id="sigungudiv">
-				<label id="sigungulable"><input type="radio" value="" name="sigungu" checked="checked"  id="sigunguradio">시/군/구 선택</label>	
+				<label id="sigungulable"><input type="radio" value="" name="sigungu" checked="checked">시/군/구 선택</label>	
 			</div>
 		</div>
 		<div class="#"><!-- 시/군/구 radiobox -->
 			<div class="#">보호소</div>
 			<div class="#" id="centerdiv">
-				<label><input type="radio" value="" name="center" checked="checked"  id="centerradio">보호소 선택</label>	
+				<label ><input type="radio" value="" name="center" checked="checked">보호소 선택</label>	
 			</div>
 		</div>
 	</div>
@@ -58,6 +58,10 @@ ${sido} = 광역시 배열
         <select name="center" id="centerSelect">
         	<option value="" >보호소 선택</option>
         </select>
+	</div>
+	<!-- items div -->
+	<div class="#" id="items">
+		
 	</div>	
 </div>
         
