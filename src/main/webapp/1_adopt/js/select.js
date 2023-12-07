@@ -6,14 +6,15 @@ $(document).ready(function() {
 		.orgCd = 도시 코드
 		.orgdownNm = 도시 이름
 	 */
+		
         var selectedValue = $(this).val();
+		$('#sidoSelect').val(selectedValue);
 		if(selectedValue !=""){
         	$.ajax({
             	url: 'SelectConditionC', 
     	        type: 'GET', 
         	    data: { value: selectedValue },
             	success: function(response) {
-	
 					$('label').remove('#sigungulabel');
 					$('label').remove('#centerlabel');
 					if (selectedValue==5690000) {
@@ -69,6 +70,9 @@ $(document).ready(function() {
 		
 	 */
         var selectedValue = $(this).val();
+		
+		$('input[type=radio][name="sido"][value="'+selectedValue+'"]').prop(checked, true);
+		
 		if(selectedValue !=""){
 	        $.ajax({
     	        url: 'SelectConditionC', 
@@ -85,8 +89,6 @@ $(document).ready(function() {
 							$('#sigunSelect').append('<option value="'+selectedValue+'!'+response[i].orgCd+'" id="sigunop">'+response[i].orgdownNm+'</option>');
 						}
 					}
-					
-					
             	},
             	error: function(error) {
 	                console.log('Ajax 요청 에러:', error);
