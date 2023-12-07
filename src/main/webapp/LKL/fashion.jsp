@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-<title></title>
+<title>Fashion</title>
 </head>
 <body>
 	<!-- 헤더 -->
@@ -14,32 +14,44 @@
 	<!-- 메인 -->
 	
 	<div class="쇼핑 카테고리">
-		<a onclick="location.href='SnackC">
-		<div class="패션 카테고리">
-			<div class="패션 카테고리 썸네일">
-				<img alt="" src="https://shop-phinf.pstatic.net/20220704_292/16569175721794ENar_PNG/icon_14.png">
+	
+		<a class="패션 카테고리 링크" onclick="location.href='FashionC'">
+			<div class="패션 카테고리">
+				<div class="패션 카테고리 썸네일">
+					<img alt="" src="https://shop-phinf.pstatic.net/20220704_292/16569175721794ENar_PNG/icon_14.png">
+				</div>
+				<div class="패션 카테고리 텍스트">fashion</div>
 			</div>
-			<div class="패션 카테고리 텍스트">fashion</div>
-		</div>
 		</a>
-		<div class="사료 카테고리">
-			<div class="사료 카테고리 썸네일">
-				<img alt="" src="https://shop-phinf.pstatic.net/20230119_57/1674087418600eO0eX_PNG/icon_04.png">
+		
+		<a class="사료 카테고리 링크" onclick="location.href='FeedC'">
+			<div class="사료 카테고리">
+				<div class="사료 카테고리 썸네일">
+					<img alt="" src="https://shop-phinf.pstatic.net/20230119_57/1674087418600eO0eX_PNG/icon_04.png">
+				</div>
+				<div class="사료 카테고리 텍스트">feed</div>
 			</div>
-			<div class="사료 카테고리 텍스트">feed</div>
-		</div>
+		</a>
+		
+		<a class="사료 카테고리 링크" onclick="location.href='SnackC'">
 		<div class="간식 카테고리">
 			<div class="간식 카테고리 썸네일">
 				<img alt="" src="https://shop-phinf.pstatic.net/20220616_30/1655365227214qAvGJ_PNG/icon_05.png">
 			</div>
 			<div class="간식 카테고리 텍스트">snack</div>
 		</div>
+		</a>
+		
+		<a class="사료 카테고리 링크" onclick="location.href='ToyC'">
 		<div class="장난감 카테고리">
 			<div class="장난감 카테고리 썸네일">
 				<img alt="" src="https://shop-phinf.pstatic.net/20220616_176/1655365272658tuiIW_PNG/icon_13.png">
 			</div>
 			<div class="장난감 카테고리 텍스트">toy</div>
 		</div>
+		</a>
+		
+		
 	</div>
 	
 	
