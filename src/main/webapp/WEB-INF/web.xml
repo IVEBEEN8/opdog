@@ -5,10 +5,11 @@
     <display-name>FashionC</display-name>
     <servlet-name>FashionC</servlet-name>
     <servlet-class>com.opdogkl.shop.fashion.FashionC</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>FashionC</servlet-name>
     <url-pattern>/FashionC</url-pattern>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:web="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>GetCenterInfoC</display-name>
@@ -57,13 +58,15 @@
   <servlet-mapping>
     <servlet-name>ToyC</servlet-name>
     <url-pattern>/ToyC</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
     <display-name>GetMarkerC</display-name>
     <servlet-name>GetMarkerC</servlet-name>
     <servlet-class>com.opdoghw.centerinfo.GetMarkerC</servlet-class>
-  <servlet></servlet>
+  </servlet>
   <servlet-mapping>
     <servlet-name>GetMarkerC</servlet-name>
     <url-pattern>/GetMarkerC</url-pattern>
   </servlet-mapping>
-</servlet-mapping></web-app></servlet-mapping></servlet>
  </web-app>
