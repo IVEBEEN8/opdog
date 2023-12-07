@@ -7,6 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<h1> LKL's INDEX</h1>
+	<div>
+		<jsp:include page="${contentPage }"></jsp:include>
+	</div>
 </body>
 </html>
