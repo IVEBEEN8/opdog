@@ -9,5 +9,5 @@ create table Fashion_test(
 create sequence fashion_test_seq;
 insert into fashion_test VALUES (fashion_test_seq.nextval,?,?,?,?);
 select * from fashion_test;
-drop table feed_test;
-drop sequence feed_test;
+drop table fashion_test;
+drop sequence fashion_test;

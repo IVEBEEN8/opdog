@@ -77,7 +77,7 @@
 	<a href="FashionPageC?p=1">[맨처음]</a>
 	<c:choose>
 		<c:when test="${curPageNo != 1 }">
-		<a href = "FashionPageC?p=${curPageNo -1 }"><button>◀ 이전 </button></a>
+		<a href = "FashionPageC?p=${curPageNo -1 }"><button>◀</button></a>
 		</c:when>
 			<c:otherwise>
 				<button class="이전버튼">◀</button>
@@ -90,7 +90,7 @@
 	
 	<c:choose>
 		<c:when test="${pageCount != curPageNo }">
-		<a href = "FashionPageC?p=${curPageNo +1 }"><button>다음 ▶</button></a>
+		<a href = "FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
 		</c:when>
 			<c:otherwise>
 				<button class="다음버튼">▶</button>
