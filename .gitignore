@@ -45,5 +45,6 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 dependency-reduced-pom.xml
-Src/main/webapp/WEB-INF/web.xml
+src/main/webapp/WEB-INF/web.xml
 /bin/
+src/main/java/com/opdoghw/centerinfo/DBManager.java
