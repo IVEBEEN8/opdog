@@ -46,3 +46,4 @@ pom.xml.next
 release.properties
 dependency-reduced-pom.xml
 Src/main/webapp/WEB-INF/web.xml
+/bin/
