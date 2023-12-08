@@ -4,6 +4,9 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
@@ -21,32 +24,29 @@ public class DoginfoDAO {
 	}
 
 	public static void sido(HttpServletRequest request) {
-		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
-		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/sido?numOfRows=100&pageNo=1&_type=json&serviceKey="+encodeKey;
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select*from sido";
 		
 		try {
-			URL u = new URL(url);
-			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
-			InputStream is = huc.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
 			
-			JSONParser jp = new JSONParser();
-			JSONObject sidos = (JSONObject) jp.parse(isr);
-			sidos = (JSONObject) sidos.get("response");
-			sidos = (JSONObject) sidos.get("body");
-			sidos = (JSONObject) sidos.get("items");
-			JSONArray sido = (JSONArray) sidos.get("item");
-			ArrayList<sidoB> sidoB = new ArrayList<sidoB>();
-			sidoB s =  null;
-			for (int i = 0; i < sido.size() ; i++) {
-				JSONObject name = (JSONObject) sido.get(i);
+			ArrayList<sidoB> sido = new ArrayList<sidoB>();
+			sidoB s = null;
+			while (rs.next()) {
 				s = new sidoB();
-				s.setOrgCd((String)name.get("orgCd"));
-				s.setOrgdownNm((String)name.get("orgdownNm"));
-				sidoB.add(s);
-			}	
-			request.setAttribute("sido", sidoB);
+				s.setOrgCd(rs.getString("s_orgCd"));
+				s.setOrgdownNm(rs.getString("s_orgdownNm"));
+				sido.add(s);
+			}
+			request.setAttribute("sido", sido);
+			System.out.println(sido);
+			
+			
+			
 			
 			
 		} catch (Exception e) {
@@ -85,24 +85,13 @@ public class DoginfoDAO {
 		String a = request.getParameter("value");
 		String Cd[] = a.split("!");
 		
-		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
-		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/shelter?upr_cd="+Cd[0]+"&org_cd="+Cd[1]+"&_type=json&serviceKey="+encodeKey;
+		
 		try {
-			URL u = new URL(url);
-			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
-			InputStream is = huc.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is,"utf-8");
 			
-			JSONParser jp = new JSONParser();
-			JSONObject centers = (JSONObject) jp.parse(isr);
-			centers = (JSONObject) centers.get("response");
-			centers = (JSONObject) centers.get("body");
-			centers = (JSONObject) centers.get("items");
-			JSONArray center = (JSONArray) centers.get("item");
+			
+			
+			
 
-			response.setContentType("application/json; charset=utf-8");
-			response.getWriter().print(center);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
