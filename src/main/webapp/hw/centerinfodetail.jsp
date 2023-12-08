@@ -28,7 +28,7 @@
 		<div class= "#">
 			<div class="#">센터주소</div>
 			<div class="#">${c.careAddr }</div>
-		</div>ß
+		</div>
 		<div class= "#">
 			<div class="#">위도</div>
 			<div class="#">${c.lat	}</div>
@@ -90,7 +90,7 @@
 
           		 // Display the address
            		var message = '위도 : ' + latlng.getLat();
-           		 message += ' 경도 : ' + latlng.getLng() + ' 주소 : ' + address
+           		 message += ' 경도 : ' + latlng.getLng() + ' 주소 : ' + address + '여기는 아무 값이나 가능한가여 ? ? ? ? ? '
 
             	var resultDiv = document.getElementById('result');
             	resultDiv.innerHTML = message;
@@ -118,7 +118,7 @@
     }
     // 카카오맵 로드.
    	kakao.maps.load(initMap);
-    kakao.maps.load()
+
     
 </script>
 </body>

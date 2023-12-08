@@ -15,6 +15,7 @@ public class SignUpC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		LoginDAO.regAccount(request);
+		
 		request.getRequestDispatcher("5_mypage/1_1_login/loginOK.jsp").forward(request, response);
 	
 	

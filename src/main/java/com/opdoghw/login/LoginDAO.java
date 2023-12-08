@@ -36,7 +36,7 @@ public class LoginDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
-				dbPW = rs.getString("ml_pw");
+				dbPW = rs.getString("op_pw");
 				if (pw.equals(dbPW)) {
 					result = "로그인 성공!";
 					

@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 public class DoginfoHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DoginfoDAO.sido(request); // 시/도 코드 세팅 메서드
-		
-		
 		request.getRequestDispatcher("1_adopt/1_1_info/select.jsp").forward(request, response);
 	}
 
