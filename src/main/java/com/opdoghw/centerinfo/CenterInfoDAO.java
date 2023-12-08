@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 
 
 
+
 public class CenterInfoDAO {
 
 	public static void getCenterInfo(HttpServletRequest request) {
@@ -43,6 +44,6 @@ public class CenterInfoDAO {
 				DBManager.close(con, pstmt, rs);
 			}
 		}
-		
+
 	}
 
