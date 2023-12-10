@@ -18,7 +18,9 @@ public class DBManager_khw {
 	    // DBCP (Apache Commons Database Connection Pooling) 설정
 	    dataSource = new BasicDataSource();
 	    dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-	    dataSource.setUrl("jdbc:oracle:thin:@k9ytr1put6n556o8_high?TNS_ADMIN=/Users/heewon/Desktop/vscodeWorkSpace/Wallet_K9YTR1PUT6N556O8");
+	    // 희
+//	    dataSource.setUrl("jdbc:oracle:thin:@k9ytr1put6n556o8_high?TNS_ADMIN=/Users/heewon/Desktop/vscodeWorkSpace/Wallet_K9YTR1PUT6N556O8");
+	    dataSource.setUrl("jdbc:oracle:thin:@k9ytr1put6n556o8_high?TNS_ADMIN=/Users/namjajeonghowon/Desktop/hw/Wallet_K9YTR1PUT6N556O8");
 	    dataSource.setUsername("ADMIN");
 	    dataSource.setPassword("Thfeptmzm802!!");
 	    
