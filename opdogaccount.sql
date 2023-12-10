@@ -5,9 +5,11 @@ create table opdogaccount_test(
     op_pw varchar2 (200 char) not null
 );
 
-create sequence opdogaccount_test_seq;
 
 select * from opdogaccount_test;
 
+
 drop table opdogaccount_test;
+
+
 DROP SEQUENCE opdogaccount_test_seq;
