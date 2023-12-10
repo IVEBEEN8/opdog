@@ -61,7 +61,7 @@ public class CenterApi {
 
 			for (Object object : items) {
 				String sql = "insert into centerinfo_test values (centerinfo_test_seq.nextval,?,?,?,?,?,?)";
-				con = DBManager.connect();
+				con = DBManager_khw.connect();
 				System.out.println("연결성공!!");
 				pstmt = con.prepareStatement(sql);
 

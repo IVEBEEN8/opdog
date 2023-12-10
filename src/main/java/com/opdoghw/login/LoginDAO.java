@@ -7,7 +7,7 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.opdoghw.centerinfo.DBManager;
+import com.opdoghw.centerinfo.DBManager_khw;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -29,7 +29,7 @@ public class LoginDAO {
 			String result = "";
 			String dbPW="";
 			
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			System.out.println("연결성공!!");
 			pstmt.setString(1, email);
@@ -63,7 +63,7 @@ public class LoginDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 }
 
@@ -76,7 +76,7 @@ public class LoginDAO {
 		
 		try {
 			request.setCharacterEncoding("utf-8");	
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			
 			String email = request.getParameter("email");
@@ -116,7 +116,7 @@ public class LoginDAO {
 			request.getSession().setAttribute("result", "회원가입에 실패하셨습니다..");
 			request.getSession().setMaxInactiveInterval(180);
 		}finally {
-			DBManager.close(con, pstmt, null);
+			DBManager_khw.close(con, pstmt, null);
 		}
 	
 	}

@@ -22,7 +22,7 @@ public class CenterInfoDAO {
 		CenterInfoDTO c = null;
 		ArrayList<CenterInfoDTO> center = new ArrayList<CenterInfoDTO>();
 		try {
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
@@ -42,7 +42,7 @@ public class CenterInfoDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 	}
 
@@ -52,20 +52,20 @@ public class CenterInfoDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from centerinfo_test where c_lat=? and c_lng=? ";
+		String sql = "select * from centerinfo_test where c_lat=?"; // and c_lng=? 나중에추가해보기. 데이터베이스 lng값이 소수점 1자리가 모자람.
 		try {
 			String lat = request.getParameter("lat");
-			String lng = request.getParameter("lng");
+			// String lng = request.getParameter("lng");
 
 			System.out.println(lat);
-			System.out.println(lng);
+			// System.out.println(lng);
 			String result = "";
 
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			System.out.println("연결성공!!123");
 			pstmt.setString(1, lat);
-			pstmt.setString(2, lng);
+			// pstmt.setString(2, lng);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -89,7 +89,7 @@ public class CenterInfoDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 	}
 
