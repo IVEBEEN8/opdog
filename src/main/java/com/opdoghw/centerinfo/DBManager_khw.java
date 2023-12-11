@@ -28,9 +28,14 @@ public class DBManager_khw {
 	}
 
 
-public static Connection connect() throws SQLException {
+public static Connection connect() {
 	System.out.println("connect~~");
-    return dataSource.getConnection();
+    try {
+		return dataSource.getConnection();
+	} catch (SQLException e) {
+		e.printStackTrace();
+	}
+	return null;
 }
 	
 public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
