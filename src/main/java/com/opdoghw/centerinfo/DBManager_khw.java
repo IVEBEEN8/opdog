@@ -8,7 +8,7 @@ import java.sql.SQLException;
 
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
-public class DBManager {
+public class DBManager_khw {
 //db 관련 작업을 할 때 연결코드를 쓴 이후 작업 해옴.
 //다 쓰면 닫음
 // 그걸 AOP하자

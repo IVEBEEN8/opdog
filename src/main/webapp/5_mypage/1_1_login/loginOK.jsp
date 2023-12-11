@@ -7,8 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div align="center">
-		<div><jsp:include page = "${contentPage }"></jsp:include></div>	
-	</div>	 
+
+<h1>welcome! to 'Open the Dog'</h1>
+
 </body>
 </html>

@@ -16,7 +16,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.opdoghw.centerinfo.DBManager;
+
+import com.opdoghw.centerinfo.DBManager_khw;
 
 
 
@@ -33,7 +34,7 @@ public class DoginfoDAO {
 		String sql = "select*from sido";
 		
 		try {
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			
@@ -48,7 +49,7 @@ public class DoginfoDAO {
 			request.setAttribute("sido", sido);
 			System.out.println(sido);
 			
-			DBManager.close();
+			DBManager_khw.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -62,7 +63,7 @@ public class DoginfoDAO {
 		ResultSet rs = null;
 		String sql = "select*from gungu where g_uprCd=?";
 		try {
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("value"));
 			rs = pstmt.executeQuery();
@@ -80,7 +81,8 @@ public class DoginfoDAO {
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(sigungu);
 			
-			DBManager.close();
+			DBManager_khw.close();
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -97,7 +99,7 @@ public class DoginfoDAO {
 		ResultSet rs = null;
 		String sql = "select*from shelter where s_uprCd=? and s_orgCd=?";
 		try {
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, Cd[0]);
 			pstmt.setString(2, Cd[1]);
@@ -115,7 +117,7 @@ public class DoginfoDAO {
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(center);
 			
-			DBManager.close();
+			DBManager_khw.close();
 
 			
 		} catch (Exception e) {

@@ -1,4 +1,4 @@
-package com.opdoghw.centerinfo;
+package com.opdog.askaboutdog;
 
 import java.io.IOException;
 
@@ -8,13 +8,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/GetCenterInfoC")
-public class GetCenterInfoC extends HttpServlet {
+@WebServlet("/AskAboutDogMainC")
+public class AskAboutDogMainC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		CenterInfoDAO.getCenterInfo(request);
-		request.setAttribute("contentPage", "hw/centerinfodetail.jsp");
+		request.setAttribute("contentPage", "4_service/4_3_askAnything/askAboutDog.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}

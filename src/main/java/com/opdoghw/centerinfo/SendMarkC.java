@@ -8,14 +8,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/GetCenterInfoC")
-public class GetCenterInfoC extends HttpServlet {
+@WebServlet("/SendMarkC")
+public class SendMarkC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		CenterInfoDAO.getCenterInfo(request);
-		request.setAttribute("contentPage", "hw/centerinfodetail.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		// System.out.println("check1");
+		CenterInfoDAO.sendMarker(request, response);
+		// System.out.println("check2");
 
 	}
 
