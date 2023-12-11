@@ -22,7 +22,7 @@ public class FashionDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from fashion_test";
+		String sql = "select * from fashion_kl";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -41,7 +41,7 @@ public class FashionDAO {
 				fs.setFs_brand(rs.getString("fs_brand"));
 				
 				System.out.println(rs.getString("fs_title"));
-				System.out.println(rs.getInt("fs_price"));
+				System.out.println(rs.getString("fs_brand"));
 				fashions.add(fs);
 				
 				

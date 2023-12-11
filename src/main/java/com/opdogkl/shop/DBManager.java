@@ -13,8 +13,8 @@ public class DBManager {
 		
 		// ����
 	public static Connection connect() throws Exception {
-		String url = "jdbc:oracle:thin:@localhost:1521:xe";
-		return DriverManager.getConnection(url,"c##lkl1004","lkl1004");
+		String url = "jdbc:oracle:thin:@k9ytr1put6n556o8_high?TNS_ADMIN=C:/Bada/Wallet_K9YTR1PUT6N556O8";
+		return DriverManager.getConnection(url,"ADMIN","Thfeptmzm802!!");
 		
 		
 	}
