@@ -201,5 +201,9 @@ $(document).ready(function() {
 		})
 		
 	});
-	
+	$(document).on('click','button[id=detail]',function(){
+		var doginfo = JSON.stringify($(this).val()) ;
+		console.log(doginfo);
+		
+		});
 });

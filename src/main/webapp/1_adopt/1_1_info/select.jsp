@@ -68,6 +68,8 @@ ${sido} = 광역시 배열
 		<div class="#" id="dogs">
 			<div class="#" id="dog"> <img alt="" src=""> kind: age: sex: neuter: </div><!-- test div -->
 		</div>
+		<button >이전</button>
+		<button>다음</button>
 	</div>
 </div>
         

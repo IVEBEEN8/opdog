@@ -57,11 +57,6 @@ public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) 
 
 
 
-public static void close() {
-    // DBCP의 경우 일반적으로 애플리케이션 종료 시에는 추가적인 작업이 필요하지 않습니다.
-}
-
-
 
 
 
