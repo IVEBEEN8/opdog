@@ -130,16 +130,16 @@ public class DoginfoDAO {
 		String	url = null;
 		String a = request.getParameter("value2");
 		String Cd[] = a.split("!");
-		System.out.println(request.getParameter("value1"));
-		System.out.println(Cd[1]);
-		System.out.println(request.getParameter("value3"));
 		if (request.getParameter("value2") == ""|| request.getParameter("value2")==null) {
+			System.out.println(request.getParameter("value1"));
 			url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="+request.getParameter("value1")+"&pageNo=1&numOfRows=1000&serviceKey="+encodeKey;
 			System.out.println("11");
 		} else if (request.getParameter("value3")=="" || request.getParameter("value3")==null) {
+			System.out.println(Cd[1]);
 			url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="+request.getParameter("value1")+"&org_cd="+Cd[1]+"&pageNo=1&numOfRows=1000&serviceKey="+encodeKey;
 			System.out.println("22");
 		} else {
+			System.out.println(request.getParameter("value3"));
 			url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="+request.getParameter("value1")+"&org_cd="+Cd[1]+"&care_reg_no="+request.getParameter("value3")+"&pageNo=1&numOfRows=1000&serviceKey="+encodeKey;
 			System.out.println("33");
 		}

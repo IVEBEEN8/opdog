@@ -60,6 +60,7 @@ ${sido} = 광역시 배열
         	<option value="" >보호소 선택</option>
         </select>
         <button id="selectbutton">버튼</button>
+        <button id="length">test</button>
 	</div>
 	<!-- 애견정보 div -->
 	<div class="#">

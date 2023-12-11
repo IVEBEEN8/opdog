@@ -201,13 +201,5 @@ $(document).ready(function() {
 		})
 		
 	});
-	$(document).on('click','button[id=detail]',function(){
-		doginfo = JSON.stringify($(this).val());
-		console.log(doginfo);
-		
-	/*
-		localStorage.setItem('data', JSON.stringify(doginfo));
-		window.open('1_adopt/1_1_info/infoDetail.jsp','_blank','width=500,height=400');
-	*/	
-	});	
+	
 });
