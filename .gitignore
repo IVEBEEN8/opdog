@@ -50,5 +50,6 @@ dependency-reduced-pom.xml
 =======
 src/main/webapp/WEB-INF/web.xml
 /bin/
-src/main/java/com/opdoghw/centerinfo/DBManager.java
->>>>>>> 865254e86d75c13eca24ada390ab0efe37d76687
+src/main/java/com/opdoghw/centerinfo/DBManager_khw.java
+
+
