@@ -8,6 +8,7 @@
 </head>
 <body>
 <h1>review register</h1>
+	<form action="ReviewRegC" method="post" enctype="multipart/form-data">
 	<div>
 		<div>
 			<div>Image</div>
@@ -22,8 +23,9 @@
 			<div><textarea name="txt"> </textarea> </div>
 		</div>
 		<div>
-			<div><button>register</button></div>
+			<div><button class="등록버튼">register</button></div>
 		</div>
 	</div>
+	</form>
 </body>
 </html>

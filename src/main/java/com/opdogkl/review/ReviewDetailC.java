@@ -7,16 +7,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-@WebServlet("/ReviewC")
-public class ReviewC extends HttpServlet {
+@WebServlet("/ReviewDetailC")
+public class ReviewDetailC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 리뷰 전체 조회하는 일
-		
-		ReviewDAO.getAllReview(request);
-		
+		ReviewDAO.getReview(request);
 	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 

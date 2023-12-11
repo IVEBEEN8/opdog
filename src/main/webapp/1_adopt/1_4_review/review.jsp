@@ -16,7 +16,7 @@
 	<main></main>
 	<c:forEach var="r"  items="${reviews }">
 		<div class="입양후기 이미지">
-			<a href="review_detail.jsp"><img alt="" src="${r.r_img }"></a>
+			<a href="reviewDetail.jsp"><img alt="" src="${r.r_img }"></a>
 		</div>
 	</c:forEach>
 	
