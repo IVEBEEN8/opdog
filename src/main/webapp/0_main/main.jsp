@@ -74,7 +74,7 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-            src="img/mainVideo2.mp4"
+            src="img/f1video.mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"
@@ -428,7 +428,7 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-            src="img/mainVideo.mp4"
+            src="img/f4Video.mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"
