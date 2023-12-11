@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector(".chat-content")
       .insertAdjacentHTML("beforeend", template);
 
-    const apiKey = "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"; // open ai_KEY
+    const apiKey = "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"; // open ai_KEY
     const prompt = template;
     try {
       const response = await fetch(
