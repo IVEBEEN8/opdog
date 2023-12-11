@@ -1,11 +1,30 @@
 @charset "UTF-8";
 
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    text-align: center;
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  text-align: center;
 }
 
 h1 {
-    color: #333;
+  color: #333;
+}
+.chat-content {
+  height: 350px;
+  overflow-y: scroll;
+}
+.line {
+  margin-top: 10px;
+  display: flex;
+}
+.chat-box {
+  background: #eee;
+  padding: 5px;
+  max-width: 200px;
+}
+.mine {
+  margin-left: auto;
+}
+button {
+  width: 200px;
 }
