@@ -7,21 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<table border="1">
-		<tr>
-			<td><a href="GetCenterInfoC">GetCenterInfo</a></td>
-		</tr>
-		<tr>
-			<td colspan="8" align="center">
-				<table>
-					<tr>
-						<td><jsp:include page = "${contentPage }"></jsp:include></td>
-					</tr>
-				</table>
-			 </td>
-		</tr>
-	</table>
-
-
+	<div align="center">
+		<div><jsp:include page = "${contentPage }"></jsp:include></div>	
+	</div>	 
 </body>
 </html>
