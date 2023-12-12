@@ -31,6 +31,7 @@ public class DoginfoDAO {
 
 		try {
 			con = DBManager_khw.connect();
+			System.out.println("connect success ---");
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
@@ -44,12 +45,12 @@ public class DoginfoDAO {
 			}
 			request.setAttribute("sido", sido);
 			System.out.println(sido);
-
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
-
 		}
 
 	}
@@ -76,12 +77,13 @@ public class DoginfoDAO {
 
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(sigungu);
-
+			
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
-
 		}
 
 	}
@@ -111,12 +113,13 @@ public class DoginfoDAO {
 
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(center);
+			
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
-
 		}
 
 	}
@@ -145,16 +148,22 @@ public class DoginfoDAO {
 					+ request.getParameter("value3") + "&pageNo=1&numOfRows=1000&serviceKey=" + encodeKey;
 			System.out.println("33");
 		}
-
+		response.setContentType("application/json; charset=utf-8");
+		
+		
+		
 		try {
 			URL u = new URL(url);
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
+			if(huc.getResponseCode() == 200) {
 			InputStream is = huc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-			System.out.println(isr);
-
+//			System.out.println(isr);
+				
+			
 			JSONParser jp = new JSONParser();
 			JSONObject dogs = (JSONObject) jp.parse(isr);
+			
 			System.out.println(dogs);
 			System.out.println("여기서 터진거면 오브젝트 나눌 때");
 			dogs = (JSONObject) dogs.get("response");
@@ -162,12 +171,16 @@ public class DoginfoDAO {
 			dogs = (JSONObject) dogs.get("items");
 			System.out.println("여기서 터진거면 어레이 만들 때");
 			JSONArray dog = (JSONArray) dogs.get("item");
-			System.out.println("여기서 터진거면 어레이 담을 때 ");
-			System.out.println(dog);
-
-			response.setContentType("application/json; charset=utf-8");
-			response.getWriter().print(dog);
-
+				if(dog != null) {
+					System.out.println("여기서 터진거면 어레이 담을 때 ");
+					System.out.println(dog);
+					response.getWriter().print(dog);
+				}else {
+					response.getWriter().print(0);
+					
+				}
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
