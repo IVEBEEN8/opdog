@@ -168,7 +168,11 @@ $(document).ready(function() {
 			type: 'GET',
 			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
 			success: function(response){
-				pagination(response);
+				$('div').remove('#data-container');
+				for (var i = 0; i < response.length; i++){
+					$('#data-container').append('<div class="#" id="dog"> <img alt="" src="'+ response[i].filename+'"> kind: '+ response[i].kindCd+' age:'+ response[i].age+' sex:'+ response[i].sexCd+' neuter:'+ response[i].neuterYn+'<button id="detail" value="'+response[i]+'">상세정보</button> </div>');
+					console.log(response[i]);
+				}
 					
 			}
 		})
@@ -198,19 +202,25 @@ $(document).ready(function() {
 		
 	});
 
-function pagination(json){
-	console.log(json)
-	console.log('---------')
-		let container = $('#pagination');
-		container.pagination({
-				dataSource: json,
-				callback: function(data, pagination){
-					var dataHtml = '<ul>';
-					$.each(data, function (index,item){
-						dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail" value="'+item+'">상세정보</button> </div></li>';
-					});
-					dataHtml += '</ul>';
-					$("#data-container").html(dataHtml);
-				}
-		});
+	function pagination(json){
+		console.log(json)
+		console.log('---------')
+			let container = $('#pagination');
+			container.pagination({
+					dataSource: json,
+					callback: function(data, pagination){
+						var dataHtml = '<ul>';
+						$.each(data, function (index,item){
+							dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail" value="'+item+'">상세정보</button> </div></li>';
+						});
+						dataHtml += '</ul>';
+						$("#data-container").html(dataHtml);
+					}
+			});
+	$(document).on('click','button[id=popupBtn]',function(){
+		$('#modalWrap').style.display = 'block';
+	});
+	$(document).on('click','button[id=closeBtn]',function(){
+		$('#modalWrap').style.display = 'none';
+	});
 }

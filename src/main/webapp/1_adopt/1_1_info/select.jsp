@@ -16,8 +16,10 @@
 	ul{
 	list-style: none;}
 	</style>
+   <link rel="stylesheet" href="1_adopt/css/modal.css"/>
 </head>
 <body>
+<!-- 동적으로 추가될 div, optioin, radiobox, button 등의 태그는 js에서 .html,.append로 태그 채로 생성되기 때문에 js에서 class부여 가능 -->
 <!-- 
 ${sido} = 광역시 배열
 .orgCd = 도시 코드
@@ -76,7 +78,15 @@ ${sido} = 광역시 배열
 		
 	</div>
 </div>
-        
+<div id="btnWrap">
+  <button typ="button" id="popupBtn">모달 팝업 띄우기</button>
+</div>
+ <div id="modalWrap">
+    <div id="modalBody">
+      <span id="closeBtn">&times;</span>
+      <p>modal-popup 입니다.</p>
+    </div>
+</div>       
         
        	
 
