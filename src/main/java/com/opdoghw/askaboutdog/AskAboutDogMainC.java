@@ -1,4 +1,4 @@
-package com.opdog.askaboutdog;
+package com.opdoghw.askaboutdog;
 
 import java.io.IOException;
 

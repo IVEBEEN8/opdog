@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>MainPage</title>
-<link rel="stylesheet" href="css/main.css" />
+<link rel="stylesheet" href="0_main/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -28,7 +28,7 @@
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a href="#">Stary Dogs</a>
-              <a href="#">Shelter Info</a>
+              <a href="'CenterMainC'">Shelter Info</a>
               <a href="#">Adoption Process</a>
               <a href="#">Adoption Review</a>
             </div>
@@ -74,7 +74,11 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
+<<<<<<< HEAD:src/main/webapp/0_main/mainPage/main.jsp
             src="img/f1video.mp4"
+=======
+            src="0_main/img/mainVideo2.mp4"
+>>>>>>> 198aa8867caf9dfed2c5e96b2c348125450f477c:src/main/webapp/0_main/main.jsp
             id="background_video"
             preload="auto"
             autoplay="autoplay"
@@ -116,7 +120,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/beny.jpeg" alt="유기견1" />
+                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Beny</div>
@@ -131,7 +135,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/tera.jpeg" alt="유기견2" />
+                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Tera</div>
@@ -146,7 +150,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/luna2.jpeg" alt="유기견3" />
+                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Runa</div>
@@ -161,7 +165,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/stella.jpeg" alt="유기견4" />
+                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Stella</div>
@@ -176,7 +180,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/bao.jpeg" alt="유기견5" />
+                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Bao</div>
@@ -191,7 +195,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/beny.jpeg" alt="유기견1" />
+                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Beny</div>
@@ -206,7 +210,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/tera.jpeg" alt="유기견2" />
+                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Tera</div>
@@ -221,7 +225,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/luna2.jpeg" alt="유기견3" />
+                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Runa</div>
@@ -236,7 +240,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/stella.jpeg" alt="유기견4" />
+                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Stella</div>
@@ -251,7 +255,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/bao.jpeg" alt="유기견5" />
+                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Bao</div>
@@ -268,7 +272,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/beny.jpeg" alt="유기견1" />
+                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Beny</div>
@@ -283,7 +287,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/tera.jpeg" alt="유기견2" />
+                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Tera</div>
@@ -298,7 +302,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/luna2.jpeg" alt="유기견3" />
+                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Runa</div>
@@ -313,7 +317,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/stella.jpeg" alt="유기견4" />
+                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Stella</div>
@@ -328,7 +332,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/bao.jpeg" alt="유기견5" />
+                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Bao</div>
@@ -343,7 +347,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/beny.jpeg" alt="유기견1" />
+                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Beny</div>
@@ -358,7 +362,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/tera.jpeg" alt="유기견2" />
+                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Tera</div>
@@ -373,7 +377,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/luna2.jpeg" alt="유기견3" />
+                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Runa</div>
@@ -388,7 +392,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/stella.jpeg" alt="유기견4" />
+                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Stella</div>
@@ -403,7 +407,7 @@
               <div class="img-box">
                 <div class="img-wrap">
                   <div class="slide-img">
-                    <img src="img/bao.jpeg" alt="유기견5" />
+                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
                   </div>
                   <div class="txt-box">
                     <div class="img-name">Bao</div>
@@ -428,7 +432,11 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
+<<<<<<< HEAD:src/main/webapp/0_main/mainPage/main.jsp
             src="img/f4Video.mp4"
+=======
+            src="0_main/img/mainVideo.mp4"
+>>>>>>> 198aa8867caf9dfed2c5e96b2c348125450f477c:src/main/webapp/0_main/main.jsp
             id="background_video"
             preload="auto"
             autoplay="autoplay"
@@ -454,5 +462,5 @@
     type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"
   ></script>
-  <script src="js/main.js"></script>
+  <script src="0_main/js/main.js"></script>
 </html>
