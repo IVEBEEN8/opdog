@@ -154,29 +154,6 @@ $(document).ready(function() {
 	
 
 	
-	$(document).on('click','button[id=radiobutton]',function(){
-		var sidoVal = $("input[name='sido']:checked").val();
-		var gunguVal = $("input[name='sigungu']:checked").val();
-		var centerVal = $("input[name='center']:checked").val();
-		console.log(sidoVal);
-		console.log(gunguVal);
-		console.log(centerVal);
-		
-		$.ajax({
-			url: 'SearchDoginfo',
-			type: 'GET',
-			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
-			success: function(response){
-				console.log(response);
-				$('div').remove('#dog');
-				for (var i = 0; i < response.length; i++){
-					$('#dogs').append('<div class="#" id="dog"> <img alt="" src="'+ response[i].filename+'"> kind: '+ response[i].kindCd+' age:'+ response[i].age+' sex:'+ response[i].sexCd+' neuter:'+ response[i].neuterYn+'<button id="detail" value="'+response[i]+'">상세정보</button> </div>');
-					console.log(response[i]);
-				}
-			}
-		})
-		
-	});
 
 	$(document).on('click','button[id=selectbutton]',function(){
 		var sidoVal = $("#sidoSelect").val();
@@ -191,19 +168,49 @@ $(document).ready(function() {
 			type: 'GET',
 			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
 			success: function(response){
-				console.log(response);
-				$('div').remove('#dog');
-				for (var i = 0; i < response.length; i++){
-					$('#dogs').append('<div class="#" id="dog"> <img alt="" src="'+ response[i].filename+'"> kind: '+ response[i].kindCd+' age:'+ response[i].age+' sex:'+ response[i].sexCd+' neuter:'+ response[i].neuterYn+'<button id="detail" value="'+response[i]+'">상세정보</button> </div>');
-					console.log(response[i]);
-				}
+				pagination(response);
+					
 			}
 		})
 		
 	});
-	$(document).on('click','button[id=detail]',function(){
-		var doginfo = JSON.stringify($(this).val()) ;
-		console.log(doginfo);
-		
-		});
+	
+
 });
+	$(document).on('click','button[id=radiobutton]',function(){
+		var sidoVal = $("input[name='sido']:checked").val();
+		var gunguVal = $("input[name='sigungu']:checked").val();
+		var centerVal = $("input[name='center']:checked").val();
+		console.log(sidoVal);
+		console.log(gunguVal);
+		console.log(centerVal);
+		
+		$.ajax({
+			url: 'SearchDoginfo',
+			type: 'GET',
+			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
+			success: function(response){
+//				console.log(response);
+				pagination(response);
+				
+			}
+		})
+		
+	});
+
+function pagination(json){
+	console.log(json)
+	console.log('---------')
+		let container = $('#pagination');
+		container.pagination({
+				dataSource: json,
+				callback: function(data, pagination){
+					var dataHtml = '<ul>';
+					$.each(data, function (index,item){
+						dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail" value="'+item+'">상세정보</button> </div></li>';
+					});
+					dataHtml += '</ul>';
+					$("#data-container").html(dataHtml);
+				}
+		});
+}
