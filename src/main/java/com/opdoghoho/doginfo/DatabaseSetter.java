@@ -1,22 +1,5 @@
 package com.opdoghoho.doginfo;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.util.ArrayList;
-
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
-
-
-
-
-
 public class DatabaseSetter {
 	public static void main(String[] args) {
 ////		---------------- 보호소 table setter --------------------		
@@ -78,8 +61,6 @@ public class DatabaseSetter {
 //			e.printStackTrace();
 //		}
 
-		
-		
 ////		---------------- 군/구 table setter --------------------		
 ////		api 키
 //		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
@@ -135,9 +116,7 @@ public class DatabaseSetter {
 //		} catch (Exception e) {
 //			e.printStackTrace();
 //		}
-		
-		
-		
+
 //		------------- 시/도 table setter -----------------
 //		api 키
 //		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키

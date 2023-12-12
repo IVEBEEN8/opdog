@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         
         document.querySelector(".chat-content").insertAdjacentHTML("beforeend", template);
 
-        const apiKey = "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" // open ai_KEY
+        const apiKey = "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" // open ai_KEY
         const prompt = document.querySelector("#input").value;
 
         try {

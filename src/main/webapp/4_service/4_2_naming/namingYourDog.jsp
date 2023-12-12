@@ -46,6 +46,7 @@
       <button onclick="selectPersonality('장난꾸러기')">장난꾸러기</button>
     </div>
     <div class="chat-content">
+    <div class="loading" id="loading">Loading...</div>
       <div class="line">
         <span class="chat-box"></span>
 
@@ -55,5 +56,8 @@
       </div>
     </div>
     <button id="send">generate!</button>
+    <div class="loadingwords" id="loadingwords">
+      "강아지와 찰떡인 이름을 만들고 있습니다. 조금만 기다려주세요!"
+    </div>
 </body>
 </html>
