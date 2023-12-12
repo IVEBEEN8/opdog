@@ -16,7 +16,46 @@
 	<!-- <a href="SendMarkC?a=1">testCall</a> -->
 	<div id="map" style="width: 750px; height: 350px;"></div>
 	<div style="border: 1px solid balck" id="printinfo"></div>
-
+	<c:forEach var="c" items="${centers}" varStatus="status">
+	<div class="#">
+		<div class= "#">
+			<div class="#">no.</div>
+			<div class="#">${c.no }</div>
+		</div>
+		<div class= "#">
+			<div class="#">센터명</div>
+			<div class="#">${c.careNm }</div>
+		</div>
+		<div class= "#">
+			<div class="#">센터주소</div>
+			<div class="#">${c.careAddr }</div>
+		</div>
+		<div class= "#">
+			<div class="#">위도</div>
+			<div class="#">${c.lat	}</div>
+		</div>
+		<div class= "#">
+			<div class="#">경도</div>
+			<div class="#">${c.lng	}</div>
+		</div>
+		<div class= "#">
+			<div class="#">수의사수</div>
+			<div class="#">${c.vetPersonCnt }</div>
+		</div>
+		<div>
+			<div class="#">보호소 영업시작</div>
+			<div class="#">${c.oprtime}</div>
+		</div>
+		<div>
+			<div class="#">보호소 영업종료</div>
+			<div class="#">${c.closetime }</div>
+		</div>
+		<div>
+			<div class="#">보호소휴무일</div>
+			<div class="#">${c.closeday }</div>
+		</div>
+	</div>
+</c:forEach>
 
 
 <script>
@@ -224,7 +263,7 @@ initializeMap();
 		                 $.ajax({
 		                     url: "SendMarkC",
 		                     data: {
-		                         lat: lat
+		                         lat, lng
 		                     },
 		                     success: function (data) {
 		                         $("#printinfo").empty();
@@ -237,6 +276,13 @@ initializeMap();
 		                                 '<div>' + data[i].tel + '</div>');
 		                             $("#printinfo").append(
 		                                 '<div>' + data[i].verNum + '</div>');
+		                             $("#printinfo").append(
+		                                 '<div>' + data[i].oprtime + '</div>');
+		                             $("#printinfo").append(
+		                                 '<div>' + data[i].closetime + '</div>');
+		                             $("#printinfo").append(
+		                                 '<div>' + data[i].closeday + '</div>');
+		                                 
 		                         }
 		                     },
 		                     error: function (request, status, error) {

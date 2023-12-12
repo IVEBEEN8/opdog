@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="PutCenterInfoC" method="post">
+<form action="putCenterInfoC" method="POST">
 <button>센터인터인포 db넣기!!</button>
 </form>
 </body>

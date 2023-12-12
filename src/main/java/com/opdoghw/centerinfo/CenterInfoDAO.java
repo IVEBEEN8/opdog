@@ -24,7 +24,7 @@ public class CenterInfoDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from centerinfo_test";
+		String sql = "select * from centerinfo";
 		CenterInfoDTO c = null;
 		ArrayList<CenterInfoDTO> center = new ArrayList<CenterInfoDTO>();
 		try {
@@ -40,6 +40,10 @@ public class CenterInfoDAO {
 				c.setLat(rs.getFloat("c_lat"));
 				c.setLng(rs.getFloat("c_lng"));
 				c.setVetPersonCnt(rs.getInt("c_vetpersoncnt"));
+				c.setCareTel(rs.getString("c_caretel"));
+				c.setClosetime(rs.getString("c_closetime"));
+				c.setOprtime(rs.getString("c_oprtime"));
+				c.setCloseday(rs.getString("c_closeday"));
 				c.setCareTel(rs.getString("c_caretel"));
 				center.add(c);
 			}
@@ -58,20 +62,20 @@ public class CenterInfoDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from centerinfo_test where c_lat=?"; // and c_lng=? 나중에추가해보기. 데이터베이스 lng값이 소수점 1자리가 모자람.
+		String sql = "select * from centerinfo where c_lat=? and c_lng=?"; // 나중에추가해보기. 데이터베이스 lng값이 소수점 1자리가 모자람.
 		try {
 			String lat = request.getParameter("lat");
-			// String lng = request.getParameter("lng");
+			String lng = request.getParameter("lng");
 
 			System.out.println(lat);
-			// System.out.println(lng);
+			System.out.println(lng);
 			String result = "";
 
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			System.out.println("연결성공!!123");
 			pstmt.setString(1, lat);
-			// pstmt.setString(2, lng);
+			pstmt.setString(2, lng);
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
@@ -79,14 +83,19 @@ public class CenterInfoDAO {
 				System.out.println(result);
 				JSONArray mydbCenterData = new JSONArray();
 				JSONObject obj = new JSONObject();
-				obj.put("careNm", rs.getString("c_careNm"));
-				obj.put("careAddr", rs.getString("c_careAddr"));
-				obj.put("verNum", rs.getInt("c_vetPersonCnt"));
-				obj.put("tel", rs.getString("c_careTel"));
+				obj.put("careNm", rs.getString("c_careNm")); // 보호소명
+				obj.put("careAddr", rs.getString("c_careAddr")); // 보호소주소
+				obj.put("verNum", rs.getInt("c_vetPersonCnt")); // 보호소수의사수
+				obj.put("tel", rs.getString("c_careTel")); // 보호소전화번호
+				obj.put("oprtime", rs.getString("c_oprtime")); // 보호소오픈시간
+				obj.put("closetime", rs.getString("c_closetime")); // 보호소닫는시간
+				obj.put("closeday", rs.getString("c_closeday")); // 보호소휴무일
+
+				// 결과값이 잘 들어갔는지 확인!
+				System.out.println(obj);
 				mydbCenterData.add(obj);
 				response.setContentType("application/json; charset=utf-8");
 				response.getWriter().print(mydbCenterData);
-
 			} else {
 				result = "존재하지 않는 데이터 입니다.";
 			}

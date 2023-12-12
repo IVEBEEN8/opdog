@@ -15,7 +15,7 @@ function selectGender(selectedGender) {
   showOptions("colorOptions");
 }
 
-function selectColor(selectedColor) {
+function selectColor(selectedColor) {    
   color = selectedColor;
   showOptions("hairLengthOptions");
 }
@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector(".chat-content")
       //.insertAdjacentHTML("beforeend", template);
 
-    const apiKey = "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"; // open ai_KEY
+    const apiKey = "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"; // open ai_KEY
     const prompt = template;
     try {
       const response = await fetch(
