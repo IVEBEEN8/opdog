@@ -85,15 +85,15 @@
           <div class="askMe">ask me</div>
           <div>
             <input type="text" />
-            <a href="#"><img src="/img/send-icon.png" alt="보내기버튼" /></a>
+            <a href="#"><img src="0_main/img/send-icon.png" alt="보내기버튼" /></a>
           </div>
         </div>
         <div class="footer3">
           <div class="sns-var">
-            <a href="#"><img src="/img/footer-menu-Facebook.svg" /></a>
-            <a href="#"><img src="/img/footer-menu-insta.svg" /></a>
-            <a href="#"><img src="/img/footer-menu-Linkedin.svg" /></a>
-            <a href="#"><img src="/img/footer-menu-Twitter.svg" /></a>
+            <a href="#"><img src="0_main/img/footer-menu-Facebook.svg" /></a>
+            <a href="#"><img src="0_main/img/footer-menu-insta.svg" /></a>
+            <a href="#"><img src="0_main/img/footer-menu-Linkedin.svg" /></a>
+            <a href="#"><img src="0_main/img/footer-menu-Twitter.svg" /></a>
           </div>
           <div class="footer-menu">
             <span>About Us</span>
