@@ -10,15 +10,23 @@
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script src="1_adopt/js/select.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css"/>
+	<style type="text/css">
+	ul{
+	list-style: none;}
+	</style>
+   <link rel="stylesheet" href="1_adopt/css/modal.css"/>
 </head>
 <body>
+<!-- 동적으로 추가될 div, optioin, radiobox, button 등의 태그는 js에서 .html,.append로 태그 채로 생성되기 때문에 js에서 class부여 가능 -->
 <!-- 
 ${sido} = 광역시 배열
 .orgCd = 도시 코드
 .orgdownNm = 도시 이름
  -->
 <!-- container div -->
-<div class="#">
+<div class="#" id="background">
 	<!-- radiobox div -->
 	<div class="#">
 		<div class="#"><!-- 시/도 radiobox -->
@@ -64,13 +72,19 @@ ${sido} = 광역시 배열
 	</div>
 	<!-- 애견정보 div -->
 	<div class="#">
-		<div>강아지 정보</div>
-		<div class="#" id="dogs">
-			<div class="#" id="dog"> <img alt="" src=""> kind: age: sex: neuter: </div><!-- test div -->
-		</div>
+		<div>강아지 정보</div>			
+		<div id="data-container"></div>
+		<div id="pagination"></div>	
+		
 	</div>
 </div>
-        
+
+ <div id="modalWrap">
+    <div id="modalBody">
+      <span id="closeBtn">&times;</span>
+    </div>
+</div>       
+<p style="">
         
        	
 

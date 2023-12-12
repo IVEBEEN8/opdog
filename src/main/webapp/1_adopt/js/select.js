@@ -154,29 +154,6 @@ $(document).ready(function() {
 	
 
 	
-	$(document).on('click','button[id=radiobutton]',function(){
-		var sidoVal = $("input[name='sido']:checked").val();
-		var gunguVal = $("input[name='sigungu']:checked").val();
-		var centerVal = $("input[name='center']:checked").val();
-		console.log(sidoVal);
-		console.log(gunguVal);
-		console.log(centerVal);
-		
-		$.ajax({
-			url: 'SearchDoginfo',
-			type: 'GET',
-			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
-			success: function(response){
-				console.log(response);
-				$('div').remove('#dog');
-				for (var i = 0; i < response.length; i++){
-					$('#dogs').append('<div class="#" id="dog"> <img alt="" src="'+ response[i].filename+'"> kind: '+ response[i].kindCd+' age:'+ response[i].age+' sex:'+ response[i].sexCd+' neuter:'+ response[i].neuterYn+'<button id="detail" value="'+response[i]+'">상세정보</button> </div>');
-					console.log(response[i]);
-				}
-			}
-		})
-		
-	});
 
 	$(document).on('click','button[id=selectbutton]',function(){
 		var sidoVal = $("#sidoSelect").val();
@@ -191,15 +168,81 @@ $(document).ready(function() {
 			type: 'GET',
 			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
 			success: function(response){
-				console.log(response);
-				$('div').remove('#dog');
-				for (var i = 0; i < response.length; i++){
-					$('#dogs').append('<div class="#" id="dog"> <img alt="" src="'+ response[i].filename+'"> kind: '+ response[i].kindCd+' age:'+ response[i].age+' sex:'+ response[i].sexCd+' neuter:'+ response[i].neuterYn+'<button id="detail" value="'+response[i]+'">상세정보</button> </div>');
-					console.log(response[i]);
-				}
+				pagination(response);
+					
 			}
 		})
 		
 	});
-	
+	$(document).on('click','button[id=radiobutton]',function(){
+		var sidoVal = $("input[name='sido']:checked").val();
+		var gunguVal = $("input[name='sigungu']:checked").val();
+		var centerVal = $("input[name='center']:checked").val();
+		console.log(sidoVal);
+		console.log(gunguVal);
+		console.log(centerVal);
+		
+		$.ajax({
+			url: 'SearchDoginfo',
+			type: 'GET',
+			data: { value1 : sidoVal, value2: gunguVal, value3 : centerVal},
+			success: function(response){
+//				console.log(response);
+				pagination(response);
+				
+			}
+		})
+		
+	});
+	$(document).on('click','button[id=detail]',function(){
+		var values = $(this).children().text();
+		var items = JSON.parse(values);
+		$('div').remove('#detailinfo');
+		$('#modalBody').append('<div class="#" id="detailinfo"><img src="'+items.popfile+'" style="width:300px;"></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">유기번호:'+items.desertionNo+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">품종:'+items.kindCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">색상:'+items.colorCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">성별:'+items.sexCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">중성화:'+items.neuterYn+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">특징: '+items.specialMark+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">보호소: '+items.careNm+'연락처 '+items.careTel+'주소 '+items.careAddr+'<button>지도로 보기</button></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo"><button>입양하러가기</button></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo"><button>장바구니</button></div>');
+		$('#modalWrap').css({
+			"display":"block"
+		});
+	});
+	$(document).on('click','span[id=closeBtn]',function(){
+		$('#modalWrap').css({
+			"display":"none"
+		});
+	});
+	$(window).on('click',function(event){
+		if($(event.target).is('#modalWrap')){
+			$('#modalWrap').css({
+				"display":"none"
+			});
+		};
+	});
 });
+
+function pagination(json){
+	console.log(json)
+	console.log('---------')
+		let container = $('#pagination');
+		container.pagination({
+			dataSource: json,
+			callback: function(data, pagination){
+				var dataHtml = '<ul>';
+				$.each(data, function (index,item){
+					dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button> </div></li>';
+					console.log(item)
+					});
+				dataHtml += '</ul>';
+				$("#data-container").html(dataHtml);
+			}
+	});
+}

@@ -16,15 +16,11 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-
 import com.opdoghw.centerinfo.DBManager_khw;
-
-
-
 
 public class DoginfoDAO {
 	public static void main(String[] args) {
-		
+
 	}
 
 	public static void sido(HttpServletRequest request) {
@@ -32,12 +28,13 @@ public class DoginfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select*from sido";
-		
+
 		try {
 			con = DBManager_khw.connect();
+			System.out.println("connect success ---");
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
-			
+
 			ArrayList<sidoB> sido = new ArrayList<sidoB>();
 			sidoB s = null;
 			while (rs.next()) {
@@ -49,12 +46,13 @@ public class DoginfoDAO {
 			request.setAttribute("sido", sido);
 			System.out.println(sido);
 			
-			DBManager_khw.close();
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
 		}
-				
+
 	}
 
 	public static void sigungu(HttpServletRequest request, HttpServletResponse response) {
@@ -67,8 +65,7 @@ public class DoginfoDAO {
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("value"));
 			rs = pstmt.executeQuery();
-			
-			
+
 			JSONArray sigungu = new JSONArray();
 			while (rs.next()) {
 				JSONObject gungu = new JSONObject();
@@ -81,19 +78,20 @@ public class DoginfoDAO {
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(sigungu);
 			
-			DBManager_khw.close();
+			
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
 		}
-		
+
 	}
 
 	public static void center(HttpServletRequest request, HttpServletResponse response) {
 		String a = request.getParameter("value");
 		String Cd[] = a.split("!");
-		
-		
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -104,8 +102,7 @@ public class DoginfoDAO {
 			pstmt.setString(1, Cd[0]);
 			pstmt.setString(2, Cd[1]);
 			rs = pstmt.executeQuery();
-			
-			
+
 			JSONArray center = new JSONArray();
 			while (rs.next()) {
 				JSONObject shelter = new JSONObject();
@@ -113,50 +110,60 @@ public class DoginfoDAO {
 				shelter.put("careNm", rs.getString("s_careNm"));
 				center.add(shelter);
 			}
-			
+
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(center);
 			
-			DBManager_khw.close();
-
 			
+
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
 		}
-				
+
 	}
 
 	public static void search(HttpServletRequest request, HttpServletResponse response) {
 		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
 		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String	url = null;
+		String url = null;
 		String a = request.getParameter("value2");
 		String Cd[] = a.split("!");
-		if (request.getParameter("value2") == ""|| request.getParameter("value2")==null) {
+		if (request.getParameter("value2") == "" || request.getParameter("value2") == null) {
 			System.out.println(request.getParameter("value1"));
-			url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="+request.getParameter("value1")+"&pageNo=1&numOfRows=1000&serviceKey="+encodeKey;
+			url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="
+					+ request.getParameter("value1") + "&pageNo=1&numOfRows=1000&serviceKey=" + encodeKey;
 			System.out.println("11");
-		} else if (request.getParameter("value3")=="" || request.getParameter("value3")==null) {
+		} else if (request.getParameter("value3") == "" || request.getParameter("value3") == null) {
 			System.out.println(Cd[1]);
-			url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="+request.getParameter("value1")+"&org_cd="+Cd[1]+"&pageNo=1&numOfRows=1000&serviceKey="+encodeKey;
+			url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="
+					+ request.getParameter("value1") + "&org_cd=" + Cd[1] + "&pageNo=1&numOfRows=1000&serviceKey="
+					+ encodeKey;
 			System.out.println("22");
 		} else {
 			System.out.println(request.getParameter("value3"));
-			url= "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="+request.getParameter("value1")+"&org_cd="+Cd[1]+"&care_reg_no="+request.getParameter("value3")+"&pageNo=1&numOfRows=1000&serviceKey="+encodeKey;
+			url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="
+					+ request.getParameter("value1") + "&org_cd=" + Cd[1] + "&care_reg_no="
+					+ request.getParameter("value3") + "&pageNo=1&numOfRows=1000&serviceKey=" + encodeKey;
 			System.out.println("33");
 		}
+		response.setContentType("application/json; charset=utf-8");
 		
 		
 		
 		try {
 			URL u = new URL(url);
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
+			if(huc.getResponseCode() == 200) {
 			InputStream is = huc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-			System.out.println(isr);
+//			System.out.println(isr);
+				
 			
 			JSONParser jp = new JSONParser();
 			JSONObject dogs = (JSONObject) jp.parse(isr);
+			
 			System.out.println(dogs);
 			System.out.println("여기서 터진거면 오브젝트 나눌 때");
 			dogs = (JSONObject) dogs.get("response");
@@ -164,18 +171,20 @@ public class DoginfoDAO {
 			dogs = (JSONObject) dogs.get("items");
 			System.out.println("여기서 터진거면 어레이 만들 때");
 			JSONArray dog = (JSONArray) dogs.get("item");
-			System.out.println("여기서 터진거면 어레이 담을 때 ");
-			System.out.println(dog);
-			
-			response.setContentType("application/json; charset=utf-8");
-			response.getWriter().print(dog);
+				if(dog != null) {
+					System.out.println("여기서 터진거면 어레이 담을 때 ");
+					System.out.println(dog);
+					response.getWriter().print(dog);
+				}else {
+					response.getWriter().print(0);
+					
+				}
+			}
 			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-	}
 
-	
+	}
 
 }
