@@ -1,5 +1,4 @@
 @charset "UTF-8";
-
 html,
 body {
   width: 100vw;
@@ -69,7 +68,7 @@ header {
 .nav-text {
   color: #424242;
   text-align: center;
-  font-size: 0.9vw;
+  font-size: 1.1vw;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -79,7 +78,7 @@ header {
 .home {
   color: rgb(247 240 216);
   text-align: center;
-  font-size: 0.9vw;
+  font-size: 1.1vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;

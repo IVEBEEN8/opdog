@@ -61,7 +61,7 @@
           <button class="reg-btn">
             <span class="reg-text">SignUp</span>
           </button>
-          <button onclick="" class="login-btn">
+          <button onclick="location.href='LoginMainHC'" class="login-btn">
             <span class="login-text">Login</span>
           </button>
         </div>
@@ -74,13 +74,12 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-            src="0_main/img/mainVideo2.mp4"
+            src="0_main/img/f1video.mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"
             loop="loop"
             muted="muted"
-            volume="0"
           ></video>
         </div>
         <!-- 텍스트부분 -->
@@ -428,11 +427,7 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-<<<<<<< HEAD:src/main/webapp/0_main/mainPage/main.jsp
-            src="img/f4Video.mp4"
-=======
-            src="0_main/img/mainVideo.mp4"
->>>>>>> 198aa8867caf9dfed2c5e96b2c348125450f477c:src/main/webapp/0_main/main.jsp
+            src="0_main/img/f4viedo.mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"
