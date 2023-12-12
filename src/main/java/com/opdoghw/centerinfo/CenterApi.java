@@ -1,4 +1,5 @@
 package com.opdoghw.centerinfo;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
@@ -60,28 +61,17 @@ public class CenterApi {
 			PreparedStatement pstmt = null;
 
 			for (Object object : items) {
-				String sql = "insert into centerinfo_test values (centerinfo_test_seq.nextval,?,?,?,?,?,?)";
+				String sql = "insert into centerinfo values (centerinfo_test_seq.nextval,?,?,?,?,?,?,?,?,?)";
 				con = DBManager_khw.connect();
-				System.out.println("연결성공!!");
 				pstmt = con.prepareStatement(sql);
 
-//    	   	System.out.println(object);
 				JSONObject item = (JSONObject) object;
-//    	   	System.out.println("상호명 : " + item.get("careNm"));
-//    	   	System.out.println("지역명 : " + item.get("orgNm"));
-//    	   	System.out.println("주소 : " +  item.get("careAddr"));
-//    	   	System.out.println("위도 : " + item.get("lat"));
-//    	   	System.out.println("경도 : " + item.get("lng"));
-//    	   	System.out.println("수의사수 : " + item.get("vetPersonCnt") + "명");
-//    	   	System.out.println("전화번호 : " + item.get("careTel"));
-//    	   	System.out.println("-------");
 
 				pstmt.setString(1, (String) item.get("careNm"));
 				pstmt.setString(2, (String) item.get("careAddr"));
 
 				Double lat = (Double) item.get("lat");
 				Double lng = (Double) item.get("lng");
-
 				if (lat != null && lng != null) {
 					pstmt.setDouble(3, lat);
 					pstmt.setDouble(4, lng);
@@ -99,9 +89,11 @@ public class CenterApi {
 					// 값이 null일 경우에 대한 처리 (예: 기본값 또는 예외 처리)
 					pstmt.setNull(5, java.sql.Types.BIGINT);
 				}
+				pstmt.setString(6, (String) item.get("weekOprStime"));
+				pstmt.setString(7, (String) item.get("weekOprEtime"));
+				pstmt.setString(8, (String) item.get("closeDay"));
 
-				pstmt.setString(6, (String) item.get("careTel"));
-				System.out.println("done----");
+				pstmt.setString(9, (String) item.get("careTel"));
 				pstmt.executeUpdate();
 			}
 
