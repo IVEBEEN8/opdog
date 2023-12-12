@@ -5,6 +5,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+<<<<<<< HEAD
+=======
+// 이건 java 쌩으론 연결x 웹으로 연결해야되서 모델링을 해줘야한다.
+>>>>>>> 58c280e8dff8a4625b67f88c5f2cee3725098840
 import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
 public class DBManager_khw {
@@ -24,7 +28,11 @@ public class DBManager_khw {
 		dataSource.setUsername("ADMIN");
 		dataSource.setPassword("Thfeptmzm802!!");
 
+<<<<<<< HEAD
 		// 다양한 DBCP 설정들을 추가할 수 있습니다.ß
+=======
+		// 다양한 DBCP 설정들을 추가할 수 있습니다.
+>>>>>>> 58c280e8dff8a4625b67f88c5f2cee3725098840
 	}
 
 	public static Connection connect() throws SQLException {

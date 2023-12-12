@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+    body {
+            display: flex;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+#map{
+            flex: 1; /* 왼쪽에 지도를 표시하는 섹션 */
+            height: 100%;
+}
+
+#data-container {
+            flex: 1; /* 오른쪽에 데이터를 표시하는 섹션 */
+            padding: 20px;
+            box-sizing: border-box;
+}
