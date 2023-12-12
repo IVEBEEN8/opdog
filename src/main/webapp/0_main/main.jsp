@@ -74,11 +74,7 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-<<<<<<< HEAD:src/main/webapp/0_main/mainPage/main.jsp
-            src="img/f1video.mp4"
-=======
             src="0_main/img/mainVideo2.mp4"
->>>>>>> 198aa8867caf9dfed2c5e96b2c348125450f477c:src/main/webapp/0_main/main.jsp
             id="background_video"
             preload="auto"
             autoplay="autoplay"
