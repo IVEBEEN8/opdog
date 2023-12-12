@@ -1,5 +1,15 @@
 let gender, color, hairLength, personality;
 
+function showLoading() {
+  document.getElementById("loading").style.display = "block";
+  document.getElementById("loadingwords").style.display = "block";
+}
+
+function hideLoading() {
+  document.getElementById("loading").style.display = "none";
+  document.getElementById("loadingwords").style.display = "none";
+}
+
 function selectGender(selectedGender) {
   gender = selectedGender;
   showOptions("colorOptions");
@@ -19,10 +29,10 @@ function selectPersonality(selectedPersonality) {
   personality = selectedPersonality;
   const generatedName = generateName();
   const personalityOptions = document.getElementById("personalityOptions");
-  personalityOptions.innerHTML = "<h2>옵션 선택을 완료하셨습니다!</h2>";
-  updateSelectedText(
+  personalityOptions.innerHTML = `<h2>성별이 ${gender}, 털 색상이 ${color}, 털 길이가 ${hairLength}, 그리고 성격이 ${personality} 옵션 선택을 완료하셨습니다! 이름 생성하기 버튼을 눌러주세요!</h2>`
+  /* updateSelectedText(
     `${generatedName}을(를) 선택했어여!! generate 버튼을 눌러주세용!!`
-  );
+  ); */
   generateName();
 }
 
@@ -43,7 +53,7 @@ function showOptions(optionsId) {
 function generateName() {
   return `${gender} ${color} ${hairLength} ${personality}`;
 }
-
+/*
 function updateSelectedText(text) {
   const selectedTextTemplate = `<div class="line">
         <span class="chat-box">${text}</span>
@@ -52,21 +62,23 @@ function updateSelectedText(text) {
     .querySelector(".chat-content")
     .insertAdjacentHTML("beforeend", selectedTextTemplate);
 }
+*/
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#send").addEventListener("click", async function () {
+	showLoading();
     // generateName 함수 호출 위치 수정
 
     var template = `<div class="line">
         <span class="chat-box mine">성별이 ${gender}, 털 색상이 ${color}, 털 길이가 ${hairLength}, 그리고 성격이 ${personality} 강아지의 이름을 지어줄래? 그리고 추천 이유도 설명해줘!</span>
-    	</div>`;
+    	</div>`; 
     generateName();
 
     document
       .querySelector(".chat-content")
-      .insertAdjacentHTML("beforeend", template);
+      //.insertAdjacentHTML("beforeend", template);
 
-    const apiKey = "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"; // open ai_KEY
+    const apiKey = "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"; // open ai_KEY
     const prompt = template;
     try {
       const response = await fetch(
@@ -90,7 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
       const result = await response.json();
       console.log("API 호출 결과:", result);
 
+	  hideLoading();
+
       if (result.choices && result.choices.length > 0) {
+	
+		document.querySelector(".chat-content").innerHTML = "";
+		
         const chatgptMessage = result.choices[0].message.content;
         console.log("gpt응답", chatgptMessage);
 
@@ -101,9 +118,11 @@ document.addEventListener("DOMContentLoaded", function () {
         var assistantTemplate = `<div class="line">
                     <span class="chat-box">${assistantMessage}</span>
                 </div>`;
+		
         document
           .querySelector(".chat-content")
           .insertAdjacentHTML("beforeend", assistantTemplate);
+		   
       } else {
         console.log("API 응답에 choices가 없습니다.");
       }

@@ -57,10 +57,14 @@ function createMarker(lat, lng, data) {
     kakao.maps.event.addListener(marker, 'click', function () {
         var markerData = marker.data;
         $("#printinfo").empty();
-        $("#printinfo").append('<div>' + markerData.careNm + '</div>');
-        $("#printinfo").append('<div>' + markerData.careAddr + '</div>');
-        $("#printinfo").append('<div>' + markerData.careTel + '</div>');
-        $("#printinfo").append('<div>' + markerData.closeDay + '</div>');
+        $("#printinfo").append('<div> 보호소명			:' + markerData.careNm + '</div>');
+        $("#printinfo").append('<div> 보호소 주소 		:' + markerData.careAddr + '</div>');
+        $("#printinfo").append('<div> 보호소 전화번호	:' + markerData.careTel + '</div>');
+        $("#printinfo").append('<div> 보호소 영업시작	:' + markerData.weekOprStime + '</div>');
+        $("#printinfo").append('<div> 보호소 영업종료	:' + markerData.weekOprEtime + '</div>');
+        $("#printinfo").append('<div> 보호소 휴무일		:' + markerData.closeDay + '</div>');
+        $("#printinfo").append('<div> 보호소 수의사수	:' + markerData.vetPersonCnt + '</div>');
+       
     });
 
     marker.setMap(map);

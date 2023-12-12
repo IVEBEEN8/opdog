@@ -9,22 +9,35 @@ body {
 h1 {
   color: #333;
 }
-.chat-content {
-  height: 350px;
-  overflow-y: scroll;
-}
-.line {
-  margin-top: 10px;
-  display: flex;
-}
-.chat-box {
-  background: #eee;
-  padding: 5px;
-  max-width: 200px;
-}
-.mine {
-  margin-left: auto;
-}
+
+
 button {
   width: 200px;
+}
+
+.loading {
+  display: none;
+  border: 16px solid #f3f3f3; /* Light grey */
+  border-top: 16px solid #3498db; /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loadingwords {
+  display: none;
+  color: black;
+}
+
+@keyframes spin {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
 }
