@@ -10,53 +10,74 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf95e7fad4ebbf7f5b751c535e5369bf&libraries=services,clusterer,drawing"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-
+<style type="text/css">
+.containar{
+display: flex;
+}
+.test{
+background-color: skyblue;
+display: flex;
+}
+.test1{
+border-color: black;
+}
+.title_hw{
+width:200px;
+}
+</style>
 </head>
 <body>
 	<!-- <a href="SendMarkC?a=1">testCall</a> -->
-	<div id="map" style="width: 750px; height: 350px;"></div>
-	<div style="border: 1px solid balck" id="printinfo"></div>
-	<c:forEach var="c" items="${centers}" varStatus="status">
-	<div class="#">
-		<div class= "#">
-			<div class="#">no.</div>
-			<div class="#">${c.no }</div>
-		</div>
-		<div class= "#">
-			<div class="#">센터명</div>
+<div class="containar">
+	<div class="test1">
+		<div id="map" style="width: 750px; height: 350px;"></div>
+		<div style="border: 1px solid balck" id="printinfo"></div>
+	</div>	
+<c:forEach var="c" items="${centers}" varStatus="status">
+
+	<div class="test">
+		<div class= "test1">
+			<div class="title_hw">센터명</div>
 			<div class="#">${c.careNm }</div>
 		</div>
-		<div class= "#">
-			<div class="#">센터주소</div>
+		<br>
+		<div class= "test1">
+			<div class="title_hw">센터주소</div>
 			<div class="#">${c.careAddr }</div>
 		</div>
-		<div class= "#">
-			<div class="#">위도</div>
+		<div class= "test1">
+			<div class="title_hw">위도</div>
 			<div class="#">${c.lat	}</div>
 		</div>
-		<div class= "#">
-			<div class="#">경도</div>
+		
+		<div class= "test1">
+			<div class="title_hw">경도</div>
 			<div class="#">${c.lng	}</div>
 		</div>
-		<div class= "#">
-			<div class="#">수의사수</div>
+		
+		<div class= "test1">
+			<div class="title_hw">수의사수</div>
 			<div class="#">${c.vetPersonCnt }</div>
 		</div>
-		<div>
-			<div class="#">보호소 영업시작</div>
+		
+		<div class="test1">
+			<div class="title_hw">보호소 영업시작</div>
 			<div class="#">${c.oprtime}</div>
 		</div>
-		<div>
-			<div class="#">보호소 영업종료</div>
+		
+		<div class="test1">
+			<div class="title_hw">보호소 영업종료</div>
 			<div class="#">${c.closetime }</div>
 		</div>
-		<div>
-			<div class="#">보호소휴무일</div>
-			<div class="#">${c.closeday }</div>
+		
+		<div class="test1">
+			<div class="title_hw">보호소휴무일</div>
+			<div class="">${c.closeday }</div>
 		</div>
 	</div>
+	<br>
 </c:forEach>
-
+</div>
 
 <script>
 var mapContainer = document.getElementById('map');

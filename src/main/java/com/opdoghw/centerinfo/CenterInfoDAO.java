@@ -35,16 +35,16 @@ public class CenterInfoDAO {
 			while (rs.next()) {
 				c = new CenterInfoDTO();
 				c.setNo(rs.getInt("c_no"));
-				c.setCareNm(rs.getString("c_carenm"));
-				c.setCareAddr(rs.getString("c_careaddr"));
-				c.setLat(rs.getFloat("c_lat"));
-				c.setLng(rs.getFloat("c_lng"));
-				c.setVetPersonCnt(rs.getInt("c_vetpersoncnt"));
-				c.setCareTel(rs.getString("c_caretel"));
-				c.setClosetime(rs.getString("c_closetime"));
-				c.setOprtime(rs.getString("c_oprtime"));
-				c.setCloseday(rs.getString("c_closeday"));
-				c.setCareTel(rs.getString("c_caretel"));
+				c.setCareNm(rs.getString("c_carenm")); // 보호소명
+				c.setCareAddr(rs.getString("c_careaddr")); // 보호소주소
+				c.setLat(rs.getFloat("c_lat")); // 보호소위도
+				c.setLng(rs.getFloat("c_lng")); // 보호소경도
+				c.setVetPersonCnt(rs.getInt("c_vetpersoncnt")); // 보호소수의사수
+				c.setCareTel(rs.getString("c_caretel")); // 보호소전화번호
+				c.setClosetime(rs.getString("c_closetime")); // 보호소종료시간
+				c.setOprtime(rs.getString("c_oprtime")); // 보호소시작시간
+				c.setCloseday(rs.getString("c_closeday")); // 보호소휴무일
+				c.setCareTel(rs.getString("c_caretel")); // 보호소전화번호
 				center.add(c);
 			}
 			request.setAttribute("centers", center);
