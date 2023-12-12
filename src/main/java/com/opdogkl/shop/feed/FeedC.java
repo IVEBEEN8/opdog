@@ -17,8 +17,8 @@ public class FeedC extends HttpServlet {
 		FeedDAO.getAllFeed(request);
 		FeedDAO.paging(1, request);
 		
-		request.setAttribute("contentPage", "feed.jsp");
-		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "2_shop/2_2_feed/feed.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

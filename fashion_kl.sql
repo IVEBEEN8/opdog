@@ -7,7 +7,7 @@ create table Fashion_kl(
 );
 
 create sequence fashion_kl_seq;
-insert into fashion_kl VALUES (fashion_test_seq.nextval,?,?,?,?);
+insert into fashion_kl VALUES (fashion_kl_seq.nextval,?,?,?,?);
 select * from fashion_kl;
 drop table fashion_kl;
 drop sequence fashion_kl;

@@ -18,7 +18,7 @@ public class FeedDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from feed_test";
+		String sql = "select * from feed_kl";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

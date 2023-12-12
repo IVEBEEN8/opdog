@@ -17,8 +17,8 @@ public class SnackC extends HttpServlet {
 		SnackDAO.getAllSnack(request);
 		SnackDAO.paging(1, request);
 		
-		request.setAttribute("contentPage", "snack.jsp");
-		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "2_shop/2_3_snack/snack.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
 	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

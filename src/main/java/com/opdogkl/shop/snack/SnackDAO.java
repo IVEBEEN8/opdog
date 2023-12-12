@@ -18,7 +18,7 @@ public class SnackDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from snack_test";
+		String sql = "select * from snack_kl";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

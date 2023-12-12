@@ -18,7 +18,7 @@ public class ToyDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from toy_test";
+		String sql = "select * from toy_kl";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
