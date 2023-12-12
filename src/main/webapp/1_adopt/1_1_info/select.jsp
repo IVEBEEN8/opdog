@@ -26,7 +26,7 @@ ${sido} = 광역시 배열
 .orgdownNm = 도시 이름
  -->
 <!-- container div -->
-<div class="#">
+<div class="#" id="background">
 	<!-- radiobox div -->
 	<div class="#">
 		<div class="#"><!-- 시/도 radiobox -->
@@ -78,15 +78,13 @@ ${sido} = 광역시 배열
 		
 	</div>
 </div>
-<div id="btnWrap">
-  <button typ="button" id="popupBtn">모달 팝업 띄우기</button>
-</div>
+
  <div id="modalWrap">
     <div id="modalBody">
       <span id="closeBtn">&times;</span>
-      <p>modal-popup 입니다.</p>
     </div>
 </div>       
+<p style="">
         
        	
 
