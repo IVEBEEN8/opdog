@@ -1,31 +1,42 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+
+<script type="text/javascript" src="../js/review.js"></script>
+
+
 <body>
 <h1>review register</h1>
-	<form action="ReviewRegC" method="post" enctype="multipart/form-data">
+	
+	 <form action="ReviewRegC" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
 	<div>
 		<div>
 			<div>Image</div>
-			<div><input name="img" type="file"> </div>
+			<div>
+				<input id="fileInput" name="img" type="file" value="Select File" style="display: none">
+				<button type="button"  onclick="document.getElementById('fileInput').click();">Select File</button>
+			</div>
 		</div>
 		<div>
 			<div>Title</div>
-			<div><input name="title"> </div>
+			<div><input id="title" name="title"> </div>
 		</div>
 		<div>
 			<div>Text</div>
-			<div><textarea name="txt"> </textarea> </div>
+			<div><textarea id="txt" name="txt"> </textarea> </div>
 		</div>
 		<div>
-			<div><button class="등록버튼">register</button></div>
+			<div><button class="�벑濡앸쾭�듉">register</button></div>
 		</div>
 	</div>
-	</form>
+</form>
+
+
 </body>
 </html>
