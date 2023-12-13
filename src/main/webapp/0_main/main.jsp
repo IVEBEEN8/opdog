@@ -18,7 +18,9 @@
     <header>
       <nav id="main_header">
         <!-- 헤더 왼쪽 로고 -->
-        <div class="header_logo">Logo</div>
+        	<div class="header_logo">
+            	<img src="../img/logo-OPEN THE DOG-light.svg" alt="" />
+         	</div>
         <!-- 메뉴 -->
         <div class="nav-var">
           <div class="nav-items">

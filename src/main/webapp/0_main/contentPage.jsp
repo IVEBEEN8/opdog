@@ -17,11 +17,13 @@
     />
   </head>
   <body>
-    <!-- 헤더 메뉴바 -->
+     <!-- 메인 상단 : 헤더 -->
     <header>
-      <nav id="main_header" style="background: white">
+      <nav id="main_header">
         <!-- 헤더 왼쪽 로고 -->
-        <div class="header_logo">Logo</div>
+        <div class="header_logo">
+          <img src="../img/logo-OPEN THE DOG-dark.svg" alt="" />
+        </div>
         <!-- 메뉴 -->
         <div class="nav-var">
           <div class="nav-items">
@@ -60,16 +62,12 @@
           </div>
         </div>
         <!-- 회원가입 로그인 버튼 -->
-        <div class="header-r">
-          <button class="reg-btn">
-            <span class="reg-text">SignUp</span>
-          </button>
-          <button onclick="" class="login-btn">
-            <span class="login-text">Login</span>
-          </button>
-        </div>
+          <div>
+		<div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
+		</div>	
       </nav>
     </header>
+ 
 	<!--  컨텐츠페이지 -->
 	<div align="center">
 		<div><jsp:include page = "${contentPage }"></jsp:include></div>	
