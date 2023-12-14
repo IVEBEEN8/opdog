@@ -27,7 +27,7 @@ function fullset() {
         //첫번째 페이지가 아닐때 (index는 0부터 시작임)
         page = page.index() - 1;
         $("#fullpage").animate({ top: -pagelength + "px" }, 1000, "swing");
-        // alert(before);
+       // alert(before);
         //페이지 인덱스에 따라 색상 변경
         if (before === 4) {
           $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
