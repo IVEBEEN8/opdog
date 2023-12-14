@@ -1,25 +1,21 @@
-package com.opdogkl.shop.feed;
+package com.opdogkl.review;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opdogkl.shop.fashion.FashionDAO;
-
-import javax.servlet.annotation.WebServlet;
-
-@WebServlet("/FeedC")
-public class FeedC extends HttpServlet {
+@WebServlet("/ReviewDetailC")
+public class ReviewDetailC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 강아지 사료 전체 조회하는일
-		FeedDAO.getAllFeed(request);
-		FeedDAO.paging(1, request);
+		//  그 리뷰를 조희해서
+		ReviewDAO.getReview(request);
 		
-		request.setAttribute("contentPage", "2_shop/2_2_feed/feed.jsp");
+		// 리뷰 디테일 페이지 보여주기 
+		request.setAttribute("contentPage", "1_adopt/1_4_review/reviewDetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
-	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
