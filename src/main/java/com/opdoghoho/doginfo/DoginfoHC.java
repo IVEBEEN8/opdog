@@ -12,8 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 public class DoginfoHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		DoginfoDAO.sido(request); // 시/도 어트리뷰 세팅 메서드
-
-		request.getRequestDispatcher("1_adopt/1_1_info/select.jsp").forward(request, response);
+		
+		request.setAttribute("contentPage", "../1_adopt/1_1_info/select.jsp");
+		request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 
 
