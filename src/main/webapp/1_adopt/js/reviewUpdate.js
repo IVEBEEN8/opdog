@@ -2,7 +2,7 @@ function checkForm() {
   // 이미지 파일이 선택되었는지 확인합니다.
   if (document.getElementById("fileInput").files.length === 0&&
     document.getElementById("oldImg").value.trim() === "") {
-    alert("이미지 파일을 선택하세요.");
+    alert("Please select an image file");
     document.getElementById("fileInput").focus();
     return false;
   }
@@ -12,7 +12,7 @@ function checkForm() {
 	
   // 제목이 공백 또는 띄어쓰기로만 이루어져 있는 경우를 확인합니다.
   if (!titleValue.trim()) {
-    alert("제목을 입력하세요.");
+    alert("Please enter a title");
     document.getElementById("title").focus();
     return false;
   }
@@ -22,7 +22,7 @@ function checkForm() {
 
   // 내용이 공백 또는 띄어쓰기로만 이루어져 있는 경우를 확인합니다.
   if (!txtValue.trim()) {
-    alert("내용을 입력하세요.");
+    alert("Please enter text");
     document.getElementById("txt").focus();
     return false;
   }
