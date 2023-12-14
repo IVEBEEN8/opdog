@@ -1,6 +1,7 @@
 function checkForm() {
   // 이미지 파일이 선택되었는지 확인합니다.
-  if (document.getElementById("fileInput").files.length === 0) {
+  if (document.getElementById("fileInput").files.length === 0&&
+    document.getElementById("oldImg").value.trim() === "") {
     alert("이미지 파일을 선택하세요.");
     document.getElementById("fileInput").focus();
     return false;
@@ -30,34 +31,25 @@ function checkForm() {
  
   	return true;
 }
-// 등록 이미지 미리보기 
+
 function previewSelectedImage(input) {
-        var preview = document.getElementById('previewImage');
-        var file = input.files[0];
-        var reader = new FileReader();
+  var preview = document.getElementById('previewImage');
+  var file = input.files[0];
 
-        reader.onload = function (e) {
-            preview.src = e.target.result;
-        };
-
-        if (file) {
-            // 이미지를 선택한 경우에만 미리보기 영역을 보이도록 변경
-            preview.parentNode.style.display = 'block';
-            reader.readAsDataURL(file);
-        } else {
-            // 이미지를 선택하지 않은 경우에는 미리보기 영역을 숨김
-            preview.parentNode.style.display = 'none';
-        }
+  if (file) {
+    // 파일이 선택된 경우
+    var reader = new FileReader();
+    
+    reader.onloadend = function () {
+      preview.src = reader.result;
     }
 
+    reader.readAsDataURL(file);
 
-// 리뷰 삭제
-function reviewDelete(n){
-	let ok = confirm('정말 삭제하시겠습니까?');
-	if(ok){
-		location.href = 'ReviewDelC?id=' + n
-	}
-	
+    // 선택한 파일의 이름으로 oldImg 업데이트
+    document.getElementById("oldImg").value = file.name;
+  } else {
+    // 파일 선택이 취소된 경우
+    preview.src = "1_adopt/1_4_review/imgFolder/" + document.getElementById("oldImg").value;
+  }
 }
-
-

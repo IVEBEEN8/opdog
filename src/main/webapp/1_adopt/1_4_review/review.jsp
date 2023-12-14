@@ -22,7 +22,7 @@
 				<img alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
 				${r.r_title} <br>
 				${r.r_txt}	<br>
-				<button onclick="location.href='ReviewDetailC'">디테일창으로 이동</button>
+				<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">디테일창으로 이동</button>
 				
 			</div>
 		</c:forEach>

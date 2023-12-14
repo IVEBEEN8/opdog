@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<script type="text/javascript" src="1_adopt/js/review.js"></script>
 </head>
 
-<script type="text/javascript" src="../js/review.js"></script>
 
 
 <body>
@@ -18,8 +18,11 @@
 	<div>
 		<div>
 			<div>Image</div>
+			 <div style="display: none;">
+                <img id="previewImage" style="max-width: 300px; max-height: 300px;" src="#" alt="Preview">
+            </div>
 			<div>
-				<input id="fileInput" name="img" type="file" value="Select File" style="display: none">
+				<input id="fileInput" name="img" type="file" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
 				<button type="button"  onclick="document.getElementById('fileInput').click();">Select File</button>
 			</div>
 		</div>

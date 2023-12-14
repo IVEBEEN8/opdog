@@ -6,6 +6,7 @@ create table review_kl(
     r_updated DATE DEFAULT TRUNC(SYSDATE) NOT NULL,
     op_email varchar2 (200 char) primary key
 );
+create sequence review_kl_seq;
 select * from review_kl;
 insert into review_kl values (?,?,?,?,?,?); 
 insert into review_kl values ('이미지','제목','텍스트','2023-12-07','2023-12-08','dlrufp1213@naver.com');
