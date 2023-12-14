@@ -9,12 +9,15 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/LoginMainHC")
 public class LoginMainHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.getRequestDispatcher("5_mypage/1_1_login/loginMain.jsp").forward(request, response);
+	request.setAttribute("contentPage", "0_main/login/loginMain.jsp");
+	request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	LoginDAO.LoginAccount(request);
-	request.getRequestDispatcher("5_mypage/1_1_login/loginOK.jsp").forward(request, response);
+	request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
+	
+	
 	
 	}
 
