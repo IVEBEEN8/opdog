@@ -74,16 +74,16 @@ public class LoginDAO {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql ="insert into opdogaccount values(opdogaccount.nextval,?, ?, ?, ?)";
+		String sql ="insert into opdogaccount values(opdogaccount_seq.nextval,?, ?, ?, ?)";
 		LoginDTO accountInfo = null;
 		
 		try {
 			request.setCharacterEncoding("utf-8");	
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
-			String email = request.getParameter("email");
-			String firstname = request.getParameter("firstname");
-			String lastname = request.getParameter("lastname");
+			String email = request.getParameter("id");
+			String firstname = request.getParameter("firstName");
+			String lastname = request.getParameter("lastName");
 			String pw = request.getParameter("pw");
 			String pwck = request.getParameter("pwCheck");
 			System.out.println(email);
@@ -140,6 +140,17 @@ public class LoginDAO {
 		}else {
  			request.setAttribute("mainLoginLogoutBtn", "main-header-logoutMypage.jsp");
  			
+		}
+		
+	}
+	
+	public static void loginCheckMain(HttpServletRequest request) {
+		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
+		if (account ==  null) {
+			request.setAttribute("mainLoginLogoutBtn", "main-header-loginSignup.jsp");
+		}else {
+			request.setAttribute("mainLoginLogoutBtn", "main-header-logoutMypage.jsp");
+			
 		}
 		
 	}

@@ -12,10 +12,10 @@
     
         <!-- 회원가입 로그인 버튼 -->
         <div class="header-r">
-          <button class="reg-btn" onclick="location.href='RegAccountC'">
+          <button class="reg-btn" onclick="location.href='SignUpC'">
             <span class="reg-text">SignUp</span>
           </button>
-          <button onclick="" class="login-btn">
+          <button onclick="location.href='LoginMainHC'" class="login-btn">
             <span class="login-text">Login</span>
           </button>
         </div>
