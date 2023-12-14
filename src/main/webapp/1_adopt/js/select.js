@@ -15,7 +15,6 @@ $(document).ready(function() {
     	        type: 'GET', 
         	    data: { value: selectedValue },
             	success: function(response) {
-				console.log(response);
 					$('label').remove('#sigungulabel');
 					$('label').remove('#centerlabel');
 					$('option').remove('#sigunop');
@@ -74,10 +73,10 @@ $(document).ready(function() {
     });
     $(document).on("change", 'input[type=radio][name="center"]' ,function() {
         var selectedValue = $(this).val();
-		$('#centerSelect').val(selectedValue);
-
-
+		$('#centerSelect').val(selectedValue);	
 	});
+	
+
     $('#sidoSelect').on('change', function() {
 	/*
 		response = 시/군/구 배열
@@ -86,7 +85,7 @@ $(document).ready(function() {
 		
 	 */
         var selectedValue = $(this).val();
-		
+		$('input[type=radio][name="sido"][value="'+selectedValue+'"]').prop('checked',true);
 		
 		if(selectedValue !=""){
 	        $.ajax({
@@ -128,7 +127,7 @@ $(document).ready(function() {
 		...Nm = 보호소 이름
 	 */
         var selectedValue = $(this).val();
-		console.log(selectedValue);
+		$('input[type=radio][name="sigungu"][value="'+selectedValue+'"]').prop('checked',true);
         if(selectedValue !=""){
        		$.ajax({
             	url: 'SelectConditionC', 
@@ -151,9 +150,11 @@ $(document).ready(function() {
 			$('option').remove('#centerop');
 		};
     });
-	
+	$('#centerSelect').on('change',function(){
+		var selectedvalue = $(this).val();
+		$('input[type=radio][name="center"][value="'+selectedvalue+'"]').prop('checked',true);
+	});
 
-	
 
 	$(document).on('click','button[id=selectbutton]',function(){
 		var sidoVal = $("#sidoSelect").val();
@@ -209,7 +210,6 @@ $(document).ready(function() {
 		$('#modalBody').append('<div class="#" id="detailinfo">특징: '+items.specialMark+'</div>');
 		$('#modalBody').append('<div class="#" id="detailinfo">보호소: '+items.careNm+'연락처 '+items.careTel+'주소 '+items.careAddr+'<button>지도로 보기</button></div>');
 		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo"><button>입양하러가기</button></div>');
 		$('#modalBody').append('<div class="#" id="detailinfo"><button>장바구니</button></div>');
 		$('#modalWrap').css({
 			"display":"block"

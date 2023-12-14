@@ -9,7 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/LoginMainHC")
 public class LoginMainHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	request.setAttribute("contentPage", "0_main/login/loginMain.jsp");
+	request.setAttribute("contentPage", "login/loginMain.jsp");
+	request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 	request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 
