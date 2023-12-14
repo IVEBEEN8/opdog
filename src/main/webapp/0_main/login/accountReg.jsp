@@ -61,7 +61,7 @@
             </p>
           </label>
           <div class="hw-account-btn">
-            <button>Sign up</button>
+            <button onclick="LoginMainHC">Sign up</button>
           </div>
           <div class="other-account">
             <div></div>

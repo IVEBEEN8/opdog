@@ -12,7 +12,7 @@
     
         <!-- 회원가입 로그인 버튼 -->
         <div class="header-r">
-          <button class="reg-btn">
+          <button class="reg-btn" onclick="location.href='RegAccountC'">
             <span class="reg-text">SignUp</span>
           </button>
           <button onclick="" class="login-btn">
