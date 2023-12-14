@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>header-loginAfter</title>
-    <link rel="stylesheet" href="../obdogCompelete/header.css" />
+    <link rel="stylesheet" href="0_main/css/header.css" />
   </head>
   <body>
     
