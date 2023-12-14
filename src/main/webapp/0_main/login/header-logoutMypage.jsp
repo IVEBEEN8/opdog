@@ -12,7 +12,7 @@
     
           <!--로그인 후 -->
           <div class="r-btn">
-            <button class="mypage-btn">
+            <button class="mypage-btn" onclick="location.href='MyPageHC'">
               <span class="mypage-text">MyPage</span>
             </button>
             <button class="logout-btn">
