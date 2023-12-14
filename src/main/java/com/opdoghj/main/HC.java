@@ -8,11 +8,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.opdoghw.login.LoginDAO;
+
 @WebServlet("/HC")
 public class HC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		LoginDAO.loginCheck(request);
 		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
 	}
 
