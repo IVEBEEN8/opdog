@@ -24,7 +24,7 @@ header {
 
 #main_header {
   display: flex;
-  border-bottom: solid 1px rgb(255, 255, 255, 0.5);
+/*   border-bottom: solid 1px rgb(255, 255, 255, 0.5); */
   height: 7.4vh;
   width: 100vw;
   padding: 1vw 8.3vw;

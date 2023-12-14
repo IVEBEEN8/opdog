@@ -60,7 +60,7 @@
         </div>
           <!-- 회원가입 로그인 버튼 -->
           <div>
-		<div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
+		<div><jsp:include page = "${mainLoginLogoutBtn}"></jsp:include></div>	
 		</div>	
       </nav>
     </header>

@@ -16,6 +16,7 @@ public class LoginMainHC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	LoginDAO.LoginAccount(request);
+	LoginDAO.loginCheckMain(request);
 	request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
 	
 	
