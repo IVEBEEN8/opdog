@@ -68,25 +68,22 @@ ${sido} = 광역시 배열
         	<option value="" >보호소 선택</option>
         </select>
         <button id="selectbutton">버튼</button>
-        <button id="length">test</button>
 	</div>
 	<!-- 애견정보 div -->
 	<div class="#">
 		<div>강아지 정보</div>			
-		<div id="data-container"></div>
-		<div id="pagination"></div>	
+		<div id="data-container"></div><!-- 강아지 정보 리스트 -->
+		<div id="pagination"></div><!-- 페이지 -->	
 		
 	</div>
 </div>
-<div id="btnWrap">
-  <button typ="button" id="popupBtn">모달 팝업 띄우기</button>
-</div>
+
  <div id="modalWrap">
     <div id="modalBody">
       <span id="closeBtn">&times;</span>
-      <p>modal-popup 입니다.</p>
     </div>
 </div>       
+<p style="">
         
        	
 

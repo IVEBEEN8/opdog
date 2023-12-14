@@ -18,7 +18,9 @@
     <header>
       <nav id="main_header">
         <!-- 헤더 왼쪽 로고 -->
-        <div class="header_logo">Logo</div>
+        	<div class="header_logo">
+            	<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
+         	</div>
         <!-- 메뉴 -->
         <div class="nav-var">
           <div class="nav-items">
@@ -27,7 +29,7 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
-              <a href="#">Stary Dogs</a>
+              <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
               <a href="'CenterMainC'">Shelter Info</a>
               <a href="#">Adoption Process</a>
               <a href="#">Adoption Review</a>
@@ -61,7 +63,7 @@
           <button class="reg-btn">
             <span class="reg-text">SignUp</span>
           </button>
-          <button onclick="" class="login-btn">
+          <button onclick="location.href='LoginMainHC'" class="login-btn">
             <span class="login-text">Login</span>
           </button>
         </div>
@@ -74,13 +76,12 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-            src="0_main/img/mainVideo2.mp4"
+            src="0_main/img/f1video.mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"
             loop="loop"
             muted="muted"
-            volume="0"
           ></video>
         </div>
         <!-- 텍스트부분 -->
@@ -428,7 +429,7 @@
         <!-- 메인페이지1 동영상 백그라운드 -->
         <div id="video_area">
           <video
-            src="0_main/img/mainVideo.mp4"
+            src="0_main/img/f4viedo.mp4"
             id="background_video"
             preload="auto"
             autoplay="autoplay"

@@ -10,13 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import com.opdogkl.shop.DBManager;
 
 public class SnackDAO {
+	
+	private static ArrayList<Snack> snacks;
 
 	public static void getAllSnack(HttpServletRequest request) {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from snack_test";
+		String sql = "select * from snack_kl";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -24,7 +26,7 @@ public class SnackDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Snack s = null;
-			ArrayList<Snack> snacks = new ArrayList<Snack>();
+			snacks = new ArrayList<Snack>();
 			
 			while(rs.next()) {
 				s = new Snack();
@@ -49,6 +51,26 @@ public class SnackDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 		
+	}
+
+	public static void paging(int page, HttpServletRequest request) {
+		request.setAttribute("curPageNo", page);
+		int cnt = 15; 		// 한페이지당 보여줄 개수
+		int total = snacks.size();		// 총 데이터 개수 
+		// 총페이지수 
+		int pageCount = (int) Math.ceil((double)total/cnt);
+		request.setAttribute("pageCount", pageCount);
+		
+		
+		int start = total - (cnt * (page - 1));
+		
+		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+		
+		ArrayList<Snack> items = new ArrayList<Snack>();
+		for (int i = start-1; i > end; i--) {
+			items.add(snacks.get(i));
+		}
+		request.setAttribute("snacks", items);
 	}
 
 }

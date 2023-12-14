@@ -12,7 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class SignUpC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("5_mypage/1_1_login/createYourAccount.jsp").forward(request, response);
+		request.setAttribute("contentPage", "login/accountMain.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -20,7 +21,8 @@ public class SignUpC extends HttpServlet {
 
 		LoginDAO.regAccount(request);
 
-		request.getRequestDispatcher("5_mypage/1_1_login/loginOK.jsp").forward(request, response);
+		request.setAttribute("contentPage", "0_main/login/accountOK.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 
 	}
 

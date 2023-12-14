@@ -1,0 +1,129 @@
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+}
+
+footer {
+  width: 100vw;
+}
+
+.footer1 {
+  position: relative;
+  top: 0px;
+  left: 47%;
+  width: 5.052083333333333vw;
+  height: 2.7777777777777777vh;
+  border-top: solid 0.1vw rgba(67, 49, 28, 0.9);
+  border-left: solid 0.1vw rgba(67, 49, 28, 0.9);
+  border-right: solid 0.1vw rgba(67, 49, 28, 0.9);
+  border-radius: 0.3125vw;
+}
+
+.footer1 > img {
+  width: 1.0416666666666665vw;
+  height: 1.8518518518518516vh;
+  position: absolute;
+  top: 0.4629629629629629vh;
+  left: 0.5208333333333333vw;
+}
+
+.footer1 > .top {
+  width: 2.864583333333333vw;
+  height: 2.685185185185185vh;
+  flex-shrink: 0;
+  text-decoration: none;
+  color: rgba(67, 49, 28, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 1.5625vw;
+  font-size: 0.78125vw;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 100%;
+}
+
+.footer2 {
+  position: relative;
+  height: 13vh;
+  background: rgba(250, 234, 177, 0.65);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5625vw;
+}
+
+.footer2 > .askMe {
+  color: #000;
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 1.5vw;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 0.8333333333333334vw;
+}
+
+.footer2 > div > input {
+  padding: 1.5625vw;
+  width: 25vw;
+  height: 2vh;
+  border-radius: 3.125vw;
+  background: #ffffffd1;
+  border: none;
+  font-size: 2vw;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+}
+
+.footer2 > div > a > img {
+  width: 2.083333333333333vw;
+  height: 3.7037037037037033vh;
+  position: absolute;
+  top: 4.7vh;
+  left: 63vw;
+}
+
+.footer-input > input:focus {
+  outline: 2px solid #4f3d0b9c;
+  /* outline: none; */
+}
+
+.footer3 {
+  position: relative;
+  height: 12vh;
+  background: #faf8f1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.9259259259259258vh;
+}
+
+.footer3 > .sns-var {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 1.5625vw;
+}
+
+.sns-var > a > img {
+  height: 2.7777777777777777vh;
+  width: 1.5625vw;
+}
+
+.footer3 > .footer-menu {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 2.083333333333333vw;
+}
