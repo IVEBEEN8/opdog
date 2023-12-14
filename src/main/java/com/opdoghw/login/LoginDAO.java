@@ -125,9 +125,9 @@ public class LoginDAO {
 	public static void loginCheck(HttpServletRequest request) {
 		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
 		if (account ==  null) {
-			request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
+			request.setAttribute("mainLoginLogoutBtn", "main-header-loginSignup.jsp");
 		}else {
- 			request.setAttribute("loginLogoutBtn", "login/header-logoutMypage.jsp");
+ 			request.setAttribute("mainLoginLogoutBtn", "main-header-logoutMypage.jsp");
  			
 		}
 		
