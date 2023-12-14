@@ -143,17 +143,5 @@ public class LoginDAO {
 		}
 		
 	}
-	
-	public static void loginCheckMain(HttpServletRequest request) {
-		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
-		if (account ==  null) {
-			request.setAttribute("mainLoginLogoutBtn", "main-header-loginSignup.jsp");
-		}else {
-			request.setAttribute("mainLoginLogoutBtn", "main-header-logoutMypage.jsp");
-			
-		}
-		
-	}
-		
 }
 
