@@ -19,7 +19,7 @@
       <nav id="main_header">
         <!-- 헤더 왼쪽 로고 -->
         	<div class="header_logo">
-            	<img src="../img/logo-OPEN THE DOG-light.svg" alt="" />
+            	<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
          	</div>
         <!-- 메뉴 -->
         <div class="nav-var">
@@ -29,7 +29,7 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
-              <a href="#">Stary Dogs</a>
+              <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
               <a href="'CenterMainC'">Shelter Info</a>
               <a href="#">Adoption Process</a>
               <a href="#">Adoption Review</a>
