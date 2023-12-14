@@ -22,13 +22,14 @@ header {
   text-align: center;
 }
 
-#main_header {
+.main_header {
   display: flex;
-/*   border-bottom: solid 1px rgb(255, 255, 255, 0.5); */
-  height: 7.4vh;
+  /* border-bottom: solid 1px rgb(255, 255, 255, 0.5); */
+  height: 7vh;
   width: 100vw;
   padding: 1vw 8.3vw;
-  justify-content: space-between;
+  gap: 15.104166666666666vw;
+  /* justify-content: space-between; */
   align-items: center;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -65,7 +66,7 @@ header {
 }
 
 .nav-text {
-  color: #424242;
+  color: rgb(247 240 216);
   text-align: center;
   font-size: 1vw;
   font-style: normal;
@@ -75,12 +76,15 @@ header {
   text-decoration: none;
 }
 .home {
-  color: rgb(247 240 216);
+  color: #faeab1;
   text-align: center;
   font-size: 1vw;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+
+  letter-spacing: 0.2px;
+  text-decoration: none;
 }
 
 /*메뉴 텍스트 호버 작업*/

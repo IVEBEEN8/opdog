@@ -16,7 +16,7 @@
 <body>
 <!-- 메인 상단 : 헤더 -->
     <header>
-      <nav id="main_header">
+      <nav id="main_header" class="main_header">
         <!-- 헤더 왼쪽 로고 -->
         	<div class="header_logo">
             	<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
