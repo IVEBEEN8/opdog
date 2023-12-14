@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/SignUpC")
 public class SignUpC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {	
-		request.setAttribute("contentPage", "0_main/login/accountMain.jsp");
+		request.setAttribute("contentPage", "login/accountMain.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 

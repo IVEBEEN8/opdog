@@ -22,7 +22,7 @@
       <nav id="main_header">
         <!-- 헤더 왼쪽 로고 -->
         <div class="header_logo">
-          <img src="../img/logo-OPEN THE DOG-dark.svg" alt="" />
+          <img src="0_main/img/logo-OPEN THE DOG-dark.svg" alt="" />
         </div>
         <!-- 메뉴 -->
         <div class="nav-var">
@@ -62,8 +62,8 @@
           </div>
         </div>
         <!-- 회원가입 로그인 버튼 -->
-          <div>
-		<div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
+        <div>
+		  <div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
 		</div>	
       </nav>
     </header>
@@ -76,7 +76,7 @@
     <footer>
       <div>
         <div class="footer1">
-          <img src="/img/top.png" />
+          <img src="0_main/img/top.png" />
           <a class="top" href="#top">Top</a>
         </div>
         <div class="footer2">

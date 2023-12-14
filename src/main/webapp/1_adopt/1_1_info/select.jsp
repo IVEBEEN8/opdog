@@ -26,7 +26,7 @@ ${sido} = 광역시 배열
 .orgdownNm = 도시 이름
  -->
 <!-- container div -->
-<div class="#" id="background">
+<div class="#">
 	<!-- radiobox div -->
 	<div class="#">
 		<div class="#"><!-- 시/도 radiobox -->
@@ -68,13 +68,12 @@ ${sido} = 광역시 배열
         	<option value="" >보호소 선택</option>
         </select>
         <button id="selectbutton">버튼</button>
-        <button id="length">test</button>
 	</div>
 	<!-- 애견정보 div -->
 	<div class="#">
 		<div>강아지 정보</div>			
-		<div id="data-container"></div>
-		<div id="pagination"></div>	
+		<div id="data-container"></div><!-- 강아지 정보 리스트 -->
+		<div id="pagination"></div><!-- 페이지 -->	
 		
 	</div>
 </div>
