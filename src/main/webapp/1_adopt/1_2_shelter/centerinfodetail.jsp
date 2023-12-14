@@ -13,89 +13,31 @@
 <script type="text/javascript"
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf95e7fad4ebbf7f5b751c535e5369bf&libraries=services,clusterer,drawing"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
-<style type="text/css">
-.containar{
-
-}
-
-.map-info-wrap{
-display: flex;
-}
-.title-wrap{
-display: flex;
-}
-
-.test{
-width:1000px;
-}
-.title_hw{
-text-align:left;
-width:200px;
-}
-.map{
-position: fixed ;
-}
-.printinfo{
-left:0;
-position: fixed;
-top: 81vh;
-width: 50vw;
-}
-.infobox-wrap{
-
-position: relative;
-display: block;
-width: 60vw;
-left: 60vw;
-}
-.box-title{
-display: flex;
-}
-.small-title{
-width: 200px;
-text-align:left;
-
-}
-.overlaybox {
-position:relative;
-width:360px;
-height:350px;
-background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png') no-repeat;
-padding:15px 10px;
-}
-
-.overlaybox div, ul {overflow:hidden;margin:0;padding:0;}
-.overlaybox li {list-style: none;}
-.overlaybox .boxtitle {color:#fff;font-size:16px;font-weight:bold;margin-bottom:8px;}
-.overlaybox .first {position:relative;width:247px;height:136px;margin-bottom:8px;}
-.first .text {color:#fff;font-weight:bold;}
-.first .triangle {position:absolute;width:48px;height:48px;top:0;left:0;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/triangle.png') no-repeat; padding:6px;font-size:18px;}
-.first .movietitle {position:absolute;width:100%;bottom:0;background:rgba(0,0,0,0.4);padding:7px 15px;font-size:14px;}
-.overlaybox ul {width:247px;}
-.overlaybox li {position:relative;margin-bottom:2px;background:#2b2d36;padding:5px 10px;color:#aaabaf;line-height: 1;}
-.overlaybox li span {display:inline-block;}
-.overlaybox li .number {font-size:16px;font-weight:bold;}
-.overlaybox li .title {font-size:13px;}
-.overlaybox ul .arrow {position:absolute;margin-top:8px;right:25px;width:5px;height:3px;background:url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png') no-repeat;} 
-.overlaybox li .up {background-position:0 -40px;}
-.overlaybox li .down {background-position:0 -60px;}
-.overlaybox li .count {position:absolute;margin-top:5px;right:15px;font-size:10px;}
-.overlaybox li:hover {color:#fff;background:#d24545;}
-.overlaybox li:hover .up {background-position:0 0px;}
-.overlaybox li:hover .down {background-position:0 -20px;}     
-
-</style>
+<link rel="stylesheet" type="text/css" href="1_adopt/css/shelter.css">
 </head>
 <body>
 	<!-- <a href="SendMarkC?a=1">testCall</a> -->
-<div class="containar">
-	<div class="map-info-wrap">
-		<div class="map" id="map" style="width: 50vw; height: 80vh;"></div>
-		<div class= "printinfo" id="printinfo"></div>
-	</div>	
-<c:forEach var="c" items="${centers}" varStatus="status">
-	<div class="infobox-wrap">
-		<div class="test">
+<div class="containar1-2">
+	<div class="map" id="map"></div>
+		
+	<div class="infobox-wrap1-2">
+	 <c:forEach var="c" items="${centers}" varStatus="status">
+	 
+	 	<div class="centerinfo-print-wrap1-2">
+	 		<div class="centerimg1-2" >이미지들어갈꺼구열</div>
+	 		<div class="centerinfo-print1-2">보호소정보
+	 			<div class="center-title1-2">보호소이름</div>
+	 			<div class="center-addr-wrap1-2">
+	 				<div class="center-addr-icon1-2"></div>
+	 				<div class="center-addr1-2">보호소주소</div>
+	 			</div>
+	 			<div class="center-oprtime-wrap1-2">
+	 				<div class="center-oprtime-icon1-2"></div>
+	 				<div class="center-oprtime1-2">오픈/클로즈/휴무일</div>
+	 			</div>
+	 		</div>
+	 	</div>
+<%-- 		<div class="test">
 			<div class= "title-wrap">
 				<div class="title_hw">센터명</div>
 				<div class="#">${c.careNm }</div>
@@ -134,9 +76,9 @@ padding:15px 10px;
 		</div>
 		<div class="test">
 			<button name="showinthemap" class="showinthemap" value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }">ShowInTheMap</button>
-		</div>
+		</div> --%>
+       </c:forEach>
 	</div>
-  </c:forEach>
 </div>
 
 <script>

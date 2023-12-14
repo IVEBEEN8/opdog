@@ -33,7 +33,7 @@
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a href="#">Stary Dogs</a>
-              <a href="#">Shelter Info</a>
+              <a onclick="location.href='CenterMainC'">Shelter Info</a>
               <a href="#">Adoption Process</a>
               <a href="#">Adoption Review</a>
             </div>

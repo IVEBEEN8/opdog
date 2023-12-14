@@ -26,7 +26,7 @@ xhr.onreadystatechange = function () {
         if (xhr.status === 200) {
             const response = JSON.parse(xhr.responseText);
             console.log(response);
-            //화면출력 id 가져오
+            //화면출력 id 가져오기
             const resultContainer = document.getElementById('resultContainer');
             // 특정 값 액세스
             const header = response.response.header;

@@ -14,7 +14,10 @@ body {
 }
 
 footer {
-  width: 100vw;
+  width: 100vw;    
+  bottom: 0;
+  position: absolute;
+  
 }
 
 .footer1 {
