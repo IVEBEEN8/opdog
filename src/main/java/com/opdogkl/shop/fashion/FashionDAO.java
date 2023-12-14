@@ -54,6 +54,46 @@ public class FashionDAO {
 			DBManager.close(con, pstmt, rs);
 		}
 	}
+	
+public static void getFashion(HttpServletRequest request) {
+		
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from fashion_kl where fs_no=?";
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			con = DBManager.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("no"));
+			rs = pstmt.executeQuery();
+			Fashion fs = null;
+			
+			if (rs.next()) {
+				fs = new Fashion();
+				fs.setFs_no(rs.getInt("fs_no"));
+				fs.setFs_img(rs.getString("fs_img"));
+				fs.setFs_title(rs.getString("fs_title"));
+				fs.setFs_price(rs.getInt("fs_price"));
+				fs.setFs_brand(rs.getString("fs_brand"));
+				
+				System.out.println(rs.getString("fs_title"));
+				System.out.println(rs.getString("fs_brand"));
+				
+				
+			}
+			request.setAttribute("fashion", fs);
+			System.out.println("패션 어트리뷰트 생성!");
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager.close(con, pstmt, rs);
+		}
+	}
+	
+	
 
 	public static void paging(int page, HttpServletRequest request) {
 		request.setAttribute("curPageNo", page);

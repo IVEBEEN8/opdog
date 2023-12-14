@@ -58,6 +58,7 @@
 	
 	<div class="아이템들">
 		<c:forEach  varStatus="" var="fs" items="${fashions }">
+		<a href="FashionDetailC?no=${fs.fs_no }">
 		<div class="아이템">	
 			<div class="아이템 썸네일">
 		    	<img class="썸네일 이미지" src="${fs.fs_img }" >
@@ -68,7 +69,9 @@
     			<div class="아이템 브랜드">${fs.fs_brand }</div>
     		</div>
     	</div>	
+		</a>
 		</c:forEach>
+		
 	</div>
 	
 	<hr>

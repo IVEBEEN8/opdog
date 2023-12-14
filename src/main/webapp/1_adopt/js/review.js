@@ -69,6 +69,18 @@ function checkForm() {
             // 파일 선택 값 초기화는 선택한 파일을 다시 선택할 수 있게 하기 위한 것
             // fileInput.value = ''; // 이 부분을 주석 처리하거나 삭제하면 사용자가 같은 파일을 여러 번 선택할 수 있습니다.
         }
+function checkLength() {
+        var textarea = document.getElementById('txt');
+        var charCount = document.getElementById('charCount');
+        var maxLength = 500;
+
+        if (textarea.value.length > maxLength) {
+            textarea.value = textarea.value.substring(0, maxLength);
+        }
+
+        charCount.innerText = '글자 수: ' + textarea.value.length + ' / ' + maxLength;
+    }
+
 
 
 // 리뷰 삭제

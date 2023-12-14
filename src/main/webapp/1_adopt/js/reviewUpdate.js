@@ -31,7 +31,7 @@ function checkForm() {
  
   	return true;
 }
-
+// 이미지 미리보기 
 function previewSelectedImage(input) {
   var preview = document.getElementById('previewImage');
   var file = input.files[0];
@@ -53,3 +53,16 @@ function previewSelectedImage(input) {
     preview.src = "1_adopt/1_4_review/imgFolder/" + document.getElementById("oldImg").value;
   }
 }
+
+// 글자수제한
+function checkLength() {
+        var textarea = document.getElementById('txt');
+        var charCount = document.getElementById('charCount');
+        var maxLength = 500;
+
+        if (textarea.value.length > maxLength) {
+            textarea.value = textarea.value.substring(0, maxLength);
+        }
+
+        charCount.innerText = '글자 수: ' + textarea.value.length + ' / ' + maxLength;
+    }

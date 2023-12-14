@@ -17,12 +17,15 @@
 	<div>Id</div>
 	<div> ${review.op_email}</div>
 	
-	<div>Img</div>
-	<img alt="" src="1_adopt/1_4_review/imgFolder/${review.r_img}">
 	<div>Title</div>
 	<div>${review.r_title}	</div>
+	<div>
+	<img alt="" src="1_adopt/1_4_review/imgFolder/${review.r_img}">
+	</div>
 	<div>Text</div>
-	<div>${review.r_txt}</div>
+	<div>
+	<pre>${review.r_txt}</pre>
+	</div>
 	<button onclick="location.href='ReviewUpC?id=${review.op_email}'">수정</button>
 	<button onclick="reviewDelete('${review.op_email}')">삭제</button>
 	<button onclick="location.href='ReviewC'">목록으로</button>

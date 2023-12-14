@@ -17,11 +17,12 @@
 	<main>
 		<div><a href="ReviewRegC">입양후기 작성하러가기</a></div>
 		<c:forEach var="r"  items="${reviews}">
-			<div class="입양후기 이미지">
+			<div class="입양후기">
 				
-				<img alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
 				${r.r_title} <br>
-				${r.r_txt}	<br>
+				<img alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
+				<pre>${r.r_txt}</pre>
+				<br>
 				<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">디테일창으로 이동</button>
 				
 			</div>

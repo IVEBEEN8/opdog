@@ -17,6 +17,10 @@
 	 <form action="ReviewRegC" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
 	<div>
 		<div>
+		<div>
+			<div>Title</div>
+			<div><input id="title" name="title"> </div>
+		</div>
 			<div>Image</div>
 			 <div style="display: none;">
                 <img id="previewImage" style="max-width: 300px; max-height: 300px;" src="#" alt="Preview">
@@ -28,12 +32,9 @@
 			</div>
 		</div>
 		<div>
-			<div>Title</div>
-			<div><input id="title" name="title"> </div>
-		</div>
-		<div>
 			<div>Text</div>
-			<div><textarea id="txt" name="txt"> </textarea> </div>
+			 <textarea id="txt" name="txt" cols="50" rows="10" oninput="checkLength()"></textarea>
+             <div id="charCount"></div>
 		</div>
 		<div>
 			<div><button class="등록버튼">register</button></div>
