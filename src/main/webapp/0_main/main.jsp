@@ -58,15 +58,10 @@
             </div>
           </div>
         </div>
-        <!-- 회원가입 로그인 버튼 -->
-        <div class="header-r">
-          <button class="reg-btn">
-            <span class="reg-text">SignUp</span>
-          </button>
-          <button onclick="location.href='LoginMainHC'" class="login-btn">
-            <span class="login-text">Login</span>
-          </button>
-        </div>
+          <!-- 회원가입 로그인 버튼 -->
+          <div>
+		<div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
+		</div>	
       </nav>
     </header>
     <!-- 메인 컨텐츠 : 슬라이드로 1,2,3,4까지 넘어감. -->
