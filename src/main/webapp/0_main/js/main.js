@@ -1,7 +1,8 @@
-$(document).ready(function () {
+$(function () {
   fullset();
   quickClick();
 });
+
 function fullset() {
   var pageindex = $("#fullpage > .fullsection").size(); //fullpage 안에 섹션이(.fullsection) 몇개인지 확인하기
   for (var i = 1; i <= pageindex; i++) {
@@ -26,13 +27,25 @@ function fullset() {
         //첫번째 페이지가 아닐때 (index는 0부터 시작임)
         page = page.index() - 1;
         $("#fullpage").animate({ top: -pagelength + "px" }, 1000, "swing");
+       // alert(before);
+        //페이지 인덱스에 따라 색상 변경
+        if (before === 4) {
+          $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
+        } else if (before === 3) {
+          $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
+        } else if (before === 2) {
+          $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
+        } else {
+          $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
+        }
       } else {
-        alert("첫번째페이지 입니다₍ᐢ. ̫.ᐢ₎♡");
+        // alert("첫번째페이지 입니다₍ᐢ. ̫.ᐢ₎♡");
       }
     } else {
       // 마우스 휠을 아래로
       var nextPage = parseInt(page.index() + 1); //다음페이지번호
       var lastPageNum = parseInt($(".quick ul li").size()); //마지막 페이지번호
+      // alert(page.index());
       //현재페이지번호 <= (마지막 페이지 번호 - 1)
       //이럴때 퀵버튼옮기기
       if (page.index() <= $(".quick ul li").size() - 1) {
@@ -48,11 +61,19 @@ function fullset() {
           pagelength += $(".full" + i).height();
         }
         $("#fullpage").animate({ top: -pagelength + "px" }, 1000, "swing");
+        //페이지 인덱스에 따라 색상 변경 (첫페이지 0부터 시작)
+        if (nextPage === 1) {
+          $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
+        } else if (nextPage === 2) {
+          $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
+        } else if (nextPage === 3) {
+          $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
+        }
       } else {
         // 현재 마지막 페이지 일때는
-        alert("마지막 페이지 입니다!₍ᐢ. ̫.ᐢ₎♡");
+        // alert("마지막 페이지 입니다!₍ᐢ. ̫.ᐢ₎♡");
       }
-      if (page.index() === 1 || page.index() === 2) {
+      if (page.index() === 1 || page.index() === 2 || page.index() === 3) {
         // 스크롤로 3번째 페이지로 이동할 때 카운터 시작
         const $counter = document.querySelector(".count");
         const max = 172491233;
@@ -60,6 +81,7 @@ function fullset() {
       }
     }
   });
+
   $(window).resize(function () {
     //페이지가 100%이기때문에 브라우저가 resize 될때마다 스크롤 위치가 그대로 남아있는것을 방지하기 위해
     var resizeindex = $(".quick ul li.on").index() + 1;
@@ -74,6 +96,7 @@ function fullset() {
     $("#fullpage").animate({ top: -pagelength + "px" }, 0);
   });
 }
+
 // 사이드 퀵버튼 클릭 이동
 function quickClick() {
   $(".quick li").click(function () {
@@ -91,6 +114,16 @@ function quickClick() {
       const $counter = document.querySelector(".count");
       const max = 172491233;
       counter($counter, max);
+    }
+
+    //페이지 인덱스에 따라 색상 변경
+    if (gnbindex === 2) {
+      $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
+    } else if (gnbindex === 3) {
+      $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
+    } else if (gnbindex === 4) {
+      // 마지막 페이지에 대한 처리 추가
+      $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
     }
 
     return false;
@@ -119,12 +152,12 @@ const counter = ($counter, max) => {
   }, 50);
 };
 
-window.onload = () => {
-  // 카운트를 적용시킬 요소
-  const $counter = document.querySelector(".count");
+// window.onload = () => {
+//   // 카운트를 적용시킬 요소
+//   const $counter = document.querySelector(".count");
 
-  // 목표 수치
-  const max = 172491233;
+//   // 목표 수치
+//   const max = 172491233;
 
-  setTimeout(() => counter($counter, max), 2000);
-};
+//   setTimeout(() => counter($counter, max), 2000);
+// };

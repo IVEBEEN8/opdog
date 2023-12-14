@@ -5,6 +5,7 @@ public class LoginDTO {
 	private String firstname;
 	private String lastname;
 	private String pw;
+	private int no;
 
 
 public LoginDTO() {
@@ -12,13 +13,15 @@ public LoginDTO() {
 }
 
 
-public LoginDTO(String email, String firstname, String lastname, String pw) {
+public LoginDTO(String email, String firstname, String lastname, String pw, int no) {
 	super();
 	this.email = email;
 	this.firstname = firstname;
 	this.lastname = lastname;
 	this.pw = pw;
+	this.no = no;
 }
+
 
 
 public String getEmail() {
@@ -58,6 +61,16 @@ public String getPw() {
 
 public void setPw(String pw) {
 	this.pw = pw;
+}
+
+
+public int getNo() {
+	return no;
+}
+
+
+public void setNo(int no) {
+	this.no = no;
 }
 
 
