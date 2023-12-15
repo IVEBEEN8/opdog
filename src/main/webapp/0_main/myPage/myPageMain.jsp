@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>mypage</h1>
+<h1>mypageです〜</h1>
 </body>
 </html>

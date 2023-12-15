@@ -22,7 +22,7 @@
       <nav id="all_header">
         <!-- 헤더 왼쪽 로고 -->
         <div class="header_logo">
-          <img src="0_main/img/logo-OPEN THE DOG-dark.svg" alt="" />
+          <img src="0_main/img/logo-OPEN THE DOG-dark.svg" alt="" onclick="location.href='HC'"/>
         </div>
         <!-- 메뉴 -->
         <div class="nav-var">
