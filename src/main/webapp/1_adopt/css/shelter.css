@@ -63,13 +63,13 @@ body {
 	text-align: left;
 }
 .centerimg1-2{
-	width: 419px;
+	width: 200px;
 	height: 195px;
 }
 .centerinfo-print1-2{
 	margin-top:3vh;
 	margin-bottom:3vh;
-	width: 425px;
+	width: 400px;
 	height: auto;
 	border-radius: 20px;
 }
@@ -99,12 +99,16 @@ body {
 	border-radius: 15px;
 }
 .center-info1-2{
+	white-space:normal;
 	color: #3E4958;
 	font-family: Abel;
 	font-size: 15px;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 136%; /* 20.4px */
+}
+.center-info-span1-2{
+	width:330px;
 }
 .btn1-2{
 	text-align: right;
@@ -123,11 +127,16 @@ body {
 }
 
 /* 여기서부턴 지도안에 박스!*/
+.centertitle1-2{
+	color:#fff;
+	font-size:14px;	
+}
+
 .overlaybox1-2 {
   position: relative;
   width: 360px;
   height: 350px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png")
+  background: url(../1_adopt/img/mapbackground.png)
     no-repeat;
   text-align: left;
   padding: 15px 10px;
@@ -148,7 +157,7 @@ body {
 }
 .overlaybox1-2 .first1-2 {
 	position:relative;
-	width:247px;height:136px;
+	width:247px;height:90px;
 	background: url("1_adopt/img/chuchu.jpeg");
 	margin-bottom:8px;
 	margin-left:0;

@@ -30,7 +30,7 @@
 	 			<div class="center-title1-2">${c.careNm }</div>
 	 			<div class="center-info-wrap1-2">
 	 				<div class="center-icon1-2"><img class="icon1-2" src="1_adopt/img/markicon.png" alt="address" /></div>
-	 				<div class="center-info1-2">${c.careAddr }</div>
+	 				<div class="center-info1-2"><div class="center-info-span1-2">${c.careAddr }</div></div>
 	 			</div>
 	 			<div class="center-info-wrap1-2">
 	 				<div class="center-icon1-2"><img class="icon1-2" src="1_adopt/img/clockicon.png" alt="time" /></div>
@@ -155,19 +155,23 @@ $(document).ready(function() {
 	         var content = '<div class="overlaybox1-2">' +
 	            '   			 <div class="boxtitle1-2">보호소정보</div>' +
 	            '    			 <div class="first1-2">' +
-	            '        		 	<div class="movietitle text">'+centername+'</div>' +
+	            '        		 	<div class="centertitle1-2">'+centername+'</div>' +
 	            '    			</div>' +
 	            '    			<ul class="li-wrap1-2">'  +
-		            '        		<li class>' +
+		            '        		<li>' +
+		            '					<span>Address:</span><br>		' +
 		            '            		<span class="title">'+centeraddr+'</span>' +
 		            '        		</li>' +
 				            '       <li>' +
+				            '					<span>Operation Time:</span><br>		' +
 				            '            <span class="title">'+opentime+'~'+closetime+'</span>' +
 				            '        </li>' +
 				            '        <li>' +
+				            '					<span>Close Day:</span><br>		' +
 				            '            <span class="title">'+closeday+'</span>' +
 				            '        </li>' +
 				            '        <li>' +
+				            '					<span>Tel:</span><br>		' +
 				            '            <span class="title">'+caretel+'</span>' +
 				            '        </li>' +
 	            '    			</ul>' +
