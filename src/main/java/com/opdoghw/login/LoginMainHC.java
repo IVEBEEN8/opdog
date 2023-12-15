@@ -1,6 +1,9 @@
 package com.opdoghw.login;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,8 +19,25 @@ public class LoginMainHC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	LoginDAO.LoginAccount(request);
-	LoginDAO.loginCheckMain(request);
-	request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
+	
+	
+	int result = LoginDAO.idPwCheck(request);
+	if (result==0) {
+        request.setAttribute("contentPage", "login/loginMain.jsp");
+        LoginDAO.loginCheck(request);
+        System.out.println(request.getAttribute("alert"));
+        request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+	} else if (result==1) {
+        request.setAttribute("contentPage", "login/loginMain.jsp");
+        LoginDAO.loginCheck(request);
+        System.out.println(request.getAttribute("alert"));
+        request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+	} else if (result==2) {
+		LoginDAO.loginCheckMain(request);
+		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
+		
+	}
+	
 	
 	
 	

@@ -6,6 +6,7 @@ public class LoginDTO {
 	private String lastname;
 	private String pw;
 	private int no;
+	private String result;
 
 
 public LoginDTO() {
@@ -13,15 +14,15 @@ public LoginDTO() {
 }
 
 
-public LoginDTO(String email, String firstname, String lastname, String pw, int no) {
+public LoginDTO(String email, String firstname, String lastname, String pw, int no, String result) {
 	super();
 	this.email = email;
 	this.firstname = firstname;
 	this.lastname = lastname;
 	this.pw = pw;
 	this.no = no;
+	this.result = result;
 }
-
 
 
 public String getEmail() {
@@ -74,10 +75,24 @@ public void setNo(int no) {
 }
 
 
+public String getResult() {
+	return result;
+}
+
+
+public void setResult(String result) {
+	this.result = result;
+}
+
+
 @Override
 public String toString() {
-	return "LoginDTO [email=" + email + ", firstname=" + firstname + ", lastname=" + lastname + ", pw=" + pw + "]";
+	return "LoginDTO [email=" + email + ", firstname=" + firstname + ", lastname=" + lastname + ", pw=" + pw + ", no="
+			+ no + ", result=" + result + "]";
 }
+
+
+
 
 
 

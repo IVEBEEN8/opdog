@@ -16,7 +16,7 @@
               <span class="mypage-text">MyPage</span>
             </button>
             <button class="logout-btn">
-              <span class="logout-text">Logout</span>
+              <span class="logout-text" onclick="location.href='LogoutC'">Logout</span>
             </button>
           </div>
   </body>
