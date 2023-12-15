@@ -1,42 +1,187 @@
-.containar1-2{
-	width: 100vw;
-	background: #FFF;
-	height:100%;
-
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+  
 }
-
+ .containar1-2{
+  width: 100vw;
+  padding: 6vh 0px;
+}
+ 
 .map{
 	left:6.822916666666667vw;
 	top:  13.88888888888889vh;
 	width: 33.90625vw;
 	height: 79.44444444444444vh;
-	position: fixed;
-	border-radius: 10px;	
+	position: absolute;
+	border-radius: 20px;	
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
-
 .infobox-wrap1-2 {
- position: absolute;
+	margin-top: 7.6vh;
+ 	margin-left:35vw;
+ 	top:13.88888888888889vh;
+ 	width: 49.21875vw;
+ 	height: 79.44444444444444vh;
+ 	overflow-x: scroll;
+ 	border-radius: 20px;
+ 	background: #FAF8F1;
+}
 
- left: 43.90625vw;
- top:13.88888888888889vh;
- width: 49.21875vw;
- height: 79.44444444444444vh;
- overflow-x: scroll;
- border-radius: 10px;
- background: #FAF8F1;
-}
 .centerinfo-print-wrap1-2{
-	display: flex;
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+	display: inline-flex;
+	margin-top:3vh;
+	width:46vw;
+	justify-content: center;
+	align-items: center;
+	gap: 11px;
+	
 }
+.infobox-wrap1-2::-webkit-scrollbar {
+    display: none; 
+}
+
 .centerimg1-2{
 	border-radius: 10px;
 }
-.center-addr-wrap1-2{
+.center-info-wrap1-2{
 	display:flex;
+	margin-top:2vh;
+	text-align: left;
 }
-.center-oprtime-wrap1-2{
-	display:flex;
+.centerimg1-2{
+	width: 419px;
+	height: 195px;
 }
+.centerinfo-print1-2{
+	margin-top:3vh;
+	margin-bottom:3vh;
+	width: 425px;
+	height: auto;
+	border-radius: 20px;
+}
+.centerimg1-2{
+	margin: 10px;
+}
+.center-title1-2{
+	display: flex;
+	margin-left: 1vw;
+	height: 45px;
+	color: #000;
+	font-family: Inter;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 136%; /* 24.48px */
+}
+.center-icon1-2{	
+	width: 28px;
+	height: 28px;
+	margin-right: 1vw;
+}
+.icon2-1-2{
+	width:28px;
+	height:29px;
+	background-color: #5E81F4;
+	border-radius: 15px;
+}
+.center-info1-2{
+	color: #3E4958;
+	font-family: Abel;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 136%; /* 20.4px */
+}
+.btn1-2{
+	text-align: right;
+    margin-right: 2vw;
+ 
+}
+.icon1-2{
+	background-color: #5E81F4;
+	border-radius: 15px;
+}
+
+.showinthemap{
+	border:none;
+	background-color:#FAF8F1;
+	
+}
+
+/* 여기서부턴 지도안에 박스!*/
+.overlaybox1-2 {
+  position: relative;
+  width: 360px;
+  height: 350px;
+  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/box_movie.png")
+    no-repeat;
+  text-align: left;
+  padding: 15px 10px;
+
+}
+.overlaybox1-2 .boxtitle1-2 {
+	color:#fff;
+	font-size:16px;
+	text-align: left;
+	font-weight:bold;
+	background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/arrow_white.png') no-repeat right 120px center;
+	margin-bottom:8px;
+	margin: 0px;
+	}
+.li-wrap1-2{
+	position: absolute;
+	width: 247px;
+}
+.overlaybox1-2 .first1-2 {
+	position:relative;
+	width:247px;height:136px;
+	background: url("1_adopt/img/chuchu.jpeg");
+	margin-bottom:8px;
+	margin-left:0;
+	}
+.overlaybox1-2 li {
+	list-style: none;
+	position:relative;
+	margin-bottom:2px;
+	background:#2b2d36;
+	padding:5px 10px;
+	color:#aaabaf;
+	line-height: 1;
+	}
+.overlaybox1-2 li .title {
+	font-size:13px;
+	white-space: normal;
+	}
+.overlaybox1-2 li:hover {
+	color:#fff;
+	background:#d24545;
+	}
+
+.li-wrap1-2 {
+  text-align:left;
+  position:relative;
+  width:247px;
+  height:136px;	
+  margin-bottom:8px;
+  margin-left:0;
+  left:-40px;
+ 
+}
+
 
 /* .title-wrap {
   display: flex;
@@ -136,15 +281,7 @@ ul {
 .overlaybox li .title {
   font-size: 13px;
 }
-.overlaybox ul .arrow {
-  position: absolute;
-  margin-top: 8px;
-  right: 25px;
-  width: 5px;
-  height: 3px;
-  background: url("https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/updown.png")
-    no-repeat;
-}
+
 .overlaybox li .up {
   background-position: 0 -40px;
 }

@@ -14,69 +14,34 @@
 	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=cf95e7fad4ebbf7f5b751c535e5369bf&libraries=services,clusterer,drawing"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
 <link rel="stylesheet" type="text/css" href="1_adopt/css/shelter.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 </head>
 <body>
-	<!-- <a href="SendMarkC?a=1">testCall</a> -->
 <div class="containar1-2">
 	<div class="map" id="map"></div>
-		
+	<div id="printinfo"></div>
 	<div class="infobox-wrap1-2">
 	 <c:forEach var="c" items="${centers}" varStatus="status">
-	 
-	 	<div class="centerinfo-print-wrap1-2">
+	 	<button class="showinthemap" value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }!${c.careTel}"><div class="centerinfo-print-wrap1-2">
 	 		<div class="centerimg1-2" >이미지들어갈꺼구열</div>
-	 		<div class="centerinfo-print1-2">보호소정보
-	 			<div class="center-title1-2">보호소이름</div>
-	 			<div class="center-addr-wrap1-2">
-	 				<div class="center-addr-icon1-2"></div>
-	 				<div class="center-addr1-2">보호소주소</div>
+	 		<div class="centerinfo-print1-2">
+	 			<div class="center-title1-2">${c.careNm }</div>
+	 			<div class="center-info-wrap1-2">
+	 				<div class="center-icon1-2"><img class="icon1-2" src="1_adopt/img/markicon.png" alt="address" /></div>
+	 				<div class="center-info1-2">${c.careAddr }</div>
 	 			</div>
-	 			<div class="center-oprtime-wrap1-2">
-	 				<div class="center-oprtime-icon1-2"></div>
-	 				<div class="center-oprtime1-2">오픈/클로즈/휴무일</div>
+	 			<div class="center-info-wrap1-2">
+	 				<div class="center-icon1-2"><img class="icon1-2" src="1_adopt/img/clockicon.png" alt="time" /></div>
+	 				<div class="center-info1-2">${c.oprtime}~${c.closetime } (${c.closeday })</div>
+	 			</div>
+	 			<div class="center-info-wrap1-2">
+	 				<div class="center-icon1-2"><img class="icon2-1-2" src="1_adopt/img/phoneicon.svg" alt="time" /></div>
+	 				<div class="center-info1-2">${c.careTel}</div>
 	 			</div>
 	 		</div>
-	 	</div>
-<%-- 		<div class="test">
-			<div class= "title-wrap">
-				<div class="title_hw">센터명</div>
-				<div class="#">${c.careNm }</div>
-			</div>
-		</div>
-		<div class="test">
-			<div class= "title-wrap">
-				<div class="title_hw">센터주소</div>
-				<div class="#">${c.careAddr }</div>
-			</div>
-		</div>
-	
-		<div class="test">
-			<div class= "title-wrap">
-				<div class="title_hw">수의사수</div>
-				<div class="#">${c.vetPersonCnt }</div>
-			</div>
-		</div>
-		<div class="test">
-			<div class="title-wrap">
-				<div class="title_hw">보호소 영업시작</div>
-				<div class="#">${c.oprtime}</div>
-			</div>
-		</div>
-		<div class="test">
-			<div class="title-wrap">
-				<div class="title_hw">보호소 영업종료</div>
-				<div class="#">${c.closetime }</div>
-			</div>
-		</div>
-		<div class="test">
-			<div class="title-wrap">
-				<div class="title_hw">보호소휴무일</div>
-				<div class="">${c.closeday }</div>
-			</div>
-		</div>
-		<div class="test">
-			<button name="showinthemap" class="showinthemap" value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }">ShowInTheMap</button>
-		</div> --%>
+	 	</div></button>
        </c:forEach>
 	</div>
 </div>
@@ -85,7 +50,7 @@
 var mapContainer = document.getElementById('map'); //지도를 표시할 div id
 var mapOption = {
     center: new kakao.maps.LatLng(36.501202261595324, 128.0554606771207), //지도의 중심좌표
-    level: 17,
+    level: 13,
     mapTypeId: kakao.maps.MapTypeId.SKYVIEW
 };
 // 지도생성
@@ -158,7 +123,7 @@ initializeMap();
 
 $(document).ready(function() {
 	$('.showinthemap').on("click", function(){
-			alert("마커를 클릭했습니다!")
+		//	alert("마커를 클릭했습니다!")
 			var clickedValue = $(this).val();
 			var scv = clickedValue.split("!");
 			for(i =0; i<scv.length; i++){
@@ -166,7 +131,7 @@ $(document).ready(function() {
 			}
 			
 			
-		 	if (scv.length === 7 && scv[2] !== "" && scv[3] !== "") {
+		 	if (scv.length === 8 && scv[2] !== "" && scv[3] !== "") {
 	            // 좌표값이 유효한 경우에만 지도를 생성하고 이동시킵니다.
 	            
 			 var centername = scv[0]; // 보호소이름
@@ -175,58 +140,38 @@ $(document).ready(function() {
 			 var longitude = parseFloat(scv[3]); // 경도
 			 var opentime = scv[4]; // 오픈시간
 			 var closetime = scv[5]; // 오픈시간
-			 var vetnum = parseInt(scv[6]);
-	           
-	            
-	            
-	            var mapContainer = document.getElementById('map'); //지도를 표시할 div id
-	            var mapOption = {
-	                center: new kakao.maps.LatLng(latitude, longitude), //지도의 중심좌표
-	                level: 5,
-	                mapTypeId: kakao.maps.MapTypeId.ROADMAP
+			 var closeday = scv[6]; // 휴무일
+			 var caretel = scv[7]; // 전화번호
+			 
+	             
+	         var mapContainer = document.getElementById('map'); //지도를 표시할 div id
+	         var mapOption = {
+	             center: new kakao.maps.LatLng(latitude, longitude), //지도의 중심좌표
+	             level: 5,
+	             mapTypeId: kakao.maps.MapTypeId.ROADMAP
 	            };
 	            // 지도 객체 생성
-	            var map = new kakao.maps.Map(mapContainer, mapOption);
-	            var content = '<div class="overlaybox">' +
-	            '    <div class="boxtitle">보호소정보</div>' +
-	            '    <div class="first">' +
-	            '        <div class="triangle text"></div>' +
-	            '        <div class="movietitle text"></div>' +
-	            '    </div>' +
-	            '    <ul>' +
-	            '        <li class="up">' +
-	            '            <span class="number">2</span>' +
-	            '            <span class="title">'+centername+'</span>' +
-	            '            <span class="arrow up"></span>' +
-	            '            <span class="count">2</span>' +
-	            '        </li>' +
-	            '        <li>' +
-	            '            <span class="number">3</span>' +
-	            '            <span class="title">'+centeraddr+'</span>' +
-	            '            <span class="arrow up"></span>' +
-	            '            <span class="count">6</span>' +
-	            '        </li>' +
-	            '        <li>' +
-	            '            <span class="number">4</span>' +
-	            '            <span class="title">'+opentime+'</span>' +
-	            '            <span class="arrow up"></span>' +
-	            '            <span class="count">3</span>' +
-	            '        </li>' +
-	            '        <li>' +
-	            '            <span class="number">5</span>' +
-	            '            <span class="title">'+closetime+'</span>' +
-	            '            <span class="arrow down"></span>' +
-	            '            <span class="count">1</span>' +
-	            '        </li>' +
-	            '        </li>' +
-	            '        <li>' +
-	            '            <span class="number">6</span>' +
-	            '            <span class="title">여긴보호소 전화번호 넣기</span>' +
-	            '            <span class="arrow down"></span>' +
-	            '            <span class="count">1</span>' +
-	            '        </li>' +
-	            '    </ul>' +
-	            '</div>';
+	         var map = new kakao.maps.Map(mapContainer, mapOption);
+	         var content = '<div class="overlaybox1-2">' +
+	            '   			 <div class="boxtitle1-2">보호소정보</div>' +
+	            '    			 <div class="first1-2">' +
+	            '        		 	<div class="movietitle text">'+centername+'</div>' +
+	            '    			</div>' +
+	            '    			<ul class="li-wrap1-2">'  +
+		            '        		<li class>' +
+		            '            		<span class="title">'+centeraddr+'</span>' +
+		            '        		</li>' +
+				            '       <li>' +
+				            '            <span class="title">'+opentime+'~'+closetime+'</span>' +
+				            '        </li>' +
+				            '        <li>' +
+				            '            <span class="title">'+closeday+'</span>' +
+				            '        </li>' +
+				            '        <li>' +
+				            '            <span class="title">'+caretel+'</span>' +
+				            '        </li>' +
+	            '    			</ul>' +
+	            '			</div>';
 
 	        // 커스텀 오버레이가 표시될 위치입니다 
 		        var position = new kakao.maps.LatLng(latitude, longitude);  
@@ -254,7 +199,11 @@ $(document).ready(function() {
 	            
 	            // 마커 지도에 표시
 	            marker.setMap(map);
-	      
+	            
+	           /*  setTimeout(function() {
+	                location.reload();
+	            }, 10000);
+	       */
 	         
 		 }
 		 clickedValue=null;

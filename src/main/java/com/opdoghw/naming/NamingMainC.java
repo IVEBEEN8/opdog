@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletResponse;
 public class NamingMainC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.setAttribute("contentPage", "4_service/4_2_naming/namingYourDog.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "../4_service/4_2_naming/namingYourDog.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 
 	}
 
