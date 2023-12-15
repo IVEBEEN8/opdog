@@ -24,7 +24,8 @@
 	</div>
 	<div>Text</div>
 	<div>
-	<pre>${review.r_txt}</pre>
+	<%-- <pre>${review.r_txt}</pre> --%>
+	<textarea rows="10" cols="50" readonly="readonly">${review.r_txt}</textarea>
 	</div>
 	<button onclick="location.href='ReviewUpC?id=${review.op_email}'">수정</button>
 	<button onclick="reviewDelete('${review.op_email}')">삭제</button>

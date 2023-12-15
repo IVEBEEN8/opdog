@@ -21,7 +21,11 @@
 				
 				${r.r_title} <br>
 				<img alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
-				<pre>${r.r_txt}</pre>
+				<pre style="white-space: pre-wrap; width: 300px;
+  height: 200px;
+  overflow: auto;">${r.r_txt}</pre>
+ 				<%-- <textarea rows="10" cols="50" readonly="readonly">${r.r_txt}</textarea> --%>
+				
 				<br>
 				<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">디테일창으로 이동</button>
 				

@@ -58,7 +58,7 @@ function previewSelectedImage(input) {
 function checkLength() {
         var textarea = document.getElementById('txt');
         var charCount = document.getElementById('charCount');
-        var maxLength = 500;
+        var maxLength = 1500;
 
         if (textarea.value.length > maxLength) {
             textarea.value = textarea.value.substring(0, maxLength);

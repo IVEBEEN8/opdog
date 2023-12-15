@@ -33,7 +33,7 @@
 		</div>
 		<div>
 			<div>Text</div>
-			 <textarea id="txt" name="txt" cols="50" rows="10" oninput="checkLength()"></textarea>
+			 <textarea id="txt" name="txt" cols="30" rows="5" oninput="checkLength()"></textarea>
              <div id="charCount"></div>
 		</div>
 		<div>
