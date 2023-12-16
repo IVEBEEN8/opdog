@@ -10,12 +10,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
     <div class="chat-content">
       <div class="line">
-        <span class="chat-box">
-        let's start a conversation is there any questions you would like to
-          ask about dogs?</span>
+        <span class="chat-box"></span>
       </div>
       <div class="line">
         <span class="chat-box mine"></span>

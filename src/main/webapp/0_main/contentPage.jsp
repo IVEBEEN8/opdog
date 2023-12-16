@@ -15,6 +15,8 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
       rel="stylesheet"
     />
+    <script type="text/javascript" src="4_service/js/askAboutDog.js"></script>
+	<link rel="stylesheet" href="4_service/css/askAboutDog.css">
   </head>
   <body>
      <!-- 메인 상단 : 헤더 -->
@@ -56,7 +58,7 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
-              <a href="#">Check Registration Number</a>
+              <a onclick="location.href='CheckRegNmC'">Check Registration Number</a>
               <a onclick="location.href='NamingMainC'">Naming</a>
             </div>
           </div>
@@ -82,10 +84,10 @@
         <div class="footer2">
           <div class="askMe">ask me</div>
           <div>
-            <input type="text" />
-            <a href="#"><img src="0_main/img/send-icon.png" alt="보내기버튼" /></a>
+            <input name ="name" class="chat-box" id="input" type="text">
+            <a onclick="" id="send"><img src="0_main/img/send-icon.png" alt="보내기버튼" /></a>
           </div>
-        </div>
+        </div>                                           
         <div class="footer3">
           <div class="sns-var">
             <a href="#"><img src="0_main/img/footer-menu-Facebook.svg" /></a>

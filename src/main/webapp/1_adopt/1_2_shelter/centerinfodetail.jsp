@@ -46,6 +46,7 @@
 	</div>
 </div>
 
+
 <script>
 var mapContainer = document.getElementById('map'); //지도를 표시할 div id
 var mapOption = {
@@ -154,24 +155,25 @@ $(document).ready(function() {
 	         var map = new kakao.maps.Map(mapContainer, mapOption);
 	         var content = '<div class="overlaybox1-2">' +
 	            '   			 <div class="boxtitle1-2">보호소정보</div>' +
-	            '    			 <div class="first1-2">' +
-	            '        		 	<div class="centertitle1-2">'+centername+'</div>' +
-	            '    			</div>' +
 	            '    			<ul class="li-wrap1-2">'  +
-		            '        		<li>' +
-		            '					<span>Address:</span><br>		' +
+		            '        		<li class="li1-2">' +
+		            '					<span class="title-span1-2">Center Name:</span><br>		' +
+		            '            		<span class="title">'+centername+'</span>' +
+		            '        		</li>' +
+		            '        		<li class="li1-2">' +
+		            '					<span class="title-span1-2">Address:</span><br>		' +
 		            '            		<span class="title">'+centeraddr+'</span>' +
 		            '        		</li>' +
-				            '       <li>' +
-				            '					<span>Operation Time:</span><br>		' +
+				            '       <li class="li1-2">' +
+				            '			<span class="title-span1-2" >Operation Time:</span><br>		' +
 				            '            <span class="title">'+opentime+'~'+closetime+'</span>' +
 				            '        </li>' +
-				            '        <li>' +
-				            '					<span>Close Day:</span><br>		' +
+				            '        <li class="li1-2">' +
+				            '			 <span class="title-span1-2">Close Day:</span><br>		' +
 				            '            <span class="title">'+closeday+'</span>' +
 				            '        </li>' +
-				            '        <li>' +
-				            '					<span>Tel:</span><br>		' +
+				            '        <li class="li1-2">' +
+				            '					<span class="title-span1-2">Tel:</span><br>		' +
 				            '            <span class="title">'+caretel+'</span>' +
 				            '        </li>' +
 	            '    			</ul>' +
@@ -204,10 +206,10 @@ $(document).ready(function() {
 	            // 마커 지도에 표시
 	            marker.setMap(map);
 	            
-	           /*  setTimeout(function() {
+	            setTimeout(function() {
 	                location.reload();
-	            }, 10000);
-	       */
+	            }, 3000);
+	       
 	         
 		 }
 		 clickedValue=null;
