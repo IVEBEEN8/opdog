@@ -21,7 +21,6 @@ public class SignUpC extends HttpServlet {
 			throws ServletException, IOException {
 
 		LoginDAO.regAccount(request);
-
 		request.setAttribute("contentPage", "login/accountOK.jsp");
 		LoginDAO.loginCheck(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);

@@ -10,7 +10,7 @@
  </head>
 <body>
 <h1>hello kakao</h1>
-<a id="test" href="javascropt:kakaoLogin()"><img src="kakao_login.png"></a>
+<a id="test" href="javascropt:kakaoLogin()"><img src="img/kakao_login.png"></a>
 </body>
 <script>
 console.log("hi are you ready?");

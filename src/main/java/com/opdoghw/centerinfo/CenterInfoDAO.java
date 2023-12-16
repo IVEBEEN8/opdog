@@ -48,7 +48,7 @@ public class CenterInfoDAO {
 				center.add(c);
 			}
 			request.setAttribute("centers", center);
-
+			System.out.println(center);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

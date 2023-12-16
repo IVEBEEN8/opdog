@@ -197,3 +197,70 @@ body {
 	color:rgba(250, 248, 241, 1);
 }
 
+
+/*모달 css*/
+#modalContent{
+  margin-top: 10vh;
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+}
+
+#printinfo {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  
+}
+
+#modalBody {
+  width: 500px;
+  height: 300px;
+  padding: 30px 30px;
+  margin: 0 auto;
+  border: 1px solid #777;
+  border-radius: 40px;
+  border: 8px solid #43311C;
+  background: #FAF8F1;
+}
+
+
+#closeBtn {
+  top: -20px;
+  float:right;
+  font-weight: bold;
+  stroke-width: 10px;
+  stroke: #43311C;
+  font-size:20px;
+  cursor: pointer;
+}
+
+.box-title{
+	display: flex;
+	height: 20px;
+	margin: 20px;
+	text-align:left;
+	font-size: 13px;
+	
+}
+.small-title{
+	width: 150px;	
+}
+.box-info{
+	font-size: 30px;
+	color: #43311C;
+	text-align: left;
+	height: 41px;
+    margin: -8px;
+}
+.small-content{
+	width:260px;
+	white-space: normal;
+}

@@ -18,7 +18,6 @@ import java.util.Scanner;
 
 import javax.net.ssl.HttpsURLConnection;
 
-
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -29,184 +28,172 @@ public class NaverAPI {
 //		네이버 개발자 센터
 //		xsNn_8ET7Ge8rnSa6ees
 //		s8uIyGeGT8
-		
+
 //		"https://openapi.naver.com/v1/search/shop.json?query="
-		
-		
+
 		try {
 			Scanner sc = new Scanner(System.in);
 			System.out.println("검색어? ");
 			String str = sc.next();
-			
-			str = URLEncoder.encode(str,"utf-8");
+
+			str = URLEncoder.encode(str, "utf-8");
 			System.out.println(str);
-			
+
 			String url = "https://openapi.naver.com/v1/search/shop.json?query=" + str + "&display=60";
 			URL u = new URL(url);
-			HttpsURLConnection huc =(HttpsURLConnection)u.openConnection();
+			HttpsURLConnection huc = (HttpsURLConnection) u.openConnection();
 			huc.addRequestProperty("X-Naver-Client-Id", "xsNn_8ET7Ge8rnSa6ees");
 			huc.addRequestProperty("X-Naver-Client-Secret", "s8uIyGeGT8");
-			
+
 			InputStream is = huc.getInputStream();
 			InputStreamReader isr = new InputStreamReader(is, "utf-8");
-			
+
 			// JSON parse 객체 (json 파싱하려고)
 			JSONParser jp = new JSONParser();
 			JSONObject naverData = (JSONObject) jp.parse(isr);
 			System.out.println(11);
-			System.out.println(naverData);	
+			System.out.println(naverData);
 			JSONArray items = (JSONArray) naverData.get("items");
-			
+
 			Connection con = null;
 			PreparedStatement pstmt = null;
-			
-			
+
 			for (int i = 0; i < items.size(); i++) {
-					JSONObject item = (JSONObject) items.get(i);
-			
-			
-			String title = (String) item.get("title");
+				JSONObject item = (JSONObject) items.get(i);
+
+				String title = (String) item.get("title");
 //			String title = item.get("title") + "";
 //			String title = item.get("title").toString();
-			title = title.replace("<b>", "");
-			title = title.replace("</b>", "");
-			title = title.replace("&amp;", " ");
+				title = title.replace("<b>", "");
+				title = title.replace("</b>", "");
+				title = title.replace("&amp;", " ");
 //			System.out.println("사진	:	" + item.get("image"));
 //			System.out.println("품명	:	" + title);
 //			System.out.println("가격	:	" + item.get("lprice"));
 //			System.out.println("브랜드	:	" + item.get("brand"));
-			String brand = (String) item.get("brand");
-			if (brand.equals("")) {
-				brand = "no brand";
-			}
-			if (title.contains(brand)) {
-				title = title.replace(brand, "");
-			}
-			
-			
+				String brand = (String) item.get("brand");
+				if (brand.equals("")) {
+					brand = "no brand";
+				}
+				if (title.contains(brand)) {
+					title = title.replace(brand, "");
+				}
+
 //			System.out.println("------------------------------------------------");
 //			System.out.println(items.size());
-			System.out.println("----------파파고 API 시작-----------------");
-			
-			String clientId = "f8E1dHSfLIZGwep16ykM";//애플리케이션 클라이언트 아이디값";
-	        String clientSecret = "g9Ae4Vludr";//애플리케이션 클라이언트 시크릿값";
+				System.out.println("----------파파고 API 시작-----------------");
 
-	        String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
-	        
-	        
-	        String text;
-	        try { 
-	            text = URLEncoder.encode(title+"\n"+brand, "UTF-8");
-	        } catch (UnsupportedEncodingException e) {
-	            throw new RuntimeException("인코딩 실패", e);
-	        }
+				String clientId = "f8E1dHSfLIZGwep16ykM";// 애플리케이션 클라이언트 아이디값";
+				String clientSecret = "g9Ae4Vludr";// 애플리케이션 클라이언트 시크릿값";
 
-	        Map<String, String> requestHeaders = new HashMap<>();
-	        requestHeaders.put("X-Naver-Client-Id", clientId);
-	        requestHeaders.put("X-Naver-Client-Secret", clientSecret);
+				String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
 
-	        String responseBody = post(apiURL, requestHeaders, text);
+				String text;
+				try {
+					text = URLEncoder.encode(title + "\n" + brand, "UTF-8");
+				} catch (UnsupportedEncodingException e) {
+					throw new RuntimeException("인코딩 실패", e);
+				}
 
-	        System.out.println(responseBody);
-	        
-	        JSONParser jsonParser = new JSONParser();
+				Map<String, String> requestHeaders = new HashMap<>();
+				requestHeaders.put("X-Naver-Client-Id", clientId);
+				requestHeaders.put("X-Naver-Client-Secret", clientSecret);
 
-	        JSONObject jsonObject = (JSONObject) jsonParser.parse(responseBody);
-	        JSONObject objMessage = (JSONObject) jsonObject.get("message");
-	        JSONObject objResult= (JSONObject) objMessage.get("result");
-	        String translatedText = (String) objResult.get("translatedText");
-	        
-	       System.out.println(translatedText);
-	        
-	       String[] splitStr= translatedText.split("\n");
+				String responseBody = post(apiURL, requestHeaders, text);
 
-	       String translatedTitle = splitStr[0];
-	       String translatedBrand = splitStr[1];
+				System.out.println(responseBody);
 
-	        
-	        
-			
-	        
-			
-			
-			System.out.println("----------파파고 API 끝-----------------");
-			String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql); 
-			pstmt.setString(1, (String)item.get("image"));
-			pstmt.setString(2, translatedTitle);
-			pstmt.setLong(3, Long.parseLong(item.get("lprice").toString()));
+				JSONParser jsonParser = new JSONParser();
 
-			pstmt.setString(4, translatedBrand);
-			System.out.println("업로드완료!");
-			pstmt.executeUpdate();
+				JSONObject jsonObject = (JSONObject) jsonParser.parse(responseBody);
+				JSONObject objMessage = (JSONObject) jsonObject.get("message");
+				JSONObject objResult = (JSONObject) objMessage.get("result");
+				String translatedText = (String) objResult.get("translatedText");
+
+				System.out.println(translatedText);
+
+				String[] splitStr = translatedText.split("\n");
+
+				String translatedTitle = splitStr[0];
+				String translatedBrand = splitStr[1];
+
+				System.out.println("----------파파고 API 끝-----------------");
+				String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
+				con = DBManager.connect();
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, (String) item.get("image"));
+				pstmt.setString(2, translatedTitle);
+				pstmt.setLong(3, Long.parseLong(item.get("lprice").toString()));
+
+				pstmt.setString(4, translatedBrand);
+				System.out.println("업로드완료!");
+				pstmt.executeUpdate();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-			
+
 		}
-		
-		
+
 	}
 
 	// 강아지 사료, 강아지 간식, 강아지 장난감, 강아지 패션
-	
-	// 파파고 api 메소드 
-	private static String post(String apiUrl, Map<String, String> requestHeaders, String text){
-        HttpURLConnection con = connect(apiUrl);
-        NaverAPI shop = new NaverAPI();
-        String postParams = "source=ko&target=en&text=" + text; //원본언어: 한국어 (ko) -> 목적언어: 영어 (en)
-        try {
-            con.setRequestMethod("POST");
-            for(Map.Entry<String, String> header :requestHeaders.entrySet()) {
-                con.setRequestProperty(header.getKey(), header.getValue());
-            }
 
-            con.setDoOutput(true);
-            try (DataOutputStream wr = new DataOutputStream(con.getOutputStream())) {
-                wr.write(postParams.getBytes());
-                wr.flush();
-            }
+	// 파파고 api 메소드
+	private static String post(String apiUrl, Map<String, String> requestHeaders, String text) {
+		HttpURLConnection con = connect(apiUrl);
+		NaverAPI shop = new NaverAPI();
+		String postParams = "source=ko&target=en&text=" + text; // 원본언어: 한국어 (ko) -> 목적언어: 영어 (en)
+		try {
+			con.setRequestMethod("POST");
+			for (Map.Entry<String, String> header : requestHeaders.entrySet()) {
+				con.setRequestProperty(header.getKey(), header.getValue());
+			}
 
-            int responseCode = con.getResponseCode();
-            if (responseCode == HttpURLConnection.HTTP_OK) { // 정상 응답
-                return readBody(con.getInputStream());
-            } else {  // 에러 응답
-                return readBody(con.getErrorStream());
-            }
-        } catch (IOException e) {
-            throw new RuntimeException("API 요청과 응답 실패", e);
-        } finally {
-            con.disconnect();
-        }
-    }
+			con.setDoOutput(true);
+			try (DataOutputStream wr = new DataOutputStream(con.getOutputStream())) {
+				wr.write(postParams.getBytes());
+				wr.flush();
+			}
 
-    private static HttpURLConnection connect(String apiUrl){
-        try {
-            URL url = new URL(apiUrl);
-            return (HttpURLConnection)url.openConnection();
-        } catch (MalformedURLException e) {
-            throw new RuntimeException("API URL이 잘못되었습니다. : " + apiUrl, e);
-        } catch (IOException e) {
-            throw new RuntimeException("연결이 실패했습니다. : " + apiUrl, e);
-        }
-    }
+			int responseCode = con.getResponseCode();
+			if (responseCode == HttpURLConnection.HTTP_OK) { // 정상 응답
+				return readBody(con.getInputStream());
+			} else { // 에러 응답
+				return readBody(con.getErrorStream());
+			}
+		} catch (IOException e) {
+			throw new RuntimeException("API 요청과 응답 실패", e);
+		} finally {
+			con.disconnect();
+		}
+	}
 
-    private static String readBody(InputStream body){
-        InputStreamReader streamReader = new InputStreamReader(body);
+	private static HttpURLConnection connect(String apiUrl) {
+		try {
+			URL url = new URL(apiUrl);
+			return (HttpURLConnection) url.openConnection();
+		} catch (MalformedURLException e) {
+			throw new RuntimeException("API URL이 잘못되었습니다. : " + apiUrl, e);
+		} catch (IOException e) {
+			throw new RuntimeException("연결이 실패했습니다. : " + apiUrl, e);
+		}
+	}
 
-        try (BufferedReader lineReader = new BufferedReader(streamReader)) {
-            StringBuilder responseBody = new StringBuilder();
+	private static String readBody(InputStream body) {
+		InputStreamReader streamReader = new InputStreamReader(body);
 
-            String line;
-            while ((line = lineReader.readLine()) != null) {
-                responseBody.append(line);
-            }
+		try (BufferedReader lineReader = new BufferedReader(streamReader)) {
+			StringBuilder responseBody = new StringBuilder();
 
-            return responseBody.toString();
-        } catch (IOException e) {
-            throw new RuntimeException("API 응답을 읽는데 실패했습니다.", e);
-        }
-    }
-	
+			String line;
+			while ((line = lineReader.readLine()) != null) {
+				responseBody.append(line);
+			}
+
+			return responseBody.toString();
+		} catch (IOException e) {
+			throw new RuntimeException("API 응답을 읽는데 실패했습니다.", e);
+		}
+	}
+
 }
