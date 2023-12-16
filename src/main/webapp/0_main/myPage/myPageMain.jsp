@@ -8,5 +8,9 @@
 </head>
 <body>
 <h1>mypageです〜</h1>
+<div>my booked dog</div>
+<div>
+
+</div>
 </body>
 </html>

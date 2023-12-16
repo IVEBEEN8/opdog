@@ -195,26 +195,6 @@ $(document).ready(function() {
 		})
 		
 	});
-	$(document).on('click','button[id=detail]',function(){
-		var values = $(this).children().text();
-		var items = JSON.parse(values);
-		$('div').remove('#detailinfo');
-		$('#modalBody').append('<div class="#" id="detailinfo"><img src="'+items.popfile+'" style="width:300px;"></div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">유기번호:'+items.desertionNo+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">품종:'+items.kindCd+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">색상:'+items.colorCd+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">성별:'+items.sexCd+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">중성화:'+items.neuterYn+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">특징: '+items.specialMark+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">보호소: '+items.careNm+'연락처 '+items.careTel+'주소 '+items.careAddr+'<button>지도로 보기</button></div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo"><button>장바구니</button></div>');
-		$('#modalWrap').css({
-			"display":"block"
-		});
-	});
 	$(document).on('click','span[id=closeBtn]',function(){
 		$('#modalWrap').css({
 			"display":"none"
@@ -226,6 +206,42 @@ $(document).ready(function() {
 				"display":"none"
 			});
 		};
+	});
+	$(document).on('click','button[id=detail]',function(){
+		var values = $(this).children().text();
+		var items = JSON.parse(values);
+		$('div').remove('#detailinfo');
+		$('#modalBody').append('<div class="#" id="detailinfo"><img src="'+items.popfile+'" style="width:300px;"></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">유기번호:'+items.desertionNo+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">품종:'+items.kindCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">색상:'+items.colorCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">성별:'+items.sexCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">중성화:'+items.neuterYn+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">특징: '+items.specialMark+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">보호소: '+items.careNm+'연락처 '+items.careTel+'주소 '+items.careAddr+'<button>지도로 보기</button></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo"><button id="like" ><p style="display:none;">'+ values +'</p>장바구니</button></div>');
+		$('#modalWrap').css({"display":"block"});
+		console.log(values);
+	});
+	$(document).on('click','button[id=like]',function(){
+		var selectedValue = $(this).children().text();
+		var value = JSON.parse(selectedValue);
+		console.log(value);
+		$.ajax({
+			url : "MyPageLikeC",
+			type: "GET",
+			data: { value : selectedValue},
+			success: function(){
+				alert('등록완료되었습니다.');
+				
+			},
+			error: function(error) {
+            	    console.log('Ajax 요청 에러:', error);
+           	}
+		});	
+		
 	});
 });
 
@@ -245,4 +261,8 @@ function pagination(json){
 				$("#data-container").html(dataHtml);
 			}
 	});
+	
+	
+	
+	
 }
