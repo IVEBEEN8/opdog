@@ -71,9 +71,9 @@
           </div>
           <div class="account-icon-wrap">
             <div class="account-icon">
-              <a href="#"><img src="/img/google.svg" /></a>
-              <a href="#"><img src="/img/apple.svg" /></a>
-              <a href="#"><img src="/img/facebook.svg" /></a>
+              <a href="#"><img src="0_main/img/google.svg" /></a>
+              <a href="#"><img src="0_main/img/apple.svg" /></a>
+              <a href="#"><img src="0_main/img/facebook.svg" /></a>
             </div>
           </div>
         </div>
