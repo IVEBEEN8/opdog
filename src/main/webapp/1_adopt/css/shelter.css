@@ -17,6 +17,18 @@ body {
   width: 100vw;
   padding: 6vh 0px;
 }
+
+.reload-map1-2{
+	position: absolute;
+    left: 7.2vw;
+    top: 11vh;
+    height: 20px;
+    border-radius: 10px;
+    background-color: #c58940;
+    box-shadow: brown;
+    border: none;
+    color: white;
+}
  
 .map{
 	left:6.822916666666667vw;
@@ -33,6 +45,7 @@ body {
  	top:13.88888888888889vh;
  	width: 49.21875vw;
  	height: 79.44444444444444vh;
+
  	overflow-x: scroll;
  	border-radius: 20px;
  	background: #FAF8F1;
@@ -43,7 +56,7 @@ body {
 	background: #FFF;
 	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 	display: inline-flex;
-	margin-top:3vh;
+	margin-bottom:3vh;
 	width:46vw;
 	justify-content: center;
 	align-items: center;
@@ -123,7 +136,6 @@ body {
 .showinthemap{
 	border:none;
 	background-color:#FAF8F1;
-	
 }
 
 /* 여기서부턴 지도안에 박스!*/
@@ -138,10 +150,13 @@ body {
   height: 300px;
   text-align: left;
   padding: 0px 13px;
-  background-color:rgba(250, 234, 177, 1);
+  border: 3px solid #777;
+  background-color: #fff;
   border-radius: 15px;
 }
 .boxtitle1-2 {
+	margin-left: 2px;
+	margin-top:2vh;
 	color: black;
 	font-size:20px;
 	text-align: left;
@@ -175,14 +190,16 @@ body {
 .overlaybox1-2 li:hover {
 	color:rgba(250, 248, 241, 1);
 	background:rgba(158, 111, 33, 1);
-;
 	}
+
+.title-span1-2{
+	width: 240px;
+}
 
 .li-wrap1-2 {
   text-align:left;
   position:relative;
-  width:247px;
-  height:136px;	
+  width:247px;	
   margin-bottom:8px;
   margin-left:0;
   left:-40px;
@@ -264,3 +281,14 @@ body {
 	width:260px;
 	white-space: normal;
 }
+.search-container1-2 {
+		width: 46vw;
+        position: sticky;
+        top: 0;
+        z-index: 1; /* 다른 요소 위에 표시되도록 z-index를 설정하세요. */
+        padding: 10px;
+        background-color: #FAF8F1;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    }
+

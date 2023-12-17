@@ -200,7 +200,7 @@ public class CenterInfoDAO {
 
 	}
 
-	public static void updateCenterInfo(HttpServletRequest request) {
+	public static void searchCenter(HttpServletRequest request, HttpServletResponse response) {
 
 	}
 
