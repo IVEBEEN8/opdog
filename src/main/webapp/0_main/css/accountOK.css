@@ -35,10 +35,10 @@ body {
 
 .compelete-msg {
   position: absolute;
-  top: 25%;
+  top: 20%;
   left: -2.5%;
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   text-align: center;
 }
 
@@ -75,3 +75,33 @@ body {
   opacity: 0.5;
   border-radius: 2vw;
 }
+
+.account-container > button {
+  position: absolute;
+  top: 33vh;
+  left: 44vw;
+  width: 7vw;
+  height: 4vh;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  border-radius: 2vw;
+  background: #43311cad;
+  font-size: 1.5vw;
+  color: rgb(247 240 216);
+  font-weight: 300;
+  line-height: normal;
+  letter-spacing: 0.46px;
+}
+
+.account-container > button:hover {
+  color: #43311c;
+  font-weight: 700;
+  transition: 0.3s;
+  background: #faeab1bf;
+  cursor: pointer; /* 마우스 포인터를 올렸을 때 손가락으로 바뀜 */
+}
+
