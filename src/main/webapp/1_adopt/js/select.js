@@ -195,26 +195,6 @@ $(document).ready(function() {
 		})
 		
 	});
-	$(document).on('click','button[id=detail]',function(){
-		var values = $(this).children().text();
-		var items = JSON.parse(values);
-		$('div').remove('#detailinfo');
-		$('#modalBody').append('<div class="#" id="detailinfo"><img src="'+items.popfile+'" style="width:300px;"></div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">유기번호:'+items.desertionNo+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">품종:'+items.kindCd+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">색상:'+items.colorCd+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">성별:'+items.sexCd+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">중성화:'+items.neuterYn+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">특징: '+items.specialMark+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">보호소: '+items.careNm+'연락처 '+items.careTel+'주소 '+items.careAddr+'<button>지도로 보기</button></div>');
-		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
-		$('#modalBody').append('<div class="#" id="detailinfo"><button>장바구니</button></div>');
-		$('#modalWrap').css({
-			"display":"block"
-		});
-	});
 	$(document).on('click','span[id=closeBtn]',function(){
 		$('#modalWrap').css({
 			"display":"none"
@@ -227,22 +207,65 @@ $(document).ready(function() {
 			});
 		};
 	});
+	$(document).on('click','button[id=detail]',function(){
+		var values = $(this).children().text();
+		var items = JSON.parse(values);
+		$('div').remove('#detailinfo');
+		$('#modalBody').append('<div class="#" id="detailinfo"><img src="'+items.popfile+'" style="width:300px;"></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">나이:'+items.age+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">유기번호:'+items.desertionNo+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">품종:'+items.kindCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">색상:'+items.colorCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">성별:'+items.sexCd+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">중성화:'+items.neuterYn+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">특징: '+items.specialMark+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">보호소: '+items.careNm+'연락처 '+items.careTel+'주소 '+items.careAddr+'<button>지도로 보기</button></div>');
+		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
+		$('#modalBody').append('<div class="#" id="detailinfo"><button id="like" ><p style="display:none;">'+ values +'</p>장바구니</button></div>');
+		$('#modalWrap').css({"display":"block"});
+	});
+	$(document).on('click','button[id=like]',function(){
+		var selectedValue = $(this).children().text();
+		var id = $('#account').text();
+
+		if(id != ""){
+			$.ajax({
+				url : "MyPageLikeC",
+				type: "GET",
+				data: { value : selectedValue},
+				success: function(){
+					alert('등록완료되었습니다.');
+				
+				},
+				error: function(error) {
+            		    console.log('Ajax 요청 에러:', error);
+           		}
+			});	
+		} else{
+			let goLogin = confirm('로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?')
+			if(goLogin){
+				location.href="LoginMainHC"
+			}
+		}		
+		
+	});
 });
 
 function pagination(json){
 	console.log(json)
 	console.log('---------')
-		let container = $('#pagination');
-		container.pagination({
-			dataSource: json,
-			callback: function(data, pagination){
-				var dataHtml = '<ul>';
-				$.each(data, function (index,item){
-					dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button> </div></li>';
-					console.log(item)
-					});
-				dataHtml += '</ul>';
-				$("#data-container").html(dataHtml);
-			}
+	let container = $('#pagination');
+	container.pagination({
+		dataSource: json,
+		callback: function(data, pagination){
+			var dataHtml = '<ul>';
+			$.each(data, function (index,item){
+				dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button> </div></li>';
+				console.log(item)
+			});
+			dataHtml += '</ul>';
+			$("#data-container").html(dataHtml);
+		}
 	});
 }
+	

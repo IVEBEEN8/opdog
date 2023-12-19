@@ -23,6 +23,10 @@
 	
 	<div>
 		<div>
+			<div>Title</div>
+			<div><input id="title" name="title" value="${review.r_title}"> </div>
+		</div>
+		<div>
 			<div>Image</div>
 			<div>
 				<img id="previewImage" src="1_adopt/1_4_review/imgFolder/${review.r_img}">
@@ -32,12 +36,10 @@
 			</div>
 		</div>
 		<div>
-			<div>Title</div>
-			<div><input id="title" name="title" value="${review.r_title}"> </div>
-		</div>
-		<div>
 			<div>Text</div>
-			<div><textarea id="txt" name="txt"  >${review.r_txt} </textarea> </div>
+			<textarea id="txt" name="txt" cols="50" rows="10" oninput="checkLength()">${review.r_txt}</textarea>
+             <div id="charCount"></div>
+			
 		</div>
 		<div>
 			<div><button name="id" value="${review.op_email}" class="수정완료버튼">수정완료</button></div>

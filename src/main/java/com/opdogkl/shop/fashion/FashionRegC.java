@@ -1,4 +1,4 @@
-package com.opdoghoho.mypage;
+package com.opdogkl.shop.fashion;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,17 +7,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opdoghw.login.LoginDAO;
-@WebServlet("/MyPageHC")
-public class MyPageHC extends HttpServlet {
+@WebServlet("/FashionRegC")
+public class FashionRegC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MyPageDAO.likeLoad(request);
-//		MyPageDAO.infoLoad(request);
-		request.getRequestDispatcher("0_main/myPage/myPageMain.jsp").forward(request, response);
+		FashionDAO.regFashion(request);
+		FashionDAO.getAllFashion(request);
+		FashionDAO.paging(1, request);
+		
+		request.setAttribute("contentPage", "2_shop/2_1_fashion/fashion.jsp");
+		request.getRequestDispatcher("index.jsp").forward(request, response);
+		
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 	}
 
 }

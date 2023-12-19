@@ -30,6 +30,7 @@ public class NaverAPI {
 //		s8uIyGeGT8
 
 //		"https://openapi.naver.com/v1/search/shop.json?query="
+<<<<<<< HEAD
 
 		try {
 			Scanner sc = new Scanner(System.in);
@@ -40,6 +41,22 @@ public class NaverAPI {
 			System.out.println(str);
 
 			String url = "https://openapi.naver.com/v1/search/shop.json?query=" + str + "&display=60";
+=======
+		
+		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		
+		
+		
+		try {
+			String str = "강아지사료";
+			str = URLEncoder.encode(str,"utf-8");
+			System.out.println(str);
+			
+			String url = "https://openapi.naver.com/v1/search/shop.json?query=" + str + "&display=48";
+>>>>>>> d7651a0337d80a5789fbcf5d07500e5e282f287c
 			URL u = new URL(url);
 			HttpsURLConnection huc = (HttpsURLConnection) u.openConnection();
 			huc.addRequestProperty("X-Naver-Client-Id", "xsNn_8ET7Ge8rnSa6ees");
@@ -54,6 +71,7 @@ public class NaverAPI {
 			System.out.println(11);
 			System.out.println(naverData);
 			JSONArray items = (JSONArray) naverData.get("items");
+<<<<<<< HEAD
 
 			Connection con = null;
 			PreparedStatement pstmt = null;
@@ -62,6 +80,16 @@ public class NaverAPI {
 				JSONObject item = (JSONObject) items.get(i);
 
 				String title = (String) item.get("title");
+=======
+			con = DBManager.connect();
+			String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			pstmt = con.prepareStatement(sql); 
+			for (int i = 0; i < items.size(); i++) {
+					JSONObject item = (JSONObject) items.get(i);
+			
+			String title = (String) item.get("title");
+>>>>>>> d7651a0337d80a5789fbcf5d07500e5e282f287c
 //			String title = item.get("title") + "";
 //			String title = item.get("title").toString();
 				title = title.replace("<b>", "");
@@ -81,10 +109,25 @@ public class NaverAPI {
 
 //			System.out.println("------------------------------------------------");
 //			System.out.println(items.size());
+<<<<<<< HEAD
 				System.out.println("----------파파고 API 시작-----------------");
 
 				String clientId = "f8E1dHSfLIZGwep16ykM";// 애플리케이션 클라이언트 아이디값";
 				String clientSecret = "g9Ae4Vludr";// 애플리케이션 클라이언트 시크릿값";
+=======
+			System.out.println("----------파파고 API 시작-----------------");
+			
+			String clientId = "f8E1dHSfLIZGwep16ykM";//애플리케이션 클라이언트 아이디값";
+	        String clientSecret = "g9Ae4Vludr";//애플리케이션 클라이언트 시크릿값";
+	        String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
+	        String text;
+	        
+	        try { 
+	            text = URLEncoder.encode(title+"\n"+brand, "UTF-8");
+	        } catch (UnsupportedEncodingException e) {
+	            throw new RuntimeException("인코딩 실패", e);
+	        }
+>>>>>>> d7651a0337d80a5789fbcf5d07500e5e282f287c
 
 				String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
 
@@ -103,6 +146,7 @@ public class NaverAPI {
 
 				System.out.println(responseBody);
 
+<<<<<<< HEAD
 				JSONParser jsonParser = new JSONParser();
 
 				JSONObject jsonObject = (JSONObject) jsonParser.parse(responseBody);
@@ -128,12 +172,34 @@ public class NaverAPI {
 				pstmt.setString(4, translatedBrand);
 				System.out.println("업로드완료!");
 				pstmt.executeUpdate();
+=======
+			System.out.println("----------파파고 API 끝-----------------");
+			
+			
+			pstmt.setString(1, (String)item.get("image"));
+			pstmt.setString(2, translatedTitle);
+			pstmt.setLong(3, Long.parseLong(item.get("lprice").toString()));
+
+			pstmt.setString(4, translatedBrand);
+			pstmt.executeUpdate();
+			System.out.println("등록성공");
+>>>>>>> d7651a0337d80a5789fbcf5d07500e5e282f287c
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+<<<<<<< HEAD
 
 		}
 
+=======
+			System.out.println("등록실패");
+			
+		} finally {
+			DBManager.close(con, pstmt, null);
+		}
+		
+>>>>>>> d7651a0337d80a5789fbcf5d07500e5e282f287c
 	}
 
 	// 강아지 사료, 강아지 간식, 강아지 장난감, 강아지 패션
