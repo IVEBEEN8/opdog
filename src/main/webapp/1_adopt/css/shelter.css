@@ -1,19 +1,360 @@
-@charset "UTF-8";
-
-    body {
-            display: flex;
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-        }
-
-#map{
-            flex: 1; /* 왼쪽에 지도를 표시하는 섹션 */
-            height: 100%;
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+  
+}
+ .containar1-2{
+  width: 100vw;
+  padding: 6vh 0px;
 }
 
-#data-container {
-            flex: 1; /* 오른쪽에 데이터를 표시하는 섹션 */
-            padding: 20px;
-            box-sizing: border-box;
+.reload-map1-2{
+	position: absolute;
+    left: 7.2vw;
+    top: 11vh;
+    width: 10vw;
+    height: 2.5vh;
+    border-radius: 15px;
+    background-color: #c58940;
+    box-shadow: brown;
+    border: none;
+    color: white;
 }
+ 
+.map{
+	left:6.822916666666667vw;
+	top:  14vh;
+	width: 33.90625vw;
+	height: 79.44444444444444vh;
+	position: absolute;
+	border-radius: 20px;	
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+}
+.infobox-wrap1-2 {
+	margin-top: 8vh;
+ 	margin-left:35vw;
+ 	top:13.88888888888889vh;
+ 	width: 49.21875vw;
+ 	height: 79.44444444444444vh;
+ 	overflow-x: scroll;
+ 	border-radius: 20px;
+ 	background: #FAF8F1;
+}
+
+.centerinfo-print-wrap1-2{
+	border-radius: 20px;
+	background: #FFF;
+	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+	display: inline-flex;
+	margin-top:2vh;
+	margin-bottom:3vh;
+	width:46vw;
+	justify-content: center;
+	align-items: center;
+	gap: 11px;
+	
+}
+.infobox-wrap1-2::-webkit-scrollbar {
+    display: none; 
+}
+
+.centerimg1-2{
+	border-radius: 10px;
+}
+.center-info-wrap1-2{
+	display:flex;
+	margin-top:2vh;
+	text-align: left;
+}
+.centerimg1-2{
+	width: 200px;
+	height: 195px;
+}
+.centerinfo-print1-2{
+	margin-top:3vh;
+	margin-bottom:3vh;
+	width: 400px;
+	height: auto;
+	border-radius: 20px;
+}
+.centerimg1-2{
+	margin: 10px;
+}
+.center-title1-2{
+	display: flex;
+	margin-left: 1vw;
+	height: 45px;
+	color: #000;
+	font-family: Inter;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: 136%; /* 24.48px */
+}
+.center-icon1-2{	
+	width: 28px;
+	height: 28px;
+	margin-right: 1vw;
+}
+.icon2-1-2{
+	width:28px;
+	height:29px;
+	background-color: #5E81F4;
+	border-radius: 15px;
+}
+.center-info1-2{
+	white-space:normal;
+	color: #3E4958;
+	font-family: Abel;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 136%; /* 20.4px */
+}
+.center-info-span1-2{
+	width:330px;
+}
+.btn1-2{
+	text-align: right;
+    margin-right: 2vw;
+ 
+}
+.icon1-2{
+	background-color: #5E81F4;
+	border-radius: 15px;
+}
+
+.showinthemap{
+	border:none;
+	background-color:#FAF8F1;
+}
+
+/* 여기서부턴 지도안에 박스!*/
+.overlaybox1-2 {
+  margin-top:2vh;
+  left: -3vw;
+  top: -7vh;
+  position: relative;
+  width: 250px;
+  height: 300px;
+  text-align: left;
+  padding: 0px 13px;
+  border: 3px solid #777;
+  background-color: #fff;
+  border-radius: 15px;
+}
+.boxtitle1-2 {
+	margin-left: 2px;
+	margin-top:2vh;
+	color: black;
+	font-size:20px;
+	text-align: left;
+	font-weight:bold;
+
+	}
+.li-wrap1-2{
+	position: absolute;
+	width: 247px;
+}
+.first1-2 {
+    position: relative;
+    width: 247px;
+    margin-bottom: 8px;
+    margin-left: 0;
+    background-size: cover; /* 이미지를 올바르게 표시하기 위해 필요한 경우 */
+}
+.overlaybox1-2 li {
+	list-style: none;
+	position:relative;
+	margin-bottom:2px;
+	background:rgba(250, 248, 241, 1);
+	padding:5px 10px;
+	color:#2b2d36;
+	line-height: 1;
+	}
+.overlaybox1-2 li .title {
+	font-size:13px;
+	white-space: normal;
+	} 
+.overlaybox1-2 li:hover {
+	color:rgba(250, 248, 241, 1);
+	background:rgba(158, 111, 33, 1);
+	}
+
+.title-span1-2{
+	width: 240px;
+}
+
+.li-wrap1-2 {
+  text-align:left;
+  position:relative;
+  width:247px;	
+  margin-bottom:8px;
+  margin-left:0;
+  left:-40px;
+ 
+}
+.title-span1-2{
+	font-size:13px;
+	color: #2b2d36
+	
+}
+.title-span1-2:hover {
+	color:rgba(250, 248, 241, 1);
+}
+
+
+/*모달 css*/
+#modalContent{
+  margin-top: 10vh;
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+}
+
+#printinfo {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: hidden; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modalBody {
+  width: 500px;
+  height: 300px;
+  padding: 30px 30px;
+  margin: 0 auto;
+  border: 1px solid #777;
+  border-radius: 40px;
+  border: 8px solid #43311C;
+  background: #FAF8F1;}
+
+#printinfo1 {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+#modalContent1{
+  margin-top: 10vh;
+  width: 500px;
+  height: 300px;
+  border-radius: 15px;
+}
+
+#modalBody1 {
+  position:absolute;
+  width: 500px;
+  height: 300px;
+  padding: 30px 30px;
+  margin: 0 auto;
+  border: 1px solid #777;
+  border-radius: 40px;
+  border: 8px solid #43311C;
+  background: #FAF8F1;
+  overflow-x: scroll;
+  max-height: 800px;  
+}
+#modalBody1::-webkit-scrollbar {
+    display: none; 
+}
+
+
+
+#closeBtn {
+  top: -20px;
+  float:right;
+  font-weight: bold;
+  stroke-width: 10px;
+  stroke: #43311C;
+  font-size:20px;
+  cursor: pointer;
+}
+
+#closeBtn1 {
+  top: -20px;
+  float:right;
+  font-weight: bold;
+  stroke-width: 10px;
+  stroke: #43311C;
+  font-size:20px;
+  cursor: pointer;
+}
+
+.box-title{
+	display: flex;
+	height: 20px;
+	margin: 20px;
+	text-align:left;
+	font-size: 13px;
+	
+}
+.box-title1{
+	display: flex;
+	height: 20px;
+	margin: 20px;
+	text-align:left;
+	font-size: 13px;
+	
+}
+.small-title{
+	width: 150px;	
+}
+.small-title1{
+	width: 150px;	
+}
+.box-info{
+	font-size: 30px;
+	color: #43311C;
+	text-align: left;
+	height: 41px;
+    margin: -8px;
+}
+.small-content{
+	width:260px;
+	white-space: normal;
+}
+.search-container1-2 {
+		width: 46vw;
+        position: sticky;
+        top: 0;
+        z-index: 1;
+        padding: 10px;
+        background-color: #FAF8F1;
+        border-radius: 15px;
+        box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+   }
+    
+/* 검색 바 꾸미기!  */
+.row{
+	height: 2.5vh;
+    width: 20vw;
+    position: absolute;
+    left: 73vw;
+    top: 11vh;
+   
+}
+

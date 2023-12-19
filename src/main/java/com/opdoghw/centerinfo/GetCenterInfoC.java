@@ -14,7 +14,7 @@ public class GetCenterInfoC extends HttpServlet {
 			throws ServletException, IOException {
 
 		CenterInfoDAO.getCenterInfo(request);
-		request.setAttribute("contentPage", "hw/centerinfodetail.jsp");
+		request.setAttribute("contentPage", "1_adopt/1_2_shelter/centerinfodetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 
 	}

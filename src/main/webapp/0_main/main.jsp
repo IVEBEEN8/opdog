@@ -53,8 +53,8 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
-              <a href="#">Check Registration Number</a>
-              <a href="#">Naming</a>
+              <a onclick="location.href='CheckRegNmC'">Check Registration Number</a>
+              <a onclick="location.href='NamingMainC'">Naming</a>
             </div>
           </div>
         </div>
