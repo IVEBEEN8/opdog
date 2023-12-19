@@ -17,22 +17,24 @@
 	 <form action="ReviewRegC" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
 	<div>
 		<div>
+		<div>
+			<div>Title</div>
+			<div><input id="title" name="title"> </div>
+		</div>
 			<div>Image</div>
 			 <div style="display: none;">
                 <img id="previewImage" style="max-width: 300px; max-height: 300px;" src="#" alt="Preview">
             </div>
 			<div>
-				<input id="fileInput" name="img" type="file" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
+				<input id="fileInput" type="file" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
 				<button type="button"  onclick="document.getElementById('fileInput').click();">Select File</button>
+				 <input type="hidden" id="previousFileName" name="img" value="">
 			</div>
 		</div>
 		<div>
-			<div>Title</div>
-			<div><input id="title" name="title"> </div>
-		</div>
-		<div>
 			<div>Text</div>
-			<div><textarea id="txt" name="txt"> </textarea> </div>
+			 <textarea id="txt" name="txt" cols="30" rows="5" oninput="checkLength()"></textarea>
+             <div id="charCount"></div>
 		</div>
 		<div>
 			<div><button class="등록버튼">register</button></div>

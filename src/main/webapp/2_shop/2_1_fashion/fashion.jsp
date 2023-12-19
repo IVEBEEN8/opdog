@@ -1,53 +1,53 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Fashion</title>
 </head>
 <body>
-	<!-- «Ï¥ı -->
+	<!-- Ìó§Îçî -->
 	<header></header>
 	
-	<!-- ∏ﬁ¿Œ -->
+	<!-- Î©îÏù∏ -->
 	
-	<div class="ºÓ«Œ ƒ´≈◊∞Ì∏Æ">
+	<div class="ÏáºÌïë Ïπ¥ÌÖåÍ≥†Î¶¨">
 	
-		<a class="∆–º« ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='FashionC'">
-			<div class="∆–º« ƒ´≈◊∞Ì∏Æ">
-				<div class="∆–º« ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
+		<a class="Ìå®ÏÖò Ïπ¥ÌÖåÍ≥†Î¶¨ ÎßÅÌÅ¨" onclick="location.href='FashionC'">
+			<div class="Ìå®ÏÖò Ïπ¥ÌÖåÍ≥†Î¶¨">
+				<div class="Ìå®ÏÖò Ïπ¥ÌÖåÍ≥†Î¶¨ Ïç∏ÎÑ§Ïùº">
 					<img alt="" src="https://shop-phinf.pstatic.net/20220704_292/16569175721794ENar_PNG/icon_14.png">
 				</div>
-				<div class="∆–º« ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">fashion</div>
+				<div class="Ìå®ÏÖò Ïπ¥ÌÖåÍ≥†Î¶¨ ÌÖçÏä§Ìä∏">fashion</div>
 			</div>
 		</a>
 		
-		<a class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='FeedC'">
-			<div class="ªÁ∑· ƒ´≈◊∞Ì∏Æ">
-				<div class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
+		<a class="ÏÇ¨Î£å Ïπ¥ÌÖåÍ≥†Î¶¨ ÎßÅÌÅ¨" onclick="location.href='FeedC'">
+			<div class="ÏÇ¨Î£å Ïπ¥ÌÖåÍ≥†Î¶¨">
+				<div class="ÏÇ¨Î£å Ïπ¥ÌÖåÍ≥†Î¶¨ Ïç∏ÎÑ§Ïùº">
 					<img alt="" src="https://shop-phinf.pstatic.net/20230119_57/1674087418600eO0eX_PNG/icon_04.png">
 				</div>
-				<div class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">feed</div>
+				<div class="ÏÇ¨Î£å Ïπ¥ÌÖåÍ≥†Î¶¨ ÌÖçÏä§Ìä∏">feed</div>
 			</div>
 		</a>
 		
-		<a class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='SnackC'">
-		<div class="∞£Ωƒ ƒ´≈◊∞Ì∏Æ">
-			<div class="∞£Ωƒ ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
+		<a class="ÏÇ¨Î£å Ïπ¥ÌÖåÍ≥†Î¶¨ ÎßÅÌÅ¨" onclick="location.href='SnackC'">
+		<div class="Í∞ÑÏãù Ïπ¥ÌÖåÍ≥†Î¶¨">
+			<div class="Í∞ÑÏãù Ïπ¥ÌÖåÍ≥†Î¶¨ Ïç∏ÎÑ§Ïùº">
 				<img alt="" src="https://shop-phinf.pstatic.net/20220616_30/1655365227214qAvGJ_PNG/icon_05.png">
 			</div>
-			<div class="∞£Ωƒ ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">snack</div>
+			<div class="Í∞ÑÏãù Ïπ¥ÌÖåÍ≥†Î¶¨ ÌÖçÏä§Ìä∏">snack</div>
 		</div>
 		</a>
 		
-		<a class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='ToyC'">
-		<div class="¿Â≥≠∞® ƒ´≈◊∞Ì∏Æ">
-			<div class="¿Â≥≠∞® ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
+		<a class="ÏÇ¨Î£å Ïπ¥ÌÖåÍ≥†Î¶¨ ÎßÅÌÅ¨" onclick="location.href='ToyC'">
+		<div class="Ïû•ÎÇúÍ∞ê Ïπ¥ÌÖåÍ≥†Î¶¨">
+			<div class="Ïû•ÎÇúÍ∞ê Ïπ¥ÌÖåÍ≥†Î¶¨ Ïç∏ÎÑ§Ïùº">
 				<img alt="" src="https://shop-phinf.pstatic.net/20220616_176/1655365272658tuiIW_PNG/icon_13.png">
 			</div>
-			<div class="¿Â≥≠∞® ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">toy</div>
+			<div class="Ïû•ÎÇúÍ∞ê Ïπ¥ÌÖåÍ≥†Î¶¨ ÌÖçÏä§Ìä∏">toy</div>
 		</div>
 		</a>
 		
@@ -56,31 +56,34 @@
 	
 	
 	
-	<div class="æ∆¿Ã≈€µÈ">
+	<div class="ÏïÑÏù¥ÌÖúÎì§">
 		<c:forEach  varStatus="" var="fs" items="${fashions }">
-		<div class="æ∆¿Ã≈€">	
-			<div class="æ∆¿Ã≈€ ΩÊ≥◊¿œ">
-		    	<img class="ΩÊ≥◊¿œ ¿ÃπÃ¡ˆ" src="${fs.fs_img }" >
+		<a href="FashionDetailC?no=${fs.fs_no }">
+		<div class="ÏïÑÏù¥ÌÖú">	
+			<div class="ÏïÑÏù¥ÌÖú Ïç∏ÎÑ§Ïùº">
+		    	<img class="Ïç∏ÎÑ§Ïùº Ïù¥ÎØ∏ÏßÄ" src="${fs.fs_img }" >
 			</div>
-	    	<div class="æ∆¿Ã≈€ ¡§∫∏">	
-    			<div class="æ∆¿Ã≈€ ¡¶∏Ò">${fs.fs_title }</div>
-    			<div class="æ∆¿Ã≈€ ∞°∞›">${fs.fs_price } &#8361;</div>
-    			<div class="æ∆¿Ã≈€ ∫Í∑£µÂ">${fs.fs_brand }</div>
+	    	<div class="ÏïÑÏù¥ÌÖú Ï†ïÎ≥¥">	
+    			<div class="ÏïÑÏù¥ÌÖú Ï†úÎ™©">${fs.fs_title }</div>
+    			<div class="ÏïÑÏù¥ÌÖú Í∞ÄÍ≤©">${fs.fs_price } &#8361;</div>
+    			<div class="ÏïÑÏù¥ÌÖú Î∏åÎûúÎìú">${fs.fs_brand }</div>
     		</div>
     	</div>	
+		</a>
 		</c:forEach>
+		<div> <button onclick="location.href='FashionRegC'">Îç∞Ïù¥ÌÑ∞ ÏûÖÎ†• </button> </div>
 	</div>
 	
 	<hr>
 	
-	<!-- ∆‰¿Ã¡ˆ √≥∏Æ -->
-	<a href="FashionPageC?p=1">[∏«√≥¿Ω]</a>
+	<!-- ÌéòÏù¥ÏßÄ Ï≤òÎ¶¨ -->
+	<a href="FashionPageC?p=1">[Îß®Ï≤òÏùå]</a>
 	<c:choose>
 		<c:when test="${curPageNo != 1 }">
-		<a href = "FashionPageC?p=${curPageNo -1 }"><button>¢∏</button></a>
+		<a href = "FashionPageC?p=${curPageNo -1 }"><button>‚óÄ</button></a>
 		</c:when>
 			<c:otherwise>
-				<button class="¿Ã¿¸πˆ∆∞">¢∏</button>
+				<button class="Ïù¥Ï†ÑÎ≤ÑÌäº">‚óÄ</button>
 			</c:otherwise>
 	</c:choose>
 	
@@ -90,16 +93,16 @@
 	
 	<c:choose>
 		<c:when test="${pageCount != curPageNo }">
-		<a href = "FashionPageC?p=${curPageNo +1 }"><button>¢∫</button></a>
+		<a href = "FashionPageC?p=${curPageNo +1 }"><button>‚ñ∂</button></a>
 		</c:when>
 			<c:otherwise>
-				<button class="¥Ÿ¿Ωπˆ∆∞">¢∫</button>
+				<button class="Îã§ÏùåÎ≤ÑÌäº">‚ñ∂</button>
 			</c:otherwise>
 	</c:choose>
-	<a href="FashionPageC?p=${pageCount }">[∏«≥°]</a>
+	<a href="FashionPageC?p=${pageCount }">[Îß®ÎÅù]</a>
 	
 	
-	<!-- «™≈Õ -->
+	<!-- Ìë∏ÌÑ∞ -->
 	<footer>
 	</footer>
 </body>

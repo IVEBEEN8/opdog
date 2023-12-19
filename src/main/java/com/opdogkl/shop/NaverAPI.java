@@ -33,15 +33,18 @@ public class NaverAPI {
 //		"https://openapi.naver.com/v1/search/shop.json?query="
 		
 		
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		
+		
+		
+		
 		try {
-			Scanner sc = new Scanner(System.in);
-			System.out.println("검색어? ");
-			String str = sc.next();
-			
+			String str = "강아지사료";
 			str = URLEncoder.encode(str,"utf-8");
 			System.out.println(str);
 			
-			String url = "https://openapi.naver.com/v1/search/shop.json?query=" + str + "&display=60";
+			String url = "https://openapi.naver.com/v1/search/shop.json?query=" + str + "&display=48";
 			URL u = new URL(url);
 			HttpsURLConnection huc =(HttpsURLConnection)u.openConnection();
 			huc.addRequestProperty("X-Naver-Client-Id", "xsNn_8ET7Ge8rnSa6ees");
@@ -56,14 +59,12 @@ public class NaverAPI {
 			System.out.println(11);
 			System.out.println(naverData);	
 			JSONArray items = (JSONArray) naverData.get("items");
-			
-			Connection con = null;
-			PreparedStatement pstmt = null;
-			
-			
+			con = DBManager.connect();
+			String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			pstmt = con.prepareStatement(sql); 
 			for (int i = 0; i < items.size(); i++) {
 					JSONObject item = (JSONObject) items.get(i);
-			
 			
 			String title = (String) item.get("title");
 //			String title = item.get("title") + "";
@@ -90,11 +91,9 @@ public class NaverAPI {
 			
 			String clientId = "f8E1dHSfLIZGwep16ykM";//애플리케이션 클라이언트 아이디값";
 	        String clientSecret = "g9Ae4Vludr";//애플리케이션 클라이언트 시크릿값";
-
 	        String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
-	        
-	        
 	        String text;
+	        
 	        try { 
 	            text = URLEncoder.encode(title+"\n"+brand, "UTF-8");
 	        } catch (UnsupportedEncodingException e) {
@@ -123,29 +122,25 @@ public class NaverAPI {
 	       String translatedTitle = splitStr[0];
 	       String translatedBrand = splitStr[1];
 
-	        
-	        
-			
-	        
-			
-			
 			System.out.println("----------파파고 API 끝-----------------");
-			String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
-			con = DBManager.connect();
-			pstmt = con.prepareStatement(sql); 
+			
+			
 			pstmt.setString(1, (String)item.get("image"));
 			pstmt.setString(2, translatedTitle);
 			pstmt.setLong(3, Long.parseLong(item.get("lprice").toString()));
 
 			pstmt.setString(4, translatedBrand);
-			System.out.println("업로드완료!");
 			pstmt.executeUpdate();
+			System.out.println("등록성공");
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
+			System.out.println("등록실패");
 			
+		} finally {
+			DBManager.close(con, pstmt, null);
 		}
-		
 		
 	}
 

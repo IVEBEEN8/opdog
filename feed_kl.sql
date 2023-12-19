@@ -10,4 +10,4 @@ create sequence feed_kl_seq;
 insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?);
 select * from feed_kl;
 drop table feed_kl;
-drop sequence feed_kl;
+drop sequence feed_kl_seq;
