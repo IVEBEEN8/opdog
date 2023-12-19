@@ -24,20 +24,20 @@
 	margin-left:37.09375vw;
 	height :945px;
 	width : 464px;
-	background-color:pink;
+	
 }
 /* 챗팅창조절! */
 .chat-box-wrap1-2{
 	position:relative;
 	top:163px;
 	margin-left:1vw;
-	background-color:yellow;
+	
 	width:425px;
     height: 643px;
     overflow-y : scroll;
 }
 .chat-bottom-wrap1-2{
-	background-color: green;
+	margin-top: 15vh;
 	display:flex;
 	margin-left:1vw;
 	width:425px;
@@ -50,14 +50,17 @@
 	display:none;
 }
 .chat-box {
-	background-color:blue;
+	padding:3px;
+	border-radius:15px;
 	text-align:left;
 	background: #eee;
     max-width: 200px;
-   
+    font-size: 15px;
 }
 .mine {
     margin-left: auto;
+    background-color:#278EFF;
+    color: white;
 }
 #send{
 	border: none;

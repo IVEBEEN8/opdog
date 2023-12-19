@@ -16,10 +16,10 @@
     	<div class="smartphone-wrap">
     		<div class="chat-box-wrap1-2">
 	      		<div class="line" >
-    	     		<span class="chat-box"></span>
+    	     		<span class="chat-box">Let's talk about dogs!</span>
       			</div>
       			<div class="line">
-        			<span class="chat-box mine"></span>
+        			<span class="chat-box mine">>_<</span>
       			</div>
     		</div>
     		<div class="chat-bottom-wrap1-2">
