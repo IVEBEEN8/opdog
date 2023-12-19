@@ -6,18 +6,15 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+@WebServlet("/MyPageLikeC")
+public class MyPageLikeC extends HttpServlet {
 
-import com.opdoghw.login.LoginDAO;
-@WebServlet("/MyPageHC")
-public class MyPageHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		MyPageDAO.likeLoad(request);
-//		MyPageDAO.infoLoad(request);
-		request.getRequestDispatcher("0_main/myPage/myPageMain.jsp").forward(request, response);
+		MyPageDAO.dogLike(request,response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+
 	}
 
 }
