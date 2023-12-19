@@ -9,28 +9,19 @@
 
         // 'send' 버튼 클릭 이벤트 핸들러
         document.getElementById('send').addEventListener('click', function() {
-            // 'send' 버튼이 클릭되면 input 값 비우기
+            // 'send' 버튼이 클릭되면 input 값 비우기	
+		
            document.getElementById('input').value = "";
+		 
         });
 
     };
 //HTML 문서가 완전히 로드되었을 때 지정된 함수를 실행하도록 하는 이벤트 리스너
 document.addEventListener("DOMContentLoaded", function () {
- /*	fetch('4_service/4_3_askAnything/askAboutDog.jsp')
-    .then(response => response.json()) // JSON 형식의 응답을 파싱
-    .then(data => {
-        // 받아온 JSON 데이터를 처리
-        const responseMessage = data.message;
-        // HTML에 표시할 처리 로직 추가
-        document.getElementById('firstQ').innerHTML = responseMessage;
-		console.log(responseMessage);
-		        
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    }); */
-	
+
+	document.getElementById('input').focus();
     document.querySelector("#send").addEventListener("click", async function () {  
+	document.getElementById('input').focus();
 		//이 코드는 템플릿 리터럴(template literal)을 사용하여 HTML 코드를 동적으로 생성하는 부분입니다.
 		// 여기서 생성된 HTML 코드는 사용자의 입력 값을 채팅 창에 표시하는 역할을 합니다.
 		 var template = `<div class="line">
@@ -42,9 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		//여러 줄의 문자열과 변수를 쉽게 표현할 수 있습니다.
         
         document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", template);
+		const chatBoxWrap = document.querySelector(".chat-box-wrap1-2");
+        chatBoxWrap.scrollTop = chatBoxWrap.scrollHeight;
 
 		const prompt = document.querySelector("#input").value;	
-        const apiKey = "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" // open ai_KEY
+        const apiKey = "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" // open ai_KEY
         
 		if(prompt == null){		
 			prompt= document.querySelector("#input").value;	
@@ -87,11 +80,17 @@ document.addEventListener("DOMContentLoaded", function () {
                     (choice) => choice.message.role === "assistant"
                 ).message.content;
 
+				
                 var assistantTemplate = `<div class="line">
                     <span class="chat-box">${assistantMessage}</span>
                 </div>`;
                 document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", assistantTemplate);
-            } else {
+            
+				//자동 스크롤!		
+				const chatBoxWrap = document.querySelector(".chat-box-wrap1-2");
+       		    chatBoxWrap.scrollTop = chatBoxWrap.scrollHeight;		
+
+				} else {
                 console.log("API 응답에 choices가 없습니다.");
             }
         } catch (error) {
