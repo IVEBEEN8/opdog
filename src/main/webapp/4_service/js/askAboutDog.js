@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", template);
 
 		const prompt = document.querySelector("#input").value;	
-        const apiKey = "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" // open ai_KEY
+        const apiKey = "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" // open ai_KEY
         
 		if(prompt == null){		
 			prompt= document.querySelector("#input").value;	
