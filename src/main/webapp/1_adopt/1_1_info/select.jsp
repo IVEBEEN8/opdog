@@ -69,9 +69,10 @@ ${sido} = 광역시 배열
         </select>
         <button id="selectbutton">버튼</button>
 	</div>
+	<h3>${account.no }</h3>
 	<!-- 애견정보 div -->
 	<div class="#">
-		<div>강아지 정보</div>			
+		<div> <p style="display:none;" id="account">${account.no }</p> 강아지 정보</div>			
 		<div id="data-container"></div><!-- 강아지 정보 리스트 -->
 		<div id="pagination"></div><!-- 페이지 -->	
 		

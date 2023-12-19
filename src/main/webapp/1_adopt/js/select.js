@@ -223,24 +223,30 @@ $(document).ready(function() {
 		$('#modalBody').append('<div class="#" id="detailinfo">관할기관: '+items.orgNm+'담당부서 '+items.chargeNm +'연락처 '+items.officetel+'</div>');
 		$('#modalBody').append('<div class="#" id="detailinfo"><button id="like" ><p style="display:none;">'+ values +'</p>장바구니</button></div>');
 		$('#modalWrap').css({"display":"block"});
-		console.log(values);
 	});
 	$(document).on('click','button[id=like]',function(){
 		var selectedValue = $(this).children().text();
-		var value = JSON.parse(selectedValue);
-		console.log(value);
-		$.ajax({
-			url : "MyPageLikeC",
-			type: "GET",
-			data: { value : selectedValue},
-			success: function(){
-				alert('등록완료되었습니다.');
+		var id = $('#account').text();
+
+		if(id != ""){
+			$.ajax({
+				url : "MyPageLikeC",
+				type: "GET",
+				data: { value : selectedValue},
+				success: function(){
+					alert('등록완료되었습니다.');
 				
-			},
-			error: function(error) {
-            	    console.log('Ajax 요청 에러:', error);
-           	}
-		});	
+				},
+				error: function(error) {
+            		    console.log('Ajax 요청 에러:', error);
+           		}
+			});	
+		} else{
+			let goLogin = confirm('로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?')
+			if(goLogin){
+				location.href="LoginMainHC"
+			}
+		}		
 		
 	});
 });
@@ -248,21 +254,18 @@ $(document).ready(function() {
 function pagination(json){
 	console.log(json)
 	console.log('---------')
-		let container = $('#pagination');
-		container.pagination({
-			dataSource: json,
-			callback: function(data, pagination){
-				var dataHtml = '<ul>';
-				$.each(data, function (index,item){
-					dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button> </div></li>';
-					console.log(item)
-					});
-				dataHtml += '</ul>';
-				$("#data-container").html(dataHtml);
-			}
+	let container = $('#pagination');
+	container.pagination({
+		dataSource: json,
+		callback: function(data, pagination){
+			var dataHtml = '<ul>';
+			$.each(data, function (index,item){
+				dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button> </div></li>';
+				console.log(item)
+			});
+			dataHtml += '</ul>';
+			$("#data-container").html(dataHtml);
+		}
 	});
-	
-	
-	
-	
 }
+	
