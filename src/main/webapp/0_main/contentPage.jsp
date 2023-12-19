@@ -82,9 +82,9 @@
         </div>
         <div class="footer2">
           <div class="askMe">ask me</div>
-          <div>
+          <div class="ask-input">
           	<form action="AskAboutDogMainC" method="post">
-            <input name ="askanything" id="input" type="text">
+            <input class="askanything" name ="askanything" id="input" type="text">
             <a id="send1"><button><img src="0_main/img/send-icon.png" alt="보내기버튼"/></button></a>
           	</form>
           </div>
