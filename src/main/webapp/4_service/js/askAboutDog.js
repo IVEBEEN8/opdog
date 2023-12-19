@@ -1,7 +1,36 @@
+ window.onload = function() {
+        // 페이지가 로드될 때 input 값이 설정되어 있다면 비우기
+        // 페이지가 로드될 때 'send' 버튼을 자동으로 클릭
+        document.getElementById('send').click();
+
+        if (document.getElementById('input').value.trim() !== "") {
+            document.getElementById('input').value = "";
+        }
+
+        // 'send' 버튼 클릭 이벤트 핸들러
+        document.getElementById('send').addEventListener('click', function() {
+            // 'send' 버튼이 클릭되면 input 값 비우기
+           document.getElementById('input').value = "";
+        });
+
+    };
 //HTML 문서가 완전히 로드되었을 때 지정된 함수를 실행하도록 하는 이벤트 리스너
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector("#send").addEventListener("click", async function () {
-       
+ /*	fetch('4_service/4_3_askAnything/askAboutDog.jsp')
+    .then(response => response.json()) // JSON 형식의 응답을 파싱
+    .then(data => {
+        // 받아온 JSON 데이터를 처리
+        const responseMessage = data.message;
+        // HTML에 표시할 처리 로직 추가
+        document.getElementById('firstQ').innerHTML = responseMessage;
+		console.log(responseMessage);
+		        
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    }); */
+	
+    document.querySelector("#send").addEventListener("click", async function () {  
 		//이 코드는 템플릿 리터럴(template literal)을 사용하여 HTML 코드를 동적으로 생성하는 부분입니다.
 		// 여기서 생성된 HTML 코드는 사용자의 입력 값을 채팅 창에 표시하는 역할을 합니다.
 		 var template = `<div class="line">
@@ -12,12 +41,15 @@ document.addEventListener("DOMContentLoaded", function () {
 		//템플릿 리터럴은 문자열을 다루는 새로운 문법으로, 
 		//여러 줄의 문자열과 변수를 쉽게 표현할 수 있습니다.
         
-        document.querySelector(".chat-content").insertAdjacentHTML("beforeend", template);
+        document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", template);
 
-        const apiKey = "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" // open ai_KEY
-        const prompt = document.querySelector("#input").value;
-
-        try {
+		const prompt = document.querySelector("#input").value;	
+        const apiKey = "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" // open ai_KEY
+        
+		if(prompt == null){		
+			prompt= document.querySelector("#input").value;	
+		}
+        try{
             const response = await fetch("https://api.openai.com/v1/chat/completions", {
                 method: "POST",
 				
@@ -58,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 var assistantTemplate = `<div class="line">
                     <span class="chat-box">${assistantMessage}</span>
                 </div>`;
-                document.querySelector(".chat-content").insertAdjacentHTML("beforeend", assistantTemplate);
+                document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", assistantTemplate);
             } else {
                 console.log("API 응답에 choices가 없습니다.");
             }

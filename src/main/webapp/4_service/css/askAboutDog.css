@@ -1,18 +1,79 @@
 @charset "UTF-8";
+.chat-content-wrap1-2{
+	
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	
+}
+.chat-content1-2 {
+		position: absolute;	
+		margin-top: 5vh;
+        height: 100vh;
+        width: 100vw;
+        overflow-y: none;
+      }
+.chat-content1-2::-webkit-scrollbar{
+	display:none;
+}
+.smartphone-wrap{	
+	top: 30vh;
+	position: relative;
+	margin-top:-23vh;
+	background: url('../img/iphonebackground.png') center center no-repeat;
+	margin-left:37.09375vw;
+	height :945px;
+	width : 464px;
+	background-color:pink;
+}
+/* 챗팅창조절! */
+.chat-box-wrap1-2{
+	position:relative;
+	top:163px;
+	margin-left:1vw;
+	background-color:yellow;
+	width:425px;
+    height: 643px;
+    overflow-y : scroll;
+}
+.chat-bottom-wrap1-2{
+	background-color: green;
+	display:flex;
+	margin-left:1vw;
+	width:425px;
+}
+.line {
+   margin-top: 2vh;
+   display: flex;
+}
+.chat-box-wrap1-2::-webkit-scrollbar{
+	display:none;
+}
+.chat-box {
+	background-color:blue;
+	text-align:left;
+	background: #eee;
+    max-width: 200px;
+   
+}
+.mine {
+    margin-left: auto;
+}
+#send{
+	border: none;
+    padding: 0; /* padding을 0으로 설정하여 내부 공간을 없앨 수 있습니다. */
+    background: none; /* 배경을 없애거나 원하는 스타일로 지정할 수 있습니다. */
+	background: url('../img/sendbtn.png') center center no-repeat;
+	margin-left: 0.8vw;
+    height: 38px;
+   	width: 32px;
+   	margin-bottom: 1vh;
+}
+.input-box{
+	border-radius :15px;
+	height:2.6vh;
+	margin-left:7vw;
+    width: 11.2vw;
+    border: none;
+}
 
-.chat-content {
-        height: 350px;
-        overflow-y: scroll;
-      }
-      .line {
-        margin-top: 10px;
-        display: flex;
-      }
-      .chat-box {
-        background: #eee;
-        padding: 5px;
-        max-width: 200px;
-      }
-      .mine {
-        margin-left: auto;
-      }
