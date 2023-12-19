@@ -2,7 +2,7 @@ function checkForm() {
   // 이미지 파일이 선택되었는지 확인합니다.
   if (document.getElementById("fileInput").files.length === 0&&
     document.getElementById("oldImg").value.trim() === "") {
-    alert("이미지 파일을 선택하세요.");
+    alert("Please select an image file");
     document.getElementById("fileInput").focus();
     return false;
   }
@@ -12,7 +12,7 @@ function checkForm() {
 	
   // 제목이 공백 또는 띄어쓰기로만 이루어져 있는 경우를 확인합니다.
   if (!titleValue.trim()) {
-    alert("제목을 입력하세요.");
+    alert("Please enter a title");
     document.getElementById("title").focus();
     return false;
   }
@@ -22,7 +22,7 @@ function checkForm() {
 
   // 내용이 공백 또는 띄어쓰기로만 이루어져 있는 경우를 확인합니다.
   if (!txtValue.trim()) {
-    alert("내용을 입력하세요.");
+    alert("Please enter text");
     document.getElementById("txt").focus();
     return false;
   }
@@ -31,7 +31,7 @@ function checkForm() {
  
   	return true;
 }
-
+// 이미지 미리보기 
 function previewSelectedImage(input) {
   var preview = document.getElementById('previewImage');
   var file = input.files[0];
@@ -53,3 +53,16 @@ function previewSelectedImage(input) {
     preview.src = "1_adopt/1_4_review/imgFolder/" + document.getElementById("oldImg").value;
   }
 }
+
+// 글자수제한
+function checkLength() {
+        var textarea = document.getElementById('txt');
+        var charCount = document.getElementById('charCount');
+        var maxLength = 1500;
+
+        if (textarea.value.length > maxLength) {
+            textarea.value = textarea.value.substring(0, maxLength);
+        }
+
+        charCount.innerText = '글자 수: ' + textarea.value.length + ' / ' + maxLength;
+    }
