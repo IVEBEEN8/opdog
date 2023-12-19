@@ -1,0 +1,45 @@
+.check {
+  cursor: pointer;
+}
+.check input {
+  display: none;
+}
+.check .icon {
+  display: inline-block;
+  width: 100px;
+  height: 100px;
+  background-color: transparent;
+  border: 10px solid #000;
+  position: relative;
+}
+.check .icon::before,
+.check .icon::after {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 0;
+  background-color: #ff1100;
+  position: absolute;
+  transform-origin: left top;
+}
+.check .icon::before {
+  top: 50px;
+  left: 10px;
+  transform: rotate(-45deg);
+}
+.check .icon::after {
+  top: 85px;
+  left: 46px;
+  transform: rotate(-135deg);
+}
+.check input:checked ~ .icon {
+  border-color: #ff1100;
+}
+.check input:checked ~ .icon::before {
+  height: 50px;
+  transition: all 0.35s ease;
+}
+.check input:checked ~ .icon::after {
+  height: 70px;
+  transition: all 0.35s ease 0.35s;
+}

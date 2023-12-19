@@ -73,7 +73,7 @@ public class ReviewDAO {
 //	        String op_email = "review_kl_seq.nextval";
 	        
 	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-			String img = mr.getFilesystemName("img");
+			String img = mr.getParameter("img");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			
