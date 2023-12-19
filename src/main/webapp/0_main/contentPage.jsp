@@ -71,7 +71,8 @@
 	<!--  컨텐츠페이지 -->
 	<div align="center">
 		<div><jsp:include page = "${contentPage }"></jsp:include></div>	
-	</div>	 
+	</div>
+
     <!-- 푸터!!! -->
     <footer>
       <div>
@@ -82,8 +83,10 @@
         <div class="footer2">
           <div class="askMe">ask me</div>
           <div>
-            <input name ="name" class="chat-box" id="input" type="text">
-            <a onclick="" id="send"><img src="0_main/img/send-icon.png" alt="보내기버튼" /></a>
+          	<form action="AskAboutDogMainC" method="post">
+            <input name ="askanything" id="input" type="text">
+            <a id="send1"><button><img src="0_main/img/send-icon.png" alt="보내기버튼"/></button></a>
+          	</form>
           </div>
         </div>                                           
         <div class="footer3">
@@ -97,8 +100,8 @@
             <span>About Us</span>
             <span>Support</span>
             <span>Adoption Process</span>
-            <span>Service</span>
-            <span>Shelter Map</span>
+            <span onclick="location.href='CheckRegNmC'">Service</span>
+            <span onclick="location.href='CenterMainC'" >Shelter Map</span>
           </div>
         </div>
       </div>

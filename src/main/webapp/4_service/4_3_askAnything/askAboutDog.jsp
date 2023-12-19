@@ -1,3 +1,4 @@
+<%@ page import="com.opdoghw.askaboutdog.askAnythingDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,15 +11,22 @@
 <title>Insert title here</title>
 </head>
 <body>
-    <div class="chat-content">
-      <div class="line">
-        <span class="chat-box"></span>
-      </div>
-      <div class="line">
-        <span class="chat-box mine"></span>
-      </div>
+<div class="chat-content-wrap1-2">
+    <div class="chat-content1-2">
+    	<div class="smartphone-wrap">
+    		<div class="chat-box-wrap1-2">
+	      		<div class="line" >
+    	     		<span class="chat-box"></span>
+      			</div>
+      			<div class="line">
+        			<span class="chat-box mine"></span>
+      			</div>
+    		</div>
+    		<div class="chat-bottom-wrap1-2">
+  		  		<input class="input-box" name = "please" id="input" value="${askanything}" />
+   				<button id="send"><img src="4_service/img/sendbtn.svg" alt="Send Button"></button>
+    		</div>
+    	</div>
     </div>
-    <input class="chat-box" id="input" />
-    <button id="send">전송</button>  
+</div>  
 </body>
-</html>

@@ -48,7 +48,6 @@ public class CenterInfoDAO {
 				center.add(c);
 			}
 			request.setAttribute("centers", center);
-			System.out.println(center);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -92,7 +91,7 @@ public class CenterInfoDAO {
 				obj.put("closeday", rs.getString("c_closeday")); // 보호소휴무일
 
 				// 결과값이 잘 들어갔는지 확인!
-				System.out.println(obj);
+				// System.out.println(obj);
 				mydbCenterData.add(obj);
 				response.setContentType("application/json; charset=utf-8");
 				response.getWriter().print(mydbCenterData);
@@ -200,8 +199,50 @@ public class CenterInfoDAO {
 
 	}
 
+	@SuppressWarnings("unchecked")
 	public static void searchCenter(HttpServletRequest request, HttpServletResponse response) {
 
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String searchField = request.getParameter("searchField");
+		String searchText = request.getParameter("searchText");
+		String sql = "select * from centerinfo where " + searchField + " like ?";
+
+		JSONArray searchedInfo = new JSONArray();
+		JSONObject si = null;
+
+		try {
+			System.out.println(searchField);
+			System.out.println(searchText);
+
+			con = DBManager_khw.connect();
+			System.out.println("checked");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "%" + searchText + "%");
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+				si = new JSONObject();
+				si.put("careNm", rs.getString("c_careNm")); // 보호소명
+				si.put("careAddr", rs.getString("c_careAddr")); // 보호소주소
+				si.put("verNum", rs.getInt("c_vetPersonCnt")); // 보호소수의사수
+				si.put("tel", rs.getString("c_careTel")); // 보호소전화번호
+				si.put("oprtime", rs.getString("c_oprtime")); // 보호소오픈시간
+				si.put("closetime", rs.getString("c_closetime")); // 보호소닫는시간
+				si.put("closeday", rs.getString("c_closeday")); // 보호소휴무일
+				System.out.println(si);
+				searchedInfo.add(si);
+			}
+			// 결과값이 잘 들어갔는지 확인!
+			response.setContentType("application/json; charset=utf-8");
+			response.getWriter().print(searchedInfo);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
 	}
 
 }

@@ -12,16 +12,19 @@ import javax.servlet.http.HttpServletResponse;
 public class AskAboutDogMainC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		System.out.println("checking if you are here ! ");
 		request.setAttribute("contentPage", "../4_service/4_3_askAnything/askAboutDog.jsp");
-		System.out.println("checking if you are here too!");
 		// request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println(request.getParameter("askanything"));
+		response.setCharacterEncoding("utf-8");
+		askAnythingDAO.askAnything(request);
+		request.setAttribute("contentPage", "../4_service/4_3_askAnything/askAboutDog.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+
 	}
 
 }

@@ -12,12 +12,13 @@ import javax.servlet.http.HttpServletResponse;
 public class SearchC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("check1");
-		CenterInfoDAO.searchCenter(request, response);
+
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println("check1");
+		CenterInfoDAO.searchCenter(request, response);
 	}
 
 }

@@ -23,24 +23,18 @@
 </head>
 <body>
 <div class="containar1-2">
-
 	<button class="reload-map1-2">Reload Map</button>
 	<div class="map" id="map"></div>
-	<div class="infobox-wrap1-2">
-	 <!-- 지도내에서 검색!  -->
-	 <br><br>
-	<div id="searchResults" class="centerinfo-print-wrap1-2"></div>
-	<div class="search-container1-2">
-	
-    <div class="row">
+	<!--검색창!-->
+	<div class="row">
         <form method="post" name="keywords-serch" id="searchForm">
             <table class="pull-right">
                 <tr>
                     <td>
                         <select class="form-control" name="searchField">
                             <option value="0">Select</option>
-                            <option value="op-Shelter">ShelterName</option>
-                            <option value="op-addr">Address</option>
+                            <option value="c_careNm">ShelterName</option>
+                            <option value="c_careAddr">Address</option>
                         </select>
                     </td>
                     <td>
@@ -53,11 +47,11 @@
             </table>
         </form>
     </div>
-</div>
-<br><br>
+    <!-- 인풋박스 시작! -->
+	<div class="infobox-wrap1-2">
 	 <c:forEach var="c" items="${centers}" varStatus="status">
-	 	<button class="showinthemap" value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }!${c.careTel}"><div class="centerinfo-print-wrap1-2">
-	 		<div class="centerimg1-2" >이미지들어갈꺼구열</div>
+	 	<button class="showinthemap" value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }!${c.careTel}">
+	 	<div class="centerinfo-print-wrap1-2">
 	 		<div class="centerinfo-print1-2">
 	 			<div class="center-title1-2">${c.careNm }</div>
 	 			<div class="center-info-wrap1-2">
@@ -73,9 +67,9 @@
 	 				<div class="center-info1-2">${c.careTel}</div>
 	 			</div>
 	 		</div>
-	 	</div></button>
+	 	</div>
+	 	</button>
        </c:forEach>
-       
 	</div>
 </div>
 
@@ -83,6 +77,14 @@
 	<div id="printinfo">
   		<div id="modalContent">
    			 <div id="modalBody">
+    		</div>
+  		</div>
+	</div>
+	
+<!--검색 모달! -->
+	<div id="printinfo1">
+  		<div id="modalContent1">
+   			 <div id="modalBody1">
     		</div>
   		</div>
 	</div>
@@ -189,10 +191,14 @@ async function initializeMap() {
 initializeMap();
 
 
-//db파일에 있는 데이터값 들고와서 사용!    
+//db파일에 있는 데이터값 들고와서 사용!
 var map;
 $(document).ready(function() {
-    $('.showinthemap').on("click", function(){
+    $('.reload-map1-2').on("click", function(){
+    	location.reload();
+    })
+	
+	$('.showinthemap').on("click", function(){
         var clickedValue = $(this).val();
         var scv = clickedValue.split("!");
         for(let i =0; i<scv.length; i++){
