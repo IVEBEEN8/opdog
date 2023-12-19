@@ -1,36 +1,48 @@
 package com.opdogkl.shop;
 
-
-
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import org.apache.tomcat.dbcp.dbcp2.BasicDataSource;
 
 public class DBManager {
-		
-		// ����
-	public static Connection connect() throws Exception {
-		String url = "jdbc:oracle:thin:@k9ytr1put6n556o8_high?TNS_ADMIN=C:/Bada/Wallet_K9YTR1PUT6N556O8";
-		return DriverManager.getConnection(url,"ADMIN","Thfeptmzm802!!");
-		
-		
+//db 관련 작업을 할 때 연결코드를 쓴 이후 작업 해옴.
+//다 쓰면 닫음
+// 그걸 AOP하자
+	private static BasicDataSource dataSource;
+
+	static {
+		// DBCP (Apache Commons Database Connection Pooling) 설정
+		dataSource = new BasicDataSource();
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		// 희
+		dataSource.setUrl(
+				"jdbc:oracle:thin:@k9ytr1put6n556o8_medium?TNS_ADMIN=C:/Bada/Wallet_K9YTR1PUT6N556O8");
+//	    dataSource.setUrl("jdbc:oracle:thin:@k9ytr1put6n556o8_high?TNS_ADMIN=/Users/namjajeonghowon/Desktop/hw/Wallet_K9YTR1PUT6N556O8");
+		dataSource.setUsername("ADMIN");
+		dataSource.setPassword("Thfeptmzm802!!");
+
+		// 다양한 DBCP 설정들을 추가할 수 있습니다.ß
+	}
+
+	public static Connection connect() throws SQLException {
+		System.out.println("connect~~");
+		return dataSource.getConnection();
 	}
 
 	public static void close(Connection con, PreparedStatement pstmt, ResultSet rs) {
-		
+
 		try {
-			
 			if (rs != null) {
 				rs.close();
 			}
 			pstmt.close();
 			con.close();
-		} catch (Exception e) {
-			// TODO Auto-generated catch block
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+
 	}
 }
