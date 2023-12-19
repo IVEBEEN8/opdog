@@ -11,7 +11,7 @@
     <!-- 회원가입 로그인 버튼 -->
         <div class="header-r">
           <button class="reg-btn">
-            <span class="reg-text">MyPage</span>
+            <span class="reg-text" onclick="location.href='MyPageHC'">MyPage</span>
           </button>
           <button onclick="location.href='LogoutC'" class="login-btn">
             <span class="login-text">Logout</span>
