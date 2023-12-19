@@ -19,30 +19,28 @@
 .smartphone-wrap{	
 	top: 30vh;
 	position: relative;
-
 	margin-top:-23vh;
 	background: url('../img/iphonebackground.png') center center no-repeat;
 	margin-left:37.09375vw;
-	height : 87.5vh;
-	width : 24.166666666666668vw;
+	height :945px;
+	width : 464px;
 	background-color:pink;
 }
 /* 챗팅창조절! */
 .chat-box-wrap1-2{
+	position:relative;
+	top:163px;
 	margin-left:1vw;
-	position: absolute;
 	background-color:yellow;
-	width:22vw;
-    margin-top: 15vh;
-    max-height: 59vh;
+	width:425px;
+    height: 643px;
     overflow-y : scroll;
 }
 .chat-bottom-wrap1-2{
+	background-color: green;
 	display:flex;
-	margin-top:75vh;
 	margin-left:1vw;
-	position: absolute;
-	width:22vw;
+	width:425px;
 }
 .line {
    margin-top: 2vh;
