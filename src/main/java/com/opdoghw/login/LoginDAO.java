@@ -1,5 +1,6 @@
 package com.opdoghw.login;
 
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,6 +8,7 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.apache.catalina.connector.Response;
 
 import com.opdoghw.centerinfo.DBManager_khw;
 
@@ -34,21 +36,22 @@ public class LoginDAO {
 			System.out.println("연결성공!!");
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
+			HttpSession hs = request.getSession();
+			LoginDTO account = new LoginDTO();
 			
 			if(rs.next()) {
-				dbPW = rs.getString("a_pw");
+				dbPW = rs.getString("a_password");
 				if (pw.equals(dbPW)) {
 					result = "로그인 성공!";
 					
-					LoginDTO account = new LoginDTO();
 					
 					account.setEmail(email);
 					account.setPw(pw);
 					account.setFirstname(rs.getString("a_firstname"));
 					account.setLastname(rs.getString("a_lastname"));
 					account.setNo(rs.getInt("a_no"));
+					account.setResult("ok");
 					
-					HttpSession hs = request.getSession();
 					
 					//세션에 account information 담아서 보내기.
 					hs.setAttribute("account", account);
@@ -56,10 +59,15 @@ public class LoginDAO {
 				
 				
 				}else {
-					result = "비번 오류!";
+					account.setResult("password");
+					hs.setAttribute("account", account);
+					System.out.println("비번 오류");
+					
 				}
 			}else {
-				result = "존재하지 않는 회원입니다.";
+				account.setResult("id");
+				hs.setAttribute("account", account);
+				System.out.println("아이디 확인");
 			}
 			//로그인 성공 실패 화면출력을 위함.
 			request.setAttribute("result", result);
@@ -122,12 +130,33 @@ public class LoginDAO {
 	
 	}
 	
+	
+	
+	public static int idPwCheck(HttpServletRequest request) {
+		String alert = null;
+		HttpSession hs = request.getSession();
+		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
+		if (account.getResult().equals("id")) {
+			alert = "Check your ID!";
+			request.setAttribute("alert", alert);
+			hs.setAttribute("account", null);
+			return 0;
+		}else if(account.getResult().equals("password")){
+			alert = "Check your PW!";
+			request.setAttribute("alert", alert);
+			hs.setAttribute("account", null);
+			return 1;
+		}else{
+			return 2;
+		}
+		
+	}
 	public static void loginCheck(HttpServletRequest request) {
 		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
 		if (account ==  null) {
-			request.setAttribute("loginLogoutBtn", "header-loginSignup.jsp");
+			request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 		}else {
- 			request.setAttribute("loginLogoutBtn", "header-logoutMypage.jsp");
+ 			request.setAttribute("loginLogoutBtn", "login/header-logoutMypage.jsp");
  			
 		}
 		
@@ -137,10 +166,20 @@ public class LoginDAO {
 		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
 		if (account ==  null) {
 			request.setAttribute("mainLoginLogoutBtn", "main-header-loginSignup.jsp");
+			
 		}else {
  			request.setAttribute("mainLoginLogoutBtn", "main-header-logoutMypage.jsp");
  			
 		}
+		
+	}
+	public static void logout(HttpServletRequest request) {
+	
+		
+		HttpSession hs = request.getSession();
+		hs.setAttribute("account", null);
+//		hs.removeAttribute("account");
+//		hs.invalidate(); : 초기화 
 		
 	}
 }

@@ -15,6 +15,7 @@
         <div class="bigTxt">Sign up is complete!</div>
         <div class="smallTxt"><p>'welcome to ‘Open the dog’</p></div>
       </div>
+      <button>Login</button>
     </div>
   </body>
 </html>

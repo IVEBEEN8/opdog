@@ -76,6 +76,7 @@ header {
   line-height: normal;
   letter-spacing: 0.2px;
   text-decoration: none;
+  cursor: pointer;
 }
 .home {
   color: #c58940;
@@ -84,6 +85,7 @@ header {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
+  cursor: pointer;
 }
 
 /*메뉴 텍스트 호버 작업*/
@@ -160,6 +162,7 @@ header {
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .nav-subnav a {
@@ -168,6 +171,7 @@ header {
   text-decoration: none;
   display: block;
   border-radius: 10px;
+  cursor: pointer;
 }
 
 .nav-subnav a:hover {

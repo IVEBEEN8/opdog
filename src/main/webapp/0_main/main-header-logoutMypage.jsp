@@ -13,7 +13,7 @@
           <button class="reg-btn">
             <span class="reg-text">MyPage</span>
           </button>
-          <button onclick="location.href='LoginMainHC'" class="login-btn">
+          <button onclick="location.href='LogoutC'" class="login-btn">
             <span class="login-text">Logout</span>
           </button>
         </div>
