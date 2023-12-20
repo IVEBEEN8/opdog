@@ -156,31 +156,28 @@ public class DoginfoDAO {
 			URL u = new URL(url);
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 			if(huc.getResponseCode() == 200) {
-			InputStream is = huc.getInputStream();
-			InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-//			System.out.println(isr);
-				
+				InputStream is = huc.getInputStream();
+				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+//				System.out.println(isr);
 			
-			JSONParser jp = new JSONParser();
-			JSONObject dogs = (JSONObject) jp.parse(isr);
+				JSONParser jp = new JSONParser();
+				JSONObject dogs = (JSONObject) jp.parse(isr);
 			
-			System.out.println(dogs);
-			System.out.println("여기서 터진거면 오브젝트 나눌 때");
-			dogs = (JSONObject) dogs.get("response");
-			dogs = (JSONObject) dogs.get("body");
-			dogs = (JSONObject) dogs.get("items");
-			System.out.println("여기서 터진거면 어레이 만들 때");
-			JSONArray dog = (JSONArray) dogs.get("item");
-				if(dog != null) {
-					System.out.println("여기서 터진거면 어레이 담을 때 ");
-					System.out.println(dog);
-					response.getWriter().print(dog);
-				}else {
-					response.getWriter().print(0);
-					
-				}
+				System.out.println(dogs);
+				System.out.println("여기서 터진거면 오브젝트 나눌 때");
+				dogs = (JSONObject) dogs.get("response");
+				dogs = (JSONObject) dogs.get("body");
+				dogs = (JSONObject) dogs.get("items");
+				System.out.println("여기서 터진거면 어레이 만들 때");
+				JSONArray dog = (JSONArray) dogs.get("item");
+					if(dog != null) {
+						System.out.println("여기서 터진거면 어레이 담을 때 ");
+						System.out.println(dog);
+						response.getWriter().print(dog);
+					}else {
+						response.getWriter().print(0);
+					}
 			}
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

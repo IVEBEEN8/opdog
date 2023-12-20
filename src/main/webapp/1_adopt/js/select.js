@@ -11,8 +11,8 @@ $(document).ready(function() {
 		$('#sidoSelect').val(selectedValue);
 		if(selectedValue !=""){
         	$.ajax({
-            	url: 'SelectConditionC', 
-    	        type: 'GET', 
+            	url: 'SelectConditionC',
+    	        type: 'GET',
         	    data: { value: selectedValue },
             	success: function(response) {
 					$('label').remove('#sigungulabel');
