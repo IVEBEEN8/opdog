@@ -101,9 +101,21 @@ input[type="checkbox" i] {
   padding-top: 0.5vw;
 }
 
+.address{
+	border: 2px solid red;
+}
+
+.selectBox1{
+  border: 2px solid red;
+}
+#sidoSelect{
+	background:pink;
+}
+
 label {
   display: flex;
 }
+
 label > p {
   padding-left: 1vw;
   color: #777e90;
