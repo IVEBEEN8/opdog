@@ -18,8 +18,8 @@ public class SnackPageC extends HttpServlet {
 		int p = Integer.parseInt(request.getParameter("p"));
 		SnackDAO.paging(p, request);
 		
-		request.setAttribute("contentPage", "snack.jsp");
-		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "../2_shop/2_3_snack/snack.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

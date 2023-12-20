@@ -34,17 +34,17 @@
             <div class="nav-subnav">
               <a href="#">Stary Dogs</a>
               <a href="#">Shelter Info</a>
-              <a href="#">Adoption Process</a>
-              <a href="#">Adoption Review</a>
+              <a onclick="location.href='ProcessC'">Adoption Process</a>
+              <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
           </div>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Shop</span></a>
             <div class="nav-subnav">
-              <a href="#">Feed</a>
-              <a href="#">Snack</a>
-              <a href="#">Fashion</a>
-              <a href="#">Toy</a>
+              <a onclick="location.href='FashionC'">Fashion</a>
+              <a onclick="location.href='FeedC'">Feed</a>
+              <a onclick="location.href='SnackC'">Snack</a>
+              <a onclick="location.href='ToyC'">Toy</a>
             </div>
           </div>
           <div class="nav-items">

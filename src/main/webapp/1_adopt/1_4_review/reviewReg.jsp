@@ -26,9 +26,9 @@
                 <img id="previewImage" style="max-width: 300px; max-height: 300px;" src="#" alt="Preview">
             </div>
 			<div>
-				<input id="fileInput" type="file" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
+				<input id="fileInput" type="file" name="fileInput" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
 				<button type="button"  onclick="document.getElementById('fileInput').click();">Select File</button>
-				 <input type="hidden" id="previousFileName" name="img" value="">
+				<input type="hidden" id="previousFileName" name="img" value="">
 			</div>
 		</div>
 		<div>
