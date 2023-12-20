@@ -19,36 +19,41 @@ body {
 }
 
 .reload-map1-2{
-	position: absolute;
-    left: 7.2vw;
-    top: 11vh;
-    width: 10vw;
+	z-index: 3;
+    position: relative;
+    left: -30.8vw;
+    top: 10vh;
+    width: 4vw;
     height: 2.5vh;
     border-radius: 15px;
-    background-color: #c58940;
-    box-shadow: brown;
+    background-color: rgba(0, 53, 133, 0.90);
     border: none;
     color: white;
 }
- 
+
+.pull-right-wrap1-2{
+	height: 3.962963vh;
+	justify-content:space-evenly;
+	display:flex;
+}
 .map{
-	left:6.822916666666667vw;
-	top:  14vh;
-	width: 33.90625vw;
-	height: 79.44444444444444vh;
-	position: absolute;
-	border-radius: 20px;	
-	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    margin-left: 15.354167vw;
+    top: 14vh;
+    width: 32.03125vw;
+    height: 79.44444444444444vh;
+    position: absolute;
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
 }
 .infobox-wrap1-2 {
-	margin-top: 8vh;
- 	margin-left:35vw;
- 	top:13.88888888888889vh;
- 	width: 49.21875vw;
- 	height: 79.44444444444444vh;
- 	overflow-x: scroll;
- 	border-radius: 20px;
- 	background: #FAF8F1;
+	margin-top: 12vh;
+    margin-left: 39.729167vw;
+    top: 13.88888888888889vh;
+    width: 31.21875vw;
+    height: 73.444444vh;
+    overflow-x: scroll;
+    border-radius: 20px;
+    background: #FAF8F1;
 }
 
 .centerinfo-print-wrap1-2{
@@ -58,7 +63,7 @@ body {
 	display: inline-flex;
 	margin-top:2vh;
 	margin-bottom:3vh;
-	width:46vw;
+	width:27vw;
 	justify-content: center;
 	align-items: center;
 	gap: 11px;
@@ -141,25 +146,37 @@ body {
 
 /* 여기서부턴 지도안에 박스!*/
 .overlaybox1-2 {
-  margin-top:2vh;
-  left: -3vw;
-  top: -7vh;
-  position: relative;
-  width: 250px;
-  height: 300px;
-  text-align: left;
-  padding: 0px 13px;
-  border: 3px solid #777;
-  background-color: #fff;
-  border-radius: 15px;
+    left: -3vw;
+    top: -6vh;
+    position: relative;
+    width: 13vw;
+    height: 35vh;
+    text-align: left;
+    padding: 0px 13px;
+    background-color: #fff;
+    border-radius: 15px;
+}
+.mid-overlaybox1-2{
+    left: -1.2vh;
+    top: 1vh;
+    position: relative;
+    width: 13vw;
+    height: 34vh;
+    text-align: left;
+    padding: 0px 13px;
+    border-top: 1px solid gray;
+  	
 }
 .boxtitle1-2 {
-	margin-left: 2px;
-	margin-top:2vh;
-	color: black;
-	font-size:20px;
-	text-align: left;
-	font-weight:bold;
+	position: absolute;
+    z-index: 3;
+    margin-left: 4vw;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    width: 5.2vw;
 
 	}
 .li-wrap1-2{
@@ -174,34 +191,39 @@ body {
     background-size: cover; /* 이미지를 올바르게 표시하기 위해 필요한 경우 */
 }
 .overlaybox1-2 li {
-	list-style: none;
-	position:relative;
-	margin-bottom:2px;
-	background:rgba(250, 248, 241, 1);
-	padding:5px 10px;
-	color:#2b2d36;
-	line-height: 1;
+	white-space:normal;
+	text-align: center;
+    top: 2vh;
+    list-style: none;
+    position: relative;
+    margin-bottom: 0.2vh;
+    padding: 5px 10px;
+    color: #2b2d36;
+    line-height: 1;
 	}
-.overlaybox1-2 li .title {
-	font-size:13px;
+
+.overlaybox1-2 li .centername {
+	font-size:1vw;
 	white-space: normal;
 	} 
+
 .overlaybox1-2 li:hover {
 	color:rgba(250, 248, 241, 1);
 	background:rgba(158, 111, 33, 1);
 	}
 
-.title-span1-2{
+/* .title-span1-2{
 	width: 240px;
-}
+} */
 
 .li-wrap1-2 {
-  text-align:left;
-  position:relative;
-  width:247px;	
-  margin-bottom:8px;
-  margin-left:0;
-  left:-40px;
+  	top: -2vh;
+    text-align: left;
+    position: relative;
+    width: 13vw;
+    margin-bottom: -4px;
+    margin-left: 0;
+    left: -40px;
  
 }
 .title-span1-2{
@@ -350,11 +372,49 @@ body {
     
 /* 검색 바 꾸미기!  */
 .row{
-	height: 2.5vh;
-    width: 20vw;
+    width: 30vw;
+    height: 3.962963vh;
     position: absolute;
-    left: 73vw;
-    top: 11vh;
-   
+    left: 55vw;
+    top: 14vh;
 }
+.form-control{
+	height: 3.962963vh;
+	border: none;
+	border-radius: 6px;
+	background: rgba(217, 217, 217, 0.30);
+	}
 
+.input-search1-2{
+	text-indent: 2em;
+	width:16vw;
+}
+.searchButton1-2{
+	width:3vw;
+	border-radius: 15px;
+    height: 4vh;
+    border: none;
+}
+/*reload icon!  */
+.reloadi{
+	bottom: 0.3vh;
+    position: absolute;
+    left: 0.3vw;
+    width: 1vw;
+	
+}
+.wordReload{
+    left: 3vw;
+    top: 0.6vh;
+    position: absolute;
+    left: 1.4vw;
+}
+.searchi{
+	width:1vw;
+}
+.bitmap{
+	width: 12vw;
+}
+.red-col{
+	color: #771138;
+}

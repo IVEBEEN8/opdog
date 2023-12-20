@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
         chatBoxWrap.scrollTop = chatBoxWrap.scrollHeight;
 
 		const prompt = document.querySelector("#input").value;	
-        const apiKey = "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" // open ai_KEY
+        const apiKey = "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" // open ai_KEY
         
 		if(prompt == null){		
 			prompt= document.querySelector("#input").value;	

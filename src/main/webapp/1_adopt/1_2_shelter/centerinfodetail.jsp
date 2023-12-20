@@ -23,28 +23,26 @@
 </head>
 <body>
 <div class="containar1-2">
-	<button class="reload-map1-2">Reload Map</button>
+	<button class="reload-map1-2"><img class="reloadi" src="1_adopt/img/reloadi.png"><span class="wordReload">Reload</span></button>
 	<div class="map" id="map"></div>
 	<!--검색창!-->
 	<div class="row">
         <form method="post" name="keywords-serch" id="searchForm">
-            <table class="pull-right">
-                <tr>
-                    <td>
+            <div class="pull-right-wrap1-2">
+                    <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
-                            <option value="0">Select</option>
-                            <option value="c_careNm">ShelterName</option>
-                            <option value="c_careAddr">Address</option>
+                            <option value="0">&nbsp;&nbsp; Select</option>
+                            <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
+                            <option value="c_careAddr">&nbsp;&nbsp;Address</option>
                         </select>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" placeholder="Put Keywords" name="searchText" maxlength="100">
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success" id="searchButton">Search</button>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                    <div class="pull-right1-2">
+                        <input type="text" id ="inputSearch" class="form-control input-search1-2" placeholder=" Put Keywords" name="searchText" maxlength="100">
+                    </div>
+                    <div class="pull-right1-2">
+                        <button type="button" class="searchButton1-2" id="searchButton"><img class="searchi" src="1_adopt/img/search.png"></button>
+                    </div>
+            </div>
         </form>
     </div>
     <!-- 인풋박스 시작! -->
@@ -95,7 +93,7 @@ var mapContainer = document.getElementById('map'); //지도를 표시할 div id
 var mapOption = {
     center: new kakao.maps.LatLng(36.501202261595324, 128.0554606771207), //지도의 중심좌표
     level: 13,
-    mapTypeId: kakao.maps.MapTypeId.SKYVIEW
+    mapTypeId: kakao.maps.MapTypeId.ROADMAP
 };
 
 // 지도생성
@@ -222,30 +220,28 @@ $(document).ready(function() {
             };
             // 지도 객체 생성
             var map = new kakao.maps.Map(mapContainer, mapOption);
-            var content = '<div class="overlaybox1-2">' +
-                '   			 <div class="boxtitle1-2">Shelter Info</div>' +
+            var content = '<div class="overlaybox1-2">' + 
+                '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
                 '    			<ul class="li-wrap1-2">'  +
-                '        				<li class="li1-2">' +
-                '						<span class="title-span1-2">Center Name:</span><br>' +    
-                '          				<span class="title">'+centername+'</span>' +
+                '        				<li class="li1-2">'  +    
+                '          				<span class="title"><img class="bitmap" src="1_adopt/img/Bitmap.png"></span>' +
                 '        				</li>' +
                 '        				<li class="li1-2">' +
-                '							<span class="title-span1-2">Address:</span><br>        ' +
+                '            				<span class="title centername">'+centername+'</span>' +
+                '        				</li>' +    
+                '        				<li class="li1-2">' +
                 '            				<span class="title">'+centeraddr+'</span>' +
                 '        				</li>' +    
-                '   				    <li class="li1-2">' +
-                '							<span class="title-span1-2" >Operation Time:</span><br>        ' +
-                '            				<span class="title">'+opentime+'~'+closetime+'</span>' +
+                '   				    <li class="li1-2">'  +
+                '            				<span class="title">'+caretel+'</span>' +
                 '			      	    </li>' +
                 '			           <li class="li1-2">' +
-                '			                 <span class="title-span1-2">Close Day:</span><br>        ' +
-                '		                     <span class="title">'+closeday+'</span>' +
+                '		                     <br><br><span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
                 ' 			           </li>' +
-                '			           <li class="li1-2">' +
-                '			                <span class="title-span1-2">Tel:</span><br>        ' +
-                '		                   <span class="title">'+caretel+'</span>' +
-                ' 			           </li>' +
-                '    			</ul>' +
+                '			           <li class="li1-2">'  +
+                '		                   <br><span class="title"><span>closed </span><span class="red-col">'+closeday+'</span>' +
+                ' 			           </li>' 
+                '    			</ul>' + '</div>'
                 '           </div>';
 
             // 커스텀 오버레이가 표시될 위치!	
