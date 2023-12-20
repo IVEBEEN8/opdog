@@ -85,7 +85,7 @@
           <div class="ask-input">
           	<form action="AskAboutDogMainC" method="post">
             <input class="askanything" name ="askanything" id="input" type="text">
-            <a id="send1"><button><img src="0_main/img/send-icon.png" alt="보내기버튼"/></button></a>
+            <a id="send1"><button type="button" class="send-btn"><img  src="0_main/img/send-icon.png" alt="보내기버튼"/></button></a>
           	</form>
           </div>
         </div>                                           
