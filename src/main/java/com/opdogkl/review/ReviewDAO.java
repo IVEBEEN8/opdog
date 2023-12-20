@@ -38,6 +38,7 @@ public class ReviewDAO {
 				r.setR_updated(rs.getDate("r_updated"));
 				r.setOp_email(rs.getString("op_email"));
 				reviews.add(r);
+				System.out.println(rs.getString("r_img"));
 			}
 			request.setAttribute("reviews", reviews);
 			System.out.println("전체 리뷰 어트리뷰트 생성");
@@ -73,7 +74,7 @@ public class ReviewDAO {
 //	        String op_email = "review_kl_seq.nextval";
 	        
 	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-			String img = mr.getParameter("img");
+			String img = mr.getFilesystemName("fileInput");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			

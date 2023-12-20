@@ -15,8 +15,8 @@ public class ReviewC extends HttpServlet {
 		
 		ReviewDAO.getAllReview(request);
 		
-		request.setAttribute("contentPage", "1_adopt/1_4_review/review.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "../1_adopt/1_4_review/review.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		
 	}
 

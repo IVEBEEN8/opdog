@@ -1,9 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <title>입양절차 페이지</title>
-    <link rel="stylesheet" href="process.css" />
+    <link rel="stylesheet" href="1_adopt/css/process.css" />
   </head>
   <body>
     <!-- 헤더 -->
