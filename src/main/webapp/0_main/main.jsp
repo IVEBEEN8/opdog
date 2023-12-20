@@ -47,7 +47,7 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Volunteer</span></a>
             <div class="nav-subnav">
-              <a href="#">Go Together</a>
+              <a onclick="location.href='VolunteerMainC'">Go Together</a>
             </div>
           </div>
           <div class="nav-items">
