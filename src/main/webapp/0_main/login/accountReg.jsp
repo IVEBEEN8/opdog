@@ -16,9 +16,12 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
       rel="stylesheet"
     />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
     <script src="0_main/js/regCheck.js"></script>
     <script src="0_main/js/validCheck.js"></script>
-	<script src="../1_adopt/js/select.js"></script>
+
   </head>
   <body>
     <!-- 회원가입 부분시작 -->
@@ -60,6 +63,7 @@
          	<div class="selectBox">
 	         	 <select name="sido" id="sidoSelect">
         		<option value="">state</option>
+        		
         		<c:forEach var="sido" items="${sido }" >
         			<option value="${sido.orgCd }">${sido.orgdownNm }</option>
         		</c:forEach>
@@ -95,6 +99,6 @@
         </div>
       </div>
     </form>
-    
+    <script src="0_main/js/accountReg.js"></script>
   </body>
 </html>

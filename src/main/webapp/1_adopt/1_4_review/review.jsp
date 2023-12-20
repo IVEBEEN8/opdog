@@ -8,9 +8,59 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>review</h1>
-	<!-- 헤더 -->
-	<header></header>
+<!-- 내가한거 -->
+    <!-- <div class="fullsection full4" pageNum="4">
+      <div class="review-box-wrap">
+        <div class="review-box">
+          <img src="../img/포인핸드1.jpg" alt="후기예시1" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드2.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드9.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드4.jpeg" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드5.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드6.jpeg" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드7.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드8.jpeg" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+      </div>
+    </div> -->
 	
 	<!-- 메인 -->
 	
@@ -33,8 +83,6 @@
 	</main>
 	
 	
-	<!-- 푸터 -->
-	<footer></footer>
 
 </body>
 </html>
