@@ -28,7 +28,6 @@
 			<div>
 				<input id="fileInput" type="file" name="fileInput" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
 				<button type="button"  onclick="document.getElementById('fileInput').click();">Select File</button>
-				<input type="hidden" id="previousFileName" name="img" value="">
 			</div>
 		</div>
 		<div>
