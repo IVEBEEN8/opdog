@@ -30,8 +30,7 @@ pageEncoding="UTF-8"%>
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
-
-              <a href="'CenterMainC'">Shelter Info</a>
+              <a onclick="location.href='CenterMainC'">Shelter Info</a>
               <a onclick="location.href='ProcessC'">Adoption Process</a>
               <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
