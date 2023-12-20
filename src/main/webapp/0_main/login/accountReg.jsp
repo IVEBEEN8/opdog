@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,6 +18,7 @@
     />
     <script src="0_main/js/regCheck.js"></script>
     <script src="0_main/js/validCheck.js"></script>
+	<script src="../1_adopt/js/select.js"></script>
   </head>
   <body>
     <!-- 회원가입 부분시작 -->
@@ -53,6 +55,20 @@
             />
             <div>Must be 8 characters at least</div>
           </div>
+         <div class="accountPage address">
+         	<p>Address</p>
+         	<div class="selectBox">
+	         	 <select name="sido" id="sidoSelect">
+        		<option value="">state</option>
+        		<c:forEach var="sido" items="${sido }" >
+        			<option value="${sido.orgCd }">${sido.orgdownNm }</option>
+        		</c:forEach>
+		        </select>
+		        <select name="sigun" id="sigunSelect">
+		        	<option value="">city</option>
+		        </select>
+		    </div>
+         </div>
           <label>
             <input type="checkbox" name="agree" value="mail" />
             <p>

@@ -76,7 +76,7 @@ footer {
   line-height: 0.8333333333333334vw;
 }
 
-.footer2 > div > form > input {
+.askanything {
   padding: 1.5625vw;
   width: 25vw;
   height: 2vh;
@@ -88,13 +88,22 @@ footer {
   font-family: "Poppins", sans-serif;
 }
 
-.footer2 > div > a > button > img {
-  width: 2.083333333333333vw;
-  height: 3.7037037037037033vh;
-  position: absolute;
-  top: 4.7vh;
-  left: 63vw;
+.send-btn {
+    width: 3vw;
+  position: relative;
+     top: 1.2vw;
+    left: -4vw;
+  background: none;
+  border: none;
+  cursor:pointer;
 }
+
+.send-btn > img{
+	position: relative;
+  width: 3vw;
+  left:-1vw;
+}
+
 .footer2 > div > a > button {
   width: 2.083333333333333vw;
   height: 3.7037037037037033vh;
