@@ -32,7 +32,7 @@
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
               <a onclick="location.href='CenterMainC'">Shelter Info</a>
               <a href="#">Adoption Process</a>
-              <a href="#">Adoption Review</a>
+              <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
           </div>
           <div class="nav-items">
