@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%> <%@ taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -111,312 +112,51 @@ pageEncoding="UTF-8"%>
         <div class="styling-tv">
           <div class="animation-list animation">
             <div class="img-list">
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Beny</div>
-                    <div class="img-info">
-                      I'm Beny, 3 years old! <br />
-                      I am male and weigh 9 kg. <br />
-                      I am innocent and like everyone.
+              <c:forEach var="dogs" items="${dog }" varStatus="status">
+                <div class="img-box">
+                  <div class="img-wrap">
+                    <div class="slide-img">
+                      <img
+                        src="${dogs.popfile }"
+                        alt="유기견${status.count }"
+                      />
+                    </div>
+                    <div class="txt-box">
+                      <div class="img-name">${dogs.kindCd }</div>
+                      <div class="img-info">
+                        ${dogs.age }<br /> ${dogs.sexCd }<br />
+                        ${dogs.specialMark }
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Tera</div>
-                    <div class="img-info">
-                      I'm Tera, 1 years old! <br />
-                      I am female and weight 3 kg. <br />
-                      I have a curious and bright personality.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Runa</div>
-                    <div class="img-info">
-                      I'm Runa, 1 years old! <br />
-                      I am female and weight 7 kg. <br />
-                      I like playing around with people more than eating.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Stella</div>
-                    <div class="img-info">
-                      I'm Stella, 1 years old! <br />
-                      I am female and weight 3.2 kg. <br />
-                      Shy and cautious, but full of affection
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Bao</div>
-                    <div class="img-info">
-                      I'm Bao, 1 years old! <br />
-                      I am female and weight 4.11 kg. <br />
-                      I'm wearing brown socks
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Beny</div>
-                    <div class="img-info">
-                      I'm Beny, 3 years old! <br />
-                      I am male and weigh 9 kg. <br />
-                      I am innocent and like everyone.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Tera</div>
-                    <div class="img-info">
-                      I'm Tera, 1 years old! <br />
-                      I am female and weight 3 kg. <br />
-                      I have a curious and bright personality.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Runa</div>
-                    <div class="img-info">
-                      I'm Runa, 1 years old! <br />
-                      I am female and weight 7 kg. <br />
-                      I like playing around with people more than eating.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Stella</div>
-                    <div class="img-info">
-                      I'm Stella, 1 years old! <br />
-                      I am female and weight 3.2 kg. <br />
-                      Shy and cautious, but full of affection
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Bao</div>
-                    <div class="img-info">
-                      I'm Bao, 1 years old! <br />
-                      I am female and weight 4.11 kg. <br />
-                      I'm wearing brown socks
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </c:forEach>
             </div>
             <div class="img-list">
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Beny</div>
-                    <div class="img-info">
-                      I'm Beny, 3 years old! <br />
-                      I am male and weigh 9 kg. <br />
-                      I am innocent and like everyone.
+              <c:forEach var="dogs" items="${dog }" varStatus="status">
+                <div class="img-box">
+                  <div class="img-wrap">
+                    <div class="slide-img">
+                      <img
+                        src="${dogs.popfile }"
+                        alt="유기견${status.count }"
+                      />
+                    </div>
+                    <div class="txt-box">
+                      <div class="img-name">${dogs.kindCd }</div>
+                      <div class="img-info">
+                        ${dogs.age }<br /> ${dogs.sexCd }<br />
+                        ${dogs.specialMark }
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Tera</div>
-                    <div class="img-info">
-                      I'm Tera, 1 years old! <br />
-                      I am female and weight 3 kg. <br />
-                      I have a curious and bright personality.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Runa</div>
-                    <div class="img-info">
-                      I'm Runa, 1 years old! <br />
-                      I am female and weight 7 kg. <br />
-                      I like playing around with people more than eating.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Stella</div>
-                    <div class="img-info">
-                      I'm Stella, 1 years old! <br />
-                      I am female and weight 3.2 kg. <br />
-                      Shy and cautious, but full of affection
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Bao</div>
-                    <div class="img-info">
-                      I'm Bao, 1 years old! <br />
-                      I am female and weight 4.11 kg. <br />
-                      I'm wearing brown socks
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/beny.jpeg" alt="유기견1" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Beny</div>
-                    <div class="img-info">
-                      I'm Beny, 3 years old! <br />
-                      I am male and weigh 9 kg. <br />
-                      I am innocent and like everyone.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/tera.jpeg" alt="유기견2" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Tera</div>
-                    <div class="img-info">
-                      I'm Tera, 1 years old! <br />
-                      I am female and weight 3 kg. <br />
-                      I have a curious and bright personality.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/luna2.jpeg" alt="유기견3" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Runa</div>
-                    <div class="img-info">
-                      I'm Runa, 1 years old! <br />
-                      I am female and weight 7 kg. <br />
-                      I like playing around with people more than eating.
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/stella.jpeg" alt="유기견4" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Stella</div>
-                    <div class="img-info">
-                      I'm Stella, 1 years old! <br />
-                      I am female and weight 3.2 kg. <br />
-                      Shy and cautious, but full of affection
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="0_main/img/bao.jpeg" alt="유기견5" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">Bao</div>
-                    <div class="img-info">
-                      I'm Bao, 1 years old! <br />
-                      I am female and weight 4.11 kg. <br />
-                      I'm wearing brown socks
-                    </div>
-                  </div>
-                </div>
-              </div>
+              </c:forEach>
             </div>
           </div>
         </div>
       </div>
+      <!-- main 3page start -->
       <div class="fullsection full3" pageNum="3">
         <div class="full3-bigTxt">Current status of abandoned dog</div>
         <div class="count">0</div>
