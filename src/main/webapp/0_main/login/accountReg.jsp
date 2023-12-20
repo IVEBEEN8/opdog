@@ -57,7 +57,7 @@
           </div>
          <div class="accountPage address">
          	<p>Address</p>
-         	<div class="selectBox1">
+         	<div class="selectBox">
 	         	 <select name="sido" id="sidoSelect">
         		<option value="">state</option>
         		<c:forEach var="sido" items="${sido }" >
