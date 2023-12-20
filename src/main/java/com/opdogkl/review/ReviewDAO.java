@@ -9,7 +9,8 @@ import java.util.Date;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
-import com.opdogkl.shop.DBManager;
+import com.opdoghw.centerinfo.DBManager_khw;
+
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -23,7 +24,7 @@ public class ReviewDAO {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Review r = null;
@@ -38,6 +39,7 @@ public class ReviewDAO {
 				r.setR_updated(rs.getDate("r_updated"));
 				r.setOp_email(rs.getString("op_email"));
 				reviews.add(r);
+				System.out.println(rs.getString("r_img"));
 			}
 			request.setAttribute("reviews", reviews);
 			System.out.println("전체 리뷰 어트리뷰트 생성");
@@ -47,7 +49,7 @@ public class ReviewDAO {
 			e.printStackTrace();
 			System.out.println("전체 리뷰 조회 실패");
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 		
 	}
@@ -62,7 +64,7 @@ public class ReviewDAO {
 		System.out.println(path);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			request.setCharacterEncoding("utf-8");	
 			
 			// 세션에서 op_email 값을 가져오기
@@ -73,7 +75,7 @@ public class ReviewDAO {
 //	        String op_email = "review_kl_seq.nextval";
 	        
 	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-			String img = mr.getParameter("img");
+			String img = mr.getFilesystemName("fileInput");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			
@@ -93,7 +95,7 @@ public class ReviewDAO {
 			e.printStackTrace();
 			System.out.println("등록 실패");
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 
 	}
@@ -108,7 +110,7 @@ public class ReviewDAO {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("id"));
 			rs = pstmt.executeQuery();	
@@ -128,7 +130,7 @@ public class ReviewDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 		
 	}
@@ -144,7 +146,7 @@ public class ReviewDAO {
 		System.out.println(path);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			request.setCharacterEncoding("utf-8");	
 	        
 	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
@@ -177,7 +179,7 @@ public class ReviewDAO {
 			e.printStackTrace();
 			System.out.println("수정 실패");
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 		
 		
@@ -190,7 +192,7 @@ public class ReviewDAO {
 		ResultSet rs = null;
 		String sql = "delete review_kl where op_email=?";
 		try {
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("id"));
 			if (pstmt.executeUpdate() == 1) {
@@ -201,7 +203,7 @@ public class ReviewDAO {
 			e.printStackTrace();
 			System.out.println("삭제 실패");
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 	}	
 }

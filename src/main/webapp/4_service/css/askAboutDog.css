@@ -16,14 +16,14 @@ body {
 }
 .chat-content-wrap1-2{
 	position:relative;
-	height: 100vh;
+	height: 1300px;
 	width: 100vw;
 	text-align: center;
 	
 }
 .chat-content1-2 {
 		position: absolute;	
-		margin-top: 5vh;
+		margin-top: 8vh;
         height: 100vh;
         width: 100vw;
         overflow-y: none;
@@ -62,13 +62,16 @@ body {
 }
 .line {
    margin-top: 2vh;
+   margin-left: 1vw;
+   margin-right:1vw;
    display: flex;
+
 }
 .chat-box-wrap1-2::-webkit-scrollbar{
 	display:none;
 }
 .chat-box {
-	padding:5px;
+	padding:10px 15px 10px 15px;
 	border-radius:15px;
 	text-align:left;
 	background: #eee;

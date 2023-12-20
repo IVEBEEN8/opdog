@@ -14,8 +14,8 @@ public class ReviewDetailC extends HttpServlet {
 		ReviewDAO.getReview(request);
 		
 		// 리뷰 디테일 페이지 보여주기 
-		request.setAttribute("contentPage", "1_adopt/1_4_review/reviewDetail.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "../1_adopt/1_4_review/reviewDetail.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

@@ -48,21 +48,19 @@ function checkForm() {
                 // 이미지를 선택한 경우, 그 이름을 저장
                 document.getElementById("previousFileName").value = file.name;
             } else {
-    // 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
-    var previousFileName = document.getElementById("previousFileName").value;
+  			  	// 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
+    			var previousFileName = document.getElementById("previousFileName").value;
 
-    if (!previousFileName) {
-        // 이전 파일 이름이 없는 경우
-        preview.parentNode.style.display = 'none';  // 미리보기 영역을 숨김
-    } else {
-        // 이전 파일 이름이 있는 경우
-        preview.parentNode.style.display = 'block';  // 미리보기 영역을 보이도록 변경
-        // 초기 이미지의 경로를 이전 파일 이름을 사용하여 설정
-        preview.src = "1_adopt/1_4_review/imgFolder/" + previousFileName;
-    }
-			
-			
-			}
+   				if (!previousFileName) {
+        			// 이전 파일 이름이 없는 경우
+        			preview.parentNode.style.display = 'none';  // 미리보기 영역을 숨김
+    			} else {
+      			  	// 이전 파일 이름이 있는 경우
+        			preview.parentNode.style.display = 'block';  // 미리보기 영역을 보이도록 변경
+        			// 초기 이미지의 경로를 이전 파일 이름을 사용하여 설정
+       				preview.src = "1_adopt/1_4_review/imgFolder/" + previousFileName;
+    				}
+				}
             
             
             	

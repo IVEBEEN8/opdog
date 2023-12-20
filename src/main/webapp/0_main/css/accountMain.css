@@ -101,9 +101,30 @@ input[type="checkbox" i] {
   padding-top: 0.5vw;
 }
 
+.selectBox {
+  display: flex;
+  gap: 20px;
+}
+
+.selectBox > select {
+  width: 11vw;
+  height: 3.7037037037037033vh;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.78125vw;
+  background: #faf8f1;
+  border: none;
+  font-size: 0.9vw;
+  font-weight: 300;
+  font-family: "Inter", sans-serif;
+  color: #7a828a;
+  padding: 0.5vw;
+}
+
 label {
   display: flex;
 }
+
 label > p {
   padding-left: 1vw;
   color: #777e90;

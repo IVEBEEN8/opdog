@@ -8,9 +8,59 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>review</h1>
-	<!-- 헤더 -->
-	<header></header>
+<!-- 내가한거 -->
+    <!-- <div class="fullsection full4" pageNum="4">
+      <div class="review-box-wrap">
+        <div class="review-box">
+          <img src="../img/포인핸드1.jpg" alt="후기예시1" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드2.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드9.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드4.jpeg" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드5.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드6.jpeg" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드7.png" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+        <div class="review-box">
+          <img class="review-img" src="../img/포인핸드8.jpeg" />
+          <span>
+            <button>Read more</button>
+          </span>
+        </div>
+      </div>
+    </div> -->
 	
 	<!-- 메인 -->
 	
@@ -21,9 +71,8 @@
 				
 				${r.r_title} <br>
 				<img alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
-				<pre style="white-space: pre-wrap; width: 300px;
-  height: 200px;
-  overflow: auto;">${r.r_txt}</pre>
+				${r.r_img}
+				<pre style="white-space: pre-wrap; width: 300px; height: 200px; overflow: auto;">${r.r_txt}</pre>
  				<%-- <textarea rows="10" cols="50" readonly="readonly">${r.r_txt}</textarea> --%>
 				
 				<br>
@@ -34,8 +83,6 @@
 	</main>
 	
 	
-	<!-- 푸터 -->
-	<footer></footer>
 
 </body>
 </html>
