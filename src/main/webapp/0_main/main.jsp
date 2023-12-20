@@ -1,26 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>MainPage</title>
-<link rel="stylesheet" href="0_main/css/main.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>MainPage</title>
+    <link rel="stylesheet" href="0_main/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-<!-- 메인 상단 : 헤더 -->
+  </head>
+  <body>
+    <!-- 메인 상단 : 헤더 -->
     <header>
       <nav id="main_header" class="main_header">
         <!-- 헤더 왼쪽 로고 -->
-        	<div class="header_logo">
-            	<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
-         	</div>
+        <div class="header_logo">
+          <img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
+        </div>
         <!-- 메뉴 -->
         <div class="nav-var">
           <div class="nav-items">
@@ -47,21 +47,23 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Volunteer</span></a>
             <div class="nav-subnav">
-              <a href="#">Go Together</a>
+              <a onclick="location.href='VolunteerMainC'">Go Together</a>
             </div>
           </div>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
-              <a href="#">Check Registration Number</a>
-              <a href="#">Naming</a>
+              <a onclick="location.href='CheckRegNmC'"
+                >Check Registration Number</a
+              >
+              <a onclick="location.href='NamingMainC'">Naming</a>
             </div>
           </div>
         </div>
-          <!-- 회원가입 로그인 버튼 -->
-          <div>
-		<div><jsp:include page = "${mainLoginLogoutBtn}"></jsp:include></div>	
-		</div>	
+        <!-- 회원가입 로그인 버튼 -->
+        <div>
+          <div><jsp:include page="${mainLoginLogoutBtn}"></jsp:include></div>
+        </div>
       </nav>
     </header>
     <!-- 메인 컨텐츠 : 슬라이드로 1,2,3,4까지 넘어감. -->

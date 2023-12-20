@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LoginMain</title>
     <link rel="stylesheet" href="0_main/css/header.css" />
@@ -17,12 +17,16 @@
     />
   </head>
   <body>
-     <!-- 메인 상단 : 헤더 -->
+    <!-- 메인 상단 : 헤더 -->
     <header>
       <nav id="all_header">
         <!-- 헤더 왼쪽 로고 -->
         <div class="header_logo">
-          <img src="0_main/img/logo-OPEN THE DOG-dark.svg" alt="" onclick="location.href='HC'"/>
+          <img
+            src="0_main/img/logo-OPEN THE DOG-dark.svg"
+            alt=""
+            onclick="location.href='HC'"
+          />
         </div>
         <!-- 메뉴 -->
         <div class="nav-var">
@@ -56,22 +60,25 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
-              <a href="#">Check Registration Number</a>
-              <a href="#">Naming</a>
+              <a onclick="location.href='CheckRegNmC'"
+                >Check Registration Number</a
+              >
+              <a onclick="location.href='NamingMainC'">Naming</a>
             </div>
           </div>
         </div>
         <!-- 회원가입 로그인 버튼 -->
         <div>
-		  <div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
-		</div>	
+          <div><jsp:include page="${loginLogoutBtn}"></jsp:include></div>
+        </div>
       </nav>
     </header>
- 
-	<!--  컨텐츠페이지 -->
-	<div align="center">
-		<div><jsp:include page = "${contentPage }"></jsp:include></div>	
-	</div>	 
+
+    <!--  컨텐츠페이지 -->
+    <div align="center">
+      <div><jsp:include page="${contentPage }"></jsp:include></div>
+    </div>
+
     <!-- 푸터!!! -->
     <footer>
       <div>
@@ -81,9 +88,22 @@
         </div>
         <div class="footer2">
           <div class="askMe">ask me</div>
-          <div>
-            <input type="text" />
-            <a href="#"><img src="0_main/img/send-icon.png" alt="보내기버튼" /></a>
+          <div class="ask-input">
+            <form action="AskAboutDogMainC" method="post">
+              <input
+                class="askanything"
+                name="askanything"
+                id="input"
+                type="text"
+              />
+              <a id="send1"
+                ><button type="button" class="send-btn">
+                  <img
+                    src="0_main/img/send-icon.png"
+                    alt="보내기버튼"
+                  /></button
+              ></a>
+            </form>
           </div>
         </div>
         <div class="footer3">
@@ -97,8 +117,8 @@
             <span>About Us</span>
             <span>Support</span>
             <span>Adoption Process</span>
-            <span>Service</span>
-            <span>Shelter Map</span>
+            <span onclick="location.href='CheckRegNmC'">Service</span>
+            <span onclick="location.href='CenterMainC'">Shelter Map</span>
           </div>
         </div>
       </div>
