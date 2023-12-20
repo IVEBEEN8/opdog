@@ -16,9 +16,10 @@ public class FeedPageC extends HttpServlet {
 		FeedDAO.getAllFeed(request);
 		int p = Integer.parseInt(request.getParameter("p"));
 		FeedDAO.paging(p, request);
-		request.setAttribute("contentPage", "feed.jsp");
-		request.getRequestDispatcher("lkl/index.jsp").forward(request, response);
-
+		
+		request.setAttribute("contentPage", "../2_shop/2_2_feed/feed.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)

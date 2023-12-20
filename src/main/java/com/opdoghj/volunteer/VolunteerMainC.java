@@ -1,26 +1,22 @@
-package com.opdogkl.shop.feed;
+package com.opdoghj.volunteer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opdogkl.shop.fashion.FashionDAO;
+import com.opdoghw.login.LoginDAO;
 
-import javax.servlet.annotation.WebServlet;
-
-@WebServlet("/FeedC")
-public class FeedC extends HttpServlet {
+@WebServlet("/VolunteerMainC")
+public class VolunteerMainC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// 강아지 사료 전체 조회하는일
-		FeedDAO.getAllFeed(request);
-		FeedDAO.paging(1, request);
-		
-		request.setAttribute("contentPage", "../2_shop/2_2_feed/feed.jsp");
+		request.setAttribute("contentPage", "../3_volunteer/volunteerMain.jsp");
+		LoginDAO.loginCheck(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
-	
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
 

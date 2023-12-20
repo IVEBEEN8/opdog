@@ -1,27 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+pageEncoding="UTF-8"%> <%@ taglib uri="http://java.sun.com/jsp/jstl/core"
+prefix="c" %>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>MainPage</title>
-<link rel="stylesheet" href="0_main/css/main.css" />
+  <head>
+    <meta charset="UTF-8" />
+    <title>MainPage</title>
+    <link rel="stylesheet" href="0_main/css/main.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
       rel="stylesheet"
     />
-</head>
-<body>
-<!-- 메인 상단 : 헤더 -->
+  </head>
+  <body>
+    <!-- 메인 상단 : 헤더 -->
     <header>
       <nav id="main_header" class="main_header">
         <!-- 헤더 왼쪽 로고 -->
-        	<div class="header_logo">
-            	<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
-         	</div>
+        <div class="header_logo">
+          <img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
+        </div>
         <!-- 메뉴 -->
         <div class="nav-var">
           <div class="nav-items">
@@ -31,38 +31,40 @@
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
-              <a onclick="location.href='CenterMainC'">Shelter Info</a>
-              <a href="#">Adoption Process</a>
-              <a href="#">Adoption Review</a>
+              <a href="'CenterMainC'">Shelter Info</a>
+              <a onclick="location.href='ProcessC'">Adoption Process</a>
+              <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
           </div>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Shop</span></a>
             <div class="nav-subnav">
-              <a href="#">Feed</a>
-              <a href="#">Snack</a>
-              <a href="#">Fashion</a>
-              <a href="#">Toy</a>
+              <a onclick="location.href='FashionC'">Fashion</a>
+              <a onclick="location.href='FeedC'">Feed</a>
+              <a onclick="location.href='SnackC'">Snack</a>
+              <a onclick="location.href='ToyC'">Toy</a>
             </div>
           </div>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Volunteer</span></a>
             <div class="nav-subnav">
-              <a href="#">Go Together</a>
+              <a onclick="location.href='VolunteerMainC'">Go Together</a>
             </div>
           </div>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
-              <a onclick="location.href='CheckRegNmC'">Check Registration Number</a>
+              <a onclick="location.href='CheckRegNmC'"
+                >Check Registration Number</a
+              >
               <a onclick="location.href='NamingMainC'">Naming</a>
             </div>
           </div>
         </div>
-          <!-- 회원가입 로그인 버튼 -->
-          <div>
-		<div><jsp:include page = "${mainLoginLogoutBtn}"></jsp:include></div>	
-		</div>	
+        <!-- 회원가입 로그인 버튼 -->
+        <div>
+          <div><jsp:include page="${mainLoginLogoutBtn}"></jsp:include></div>
+        </div>
       </nav>
     </header>
     <!-- 메인 컨텐츠 : 슬라이드로 1,2,3,4까지 넘어감. -->
@@ -110,44 +112,46 @@
         <div class="styling-tv">
           <div class="animation-list animation">
             <div class="img-list">
-            
-            <c:forEach var="dogs" items="${dog }" varStatus="status">
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="${dogs.popfile }" alt="유기견${status.count }" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">${dogs.kindCd }</div>
-                    <div class="img-info">
-                      ${dogs.age }<br />
-                      ${dogs.sexCd }<br />
-                      ${dogs.specialMark }
+              <c:forEach var="dogs" items="${dog }" varStatus="status">
+                <div class="img-box">
+                  <div class="img-wrap">
+                    <div class="slide-img">
+                      <img
+                        src="${dogs.popfile }"
+                        alt="유기견${status.count }"
+                      />
+                    </div>
+                    <div class="txt-box">
+                      <div class="img-name">${dogs.kindCd }</div>
+                      <div class="img-info">
+                        ${dogs.age }<br /> ${dogs.sexCd }<br />
+                        ${dogs.specialMark }
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </c:forEach>
-           </div>
-           <div class="img-list">
-            <c:forEach var="dogs" items="${dog }" varStatus="status">
-              <div class="img-box">
-                <div class="img-wrap">
-                  <div class="slide-img">
-                    <img src="${dogs.popfile }" alt="유기견${status.count }" />
-                  </div>
-                  <div class="txt-box">
-                    <div class="img-name">${dogs.kindCd }</div>
-                    <div class="img-info">
-                      ${dogs.age }<br />
-                      ${dogs.sexCd }<br />
-                      ${dogs.specialMark }
+              </c:forEach>
+            </div>
+            <div class="img-list">
+              <c:forEach var="dogs" items="${dog }" varStatus="status">
+                <div class="img-box">
+                  <div class="img-wrap">
+                    <div class="slide-img">
+                      <img
+                        src="${dogs.popfile }"
+                        alt="유기견${status.count }"
+                      />
+                    </div>
+                    <div class="txt-box">
+                      <div class="img-name">${dogs.kindCd }</div>
+                      <div class="img-info">
+                        ${dogs.age }<br /> ${dogs.sexCd }<br />
+                        ${dogs.specialMark }
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-            </c:forEach>
-              
+              </c:forEach>
             </div>
           </div>
         </div>

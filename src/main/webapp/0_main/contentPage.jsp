@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LoginMain</title>
     <link rel="stylesheet" href="0_main/css/header.css" />
@@ -17,12 +17,16 @@
     />
   </head>
   <body>
-     <!-- 메인 상단 : 헤더 -->
+    <!-- 메인 상단 : 헤더 -->
     <header>
       <nav id="all_header">
         <!-- 헤더 왼쪽 로고 -->
         <div class="header_logo">
-          <img src="0_main/img/logo-OPEN THE DOG-dark.svg" alt="" onclick="location.href='HC'"/>
+          <img
+            src="0_main/img/logo-OPEN THE DOG-dark.svg"
+            alt=""
+            onclick="location.href='HC'"
+          />
         </div>
         <!-- 메뉴 -->
         <div class="nav-var">
@@ -33,18 +37,18 @@
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a href="#">Stary Dogs</a>
-              <a onclick="location.href='CenterMainC'">Shelter Info</a>
-              <a href="#">Adoption Process</a>
-              <a href="#">Adoption Review</a>
+              <a href="#">Shelter Info</a>
+              <a onclick="location.href='ProcessC'">Adoption Process</a>
+              <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
           </div>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Shop</span></a>
             <div class="nav-subnav">
-              <a href="#">Feed</a>
-              <a href="#">Snack</a>
-              <a href="#">Fashion</a>
-              <a href="#">Toy</a>
+              <a onclick="location.href='FashionC'">Fashion</a>
+              <a onclick="location.href='FeedC'">Feed</a>
+              <a onclick="location.href='SnackC'">Snack</a>
+              <a onclick="location.href='ToyC'">Toy</a>
             </div>
           </div>
           <div class="nav-items">
@@ -56,22 +60,24 @@
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
-              <a onclick="location.href='CheckRegNmC'">Check Registration Number</a>
+              <a onclick="location.href='CheckRegNmC'"
+                >Check Registration Number</a
+              >
               <a onclick="location.href='NamingMainC'">Naming</a>
             </div>
           </div>
         </div>
         <!-- 회원가입 로그인 버튼 -->
         <div>
-		  <div><jsp:include page = "${loginLogoutBtn}"></jsp:include></div>	
-		</div>	
+          <div><jsp:include page="${loginLogoutBtn}"></jsp:include></div>
+        </div>
       </nav>
     </header>
- 
-	<!--  컨텐츠페이지 -->
-	<div align="center">
-		<div><jsp:include page = "${contentPage }"></jsp:include></div>	
-	</div>
+
+    <!--  컨텐츠페이지 -->
+    <div align="center">
+      <div><jsp:include page="${contentPage }"></jsp:include></div>
+    </div>
 
     <!-- 푸터!!! -->
     <footer>
@@ -82,13 +88,24 @@
         </div>
         <div class="footer2">
           <div class="askMe">ask me</div>
-          <div>
-          	<form action="AskAboutDogMainC" method="post">
-            <input name ="askanything" id="input" type="text">
-            <a id="send1"><button><img src="0_main/img/send-icon.png" alt="보내기버튼"/></button></a>
-          	</form>
+          <div class="ask-input">
+            <form action="AskAboutDogMainC" method="post">
+              <input
+                class="askanything"
+                name="askanything"
+                id="input"
+                type="text"
+              />
+              <a id="send1"
+                ><button type="button" class="send-btn">
+                  <img
+                    src="0_main/img/send-icon.png"
+                    alt="보내기버튼"
+                  /></button
+              ></a>
+            </form>
           </div>
-        </div>                                           
+        </div>
         <div class="footer3">
           <div class="sns-var">
             <a href="#"><img src="0_main/img/footer-menu-Facebook.svg" /></a>
@@ -101,7 +118,7 @@
             <span>Support</span>
             <span>Adoption Process</span>
             <span onclick="location.href='CheckRegNmC'">Service</span>
-            <span onclick="location.href='CenterMainC'" >Shelter Map</span>
+            <span onclick="location.href='CenterMainC'">Shelter Map</span>
           </div>
         </div>
       </div>

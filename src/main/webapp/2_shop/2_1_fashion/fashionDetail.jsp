@@ -16,10 +16,10 @@
 		    	<img class="썸네일 이미지" src="${fashion.fs_img }" >
 			</div>
 	    	<div class="아이템 정보">	
-    			<div class="아이템 제목">${fashion.fs_title }</div>
-    			<div class="아이템 가격">${fashion.fs_price } &#8361;</div>
-    			<div class="아이템 브랜드">${fashion.fs_brand }</div>
-    			<button onclick="checkOut()">결제하기</button> <button>하트</button>
+    			<div class="아이템 제목" id="itemTitle">${fashion.fs_title }</div>
+    			<div class="아이템 가격" id="itemPrice">${fashion.fs_price } &#8361;</div>
+    			<div class="아이템 브랜드" id="itemBrand">${fashion.fs_brand }</div>
+    			<button onclick="checkOut()" id="checkOutBtn" value="${fashion.fs_price / 10}">결제하기</button> <button>하트</button>
     		</div>
     	</div>	
     	

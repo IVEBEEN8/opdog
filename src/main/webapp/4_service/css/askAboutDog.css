@@ -1,14 +1,29 @@
 @charset "UTF-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+  
+}
 .chat-content-wrap1-2{
-	
-	height: 100vh;
+	position:relative;
+	height: 1300px;
 	width: 100vw;
 	text-align: center;
 	
 }
 .chat-content1-2 {
 		position: absolute;	
-		margin-top: 5vh;
+		margin-top: 8vh;
         height: 100vh;
         width: 100vw;
         overflow-y: none;
@@ -17,40 +32,46 @@
 	display:none;
 }
 .smartphone-wrap{	
-	top: 30vh;
-	position: relative;
-	margin-top:-23vh;
-	background: url('../img/iphonebackground.png') center center no-repeat;
-	margin-left:37.09375vw;
-	height :945px;
+	position:relative;
+	margin:auto; 
+	background: url('../img/msgframe.png') center center no-repeat;
+	background-size:contain;
+	height :1000px;
 	width : 464px;
 	
 }
 /* 챗팅창조절! */
 .chat-box-wrap1-2{
-	position:relative;
-	top:163px;
-	margin-left:1vw;
-	
-	width:425px;
-    height: 643px;
-    overflow-y : scroll;
+    position: absolute;
+    left: 5.3%;
+    top: 20.4%;
+    width: 89.2%;
+    max-height: 62%;
+    overflow-y: scroll;
 }
 .chat-bottom-wrap1-2{
-	margin-top: 15vh;
-	display:flex;
-	margin-left:1vw;
-	width:425px;
+   	position: absolute;
+    top: 82.6%;
+    left: 5.3%;
+    width: 89.2%;
+    overflow-y: scroll;
+    display: flex;
+}
+.chat-bottom-wrap1-2::-webkit-scrollbar{
+	display:none;
 }
 .line {
    margin-top: 2vh;
+   margin-left: 1vw;
+   margin-right:1vw;
    display: flex;
+
 }
 .chat-box-wrap1-2::-webkit-scrollbar{
 	display:none;
 }
 .chat-box {
-	padding:3px;
+	padding:10px 15px 10px 15px;
 	border-radius:15px;
 	text-align:left;
 	background: #eee;
@@ -73,10 +94,12 @@
    	margin-bottom: 1vh;
 }
 .input-box{
-	border-radius :15px;
-	height:2.6vh;
-	margin-left:7vw;
-    width: 11.2vw;
-    border: none;
+	margin-top: 0.6%;
+    height: 27px;
+    width: 50%;
+    text-indent: 1em;
+    border: 1px solid gray;
+    border-radius: 15px;
+    margin-left: 33.5%;
 }
 
