@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>review register</title>
 <script type="text/javascript" src="1_adopt/js/review.js"></script>
 </head>
 
