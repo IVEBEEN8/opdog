@@ -65,7 +65,8 @@
 	<!-- 메인 -->
 	
 	<main>
-		<div><a href="ReviewRegC">입양후기 작성하러가기</a></div>
+	
+		
 		<c:forEach var="r"  items="${reviews}">
 			<div class="입양후기">
 				
@@ -77,9 +78,9 @@
 				
 				<br>
 				<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">디테일창으로 이동</button>
-				
 			</div>
 		</c:forEach>
+		<div><a href="ReviewRegC">입양후기 작성하러가기</a></div>
 	</main>
 	
 	

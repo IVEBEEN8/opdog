@@ -24,7 +24,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.opdogkl.shop.DBManager;
+import com.opdoghw.centerinfo.DBManager_khw;
+
 import com.opdogkl.shop.NaverAPI;
 
 public class FashionDAO {
@@ -44,7 +45,7 @@ public class FashionDAO {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Fashion fs = null;
@@ -69,7 +70,7 @@ public class FashionDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 	}
 	
@@ -83,7 +84,7 @@ public static void getFashion(HttpServletRequest request) {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("no"));
 			rs = pstmt.executeQuery();
@@ -107,7 +108,7 @@ public static void getFashion(HttpServletRequest request) {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 	}
 	
@@ -139,11 +140,8 @@ public static void getFashion(HttpServletRequest request) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
-		
-		
-		
 		try {
-			String str = "강아지사료";
+			String str = "강아지패션";
 			str = URLEncoder.encode(str,"utf-8");
 			System.out.println(str);
 			
@@ -162,8 +160,8 @@ public static void getFashion(HttpServletRequest request) {
 			System.out.println(11);
 			System.out.println(naverData);	
 			JSONArray items = (JSONArray) naverData.get("items");
-			con = DBManager.connect();
-			String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
+			con = DBManager_khw.connect();
+			String sql = "insert into naver_kl VALUES (naver_kl_seq.nextval,?,?,?,?)";
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			pstmt = con.prepareStatement(sql); 
 			for (int i = 0; i < items.size(); i++) {
@@ -242,7 +240,7 @@ public static void getFashion(HttpServletRequest request) {
 			System.out.println("등록실패");
 			
 		} finally {
-			DBManager.close(con, pstmt, null);
+			DBManager_khw.close(con, pstmt, null);
 		}
 		
 	}

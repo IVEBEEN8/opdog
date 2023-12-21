@@ -31,42 +31,41 @@ function checkForm() {
   	return true;
 }
 // 등록 이미지 미리보기 
- function previewSelectedImage(input) {
-            var preview = document.getElementById('previewImage');
-            var file = input.files[0];
-            var reader = new FileReader();
+ // 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
+var previousFile = null;  // 이전에 선택한 파일 정보를 저장하는 변수
 
-            reader.onload = function (e) {
-                preview.src = e.target.result;
-            };
+function previewSelectedImage(input) {
+    var preview = document.getElementById('previewImage');
+    var file = input.files[0];
+    var reader = new FileReader();
 
-            if (file) {
-                // 이미지를 선택한 경우에만 미리보기 영역을 보이도록 변경
-                preview.parentNode.style.display = 'block';
-                reader.readAsDataURL(file);
+    reader.onload = function (e) {
+        // 이미지를 선택한 경우에만 미리보기 영역을 보이도록 변경
+        preview.parentNode.style.display = 'block';
+        preview.src = e.target.result;
 
-                // 이미지를 선택한 경우, 그 이름을 저장
-                document.getElementById("previousFileName").value = file.name;
-            } else {
-  			  	// 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
-    			var previousFileName = document.getElementById("previousFileName").value;
+        // 이미지를 선택한 경우, 그 정보를 저장
+        previousFile = {
+            name: file.name,
+            dataURL: e.target.result
+        };
+    };
 
-   				if (!previousFileName) {
-        			// 이전 파일 이름이 없는 경우
-        			preview.parentNode.style.display = 'none';  // 미리보기 영역을 숨김
-    			} else {
-      			  	// 이전 파일 이름이 있는 경우
-        			preview.parentNode.style.display = 'block';  // 미리보기 영역을 보이도록 변경
-        			// 초기 이미지의 경로를 이전 파일 이름을 사용하여 설정
-       				preview.src = "1_adopt/1_4_review/imgFolder/" + previousFileName;
-    				}
-				}
-            
-            
-            	
-            // 파일 선택 값 초기화는 선택한 파일을 다시 선택할 수 있게 하기 위한 것
-            // fileInput.value = ''; // 이 부분을 주석 처리하거나 삭제하면 사용자가 같은 파일을 여러 번 선택할 수 있습니다.
+    if (file) {
+        // 이미지를 선택한 경우에만 미리보기 영역을 보이도록 변경
+        preview.parentNode.style.display = 'block';
+        reader.readAsDataURL(file);
+    } else {
+        // 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
+        if (previousFile) {
+            preview.parentNode.style.display = 'block';  // 미리보기 영역을 보이도록 변경
+            preview.src = previousFile.dataURL;  // 이전에 선택한 파일을 미리보기로 복원
+        } else {
+            preview.parentNode.style.display = 'none';  // 미리보기 영역을 숨김
         }
+    }
+}
+
 function checkLength() {
         var textarea = document.getElementById('txt');
         var charCount = document.getElementById('charCount');

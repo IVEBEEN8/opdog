@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.opdogkl.shop.DBManager;
+import com.opdoghw.centerinfo.DBManager_khw;
 
 public class FeedDAO {
 	private static ArrayList<Feed> feeds;
@@ -22,7 +22,7 @@ public class FeedDAO {
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			con = DBManager.connect();
+			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Feed f = null;
@@ -48,7 +48,7 @@ public class FeedDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			DBManager.close(con, pstmt, rs);
+			DBManager_khw.close(con, pstmt, rs);
 		}
 		
 	}
