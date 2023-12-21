@@ -1,7 +1,3 @@
-# Ignore config.js files
-config.js
-
-*.class
 
 
 # Mobile Tools for Java (J2ME)
@@ -49,8 +45,11 @@ pom.xml.versionsBackup
 pom.xml.next
 release.properties
 dependency-reduced-pom.xml
+<<<<<<< HEAD
+/bin/
+=======
 src/main/webapp/WEB-INF/web.xml
 /bin/
 src/main/java/com/opdoghw/centerinfo/DBManager_khw.java
-opdog/src/main/webapp/4_service/js/config.js
+
 

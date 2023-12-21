@@ -15,9 +15,9 @@ public class HC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
+
 		LoginDAO.loginCheckMain(request);
-		MainDAO.listLoading(request,response);
+		MainDAO.listLoading(request, response);
 		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
 	}
 

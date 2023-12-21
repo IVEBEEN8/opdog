@@ -112,7 +112,7 @@ prefix="c" %>
         <div class="styling-tv">
           <div class="animation-list animation">
             <div class="img-list">
-              <c:forEach var="dogs" items="${dog }" varStatus="status">
+              <c:forEach var="dogs" items="${dog }" varStatus="status" end="9">
                 <div class="img-box">
                   <div class="img-wrap">
                     <div class="slide-img">
@@ -122,10 +122,11 @@ prefix="c" %>
                       />
                     </div>
                     <div class="txt-box">
-                      <div class="img-name">${dogs.kindCd }</div>
+                      <div class="img-name">D-${dogs.dday }day</div>
                       <div class="img-info">
-                        ${dogs.age }<br /> ${dogs.sexCd }<br />
-                        ${dogs.specialMark }
+                        ${dogs.age }<br /> ${dogs.sexCd },<br />
+                        ${dogs.specialMark }<br />
+                        ${dogs.date }
                       </div>
                     </div>
                   </div>
@@ -133,7 +134,7 @@ prefix="c" %>
               </c:forEach>
             </div>
             <div class="img-list">
-              <c:forEach var="dogs" items="${dog }" varStatus="status">
+              <c:forEach var="dogs" items="${dog }" varStatus="status" end="9">
                 <div class="img-box">
                   <div class="img-wrap">
                     <div class="slide-img">
@@ -143,10 +144,11 @@ prefix="c" %>
                       />
                     </div>
                     <div class="txt-box">
-                      <div class="img-name">${dogs.kindCd }</div>
+                      <div class="img-name">D-${dogs.dday }day</div>
                       <div class="img-info">
-                        ${dogs.age }<br /> ${dogs.sexCd }<br />
-                        ${dogs.specialMark }
+                        ${dogs.age }<br /> ${dogs.sexCd },<br />
+                        ${dogs.specialMark }<br />
+                        ${dogs.date }
                       </div>
                     </div>
                   </div>
@@ -159,7 +161,10 @@ prefix="c" %>
       <!-- main 3page start -->
       <div class="fullsection full3" pageNum="3">
         <div class="full3-bigTxt">Current status of abandoned dog</div>
-        <div class="count">0</div>
+        <div class="count">
+          <p style="display: none" id="count">${count }</p>
+          0
+        </div>
         <div class="full3-smallTxt">dogs</div>
       </div>
       <div class="fullsection full4" pageNum="4">
