@@ -1,6 +1,11 @@
-$(document).ready(function(){
+/*document.getElementById('inputSearch').addEventListener('keyup', function(event){
+	if(event.key==='Enter'){
+		performSearch();
+	}
+})*/
 
-	console.log(11);
+
+$(document).ready(function performSearch(){
 	//검색버튼 클릭이벤트처리!
 	$("#searchButton").on("click", function(){
 		var searchField = $("select[name='searchField']").val();
@@ -22,7 +27,6 @@ $(document).ready(function(){
 			
 			console.log(data);
 				$("#modalBody1").empty();
-       		  
 		        $("#modalBody1").append('<div class="box-info1">Searched Info</div>')
 		        $("#modalBody1").append('<hr>')
 				$("#modalBody1").append('<div style="z-index:1000;"id="closeBtn1">x<div>')

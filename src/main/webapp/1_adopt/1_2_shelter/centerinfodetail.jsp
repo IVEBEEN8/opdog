@@ -23,28 +23,26 @@
 </head>
 <body>
 <div class="containar1-2">
-	<button class="reload-map1-2">Reload Map</button>
+	<button class="reload-map1-2"><img class="reloadi" src="1_adopt/img/reloadi.png"><span class="wordReload">Reload</span></button>
 	<div class="map" id="map"></div>
 	<!--검색창!-->
 	<div class="row">
         <form method="post" name="keywords-serch" id="searchForm">
-            <table class="pull-right">
-                <tr>
-                    <td>
+            <div class="pull-right-wrap1-2">
+                    <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
-                            <option value="0">Select</option>
-                            <option value="c_careNm">ShelterName</option>
-                            <option value="c_careAddr">Address</option>
+                            <option value="0">&nbsp;&nbsp; Select</option>
+                            <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
+                            <option value="c_careAddr">&nbsp;&nbsp;Address</option>
                         </select>
-                    </td>
-                    <td>
-                        <input type="text" class="form-control" placeholder="Put Keywords" name="searchText" maxlength="100">
-                    </td>
-                    <td>
-                        <button type="button" class="btn btn-success" id="searchButton">Search</button>
-                    </td>
-                </tr>
-            </table>
+                    </div>
+                    <div class="pull-right1-2">
+                        <input type="text" id ="inputSearch" class="form-control input-search1-2" placeholder=" Put Keywords" name="searchText" maxlength="100">
+                    </div>
+                    <div class="pull-right1-2">
+                        <button type="button" class="searchButton1-2" id="searchButton"><img class="searchi" src="1_adopt/img/search.png"></button>
+                    </div>
+            </div>
         </form>
     </div>
     <!-- 인풋박스 시작! -->
@@ -95,7 +93,7 @@ var mapContainer = document.getElementById('map'); //지도를 표시할 div id
 var mapOption = {
     center: new kakao.maps.LatLng(36.501202261595324, 128.0554606771207), //지도의 중심좌표
     level: 13,
-    mapTypeId: kakao.maps.MapTypeId.SKYVIEW
+    mapTypeId: kakao.maps.MapTypeId.ROADMAP
 };
 
 // 지도생성
@@ -122,6 +120,8 @@ async function fetchData() {
         return null;
     }
 }
+
+
 
 function createMarker(lat, lng, data) {
     var marker = new kakao.maps.Marker({
@@ -191,6 +191,19 @@ async function initializeMap() {
 initializeMap();
 
 
+
+function copyText(){
+	var spanText = document.querySelector(".centeraddr");
+	window.getSelection().removeAllRanges();
+	var range = document.createRange();
+ 	range.selectNode(spanText);
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    alert("주소가 복사되었습니다.");
+    }
+
+
 //db파일에 있는 데이터값 들고와서 사용!
 var map;
 $(document).ready(function() {
@@ -199,11 +212,14 @@ $(document).ready(function() {
     })
 	
 	$('.showinthemap').on("click", function(){
+		
         var clickedValue = $(this).val();
         var scv = clickedValue.split("!");
         for(let i =0; i<scv.length; i++){
             console.log(scv[i]);
         }
+      
+      
         if (scv.length === 8 && scv[2] !== "" && scv[3] !== "") {
             // 좌표값이 유효한 경우에만 지도를 생성하고 이동시킵니다.
             var centername = scv[0]; // 보호소이름
@@ -214,40 +230,47 @@ $(document).ready(function() {
             var closetime = scv[5]; // 오픈시간
             var closeday = scv[6]; // 휴무일
             var caretel = scv[7]; // 전화번호
-
+			
+            
+            
             var mapOption = {
                 center: new kakao.maps.LatLng(latitude, longitude), //지도의 중심좌표
                 level: 5,
                 mapTypeId: kakao.maps.MapTypeId.ROADMAP
             };
             // 지도 객체 생성
+            
             var map = new kakao.maps.Map(mapContainer, mapOption);
-            var content = '<div class="overlaybox1-2">' +
-                '   			 <div class="boxtitle1-2">Shelter Info</div>' +
+           	var centeraddrId = "mycopyaddr" + Math.random().toString(36).substr(2, 9);
+            var content = '<div class="overlaybox1-2">' + 
+                '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
                 '    			<ul class="li-wrap1-2">'  +
-                '        				<li class="li1-2">' +
-                '						<span class="title-span1-2">Center Name:</span><br>' +    
-                '          				<span class="title">'+centername+'</span>' +
+                '        				<li class="li1-2">'  +    
+                '          				<span class="title"><img class="bitmap" src="1_adopt/img/Bitmap.png"></span>' +
                 '        				</li>' +
                 '        				<li class="li1-2">' +
-                '							<span class="title-span1-2">Address:</span><br>        ' +
-                '            				<span class="title">'+centeraddr+'</span>' +
+                '            				<span class="title centername">'+centername+'</span>' +
                 '        				</li>' +    
-                '   				    <li class="li1-2">' +
-                '							<span class="title-span1-2" >Operation Time:</span><br>        ' +
-                '            				<span class="title">'+opentime+'~'+closetime+'</span>' +
-                '			      	    </li>' +
+                '        				<li class="li1-2">' +
+                '            				<span class="title centeraddr" id="'+centeraddrId+'">'+centeraddr+'</span>' +
+                '        				</li>' +    
+                '   				    <li class="li1-2">'  +
+                '            				<span class="title caretel">'+caretel+'</span>' +
+                '			      	    </li><br>' +
                 '			           <li class="li1-2">' +
-                '			                 <span class="title-span1-2">Close Day:</span><br>        ' +
-                '		                     <span class="title">'+closeday+'</span>' +
+                '		                     <span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
                 ' 			           </li>' +
-                '			           <li class="li1-2">' +
-                '			                <span class="title-span1-2">Tel:</span><br>        ' +
-                '		                   <span class="title">'+caretel+'</span>' +
+                '			           <li class="li1-2">'  +
+                '		                   <span class="title"><span>closed </span><span class="red-col">'+closeday+'</span>' +
                 ' 			           </li>' +
-                '    			</ul>' +
-                '           </div>';
-
+                '    			</ul><br>'+
+                '				<div class="copylocationbtn-wrap"><button onclick="copyText()" class="copylocationbtn">Copy location</button></div>'	+
+                '</div>' +
+                '</div>';
+            
+           
+			
+                
             // 커스텀 오버레이가 표시될 위치!	
             var position = new kakao.maps.LatLng(latitude, longitude);  
 
@@ -274,6 +297,8 @@ $(document).ready(function() {
         }
         clickedValue=null;
     });
+
+
 });
 </script>
 </body>
