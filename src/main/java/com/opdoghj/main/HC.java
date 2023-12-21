@@ -18,6 +18,7 @@ public class HC extends HttpServlet {
 		
 		LoginDAO.loginCheckMain(request);
 		MainDAO.listLoading(request,response);
+		MainDAO.totalCountLoading(request);
 		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
 	}
 

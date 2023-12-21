@@ -10,6 +10,7 @@ function fullset() {
   }
   $("#fullpage .quick ul :first-child").addClass("on"); //일단 화면이 로드 되었을때는 퀵버튼에 1번째에 불이 들어오게
   //마우스 휠 이벤트
+	var totalCount = $('p[id="count"]').text();
   $(window).bind("mousewheel", function (event) {
     var page = $(".quick ul li.on");
     //alert(page.index()+1);  // 현재 on 되어있는 페이지 번호
@@ -76,7 +77,7 @@ function fullset() {
       if (page.index() === 1 || page.index() === 2 || page.index() === 3) {
         // 스크롤로 3번째 페이지로 이동할 때 카운터 시작
         const $counter = document.querySelector(".count");
-        const max = 172491233;
+        const max = totalCount;
         counter($counter, max);
       }
     }
@@ -112,7 +113,7 @@ function quickClick() {
     // 세 번째 페이지이면서 카운터 시작
     if (gnbindex === 3) {
       const $counter = document.querySelector(".count");
-      const max = 172491233;
+      const max = totalCount;
       counter($counter, max);
     }
 
