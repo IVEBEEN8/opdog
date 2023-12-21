@@ -17,6 +17,7 @@ public class HC extends HttpServlet {
 			throws ServletException, IOException {
 
 		LoginDAO.loginCheckMain(request);
+		MainDAO.totalCountLoading(request);
 		MainDAO.listLoading(request, response);
 		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
 	}
