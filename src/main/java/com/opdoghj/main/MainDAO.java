@@ -30,20 +30,12 @@ public class MainDAO {
 		calendar.add(calendar.DAY_OF_MONTH, -17);
 		Date newDate = calendar.getTime();
 		
-//		Calendar calendar2 = Calendar.getInstance();
-//		calendar2.setTime(currenDate);
-//		calendar2.add(calendar2.DAY_OF_MONTH, -8);
-//		Date newDate2 = calendar2.getTime();
-
 		System.out.println(currenDate);
 		System.out.println(newDate);
-//		System.out.println(newDate2);
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		String endde = dateFormat.format(currenDate);
 		String bgnde = dateFormat.format(newDate);
-//		String dDay = dateFormat.format(newDate2);
-//		int dDay2 = Integer.parseInt(dDay);
 		System.out.println(bgnde);
 		System.out.println(endde);
 		int today = Integer.parseInt(endde);
@@ -60,17 +52,13 @@ public class MainDAO {
 			if(huc.getResponseCode() == 200) {
 				InputStream is = huc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-//				System.out.println(isr);
 			
 				JSONParser jp = new JSONParser();
 				JSONObject dogs = (JSONObject) jp.parse(isr);
 			
-//				System.out.println(dogs);
-//				System.out.println("여기서 터진거면 오브젝트 나눌 때");
 				dogs = (JSONObject) dogs.get("response");
 				dogs = (JSONObject) dogs.get("body");
 				dogs = (JSONObject) dogs.get("items");
-//				System.out.println("여기서 터진거면 어레이 만들 때");
 				JSONArray dog = (JSONArray) dogs.get("item");
 				ArrayList<DogB> doglist = new ArrayList<DogB>();
 				DogB d = null;
@@ -120,7 +108,6 @@ public class MainDAO {
 				JSONParser jp = new JSONParser();
 				JSONObject dogs = (JSONObject) jp.parse(isr);
 			
-//				System.out.println(dogs);
 				dogs = (JSONObject) dogs.get("response");
 				dogs = (JSONObject) dogs.get("body");
 				System.out.println(dogs.get("totalCount"));

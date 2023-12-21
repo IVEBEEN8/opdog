@@ -5,7 +5,8 @@ function check(){
 	let id = document.querySelector("input[name='id']");
 	let pw = document.querySelector("input[name='pw']");
 	let pwCheck = document.querySelector("input[name='pwCheck']");
-	
+	let uprCd = document.getElementById("select[id='sidoSelect']")
+	let orgCd = document.getElementById("select[id='sigunSelect']")
 	
 	if (isEmpty(firstName)){
 		alert('Type your firstname');
@@ -45,6 +46,14 @@ function check(){
 		pw.focus();
 		pw.value="";
 		pwCehck.value="";
+		return false;
+	}
+	if(isEmpty(uprCd)){
+		alert('check your state')
+		return false;
+	}
+	if(isEmpty(uprCd)){
+		alert('check your city')
 		return false;
 	}
 	

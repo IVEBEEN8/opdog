@@ -7,6 +7,8 @@ public class LoginDTO {
 	private String pw;
 	private int no;
 	private String result;
+	private String uprCd;
+	private String orgCd;
 
 
 public LoginDTO() {
@@ -14,7 +16,8 @@ public LoginDTO() {
 }
 
 
-public LoginDTO(String email, String firstname, String lastname, String pw, int no, String result) {
+public LoginDTO(String email, String firstname, String lastname, String pw, int no, String result, String uprCd,
+		String orgCd) {
 	super();
 	this.email = email;
 	this.firstname = firstname;
@@ -22,6 +25,8 @@ public LoginDTO(String email, String firstname, String lastname, String pw, int 
 	this.pw = pw;
 	this.no = no;
 	this.result = result;
+	this.uprCd = uprCd;
+	this.orgCd = orgCd;
 }
 
 
@@ -85,11 +90,34 @@ public void setResult(String result) {
 }
 
 
+public String getUprCd() {
+	return uprCd;
+}
+
+
+public void setUprCd(String uprCd) {
+	this.uprCd = uprCd;
+}
+
+
+public String getOrgCd() {
+	return orgCd;
+}
+
+
+public void setOrgCd(String orgCd) {
+	this.orgCd = orgCd;
+}
+
+
 @Override
 public String toString() {
 	return "LoginDTO [email=" + email + ", firstname=" + firstname + ", lastname=" + lastname + ", pw=" + pw + ", no="
-			+ no + ", result=" + result + "]";
+			+ no + ", result=" + result + ", uprCd=" + uprCd + ", orgCd=" + orgCd + "]";
 }
+
+
+
 
 
 
