@@ -143,15 +143,16 @@ function createMarker(lat, lng, data) {
         //휴업일 대체처리!
         const modifiedCloseDay = markerData.closeDay.replace(/\+/g, ', ').replace(/0/g, 'Open Always');
         // 모댤에에 나올정보!
+        
         $("#modalBody").append('<div id="closeBtn">x<div>')
-        $("#modalBody").append('<div class="box-info">Info Card</div>')
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소명</div><div class="small-content">:' + markerData.careNm + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 주소</div><div class="small-content">:' + markerData.careAddr + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 전화번호</div><div class="small-content">:' + tel + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 영업시작</div><div class="small-content">:' + markerData.weekOprStime + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 영업종료</div><div class="small-content">:' + markerData.weekOprEtime + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 휴무일</div><div class="small-content">:' + modifiedCloseDay + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 수의사수</div><div class="small-content">: ' + vet + '</div></div>');
+        $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
+        $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
+        $("#modalBody").append('<div class="box-title">' + markerData.careNm + '</div>');
+        $("#modalBody").append('<div class="box-title">' + markerData.careAddr + '</div></div>');
+        $("#modalBody").append('<div class="box-title">' + tel + '</div></div>');
+        $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Operation</span>	' + markerData.weekOprStime +'~'+ markerData.weekOprEtime + '</div>');
+        $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Closed</span>	' + modifiedCloseDay + '</div>');
+        
         // 모달 보이기
         $("#printinfo").show();
         $("#closeBtn").on("click", function () {

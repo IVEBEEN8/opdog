@@ -27,9 +27,9 @@ $(document).ready(function performSearch(){
 			
 			console.log(data);
 				$("#modalBody1").empty();
+				$("#modalBody1").append('<div style="z-index:8;"id="closeBtn1">x<div>')
 		        $("#modalBody1").append('<div class="box-info1">Searched Info</div>')
 		        $("#modalBody1").append('<hr>')
-				$("#modalBody1").append('<div style="z-index:1000;"id="closeBtn1">x<div>')
 			for(var i = 0; i < data.length; i++){
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> 보호소명</div><div class="small-content1">:' + data[i].careNm + '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> 보호소 주소</div><div class="small-content1">:' + data[i].careAddr + '</div></div>');
