@@ -107,7 +107,7 @@ prefix="c" %>
             protection center. <br />
             Please help me get to a warm home as soon as possible.
           </div>
-          <button class="full2-btn">View More</button>
+          <button class="full2-btn" onclick="location.href='DoginfoHC'">View More</button>
         </div>
         <!-- 메인2 슬라이드부분 -->
         <div class="styling-tv">

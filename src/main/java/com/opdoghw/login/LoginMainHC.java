@@ -9,6 +9,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.opdoghj.main.MainDAO;
 @WebServlet("/LoginMainHC")
 public class LoginMainHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -25,16 +27,13 @@ public class LoginMainHC extends HttpServlet {
 	if (result==0) {
         request.setAttribute("contentPage", "login/loginMain.jsp");
         LoginDAO.loginCheck(request);
-        System.out.println(request.getAttribute("alert"));
         request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	} else if (result==1) {
         request.setAttribute("contentPage", "login/loginMain.jsp");
         LoginDAO.loginCheck(request);
-        System.out.println(request.getAttribute("alert"));
         request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	} else if (result==2) {
-		LoginDAO.loginCheckMain(request);
-		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
+		response.sendRedirect("HC");
 		
 	}
 	

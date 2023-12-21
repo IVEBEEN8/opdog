@@ -29,6 +29,12 @@ public class sidoB {
 	public void setOrgdownNm(String orgdownNm) {
 		this.orgdownNm = orgdownNm;
 	}
+
+	@Override
+	public String toString() {
+		return "sidoB [orgCd=" + orgCd + ", orgdownNm=" + orgdownNm + "]";
+	}
+	
 	
 	
 

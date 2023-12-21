@@ -50,6 +50,8 @@ public class LoginDAO {
 					account.setFirstname(rs.getString("a_firstname"));
 					account.setLastname(rs.getString("a_lastname"));
 					account.setNo(rs.getInt("a_no"));
+					account.setUprCd(rs.getString("a_uprCd"));
+					account.setOrgCd(rs.getString("a_orgCd"));
 					account.setResult("ok");
 					
 					
@@ -82,7 +84,7 @@ public class LoginDAO {
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql ="insert into opdogaccount values(opdogaccount_seq.nextval,?, ?, ?, ?)";
+		String sql ="insert into opdogaccount values(opdogaccount_seq.nextval,?, ?, ?, ?, ?, ?)";
 		LoginDTO accountInfo = null;
 		
 		try {
@@ -94,17 +96,23 @@ public class LoginDAO {
 			String lastname = request.getParameter("lastName");
 			String pw = request.getParameter("pw");
 			String pwck = request.getParameter("pwCheck");
+			String uprCd = request.getParameter("sido");
+			String orgCd = request.getParameter("sigun");
 			System.out.println(email);
 			System.out.println(firstname);
 			System.out.println(lastname);
 			System.out.println(pw);
 			System.out.println(pwck);
+			System.out.println(uprCd);
+			System.out.println(orgCd);
 			if (pw.equals(pwck)) {
 				
 				pstmt.setString(1, email);
 				pstmt.setString(2, firstname);
 				pstmt.setString(3, lastname);
 				pstmt.setString(4, pw);
+				pstmt.setString(5, uprCd);
+				pstmt.setString(6, orgCd);
 				
 				
 				
