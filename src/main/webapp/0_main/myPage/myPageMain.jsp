@@ -14,7 +14,7 @@
 <div>First Name: ${account.firstname }</div>
 <div>Last Name: ${account.lastname }</div>
 <div>PW: ********</div>
-<button onclick="location.href='0_main/myPage/changeInfo.jsp'">change</button>
+<button onclick="location.href='UpdateInfoC'">change</button>
 
 <div>my booked dog</div>
 <c:forEach var="list" items="${list }" varStatus="status">

@@ -1,4 +1,7 @@
- window.onload = function() {
+import config from "./config.js";
+const {API_KEY} = config;
+
+window.onload = function() {
         // 페이지가 로드될 때 input 값이 설정되어 있다면 비우기
         // 페이지가 로드될 때 'send' 버튼을 자동으로 클릭
         document.getElementById('send').click();
@@ -16,17 +19,16 @@
         });
 
     };
+
+
 //HTML 문서가 완전히 로드되었을 때 지정된 함수를 실행하도록 하는 이벤트 리스너
 document.addEventListener("DOMContentLoaded", function () {
-
 	document.getElementById('input').focus();
     document.querySelector("#send").addEventListener("click", async function () {  
 	document.getElementById('input').focus();
 		//이 코드는 템플릿 리터럴(template literal)을 사용하여 HTML 코드를 동적으로 생성하는 부분입니다.
-		// 여기서 생성된 HTML 코드는 사용자의 입력 값을 채팅 창에 표시하는 역할을 합니다.
-		 var template = `<div class="line">
-            <span class="chat-box mine">${document.querySelector("#input").value}</span>
-        </div>`;
+		//여기서 생성된 HTML 코드는 사용자의 입력 값을 채팅 창에 표시하는 역할을 합니다.
+		 var template = '<div class="line"><span class="chat-box mine">${document.querySelector("#input").value}</span></div>';
 
 		//`` (역따옴표)로 묶인 부분은 템플릿 리터럴입니다. 
 		//템플릿 리터럴은 문자열을 다루는 새로운 문법으로, 
@@ -36,9 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
 		const chatBoxWrap = document.querySelector(".chat-box-wrap1-2");
         chatBoxWrap.scrollTop = chatBoxWrap.scrollHeight;
 
+		
+
 		const prompt = document.querySelector("#input").value;	
-        const apiKey = "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" // open ai_KEY
-        
+        //const apiKey = "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" // open ai_KEY
+        //const apiKey = config.API_KEY;
 		if(prompt == null){		
 			prompt= document.querySelector("#input").value;	
 		}
@@ -55,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
 			/*"Content-Type": "application/xml"은 XML 형식의 데이터를 나타냅니다.
 			"Content-Type": "text/plain"은 일반 텍스트 데이터를 나타냅니다.
 			"Content-Type": "application/x-www-form-urlencoded"은 웹 폼 데이터를 나타냅니다. */
-                    Authorization: `Bearer ${apiKey}`,
+                    Authorization: `Bearer ${API_KEY}`,
                 },
                 body: JSON.stringify({
                     model: "gpt-3.5-turbo-0613",
@@ -81,9 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ).message.content;
 
 				
-                var assistantTemplate = `<div class="line">
-                    <span class="chat-box">${assistantMessage}</span>
-                </div>`;
+                var assistantTemplate = '<div class="line"><span class="chat-box">${assistantMessage}</span></div>';
                 document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", assistantTemplate);
             
 				//자동 스크롤!		
@@ -96,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
         } catch (error) {
             console.error("API 호출 중 오류:", error);
             // 오류에 대한 추가 처리를 할 수 있습니다.
-        }
+        };
     });
 });
 

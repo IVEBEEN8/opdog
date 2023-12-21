@@ -31,6 +31,7 @@ public class NaverAPI {
 //		s8uIyGeGT8
 //		"https://openapi.naver.com/v1/search/shop.json?query="
 		
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
