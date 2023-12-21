@@ -5,10 +5,10 @@
 <%@ page import="java.util.Date" %>
 <!DOCTYPE html>
 <html>
-<script type="text/javascript" src="4_service/js/askAboutDog.js"></script>
-<script type="text/javascript" src="4_service/js/getTheDate.js"></script>
-
+<script type="module" src="4_service/js/askAboutDog.js"></script>
+<script type="moduel" src="4_service/js/getTheDate.js"></script>
 <link rel="stylesheet" href="4_service/css/askAboutDog.css">
+
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
@@ -32,5 +32,6 @@
     		</div>
     	</div>
     </div>
-</div>  
+</div>
+
 </body>

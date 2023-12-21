@@ -17,17 +17,15 @@ body {
  .container{
     position: relative;
     width: 100vw;
-    top: 4vw;
+    top: 4.7vw;
     display: flex;
     flex-direction: column;
-    gap: 3vw;
 
 }
 
 .title {
   margin: auto;
-  width: 660px;
-  height: 60px;
+  width: 34.375vw;
   text-align: center;
 }
 
@@ -54,10 +52,10 @@ body {
 }
 
 .content-bg {
-  width: 350px;
-  height: 220px;
+  width: 18vw;
+  height: 12vw;
   flex-shrink: 0;
-  border-radius: 200px;
+  border-radius:6vw;
   background: rgba(250, 234, 177, 0.65);
   margin: 20px 0px 0px 20px;
   position: relative;
@@ -86,18 +84,16 @@ body {
 
 .content-bg > img {
   position: absolute;
-  left: 95px;
-  top: 30px;
+  left: 5vw;
+  top: 1.5vw;
 }
-
 
 .content-bg>a {
   display: flex;
-  width: 350px;
-  height: 60px;
+  width: 18.2vw;
   position: absolute;
   justify-content: center;
-  top: 155px;
+  top: 8vw;
   gap: 20px;
 }
 
@@ -114,7 +110,7 @@ body {
 }
 
 .content-bg>a > img {
-  width: 30px;
-  height: 34px;
+  width: 1.5vw;
+  height: 2.5vw;
   margin-top: 3px;
 }
