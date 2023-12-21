@@ -150,7 +150,7 @@ body {
     top: -6vh;
     position: relative;
     width: 13vw;
-    height: 35vh;
+    height: 37vh;
     text-align: left;
     padding: 0px 13px;
     background-color: #fff;
@@ -417,4 +417,23 @@ body {
 }
 .red-col{
 	color: #771138;
+}
+.centername{
+	font-weight: bold;
+    	
+}
+.centeraddr{
+	font-weight: bold;
+    font-size: 0.5vw;	
+}
+.li1-2:hover {
+	color:rgba(250, 248, 241, 1);
+}
+.copylocationbtn-wrap{
+	text-align: center;
+}
+.copylocationbtn{
+	background-color:#fff;
+    width: 12vw;
+    height: 4vh;
 }

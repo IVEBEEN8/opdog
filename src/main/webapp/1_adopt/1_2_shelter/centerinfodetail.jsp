@@ -121,6 +121,8 @@ async function fetchData() {
     }
 }
 
+
+
 function createMarker(lat, lng, data) {
     var marker = new kakao.maps.Marker({
         position: new kakao.maps.LatLng(lat, lng),
@@ -189,6 +191,19 @@ async function initializeMap() {
 initializeMap();
 
 
+
+function copyText(){
+	var spanText = document.querySelector(".centeraddr");
+	window.getSelection().removeAllRanges();
+	var range = document.createRange();
+ 	range.selectNode(spanText);
+    window.getSelection().addRange(range);
+    document.execCommand("copy");
+    window.getSelection().removeAllRanges();
+    alert("주소가 복사되었습니다.");
+    }
+
+
 //db파일에 있는 데이터값 들고와서 사용!
 var map;
 $(document).ready(function() {
@@ -197,11 +212,14 @@ $(document).ready(function() {
     })
 	
 	$('.showinthemap').on("click", function(){
+		
         var clickedValue = $(this).val();
         var scv = clickedValue.split("!");
         for(let i =0; i<scv.length; i++){
             console.log(scv[i]);
         }
+      
+      
         if (scv.length === 8 && scv[2] !== "" && scv[3] !== "") {
             // 좌표값이 유효한 경우에만 지도를 생성하고 이동시킵니다.
             var centername = scv[0]; // 보호소이름
@@ -212,14 +230,18 @@ $(document).ready(function() {
             var closetime = scv[5]; // 오픈시간
             var closeday = scv[6]; // 휴무일
             var caretel = scv[7]; // 전화번호
-
+			
+            
+            
             var mapOption = {
                 center: new kakao.maps.LatLng(latitude, longitude), //지도의 중심좌표
                 level: 5,
                 mapTypeId: kakao.maps.MapTypeId.ROADMAP
             };
             // 지도 객체 생성
+            
             var map = new kakao.maps.Map(mapContainer, mapOption);
+           	var centeraddrId = "mycopyaddr" + Math.random().toString(36).substr(2, 9);
             var content = '<div class="overlaybox1-2">' + 
                 '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
                 '    			<ul class="li-wrap1-2">'  +
@@ -230,20 +252,25 @@ $(document).ready(function() {
                 '            				<span class="title centername">'+centername+'</span>' +
                 '        				</li>' +    
                 '        				<li class="li1-2">' +
-                '            				<span class="title">'+centeraddr+'</span>' +
+                '            				<span class="title centeraddr" id="'+centeraddrId+'">'+centeraddr+'</span>' +
                 '        				</li>' +    
                 '   				    <li class="li1-2">'  +
-                '            				<span class="title">'+caretel+'</span>' +
-                '			      	    </li>' +
+                '            				<span class="title caretel">'+caretel+'</span>' +
+                '			      	    </li><br>' +
                 '			           <li class="li1-2">' +
-                '		                     <br><br><span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
+                '		                     <span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
                 ' 			           </li>' +
                 '			           <li class="li1-2">'  +
-                '		                   <br><span class="title"><span>closed </span><span class="red-col">'+closeday+'</span>' +
-                ' 			           </li>' 
-                '    			</ul>' + '</div>'
-                '           </div>';
-
+                '		                   <span class="title"><span>closed </span><span class="red-col">'+closeday+'</span>' +
+                ' 			           </li>' +
+                '    			</ul><br>'+
+                '				<div class="copylocationbtn-wrap"><button onclick="copyText()" class="copylocationbtn">Copy location</button></div>'	+
+                '</div>' +
+                '</div>';
+            
+           
+			
+                
             // 커스텀 오버레이가 표시될 위치!	
             var position = new kakao.maps.LatLng(latitude, longitude);  
 
@@ -270,6 +297,8 @@ $(document).ready(function() {
         }
         clickedValue=null;
     });
+
+
 });
 </script>
 </body>
