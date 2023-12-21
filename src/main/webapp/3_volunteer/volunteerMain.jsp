@@ -24,14 +24,14 @@
       <div class="content-frame">
         <div class="content-row">
           <div class="content-bg">
-            <img src="3_volunteer/img/SeoulIcon.png" alt="" />
+            <img style="width: 7.3vw;" src="3_volunteer/img/SeoulIcon.png" alt="" />
             <a>
               <p>Seoul</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </a>
           </div>
           <div class="content-bg">
-            <img src="3_volunteer/img/busanIcon.png" alt="" />
+            <img style="width: 7.3vw;" src="3_volunteer/img/busanIcon.png" alt="" />
             <a>
               <p>Busan</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
@@ -39,7 +39,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 142px; height: 131px"
+              style="width: 7.3vw;"
               src="3_volunteer/img/DaeguIcon.png"
             />
             <a>
@@ -51,7 +51,7 @@
         <div class="content-row">
           <div class="content-bg">
             <img
-              style="width: 142px; height: 121px"
+              style="width: 7.3vw;"
               src="3_volunteer/img/IncheonIcon.png"
             />
             <a>
@@ -61,7 +61,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 142px; height: 121px"
+              style="width: 7.3vw;"
               src="3_volunteer/img/DaejeonIcon.png"
             />
             <a>
@@ -71,7 +71,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 142px; height: 121px"
+             style="width: 7.3vw;"
               src="3_volunteer/img/GyeongnamIcon.png"
             />
             <a>
@@ -83,7 +83,7 @@
         <div class="content-row">
           <div class="content-bg">
             <img
-              style="width: 142px; height: 121px"
+              style="width: 7.3vw;"
               src="3_volunteer/img/GyeongbukIcon.png"
             />
             <a>
@@ -93,7 +93,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 142px; height: 131px"
+              style="width: 7.3vw;"
               src="3_volunteer/img/JeonnamIcon.png"
             />
             <a>
@@ -103,7 +103,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 142px; height: 131px"
+             style="width: 7.3vw;"
               src="3_volunteer/img/JeonbukIcon.png"
             />
             <a>
@@ -115,7 +115,7 @@
         <div class="content-row">
           <div class="content-bg">
             <img
-              style="width: 142px; height: 131px"
+             style="width: 7.3vw;"
               src="3_volunteer/img/ChungnamIcon.png"
             />
             <a>
@@ -125,7 +125,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 132px; height: 129px"
+              style="width:6.8vw;"
               src="3_volunteer/img/ChungbukIcon.png"
             />
             <a>
@@ -135,7 +135,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 180px; height: 129px"
+              style="width: 9.3vw;"
               src="3_volunteer/img/JejuIcon.png"
             />
             <a>
@@ -147,7 +147,7 @@
         <div class="content-row">
           <div class="content-bg">
             <img
-              style="width: 132px; height: 125px"
+             style="width: 6.8vw;"
               src="3_volunteer/img/GyeonggiIcon.png"
             />
             <a>
@@ -157,7 +157,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 160px; height: 125px"
+            style="width: 9.3vw;"
               src="3_volunteer/img/GangwonIcon.png"
             />
             <a>
@@ -167,7 +167,7 @@
           </div>
           <div class="content-bg">
             <img
-              style="width: 160px; height: 125px"
+             style="width: 9.3vw; height:7vw;"
               src="3_volunteer/img/GwangjuIcon.png"
             />
             <a>
