@@ -22,24 +22,21 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.opdoghw.centerinfo.DBManager_khw;
+
 public class NaverAPI {
 	public static void main(String[] args) {
-
 //		네이버 개발자 센터
 //		xsNn_8ET7Ge8rnSa6ees
 //		s8uIyGeGT8
-
 //		"https://openapi.naver.com/v1/search/shop.json?query="
 		
 		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		
-		
-		
-		
 		try {
-			String str = "강아지사료";
+			String str = "네이버";
 			str = URLEncoder.encode(str,"utf-8");
 			System.out.println(str);
 			
@@ -55,26 +52,27 @@ public class NaverAPI {
 			// JSON parse 객체 (json 파싱하려고)
 			JSONParser jp = new JSONParser();
 			JSONObject naverData = (JSONObject) jp.parse(isr);
-			System.out.println(11);
 			System.out.println(naverData);
-			JSONArray items = (JSONArray) naverData.get("items");
-			con = DBManager.connect();
-			String sql = "insert into feed_kl VALUES (feed_kl_seq.nextval,?,?,?,?)";
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			pstmt = con.prepareStatement(sql); 
-			for (int i = 0; i < items.size(); i++) {
-					JSONObject item = (JSONObject) items.get(i);
 			
-			String title = (String) item.get("title");
-//			String title = item.get("title") + "";
-//			String title = item.get("title").toString();
+			JSONArray items = (JSONArray) naverData.get("items");
+			String sql = "insert into naver_kl VALUES (naver_kl_seq.nextval,?,?,?,?)";
+			con = DBManager_khw.connect();
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			pstmt = con.prepareStatement(sql);
+			
+			for (int i = 0; i < items.size(); i++) {
+				JSONObject item = (JSONObject) items.get(i);
+			
+				String title = (String) item.get("title");
+//				String title = item.get("title") + "";
+//				String title = item.get("title").toString();
 				title = title.replace("<b>", "");
 				title = title.replace("</b>", "");
 				title = title.replace("&amp;", " ");
-//			System.out.println("사진	:	" + item.get("image"));
-//			System.out.println("품명	:	" + title);
-//			System.out.println("가격	:	" + item.get("lprice"));
-//			System.out.println("브랜드	:	" + item.get("brand"));
+//				System.out.println("사진	:	" + item.get("image"));
+//				System.out.println("품명	:	" + title);
+//				System.out.println("가격	:	" + item.get("lprice"));
+//				System.out.println("브랜드	:	" + item.get("brand"));
 				String brand = (String) item.get("brand");
 				if (brand.equals("")) {
 					brand = "no brand";
@@ -85,21 +83,11 @@ public class NaverAPI {
 
 //			System.out.println("------------------------------------------------");
 //			System.out.println(items.size());
-			System.out.println("----------파파고 API 시작-----------------");
-			
-			String clientId = "f8E1dHSfLIZGwep16ykM";//애플리케이션 클라이언트 아이디값";
-	        String clientSecret = "g9Ae4Vludr";//애플리케이션 클라이언트 시크릿값";
-	        String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
-	        String text;
-	        
-	        try { 
-	            text = URLEncoder.encode(title+"\n"+brand, "UTF-8");
-	        } catch (UnsupportedEncodingException e) {
-	            throw new RuntimeException("인코딩 실패", e);
-	        }
+				System.out.println("----------파파고 API 시작-----------------");
 
+				String clientId = "f8E1dHSfLIZGwep16ykM";// 애플리케이션 클라이언트 아이디값";
+				String clientSecret = "g9Ae4Vludr";// 애플리케이션 클라이언트 시크릿값";
 				String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
-
 				String text;
 				try {
 					text = URLEncoder.encode(title + "\n" + brand, "UTF-8");
@@ -115,16 +103,27 @@ public class NaverAPI {
 
 				System.out.println(responseBody);
 
-			System.out.println("----------파파고 API 끝-----------------");
-			
-			
-			pstmt.setString(1, (String)item.get("image"));
-			pstmt.setString(2, translatedTitle);
-			pstmt.setLong(3, Long.parseLong(item.get("lprice").toString()));
+				JSONParser jsonParser = new JSONParser();
 
-			pstmt.setString(4, translatedBrand);
-			pstmt.executeUpdate();
-			System.out.println("등록성공");
+				JSONObject jsonObject = (JSONObject) jsonParser.parse(responseBody);
+				JSONObject objMessage = (JSONObject) jsonObject.get("message");
+				JSONObject objResult = (JSONObject) objMessage.get("result");
+				String translatedText = (String) objResult.get("translatedText");
+
+				System.out.println(translatedText);
+
+				String[] splitStr = translatedText.split("\n");
+
+				String translatedTitle = splitStr[0];
+				String translatedBrand = splitStr[1];
+
+				System.out.println("----------파파고 API 끝-----------------");
+				pstmt.setString(1, (String) item.get("image"));
+				pstmt.setString(2, translatedTitle);
+				pstmt.setLong(3, Long.parseLong(item.get("lprice").toString()));
+				pstmt.setString(4, translatedBrand);
+				System.out.println("등록성공");
+				pstmt.executeUpdate();
 			}
 			
 		} catch (Exception e) {
@@ -132,7 +131,7 @@ public class NaverAPI {
 			System.out.println("등록실패");
 			
 		} finally {
-			DBManager.close(con, pstmt, null);
+			DBManager_khw.close(con, pstmt, null);
 		}
 		
 	}
