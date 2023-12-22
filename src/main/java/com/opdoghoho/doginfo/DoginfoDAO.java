@@ -17,6 +17,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.opdoghw.centerinfo.DBManager_khw;
+import com.opdoghw.login.LoginDTO;
 
 public class DoginfoDAO {
 	public static void main(String[] args) {
@@ -28,6 +29,8 @@ public class DoginfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select*from sido";
+		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
+
 
 		try {
 			con = DBManager_khw.connect();
@@ -43,6 +46,10 @@ public class DoginfoDAO {
 				s.setOrgdownNm(rs.getString("s_orgdownNm"));
 				sido.add(s);
 				
+			}
+			if (account!=null) {
+				request.setAttribute("defaultsido", account.getUprCd());
+				request.setAttribute("defaultsigun", account.getOrgCd());
 			}
 			request.setAttribute("sido", sido);
 			System.out.println(sido.toString());
