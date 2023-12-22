@@ -63,7 +63,7 @@ public class ReviewDAO {
 //		서버상 경로
 //		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
 		
-		String path = "C:/Bada/opdog/src/main/webapp/1_adopt/1_4_review/imgFolder";
+		String path = "/Users/6oohye/Desktop/obdog/src/main/webapp/1_adopt/1_4_review/imgFolder";
 		System.out.println(path);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");

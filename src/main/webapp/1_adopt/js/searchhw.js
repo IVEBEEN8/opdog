@@ -1,9 +1,3 @@
-/*document.getElementById('inputSearch').addEventListener('keyup', function(event){
-	if(event.key==='Enter'){
-		performSearch();
-	}
-})*/
-
 
 $(document).ready(function performSearch(){
 	//검색버튼 클릭이벤트처리!
@@ -27,14 +21,11 @@ $(document).ready(function performSearch(){
 			
 			console.log(data);
 				$("#modalBody1").empty();
-		        $("#modalBody1").append('<div class="box-info1">Searched Info</div>')
-		        $("#modalBody1").append('<hr>')
-				$("#modalBody1").append('<div style="z-index:1000;"id="closeBtn1">x<div>')
 			for(var i = 0; i < data.length; i++){
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> 보호소명</div><div class="small-content1">:' + data[i].careNm + '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> 보호소 주소</div><div class="small-content1">:' + data[i].careAddr + '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> 보호소 영업정보</div><div class="small-content1">:' + data[i].oprtime+'~'+data[i].closetime +'('+data[i].closeday+')'+ '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> 보호소 전화번호</div><div class="small-content1">: ' + data[i].tel + '</div></div>');	
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Center Name</div><div class="small-content1">:' + data[i].careNm + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Address</div><div class="small-content1">:' + data[i].careAddr + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Operation Time</div><div class="small-content1">:' + data[i].oprtime+'~'+data[i].closetime +'('+data[i].closeday+')'+ '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Tel</div><div class="small-content1">: ' + data[i].tel + '</div></div>');	
 				$("#modalBody1").append('<hr>')}
 				//모달
 		   	  $("#closeBtn1").on("click", function () {
