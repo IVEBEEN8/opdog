@@ -96,7 +96,7 @@ public class MainDAO {
 	public static void totalCountLoading(HttpServletRequest request) {
 		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
 		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?&pageNo=1&numOfRows=10&upkind=417000&_type=json&serviceKey=" + encodeKey;		
+		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?&pageNo=1&numOfRows=10&status=protect?upkind=417000&_type=json&serviceKey=" + encodeKey;		
 		
 		try {
 			URL u = new URL(url);

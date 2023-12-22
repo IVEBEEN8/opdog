@@ -56,13 +56,13 @@ ${sido} = 광역시 배열
 	<!-- selectbox div --> 
 	<div class="#">
         <select name="sido" id="sidoSelect">
-        		<option value="">시/도 선택</option>
+        		<option value="${uprCd }">${uprText }</option>
         		<c:forEach var="sido" items="${sido }" >
         			<option value="${sido.orgCd }">${sido.orgdownNm }</option>
         		</c:forEach>
         </select>
         <select name="sigun" id="sigunSelect">
-        	<option value="">시/군/구 선택</option>
+        	<option value="${orgCd }">${orgText}</option>
         </select>
         <select name="center" id="centerSelect">
         	<option value="" >보호소 선택</option>

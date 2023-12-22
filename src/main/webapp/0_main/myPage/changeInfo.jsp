@@ -20,13 +20,13 @@ Password: <input name="oldPW" value="${account.pw }" type="password" disabled="d
 *Password check: <input name="oldPWCheck" type="password"> <br>
 <div class="selectBox">
 	*<select name="sido" id="sidoSelect">
-    	<option value="">state</option>
+    	<option value="${uprCd }">${uprText }</option>
         <c:forEach var="sido" items="${sido }" >
         	<option value="${sido.orgCd }">${sido.orgdownNm }</option>
         </c:forEach>
 	</select>
 	*<select name="sigun" id="sigunSelect">
-		<option value="">city</option>
+		<option value="${orgCd }">${orgText }</option>
 	</select>
 </div>
 New password: <input name="newPW" type="password"> <br>

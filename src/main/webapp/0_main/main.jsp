@@ -162,7 +162,7 @@ prefix="c" %>
       <div class="fullsection full3" pageNum="3">
         <div class="full3-bigTxt">Current status of abandoned dog</div>
         <div class="count">
-          <p style="display: none" id="count">${count }</p>
+          <p style="display: none;" id="count">${count }</p>
           0
         </div>
         <div class="full3-smallTxt">dogs</div>
