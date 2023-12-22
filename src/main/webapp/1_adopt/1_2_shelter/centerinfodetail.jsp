@@ -81,7 +81,7 @@
 	
 <!--검색 모달! -->
 	<div id="printinfo1">
-  		<div id="modalContent1">
+  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">x</div>
    			 <div id="modalBody1">
     		</div>
   		</div>
