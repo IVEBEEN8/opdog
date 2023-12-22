@@ -61,12 +61,12 @@
          <div class="accountPage address">
          	<p>Address</p>
          	<div class="selectBox">
-	         	 <select name="sido" id="sidoSelect">
-        		<option value="">state</option>
+	        	<select name="sido" id="sidoSelect">
+        			<option value="">state</option>
         		
-        		<c:forEach var="sido" items="${sido }" >
-        			<option value="${sido.orgCd }">${sido.orgdownNm }</option>
-        		</c:forEach>
+        			<c:forEach var="sido" items="${sido }" >
+        				<option value="${sido.orgCd }">${sido.orgdownNm }</option>
+        			</c:forEach>
 		        </select>
 		        <select name="sigun" id="sigunSelect">
 		        	<option value="">city</option>
@@ -82,7 +82,7 @@
             </p>
           </label>
           <div class="hw-account-btn">
-            <button>Sign up</button>
+          	<button>Sign up</button>
           </div>
           <div class="other-account">
             <div></div>

@@ -31,7 +31,6 @@ prefix="c" %>
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
-
               <a onclick="location.href='CenterMainC'">Shelter Info</a>
               <a onclick="location.href='ProcessC'">Adoption Process</a>
               <a onclick="location.href='ReviewC'">Adoption Review</a>
@@ -107,7 +106,7 @@ prefix="c" %>
             protection center. <br />
             Please help me get to a warm home as soon as possible.
           </div>
-          <button class="full2-btn">View More</button>
+          <button class="full2-btn" onclick="location.href='DoginfoHC'">View More</button>
         </div>
         <!-- 메인2 슬라이드부분 -->
         <div class="styling-tv">
@@ -125,8 +124,7 @@ prefix="c" %>
                     <div class="txt-box">
                       <div class="img-name">D-${dogs.dday }day</div>
                       <div class="img-info">
-                        ${dogs.age }<br /> 
-                        ${dogs.sexCd },<br />
+                        ${dogs.age }<br /> ${dogs.sexCd },<br />
                         ${dogs.specialMark }<br />
                         ${dogs.date }
                       </div>
@@ -148,8 +146,7 @@ prefix="c" %>
                     <div class="txt-box">
                       <div class="img-name">D-${dogs.dday }day</div>
                       <div class="img-info">
-                        ${dogs.age }<br /> 
-                        ${dogs.sexCd },<br />
+                        ${dogs.age }<br /> ${dogs.sexCd },<br />
                         ${dogs.specialMark }<br />
                         ${dogs.date }
                       </div>
@@ -164,7 +161,10 @@ prefix="c" %>
       <!-- main 3page start -->
       <div class="fullsection full3" pageNum="3">
         <div class="full3-bigTxt">Current status of abandoned dog</div>
-        <div class="count"> <p style="display: none;" id="count">${count }</p> 0</div>
+        <div class="count">
+          <p style="display: none" id="count">${count }</p>
+          0
+        </div>
         <div class="full3-smallTxt">dogs</div>
       </div>
       <div class="fullsection full4" pageNum="4">

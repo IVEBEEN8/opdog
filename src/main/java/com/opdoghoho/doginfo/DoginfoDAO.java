@@ -42,9 +42,11 @@ public class DoginfoDAO {
 				s.setOrgCd(rs.getString("s_orgCd"));
 				s.setOrgdownNm(rs.getString("s_orgdownNm"));
 				sido.add(s);
+				
 			}
 			request.setAttribute("sido", sido);
-			System.out.println(sido);
+			System.out.println(sido.toString());
+			
 			
 			
 		} catch (Exception e) {

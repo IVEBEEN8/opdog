@@ -14,8 +14,8 @@ public class FashionRegC extends HttpServlet {
 		FashionDAO.getAllFashion(request);
 		FashionDAO.paging(1, request);
 		
-		request.setAttribute("contentPage", "2_shop/2_1_fashion/fashion.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "../2_shop/2_1_fashion/fashion.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		
 	
 	}

@@ -89,20 +89,19 @@ footer {
 }
 
 .send-btn {
-    width: 3vw;
   position: relative;
-     top: 1.2vw;
-    left: -4vw;
+  top: 1.2vw;
+  left: -4vw;
   background: none;
   border: none;
   cursor:pointer;
 }
 
 .send-btn > img{
-	position: relative;
+  position: relative;
   width: 3vw;
   left:-1vw;
-}
+} 
 
 .footer2 > div > a > button {
   width: 2.083333333333333vw;

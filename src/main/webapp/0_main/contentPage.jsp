@@ -36,8 +36,8 @@ pageEncoding="UTF-8"%>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
-              <a href="#">Stary Dogs</a>
-              <a href="#">Shelter Info</a>
+              <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
+              <a onclick="location.href='CenterMainC'">Shelter Info</a>
               <a onclick="location.href='ProcessC'">Adoption Process</a>
               <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
@@ -54,7 +54,7 @@ pageEncoding="UTF-8"%>
           <div class="nav-items">
             <a href="#" class="nav-text"><span>Volunteer</span></a>
             <div class="nav-subnav">
-              <a href="#">Go Together</a>
+              <a onclick="location.href='VolunteerMainC'">Go Together</a>
             </div>
           </div>
           <div class="nav-items">
@@ -96,13 +96,12 @@ pageEncoding="UTF-8"%>
                 id="input"
                 type="text"
               />
-              <a id="send1"
-                ><button type="button" class="send-btn">
+           		 <button class="send-btn">
                   <img
                     src="0_main/img/send-icon.png"
                     alt="보내기버튼"
                   /></button
-              ></a>
+              > 
             </form>
           </div>
         </div>
@@ -114,9 +113,9 @@ pageEncoding="UTF-8"%>
             <a href="#"><img src="0_main/img/footer-menu-Twitter.svg" /></a>
           </div>
           <div class="footer-menu">
-            <span>About Us</span>
-            <span>Support</span>
-            <span>Adoption Process</span>
+            <span onclick="location.href='HC'">About Us</span>
+            <span onclick="location.href='DoginfoHC'">Support</span>
+            <span onclick="location.href='ProcessC'">Adoption Process</span>
             <span onclick="location.href='CheckRegNmC'">Service</span>
             <span onclick="location.href='CenterMainC'">Shelter Map</span>
           </div>
