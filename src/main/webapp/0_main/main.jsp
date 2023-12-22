@@ -184,7 +184,7 @@ prefix="c" %>
         <div class="full4-txtFrame">
           <div class="full4-bigTxt">About &nbsp;&nbsp;Us</div>
           <div class="full4-smallTxt">
-            <div><a href="#">Our Goal</a></div>
+            <div><a href="#">Checklist</a></div>
             <div><a href="#">Adopt Review</a></div>
           </div>
         </div>
