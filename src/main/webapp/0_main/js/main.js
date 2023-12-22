@@ -39,6 +39,14 @@ function fullset() {
         } else {
           $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
         }
+
+			//스크롤 아래에서 위로 올릴때 카운트 시작
+		  if (before === 4 || before === 3 ||before === 2) {
+	        // 스크롤로 3번째 페이지로 이동할 때 카운터 시작
+	        const $counter = document.querySelector(".count");
+	        const max = totalCount;
+	        counter($counter, max);
+	      }
       } else {
         // alert("첫번째페이지 입니다₍ᐢ. ̫.ᐢ₎♡");
       }
@@ -74,7 +82,7 @@ function fullset() {
         // 현재 마지막 페이지 일때는
         // alert("마지막 페이지 입니다!₍ᐢ. ̫.ᐢ₎♡");
       }
-      if (page.index() === 4 || page.index() === 2 || page.index() === 3) {
+      if (page.index() === 1 || page.index() === 2 || page.index() === 3) {
         // 스크롤로 3번째 페이지로 이동할 때 카운터 시작
         const $counter = document.querySelector(".count");
         const max = totalCount;
@@ -112,9 +120,9 @@ function quickClick() {
     $("#fullpage").animate({ top: -length + "px" }, 800, "swing");
     // 세 번째 페이지이면서 카운터 시작
     if (gnbindex === 3) {
-      const $counter = document.querySelector(".count");
-      const max = totalCount;
-      counter($counter, max);
+    const $counter = document.querySelector(".count");
+     const max = totalCount;
+        counter($counter, max);
     }
 
     //페이지 인덱스에 따라 색상 변경
