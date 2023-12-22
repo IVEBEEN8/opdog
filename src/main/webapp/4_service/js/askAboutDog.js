@@ -28,8 +28,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	document.getElementById('input').focus();
 		//이 코드는 템플릿 리터럴(template literal)을 사용하여 HTML 코드를 동적으로 생성하는 부분입니다.
 		//여기서 생성된 HTML 코드는 사용자의 입력 값을 채팅 창에 표시하는 역할을 합니다.
-		 var template = '<div class="line"><span class="chat-box mine">${document.querySelector("#input").value}</span></div>';
-
+		 var template = `<div class="line"><span class="chat-box mine">${document.querySelector("#input").value}</span></div>`;
+		 console.log(template);
 		//`` (역따옴표)로 묶인 부분은 템플릿 리터럴입니다. 
 		//템플릿 리터럴은 문자열을 다루는 새로운 문법으로, 
 		//여러 줄의 문자열과 변수를 쉽게 표현할 수 있습니다.
@@ -85,7 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 ).message.content;
 
 				
-                var assistantTemplate = '<div class="line"><span class="chat-box">${assistantMessage}</span></div>';
+                var assistantTemplate = `<div class="line"><span class="chat-box">${assistantMessage}</span></div>`;
                 document.querySelector(".chat-box-wrap1-2").insertAdjacentHTML("beforeend", assistantTemplate);
             
 				//자동 스크롤!		

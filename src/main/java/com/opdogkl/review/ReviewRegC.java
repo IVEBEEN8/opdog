@@ -22,9 +22,10 @@ public class ReviewRegC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//리뷰 등록하는일 
 		ReviewDAO.regReview(request);
-		ReviewDAO.getAllReview(request);
-		request.setAttribute("contentPage", "../1_adopt/1_4_review/review.jsp");
-		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+//		ReviewDAO.getAllReview(request);
+//		request.setAttribute("contentPage", "../1_adopt/1_4_review/review.jsp");
+//		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+		response.sendRedirect("ReviewC");
 		
 	
 	}

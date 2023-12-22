@@ -4,6 +4,7 @@ create table ordered_kl(
     o_price number(7),
     o_brand varchar2(200char),
     o_sPrice number(7),
+    o_date DATE DEFAULT TRUNC(SYSDATE) NOT NULL,
     a_no number(3)not null
 );
 

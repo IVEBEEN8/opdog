@@ -200,6 +200,7 @@ public class ReviewDAO {
 			pstmt.setString(1, request.getParameter("id"));
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("삭제 성공");
+				
 			}
 			
 		} catch (Exception e) {
