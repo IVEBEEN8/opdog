@@ -74,7 +74,7 @@ function fullset() {
         // 현재 마지막 페이지 일때는
         // alert("마지막 페이지 입니다!₍ᐢ. ̫.ᐢ₎♡");
       }
-      if (page.index() === 1 || page.index() === 2 || page.index() === 3) {
+      if (page.index() === 4 || page.index() === 2 || page.index() === 3) {
         // 스크롤로 3번째 페이지로 이동할 때 카운터 시작
         const $counter = document.querySelector(".count");
         const max = totalCount;

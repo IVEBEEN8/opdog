@@ -38,7 +38,7 @@ pageEncoding="UTF-8"%>
             <div class="nav-subnav">
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
               <a onclick="location.href='CenterMainC'">Shelter Info</a>
-              <a onclick="location.href='ProcessC'">Adoption Process</a>
+              <a onclick="location.href='ProcessC'">Checklist</a>
               <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
           </div>
@@ -115,7 +115,7 @@ pageEncoding="UTF-8"%>
           <div class="footer-menu">
             <span onclick="location.href='HC'">About Us</span>
             <span onclick="location.href='DoginfoHC'">Support</span>
-            <span onclick="location.href='ProcessC'">Adoption Process</span>
+            <span onclick="location.href='ProcessC'">Checklist</span>
             <span onclick="location.href='CheckRegNmC'">Service</span>
             <span onclick="location.href='CenterMainC'">Shelter Map</span>
           </div>
