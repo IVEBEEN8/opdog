@@ -147,7 +147,7 @@ function createMarker(lat, lng, data) {
         $("#modalBody").append('<div id="closeBtn">x<div>')
         $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
         $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
-        $("#modalBody").append('<div class="box-title">' + markerData.careNm + '</div>');
+        $("#modalBody").append('<div class="box-title modal-carenm">' + markerData.careNm + '</div>');
         $("#modalBody").append('<div class="box-title">' + markerData.careAddr + '</div></div>');
         $("#modalBody").append('<div class="box-title">' + tel + '</div></div>');
         $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Operation</span>	' + markerData.weekOprStime +'~'+ markerData.weekOprEtime + '</div>');
@@ -185,19 +185,24 @@ async function initializeMap() {
         map: map,
         markers: markers,
         averageCenter: true,
-        minLevel: 12
+        minLevel: 10
     });
 }
 
 initializeMap();
 
-
+var centeraddrId;
 
 function copyText(){
-	var spanText = document.querySelector(".centeraddr");
+	
+	var spanText = document.getElementById(centeraddrId);
+	console.log("this is spanText" + spanText);
 	window.getSelection().removeAllRanges();
 	var range = document.createRange();
- 	range.selectNode(spanText);
+ 	
+	
+	range.selectNode(spanText);
+ 	
     window.getSelection().addRange(range);
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
@@ -242,7 +247,8 @@ $(document).ready(function() {
             // 지도 객체 생성
             
             var map = new kakao.maps.Map(mapContainer, mapOption);
-           	var centeraddrId = "mycopyaddr" + Math.random().toString(36).substr(2, 9);
+            centeraddrId = "mycopyaddr" + Math.random().toString(36).substr(2, 9);
+           	console.log(centeraddrId);
             var content = '<div class="overlaybox1-2">' + 
                 '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
                 '    			<ul class="li-wrap1-2">'  +
@@ -257,7 +263,7 @@ $(document).ready(function() {
                 '        				</li>' +    
                 '   				    <li class="li1-2">'  +
                 '            				<span class="title caretel">'+caretel+'</span>' +
-                '			      	    </li><br>' +
+                '			      	    </li>' +
                 '			           <li class="li1-2">' +
                 '		                     <span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
                 ' 			           </li>' +

@@ -1,9 +1,3 @@
-/*document.getElementById('inputSearch').addEventListener('keyup', function(event){
-	if(event.key==='Enter'){
-		performSearch();
-	}
-})*/
-
 
 $(document).ready(function performSearch(){
 	//검색버튼 클릭이벤트처리!

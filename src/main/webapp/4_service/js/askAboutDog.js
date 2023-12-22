@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		 var template = `<div class="line">
             <span class="chat-box mine">${document.querySelector("#input").value}</span>
         </div>`;
-
+	 	console.log(template);
 		//`` (역따옴표)로 묶인 부분은 템플릿 리터럴입니다. 
 		//템플릿 리터럴은 문자열을 다루는 새로운 문법으로, 
 		//여러 줄의 문자열과 변수를 쉽게 표현할 수 있습니다.
