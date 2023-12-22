@@ -29,6 +29,7 @@ function fullset() {
         page = page.index() - 1;
         $("#fullpage").animate({ top: -pagelength + "px" }, 1000, "swing");
        // alert(before);
+
         //페이지 인덱스에 따라 색상 변경
         if (before === 4) {
           $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
@@ -39,6 +40,14 @@ function fullset() {
         } else {
           $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
         }
+
+			//스크롤 아래에서 위로 올릴때 카운트 시작
+		  if (before === 4 || before === 3 ||before === 2) {
+	        // 스크롤로 3번째 페이지로 이동할 때 카운터 시작
+	        const $counter = document.querySelector(".count");
+	        const max = totalCount;
+	        counter($counter, max);
+	      }
       } else {
         // alert("첫번째페이지 입니다₍ᐢ. ̫.ᐢ₎♡");
       }
@@ -101,6 +110,7 @@ function fullset() {
 // 사이드 퀵버튼 클릭 이동
 function quickClick() {
   $(".quick li").click(function () {
+	var totalCount = $('p[id="count"]').text();
     var gnbindex = $(this).index() + 1;
     var length = 0;
     for (var i = 1; i < gnbindex; i++) {
@@ -111,11 +121,11 @@ function quickClick() {
 
     $("#fullpage").animate({ top: -length + "px" }, 800, "swing");
     // 세 번째 페이지이면서 카운터 시작
-    if (gnbindex === 3) {
-      const $counter = document.querySelector(".count");
-      const max = totalCount;
-      counter($counter, max);
-    }
+    /*if (gnbindex === 3) {
+    const $counter = document.querySelector(".count");
+     const max = totalCount;
+        counter($counter, max);
+    }*/
 
     //페이지 인덱스에 따라 색상 변경
     if (gnbindex === 2) {
@@ -126,6 +136,15 @@ function quickClick() {
       // 마지막 페이지에 대한 처리 추가
       $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
     }
+
+	//퀵 마우스휠 선택했을때 숫자 로딩 
+	if (gnbindex === 3) {
+	const $counter = document.querySelector(".count");
+	const max = totalCount;
+	counter($counter, max);
+	//alert("₍ᐢ. ̫.ᐢ₎♡");
+	 }
+
 
     return false;
   });
@@ -152,13 +171,3 @@ const counter = ($counter, max) => {
     now -= step;
   }, 50);
 };
-
-// window.onload = () => {
-//   // 카운트를 적용시킬 요소
-//   const $counter = document.querySelector(".count");
-
-//   // 목표 수치
-//   const max = 172491233;
-
-//   setTimeout(() => counter($counter, max), 2000);
-// };

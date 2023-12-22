@@ -15,7 +15,6 @@ public class HC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		
 		LoginDAO.loginCheckMain(request);
 		MainDAO.totalCountLoading(request);
 		MainDAO.listLoading(request, response);
@@ -28,3 +27,4 @@ public class HC extends HttpServlet {
 	
 
 }
+

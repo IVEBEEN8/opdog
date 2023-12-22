@@ -81,7 +81,7 @@
 	
 <!--검색 모달! -->
 	<div id="printinfo1">
-  		<div id="modalContent1">
+  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">x</div>
    			 <div id="modalBody1">
     		</div>
   		</div>
@@ -143,15 +143,16 @@ function createMarker(lat, lng, data) {
         //휴업일 대체처리!
         const modifiedCloseDay = markerData.closeDay.replace(/\+/g, ', ').replace(/0/g, 'Open Always');
         // 모댤에에 나올정보!
+        
         $("#modalBody").append('<div id="closeBtn">x<div>')
-        $("#modalBody").append('<div class="box-info">Info Card</div>')
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소명</div><div class="small-content">:' + markerData.careNm + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 주소</div><div class="small-content">:' + markerData.careAddr + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 전화번호</div><div class="small-content">:' + tel + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 영업시작</div><div class="small-content">:' + markerData.weekOprStime + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 영업종료</div><div class="small-content">:' + markerData.weekOprEtime + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 휴무일</div><div class="small-content">:' + modifiedCloseDay + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><div class="small-title"> 보호소 수의사수</div><div class="small-content">: ' + vet + '</div></div>');
+        $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
+        $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
+        $("#modalBody").append('<div class="box-title modal-carenm">' + markerData.careNm + '</div>');
+        $("#modalBody").append('<div class="box-title">' + markerData.careAddr + '</div></div>');
+        $("#modalBody").append('<div class="box-title">' + tel + '</div></div>');
+        $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Operation</span>	' + markerData.weekOprStime +'~'+ markerData.weekOprEtime + '</div>');
+        $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Closed</span>	' + modifiedCloseDay + '</div>');
+        
         // 모달 보이기
         $("#printinfo").show();
         $("#closeBtn").on("click", function () {
@@ -184,19 +185,24 @@ async function initializeMap() {
         map: map,
         markers: markers,
         averageCenter: true,
-        minLevel: 12
+        minLevel: 10
     });
 }
 
 initializeMap();
 
-
+var centeraddrId;
 
 function copyText(){
-	var spanText = document.querySelector(".centeraddr");
+	
+	var spanText = document.getElementById(centeraddrId);
+	console.log("this is spanText" + spanText);
 	window.getSelection().removeAllRanges();
 	var range = document.createRange();
- 	range.selectNode(spanText);
+ 	
+	
+	range.selectNode(spanText);
+ 	
     window.getSelection().addRange(range);
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
@@ -241,7 +247,8 @@ $(document).ready(function() {
             // 지도 객체 생성
             
             var map = new kakao.maps.Map(mapContainer, mapOption);
-           	var centeraddrId = "mycopyaddr" + Math.random().toString(36).substr(2, 9);
+            centeraddrId = "mycopyaddr" + Math.random().toString(36).substr(2, 9);
+           	console.log(centeraddrId);
             var content = '<div class="overlaybox1-2">' + 
                 '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
                 '    			<ul class="li-wrap1-2">'  +
@@ -256,7 +263,7 @@ $(document).ready(function() {
                 '        				</li>' +    
                 '   				    <li class="li1-2">'  +
                 '            				<span class="title caretel">'+caretel+'</span>' +
-                '			      	    </li><br>' +
+                '			      	    </li>' +
                 '			           <li class="li1-2">' +
                 '		                     <span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
                 ' 			           </li>' +
