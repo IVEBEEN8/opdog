@@ -1,11 +1,4 @@
 function checkForm() {
-  // 이미지 파일이 선택되었는지 확인합니다.
-  if (document.getElementById("previousFileName").value.length === 0) {
-    alert("Please select an image file");
-    document.getElementById("fileInput").focus();
-    return false;
-  }
-  
   // 제목 입력값을 얻어옵니다.
   var titleValue = document.getElementById("title").value;
 	
@@ -15,6 +8,14 @@ function checkForm() {
     document.getElementById("title").focus();
     return false;
   }
+  
+  
+  // 이미지 파일이 선택되었는지 확인합니다.
+  if (document.getElementById("fileInput").value.length === 0) {
+    alert("Please select an image file");
+    return false;
+  }
+  
 
   // 내용 입력값을 얻어옵니다.
   var txtValue = document.getElementById("txt").value;
@@ -30,10 +31,8 @@ function checkForm() {
  
   	return true;
 }
-// 등록 이미지 미리보기 
- // 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
-var previousFile = null;  // 이전에 선택한 파일 정보를 저장하는 변수
 
+// 등록 이미지 미리보기 
 function previewSelectedImage(input) {
     var preview = document.getElementById('previewImage');
     var file = input.files[0];
@@ -44,11 +43,6 @@ function previewSelectedImage(input) {
         preview.parentNode.style.display = 'block';
         preview.src = e.target.result;
 
-        // 이미지를 선택한 경우, 그 정보를 저장
-        previousFile = {
-            name: file.name,
-            dataURL: e.target.result
-        };
     };
 
     if (file) {
@@ -56,15 +50,11 @@ function previewSelectedImage(input) {
         preview.parentNode.style.display = 'block';
         reader.readAsDataURL(file);
     } else {
-        // 이미지를 선택하지 않은 경우에는 이전 이미지를 보여줌
-        if (previousFile) {
-            preview.parentNode.style.display = 'block';  // 미리보기 영역을 보이도록 변경
-            preview.src = previousFile.dataURL;  // 이전에 선택한 파일을 미리보기로 복원
-        } else {
-            preview.parentNode.style.display = 'none';  // 미리보기 영역을 숨김
+        preview.parentNode.style.display = 'none';  // 미리보기 영역을 숨김
         }
-    }
+    
 }
+
 
 function checkLength() {
         var textarea = document.getElementById('txt');

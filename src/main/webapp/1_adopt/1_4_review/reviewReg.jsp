@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>review register</title>
-<script type="text/javascript" src="1_adopt/js/review.js"></script>
+<script type="text/javascript" src="1_adopt/js/review.js?ver=13"></script>
 </head>
 
 
@@ -28,6 +28,8 @@
 			<div>
 				<input id="fileInput" type="file" name="fileInput" value="Select File" style="display: none" oninput="previewSelectedImage(this)">
 				<button type="button"  onclick="document.getElementById('fileInput').click();">Select File</button>
+				<div style="display: none;">
+				</div>
 			</div>
 		</div>
 		<div>
