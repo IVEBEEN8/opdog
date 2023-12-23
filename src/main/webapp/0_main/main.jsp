@@ -32,7 +32,7 @@ prefix="c" %>
             <div class="nav-subnav">
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
               <a onclick="location.href='CenterMainC'">Shelter Info</a>
-              <a onclick="location.href='ProcessC'">Adoption Process</a>
+              <a onclick="location.href='ProcessC'">Checklist</a>
               <a onclick="location.href='ReviewC'">Adoption Review</a>
             </div>
           </div>
@@ -162,7 +162,7 @@ prefix="c" %>
       <div class="fullsection full3" pageNum="3">
         <div class="full3-bigTxt">Current status of abandoned dog</div>
         <div class="count">
-          <p style="display: none" id="count">${count }</p>
+          <p style="display: none;" id="count">${count }</p>
           0
         </div>
         <div class="full3-smallTxt">dogs</div>
@@ -184,7 +184,7 @@ prefix="c" %>
         <div class="full4-txtFrame">
           <div class="full4-bigTxt">About &nbsp;&nbsp;Us</div>
           <div class="full4-smallTxt">
-            <div><a href="#">Our Goal</a></div>
+            <div><a href="#">Checklist</a></div>
             <div><a href="#">Adopt Review</a></div>
           </div>
         </div>
