@@ -65,7 +65,7 @@
         			<option value="">state</option>
         		
         			<c:forEach var="sido" items="${sido }" >
-        				<option value="${sido.orgCd }">${sido.orgdownNm }</option>
+        				<option value="${sido.orgCd }" id="sidoname">${sido.orgdownNm }</option>
         			</c:forEach>
 		        </select>
 		        <select name="sigun" id="sigunSelect">

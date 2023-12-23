@@ -44,14 +44,18 @@ public class LoginDAO {
 				if (pw.equals(dbPW)) {
 					result = "로그인 성공!";
 					
+					String upr[] = rs.getString("a_uprCd").split(",");
+					String org[] = rs.getString("a_orgCd").split(",");
 					
 					account.setEmail(email);
 					account.setPw(pw);
 					account.setFirstname(rs.getString("a_firstname"));
 					account.setLastname(rs.getString("a_lastname"));
 					account.setNo(rs.getInt("a_no"));
-					account.setUprCd(rs.getString("a_uprCd"));
-					account.setOrgCd(rs.getString("a_orgCd"));
+					account.setUprCd(upr[0]);
+					account.setUprText(upr[1]);
+					account.setOrgCd(org[0]);
+					account.setOrgText(org[1]);
 					account.setResult("ok");
 					
 					
@@ -97,7 +101,9 @@ public class LoginDAO {
 			String pw = request.getParameter("pw");
 			String pwck = request.getParameter("pwCheck");
 			String uprCd = request.getParameter("sido");
+			String uprText = request.getParameter("sidotext");
 			String orgCd = request.getParameter("sigun");
+			String orgText = request.getParameter("siguntext");
 			System.out.println(email);
 			System.out.println(firstname);
 			System.out.println(lastname);
@@ -111,8 +117,8 @@ public class LoginDAO {
 				pstmt.setString(2, firstname);
 				pstmt.setString(3, lastname);
 				pstmt.setString(4, pw);
-				pstmt.setString(5, uprCd);
-				pstmt.setString(6, orgCd);
+				pstmt.setString(5, uprCd+","+uprText);
+				pstmt.setString(6, orgCd+","+orgText);
 				
 				
 				
@@ -163,8 +169,17 @@ public class LoginDAO {
 		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
 		if (account ==  null) {
 			request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
+			request.setAttribute("uprCd","");
+			request.setAttribute("uprText","state");
+			request.setAttribute("orgCd","");
+			request.setAttribute("orgText","city");
+			
 		}else {
  			request.setAttribute("loginLogoutBtn", "login/header-logoutMypage.jsp");
+ 			request.setAttribute("uprCd",account.getUprCd());
+ 			request.setAttribute("uprText",account.getUprText());
+ 			request.setAttribute("orgCd",account.getOrgCd());
+ 			request.setAttribute("orgText",account.getOrgText());
  			
 		}
 		

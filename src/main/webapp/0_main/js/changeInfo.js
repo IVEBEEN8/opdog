@@ -1,4 +1,6 @@
 $(document).ready(function(){
+
+	
 	$('button[id="change"]').on("click",function(){
 		var oldpw = $('input[name="oldPW"]').val();		
 		var oldpwch = $('input[name="oldPWCheck"]').val();
@@ -98,3 +100,9 @@ $(document).ready(function(){
 	
 	
 });
+$('window').onload(function(){
+	$.ajax({
+		
+	})
+});
+
