@@ -22,6 +22,20 @@ width: 500px;
 </style>
 <body>
 <div>
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
+<br>sads
 	<div class="input-wrap">
 	<p>보호자명</p>
 	<input id= "name">

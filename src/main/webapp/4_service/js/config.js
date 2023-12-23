@@ -1,4 +1,4 @@
 const config = {
-	API_KEY: "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"
+	API_KEY: "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"
 };
 export default config;

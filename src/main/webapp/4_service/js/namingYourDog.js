@@ -1,3 +1,8 @@
+//import config from "./config.js";
+//const {API_KEY} = config;
+
+
+
 let gender, color, hairLength, personality;
 
 function showLoading() {
@@ -68,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#send").addEventListener("click", async function () {
 	showLoading();
     // generateName 함수 호출 위치 수정
-
+	const apiKey = "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";
     var template = `<div class="line">
         <span class="chat-box mine">성별이 ${gender}, 털 색상이 ${color}, 털 길이가 ${hairLength}, 그리고 성격이 ${personality} 강아지의 이름을 지어줄래? 그리고 추천 이유도 설명해줘!</span>
     	</div>`; 
@@ -78,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector(".chat-content")
       //.insertAdjacentHTML("beforeend", template);
 
-    const apiKey = "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"; // open ai_KEY
     const prompt = template;
     try {
       const response = await fetch(

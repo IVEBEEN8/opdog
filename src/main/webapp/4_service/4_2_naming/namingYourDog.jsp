@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="4_service/js/namingYourDog.js"></script>
+<script type="module" src="4_service/js/namingYourDog.js"></script>
 <link rel="stylesheet" href="4_service/css/namingYourDog.css">
 </head>
 <body>
