@@ -44,7 +44,17 @@ $(document).ready(function() {
 			//$('option').remove('#centerop');
 		};
     });
-
+	
+	$('#sidoSelect').change(function(){
+		$('input[name="sidotext"]').remove();
+		var sidotext = $('#sidoSelect option:checked').text();
+		$('.selectBox').append('<input type="hidden" name="sidotext" value="'+sidotext+'"></input>')
+	})
+	$('#sigunSelect').change(function(){
+		$('input[name="siguntext"]').remove();
+		var siguntext = $('#sigunSelect option:checked').text();
+		$('.selectBox').append('<input type="hidden" name="siguntext" value="'+siguntext+'"></input>')
+	})
    
 	
 	

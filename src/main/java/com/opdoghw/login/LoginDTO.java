@@ -9,6 +9,8 @@ public class LoginDTO {
 	private String result;
 	private String uprCd;
 	private String orgCd;
+	private String uprText;
+	private String orgText;
 
 
 public LoginDTO() {
@@ -17,7 +19,7 @@ public LoginDTO() {
 
 
 public LoginDTO(String email, String firstname, String lastname, String pw, int no, String result, String uprCd,
-		String orgCd) {
+		String orgCd, String uprText, String orgText) {
 	super();
 	this.email = email;
 	this.firstname = firstname;
@@ -27,6 +29,8 @@ public LoginDTO(String email, String firstname, String lastname, String pw, int 
 	this.result = result;
 	this.uprCd = uprCd;
 	this.orgCd = orgCd;
+	this.uprText = uprText;
+	this.orgText = orgText;
 }
 
 
@@ -110,10 +114,23 @@ public void setOrgCd(String orgCd) {
 }
 
 
-@Override
-public String toString() {
-	return "LoginDTO [email=" + email + ", firstname=" + firstname + ", lastname=" + lastname + ", pw=" + pw + ", no="
-			+ no + ", result=" + result + ", uprCd=" + uprCd + ", orgCd=" + orgCd + "]";
+public String getUprText() {
+	return uprText;
+}
+
+
+public void setUprText(String uprText) {
+	this.uprText = uprText;
+}
+
+
+public String getOrgText() {
+	return orgText;
+}
+
+
+public void setOrgText(String orgText) {
+	this.orgText = orgText;
 }
 
 
