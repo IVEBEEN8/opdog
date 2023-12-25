@@ -23,158 +23,158 @@
       </div>
       <div class="content-frame">
         <div class="content-row">
-          <div class="content-bg">
+          <a href="vtSeoulC" class="content-bg">
             <img style="width: 7.3vw;" src="3_volunteer/img/SeoulIcon.png" alt="" />
-            <a>
+            <div>
               <p>Seoul</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+         <a href="vtBusanC"class="content-bg">
             <img style="width: 7.3vw;" src="3_volunteer/img/busanIcon.png" alt="" />
-            <a>
+            <div>
               <p>Busan</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a href="vtDaeguC"class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/DaeguIcon.png"
             />
-            <a>
+            <div>
               <p>Daegu</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
         <div class="content-row">
-          <div class="content-bg">
+          <a href="vtInsheonC" class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/IncheonIcon.png"
             />
-            <a>
+            <div>
               <p>Incheon</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/DaejeonIcon.png"
             />
-            <a>
+            <div>
               <p>Daejeon</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
              style="width: 7.3vw;"
               src="3_volunteer/img/GyeongnamIcon.png"
             />
-            <a>
+            <div>
               <p>Gyeongnam</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
         <div class="content-row">
-          <div class="content-bg">
+          <a class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/GyeongbukIcon.png"
             />
-            <a>
+            <div>
               <p>Gyeongbuk</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/JeonnamIcon.png"
             />
-            <a>
+            <div>
               <p>Jeonnam</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
              style="width: 7.3vw;"
               src="3_volunteer/img/JeonbukIcon.png"
             />
-            <a>
+            <div>
               <p>Jeonbuk</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
         <div class="content-row">
-          <div class="content-bg">
+          <a class="content-bg">
             <img
              style="width: 7.3vw;"
               src="3_volunteer/img/ChungnamIcon.png"
             />
-            <a>
+            <div>
               <p>Chungnam</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
               style="width:6.8vw;"
               src="3_volunteer/img/ChungbukIcon.png"
             />
-            <a>
+            <div>
               <p>Chungbuk</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
               style="width: 9.3vw;"
               src="3_volunteer/img/JejuIcon.png"
             />
-            <a>
+            <div>
               <p>Jeju</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
         <div class="content-row">
-          <div class="content-bg">
+          <a class="content-bg">
             <img
              style="width: 6.8vw;"
               src="3_volunteer/img/GyeonggiIcon.png"
             />
-            <a>
+            <div>
               <p>Gyeonggi</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
             style="width: 9.3vw;"
               src="3_volunteer/img/GangwonIcon.png"
             />
-            <a>
+            <div>
               <p>Gangwon</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
-          <div class="content-bg">
+            </div>
+          </a>
+          <a class="content-bg">
             <img
              style="width: 9.3vw; height:7vw;"
               src="3_volunteer/img/GwangjuIcon.png"
             />
-            <a>
+            <div>
               <p>Gwangju</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
-            </a>
-          </div>
+            </div>
+          </a>
         </div>
       </div>
     </div>
