@@ -27,7 +27,7 @@
 			<!-- 메뉴 -->
 			<div class="nav-var">
 				<div class="nav-items">
-					<a href="#" class="nav-text home"><span>Home</span></a>
+					<a href="HC" class="nav-text home"><span>Home</span></a>
 				</div>
 				<div class="nav-items">
 					<a href="#" class="nav-text"><span>Adopt</span></a>
