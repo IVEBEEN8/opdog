@@ -1,0 +1,127 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+  
+}
+.big-mama{
+	width:100vw;
+	height:100vh;
+}
+.title4_1{
+	color: rgba(67, 49, 28, 0.9);
+}
+.yellow-bar{
+	top: 20%;
+    position: absolute;
+    width: 100%;
+    background: rgba(250, 234, 177, 1);
+    height: 2px;
+    border: none;
+}
+.title-box4_1{
+	text-align: left;
+    top: 10%;
+    position: relative;
+    max-width: 884px;
+    margin: 0px auto;
+    padding: 60px 70px 0px;
+    font-size: 200%;
+    line-height: 111%;
+    font-weight: 600;
+}
+.paw-img{
+	width: 41px;
+    height: 34px;
+    margin-left: 3px
+}
+.paw-img1{
+    z-index: 1;
+    position: absolute;
+    top: -41%;
+    right: -3%;
+    width: 22%;
+    height: 183%;
+}
+
+
+
+.petnmcheck-wrap{
+	position:relative;
+	height: 1300px;
+	width: 100vw;
+	text-align: center;
+	
+}
+.petnm-info-box{
+    left: 25%;
+    top: 13%;
+    font-size: 150%;
+    position: absolute;
+    border: 1px solid gray;
+    width: 50%;
+    text-align: left;
+    border-radius: 10px;
+    max-height: 312px;
+    overflow: auto;
+
+}
+.wrap-for-input-wrap{
+	width: 50%;
+    top: 39%;
+    left: 25%;
+    position: absolute;
+}
+.owner-input{
+	width: 23%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid 
+rgba(197, 137, 64, 1);
+    background-color: white;
+}
+
+.petnm-input{
+	width: 23%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid 
+rgba(197, 137, 64, 1);
+    background-color: white;
+	
+}
+.input-name4_1{
+	padding: 10px;
+    font-size: 18px;
+    line-height: 19px;
+    font-weight: 600;
+}
+.find-btn4_1{
+	width: 138.5px;
+    padding: 10px;
+    margin: 40px auto 60px;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    color: black;
+    border-radius: 21px;
+    border: none;
+    background-color: rgb(252, 209, 30);
+    cursor: pointer;
+}
+.petnm-info-box li{
+	font-weight: 500;
+	color: rgba(67, 49, 28, 0.9);
+}
+
+

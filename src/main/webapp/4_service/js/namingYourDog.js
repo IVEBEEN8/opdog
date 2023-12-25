@@ -58,16 +58,7 @@ function showOptions(optionsId) {
 function generateName() {
   return `${gender} ${color} ${hairLength} ${personality}`;
 }
-/*
-function updateSelectedText(text) {
-  const selectedTextTemplate = `<div class="line">
-        <span class="chat-box">${text}</span>
-    </div>`;
-  document
-    .querySelector(".chat-content")
-    .insertAdjacentHTML("beforeend", selectedTextTemplate);
-}
-*/
+
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#send").addEventListener("click", async function () {
