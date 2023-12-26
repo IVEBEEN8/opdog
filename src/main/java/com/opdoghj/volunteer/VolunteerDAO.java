@@ -42,7 +42,7 @@ public class VolunteerDAO {
 				v.setV_status(rs.getString("v_status"));
 				v.setA_no(rs.getInt("a_no"));
 				volunteer.add(v);
-
+			
 			}
 
 			request.setAttribute("volunteer", volunteer);

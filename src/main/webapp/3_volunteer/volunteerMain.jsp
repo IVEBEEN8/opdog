@@ -33,6 +33,7 @@
          <a href="vtBusanC"class="content-bg">
             <img style="width: 7.3vw;" src="3_volunteer/img/busanIcon.png" alt="" />
             <div>
+            
               <p>Busan</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
