@@ -12,133 +12,110 @@ public class LoginDTO {
 	private String uprText;
 	private String orgText;
 
+	public LoginDTO() {
+		// TODO Auto-generated constructor stub
+	}
 
-public LoginDTO() {
-	// TODO Auto-generated constructor stub
-}
+	public LoginDTO(String email, String firstname, String lastname, String pw, int no, String result, String uprCd,
+			String orgCd, String uprText, String orgText) {
+		super();
+		this.email = email;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.pw = pw;
+		this.no = no;
+		this.result = result;
+		this.uprCd = uprCd;
+		this.orgCd = orgCd;
+		this.uprText = uprText;
+		this.orgText = orgText;
+	}
 
+	public String getEmail() {
+		return email;
+	}
 
-public LoginDTO(String email, String firstname, String lastname, String pw, int no, String result, String uprCd,
-		String orgCd, String uprText, String orgText) {
-	super();
-	this.email = email;
-	this.firstname = firstname;
-	this.lastname = lastname;
-	this.pw = pw;
-	this.no = no;
-	this.result = result;
-	this.uprCd = uprCd;
-	this.orgCd = orgCd;
-	this.uprText = uprText;
-	this.orgText = orgText;
-}
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
+	public String getFirstname() {
+		return firstname;
+	}
 
-public String getEmail() {
-	return email;
-}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
 
+	public String getLastname() {
+		return lastname;
+	}
 
-public void setEmail(String email) {
-	this.email = email;
-}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
 
+	public String getPw() {
+		return pw;
+	}
 
-public String getFirstname() {
-	return firstname;
-}
+	public void setPw(String pw) {
+		this.pw = pw;
+	}
 
+	public int getNo() {
+		return no;
+	}
 
-public void setFirstname(String firstname) {
-	this.firstname = firstname;
-}
+	public void setNo(int no) {
+		this.no = no;
+	}
 
+	public String getResult() {
+		return result;
+	}
 
-public String getLastname() {
-	return lastname;
-}
+	public void setResult(String result) {
+		this.result = result;
+	}
 
+	public String getUprCd() {
+		return uprCd;
+	}
 
-public void setLastname(String lastname) {
-	this.lastname = lastname;
-}
+	public void setUprCd(String uprCd) {
+		this.uprCd = uprCd;
+	}
 
+	public String getOrgCd() {
+		return orgCd;
+	}
 
-public String getPw() {
-	return pw;
-}
+	public void setOrgCd(String orgCd) {
+		this.orgCd = orgCd;
+	}
 
+	public String getUprText() {
+		return uprText;
+	}
 
-public void setPw(String pw) {
-	this.pw = pw;
-}
+	public void setUprText(String uprText) {
+		this.uprText = uprText;
+	}
 
+	public String getOrgText() {
+		return orgText;
+	}
 
-public int getNo() {
-	return no;
-}
+	public void setOrgText(String orgText) {
+		this.orgText = orgText;
+	}
 
-
-public void setNo(int no) {
-	this.no = no;
-}
-
-
-public String getResult() {
-	return result;
-}
-
-
-public void setResult(String result) {
-	this.result = result;
-}
-
-
-public String getUprCd() {
-	return uprCd;
-}
-
-
-public void setUprCd(String uprCd) {
-	this.uprCd = uprCd;
-}
-
-
-public String getOrgCd() {
-	return orgCd;
-}
-
-
-public void setOrgCd(String orgCd) {
-	this.orgCd = orgCd;
-}
-
-
-public String getUprText() {
-	return uprText;
-}
-
-
-public void setUprText(String uprText) {
-	this.uprText = uprText;
-}
-
-
-public String getOrgText() {
-	return orgText;
-}
-
-
-public void setOrgText(String orgText) {
-	this.orgText = orgText;
-}
-
-
-
-
-
-
-
-
+	@Override
+	public String toString() {
+		return "LoginDTO [email=" + email + ", firstname=" + firstname + ", lastname=" + lastname + ", pw=" + pw
+				+ ", no=" + no + ", result=" + result + ", uprCd=" + uprCd + ", orgCd=" + orgCd + ", uprText=" + uprText
+				+ ", orgText=" + orgText + "]";
+	}
 
 }
