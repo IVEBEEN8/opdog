@@ -53,15 +53,15 @@
               </div>
               <div class="post-info">
                 <div class="post-user">
-                  <img src="3_volunteer/img/profileIcon.png" alt="" />d
+                  <img src="3_volunteer/img/profileIcon.png" alt="" />id
                 </div>
-                <div class="post-view">| view</div>
-                <div class="post-coment">| comment</div>
+        <!--         <div class="post-view">| view</div>
+                <div class="post-coment">| comment</div> -->
               </div>
             </div>
           </td>
           <td class="post-img">
-          <img style="width: 20vw; height:27vh;  border-radius: 30px;" src="3_volunteer/postImg/${volunteer.v_img }"></td>
+          <img src="3_volunteer/newImg/${volunteer.v_img }"></td>
         </tr>
       </table>
  </c:forEach> 
