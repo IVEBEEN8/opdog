@@ -1,6 +1,7 @@
 package com.opdoghj.volunteer;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,6 +12,7 @@ import com.opdoghw.login.LoginDAO;
 
 @WebServlet("/VtWriteC")
 public class VtWriteC extends HttpServlet {
+
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		LoginDAO.loginCheck(request);
 		request.setAttribute("contentPage", "../3_volunteer/volunteerWrite.jsp");
@@ -25,5 +27,6 @@ public class VtWriteC extends HttpServlet {
 	request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
 	request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
+
 
 }
