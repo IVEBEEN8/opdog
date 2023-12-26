@@ -12,6 +12,17 @@
       <main>
         <table id="vTbl">
           <tr>
+            <td class="write-td">Status</td>
+            <td>
+              <select name="chooseStatus">
+              	<option value="0">Select</option>
+              	<option value="c_recruit">Recruiting</option>
+              	<option value="c_complete">Completed</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+          <tr>
             <td class="write-td">title</td>
             <td>
               <input
