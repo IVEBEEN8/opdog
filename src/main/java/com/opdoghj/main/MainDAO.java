@@ -14,6 +14,7 @@ import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -101,6 +102,8 @@ public class MainDAO {
 		try {
 			URL u = new URL(url);
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
+			HttpSession hs = request.getSession();
+			
 			if (huc.getResponseCode() == 200) {
 				InputStream is = huc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
