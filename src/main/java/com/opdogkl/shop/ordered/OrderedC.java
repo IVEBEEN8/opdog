@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 public class OrderedC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		OrderedDAO.regOrdered(request);
+		request.setAttribute("contentPage", "../2_shop/2_5_checkOut/checkOut3.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		
 	}
 

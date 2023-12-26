@@ -5,9 +5,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="checkOut.css" />
-    <script type="text/javascript" src="../js/shop.js"></script>
+    <title>checkout2</title>
+        <link rel="stylesheet" href="../css/checkOut.css" />
+    <script type="text/javascript" src="../js/checkOut.js"></script>
   </head>
   <body>
     <div class="main">
@@ -40,9 +40,12 @@
          
 
           <div><input type="checkbox" /> Save contact information</div>
-          <div><button class="continue-btn"  onclick="continueShopping()">Pay with card</button></div>
+          <div><button class="continue-btn" onclick="payWithCard()">Pay with card</button></div>
+          ${param.title } <br>
+          ${param.brand } <br>
+          
           ${param.price} <br>
-         ${param.sPrice }
+          ${param.sPrice }
         </div>
       </div>
     </div>
