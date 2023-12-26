@@ -1,3 +1,21 @@
+function goReviewReg() {
+		// 서버에서 세션 정보를 가져옴
+		var sessionAccount = document.getElementById("goReviewReg").value;
+
+		// 세션 정보가 있는지 확인
+		if (!sessionAccount) {
+			// 로그인 되어 있지 않으면 로그인 여부를 확인
+			var result = confirm('로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?');
+			if (result) {
+				// 로그인 페이지로 이동
+				location.href = "LoginMainHC";
+			}
+		} else {
+			// 로그인 되어 있으면 ReviewRegC로 이동
+			location.href = "ReviewRegC";
+		}
+	}
+
 function checkForm() {
   // 제목 입력값을 얻어옵니다.
   var titleValue = document.getElementById("title").value;
