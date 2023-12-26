@@ -15,9 +15,10 @@
 	rel="stylesheet" />
 </head>
 <body>
+
 	<div class="container">
 		<h1>Dog name generator</h1>
-
+		<h1>반려견 이름 생성기</h1>
 		<!-- 성별 선택 -->
 		<div class="wrapper" id="genderOptions">
 			<h2>What is your pet's gender?</h2>
@@ -27,8 +28,8 @@
 					<p class="boy">Boy</p>
 				</button>
 				<button onclick="selectGender('Girl')">
-				<img src="4_service/img/naming-girl.png">
-				<p>Girl</p>
+					<img src="4_service/img/naming-girl.png">
+					<p>Girl</p>
 				</button>
 			</div>
 		</div>

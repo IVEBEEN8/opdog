@@ -1,3 +1,5 @@
+
+
 $(function () {
   fullset();
   quickClick();
@@ -152,7 +154,7 @@ function quickClick() {
 
 //3번째 페이지 카운터 기능
 
-const counter = ($counter, max) => {
+function counter($counter, max) {
   let now = max;
 
   const handle = setInterval(() => {
