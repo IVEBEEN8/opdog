@@ -53,10 +53,10 @@
               </div>
               <div class="post-info">
                 <div class="post-user">
-                  <img src="3_volunteer/img/profileIcon.png" alt="" />d
+                  <img src="3_volunteer/img/profileIcon.png" alt="" />id
                 </div>
-                <div class="post-view">| view</div>
-                <div class="post-coment">| comment</div>
+        <!--         <div class="post-view">| view</div>
+                <div class="post-coment">| comment</div> -->
               </div>
             </div>
           </td>
