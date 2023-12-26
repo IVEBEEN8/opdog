@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>review update</title>
-<script type="text/javascript" src="1_adopt/js/reviewUpdate.js"></script>
+<script type="text/javascript" src="1_adopt/js/reviewUpdate.js?ver=1"></script>
 
 </head>
 <body>
