@@ -83,21 +83,20 @@
 		<div class="wrapper" id="personalityOptions" style="display: none">
 			<p>What is your dog's personality?</p>
 			<div class="choice-wrap">
-				<button onclick="selectPersonality('meticulous')">
-					<img style="width: 15vw" src="4_service/img/naming-long.png">
-					<p>meticulous</p>
+				<button onclick="selectPersonality('smart')">
+					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-smart.jpg">
+					<p>smart</p>
 				</button>
-				<button onclick="selectPersonality('
-					fainthearted')">
-					<img style="width: 15vw" src="4_service/img/naming-p1.jpg">
+				<button onclick="selectPersonality('fainthearted')">
+					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-p1.jpg">
 					<p>fainthearted</p>
 				</button>
 				<button onclick="selectPersonality('angry')">
-					<img style="width: 15vw" src="4_service/img/naming-p1.jpg">
+					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-angry.jpg">
 					<p>angry</p>
 				</button>
 				<button onclick="selectPersonality('playful')">
-					<img style="width: 15vw" src="4_service/img/naming-p1.jpg">
+					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-playful.jpg">
 					<p>playful</p>
 				</button>
 			</div>
