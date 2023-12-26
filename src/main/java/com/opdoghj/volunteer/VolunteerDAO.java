@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
@@ -41,7 +42,7 @@ public class VolunteerDAO {
 				v.setV_status(rs.getString("v_status"));
 				v.setA_no(rs.getInt("a_no"));
 				volunteer.add(v);
-				System.out.println(v);
+
 			}
 
 			request.setAttribute("volunteer", volunteer);
@@ -57,6 +58,7 @@ public class VolunteerDAO {
 	}
 
 	public static void WritePost(HttpServletRequest request) {
+		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		int no = account.getNo();
 		System.out.println("account number: " + no);
@@ -69,9 +71,7 @@ public class VolunteerDAO {
 			System.out.println("연결성공~!");
 
 			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
-
 			System.out.println(path);
-
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 
@@ -93,7 +93,7 @@ public class VolunteerDAO {
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setInt(5, no);
-
+			pstmt.executeUpdate();
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
