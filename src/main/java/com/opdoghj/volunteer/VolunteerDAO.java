@@ -44,7 +44,7 @@ public class VolunteerDAO {
 				System.out.println(v);
 			}
 			
-			request.setAttribute("volunteer", v);
+			request.setAttribute("volunteer", volunteer);
 			System.out.println("성공");
 			
 			
@@ -64,16 +64,15 @@ public class VolunteerDAO {
 		System.out.println(no);
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		System.out.println(pstmt);
 		String sql = "insert into volunteer values(?,?,?,sysdate,sysdate,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con= DBManager_khw.connect();
 			System.out.println("연결성공~!");
-			String path= "/Users/6oohye/Desktop/obdog/src/main/webapp/3_volunteer/postImg";
+			String path= "3_volunteer/newImg";
 			System.out.println(path);
 			
-			 MultipartRequest mr = new MultipartRequest(request, path,30 * 1024 * 1024, "utf-8",
+			 MultipartRequest mr = new MultipartRequest(request, path,30 * 1024 * 1024, "UTF-8",
 						new DefaultFileRenamePolicy());
 			 
 			 String title = mr.getParameter("title");
