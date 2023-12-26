@@ -88,7 +88,7 @@ body {
   top: 1.5vw;
 }
 
-.content-bg>a {
+.content-bg>div {
   display: flex;
   width: 18.2vw;
   position: absolute;
@@ -97,7 +97,7 @@ body {
   gap: 20px;
 }
 
-.content-bg>a > p {
+.content-bg>div > p {
   color: #000;
   text-align: center;
   font-family: "Poppins", sans-serif;
@@ -109,7 +109,7 @@ body {
   margin: 0;
 }
 
-.content-bg>a > img {
+.content-bg>div > img {
   width: 1.5vw;
   height: 2.5vw;
   margin-top: 3px;
