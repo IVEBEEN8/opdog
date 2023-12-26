@@ -1,4 +1,4 @@
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -34,7 +34,8 @@
           />
         </div>
       </div>
-<c:forEach items="${volunteer}" var="volunteer"> 
+<c:forEach items="${volunteer}" var="volunteer">
+<a href="VolunteerDetailC?no=${volunteer.v_no}">
       <table id="middle">
         <tr onclick="location.href='VtDetailC?no=${volunteer.v_no}'" class="middle-post">
           <td class="post-left">
@@ -64,7 +65,9 @@
           <img src="3_volunteer/newImg/${volunteer.v_img }"></td>
         </tr>
       </table>
+ </a>
  </c:forEach> 
+
        <div class="bottom btn">
        <form action="VtWriteC">
         <button>Write</button>       
