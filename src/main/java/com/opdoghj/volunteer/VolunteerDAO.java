@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 
 import com.opdoghw.centerinfo.DBManager_khw;
+import com.opdoghw.login.LoginDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -33,13 +34,12 @@ public class VolunteerDAO {
 			volunteer = new ArrayList<volunteerDTO>();
 			while (rs.next()) {
 				v = new volunteerDTO();
-				v.setA_no(rs.getInt("a_no"));
 				v.setV_title(rs.getString("v_title"));
 				v.setV_img(rs.getString("v_img"));
 				v.setV_txt(rs.getString("v_txt"));
 				v.setV_created(rs.getDate("v_created"));
 				v.setV_updated(rs.getDate("v_updated"));
-//				v.setA_email(rs.getString("a_email"));
+
 				volunteer.add(v);
 				System.out.println(v);
 			}
@@ -59,10 +59,13 @@ public class VolunteerDAO {
 
 
 	public static void WritePost(HttpServletRequest request) {
+		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
+		int no = account.getNo();
+		System.out.println(no);
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		System.out.println(pstmt);
-		String sql = "insert into volunteer values(?,?,?,sysdate,sysdate,41)";
+		String sql = "insert into volunteer values(?,?,?,sysdate,sysdate,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con= DBManager_khw.connect();
@@ -77,6 +80,7 @@ public class VolunteerDAO {
 			 String file = mr.getFilesystemName("file");
 			 String content = mr.getParameter("content");
 			 
+			 
 			 content=content.replaceAll("\r\n", "<br>");
 			 
 			 
@@ -88,7 +92,7 @@ public class VolunteerDAO {
 				pstmt.setString(1, title);
 				pstmt.setString(2, file);
 				pstmt.setString(3, content);
-//				pstmt.setString(4, content);
+				pstmt.setInt(4, no);
 			
 			if (pstmt.executeUpdate()==1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
