@@ -70,6 +70,7 @@ $(document).ready(function(){
         	    type: 'GET',
             	data: { value: selectedValue },
 	            success: function(response) {
+		alert(11);
 					console.log(response);
 					//$('label').remove('#sigungulabel');
 					//$('label').remove('#centerlabel');
@@ -100,9 +101,12 @@ $(document).ready(function(){
 	
 	
 });
-$('window').onload(function(){
-	$.ajax({
-		
-	})
+$(window).on('load',function(){
+	var uprCd = $('#defaultUpr').val();
+	var orgCd = $('#defaultOrg').val();
+	console.log(uprCd);
+	//$('input[name="sigungu"][value="'+ orgCd+'"]').click();
+	$('#sidoSelect').val(''+uprCd+'').trigger('change');
+	$('#sigunSelect').val(''+orgCd+'');
 });
 
