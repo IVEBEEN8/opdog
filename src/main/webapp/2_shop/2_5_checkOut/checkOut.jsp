@@ -5,9 +5,9 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="checkOut.css" />
-    <script type="text/javascript" src="../js/shop.js"></script>
+    <title>checkout</title>
+    <link rel="stylesheet" href="../css/checkOut.css" />
+    <script type="text/javascript" src="../js/checkOut.js"></script>
     
   </head>
   <body>
@@ -47,12 +47,19 @@
           <div>
             <input class="input-box" type="text" placeholder="Phone number" />
           </div>
+          <input id="itemTitle" type="hidden" value="${param.title}">
+          <input id="itemPrice" type="hidden" value="${param.price}">
+          <input id="itemBrand" type="hidden" value="${param.brand}">
+          <input id="itemSPrice" type="hidden" value="${param.sPrice}">
 		
 			
           <div><input type="checkbox" /> Save contact information</div>
           <div><button class="continue-btn" onclick="continueShopping()">Continue to shopping</button></div>
+          ${param.title } <br>
+          ${param.brand } <br>
+          
           ${param.price} <br>
-         ${param.sPrice }
+          ${param.sPrice }
         </div>
       </div>
     </div>
