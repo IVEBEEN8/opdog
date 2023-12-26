@@ -7,7 +7,7 @@ function check(){
 	let pwCheck = document.querySelector("input[name='pwCheck']");
 	let uprCd = document.getElementById("sidoSelect");
 	let orgCd = document.getElementById("sigunSelect");
- 	//let checkbox = document.querySelector(" <input type="checkbox" name="agree" value="mail" />")
+	let checkbox = document.querySelector("input[type='checkbox'][name='agree']");
   
 
 	
@@ -83,8 +83,9 @@ function check(){
 		alert("check your city");
 		return false;
 	}
-	if(!isCheckboxChecked){
+	if(!isCheckboxChecked(checkbox)){
 		alert("agree to the terms");
+		return false;
 	}
 	
 }
