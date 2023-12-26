@@ -61,7 +61,7 @@
             </div>
           </td>
           <td class="post-img">
-          <img src="3_volunteer/postImg/${volunteer.v_img }"></td>
+          <img src="3_volunteer/newImg/${volunteer.v_img }"></td>
         </tr>
       </table>
  </c:forEach> 
