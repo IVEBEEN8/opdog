@@ -15,14 +15,16 @@ body {
   
 }
 .big-mama{
-	width:100vw;
-	height:100vh;
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    top: 10vw;
 }
 .title4_1{
 	color: rgba(67, 49, 28, 0.9);
 }
 .yellow-bar{
-	top: 20%;
+	top:6vw;
     position: absolute;
     width: 100%;
     background: rgba(250, 234, 177, 1);

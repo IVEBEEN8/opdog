@@ -37,7 +37,7 @@ public class VolunteerDAO {
 				v.setV_txt(rs.getString("v_txt"));
 				v.setV_created(rs.getDate("v_created"));
 				v.setV_updated(rs.getDate("v_updated"));
-
+				System.out.println(rs.getString("v_img"));
 				volunteer.add(v);
 				System.out.println(v);
 			}
@@ -65,7 +65,9 @@ public class VolunteerDAO {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
 			System.out.println("연결성공~!");
-			String path = "/Users/heewon/opdog/src/main/webapp/3_volunteer/postimg";
+
+			String path= request.getServletContext().getRealPath("3_volunteer/newImg"); 
+
 			System.out.println(path);
 
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",

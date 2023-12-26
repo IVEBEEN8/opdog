@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td colspan="2" class="write-td">
-              <button>add</button>
+              <button >add</button>
             </td>
           </tr>
         </table>

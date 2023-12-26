@@ -21,6 +21,7 @@ public class HC extends HttpServlet {
 		request.getRequestDispatcher("0_main/main.jsp").forward(request, response);
 	}
 
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 	}
