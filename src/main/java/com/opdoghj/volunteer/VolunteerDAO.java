@@ -109,30 +109,14 @@ public class VolunteerDAO {
 
 	}
 
-<<<<<<< HEAD
-	public static void getDetail(HttpServletRequest request) {
-=======
+
 	public static void getPost(HttpServletRequest request) {
->>>>>>> 71f4ea638518e7f3d8fc88a02ac08a740b525285
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from volunteer where v_no=?";
-<<<<<<< HEAD
-		
-		try {
-			con = DBManager_khw.connect();
-			System.out.println("연결성공~!");
 
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("no"));
-			
-			rs = pstmt.executeQuery();
-
-			volunteerDTO v = null;
-			volunteer = new ArrayList<volunteerDTO>();
-			while (rs.next()) {
-=======
 
 		try {
 			con = DBManager_khw.connect();
@@ -144,7 +128,6 @@ public class VolunteerDAO {
 
 			volunteerDTO v = null;
 			if (rs.next()) {
->>>>>>> 71f4ea638518e7f3d8fc88a02ac08a740b525285
 				v = new volunteerDTO();
 				v.setV_no(rs.getInt("v_no"));
 				v.setV_title(rs.getString("v_title"));
@@ -154,25 +137,9 @@ public class VolunteerDAO {
 				v.setV_updated(rs.getDate("v_updated"));
 				v.setV_status(rs.getString("v_status"));
 				v.setA_no(rs.getInt("a_no"));
-<<<<<<< HEAD
-				volunteer.add(v);
-				System.out.println(v);
-			}
 
-			request.setAttribute("volunteer", volunteer);
-			System.out.println("성공");
-
-		} catch (Exception e) {
-			e.printStackTrace();
-			System.out.println("디테일 조회 실패");
-		} finally {
-			DBManager_khw.close(con, pstmt, rs);
-		}
-
-=======
 				request.setAttribute("vol", v);
 				System.out.println("성공");
-
 			}
 
 		} catch (Exception e) {
@@ -181,7 +148,7 @@ public class VolunteerDAO {
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
->>>>>>> 71f4ea638518e7f3d8fc88a02ac08a740b525285
+
 	}
 
 }
