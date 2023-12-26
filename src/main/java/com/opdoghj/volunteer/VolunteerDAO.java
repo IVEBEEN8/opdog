@@ -42,7 +42,7 @@ public class VolunteerDAO {
 				v.setV_status(rs.getString("v_status"));
 				v.setA_no(rs.getInt("a_no"));
 				volunteer.add(v);
-			
+
 			}
 
 			request.setAttribute("volunteer", volunteer);
@@ -107,6 +107,44 @@ public class VolunteerDAO {
 			DBManager_khw.close(con, pstmt, null);
 		}
 
+	}
+
+	public static void getPost(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from volunteer where v_no=?";
+
+		try {
+			con = DBManager_khw.connect();
+			System.out.println("연결성공~!");
+			String no = request.getParameter("no");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			rs = pstmt.executeQuery();
+
+			volunteerDTO v = null;
+			if (rs.next()) {
+				v = new volunteerDTO();
+				v.setV_no(rs.getInt("v_no"));
+				v.setV_title(rs.getString("v_title"));
+				v.setV_img(rs.getString("v_img"));
+				v.setV_txt(rs.getString("v_txt"));
+				v.setV_created(rs.getDate("v_created"));
+				v.setV_updated(rs.getDate("v_updated"));
+				v.setV_status(rs.getString("v_status"));
+				v.setA_no(rs.getInt("a_no"));
+				request.setAttribute("vol", v);
+				System.out.println("성공");
+
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("실패");
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
 	}
 
 }

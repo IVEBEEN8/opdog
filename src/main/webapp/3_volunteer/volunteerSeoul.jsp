@@ -35,9 +35,8 @@
         </div>
       </div>
 <c:forEach items="${volunteer}" var="volunteer">
+<a href="VolunteerDetailC?no=${volunteer.v_no}">
       <table id="middle">
-      <a>
-      
         <tr class="middle-post">
           <td class="post-left">
             <div class="td-wrapper">
@@ -66,7 +65,9 @@
           <img src="3_volunteer/newImg/${volunteer.v_img }"></td>
         </tr>
       </table>
+ </a>
  </c:forEach> 
+
        <div class="bottom btn">
        <form action="VtWriteC">
         <button>Write</button>       
