@@ -1,5 +1,6 @@
 package com.opdogkl.review;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -63,7 +64,9 @@ public class ReviewDAO {
 //		서버상 경로
 //		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
 		
-		String path = "/Users/6oohye/Desktop/obdog/src/main/webapp/1_adopt/1_4_review/imgFolder";
+		// 겨레 local path
+		String path = "C:/Bada/opdog/src/main/webapp/1_adopt/1_4_review/imgFolder";
+//		String path = "/Users/6oohye/Desktop/obdog/src/main/webapp/1_adopt/1_4_review/imgFolder";
 		System.out.println(path);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -176,6 +179,11 @@ public class ReviewDAO {
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("수정 성공");
+				// 사진 교체시 기존파일 삭제
+				if (newImg != null) {
+					File f = new File(path + "/" +oldImg);
+					f.delete();
+				}
 			}
 			
 		} catch (Exception e) {
@@ -193,13 +201,34 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "delete review_kl where op_email=?";
+		
 		try {
 			con = DBManager_khw.connect();
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("id"));
+			String sql = "select r_img from review_kl where op_email=?"; // 필요한 열만 조회
+	        pstmt = con.prepareStatement(sql);
+	        pstmt.setString(1, request.getParameter("id"));
+	        rs = pstmt.executeQuery();
+
+	        String fileName = null;
+	        if (rs.next()) {
+	            fileName = rs.getString("r_img");
+	        }
+
+	        rs.close();  // ResultSet 객체 닫기
+	        pstmt.close(); // PreparedStatement 객체 닫기
+
+	        sql = "delete review_kl where op_email=?";
+	        pstmt = con.prepareStatement(sql); // PreparedStatement 객체 재사용
+	        pstmt.setString(1, request.getParameter("id"));
+			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("삭제 성공");
+				
+				// 파일 삭제
+				String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
+				File file = new File(path + "/" + fileName);
+				file.delete();
+				
 			}
 			
 		} catch (Exception e) {

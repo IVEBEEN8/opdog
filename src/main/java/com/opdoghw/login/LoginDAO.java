@@ -192,7 +192,13 @@ public class LoginDAO {
 		HttpSession hs = request.getSession();
 		hs.setAttribute("account", null);
 //		hs.removeAttribute("account");
+<<<<<<< HEAD
 //		hs.invalidate(); : 초기화 
 
+=======
+////		hs.invalidate(); : 초기화 
+//		loginCheck(request);
+		
+>>>>>>> 915489ceb08581829b782cf14af8de3bcdf417fa
 	}
 }

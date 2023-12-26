@@ -1,21 +1,21 @@
-package com.opdogkl.shop.fashion;
+package com.opdoghoho.doginfo;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-@WebServlet("/FashionDetailC")
-public class FashionDetailC extends HttpServlet {
+
+@WebServlet("/SelectConditionC")
+public class SelectConditionC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		FashionDAO.getFashion(request);
-		request.setAttribute("contentPage", "../2_shop/2_1_fashion/fashionDetail.jsp");
-		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
-	
-		
+		DoginfoDAO.sigungu(request,response); // 시/군/구 세팅 메서드
 	}
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		DoginfoDAO.center(request,response);
 	}
 
 }

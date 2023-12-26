@@ -1,6 +1,6 @@
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -34,7 +34,7 @@
           />
         </div>
       </div>
-	<%-- <c:forEach items="${volunteer}" var="c"> --%>
+<c:forEach items="${volunteer}" var="volunteer"> 
       <table id="middle">
         <tr class="middle-post">
           <td class="post-left">
@@ -60,10 +60,11 @@
               </div>
             </div>
           </td>
-          <td class="post-img">${volunteer.v_img }</td>
+          <td class="post-img">
+          <img src="3_volunteer/postImg/${volunteer.v_img }"></td>
         </tr>
       </table>
-<%--    </c:forEach>  --%>
+ </c:forEach> 
        <div class="bottom btn">
        <form action="VtWriteC">
         <button>Write</button>       

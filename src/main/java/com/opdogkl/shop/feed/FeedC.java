@@ -6,6 +6,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.opdoghw.login.LoginDAO;
 import com.opdogkl.shop.fashion.FashionDAO;
 
 import javax.servlet.annotation.WebServlet;
@@ -18,6 +19,7 @@ public class FeedC extends HttpServlet {
 		FeedDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_2_feed/feed.jsp");
+		LoginDAO.loginCheck(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	
 	}

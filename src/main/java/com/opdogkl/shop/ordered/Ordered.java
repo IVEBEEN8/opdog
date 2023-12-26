@@ -1,24 +1,28 @@
 package com.opdogkl.shop.ordered;
 
+import java.util.Date;
+
 public class Ordered {
 	private int o_no;
 	private String o_title;
 	private int o_price;
 	private String o_brand;
 	private int o_sPrice;
+	private Date o_date;
 	private int a_no;
 	
 	public Ordered() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Ordered(int o_no, String o_title, int o_price, String o_brand, int o_sPrice, int a_no) {
+	public Ordered(int o_no, String o_title, int o_price, String o_brand, int o_sPrice, Date o_date, int a_no) {
 		super();
 		this.o_no = o_no;
 		this.o_title = o_title;
 		this.o_price = o_price;
 		this.o_brand = o_brand;
 		this.o_sPrice = o_sPrice;
+		this.o_date = o_date;
 		this.a_no = a_no;
 	}
 
@@ -62,6 +66,14 @@ public class Ordered {
 		this.o_sPrice = o_sPrice;
 	}
 
+	public Date getO_date() {
+		return o_date;
+	}
+
+	public void setO_date(Date o_date) {
+		this.o_date = o_date;
+	}
+
 	public int getA_no() {
 		return a_no;
 	}
@@ -69,6 +81,11 @@ public class Ordered {
 	public void setA_no(int a_no) {
 		this.a_no = a_no;
 	}
+	
+	
+	
+	
+	
 	
 	
 	
