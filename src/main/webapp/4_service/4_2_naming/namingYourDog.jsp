@@ -17,48 +17,90 @@
 <body>
 
 	<div class="container">
-		<h1>Dog name generator</h1>
-		<h1>반려견 이름 생성기</h1>
+		<p>Dog name generator</p>
 		<!-- 성별 선택 -->
 		<div class="wrapper" id="genderOptions">
-			<h2>What is your pet's gender?</h2>
+			<p>What is your pet's gender?</p>
 			<div class="choice-wrap">
 				<button onclick="selectGender('Boy')">
-					<img src="4_service/img/naming-boy.png">
+					<img style="width: 12vw" src="4_service/img/naming-boy.png">
 					<p class="boy">Boy</p>
 				</button>
 				<button onclick="selectGender('Girl')">
-					<img src="4_service/img/naming-girl.png">
+					<img style="width: 12vw" src="4_service/img/naming-girl.png">
 					<p>Girl</p>
 				</button>
 			</div>
 		</div>
 
 		<!-- 털 색상 선택 -->
-		<div class="choice-wrap" id="colorOptions" style="display: none">
-			<h2>털 색상 선택</h2>
-			<button onclick="selectColor('검정')">검정</button>
-			<button onclick="selectColor('흰색')">흰색</button>
-			<button onclick="selectColor('갈색')">갈색</button>
-			<button onclick="selectColor('기타')">기타</button>
+		<div class="wrapper" id="colorOptions" style="display: none">
+			<p>What is the fur color?</p>
+			<div class="choice-wrap">
+				<button onclick="selectColor('black')">
+					<img style="width: 12vw" src="4_service/img/naming-black.png">
+					<p>black</p>
+				</button>
+				<button onclick="selectColor('white')">
+					<img style="width: 12vw" src="4_service/img/naming-white.png">
+					<p>white</p>
+				</button>
+				<button onclick="selectColor('brown')">
+					<img style="width: 12vw" src="4_service/img/naming-brown.png">
+					<p>brown</p>
+				</button>
+				<button onclick="selectColor('etc')">
+					<img style="width: 12vw" src="4_service/img/naming-etc.png">
+					<p>etc</p>
+				</button>
+			</div>
 		</div>
 
 		<!-- 머리길이 선택 -->
-		<div class="choice-wrap" id="hairLengthOptions" style="display: none">
-			<h2>머리길이 선택</h2>
-			<button onclick="selectHairLength('직모')">직모</button>
-			<button onclick="selectHairLength('장모')">장모</button>
-			<button onclick="selectHairLength('단모')">단모</button>
-			<button onclick="selectHairLength('곱슬')">곱슬</button>
+		<div class="wrapper" id="hairLengthOptions" style="display: none">
+			<p>What is your dog's hair length?</p>
+			<div class="choice-wrap">
+				<button onclick="selectHairLength('straight hair')">
+					<img style="width: 12vw" src="4_service/img/naming-straight.png">
+					<p>straight hair</p>
+				</button>
+				<button onclick="selectHairLength('long hair')">
+					<img style="width: 12vw" src="4_service/img/naming-long.png">
+					<p>long hair</p>
+				</button>
+				<button onclick="selectHairLength('short hair')">
+					<img style="width: 12vw" src="4_service/img/naming-short.png">
+					<p>short hair</p>
+				</button>
+				<button onclick="selectHairLength('curly')">
+					<img style="width: 12vw" src="4_service/img/naming-curly.png">
+					<p>curly</p>
+				</button>
+			</div>
 		</div>
 
 		<!-- 성격 선택 -->
-		<div class="choice-wrap" id="personalityOptions" style="display: none">
-			<h2>성격 선택</h2>
-			<button onclick="selectPersonality('세심한')">세심한</button>
-			<button onclick="selectPersonality('소심한')">소심한</button>
-			<button onclick="selectPersonality('화난')">화난</button>
-			<button onclick="selectPersonality('장난꾸러기')">장난꾸러기</button>
+		<div class="wrapper" id="personalityOptions" style="display: none">
+			<p>What is your dog's personality?</p>
+			<div class="choice-wrap">
+				<button onclick="selectPersonality('meticulous')">
+					<img style="width: 15vw" src="4_service/img/naming-long.png">
+					<p>meticulous</p>
+				</button>
+				<button onclick="selectPersonality('
+					fainthearted')">
+					<img style="width: 15vw" src="4_service/img/naming-p1.jpg">
+					<p>fainthearted</p>
+				</button>
+				<button onclick="selectPersonality('angry')">
+					<img style="width: 15vw" src="4_service/img/naming-p1.jpg">
+					<p>angry</p>
+				</button>
+				<button onclick="selectPersonality('playful')">
+					<img style="width: 15vw" src="4_service/img/naming-p1.jpg">
+					<p>playful</p>
+				</button>
+			</div>
 		</div>
 		<div class="chat-content">
 			<div class="loading" id="loading">Loading...</div>

@@ -18,50 +18,79 @@ body {
 
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   position: relative;
-  top: 16vw;
+  top: 10vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1vw;
 }
 
-.wrapper > button {
+.container > p {
+  margin: 0;
+  color: rgba(67, 49, 28, 0.9);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 2.5vw;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  text-shadow: -1px 0 #faeab199, 0 1px #faeab199, 1px 0 #faeab199, 0 -1px #faeab199;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.wrapper > p {
+  color: rgba(67, 49, 28, 0.9);
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5vw;
+  letter-spacing: -1.2px;
+    font-weight: 500;
+}
+
+.wrapper > .choice-wrap > button {
   display: flex;
   flex-direction: column;
 }
 
 .choice-wrap {
   display: flex;
-  gap: 2vw;
+  gap: 5vw;
 }
 
-h1 {
-  color: #333;
-}
-
-button {
-  width: 25vw;
-  height: 30vw;
+.choice-wrap > button {
+  width: 20vw;
+  height: 25vw;
   background: none;
-  border: solid 2px #faeab1b1;
+  border: none;
   border-radius: 2vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2vw;
+  box-shadow: 2px 2px 16px 2px #faeab182;
 }
 
-p {
+.choice-wrap > button:hover {
+  background: #faeab1;
+}
+
+.choice-wrap > button > p {
   font-family: "Inter", sans-serif;
   font-size: 1.5vw;
   font-weight: 500;
 }
 
-.boy{
-	margin-right: 1vw;
+.boy {
+  margin-right: 1vw;
 }
 
 .loading {

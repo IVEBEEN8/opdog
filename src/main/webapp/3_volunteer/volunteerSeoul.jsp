@@ -61,7 +61,7 @@
             </div>
           </td>
           <td class="post-img">
-          <img src="3_volunteer/postImg/${volunteer.v_img }"></td>
+          <img style="width: 20vw; height:27vh;  border-radius: 30px;" src="3_volunteer/postImg/${volunteer.v_img }"></td>
         </tr>
       </table>
  </c:forEach> 
