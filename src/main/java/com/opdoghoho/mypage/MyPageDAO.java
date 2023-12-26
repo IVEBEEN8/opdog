@@ -41,7 +41,9 @@ public class MyPageDAO {
 			pstmt.setString(8, (String) bb.get("careNm")+"!"+bb.get("careTel")+"!"+bb.get("careAddr"));
 			pstmt.setString(9, (String) bb.get("orgNm")+"!"+bb.get("chargeNm")+"!"+bb.get("officetel"));
 			pstmt.setInt(10, account.getNo());
+			System.out.println(account.getNo());
 			pstmt.executeUpdate();
+			
 			
 			
 		} catch (Exception e) {
