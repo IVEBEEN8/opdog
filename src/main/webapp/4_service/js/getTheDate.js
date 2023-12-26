@@ -26,5 +26,5 @@ function getDateTime() {
 var currentDateTime = getDateTime();
 console.log(currentDateTime);
  document.addEventListener('DOMContentLoaded', function() {
-        document.getElementById('date').innerHTML =currentDateTime
+        document.getElementById('date1').innerHTML = currentDateTime
 });
