@@ -37,20 +37,12 @@ public class VolunteerDAO {
 				v.setV_txt(rs.getString("v_txt"));
 				v.setV_created(rs.getDate("v_created"));
 				v.setV_updated(rs.getDate("v_updated"));
-<<<<<<< HEAD
-				volunteer.add(v);
-				System.out.println(v);
-			}
-
-			request.setAttribute("volunteer", v);
-=======
 
 				volunteer.add(v);
 				System.out.println(v);
 			}
-			
+
 			request.setAttribute("volunteer", volunteer);
->>>>>>> 915489ceb08581829b782cf14af8de3bcdf417fa
 			System.out.println("성공");
 
 		} catch (Exception e) {
@@ -63,32 +55,20 @@ public class VolunteerDAO {
 	}
 
 	public static void WritePost(HttpServletRequest request) {
-<<<<<<< HEAD
-
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		int no = account.getNo();
-		System.out.println(no);
-
+		System.out.println("account number: " + no);
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		System.out.println(pstmt);
-=======
-		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
-		int no = account.getNo();
-		System.out.println(no);
-		Connection con = null;
-		PreparedStatement pstmt = null;
->>>>>>> 915489ceb08581829b782cf14af8de3bcdf417fa
 		String sql = "insert into volunteer values(?,?,?,sysdate,sysdate,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
 			System.out.println("연결성공~!");
-<<<<<<< HEAD
-			String path = "/Users/6oohye/Desktop/obdog/src/main/webapp/3_volunteer/postImg";
+			String path = "3_volunteer/newImg";
 			System.out.println(path);
 
-			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8",
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 
 			String title = mr.getParameter("title");
@@ -108,33 +88,6 @@ public class VolunteerDAO {
 			pstmt.setInt(4, no);
 
 			if (pstmt.executeUpdate() == 1) {
-=======
-			String path= "3_volunteer/newImg";
-			System.out.println(path);
-			
-			 MultipartRequest mr = new MultipartRequest(request, path,30 * 1024 * 1024, "UTF-8",
-						new DefaultFileRenamePolicy());
-			 
-			 String title = mr.getParameter("title");
-			 String file = mr.getFilesystemName("file");
-			 String content = mr.getParameter("content");
-			 
-			 
-			 content=content.replaceAll("\r\n", "<br>");
-			 
-			 
-			 System.out.println(file);
-			 System.out.println(title);
-			 System.out.println(content);
-			 
-			 pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, title);
-				pstmt.setString(2, file);
-				pstmt.setString(3, content);
-				pstmt.setInt(4, no);
-			
-			if (pstmt.executeUpdate()==1) {
->>>>>>> 915489ceb08581829b782cf14af8de3bcdf417fa
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 			}
