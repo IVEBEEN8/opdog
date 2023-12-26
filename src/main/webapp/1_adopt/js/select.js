@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	
+	
     $('input[type=radio][name="sido"]').on("change",function() {
 	/*
 		response = 시/군/구 배열
@@ -249,6 +251,8 @@ $(document).ready(function() {
 		}		
 		
 	});
+	
+	
 });
 
 function pagination(json){
@@ -268,4 +272,12 @@ function pagination(json){
 		}
 	});
 }
-	
+
+$(window).on('load',function(){
+	var uprCd = $('#defaultUpr').val();
+	//var orgCd = $('#defaultOrg').val();
+	//console.log(orgCd);
+	$('input[name="sido"][value="'+ uprCd+'"]').click();
+	//$('input[name="sigungu"][value="'+ orgCd+'"]').click();
+	$('#radiobutton').click();	
+});
