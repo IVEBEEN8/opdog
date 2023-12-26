@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Review Main</title>
+<script type="text/javascript" src="1_adopt/js/review.js?ver=16"></script>
 </head>
 <body>
 <!-- 내가한거 -->
@@ -68,10 +69,10 @@
 	
 		
 		<c:forEach var="r"  items="${reviews}">
-			<div class="입양후기">
+			<div class="review-box">
 				
 				${r.r_title} <br>
-				<img alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
+				<img class="review-img" alt="" src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <br>
 				${r.r_img}
 				<pre style="white-space: pre-wrap; width: 300px; height: 200px; overflow: auto;">${r.r_txt}</pre>
  				<%-- <textarea rows="10" cols="50" readonly="readonly">${r.r_txt}</textarea> --%>
@@ -80,10 +81,10 @@
 				<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">디테일창으로 이동</button>
 			</div>
 		</c:forEach>
-		<div><a href="ReviewRegC">입양후기 작성하러가기</a></div>
+		<div>
+		<button id="goReviewReg" value="${sessionScope.account}" onclick="goReviewReg()">입양후기 작성하러가기</button>
+		</div>
 	</main>
-	
-	
 
 </body>
 </html>

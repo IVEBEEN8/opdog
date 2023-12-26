@@ -10,8 +10,10 @@ import javax.servlet.http.HttpServletResponse;
 public class FashionDetailC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FashionDAO.getFashion(request);
-		request.setAttribute("contentPage", "2_shop/2_1_fashion/fashionDetail.jsp");
-		request.getRequestDispatcher("index.jsp").forward(request, response);
+		request.setAttribute("contentPage", "../2_shop/2_1_fashion/fashionDetail.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+	
+		
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
