@@ -36,7 +36,7 @@
       </div>
 <c:forEach items="${volunteer}" var="volunteer"> 
       <table id="middle">
-        <tr <%-- onclick="location.href='vtDetailC?no=${volunteer.v_no}'" --%> class="middle-post">
+        <tr onclick="location.href='VtDetailC?no=${volunteer.v_no}'" class="middle-post">
           <td class="post-left">
             <div class="td-wrapper">
               <div class="post-btn">
