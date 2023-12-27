@@ -43,6 +43,7 @@
           <div class="accountPage ac-id">
             <p>E-mail</p>
             <input name="id" placeholder="Type your e-mail" />
+            <button class="checkBtn">check</button>
           </div>
           <div class="accountPage ac-pw">
             <p>Password</p>
