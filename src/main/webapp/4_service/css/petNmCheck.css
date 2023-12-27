@@ -56,11 +56,9 @@ body {
     height: 183%;
 }
 
-
-
 .petnmcheck-wrap{
 	position:relative;
-	height: 1300px;
+	height: 100vh;
 	width: 100vw;
 	text-align: center;
 	
@@ -80,7 +78,7 @@ body {
 }
 .wrap-for-input-wrap{
 	width: 50%;
-    top: 39%;
+    top: 43%;
     left: 25%;
     position: absolute;
 }
@@ -128,21 +126,70 @@ rgba(197, 137, 64, 1);
 
 
 /* 출력화면 css입니다~ */
-.dogNm-wrap{
-	position: relative;
-	background-color: pink;
+#closeBtn1 {
+	top: 0vh;
+	left: 94%; 
+    position: absolute;
+    font-weight: bold;
+    stroke-width: 10px;
+    stroke: #43311C;
+    font-size: 3vh;
+    cursor: pointer;
 }
-.docNm-title{
-	background-color: yellow;	
+#modalBody1 {
+	top: 11%;
+    width: 87%;
+    position: absolute;
+    border-top: 1px solid black;
+    height: 75%;
+    padding: 3% 6.5%;
+    overflow-x: scroll;
 }
-.dogNm-mid-wrap{
-	display:flex;
+#modalContent1{
+    background: #FAF8F1;
+    position: relative;
+    margin-top: 10vh;
+    width: 32vw;
+    height: 45vh;
+    border-radius: 20px;
 }
-.dogNm-content{
-	background-color: orange;	
+#printinfo1 {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.mtitle{
+	height: 6%;
+	background: #FAF8F1;
+    z-index: 3;
+    top: 6%;
+    left: 38%;
+    position: absolute;
+    font-size: 236%;
+}
+.box-title1{
+	display: flex;
+    height: 3vh;
+    margin: 1vh;
+    text-align: left;
+    font-size: 0.7vw;
 }
 
-
-
+.small-title1{
+	width: 30%;
+}
+.small-content1{
+	left: 34%;
+    position: absolute;
+    width: 59%;
+    white-space: normal
+}
 
 
