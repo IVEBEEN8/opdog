@@ -93,7 +93,7 @@ public class VolunteerDAO {
 			pstmt.setString(2, file);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
-			pstmt.setInt(5, no);
+			pstmt.setInt(5, account.getNo());
 			pstmt.executeUpdate();
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
