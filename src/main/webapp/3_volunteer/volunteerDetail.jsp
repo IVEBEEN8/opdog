@@ -1,20 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Insert title here</title>
+<link rel="stylesheet" href="3_volunteer/css/volunteerDetail.css" />
 </head>
 <body>
-<br>1
-<br>1
-<br>1
-<h1>this is detail page~</h1>
-<p>${vol.v_title }</p>
-<p>${vol.v_img }</p>
-<p>${vol.v_created }</p>
-<p>${vol.v_updated }</p>
-<p>${vol.v_status }</p>
+	<form class="container" action="VolunteerDetailC" method="post"
+		enctype="multipart/form-data">
+		<main>
+			<div id="DetailTbl">
+				<div class="statusWrap">
+					<div class="post-status">
+						<p>${vol.v_status }</p>
+					</div>
+				</div>
+				<div>
+					<div class="post-title">${vol.v_title }</div>
+				</div>
+
+				<div class="imgWrapper">
+					<img src="3_volunteer/newImg/${vol.v_img }" />
+				</div>
+
+				<div class="post-txt">
+					<p>${vol.v_txt }</p>
+				</div>
+					<div class="btnWrap">
+						<button onclick="location.href='VtSeoulC'">Go list</button>
+
+						<button
+							onclick="location.href='VolunteerModiC?no=${volunteer.v_no}'">
+							Modify</button>
+
+						<button
+							onclick="location.href='VolunteerDelC?no=${volunteer.v_no}'">
+							Delete</button>
+					</div>
+			</div>
+		</main>
+	</form>
+
 </body>
 </html>

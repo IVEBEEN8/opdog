@@ -14,6 +14,9 @@ html, body {
 	font-size: 10pt;
 	scroll-behavior: smooth;
 }
+a{
+	text-decoration: none;
+}
 
 table {
 	margin-left: auto;
@@ -55,7 +58,7 @@ main {
 	top: 1vw;
 }
 
-.top-title>p {
+.top-title>a>p {
 	color: rgba(67, 49, 28, 0.9);
 	text-align: center;
 	font-family: "Poppins", sans-serif;
@@ -67,11 +70,11 @@ main {
 	-webkit-text-stroke: 1.5px #faeab199;
 }
 
-.top-btn {
+.top-btn>form, .top-btn {
 	text-align: center;
 }
 
-.top-btn>button {
+.top-btn>form>button, .top-btn>button {
 	border-radius: 30vw;
 	border: none;
 	width: 6.8vw;
@@ -170,6 +173,7 @@ input:focus {
 }
 
 .post-btn-txt {
+	position: absolute;
 	border-radius: 30vw;
 	border: none;
 	width: 6.8vw;
@@ -179,11 +183,11 @@ input:focus {
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
+	text-align: center;
 }
 
 .post-btn-txt>p {
 	top: -0.5vw;
-	left: 0.5vw;
 	position: relative;
 }
 

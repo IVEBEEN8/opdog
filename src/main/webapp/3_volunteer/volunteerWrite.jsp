@@ -17,6 +17,7 @@
               <select name="chooseStatus">
               	<option value="0">Select</option>
               	<option value="Recruiting">Recruiting</option>
+
               	<option value="Completed">Completed</option>
               </select>
             </td>

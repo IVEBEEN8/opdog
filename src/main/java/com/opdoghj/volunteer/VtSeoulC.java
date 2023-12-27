@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.opdoghw.login.LoginDAO;
 
-@WebServlet("/vtSeoulC")
-public class vtSeoulC extends HttpServlet {
+@WebServlet("/VtSeoulC")
+public class VtSeoulC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//게시글 전체 조회하는 일
 		LoginDAO.LoginAccount(request);
@@ -22,5 +22,4 @@ public class vtSeoulC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}
-
 }
