@@ -8,6 +8,7 @@ import java.sql.ResultSet;
 import javax.servlet.http.HttpServletRequest;
 
 import com.opdoghw.centerinfo.DBManager_khw;
+import com.opdoghw.login.LoginDTO;
 
 public class OrderedDAO {
 
@@ -15,7 +16,8 @@ public class OrderedDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "insert into ordered_kl values (ordered_kl_seq.nextval,?,?,?,?,sysdate,1)";
+		String sql = "insert into ordered_kl values (ordered_kl_seq.nextval,?,?,?,?,sysdate,?)";
+		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		
 		String title = request.getParameter("title");
 		int price = Integer.parseInt(request.getParameter("price"));
@@ -29,8 +31,8 @@ public class OrderedDAO {
 			pstmt.setString(1, title); 
 			pstmt.setInt(2, price); 
 			pstmt.setString(3, brand); 
-			pstmt.setInt(4, sPrice); 
-			
+			pstmt.setInt(4, sPrice);
+			pstmt.setInt(5,account.getNo());
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("등록 성공");
 			}

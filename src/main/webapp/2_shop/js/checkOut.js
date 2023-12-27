@@ -1,8 +1,29 @@
+function goCheckOut() {
+		// 서버에서 세션 정보를 가져옴
+		var sessionAccount = document.getElementById("goCheckOut").value;
+
+		// 세션 정보가 있는지 확인
+		if (!sessionAccount) {
+			// 로그인 되어 있지 않으면 로그인 여부를 확인
+			var result = confirm('This is a menu that requires login \n Would you like to go to the login page?');
+			if (result) {
+				// 로그인 페이지로 이동
+				location.href = "LoginMainHC";
+			}
+		} else {
+			// 로그인 되어 있으면 checkOut()로 이동
+			checkOut();
+		}
+	}
+
+
+
+
+
 var title;
 var price;
 var sPrice;
 var brand;
-
 
  function checkOut() {
     title = document.getElementById("itemTitle").innerText;
@@ -19,12 +40,12 @@ var brand;
     + "&brand=" + encodeURIComponent(brand);
 
     // 새 창 열기
-    var width = 900; // 원하는 폭
-    var height = 700; // 원하는 높이
-    var left = (window.innerWidth - width) / 2;
-    var top = (window.innerHeight - height) / 2;
+    var width = 400; // 원하는 폭
+    var height = 500; // 원하는 높이
+    var left = (window.innerWidth - width) / 2;		
+    var top = (window.innerHeight - height) / 2;	
 
-    var checkoutWindow = window.open(checkoutUrl, "결제하기",  "width=" + width + ", height=" + height + ", left=" + left + ", top=" + top);
+    window.open(checkoutUrl, "결제하기",  "width=" + width + ", height=" + height + ", left=" + left + ", top=" + top);
 }
 
 function continueShopping() {
