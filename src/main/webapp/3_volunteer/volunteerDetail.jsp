@@ -29,7 +29,7 @@
 					<p>${vol.v_txt }</p>
 				</div>
 					<div class="btnWrap">
-						<button onclick="location.href='VtSeoulC'">Go list</button>
+						<button onclick="location.href='VSeoulC'">Go list</button>
 
 						<button
 							onclick="location.href='VolunteerModiC?no=${volunteer.v_no}'">

@@ -62,7 +62,6 @@ public class VolunteerDAO {
 		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		System.out.println(account.getNo());
-		int no = account.getNo();
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,sysdate,?,?)";
@@ -110,14 +109,12 @@ public class VolunteerDAO {
 
 	}
 
-
 	public static void getPost(HttpServletRequest request) {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select * from volunteer where v_no=?";
-
 
 		try {
 			con = DBManager_khw.connect();
@@ -239,29 +236,29 @@ public class VolunteerDAO {
 
 	public static void Paging(int page, HttpServletRequest request) {
 		request.setAttribute("curPageNo", page);
-		int cnt = 5 ; // 한페이지당 보여줄 개수 
-		int total = volunteer.size(); //총 데이터 개수 
-		//총 페이지
-		int pageCount= (int)Math.ceil((double) total / cnt);
-		request.setAttribute("pageCount", pageCount);   //jsp에서 써야해서 실어줌..! 
-		
+		int cnt = 5; // 한페이지당 보여줄 개수
+		int total = volunteer.size(); // 총 데이터 개수
+		// 총 페이지
+		int pageCount = (int) Math.ceil((double) total / cnt);
+		request.setAttribute("pageCount", pageCount); // jsp에서 써야해서 실어줌..!
+
 		int start = total - (cnt * (page - 1));
-		int end = (page == pageCount) ? - 1 : start - (cnt +1 ) ;  
-		
+		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+
 		ArrayList<volunteerDTO> items = new ArrayList<volunteerDTO>();
-		for (int i = start-1; i > end; i--) {
-								//역순으로 계산하는걸로 가져왔기때문에 꺽새 뒤집어주고 --로 수정
+		for (int i = start - 1; i > end; i--) {
+			// 역순으로 계산하는걸로 가져왔기때문에 꺽새 뒤집어주고 --로 수정
 			items.add(volunteer.get(i));
 		}
 		request.setAttribute("volunteer", items);
-		
+
 	}
 
 	public static void updatePost(HttpServletRequest request) {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql= "update volunteer"+"set v_img=?, v_title=?,v_txt=?, v_status=? where v_no=?";
+		String sql = "update volunteer" + "set v_img=?, v_title=?,v_txt=?, v_status=? where v_no=?";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
@@ -291,14 +288,14 @@ public class VolunteerDAO {
 			pstmt.setString(2, title);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
-			pstmt.setString(5,no);
-			
+			pstmt.setString(5, no);
+
 			if (newFile != null) {
 				pstmt.setString(1, newFile);
-			}else {
+			} else {
 				pstmt.setString(1, oldFile);
 			}
-			
+
 			pstmt.executeUpdate();
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
