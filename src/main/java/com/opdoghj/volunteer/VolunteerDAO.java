@@ -148,7 +148,6 @@ public class VolunteerDAO {
 		}
 	}
 
-	@SuppressWarnings("unchecked")
 	public static void searchCenter(HttpServletRequest request, HttpServletResponse response) {
 
 		Connection con = null;
@@ -192,4 +191,45 @@ public class VolunteerDAO {
 		}
 	}
 
+	public static void statusClick(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String clickedBtn = request.getParameter("searchBtn");
+		String sql = "select * from volunteer where v_status like ?";
+
+		try {
+			System.out.println(clickedBtn);
+			con = DBManager_khw.connect();
+			System.out.println("checked");
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, clickedBtn);
+			rs = pstmt.executeQuery();
+
+			volunteerDTO searchedItems = null;
+			volunteer = new ArrayList<volunteerDTO>();
+			while (rs.next()) {
+				searchedItems = new volunteerDTO();
+				searchedItems.setV_no(rs.getInt("v_no"));
+				searchedItems.setV_title(rs.getString("v_title"));
+				searchedItems.setV_img(rs.getString("v_img"));
+				searchedItems.setV_txt(rs.getString("v_txt"));
+				searchedItems.setV_created(rs.getDate("v_created"));
+				searchedItems.setV_updated(rs.getDate("v_updated"));
+				searchedItems.setV_status(rs.getString("v_status"));
+				searchedItems.setA_no(rs.getInt("a_no"));
+				volunteer.add(searchedItems);
+
+			}
+
+			System.out.println(volunteer);
+			request.setAttribute("volunteer", volunteer);
+			System.out.println("성공");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
+	}
 }

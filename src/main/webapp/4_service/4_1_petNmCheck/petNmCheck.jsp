@@ -8,7 +8,7 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
-<script type="text/javascript" src="petNmCheck.js"></script>
+<script type="module" src="4_service/js/petNmCheck.js"></script>
 <link rel="stylesheet" href="4_service/css/petNmCheck.css">
 
 </head>
@@ -34,6 +34,7 @@
 		</ul>
 		<br>
 	</div>
+	
 <div class="wrap-for-input-wrap">
 	<div class="input-wrap">
 		<p class="input-name4_1">Full Name Of The Owner</p>
@@ -44,6 +45,7 @@
 		<p class="input-name4_1">Registration Numbers</p>
 		<input class="petnm-input" id= "petnum">
 	</div>
+	
 	<button class="find-btn4_1" id="submit">Search</button>
 	<div id="resultContainer"></div>
 </div>

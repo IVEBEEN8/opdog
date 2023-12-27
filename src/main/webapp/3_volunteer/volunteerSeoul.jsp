@@ -23,10 +23,12 @@
           <p>Seoul</p>
         </div>
         <div class="top-btn">
-          <button class="Recruiting">Recruiting</button>
-          <button class="Completed">Completed</button>
+          <form action="VolBtnClickC">
+          <button name="searchBtn" value="Recruiting" class="Recruiting">Recruiting</button>
+          <button name="searchBtn" value="Completed" class="Completed">Completed</button>
+       	  </form>
         </div>
-      <form action="VolSearchSC" method="post" name="keywords-serch" id="searchForm">
+      <form action="VolSearchSC" method="post">
         <div class="search">
           <img src="3_volunteer/img/SearchIcon.png" alt="돋보기" />
           <input name="searchTitle"
