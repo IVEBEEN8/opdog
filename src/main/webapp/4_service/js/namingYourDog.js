@@ -1,7 +1,9 @@
 //import config from "./config.js";
 //const {API_KEY} = config;
 
-
+window.onload = function () {
+hideButtom();
+}
 
 let gender, color, hairLength, personality;
 
@@ -13,6 +15,12 @@ function showLoading() {
 function hideLoading() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("loadingwords").style.display = "none";
+}
+function showButtom(){
+	document.getElementById("send").style.display = "block";
+}
+function hideButtom(){
+	document.getElementById("send").style.display = "none";
 }
 
 function selectGender(selectedGender) {
@@ -32,6 +40,7 @@ function selectHairLength(selectedHairLength) {
 
 function selectPersonality(selectedPersonality) {
   personality = selectedPersonality;
+  showButtom();
   const generatedName = generateName();
   const personalityOptions = document.getElementById("personalityOptions");
   personalityOptions.innerHTML = `<h2>You've just selected ${gender}, ${color} hair color, ${hairLength} style, and ${personality} personality! Can you push the generate button?!</h2>`
@@ -43,6 +52,7 @@ function selectPersonality(selectedPersonality) {
 
 function showOptions(optionsId) {
   const optionsElements = [
+	"send",
     "genderOptions",
     "colorOptions",
     "hairLengthOptions",

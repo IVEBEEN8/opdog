@@ -111,7 +111,7 @@
 				</div>
 			</div>
 		</div>
-		<button id="send">generate!</button>
+		<button id="send" style="display:none;">generate!</button>
 		<div class="loadingwords" id="loadingwords">"We are generating the name matched perfectly well with your lovely dog!"</div>
 	</div>
 </body>
