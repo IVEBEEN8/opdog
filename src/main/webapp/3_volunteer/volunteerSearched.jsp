@@ -1,6 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,15 +20,15 @@
       <div class="top">
         <div class="top-title">
           <img src="3_volunteer/img/SeoulIcon.png" alt="" />
-          <p>Seoul</p>
+          <a href="vtSeoulC">
+         	<p>Seoul</p>
+          </a>
         </div>
         <div class="top-btn">
-          <form action="VolBtnClickC">
-          <button name="searchBtn" value="Recruiting" class="Recruiting">Recruiting</button>
-          <button name="searchBtn" value="Completed" class="Completed">Completed</button>
-       	  </form>
+          <button class="Recruiting">Recruiting</button>
+          <button class="Completed">Completed</button>
         </div>
-      <form action="VolSearchSC" method="post">
+      <form action="VolSearchSC" method="post" name="keywords-serch" id="searchForm">
         <div class="search">
           <img src="3_volunteer/img/SearchIcon.png" alt="돋보기" />
           <input name="searchTitle"
@@ -38,22 +38,21 @@
         </div>
        </form>
       </div>
-<c:forEach items="${volunteer}" var="volunteer">
-<a href="VolunteerDetailC?no=${volunteer.v_no}">
+<c:forEach items="${searchedVol}" var="v">
+<a href="VolunteerDetailC?no=${v.v_no}">
       <table id="middle">
         <tr class="middle-post">
           <td class="post-left">
             <div class="td-wrapper">
               <div class="post-btn">
-				<!-- 이부분 만약 값이 recruting이면 그에맞는 css completed면 그에 맞게css적용하기 -->
-                <div class="Recruiting post-btn-txt"><p>${volunteer.v_status }</p></div>
+                <div class="Recruiting post-btn-txt"><p>${v.v_status }</p></div>
               </div>
               <div class="post-text">
                 <div class="bigTxt">
-                title: ${volunteer.v_title }
+                title: ${v.v_title }
                 </div>
                 <div class="smallTxt">
-                description: ${volunteer.v_txt }
+                description: ${v.v_txt }
                 </div>
               </div>
               <div class="post-info">
@@ -64,24 +63,25 @@
             </div>
           </td>
           <td class="post-img">
-          <img src="3_volunteer/newImg/${volunteer.v_img }"></td>
+          <img src="3_volunteer/newImg/${v.v_img }"></td>
         </tr>
       </table>
  </a>
  </c:forEach> 
-
-		<div class="bottom btn">
-			<form action="VtWriteC">
-				<button>Write</button>
-			</form>
-		</div>
-
-		<div class="bottom paging">
-			<a class="pagebox" href=""><img
-				src="3_volunteer/img/firstpage.png" alt="" /></a> <a class="pagebox"
-				href="">페이징할것 포이치 돌리기</a> <a class="pagebox" href=""><img
-				src="3_volunteer/img/lastpage.png" alt="" /></a>
-		</div>
-	</main>
-</body>
+       <div class="bottom btn">
+       <form action="VtWriteC">
+        <button>Write</button>       
+       </form>
+       <form action="VtModifyC">
+        <button>Modify</button>
+       </form>
+      </div>
+      
+      <div class="bottom paging">
+        <a class="pagebox" href=""><img src="3_volunteer/img/firstpage.png" alt="" /></a>
+        <a class="pagebox" href="">페이징할것 포이치 돌리기</a>
+        <a class="pagebox" href=""><img src="3_volunteer/img/lastpage.png" alt="" /></a>
+      </div>
+    </main>
+  </body>
 </html>

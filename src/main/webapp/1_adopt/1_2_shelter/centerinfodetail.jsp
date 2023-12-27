@@ -27,7 +27,7 @@
 	<div class="map" id="map"></div>
 	<!--검색창!-->
 	<div class="row">
-        <form method="post" name="keywords-serch" id="searchForm">
+        <form action="SearchC" method="post" name="keywords-serch" id="searchForm">
             <div class="pull-right-wrap1-2">
                     <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
@@ -41,7 +41,7 @@
                     </div>
                     <div class="pull-right1-2">
                         <button type="button" class="searchButton1-2" id="searchButton"><img class="searchi" src="1_adopt/img/search.png"></button>
-                    </div>
+                   </div>
             </div>
         </form>
     </div>

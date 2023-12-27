@@ -1,5 +1,6 @@
-$(document).ready(function(){
+window
 
+$(document).ready(function(){
 	console.log("hellow world?");
 	$('#submit').on("click", function(){
 
@@ -40,29 +41,25 @@ xhr.onreadystatechange = function () {
             const rfidCd = item.rfidCd;
             const dogNm = item.dogNm;
             const sexNm = item.sexNm;
-            const kindNm = item.kindNm;
-            const neuterYn =
-            	
-            	item.neuterYn;
+            const kindNm = item.kindNms;
+            const neuterYn =item.neuterYn;
             const orgNm = item.orgNm;
             const officeTel = item.officeTel;
             const aprGbNm = item.aprGbNm;
-
+		
            	console.log(11);
             // 동적으로 화면에 출력! 
             resultContainer.innerHTML =
-                '<p>Dog Name:' +dogNm+'</p>' +
-                '<p>Sex:'+ sexNm +'</p>'+
-                '<p>Kind:'+ kindNm +'</p>' +
-                '<p>orgNm:' + orgNm + '</p>' +
-                '<p>officeTel:' +
-                officeTel + '</p>'
+                '<div class="dogNm-wrap"><div class="dogNm-mid-wrap"><div class="dogNm-title"> Dog Name:</div><div class="dogNm-content">' +dogNm+'</div></div>' +
+                '<div class="dogNm-mid-wrap"><div class="dogNm-title">Gender:</div><div class="dogNm-content">'+ sexNm +'</div></div>'+
+                '<div class="dogNm-mid-wrap"><div class="dogNm-title">Kind:</div><div class="dogNm-content">'+ kindNm +'</div></div>' +
+                '<div class="dogNm-mid-wrap"><div class="dogNm-title">orgNm:</div><div class="dogNm-content">' + orgNm + '</div></div>' +
+                '<div class="dogNm-mid-wrap"><div class="dogNm-title">officeTel:</div><div class="dogNm-content">' +
+                officeTel + '</div></div></div>'
         }
     }
 };
 xhr.send('');
 
 	});
-	
-
 });
