@@ -50,6 +50,17 @@
 	<div id="resultContainer"></div>
 </div>
 </div>
-</div>	
+</div>
+
+
+<!--검색 모달! -->
+	<div id="printinfo1">
+  		<div id="modalContent1"><span class="mtitle">My Pet Info</span><div style="z-index:8;"id="closeBtn1">x</div>
+   			 <div id="modalBody1">
+    		</div>
+  		</div>
+	</div>
+
+	
 </body>
 </html>

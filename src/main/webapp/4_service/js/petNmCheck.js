@@ -23,8 +23,11 @@ xhr.onreadystatechange = function () {
 
 xhr.onreadystatechange = function () {
 	console.log('onreadystatechange event triggered');
+	
+	$("#submit").on("click",function(){
     if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
+			console.log(11);
             const response = JSON.parse(xhr.responseText);
             console.log(response);
             //화면출력 id 가져오기
@@ -46,18 +49,31 @@ xhr.onreadystatechange = function () {
             const orgNm = item.orgNm;
             const officeTel = item.officeTel;
             const aprGbNm = item.aprGbNm;
+     			
 		
-           	console.log(11);
-            // 동적으로 화면에 출력! 
-            resultContainer.innerHTML =
-                '<div class="dogNm-wrap"><div class="dogNm-mid-wrap"><div class="dogNm-title"> Dog Name:</div><div class="dogNm-content">' +dogNm+'</div></div>' +
-                '<div class="dogNm-mid-wrap"><div class="dogNm-title">Gender:</div><div class="dogNm-content">'+ sexNm +'</div></div>'+
-                '<div class="dogNm-mid-wrap"><div class="dogNm-title">Kind:</div><div class="dogNm-content">'+ kindNm +'</div></div>' +
-                '<div class="dogNm-mid-wrap"><div class="dogNm-title">orgNm:</div><div class="dogNm-content">' + orgNm + '</div></div>' +
-                '<div class="dogNm-mid-wrap"><div class="dogNm-title">officeTel:</div><div class="dogNm-content">' +
-                officeTel + '</div></div></div>'
-        }
-    }
+				$("#printinfo1").show();
+				$("#modalBody1").empty();
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Name of the dog</div><div class="small-content1">:' + dogNm + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Gender</div><div class="small-content1">:' + sexNm + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Kind</div><div class="small-content1">:' + kindNm+ '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> OrgNm</div><div class="small-content1">: ' + orgNm + '</div></div>');	
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Tel</div><div class="small-content1">: ' + officeTel+ '</div></div>');	
+				//모달
+		   	  $("#closeBtn1").on("click", function () {
+            		$("#printinfo1").hide();
+        		});
+
+				const printinfobox = document.getElementById('printinfo1');
+		
+				$(document).on("click", function(event) {
+					    if (event.target === printinfobox) {
+				        printinfobox.style.display = 'none';
+				    }
+				});
+			
+			}
+   		}
+  })
 };
 xhr.send('');
 
