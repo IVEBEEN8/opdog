@@ -41,8 +41,9 @@
 <p>${vol.v_title }</p>
 <p>${vol.v_img }</p>
 <p>${vol.v_created }</p>
-<p>${volr.v_updated }</p>
-<p>${vol.v_status }</p> --%>
+<p>${vol.v_updated }</p>
+<p>${vol.v_status }</p>
+--%>
 
 </body>
 </html>
