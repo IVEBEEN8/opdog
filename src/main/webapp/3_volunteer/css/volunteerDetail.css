@@ -1,0 +1,34 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Kaisei Decol", serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+}
+
+main {
+ width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#DetailTbl {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  border-top: #1e3269 double 3px;
+  border-bottom: #1e3269 double 3px;
+  width: 500px;
+  height: 200px;
+  color: black;
+}

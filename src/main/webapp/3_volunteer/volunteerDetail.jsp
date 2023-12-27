@@ -5,11 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="3_volunteer/css/volunteerDetail.css" />
 </head>
 <body>
 	<form action="VolunteerDetailC" method="post" enctype="multipart/form-data">
 		<main>
-			<table id="vTbl">
+			<table id="DetailTbl">
 				<tr>
 					<td class="write-td">Status</td>
 					<td>${vol.v_status }</td>
