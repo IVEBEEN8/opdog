@@ -23,7 +23,7 @@
       </div>
       <div class="content-frame">
         <div class="content-row">
-          <a href="VtSeoulC" class="content-bg">
+          <a href="VSeoulC" class="content-bg">
             <img style="width: 7.3vw;" src="3_volunteer/img/SeoulIcon.png" alt="" />
             <div>
               <p>Seoul</p>
