@@ -182,7 +182,7 @@ public class VolunteerDAO {
 			}
 
 			System.out.println(volunteer);
-			request.setAttribute("searchedVol", volunteer);
+			request.setAttribute("volunteer", volunteer);
 			System.out.println("성공");
 
 		} catch (Exception e) {
