@@ -12,3 +12,4 @@ create sequence ordered_kl_seq start with 1 increment by 1;
 DROP SEQUENCE ordered_kl_seq;
 drop table ordered_kl;
 select * from ordered_kl;   
+select * from opdogaccount;

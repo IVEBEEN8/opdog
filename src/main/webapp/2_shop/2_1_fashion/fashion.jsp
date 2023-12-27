@@ -71,7 +71,7 @@
     	</div>	
 		</a>
 		</c:forEach>
-		<div> <button onclick="location.href='FashionRegC'">데이터 입력 </button> </div>
+		<!-- <div> <button onclick="location.href='FashionRegC'">데이터 입력 </button> </div> -->
 	</div>
 	
 	<hr>

@@ -7,15 +7,27 @@
     <meta charset="UTF-8" />
     <title>checkout</title>
     <link rel="stylesheet" href="../css/checkOut.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
+      rel="stylesheet"
+    />
     <script type="text/javascript" src="../js/checkOut.js"></script>
     
   </head>
   <body>
     <div class="main">
       <div class="content" id="checkout-content">
-        <h1>Checkout</h1>
-        <h3>Address - Payment</h3>
-        <h2>Shopping Information</h2>
+        <div class="main-title">Checkout</div>
+        <div class="second-title">
+        	<div class="second-tit-adr">Address</div>
+        	<div class="second-tit-line-cover">
+        		<div class="second-tit-line"> </div>
+        	</div>
+        	<div class="second-tit-pay">Payment</div>
+        </div>
+        <div class="third-title" >Shopping Information</div>
         <div class="input-group">
           <div class="full-name">
             <div>
@@ -53,13 +65,13 @@
           <input id="itemSPrice" type="hidden" value="${param.sPrice}">
 		
 			
-          <div><input type="checkbox" /> Save contact information</div>
+          <div class="checkbox" ><input type="checkbox" /> Save contact information</div>
           <div><button class="continue-btn" onclick="continueShopping()">Continue to shopping</button></div>
-          ${param.title } <br>
+         <%--  ${param.title } <br>
           ${param.brand } <br>
           
           ${param.price} <br>
-          ${param.sPrice }
+          ${param.sPrice } --%>
         </div>
       </div>
     </div>
