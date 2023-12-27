@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
@@ -57,9 +58,11 @@ public class VolunteerDAO {
 	}
 
 	public static void WritePost(HttpServletRequest request) {
+		HttpSession hs = request.getSession();
+
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
-		int no = account.getNo();
-		System.out.println("account number: " + no);
+		System.out.println(account.getNo());
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,sysdate,?,?)";
@@ -92,7 +95,7 @@ public class VolunteerDAO {
 			pstmt.setString(2, file);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
-			pstmt.setInt(5, no);
+			pstmt.setInt(5, account.getNo());
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");

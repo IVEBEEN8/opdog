@@ -56,6 +56,8 @@ public class LoginDAO {
 					// 세션에 account information 담아서 보내기.
 					hs.setAttribute("account", account);
 					hs.setMaxInactiveInterval(60 * 60 * 12);
+					System.out.println("rs넘버"+rs.getInt("a_no"));
+					System.out.println("세션넘버"+account.getNo());
 
 				} else {
 					account.setResult("password");

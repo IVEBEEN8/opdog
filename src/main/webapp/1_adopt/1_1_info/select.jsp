@@ -17,6 +17,7 @@
 	list-style: none;}
 	</style>
    <link rel="stylesheet" href="1_adopt/css/modal.css"/>
+   <link rel="stylesheet" href="1_adopt/css/select.css">
 </head>
 <body>
 <!-- 동적으로 추가될 div, optioin, radiobox, button 등의 태그는 js에서 .html,.append로 태그 채로 생성되기 때문에 js에서 class부여 가능 -->
@@ -26,10 +27,11 @@ ${sido} = 광역시 배열
 .orgdownNm = 도시 이름
  -->
 <!-- container div -->
-<div class="#">
+<div class="infocontainer">
 	<!-- radiobox div -->
-	<div class="#">
-		<div class="#"><!-- 시/도 radiobox -->
+	<div class="radiocontainer">
+		<div class="titlebox"> stary dog</div>
+		<div class="sidoradiobox"><!-- 시/도 radiobox -->
 			<div class="#">시/도</div>
 			<input type="hidden" value="${uprCd }" id="defaultUpr">
 			<input type="hidden" value="${orgCd }" id="defaultOrg">
@@ -40,13 +42,13 @@ ${sido} = 광역시 배열
 				</c:forEach>
 			</div>
 		</div>
-		<div class="#"><!-- 시/군/구 radiobox -->
+		<div class="sigunradiobox"><!-- 시/군/구 radiobox -->
 			<div class="#">시/군/구</div>
 			<div class="#" id="sigungudiv">
 				<label id="sigungulable"><input type="radio" value="" name="sigungu" checked="checked" id="sigungurd">city</label>	
 			</div>
 		</div>
-		<div class="#"><!-- 보호소 radiobox -->
+		<div class="shelterradiobox"><!-- 보호소 radiobox -->
 			<div class="#">보호소</div>
 			<div class="#" id="centerdiv">
 				<label ><input type="radio" value="" name="center" checked="checked" id="centerrd">shelter</label>	
@@ -56,7 +58,7 @@ ${sido} = 광역시 배열
 	</div>
 	<br>
 	<!-- selectbox div --> 
-	<div class="#">
+	<div class="selectcontainer">
         <select name="sido" id="sidoSelect">
         		<option value="">state</option>
         		<c:forEach var="sido" items="${sido }" >
@@ -72,10 +74,10 @@ ${sido} = 광역시 배열
         <button id="selectbutton">버튼</button>
 	</div>
 	<!-- 애견정보 div -->
-	<div class="#">
-		<div> <p style="display:none;" id="account">${account.no }</p> 강아지 정보</div>			
-		<div id="data-container"></div><!-- 강아지 정보 리스트 -->
-		<div id="pagination"></div><!-- 페이지 -->	
+	<div class="infoouter">
+		<div> <p style="display:none;" id="account">${account.no }</p></div>			
+		<div id="data-container" class="datacontainer"></div><!-- 강아지 정보 리스트 -->
+		<div id="pagination" class="pagination"></div><!-- 페이지 -->	
 		
 	</div>
 </div>
