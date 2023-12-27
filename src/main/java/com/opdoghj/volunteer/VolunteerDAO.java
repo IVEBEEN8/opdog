@@ -61,8 +61,8 @@ public class VolunteerDAO {
 	public static void WritePost(HttpServletRequest request) {
 		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
-		int no = account.getNo();
-		System.out.println("account number: " + no);
+		System.out.println(account.getNo());
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,sysdate,?,?)";
