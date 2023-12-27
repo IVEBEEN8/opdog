@@ -29,13 +29,13 @@
 					<p>${vol.v_txt }</p>
 				</div>
 					<div class="btnWrap">
-						<button onclick="location.href='VSeoulC'">Go list</button>
+						<button type="button" onclick="location.href='VSeoulC'">Go list</button>
 
-						<button
+						<button type="button"
 							onclick="location.href='VolunteerModiC?no=${volunteer.v_no}'">
 							Modify</button>
 
-						<button
+						<button type="button"
 							onclick="location.href='VolunteerDelC?no=${volunteer.v_no}'">
 							Delete</button>
 					</div>

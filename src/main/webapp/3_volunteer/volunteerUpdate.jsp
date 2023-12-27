@@ -29,10 +29,9 @@
 				</tr>
 				<tr>
 					<td class="write-td">img</td>
-					<td><img alt="기존이미지 보여주기"
-						src="3_volunteer/newImg/${vol.v_img }"></td>
-					<td><input class="input-style" name="newFile" type="file" />
-						<input class="input-style" name="oldFile" value="${vol.v_img }" />
+					<td><img src="3_volunteer/newImg/${vol.v_img }">
+						<input  name="newFile" type="file" />
+						<input name="oldFile" value="${vol.v_img }" />
 					</td>
 				</tr>
 				<tr>

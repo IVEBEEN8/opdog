@@ -12,7 +12,6 @@ import com.opdoghw.login.LoginDAO;
 @WebServlet("/VolunteerModiC")
 public class VolunteerModiC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		LoginDAO.LoginAccount(request);
 		LoginDAO.loginCheck(request);
 		VolunteerDAO.getPost(request);
 	
