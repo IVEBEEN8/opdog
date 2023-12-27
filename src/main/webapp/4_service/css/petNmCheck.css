@@ -127,3 +127,22 @@ rgba(197, 137, 64, 1);
 }
 
 
+/* 출력화면 css입니다~ */
+.dogNm-wrap{
+	position: relative;
+	background-color: pink;
+}
+.docNm-title{
+	background-color: yellow;	
+}
+.dogNm-mid-wrap{
+	display:flex;
+}
+.dogNm-content{
+	background-color: orange;	
+}
+
+
+
+
+
