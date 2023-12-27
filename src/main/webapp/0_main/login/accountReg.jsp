@@ -43,10 +43,11 @@
           <div class="accountPage ac-id">
             <p>E-mail</p>
             <input name="id" placeholder="Type your e-mail" />
+            <button class="checkBtn">check</button>
           </div>
           <div class="accountPage ac-pw">
             <p>Password</p>
-            <input name="pw" type="password" placeholder="Type your password" />
+            <input name="pw" type="password" placeholder="Type your password"/>
             <div>type over 8 characters including at least one number and one capital letter</div>
           </div>
           <div class="accountPage ac-pw">
@@ -63,7 +64,6 @@
          	<div class="selectBox">
 	        	<select name="sido" id="sidoSelect">
         			<option value="">state</option>
-        		
         			<c:forEach var="sido" items="${sido }" >
         				<option value="${sido.orgCd }" id="sidoname">${sido.orgdownNm }</option>
         			</c:forEach>
@@ -77,8 +77,8 @@
             <input type="checkbox" name="agree" value="mail" />
             <p>
               By creating an account means you agree to the
-              <span>Terms and Conditions</span>, and our
-              <span>Privacy Policy</span>
+              <span>Dedication for The Adopted Dog</span>, and try to be
+              <span>The Best Owner for The Dog</span>
             </p>
           </label>
           <div class="hw-account-btn">

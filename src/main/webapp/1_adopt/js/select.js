@@ -1,5 +1,7 @@
 $(document).ready(function() {
 	
+	
+	
     $('input[type=radio][name="sido"]').on("change",function() {
 	/*
 		response = 시/군/구 배열
@@ -249,6 +251,8 @@ $(document).ready(function() {
 		}		
 		
 	});
+	
+	
 });
 
 function pagination(json){
@@ -258,14 +262,34 @@ function pagination(json){
 	container.pagination({
 		dataSource: json,
 		callback: function(data, pagination){
-			var dataHtml = '<ul>';
+			var dataHtml = '<div class="infoinnerbox">';
 			$.each(data, function (index,item){
-				dataHtml += '<li><div class="#" id="dog"> <img alt="" src="'+ item.filename+'"> kind: '+ item.kindCd+' age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button> </div></li>';
+				dataHtml += '<div class="doginfobox" id="dog">'+
+								'<div class="infoimg"> <img alt="" src="'+ item.filename+'"></div>'+
+								'<div class="infotext">'+
+									'<div class="kind"> kind: '+ item.kindCd+'</div>'+
+									'<div class="etc"> age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'</div>'+
+								'</div>'+
+								'<div class="infobutton">'+
+									'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button>'+
+									'<button id="liketrigger">like!</button>'+
+								'</div>'+
+							'</div>';
 				console.log(item)
 			});
-			dataHtml += '</ul>';
+			dataHtml += '</div>';
 			$("#data-container").html(dataHtml);
 		}
 	});
 }
-	
+
+$(window).on('load',function(){
+	var uprCd = $('#defaultUpr').val();
+	//var orgCd = $('#defaultOrg').val();
+	//console.log(orgCd);
+	$('input[name="sido"][value="'+ uprCd+'"]').click();
+	//$('input[name="sigungu"][value="'+ orgCd+'"]').click();
+	if(uprCd!=""){
+	$('#radiobutton').click();	
+	}
+});

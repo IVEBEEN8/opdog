@@ -1,3 +1,10 @@
+//import config from "./config.js";
+//const {API_KEY} = config;
+
+window.onload = function () {
+hideButtom();
+}
+
 let gender, color, hairLength, personality;
 
 function showLoading() {
@@ -8,6 +15,12 @@ function showLoading() {
 function hideLoading() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("loadingwords").style.display = "none";
+}
+function showButtom(){
+	document.getElementById("send").style.display = "block";
+}
+function hideButtom(){
+	document.getElementById("send").style.display = "none";
 }
 
 function selectGender(selectedGender) {
@@ -27,9 +40,10 @@ function selectHairLength(selectedHairLength) {
 
 function selectPersonality(selectedPersonality) {
   personality = selectedPersonality;
+  showButtom();
   const generatedName = generateName();
   const personalityOptions = document.getElementById("personalityOptions");
-  personalityOptions.innerHTML = `<h2>성별이 ${gender}, 털 색상이 ${color}, 털 길이가 ${hairLength}, 그리고 성격이 ${personality} 옵션 선택을 완료하셨습니다! 이름 생성하기 버튼을 눌러주세요!</h2>`
+  personalityOptions.innerHTML = `<h2>You've just selected ${gender}, ${color} hair color, ${hairLength} style, and ${personality} personality! Can you push the generate button?!</h2>`
   /* updateSelectedText(
     `${generatedName}을(를) 선택했어여!! generate 버튼을 눌러주세용!!`
   ); */
@@ -38,6 +52,7 @@ function selectPersonality(selectedPersonality) {
 
 function showOptions(optionsId) {
   const optionsElements = [
+	"send",
     "genderOptions",
     "colorOptions",
     "hairLengthOptions",
@@ -53,24 +68,15 @@ function showOptions(optionsId) {
 function generateName() {
   return `${gender} ${color} ${hairLength} ${personality}`;
 }
-/*
-function updateSelectedText(text) {
-  const selectedTextTemplate = `<div class="line">
-        <span class="chat-box">${text}</span>
-    </div>`;
-  document
-    .querySelector(".chat-content")
-    .insertAdjacentHTML("beforeend", selectedTextTemplate);
-}
-*/
+
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#send").addEventListener("click", async function () {
 	showLoading();
     // generateName 함수 호출 위치 수정
-
+	const apiKey = "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";
     var template = `<div class="line">
-        <span class="chat-box mine">성별이 ${gender}, 털 색상이 ${color}, 털 길이가 ${hairLength}, 그리고 성격이 ${personality} 강아지의 이름을 지어줄래? 그리고 추천 이유도 설명해줘!</span>
+        <span class="chat-box mine">Can you name a dog that gender is ${gender},has ${color} hair color, ${hairLength} style and ${personality} personality? Also explain the reason why you recommand the name!</span>
     	</div>`; 
     generateName();
 
@@ -78,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
       .querySelector(".chat-content")
       //.insertAdjacentHTML("beforeend", template);
 
-    const apiKey = "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"; // open ai_KEY
     const prompt = template;
     try {
       const response = await fetch(

@@ -8,6 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.opdoghw.login.LoginDAO;
+
 @WebServlet("/AskAboutDogMainC")
 public class AskAboutDogMainC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -19,6 +21,7 @@ public class AskAboutDogMainC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		LoginDAO.loginCheck(request);
 		System.out.println(request.getParameter("askanything"));
 		response.setCharacterEncoding("utf-8");
 		askAnythingDAO.askAnything(request);

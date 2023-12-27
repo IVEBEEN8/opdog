@@ -19,14 +19,16 @@
 Password: <input name="oldPW" value="${account.pw }" type="password" disabled="disabled"> <br>
 *Password check: <input name="oldPWCheck" type="password"> <br>
 <div class="selectBox">
+	<input type="hidden" value="${uprCd }" id="defaultUpr">
+	<input type="hidden" value="${orgCd }" id="defaultOrg">
 	*<select name="sido" id="sidoSelect">
-    	<option value="${uprCd }">${uprText }</option>
+    	<option value="">state</option>
         <c:forEach var="sido" items="${sido }" >
         	<option value="${sido.orgCd }">${sido.orgdownNm }</option>
         </c:forEach>
 	</select>
 	*<select name="sigun" id="sigunSelect">
-		<option value="${orgCd }">${orgText }</option>
+		<option value="">city</option>
 	</select>
 </div>
 New password: <input name="newPW" type="password"> <br>

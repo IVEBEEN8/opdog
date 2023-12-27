@@ -1,16 +1,96 @@
 @charset "UTF-8";
 
 body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
   font-family: "Arial", sans-serif;
-  background-color: #f4f4f4;
   text-align: center;
 }
 
-h1 {
-  color: #333;
+.container {
+  width: 100vw;
+  height: 120vh;
+  position: relative;
+  top: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1vw;
 }
-button {
-  width: 200px;
+
+.container > p {
+  margin: 0;
+  color: rgba(67, 49, 28, 0.9);
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 2.5vw;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  letter-spacing: -1.2px;
+  text-shadow: -1px 0 #faeab199, 0 1px #faeab199, 1px 0 #faeab199, 0 -1px #faeab199;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2vw;
+}
+
+.wrapper > p {
+  color: rgba(67, 49, 28, 0.9);
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.5vw;
+  letter-spacing: -1.2px;
+    font-weight: 500;
+}
+
+.wrapper > .choice-wrap > button {
+  display: flex;
+  flex-direction: column;
+}
+
+.choice-wrap {
+  display: flex;
+  gap: 5vw;
+}
+
+.choice-wrap > button {
+  width: 20vw;
+  height: 25vw;
+  background: none;
+  border: none;
+  border-radius: 2vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2vw;
+  box-shadow: 2px 2px 16px 2px #faeab182;
+}
+
+.choice-wrap > button:hover {
+  background: #faeab1;
+}
+
+.choice-wrap > button > p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+
+.boy {
+  margin-right: 1vw;
 }
 
 .loading {
@@ -26,6 +106,20 @@ button {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+/*생성 버튼 !*/
+#send {
+  width: 10vw;
+  height: 3vw;
+  background: #faeab1b1;
+  border: none;
+  color: #43311c;
+  font-size: 1.5vw;
+  border-radius: 2vw;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
 .loadingwords {
   display: none;
   color: black;

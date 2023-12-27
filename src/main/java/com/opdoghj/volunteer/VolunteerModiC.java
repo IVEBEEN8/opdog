@@ -9,18 +9,25 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.opdoghw.login.LoginDAO;
 
-@WebServlet("/vtSeoulC")
-public class vtSeoulC extends HttpServlet {
+@WebServlet("/VolunteerModiC")
+public class VolunteerModiC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		//게시글 전체 조회하는 일
 		LoginDAO.loginCheck(request);
-		VolunteerDAO.getAllpost(request);
-		LoginDAO.LoginAccount(request);
-		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
-		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+		VolunteerDAO.getPost(request);
+	
+	request.setAttribute("contentPage", "../3_volunteer/volunteerUpdate.jsp");
+	request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+	
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	//수정 UPDATE
+		VolunteerDAO.updatePost(request);
+		
+		VolunteerDAO.getPost(request);
+		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+		
 	}
 
 }

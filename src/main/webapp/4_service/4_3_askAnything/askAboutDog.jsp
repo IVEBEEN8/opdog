@@ -6,7 +6,7 @@
 <!DOCTYPE html>
 <html>
 <script type="module" src="4_service/js/askAboutDog.js"></script>
-<script type="moduel" src="4_service/js/getTheDate.js"></script>
+<script type="text/javascript" src="4_service/js/getTheDate.js"></script>
 <link rel="stylesheet" href="4_service/css/askAboutDog.css">
 
 <head>
@@ -16,9 +16,9 @@
 <body>
 <div class="chat-content-wrap1-2">
     <div class="chat-content1-2">
-    	<div class="smartphone-wrap">	
+    	<div class="smartphone-wrap">
     		<div class="chat-box-wrap1-2">
-    			<div id="date"></div>
+    			<div class="date1-2"  id="date1"></div>	
 	      		<div class="line" >
     	     		<span class="chat-box">Let's talk about dogs!</span>
       			</div>

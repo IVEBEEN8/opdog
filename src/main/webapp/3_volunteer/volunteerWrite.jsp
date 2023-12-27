@@ -12,6 +12,18 @@
       <main>
         <table id="vTbl">
           <tr>
+            <td class="write-td">Status</td>
+            <td>
+              <select name="chooseStatus">
+              	<option value="0">Select</option>
+              	<option value="Recruiting">Recruiting</option>
+
+              	<option value="Completed">Completed</option>
+              </select>
+            </td>
+          </tr>
+          <tr>
+          <tr>
             <td class="write-td">title</td>
             <td>
               <input
@@ -37,7 +49,7 @@
           </tr>
           <tr>
             <td colspan="2" class="write-td">
-              <button>add</button>
+              <button >add</button>
             </td>
           </tr>
         </table>

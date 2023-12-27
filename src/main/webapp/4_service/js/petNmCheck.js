@@ -1,5 +1,6 @@
-$(document).ready(function(){
+window
 
+$(document).ready(function(){
 	console.log("hellow world?");
 	$('#submit').on("click", function(){
 
@@ -22,8 +23,11 @@ xhr.onreadystatechange = function () {
 
 xhr.onreadystatechange = function () {
 	console.log('onreadystatechange event triggered');
+	
+	$("#submit").on("click",function(){
     if (xhr.readyState === XMLHttpRequest.DONE) {
         if (xhr.status === 200) {
+			console.log(11);
             const response = JSON.parse(xhr.responseText);
             console.log(response);
             //화면출력 id 가져오기
@@ -40,29 +44,38 @@ xhr.onreadystatechange = function () {
             const rfidCd = item.rfidCd;
             const dogNm = item.dogNm;
             const sexNm = item.sexNm;
-            const kindNm = item.kindNm;
-            const neuterYn =
-            	
-            	item.neuterYn;
+            const kindNm = item.kindNms;
+            const neuterYn =item.neuterYn;
             const orgNm = item.orgNm;
             const officeTel = item.officeTel;
             const aprGbNm = item.aprGbNm;
+     			
+		
+				$("#printinfo1").show();
+				$("#modalBody1").empty();
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Name of the dog</div><div class="small-content1">:' + dogNm + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Gender</div><div class="small-content1">:' + sexNm + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Kind</div><div class="small-content1">:' + kindNm+ '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> OrgNm</div><div class="small-content1">: ' + orgNm + '</div></div>');	
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Tel</div><div class="small-content1">: ' + officeTel+ '</div></div>');	
+				//모달
+		   	  $("#closeBtn1").on("click", function () {
+            		$("#printinfo1").hide();
+        		});
 
-           	console.log(11);
-            // 동적으로 화면에 출력! 
-            resultContainer.innerHTML =
-                '<p>Dog Name:' +dogNm+'</p>' +
-                '<p>Sex:'+ sexNm +'</p>'+
-                '<p>Kind:'+ kindNm +'</p>' +
-                '<p>orgNm:' + orgNm + '</p>' +
-                '<p>officeTel:' +
-                officeTel + '</p>'
-        }
-    }
+				const printinfobox = document.getElementById('printinfo1');
+		
+				$(document).on("click", function(event) {
+					    if (event.target === printinfobox) {
+				        printinfobox.style.display = 'none';
+				    }
+				});
+			
+			}
+   		}
+  })
 };
 xhr.send('');
 
 	});
-	
-
 });
