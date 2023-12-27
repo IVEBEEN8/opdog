@@ -8,24 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.opdoghw.login.LoginDAO;
-
-@WebServlet("/VtWriteC")
-public class VtWriteC extends HttpServlet {
-
+@WebServlet("/VolSearchSC")
+public class VolSearchSC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		LoginDAO.loginCheck(request);
-		request.setAttribute("contentPage", "../3_volunteer/volunteerWrite.jsp");
-		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		LoginDAO.LoginAccount(request);
-		VolunteerDAO.WritePost(request);
-		VolunteerDAO.getAllpost(request);
-		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
+		VolunteerDAO.searchCenter(request, response);
+		request.setAttribute("contentPage", "../3_volunteer/volunteerSearched.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
+
 }

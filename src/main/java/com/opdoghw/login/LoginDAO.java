@@ -52,13 +52,10 @@ public class LoginDAO {
 					account.setOrgCd(org[0]);
 					account.setOrgText(org[1]);
 					account.setResult("ok");
-
 					// 세션에 account information 담아서 보내기.
 					hs.setAttribute("account", account);
 					hs.setMaxInactiveInterval(60 * 60 * 12);
-					System.out.println("rs넘버"+rs.getInt("a_no"));
-					System.out.println("세션넘버"+account.getNo());
-
+					System.out.println("account정보:" + account);
 				} else {
 					account.setResult("password");
 					hs.setAttribute("account", account);
