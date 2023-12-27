@@ -62,7 +62,6 @@ public class VolunteerDAO {
 		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		System.out.println(account.getNo());
-
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,sysdate,?,?)";
@@ -183,7 +182,7 @@ public class VolunteerDAO {
 			}
 
 			System.out.println(volunteer);
-			request.setAttribute("searchedVol", volunteer);
+			request.setAttribute("volunteer", volunteer);
 			System.out.println("성공");
 
 		} catch (Exception e) {

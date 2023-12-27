@@ -17,7 +17,7 @@ public class VolSearchSC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		VolunteerDAO.searchCenter(request, response);
-		request.setAttribute("contentPage", "../3_volunteer/volunteerSearched.jsp");
+		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 

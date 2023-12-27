@@ -37,44 +37,44 @@
 		<div class="wrapper" id="colorOptions" style="display: none">
 			<p>What is the fur color?</p>
 			<div class="choice-wrap">
-				<button onclick="selectColor('black')">
+				<button onclick="selectColor('Black')">
 					<img style="width: 12vw" src="4_service/img/naming-black.png">
-					<p>black</p>
+					<p>Black</p>
 				</button>
-				<button onclick="selectColor('white')">
+				<button onclick="selectColor('White')">
 					<img style="width: 12vw" src="4_service/img/naming-white.png">
-					<p>white</p>
+					<p>White</p>
 				</button>
-				<button onclick="selectColor('brown')">
+				<button onclick="selectColor('Brown')">
 					<img style="width: 12vw" src="4_service/img/naming-brown.png">
-					<p>brown</p>
+					<p>Brown</p>
 				</button>
-				<button onclick="selectColor('etc')">
+				<button onclick="selectColor('Etc')">
 					<img style="width: 12vw" src="4_service/img/naming-etc.png">
-					<p>etc</p>
+					<p>Etc</p>
 				</button>
 			</div>
 		</div>
 
 		<!-- 머리길이 선택 -->
 		<div class="wrapper" id="hairLengthOptions" style="display: none">
-			<p>What is your dog's hair length?</p>
+			<p>What is your dog's hair style?</p>
 			<div class="choice-wrap">
-				<button onclick="selectHairLength('straight hair')">
+				<button onclick="selectHairLength('Straight hair')">
 					<img style="width: 12vw" src="4_service/img/naming-straight.png">
-					<p>straight hair</p>
+					<p>Straight hair</p>
 				</button>
-				<button onclick="selectHairLength('long hair')">
+				<button onclick="selectHairLength('Long hair')">
 					<img style="width: 12vw" src="4_service/img/naming-long.png">
-					<p>long hair</p>
+					<p>Long hair</p>
 				</button>
-				<button onclick="selectHairLength('short hair')">
+				<button onclick="selectHairLength('Short hair')">
 					<img style="width: 12vw" src="4_service/img/naming-short.png">
-					<p>short hair</p>
+					<p>Short hair</p>
 				</button>
-				<button onclick="selectHairLength('curly')">
+				<button onclick="selectHairLength('Curly hair')">
 					<img style="width: 12vw" src="4_service/img/naming-curly.png">
-					<p>curly</p>
+					<p>Curly hair</p>
 				</button>
 			</div>
 		</div>
@@ -83,21 +83,21 @@
 		<div class="wrapper" id="personalityOptions" style="display: none">
 			<p>What is your dog's personality?</p>
 			<div class="choice-wrap">
-				<button onclick="selectPersonality('smart')">
+				<button onclick="selectPersonality('Smart')">
 					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-smart.jpg">
-					<p>smart</p>
+					<p>Smart</p>
 				</button>
-				<button onclick="selectPersonality('fainthearted')">
+				<button onclick="selectPersonality('Fainthearted')">
 					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-p1.jpg">
-					<p>fainthearted</p>
+					<p>Fainthearted</p>
 				</button>
-				<button onclick="selectPersonality('angry')">
+				<button onclick="selectPersonality('Angry')">
 					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-angry.jpg">
-					<p>angry</p>
+					<p>Angry</p>
 				</button>
-				<button onclick="selectPersonality('playful')">
+				<button onclick="selectPersonality('Playful')">
 					<img style="width: 15vw; border-radius: 1vw;" src="4_service/img/naming-playful.jpg">
-					<p>playful</p>
+					<p>Playful</p>
 				</button>
 			</div>
 		</div>
@@ -111,9 +111,8 @@
 				</div>
 			</div>
 		</div>
-		<button id="send">generate!</button>
-		<div class="loadingwords" id="loadingwords">"강아지와 찰떡인 이름을 만들고
-			있습니다. 조금만 기다려주세요!"</div>
+		<button id="send" style="display:none;">generate!</button>
+		<div class="loadingwords" id="loadingwords">"We are generating the name matched perfectly well with your lovely dog!"</div>
 	</div>
 </body>
 </html>
