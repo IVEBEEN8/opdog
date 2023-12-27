@@ -19,7 +19,7 @@
 		<div class="top">
 			<div class="top-title">
 				<img src="3_volunteer/img/SeoulIcon.png" alt="" /> <a
-					href="VtSeoulC">
+					href="VSeoulC">
 					<p>Seoul</p>
 				</a>
 			</div>
