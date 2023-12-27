@@ -251,9 +251,9 @@ $(document).ready(function() {
            	console.log(centeraddrId);
             var content = '<div class="overlaybox1-2">' + 
                 '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
-                '    			<ul class="li-wrap1-2">'  +
-                '        				<li class="li1-2">'  +    
-                '          				<span class="title"><img class="bitmap" src="1_adopt/img/Bitmap.png"></span>' +
+                '    			<ul class="li-wrap1-2">'    + 
+                '        				<li class="li1-2">' +
+                '          				<span class="title"><img class="bitmap" src="1_adopt/img/Bitmap.png"></span>'  +
                 '        				</li>' +
                 '        				<li class="li1-2">' +
                 '            				<span class="title centername">'+centername+'</span>' +
@@ -270,7 +270,7 @@ $(document).ready(function() {
                 '			           <li class="li1-2">'  +
                 '		                   <span class="title"><span>closed </span><span class="red-col">'+closeday+'</span>' +
                 ' 			           </li>' +
-                '    			</ul><br>'+
+                '    			</ul>'+
                 '				<div class="copylocationbtn-wrap"><button onclick="copyText()" class="copylocationbtn">Copy location</button></div>'	+
                 '</div>' +
                 '</div>';

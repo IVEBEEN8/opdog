@@ -41,23 +41,20 @@
           <td class="post-left">
             <div class="td-wrapper">
               <div class="post-btn">
-                <div class="Recruiting post-btn-txt"><p>Recruiting</p></div>
-                <div class="Completed post-btn-txt"><p>completed</p></div>
+                <div class="Recruiting post-btn-txt"><p>${volunteer.v_status }</p></div>
               </div>
               <div class="post-text">
                 <div class="bigTxt">
-                  ${volunteer.v_title }
+                title: ${volunteer.v_title }
                 </div>
                 <div class="smallTxt">
-                  ${volunteer.v_txt }
+                description: ${volunteer.v_txt }
                 </div>
               </div>
               <div class="post-info">
                 <div class="post-user">
                   <img src="3_volunteer/img/profileIcon.png" alt="" />id
                 </div>
-        <!--         <div class="post-view">| view</div>
-                <div class="post-coment">| comment</div> -->
               </div>
             </div>
           </td>
