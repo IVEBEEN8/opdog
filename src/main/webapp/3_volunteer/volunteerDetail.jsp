@@ -1,49 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+<meta charset="UTF-8" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="3_volunteer/css/volunteerDetail.css" />
 </head>
 <body>
-	<form action="VolunteerDetailC" method="post" enctype="multipart/form-data">
+	<form class="container" action="VolunteerDetailC" method="post"
+		enctype="multipart/form-data">
 		<main>
-			<table id="DetailTbl">
-				<tr>
-					<td class="write-td">Status</td>
-					<td>${vol.v_status }</td>
-				</tr>
-				<tr>
-				<tr>
-					<td class="write-td">title</td>
-					<td>${vol.v_title }</td>
-				</tr>
-				<tr>
-					<td><img src="3_volunteer/newImg/${vol.v_img }"></td>
-				</tr>
-				<tr>
-					<td class="write-td">content</td>
-					<td>${vol.v_txt }</td>
-				</tr>
-				<tr>
-					<td colspan="2" class="write-td">
-						<button>Go list</button>
-					</td>
-				</tr>
-			</table>
+			<div id="DetailTbl">
+				<div class="statusWrap">
+					<div class="post-status">
+						<p>${vol.v_status }</p>
+					</div>
+				</div>
+				<div>
+					<div class="post-title">${vol.v_title }</div>
+				</div>
+
+				<div class="imgWrapper">
+					<img src="3_volunteer/newImg/${vol.v_img }" />
+				</div>
+
+				<div class="post-txt">
+					<p>${vol.v_txt }</p>
+				</div>
+					<div class="btnWrap">
+						<button onclick="location.href='VtSeoulC'">Go list</button>
+
+						<button
+							onclick="location.href='VolunteerModiC?no=${volunteer.v_no}'">
+							Modify</button>
+
+						<button
+							onclick="location.href='VolunteerDelC?no=${volunteer.v_no}'">
+							Delete</button>
+					</div>
+			</div>
 		</main>
 	</form>
-
-
-<%-- <h1>this is detail page~</h1>
-<p>${vol.v_title }</p>
-<p>${vol.v_img }</p>
-<p>${vol.v_created }</p>
-<p>${vol.v_updated }</p>
-<p>${vol.v_status }</p>
---%>
 
 </body>
 </html>

@@ -170,6 +170,7 @@ input:focus {
 }
 
 .post-btn-txt {
+	position: absolute;
 	border-radius: 30vw;
 	border: none;
 	width: 6.8vw;
@@ -179,11 +180,11 @@ input:focus {
 	font-style: normal;
 	font-weight: 600;
 	line-height: normal;
+	text-align: center;
 }
 
 .post-btn-txt>p {
 	top: -0.5vw;
-	left: 0.5vw;
 	position: relative;
 }
 
