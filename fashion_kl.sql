@@ -10,8 +10,13 @@ drop table fashion_kl;
 insert into fashion_kl VALUES (fashion_kl_seq.nextval,?,?,?,?);
 create sequence fashion_kl_seq start with 1 increment by 1;
 DROP SEQUENCE fashion_kl_seq;
+UPDATE fashion_kl
+SET fs_title = 'Shiba Dog Padding Vest Winter Clothing General Padding Khaki'
+WHERE fs_no = 46;
 
 select * from fashion_kl;
+select * from fashion_kl order by fs_price asc;
+select * from fashion_kl order by fs_price desc;
 
 
 

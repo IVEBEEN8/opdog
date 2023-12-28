@@ -67,7 +67,8 @@
 			</div>
 		</div>
 
-
+		<input type="radio" name="sort" value="high"> 높은가격순
+    	<input type="radio" name="sort" value="low"> 낮은가격순
 		<div class="items-container">
 			<div class="items">
 				<c:forEach varStatus="" var="fs" items="${fashions }">
@@ -77,14 +78,14 @@
 								<img class="item-img" src="${fs.fs_img }">
 							</div>
 							<div class="item-info">
-								<div class="item-brand">${fs.fs_brand }</div>
-								<div class="item-title">${fs.fs_title }</div>
+								<div class="item-brand" align="left">${fs.fs_brand }</div>
+								<div class="item-title" align="left">${fs.fs_title }</div>
 							</div>
 							<div class="item-line-price">
 								<div class="item-line">
 									<div id="item-line"></div>
 								</div>
-								<div class="item-price">${fs.fs_price }&#8361;</div>
+								<div class="item-price" align="left">${fs.fs_price } &#8361;</div>
 							</div>
 						</div>
 					</a>

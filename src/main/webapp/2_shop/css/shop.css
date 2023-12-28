@@ -76,6 +76,9 @@ a {
 .items {
 	display: flex;
 	flex-wrap: wrap;
+	margin-top: 5vh;
+	margin-bottom: 5vh;
+	padding-left:1vw;
 }
 
 .item {
@@ -85,7 +88,7 @@ a {
 	height: 50vh;
 	margin-left: 5vw;
 	margin-top: 5vh;
-	position:relative;
+	position: relative;
 }
 
 .item-img {
@@ -93,9 +96,10 @@ a {
 	height: 27.78vh;
 	padding: 1.3vw
 }
-.item-info{
-	padding-left:1vw;
-	padding-right:1vw;
+
+.item-info {
+	padding-left: 1.5vw;
+	padding-right: 1vw;
 }
 
 .item-brand {
@@ -117,15 +121,17 @@ a {
 	line-height: normal;
 	letter-spacing: -0.03vw;
 	font-family: Inter;
+	padding-top:1vh;
 }
-.item-line-price{
-	position:absolute;
+
+.item-line-price {
+	position: absolute;
 	top: 45vh;
 	left: 1.3vw;
 }
 
-#item-line{
-	border:0.0925925925925926vh solid rgba(67, 49, 28, 0.6);
+#item-line {
+	border: 0.0925925925925926vh solid rgba(67, 49, 28, 0.6);
 	width: 15.62vw;
 }
 
@@ -137,5 +143,7 @@ a {
 	font-weight: 600;
 	line-height: normal;
 	letter-spacing: -0.03125vw;
+	position: relative;
+	top: 1vh;
+	left:0.5vw
 }
-
