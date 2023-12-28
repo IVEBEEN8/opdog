@@ -98,18 +98,18 @@ input[type="checkbox" i] {
 }
 
 .checkBtn {
-border: solid 0.1vw #43311ce5;
-    font-size: 0.8vw;
-    background: none;
-    border-radius: 0.5vw;
-    position: absolute;
-    top: 60%;
-    left: 80%;
+  border: solid 0.1vw #43311ce5;
+  font-size: 0.8vw;
+  background: none;
+  border-radius: 0.5vw;
+  position: absolute;
+  top: 60%;
+  left: 80%;
 }
 
 .checkBtn:hover {
   background: #43311ce5;
-  color:white;
+  color: white;
 }
 
 .ac-pw > div {

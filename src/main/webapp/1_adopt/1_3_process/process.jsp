@@ -17,24 +17,25 @@
 	<!-- 메인 -->
 	<main>
 		<div class="container">
-			<div class="first-title">Adopt Process</div>
-			<div class="second-title">
-				<p>Checklist before adopting a dog</p>
+			<div class="first-title">
+				<p>Adopt Checklist</p>
+				<img alt="" src="1_adopt/img/checklistTitle.jpg">
 			</div>
 			<div class="checklist-set">
 				<div class="checklist">
 					<div class="checklist-title">
-						<h3>Are you ready to adopt a dog?</h3>
+						<img alt="" src="1_adopt/img/checklist.png">
+						<p>Are you ready to adopt a dog?</p>
 					</div>
 					<div class="checklist-txt">
 						<ul>
-							<li>You should be able to afford your dog's living expenses,
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;You should be able to afford your dog's living expenses,
 								health care expenses, and education expenses</li>
-							<li>Make sure you have enough space and time to live with
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;Make sure you have enough space and time to live with
 								your dog</li>
-							<li>Please make sure that all family members agree to adopt
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;Please make sure that all family members agree to adopt
 								a dog</li>
-							<li>Please check whether the rules of the house or apartment
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;Please check whether the rules of the house or apartment
 								where you will live with your dog allow pets</li>
 						</ul>
 					</div>
@@ -42,14 +43,15 @@
 
 				<div class="checklist">
 					<div class="checklist-title">
-						<h3>Did you choose your dog considering its type and
-							personality?</h3>
+						<img alt="" src="1_adopt/img/checklist.png">
+						<p>Did you choose your dog considering its type and
+							personality?</p>
 					</div>
 					<div class="checklist-txt">
 						<ul>
-							<li>You should choose one considering your dog's size,
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;You should choose one considering your dog's size,
 								activity level, and personality</li>
-							<li>Please fully understand the unique characteristics of a
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;Please fully understand the unique characteristics of a
 								dog breed and consider whether it can fit in well with your
 								family</li>
 						</ul>
@@ -58,13 +60,14 @@
 
 				<div class="checklist">
 					<div class="checklist-title">
-						<h3>Have you checked the health of the dog you plan to adopt?</h3>
+					<img alt="" src="1_adopt/img/checklist.png">
+						<p>Have you checked the health of the dog you plan to adopt?</p>
 					</div>
 					<div class="checklist-txt">
 						<ul>
-							<li>Please check whether the dog you are considering for
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;Please check whether the dog you are considering for
 								adoption is vaccinated and neutered</li>
-							<li>It is recommended that you visit the protection center
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;It is recommended that you visit the protection center
 								and check in person before adopting</li>
 						</ul>
 					</div>
@@ -72,29 +75,29 @@
 
 				<div class="checklist">
 					<div class="checklist-title">
-						<h3>Can you take care of dog responsibly after adoption?</h3>
+					<img alt="" src="1_adopt/img/checklist.png">
+						<p>Can you take care of dog responsibly after adoption?</p>
 					</div>
 					<div class="checklist-txt">
 						<ul>
-							<li>You should understand your pet's care, such as
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;You should understand your pet's care, such as
 								defecation, walking, education, and health care</li>
-							<li>A dog has a lifespan of about 15 years. Please consider
-								whether it can be taken care of for a long time by being like a
-								family member</li>
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;Please consider whether it can be taken care of for a long time by being like a family member</li>
 						</ul>
 					</div>
 				</div>
 
 				<div class="checklist">
 					<div class="checklist-title">
-						<h3>Could you please cooperate in monitoring and sharing
-							information after adoption?</h3>
+					<img alt="" src="1_adopt/img/checklist.png">
+						<p>Could you please cooperate in monitoring and sharing
+							information after adoption?</p>
 					</div>
 					<div class="checklist-txt">
 						<ul>
-							<li>To improve adoption awareness, we ask guardians to write
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;To improve adoption awareness, we ask guardians to write
 								warm adoption reviews</li>
-							<li>We ask that you actively participate in providing
+							<li><img alt="" src="1_adopt/img/checklistli.png"> &nbsp;We ask that you actively participate in providing
 								information requested by the Protection Center to compile
 								statistics</li>
 						</ul>

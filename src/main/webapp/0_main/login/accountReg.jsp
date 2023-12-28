@@ -84,7 +84,7 @@
           <div class="hw-account-btn">
           	<button>Sign up</button>
           </div>
-          <div class="other-account">
+<!--           <div class="other-account">
             <div></div>
             <p>or do it via other accounts</p>
             <div></div>
@@ -95,7 +95,7 @@
               <a href="#"><img src="0_main/img/apple.svg" /></a>
               <a href="#"><img src="0_main/img/facebook.svg" /></a>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </form>
