@@ -24,6 +24,7 @@ public class VolunteerModiC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 수정 UPDATE
+		LoginDAO.loginCheck(request);
 		VolunteerDAO.updatePost(request);
 		VolunteerDAO.getPost(request);
 		request.setAttribute("contentPage", "../3_volunteer/volunteerDetail.jsp");
