@@ -1,6 +1,6 @@
 # Ignore config.js files
 config.js
-src/main/webapp/4_service/js
+src/main/webapp/4_service/js/config.js
 *.class
 
 
