@@ -120,7 +120,9 @@ public class VolunteerDAO {
 		try {
 			con = DBManager_khw.connect();
 			System.out.println("연결성공~!");
-			String no = request.getParameter("no");
+			String paramNo = request.getParameter("no");
+			String attrNo = (String) request.getAttribute("no");
+			String no = paramNo != null ? paramNo : attrNo;
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, no);
 			rs = pstmt.executeQuery();
@@ -259,8 +261,9 @@ public class VolunteerDAO {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
+
 		String path = request.getServletContext().getRealPath("3_volunteer/newImg");
-		String sql = "update volunteer" + " set v_img=?, v_title=?,v_txt=?, v_status=? where v_no=?";
+		String sql = "update volunteer" + " set v_title=?, v_img=?, v_txt=?, v_status=? where v_no=?";
 		try {
 
 			request.setCharacterEncoding("utf-8");
@@ -286,15 +289,15 @@ public class VolunteerDAO {
 			System.out.println(status);
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(2, title);
+			pstmt.setString(1, title);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setString(5, no);
 
 			if (newFile != null) {
-				pstmt.setString(1, newFile);
+				pstmt.setString(2, newFile);
 			} else {
-				pstmt.setString(1, oldFile);
+				pstmt.setString(2, oldFile);
 			}
 
 			pstmt.executeUpdate();
