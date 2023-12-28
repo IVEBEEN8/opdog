@@ -21,6 +21,7 @@
 						Your order has been completed ! <br> Thank you for your
 						support
 					</div>
+					<div class="opdog-arrow"> </div>
 				</div>
 			</div>
 		</div>

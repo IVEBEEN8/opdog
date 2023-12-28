@@ -68,7 +68,7 @@
 
 
 			<div class="checkbox">
-				<input type="checkbox" /> Save card data for future payments
+				<input type="checkbox" /> <label class="check-label"> Save card data for future payments</label>
 			</div>
 			<div class="pay-btn">
 				<button class="continue-btn" onclick="payWithCard()">Pay

@@ -116,7 +116,7 @@ public static void getFashion(HttpServletRequest request) {
 
 	public static void paging(int page, HttpServletRequest request) {
 		request.setAttribute("curPageNo", page);
-		int cnt = 15; 		// 한페이지당 보여줄 개수
+		int cnt = 12; 		// 한페이지당 보여줄 개수
 		int total = fashions.size();		// 총 데이터 개수 
 		// 총페이지수 
 		int pageCount = (int) Math.ceil((double)total/cnt);
@@ -301,5 +301,45 @@ public static void getFashion(HttpServletRequest request) {
 	            throw new RuntimeException("API 응답을 읽는데 실패했습니다.", e);
 	        }
 	    }
+
+		public static void sortFashion(HttpServletRequest request) {
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String sql = "";
+			String asc = "select * from fashion_kl order by fs_price asc";		// 낮은가격순
+			String desc = "select * from fashion_kl order by fs_price desc";	// 높은가격순
+			
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				con = DBManager_khw.connect();
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				Fashion fs = null;
+				fashions = new ArrayList<Fashion>();
+				
+				while(rs.next()) {
+					fs = new Fashion();
+					fs.setFs_no(rs.getInt("fs_no"));
+					fs.setFs_img(rs.getString("fs_img"));
+					fs.setFs_title(rs.getString("fs_title"));
+					fs.setFs_price(rs.getInt("fs_price"));
+					fs.setFs_brand(rs.getString("fs_brand"));
+					
+					System.out.println(rs.getString("fs_title"));
+					System.out.println(rs.getString("fs_brand"));
+					fashions.add(fs);
+					
+					
+				}
+				request.setAttribute("fashions", fashions);
+				System.out.println("어트리뷰트 생성!");
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager_khw.close(con, pstmt, rs);
+			}
+			
+		}
 	
 }

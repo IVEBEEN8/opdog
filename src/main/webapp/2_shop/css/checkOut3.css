@@ -39,8 +39,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 }
 
+.opdog-arrow{
+	position: absolute;
+	border-top: 0.5vw solid rgba(158, 111, 33, 1);
+	border-left: 0.5vw solid rgba(158, 111, 33, 1);
+	border-right: 0.5vw solid transparent;
+	border-bottom: 0.5vw solid transparent;
+	top:4vw;
+	left:1vw;
+}
 
 
 .opdog-txt{
