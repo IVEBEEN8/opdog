@@ -14,12 +14,12 @@
 			<table id="vTbl">
 				<tr>
 					<td class="write-td">Status</td>
-					<td><select name="chooseStatus">
-							<option value="0">Select</option>
+					<td>
+					<select name="chooseStatus">
 							<option value="Recruiting">Recruiting</option>
-
 							<option value="Completed">Completed</option>
-					</select></td>
+					</select>
+					</td>
 				</tr>
 				<tr>
 				<tr>
@@ -37,12 +37,11 @@
 				<tr>
 					<td class="write-td">content</td>
 					<td><textarea class="textarea-style" name="content"
-							placeholder="
-Please enter the information to be modified"></textarea></td>
+							placeholder="Please enter the information to be modified"></textarea></td>
 				</tr>
 				<tr>
 					<td colspan="2" class="write-td">
-						<button  name="no" value="${vol.v_no }">Modify</button>
+						<button name="no" value="${vol.v_no }">Modify</button>
 					</td>
 				</tr>
 			</table>
