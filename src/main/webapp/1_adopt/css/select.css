@@ -1,0 +1,97 @@
+@charset "UTF-8";
+html,
+body {
+
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+}
+
+.infocontainer{
+	border: 1px solid black;
+	width: 100%;
+	height:220vh;
+	position:relative;
+	top:5vw;
+	justify-content: center;
+}
+.radiocontainer{
+	border: 1px solid black;
+	width: 70%;
+	height: 15%;
+	margin-top: 5%;
+}
+.titlebox{
+	border: 1px solid black;
+	width: 15%;
+}
+.sidoradiobox{
+	border: 1px solid black;
+	width: 100%;
+}
+.sigunradiobox{
+	border: 1px solid black;
+	width: 100%;
+}
+.shelterradiobox{
+	border: 1px solid black;
+	width: 100%;
+}
+.selectcontainer{
+	border: 1px solid black;
+	width: 100%;
+	height: 3%;
+	background-color: gray;
+	position: sticky;
+    top: 7vh;
+}
+.infoouter{
+	border: 1px solid red;
+	width: 100%;
+	height: 75%;
+}
+.datacontainer{
+	border: 1px solid blue;
+	width: 80%;
+	height: 90%;
+	display: flex;
+	margin-top: 4%;
+}
+.infoinnerbox{
+	border: 1px solid black;
+	width: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	
+}
+.doginfobox{
+	border: 1px solid black;
+	width: 40%;
+	height: 18%;
+	display: flex;
+	margin-top: 1%;
+	justify-content: space-between;
+}
+.infoimg{
+	border: 1px solid black;
+	width: 30%;
+}
+.infotext{
+	border: 1px solid black;
+	width: 30%;
+}
+.infobutton{
+	border: 1px solid black;
+	width: 30%;	
+}
+
+

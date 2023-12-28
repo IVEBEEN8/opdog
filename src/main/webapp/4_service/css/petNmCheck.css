@@ -1,0 +1,195 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+  
+}
+.big-mama{
+    width: 100vw;
+    height: 100%;
+    position: relative;
+    top: 10vw;
+}
+.title4_1{
+	color: rgba(67, 49, 28, 0.9);
+}
+.yellow-bar{
+	top:6vw;
+    position: absolute;
+    width: 100%;
+    background: rgba(250, 234, 177, 1);
+    height: 2px;
+    border: none;
+}
+.title-box4_1{
+	text-align: left;
+    top: 10%;
+    position: relative;
+    max-width: 884px;
+    margin: 0px auto;
+    padding: 60px 70px 0px;
+    font-size: 200%;
+    line-height: 111%;
+    font-weight: 600;
+}
+.paw-img{
+	width: 41px;
+    height: 34px;
+    margin-left: 3px
+}
+.paw-img1{
+    z-index: 1;
+    position: absolute;
+    top: -41%;
+    right: -3%;
+    width: 22%;
+    height: 183%;
+}
+
+.petnmcheck-wrap{
+	position:relative;
+	height: 100vh;
+	width: 100vw;
+	text-align: center;
+	
+}
+.petnm-info-box{
+    left: 25%;
+    top: 13%;
+    font-size: 150%;
+    position: absolute;
+    border: 1px solid gray;
+    width: 50%;
+    text-align: left;
+    border-radius: 10px;
+    max-height: 312px;
+    overflow: auto;
+
+}
+.wrap-for-input-wrap{
+	width: 50%;
+    top: 43%;
+    left: 25%;
+    position: absolute;
+}
+.owner-input{
+	width: 23%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid 
+rgba(197, 137, 64, 1);
+    background-color: white;
+}
+
+.petnm-input{
+	width: 23%;
+    padding: 10px 15px;
+    border-radius: 25px;
+    border: 1px solid 
+rgba(197, 137, 64, 1);
+    background-color: white;
+	
+}
+.input-name4_1{
+	padding: 10px;
+    font-size: 18px;
+    line-height: 19px;
+    font-weight: 600;
+}
+.find-btn4_1{
+	width: 138.5px;
+    padding: 10px;
+    margin: 40px auto 60px;
+    font-size: 22px;
+    line-height: 26px;
+    font-weight: 600;
+    color: black;
+    border-radius: 21px;
+    border: none;
+    background-color: rgb(252, 209, 30);
+    cursor: pointer;
+}
+.petnm-info-box li{
+	font-weight: 500;
+	color: rgba(67, 49, 28, 0.9);
+}
+
+
+/* 출력화면 css입니다~ */
+#closeBtn1 {
+	top: 0vh;
+	left: 94%; 
+    position: absolute;
+    font-weight: bold;
+    stroke-width: 10px;
+    stroke: #43311C;
+    font-size: 3vh;
+    cursor: pointer;
+}
+#modalBody1 {
+	top: 11%;
+    width: 87%;
+    position: absolute;
+    border-top: 1px solid black;
+    height: 75%;
+    padding: 3% 6.5%;
+    overflow-x: scroll;
+}
+#modalContent1{
+    background: #FAF8F1;
+    position: relative;
+    margin-top: 10vh;
+    width: 32vw;
+    height: 45vh;
+    border-radius: 20px;
+}
+#printinfo1 {
+  display: none;
+  position: fixed; /* Stay in place */
+  z-index: 2; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.mtitle{
+	height: 6%;
+	background: #FAF8F1;
+    z-index: 3;
+    top: 6%;
+    left: 38%;
+    position: absolute;
+    font-size: 236%;
+}
+.box-title1{
+	display: flex;
+    height: 3vh;
+    margin: 1vh;
+    text-align: left;
+    font-size: 0.7vw;
+}
+
+.small-title1{
+	width: 30%;
+}
+.small-content1{
+	left: 34%;
+    position: absolute;
+    width: 59%;
+    white-space: normal
+}
+
+

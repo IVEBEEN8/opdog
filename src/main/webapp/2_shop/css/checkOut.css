@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+}
+
+.content {
+	width: 56.2vw;
+	flex-shrink: 0;
+}
+
+.main-title {
+	color:rgba(67, 49, 28, 0.9);
+	font-family: "DM Sans", sans-serif;
+	font-size: 30px;
+	font-weight: 600;
+	margin-top: 10vh;
+	letter-spacing:-1px
+}
+
+.second-title {
+	display: flex;
+	justify-content: center;
+	color:rgba(67, 49, 28, 0.9);
+	font-size: 12px;
+	margin-top: 1.5vh;
+}
+
+.second-tit-adr {
+	font-weight: 700;
+}
+
+.second-tit-line-cover {
+	display: flex;
+	align-items: center;
+	margin-right: 10px;
+	margin-left: 10px;
+}
+
+.second-tit-line {
+	width: 40px;
+	height: 0px;
+	border: solid 0.1px #43311CE5;
+}
+
+.second-tit-pay {
+	font-weight: 400;
+}
+
+.third-title {
+	color:rgba(67, 49, 28, 0.9);
+	font-weight: 400;
+	font-size: 15px;
+	font-family: "DM Sans", sans-serif;
+	letter-spacing: -0.4px;
+	margin-top: 4vh;
+	margin-bottom: 2vh;
+}
+
+input:focus {
+	outline: 2px solid rgba(250, 234, 177, 1); /* outline 테두리 속성 수정 */
+
+} 
+input::placeholder {
+	color: #B6B2B2;
+	font-size: 12px;
+	font-feature-settings: 'clig' off, 'liga' off;
+	padding-left: 2vw;
+
+}
+
+.full-name {
+	display: flex;
+}
+
+.input-name {
+	width: 27vw;
+	height: 3.5vh;
+	margin-right: 0.5vw;
+	padding:2px;
+}
+
+.input-box {
+	width: 56.2vw;
+	height: 3.5vh;
+	margin-top: 0.8vh;
+	padding:2px;
+}
+
+.checkbox {
+	color: rgba(151, 151, 151, 1);
+	font-feature-settings: 'clig' off, 'liga' off;
+	font-weight: 400;
+	font-size: 12px;
+	margin-top: 1.5vh;
+	margin-bottom: 2vh;
+	letter-spacing: -0.5px;
+}
+
+.continue-btn {
+	width: 56.2vw;
+	height: 6vh;
+	border: none;
+	background: #9e6f21;
+	color: white;
+    font-family: "DM Sans", sans-serif;
+}

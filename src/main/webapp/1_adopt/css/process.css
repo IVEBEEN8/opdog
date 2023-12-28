@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+	font-size: 10pt;
+	scroll-behavior: smooth;
+}
+
+.container {
+	padding-top: 6vw;
+	padding-bottom: 2vw;
+}
+
+.first-title {
+	margin: 0;
+	color: rgba(67, 49, 28, 0.9);
+	text-align: center;
+	font-family: "Inter", sans-serif;
+	font-size: 2vw;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	letter-spacing: -1.2px;
+	text-shadow: -1px 0 #faeab199, 0 1px #faeab199, 1px 0 #faeab199, 0 -1px
+		#faeab199;
+}
+
+.second-title {
+	width: 25vw;
+	height: 3vw;
+	border-radius: 2vw;
+	background: #faeab178;
+	border: none;
+}
+
+.second-title>p {
+	font-size: 1.3vw;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 3vw;
+	font-family: "Inter", sans-serif;
+	font-weight: 400;
+	color:#43311CE5;
+}
+
+.checklist-title {
+	background-color: aqua;
+}
+
+.checklist-txt {
+	background-color: antiquewhite;
+}
+
+.notice {
+	border: 2px solid red;
+}
+
+.notice-title {
+	background-color: yellow;
+}
+
+.notice-txt {
+	background-color: yellowgreen;
+}

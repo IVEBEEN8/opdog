@@ -1,0 +1,213 @@
+@charset "UTF-8";
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+}
+
+.containar-hw {
+  display: flex;
+  width: 100vw;
+  height: 83.33333333333334vh;
+  padding: 6vh 0px;
+  position: relative;
+  top: 5.555555555555555vh;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sub-containar-hw {
+  font-family: "Inter", sans-serif;
+  display: flex;
+  width: 23.4375vw;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.3888888888888888vh;
+}
+
+.loginpage > p {
+  width: 23.4375vw;
+  color: #424242;
+  font-size: 0.7291666666666666vw;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.lp-title > span {
+  color: #27272e;
+  font-family: "Inter", sans-serif;
+  font-size: 1.4583333333333333vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 136.023%;
+}
+.lp-title > p {
+  color: #27272e;
+  font-family: "Inter", sans-serif;
+  font-size: 0.8333333333333334vw;
+  font-style: normal;
+  line-height: 162.023%;
+}
+
+.loginpage > input {
+  width: 22.083333333333332vw;
+  height: 3.7037037037037033vh;
+  display: flex;
+  padding: 0.7291666666666666vw 0.7291666666666666vw;
+  align-items: center;
+  align-self: stretch;
+  border-radius: 0.78125vw;
+  background: #faf8f1;
+  border: none;
+  font-size: 0.9vw;
+  font-weight: 300;
+  font-family: "Inter", sans-serif;
+}
+
+.loginpage > input::placeholder {
+  color: #7a828a;
+  font-size: 0.8333333333333334vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.78125vw;
+}
+
+.forgot-pw > div {
+  color: #777e90;
+  text-align: right;
+  width: 23.4375vw;
+  font-family: "Inter", sans-serif;
+  font-size: 0.5729166666666666vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.625vw;
+}
+
+.hw-login-btn {
+  display: flex;
+  width: 23.4375vw;
+  height: 4.62962962962963vh;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4.6875vw;
+  background: #9e6f21;
+}
+
+.hw-login-btn > button {
+  color: #fcfcfd;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 0.8333333333333334vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 0.8333333333333334vw;
+  background: none;
+  border: none;
+  width: 23.333333333333332vw;
+  height: 4.62962962962963vh;
+}
+
+.hw-login-btn:hover {
+  background: #faeab1;
+  transition: 0.1s linear;
+}
+
+.hw-login-btn > button:hover {
+  color: #9e6f21;
+}
+
+.other-account {
+  display: flex;
+  width: 23.4375vw;
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25vw;
+}
+
+.other-account > p {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: 0.5729166666666666vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.625vw;
+}
+
+.other-account > div {
+  width: 6.770833333333333vw;
+  height: 0.1851851851851852vh;
+  background: #edf2f7;
+}
+
+.account-icon-wrap {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-icon {
+  display: flex;
+  /* align-items: flex-start; */
+  gap: 1.6666666666666667vw;
+  width: 23.4375vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.account-icon > a {
+  position: relative;
+  width: 2.604166666666667vw;
+  height: 4.62962962962963vh;
+  background: #faf8f199;
+  border-radius: 1.5625vw;
+  background-size: cover;
+  box-shadow: 0.05vw 0.1vw 0.625vw rgb(196, 137, 64, 0.3);
+}
+
+.account-icon > a > img {
+  width: 1.5625vw;
+  height: 2.8703703703703702vh;
+  position: absolute;
+  top: 0.9259259259259258vh;
+  left: 0.5208333333333333vw;
+}
+
+.signUp-guide {
+  display: flex;
+  width: 23.4375vw;
+  gap: 1.0416666666666665vw;
+  justify-content: center;
+  align-items: center;
+}
+
+.signUp-guide > p {
+  color: #424242;
+  text-align: right;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7291666666666666vw;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 1.25vw;
+}
+
+.signUp-guide > button {
+  color: #43311c;
+  font-family: "Inter", sans-serif;
+  font-size: 0.7291666666666666vw;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.25vw;
+  border: none;
+  background: none;
+}
