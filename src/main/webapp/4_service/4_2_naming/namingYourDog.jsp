@@ -6,7 +6,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script type="text/javascript" src="4_service/js/namingYourDog.js"></script>
+<script type="module" src="4_service/js/namingYourDog.js"></script>
+<script type="text/javascript" src="4_service/js/namingHideAndShow.js"></script>
 <link rel="stylesheet" href="4_service/css/namingYourDog.css">
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,7 +16,6 @@
 	rel="stylesheet" />
 </head>
 <body>
-
 	<div class="container">
 		<p>Dog name generator</p>
 		<!-- 성별 선택 -->
@@ -111,7 +111,8 @@
 				</div>
 			</div>
 		</div>
-		<button id="send" style="display:none;">generate!</button>
+		<button id="send" style="display:none;">Generate!</button>
+		<button onclick="location.href='NamingMainC'" id="resend" style="display:none;">Retry!</button>
 		<div class="loadingwords" id="loadingwords">"We are generating the name matched perfectly well with your lovely dog!"</div>
 	</div>
 </body>

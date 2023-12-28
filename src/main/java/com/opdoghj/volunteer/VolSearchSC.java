@@ -20,5 +20,4 @@ public class VolSearchSC extends HttpServlet {
 		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
-
 }

@@ -1,80 +1,13 @@
-//import config from "./config.js";
-//const {API_KEY} = config;
 
-window.onload = function () {
-hideButtom();
-}
+import config from "./config.js";
+const {API_KEY} = config;
 
-let gender, color, hairLength, personality;
-
-function showLoading() {
-  document.getElementById("loading").style.display = "block";
-  document.getElementById("loadingwords").style.display = "block";
-}
-
-function hideLoading() {
-  document.getElementById("loading").style.display = "none";
-  document.getElementById("loadingwords").style.display = "none";
-}
-function showButtom(){
-	document.getElementById("send").style.display = "block";
-}
-function hideButtom(){
-	document.getElementById("send").style.display = "none";
-}
-
-function selectGender(selectedGender) {
-  gender = selectedGender;
-  showOptions("colorOptions");
-}
-
-function selectColor(selectedColor) {    
-  color = selectedColor;
-  showOptions("hairLengthOptions");
-}
-
-function selectHairLength(selectedHairLength) {
-  hairLength = selectedHairLength;
-  showOptions("personalityOptions");
-}
-
-function selectPersonality(selectedPersonality) {
-  personality = selectedPersonality;
-  showButtom();
-  const generatedName = generateName();
-  const personalityOptions = document.getElementById("personalityOptions");
-  personalityOptions.innerHTML = `<h2>You've just selected ${gender}, ${color} hair color, ${hairLength} style, and ${personality} personality! Can you push the generate button?!</h2>`
-  /* updateSelectedText(
-    `${generatedName}을(를) 선택했어여!! generate 버튼을 눌러주세용!!`
-  ); */
-  generateName();
-}
-
-function showOptions(optionsId) {
-  const optionsElements = [
-	"send",
-    "genderOptions",
-    "colorOptions",
-    "hairLengthOptions",
-    "personalityOptions",
-  ];
-
-  for (const elementId of optionsElements) {
-    document.getElementById(elementId).style.display =
-      elementId === optionsId ? "block" : "none";
-  }
-}
-
-function generateName() {
-  return `${gender} ${color} ${hairLength} ${personality}`;
-}
-
+console.log("api hello ?")
 
 document.addEventListener("DOMContentLoaded", function () {
   document.querySelector("#send").addEventListener("click", async function () {
 	showLoading();
     // generateName 함수 호출 위치 수정
-	const apiKey = "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";
     var template = `<div class="line">
         <span class="chat-box mine">Can you name a dog that gender is ${gender},has ${color} hair color, ${hairLength} style and ${personality} personality? Also explain the reason why you recommand the name!</span>
     	</div>`; 
@@ -92,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: `Bearer ${apiKey}`,
+            Authorization: `Bearer ${API_KEY}`,
           },
           body: JSON.stringify({
             model: "gpt-3.5-turbo-0613",
@@ -108,7 +41,8 @@ document.addEventListener("DOMContentLoaded", function () {
       console.log("API 호출 결과:", result);
 
 	  hideLoading();
-
+	  hideButtom();
+	  showRetry();
       if (result.choices && result.choices.length > 0) {
 	
 		document.querySelector(".chat-content").innerHTML = "";
@@ -127,8 +61,10 @@ document.addEventListener("DOMContentLoaded", function () {
         document
           .querySelector(".chat-content")
           .insertAdjacentHTML("beforeend", assistantTemplate);
-		   
-      } else {
+		
+		
+      } 
+		else {
         console.log("API 응답에 choices가 없습니다.");
       }
     } catch (error) {

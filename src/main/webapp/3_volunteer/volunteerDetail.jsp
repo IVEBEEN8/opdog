@@ -32,11 +32,11 @@
 						<button type="button" onclick="location.href='VSeoulC'">Go list</button>
 
 						<button type="button"
-							onclick="location.href='VolunteerModiC?no=${volunteer.v_no}'">
+							onclick="location.href='VolunteerModiC?no=${vol.v_no}'">
 							Modify</button>
 
 						<button type="button"
-							onclick="location.href='VolunteerDelC?no=${volunteer.v_no}'">
+							onclick="location.href='VolunteerDelC?no=${vol.v_no}'">
 							Delete</button>
 					</div>
 			</div>
