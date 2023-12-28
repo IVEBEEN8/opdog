@@ -6,6 +6,7 @@
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="3_volunteer/css/volunteerDetail.css" />
+<script src="3_volunteer/js/volunteer.js"></script>
 </head>
 <body>
 	<form class="container" action="VolunteerDetailC" method="post"
@@ -36,7 +37,7 @@
 							Modify</button>
 
 						<button type="button"
-							onclick="location.href='VolunteerDelC?no=${vol.v_no}'">
+							onclick = "deleteMovie('${vol.v_no}')">
 							Delete</button>
 					</div>
 			</div>

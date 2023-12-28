@@ -206,7 +206,7 @@ function copyText(){
     window.getSelection().addRange(range);
     document.execCommand("copy");
     window.getSelection().removeAllRanges();
-    alert("주소가 복사되었습니다.");
+    alert("You've just copied the address!");
     }
 
 
