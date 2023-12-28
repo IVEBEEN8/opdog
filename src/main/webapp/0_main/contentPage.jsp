@@ -69,7 +69,7 @@
 	</header>
 
 	<!--  컨텐츠페이지 -->
-	<div align="center">
+	<div align="center"  class="contentBox">
 		<div><jsp:include page="${contentPage }"></jsp:include></div>
 	</div>
 

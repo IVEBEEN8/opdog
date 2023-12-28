@@ -81,6 +81,8 @@ public class MyPageDAO {
 
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
 		}
 
 	}
