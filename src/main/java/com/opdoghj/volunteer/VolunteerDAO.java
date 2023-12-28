@@ -1,5 +1,6 @@
 package com.opdoghj.volunteer;
 
+import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -110,7 +111,7 @@ public class VolunteerDAO {
 	}
 
 	public static void getPost(HttpServletRequest request) {
-
+		System.out.println("modify중 들어왔음!");
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -258,13 +259,13 @@ public class VolunteerDAO {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "update volunteer" + "set v_img=?, v_title=?,v_txt=?, v_status=? where v_no=?";
+		String path = request.getServletContext().getRealPath("3_volunteer/newImg");
+		String sql = "update volunteer" + " set v_img=?, v_title=?,v_txt=?, v_status=? where v_no=?";
 		try {
+
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
 			System.out.println("연결성공~!");
-
-			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
 			System.out.println(path);
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
@@ -300,8 +301,12 @@ public class VolunteerDAO {
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
+				if (newFile != null) {
+					File f = new File(path + "/" + oldFile);
+					f.delete();
+				}
 			}
-
+			request.setAttribute("no", no);
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("업로드 실패..₍ᐢㅠ༝ㅠᐢ₎");
