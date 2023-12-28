@@ -15,18 +15,18 @@
 }
 
 .main-title {
-	color:rgba(67, 49, 28, 0.9);
+	color: rgba(67, 49, 28, 0.9);
 	font-family: "DM Sans", sans-serif;
 	font-size: 30px;
 	font-weight: 600;
 	margin-top: 10vh;
-	letter-spacing:-1px
+	letter-spacing: -1px
 }
 
 .second-title {
 	display: flex;
 	justify-content: center;
-	color:rgba(67, 49, 28, 0.9);
+	color: rgba(67, 49, 28, 0.9);
 	font-size: 12px;
 	margin-top: 1.5vh;
 }
@@ -53,7 +53,7 @@
 }
 
 .third-title {
-	color:rgba(67, 49, 28, 0.9);
+	color: rgba(67, 49, 28, 0.9);
 	font-weight: 400;
 	font-size: 15px;
 	font-family: "DM Sans", sans-serif;
@@ -64,14 +64,16 @@
 
 input:focus {
 	outline: 2px solid rgba(250, 234, 177, 1); /* outline 테두리 속성 수정 */
+}
+select:focus{
+	outline: 2px solid rgba(250, 234, 177, 1); /* outline 테두리 속성 수정 */
+}
 
-} 
 input::placeholder {
 	color: #B6B2B2;
 	font-size: 12px;
 	font-feature-settings: 'clig' off, 'liga' off;
 	padding-left: 2vw;
-
 }
 
 .full-name {
@@ -82,14 +84,14 @@ input::placeholder {
 	width: 27vw;
 	height: 3.5vh;
 	margin-right: 0.5vw;
-	padding:2px;
+	padding: 2px;
 }
 
 .input-box {
 	width: 56.2vw;
 	height: 3.5vh;
 	margin-top: 0.8vh;
-	padding:2px;
+	padding: 2px;
 }
 
 .checkbox {
@@ -102,11 +104,16 @@ input::placeholder {
 	letter-spacing: -0.5px;
 }
 
+.check-label {
+	position: relative;
+	top: -0.3vh;
+}
+
 .continue-btn {
 	width: 56.2vw;
 	height: 6vh;
 	border: none;
 	background: #9e6f21;
 	color: white;
-    font-family: "DM Sans", sans-serif;
+	font-family: "DM Sans", sans-serif;
 }

@@ -54,3 +54,9 @@ src/main/webapp/WEB-INF/web.xml
 src/main/java/com/opdoghw/centerinfo/DBManager_khw.java
 opdog/src/main/webapp/4_service/js/config.js
 config.js
+*.java
+*.svg
+*.jpeg
+*.mp4
+*.png
+*.jpg
