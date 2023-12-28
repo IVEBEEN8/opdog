@@ -116,7 +116,7 @@ public static void getFashion(HttpServletRequest request) {
 
 	public static void paging(int page, HttpServletRequest request) {
 		request.setAttribute("curPageNo", page);
-		int cnt = 15; 		// 한페이지당 보여줄 개수
+		int cnt = 12; 		// 한페이지당 보여줄 개수
 		int total = fashions.size();		// 총 데이터 개수 
 		// 총페이지수 
 		int pageCount = (int) Math.ceil((double)total/cnt);
