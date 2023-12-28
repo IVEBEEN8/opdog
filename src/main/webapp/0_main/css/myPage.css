@@ -1,17 +1,34 @@
 @charset "UTF-8";
+html,
+body {
+
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "DM Sans", sans-serif;
+  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
+  font-size: 10pt;
+  scroll-behavior: smooth;
+}
+
 .myPageContainer{
 	border: 1px solid black;
-	width: 1500px;
-	height: 1500px;
+	width: 100vw;
+	height: 80vh;
+	position: relative;
+	padding-bottom:10vw;
 	
 }
-.totalpage{
+.totalPage{
 	border: 1px solid black;
-	width: 1200px;
-	height: 1200px;
+	width: 66%;
+	height: 90%;
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	
 }
 .buttonBox{
 	border: 1px solid black;
@@ -26,19 +43,19 @@
 .totalInnerPage{
 	border: 1px solid black;
 	width: 80%;
-	height: 100%;
+	height: 80%;
 }
 .innerPage{
 	border: 1px solid black;
-	width: 100%;
-	height: 100%;
+	width: 640px;
+	height: 640px;
 	position: absolute;	
 }
 .p1{
-	display: block;
+	display: none;
 }
 .p2{
-	display: none;
+	display: block;
 }
 .p3{
 	display: none;

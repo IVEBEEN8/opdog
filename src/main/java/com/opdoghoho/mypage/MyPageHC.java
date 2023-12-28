@@ -11,9 +11,12 @@ import com.opdoghw.login.LoginDAO;
 @WebServlet("/MyPageHC")
 public class MyPageHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		request.setAttribute("contentPage", "../0_main/myPage/myPageMain.jsp");
+		LoginDAO.loginCheck(request);
 		MyPageDAO.likeLoad(request);
-//		MyPageDAO.infoLoad(request);
-		request.getRequestDispatcher("0_main/myPage/myPageMain.jsp").forward(request, response);
+		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+		
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
