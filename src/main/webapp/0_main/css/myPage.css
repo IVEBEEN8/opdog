@@ -16,18 +16,18 @@ body {
 }
 
 .myPageContainer{
-	border: 1px solid black;
 	width: 100vw;
-	height: 80vh;
+	height: 95vh;
 	position: relative;
-	padding-bottom:10vw;
-	
+	padding-top: 7vh;	
 }
 .totalPage{
 	border: 1px solid black;
-	width: 66%;
-	height: 90%;
+	width: 69.21875vw;
+	height: 87.68518518518519vh;
 	display: flex;
+	margin: 3vh 0vw 0vh 0vw;
+	flex-wrap: wrap;
 	
 }
 .buttonBox{
@@ -42,13 +42,15 @@ body {
 }
 .totalInnerPage{
 	border: 1px solid black;
-	width: 80%;
-	height: 80%;
+	width: 51.24999999999999vw;
+	height: 84.35185185185186vh;
+	position: absolute;
+	margin: 0.8854166666666666vw 2.685185185185185vh 0.9895833333333333vw 29.259259259259256vh;
 }
 .innerPage{
 	border: 1px solid black;
-	width: 640px;
-	height: 640px;
+	width: 51.24999999999999vw;
+	height: 84.35185185185186vh;
 	position: absolute;	
 }
 .p1{
