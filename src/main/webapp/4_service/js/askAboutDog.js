@@ -3,6 +3,7 @@ const { API_KEY } = config;
 
 window.onload = function () {
 	console.log(11);
+
   // 페이지가 로드될 때 input 값이 설정되어 있다면 비우기
   // 페이지가 로드될 때 'send' 버튼을 자동으로 클릭
   document.getElementById("send").click();
