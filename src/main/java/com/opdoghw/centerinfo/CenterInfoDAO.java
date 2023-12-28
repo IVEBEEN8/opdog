@@ -24,7 +24,7 @@ public class CenterInfoDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from centerinfo";
+		String sql = "select * from centerinfo1";
 		CenterInfoDTO c = null;
 		ArrayList<CenterInfoDTO> center = new ArrayList<CenterInfoDTO>();
 		try {
@@ -61,7 +61,7 @@ public class CenterInfoDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from centerinfo where c_lat=? and c_lng=?"; // 나중에추가해보기. 데이터베이스 lng값이 소수점 1자리가 모자람.
+		String sql = "select * from centerinfo1 where c_lat=? and c_lng=?"; // 나중에추가해보기. 데이터베이스 lng값이 소수점 1자리가 모자람.
 		try {
 			String lat = request.getParameter("lat");
 			String lng = request.getParameter("lng");
@@ -155,17 +155,25 @@ public class CenterInfoDAO {
 
 			// db에 연결하기!
 			con = DBManager_khw.connect();
+
 			for (Object object : items) {
-				String sql = "insert into centerinfo values (centerinfo_seq.nextval,?,?,?,?,?,?,?,?,?)";
+				String sql = "insert into centerinfo1 values (centerinfo1_seq.nextval,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
 
 				JSONObject item = (JSONObject) object;
 
-				pstmt.setString(1, (String) item.get("careNm"));
-				pstmt.setString(2, (String) item.get("careAddr"));
+				String careNm = (String) item.get("careNm");
+				String careAddr = (String) item.get("careAddr");
+
+				String translatedCareNm = papagoTranslate(careNm);
+				String translatedCareAddr = papagoTranslate(careAddr);
+
+				pstmt.setString(1, translatedCareNm);
+				pstmt.setString(2, translatedCareAddr);
 
 				Double lat = (Double) item.get("lat");
 				Double lng = (Double) item.get("lng");
+
 				if (lat != null && lng != null) {
 					pstmt.setDouble(3, lat);
 					pstmt.setDouble(4, lng);
@@ -199,6 +207,55 @@ public class CenterInfoDAO {
 
 	}
 
+	@SuppressWarnings("unused")
+	private static String papagoTranslate(String text) {
+		try {
+			String clientId = "G_LumDg1eMO6O8wBrhcP";
+			String clientSecret = "WAFpoo4142";
+			// String clientId = "f8E1dHSfLIZGwep16ykM";// 애플리케이션 클라이언트 아이디값";
+			// String clientSecret = "g9Ae4Vludr";
+			// String clientId = "6c4er8GLss670lWmpB12";
+			// String clientSecret = "wONSCvVVKS";
+			String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
+
+			URL url = new URL(apiURL);
+			HttpURLConnection con = (HttpURLConnection) url.openConnection();
+			con.setRequestMethod("POST");
+			con.setRequestProperty("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+			con.setRequestProperty("X-Naver-Client-Id", clientId);
+			con.setRequestProperty("X-Naver-Client-Secret", clientSecret);
+
+			String postParams = "source=ko&target=en&text=" + URLEncoder.encode(text, "UTF-8");
+			con.setDoOutput(true);
+			con.getOutputStream().write(postParams.getBytes("UTF-8"));
+
+			int responseCode = con.getResponseCode();
+			BufferedReader br;
+			if (responseCode == 200) { // 정상 호출
+				br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			} else { // 에러 발생
+				br = new BufferedReader(new InputStreamReader(con.getErrorStream()));
+			}
+
+			StringBuilder response = new StringBuilder();
+			String line;
+			while ((line = br.readLine()) != null) {
+				response.append(line);
+			}
+			br.close();
+
+			JSONParser jp = new JSONParser();
+			JSONObject resultData = (JSONObject) jp.parse(response.toString());
+			JSONObject obj = (JSONObject) resultData.get("message");
+			obj = (JSONObject) obj.get("result");
+			return (String) obj.get("translatedText");
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			return null;
+		}
+	}
+
 	@SuppressWarnings("unchecked")
 	public static void searchCenter(HttpServletRequest request, HttpServletResponse response) {
 
@@ -207,7 +264,7 @@ public class CenterInfoDAO {
 		ResultSet rs = null;
 		String searchField = request.getParameter("searchField");
 		String searchText = request.getParameter("searchText");
-		String sql = "select * from centerinfo where " + searchField + " like ?";
+		String sql = "select * from centerinfo1 where " + searchField + " like ?";
 
 		JSONArray searchedInfo = new JSONArray();
 		JSONObject si = null;

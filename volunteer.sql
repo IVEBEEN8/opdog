@@ -13,6 +13,11 @@ create sequence volunteer_seq;
 
 select * from volunteer;
 
+
+ALTER TABLE volunteer
+ADD CONSTRAINT fk_a_no foreign KEY(a_no) references opdogaccount (a_no);
+
+
 insert into volunteer values(volunteer_seq.nextval, ?,?,?,sysdate,sysdate,?,?);
 
 drop table volunteer;

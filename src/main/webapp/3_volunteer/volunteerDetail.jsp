@@ -6,6 +6,7 @@
 <meta charset="UTF-8" />
 <title>Insert title here</title>
 <link rel="stylesheet" href="3_volunteer/css/volunteerDetail.css" />
+<script src="3_volunteer/js/volunteer.js"></script>
 </head>
 <body>
 	<form class="container" action="VolunteerDetailC" method="post"
@@ -32,11 +33,11 @@
 						<button type="button" onclick="location.href='VSeoulC'">Go list</button>
 
 						<button type="button"
-							onclick="location.href='VolunteerModiC?no=${volunteer.v_no}'">
+							onclick="location.href='VolunteerModiC?no=${vol.v_no}'">
 							Modify</button>
 
 						<button type="button"
-							onclick="location.href='VolunteerDelC?no=${volunteer.v_no}'">
+							onclick = "deleteMovie('${vol.v_no}')">
 							Delete</button>
 					</div>
 			</div>

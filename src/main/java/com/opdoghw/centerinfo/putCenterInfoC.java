@@ -13,7 +13,7 @@ public class putCenterInfoC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		request.setAttribute("contentPage", "hw/putTheCenterInfo.jsp");
+		request.setAttribute("contentPage", "1_adopt/1_2_shelter/putTheCenterInfo.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 	}
 
