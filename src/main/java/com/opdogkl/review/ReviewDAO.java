@@ -62,10 +62,10 @@ public class ReviewDAO {
 									// img/title/txt/created/updated/op_email(foreign key)
 		String sql = "insert into review_kl values (?,?,?,sysdate,sysdate,review_kl_seq.nextval)";
 //		서버상 경로
-//		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
+		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
 		
 		// 겨레 local path
-		String path = "1_adopt/1_4_review/imgFolder";
+//		String path = "1_adopt/1_4_review/imgFolder";
 		System.out.println(path);
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
