@@ -50,12 +50,13 @@
 									</div>
 								</div>
 								<div class="post-text">
-									<div class="bigTxt">title: ${volunteer.v_title }</div>
-									<div class="smallTxt">description: ${volunteer.v_txt }</div>
+									<div class="bigTxt">${volunteer.v_title }</div>
+									<div class="smallTxt">${volunteer.v_txt }</div>
 								</div>
 								<div class="post-info">
 									<div class="post-user">
 										<img src="3_volunteer/img/profileIcon.png" alt="" />id
+										<div>| ${volunteer.v_created }</div>
 									</div>
 								</div>
 							</div>

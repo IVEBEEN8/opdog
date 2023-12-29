@@ -14,8 +14,10 @@ html, body {
 	font-size: 10pt;
 	scroll-behavior: smooth;
 }
-a{
+
+a {
 	text-decoration: none;
+	color:#000;
 }
 
 table {
@@ -159,6 +161,7 @@ input:focus {
 	flex-direction: column;
 	position: relative;
 	top: 3vw;
+	margin-left: 1vw;
 }
 
 .post-left {
@@ -184,11 +187,19 @@ input:focus {
 	font-weight: 600;
 	line-height: normal;
 	text-align: center;
+	top:-17px;
 }
 
 .post-btn-txt>p {
 	top: -0.5vw;
 	position: relative;
+}
+
+.post-text{
+	display:flex;
+	flex-direction: column;
+	gap:1vw;
+	margin-left: 0.5vw;
 }
 
 .bigTxt {
@@ -264,6 +275,12 @@ input:focus {
 	font-family: "DM Sans", sans-serif;
 	font-size: 1vw;
 	line-height: 50%;
+	cursor: pointer;
+}
+
+.bottom>form>button:hover{
+	background:rgba(67, 49, 28, 0.7);
+	color:white;
 }
 
 .pagebox {

@@ -15,7 +15,6 @@ public class VSeoulC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// 게시글 전체 조회하는 일
-		LoginDAO.LoginAccount(request);
 		LoginDAO.loginCheck(request);
 		VolunteerDAO.getAllpost(request);
 

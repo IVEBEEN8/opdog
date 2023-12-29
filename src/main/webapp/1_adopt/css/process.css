@@ -15,25 +15,34 @@ html, body {
 }
 
 .container {
-	padding-top: 6vw;
+	padding-top: 6.5vw;
 	padding-bottom: 2vw;
 }
 
-.first-title {
-	margin: 0;
+.first-title>img {
+	width: 100vw;
+	opacity: 0.8;
+}
+
+.first-title>p {
 	color: rgba(67, 49, 28, 0.9);
-	text-align: center;
 	font-family: "Inter", sans-serif;
 	font-size: 2vw;
 	font-style: normal;
 	font-weight: 800;
 	line-height: normal;
 	letter-spacing: -1.2px;
-	text-shadow: -1px 0 #faeab199, 0 1px #faeab199, 1px 0 #faeab199, 0 -1px
-		#faeab199;
+	width: 20vw;
+	display: flex;
+	height: 3vw;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2vw;
+	background: #faeab178;
+	border: none;
 }
 
-.second-title {
+/* .second-title {
 	width: 25vw;
 	height: 3vw;
 	border-radius: 2vw;
@@ -50,25 +59,103 @@ html, body {
 	height: 3vw;
 	font-family: "Inter", sans-serif;
 	font-weight: 400;
-	color:#43311CE5;
+	color: #43311CE5;
+} */
+.checklist-set {
+	padding-top: 1.5vw;
+	display: flex;
+	flex-direction: column;
+	gap: 2vw;
+	justify-content: center;
+	align-items: center;
+}
+
+.checklist {
+	display: flex;
+	width: 80vw;
+	background: #fdf9ec;
+	border-radius: 2vw;
+	flex-direction: column;
+	margin: 1vw;
+	padding: 1vw;
 }
 
 .checklist-title {
-	background-color: aqua;
+	color: #43311CE5;
+	display: flex;
+	gap: 1vw;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.checklist-title>img {
+	width: 2vw;
+	height: 2vw;
+}
+
+.checklist-title>p {
+	font-size: 1.6vw;
+	font-weight: 700;
+}
+
+li {
+	list-style: none;
+	font-size: 1.2vw;
+	display: flex;
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	margin: 1vw 0px;
+	align-items: center;
 }
 
 .checklist-txt {
-	background-color: antiquewhite;
+	margin: auto;
+	display: flex;
+}
+
+li>img {
+	width: 1vw;
+	height: 1vw;
 }
 
 .notice {
-	border: 2px solid red;
+	position: relative;
+	top: 5vw;
+	border: solid 2px rgba(158, 111, 33, 1);
+	width: 60vw;
+	padding: 5vw 0;
+	margin-bottom: 5vw;
+	margin-top: 5vw;
+	border-radius: 2vw;
 }
 
-.notice-title {
-	background-color: yellow;
+.notice>img {
+	position: absolute;
+	top: -4vw;
+	left: 27vw;
 }
 
-.notice-txt {
-	background-color: yellowgreen;
+.notice-title>p {
+	font-size: 3vw;
+	font-weight: 700;
+	color: rgba(158, 111, 33, 1);
+}
+
+.notice-txt>ul>li {
+	color: #43311CE5;
+	font-size: 1.5vw;
+	font-weight: 400;
+}
+
+.notice-txt>p {
+	list-style: none;
+	font-size: 1.2vw;
+	display: flex;
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	margin: 3vw 0 0 0;
+	align-items: center;
+	color: #b20a0ae5;
+	font-weight: 500;
 }
