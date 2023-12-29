@@ -34,7 +34,7 @@
 				<div class="cate-thumb">
 					<a class="cate-link" onclick="location.href='FashionC'"> <img
 						class="cate-img" alt="" src="2_shop/img/fashion_icon.png">
-						<div class="cate-txt">fashion</div>
+						<div class="cate-txt">Fashion</div>
 					</a>
 				</div>
 			</div>
@@ -43,7 +43,7 @@
 				<div class="cate-thumb">
 					<a class="cate-link" onclick="location.href='FeedC'"> <img
 						class="cate-img" alt="" src="2_shop/img/feed_icon.png">
-						<div class="cate-txt">feed</div>
+						<div class="cate-txt">Feed</div>
 					</a>
 				</div>
 			</div>
@@ -52,7 +52,7 @@
 				<div class="cate-thumb">
 					<a class="cate-link" onclick="location.href='SnackC'"> <img
 						class="cate-img" alt="" src="2_shop/img/snack_icon.png">
-						<div class="cate-txt">snack</div>
+						<div class="cate-txt">Snack</div>
 					</a>
 				</div>
 			</div>
@@ -61,14 +61,30 @@
 				<div class="cate-thumb">
 					<a class="cate-link" onclick="location.href='ToyC'"> <img
 						class="cate-img" alt="" src="2_shop/img/toy_icon.png">
-						<div class="cate-txt">toy</div>
+						<div class="cate-txt">Toy</div>
 					</a>
 				</div>
 			</div>
 		</div>
-
-		<input type="radio" name="sort" value="high"> 높은가격순
-    	<input type="radio" name="sort" value="low"> 낮은가격순
+		<div class="search-price">
+			<div class="search">
+				<div>
+					<input type="text" id="search" placeholder="Search">
+				</div>
+				<div class="search-img">
+					<img alt="" src="2_shop/img/Search.png"
+						onclick="location.href='FashionSearchC?search='+document.getElementById('search').value">
+				</div>
+			</div>
+			<div class="search-zero">${message}</div>
+			<div class="price-order" align="right">
+				<input type="radio" name="sort" value="low"
+					onclick="location.href='FashionSortC?sort=low'"> High price
+				order &nbsp; <input type="radio" name="sort" value="high"
+					onclick="location.href='FashionSortC?sort=high'"> Low price
+				order
+			</div>
+		</div>
 		<div class="items-container">
 			<div class="items">
 				<c:forEach varStatus="" var="fs" items="${fashions }">
@@ -85,7 +101,8 @@
 								<div class="item-line">
 									<div id="item-line"></div>
 								</div>
-								<div class="item-price" align="left">${fs.fs_price } &#8361;</div>
+								<div class="item-price" align="left">${fs.fs_price }
+									&#8361;</div>
 							</div>
 						</div>
 					</a>
@@ -96,30 +113,32 @@
 
 		<hr>
 
-		<!-- 페이지 처리 -->
-		<a href="FashionPageC?p=1">[맨처음]</a>
-		<c:choose>
-			<c:when test="${curPageNo != 1 }">
-				<a href="FashionPageC?p=${curPageNo -1 }"><button>◀</button></a>
-			</c:when>
-			<c:otherwise>
-				<button class="이전버튼">◀</button>
-			</c:otherwise>
-		</c:choose>
+		<div class="page-controller">
+			<!-- 페이지 처리 -->
+			<a href="FashionPageC?p=1">[맨처음]</a>
+			<c:choose>
+				<c:when test="${curPageNo != 1 }">
+					<a href="FashionPageC?p=${curPageNo -1 }"><button>◀</button></a>
+				</c:when>
+				<c:otherwise>
+					<button class="이전버튼">◀</button>
+				</c:otherwise>
+			</c:choose>
 
-		<c:forEach begin="1" end="${pageCount }" var="n">
-			<a href="FashionPageC?p=${n }"> [${n }] </a>
-		</c:forEach>
+			<c:forEach begin="1" end="${pageCount }" var="n">
+				<a href="FashionPageC?p=${n }"> [${n }] </a>
+			</c:forEach>
 
-		<c:choose>
-			<c:when test="${pageCount != curPageNo }">
-				<a href="FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
-			</c:when>
-			<c:otherwise>
-				<button class="다음버튼">▶</button>
-			</c:otherwise>
-		</c:choose>
-		<a href="FashionPageC?p=${pageCount }">[맨끝]</a>
+			<c:choose>
+				<c:when test="${pageCount != curPageNo }">
+					<a href="FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
+				</c:when>
+				<c:otherwise>
+					<button class="다음버튼">▶</button>
+				</c:otherwise>
+			</c:choose>
+			<a href="FashionPageC?p=${pageCount }">[맨끝]</a>
+		</div>
 
 
 
