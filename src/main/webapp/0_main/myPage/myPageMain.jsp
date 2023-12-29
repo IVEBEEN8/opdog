@@ -11,30 +11,54 @@
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script src="0_main/js/myPage.js"></script>
-	
+
 </head>
 <body>
 
 	<div class="myPageContainer">
 		<div class="totalPage">
+			<div class="infoTag">
+				<div class="tagImg">
+					<img alt="" src="0_main/img/Ellipse1.svg" style="width: 100%;">
+				</div>
+				<div class="tagText">
+					<div class="tagText-name">名字</div>
+					<div class="tagText-op">紹介</div>
+				</div>
+			</div>
 			<div class="buttonBox">
-				<div>img desu~</div>
 				<div id="myPageButton" class="button" onclick="myPageButton()">my info</div>
 				<div id="likeButton" class="button" onclick="likeButton()">like</div>
 				<div id="pointButton" class="button" onclick="pointButton()">point</div>
 			</div>
+
 			<div class="totalInnerPage">
 				<div id="infoPage" class="innerPage p1">
-					<h1>mypageです〜</h1>
-					<div>info</div>
-					<div>ID: ${account.email }</div>
-					<div>First Name: ${account.firstname }</div>
-					<div>Last Name: ${account.lastname }</div>
-					<div>PW: ********</div>
-					<button onclick="location.href='UpdateInfoC'">change</button>
+					<div class="p1Inner">
+						<div>
+							<h1>My info</h1>
+						</div>
+						<div class="itemBoxP1">
+							<div class="columnBoxP1">
+								<div class="columnP1">ID</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
+							</div>
+							<div class="columnBoxP1">
+								<div class="columnP1">First Name</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.firstname }</div>
+							</div>
+							<div class="columnBoxP1">
+								<div class="columnP1">Last Name</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
+							</div>
+							<div class="columnBoxP1">
+								<div class="columnP1">addr</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.uprText }&nbsp;${account.orgText }</div>
+							</div>
+						</div>
+						<button class="updateButton" onclick="location.href='UpdateInfoC'">Update</button>
+					</div>
 				</div>
-
-
 				<div id="likePage" class="innerPage p2">
 					<div>my booked dog</div>
 					<c:forEach var="list" items="${list }" varStatus="status">
@@ -43,12 +67,10 @@
 						<button id="detail" value="${status.count }">상세보기</button>
 					</c:forEach>
 				</div>
-
 				<div id="pointPage" class="innerPage p3">
 					<div>point</div>
 				</div>
 			</div>
-
 
 		</div>
 	</div>
