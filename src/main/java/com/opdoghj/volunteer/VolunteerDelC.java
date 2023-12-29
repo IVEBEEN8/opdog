@@ -17,6 +17,7 @@ public class VolunteerDelC extends HttpServlet {
 		LoginDAO.loginCheck(request);
 		VolunteerDAO.deletePost(request);
 		VolunteerDAO.getAllpost(request);
+		VolunteerDAO.Paging(1, request);
 		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 

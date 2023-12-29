@@ -25,6 +25,7 @@ public class VolunteerDetailC extends HttpServlet {
 		LoginDAO.loginCheck(request);
 		//조회하는걸로 이동 
 		VolunteerDAO.getAllpost(request);
+		VolunteerDAO.Paging(1, request);
 		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
