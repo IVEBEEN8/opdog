@@ -1,64 +1,192 @@
 @charset "UTF-8";
-html,
-body {
 
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "DM Sans", sans-serif;
-  font-family: "Inter", sans-serif;
-  font-family: "Poppins", sans-serif;
-  font-size: 10pt;
-  scroll-behavior: smooth;
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+	font-size: 10pt;
+	scroll-behavior: smooth;
 }
 
-.myPageContainer{
+.myPageContainer {
 	width: 100vw;
 	height: 95vh;
 	position: relative;
-	padding-top: 7vh;	
+	padding-top: 7vh;
 }
-.totalPage{
-	border: 1px solid black;
+
+.totalPage {
 	width: 69.21875vw;
 	height: 87.68518518518519vh;
 	display: flex;
 	margin: 3vh 0vw 0vh 0vw;
 	flex-wrap: wrap;
-	
+	border-radius: 40px;
+	background-color: #F5F5F5;
 }
-.buttonBox{
+
+.infoTag {
+	border: 1px solid black;
+	width: 11.927083333333334vw;
+	height: 5.277777777777778vh;
+	margin: 6.203703703703703vh 54.947916666666664vw 76.66666666666667vh
+		2.34375vw;
+	position: absolute;
+	display: flex;
+}
+
+.tagImg {
+	width: 2.9166666666666665vw;
+	height: 5.277777777777778vh;
+}
+
+.tagText {
+	border: 1px solid black;
+	width: 8.854166666666668vw;
+	height: 5.277777777777778vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.tagText-name {
+	width: 6.510416666666667vw;
+	color: var(- -Secondary-crypto, #333);
+	font-family: Poppins;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.18px;
+}
+
+.tagText-op {
+	width: 6.510416666666667vw;
+	color: var(- -Secondary-crypto, #333);
+	font-family: Poppins;
+	font-size: 11px;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.11px;
+}
+
+.buttonBox {
 	border: 1px solid black;
 	width: 20%;
 	height: 100%;
 }
-.button{
+
+.button {
 	border: 1px solid black;
 	width: 100%;
 	height: 20%;
 }
-.totalInnerPage{
-	border: 1px solid black;
+
+.totalInnerPage {
 	width: 51.24999999999999vw;
 	height: 84.35185185185186vh;
 	position: absolute;
-	margin: 0.8854166666666666vw 2.685185185185185vh 0.9895833333333333vw 29.259259259259256vh;
+	margin: 1.574074074074074vh 1.5104166666666667vw 1.7592592592592593vh
+		16.458333333333332vw;
+	background-color: white;
+	border-radius: 30px;
 }
-.innerPage{
-	border: 1px solid black;
+
+.innerPage {
 	width: 51.24999999999999vw;
 	height: 84.35185185185186vh;
-	position: absolute;	
 }
-.p1{
-	display: none;
-}
-.p2{
+
+.p1 {
 	display: block;
 }
-.p3{
+
+.p2 {
 	display: none;
+}
+
+.p3 {
+	display: none;
+}
+
+.p1Inner {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	justify-content: center;
+}
+
+.itemBoxP1 {
+	gap: 1.6666666666666667vh;
+	display: flex;
+	flex-direction: column;
+}
+
+.columnBoxP1 {
+	width: 22.34375vw;
+	height: 5.555555555555555vh;
+	border-radius: 30px;
+	background: rgba(217, 217, 217, 0.30);
+	display: flex;
+}
+
+.columnP1 {
+	align-self: center;
+	width: 3vw;
+	margin-left: 2vw;
+	color: #000;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 1.05vw;
+	font-style: normal;
+	font-weight: 275;
+	line-height: normal;
+	letter-spacing: 0.05vh;
+	display: flex;
+	justify-content: center;
+}
+
+.textP1 {
+	width: 15.156249999999998vw;
+	height: 4.074074074074074vh;
+	position: absolute;
+	margin: 0.7407407407407408vh 0.625vw 0.7407407407407408vh 6.5625vw;
+	border-radius: 30px;
+	background: #FFF;
+	color: #000;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 1.2vw;
+	font-style: normal;
+	font-weight: 275;
+	line-height: normal;
+	letter-spacing: 0.05vh;
+}
+
+.updateButton {
+	border-radius: 20px;
+	border: 1px solid rgba(67, 49, 28, 0.90);
+	width: 6.25vw;
+	height: 3.3333333333333335vh;
+	background-color: white;
+	color: rgba(67, 49, 28, 0.90);
+	font-family: Poppins;
+	font-size: 1.2vh;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: 0.05vh;
+	margin-top: 5vh;
 }

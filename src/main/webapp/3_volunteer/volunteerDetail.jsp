@@ -7,6 +7,27 @@
 <title>Insert title here</title>
 <link rel="stylesheet" href="3_volunteer/css/volunteerDetail.css" />
 <script src="3_volunteer/js/volunteer.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+<script type="text/javascript">
+	$(function() {
+		$('#btn')
+				.click(
+						function() {
+							/* alert("Application Success - The shelter will contact you individually"); */
+							Swal
+									.fire({
+										icon : "success",
+										title : "Application Success - The shelter will contact you individually",
+										showConfirmButton : false,
+										timer : 1500
+									});
+						});
+
+	});
+</script>
 </head>
 <body>
 	<form class="container" action="VolunteerDetailC" method="post"
@@ -18,9 +39,13 @@
 						<p>${vol.v_status }</p>
 					</div>
 				</div>
-				<div>
-					<div class="post-title">${vol.v_title }</div>
-				</div>
+
+				<div class="post-title">${vol.v_title }</div>
+
+
+
+				<div class="post-date">${vol.v_created }</div>
+
 
 				<div class="imgWrapper">
 					<img src="3_volunteer/newImg/${vol.v_img }" />
@@ -29,18 +54,26 @@
 				<div class="post-txt">
 					<p>${vol.v_txt }</p>
 				</div>
-					<div class="btnWrap">
-						<button type="button" onclick="location.href='VSeoulC'">Go list</button>
+				<div class="btnWrap">
+					<button type="button" onclick="location.href='VSeoulC'">Go
+						list</button>
 
-						<button type="button"
-							onclick="location.href='VolunteerModiC?no=${vol.v_no}'">
-							Modify</button>
+					<button type="button"
+						onclick="location.href='VolunteerModiC?no=${vol.v_no}'">
+						Modify</button>
 
-						<button type="button"
-							onclick = "deleteMovie('${vol.v_no}')">
-							Delete</button>
-					</div>
+					<button type="button" onclick="deleteMovie('${vol.v_no}')">
+						Delete</button>
+				</div>
 			</div>
+
+			<div class="apply-btn">
+				<button type="button" id="btn">Apply for volunteer</button>
+			</div>
+			<div class="img-wrap">
+				<img alt="" src="3_volunteer/img/click.png">
+			</div>
+
 		</main>
 	</form>
 

@@ -14,7 +14,7 @@
 <body>
 <h1>review register</h1>
 	
-	 <form action="ReviewRegC" method="post" enctype="multipart/form-data" onsubmit="return checkForm();">
+	 <form action="ReviewRegC" method="post" enctype="multipart/form-data" accept-charset="UTF-8" onsubmit="return checkForm();">
 	<div>
 		<div>
 		<div>

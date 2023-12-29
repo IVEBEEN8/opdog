@@ -115,23 +115,37 @@ public static void getFashion(HttpServletRequest request) {
 	
 
 	public static void paging(int page, HttpServletRequest request) {
-		request.setAttribute("curPageNo", page);
-		int cnt = 12; 		// 한페이지당 보여줄 개수
-		int total = fashions.size();		// 총 데이터 개수 
-		// 총페이지수 
-		int pageCount = (int) Math.ceil((double)total/cnt);
-		request.setAttribute("pageCount", pageCount);
-		
-		
-		int start = total - (cnt * (page - 1));
-		
-		int end = (page == pageCount) ? -1 : start - (cnt + 1);
-		
-		ArrayList<Fashion> items = new ArrayList<Fashion>();
-		for (int i = start-1; i > end; i--) {
-			items.add(fashions.get(i));
+		try {
+			request.setAttribute("curPageNo", page);
+			int cnt = 12; 		// 한페이지당 보여줄 개수
+			int total = fashions.size();		// 총 데이터 개수 
+			System.out.println("생성된 배열길이 : " + fashions.size());
+			// 총페이지수 
+			int pageCount = (int) Math.ceil((double)total/cnt);
+			System.out.println("생성된 총페이지수 : " + pageCount);
+			request.setAttribute("pageCount", pageCount);
+			
+			
+			int start = total - (cnt * (page - 1));
+			System.out.println("시작 : " + start);
+			// 현재페이지가 총페이지수와 같아?
+			int end = (page == pageCount) ? -1 : start - (cnt + 1);
+			System.out.println("끝 : " + end);
+			System.out.println();
+			ArrayList<Fashion> items = new ArrayList<Fashion>();
+			for (int i = start-1; i > end; i--)
+			{
+				items.add(fashions.get(i));
+				
+			}
+			request.setAttribute("fashions", items);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("표시할 페이지가 없어요");
 		}
-		request.setAttribute("fashions", items);
+		
+		
 	}
 
 	
@@ -307,8 +321,21 @@ public static void getFashion(HttpServletRequest request) {
 			PreparedStatement pstmt = null;
 			ResultSet rs = null;
 			String sql = "";
-			String asc = "select * from fashion_kl order by fs_price asc";		// 낮은가격순
-			String desc = "select * from fashion_kl order by fs_price desc";	// 높은가격순
+			String asc = "select * from fashion_kl order by fs_price asc";		// 높은가격순
+			String desc = "select * from fashion_kl order by fs_price desc";	// 낮은가격순
+			
+			// 요청에서 정렬 값 가져오기
+		    String sort = request.getParameter("sort");
+			
+			if ("high".equals(sort)) {
+		        sql = "select * from fashion_kl order by fs_price desc"; // 낮은가격순
+		    } else if ("low".equals(sort)) {
+		        sql = "select * from fashion_kl order by fs_price asc";  // 높은가격순
+		    } else {
+		        // 유효한 값이 제공되지 않은 경우 기본 정렬 처리
+		        sql = "select * from fashion_kl"; // 기본 정렬
+		    }
+			
 			
 			try {
 				Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -339,6 +366,60 @@ public static void getFashion(HttpServletRequest request) {
 			} finally {
 				DBManager_khw.close(con, pstmt, rs);
 			}
+			
+		}
+
+		public static void searchFashion(HttpServletRequest request) {
+			
+			
+			Connection con = null;
+			PreparedStatement pstmt = null;
+			ResultSet rs = null;
+			String search = request.getParameter("search");
+//			String sql = "select * from fashion_kl where fs_title like '%" + search +"%'";
+			String sql = "select * from fashion_kl where lower(fs_title) like lower('%"+search+"%') or lower(fs_brand) like lower('%"+search+"%')";
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");
+				con = DBManager_khw.connect();
+				pstmt = con.prepareStatement(sql);
+				rs = pstmt.executeQuery();
+				Fashion fs = null;
+				fashions = new ArrayList<Fashion>();
+				
+				if (rs.next()) {
+						do {
+							fs = new Fashion();
+							fs.setFs_no(rs.getInt("fs_no"));
+							fs.setFs_img(rs.getString("fs_img"));
+							fs.setFs_title(rs.getString("fs_title"));
+							fs.setFs_price(rs.getInt("fs_price"));
+							fs.setFs_brand(rs.getString("fs_brand"));
+							
+							System.out.println(rs.getString("fs_title"));
+							System.out.println(rs.getString("fs_brand"));
+							fashions.add(fs);
+							
+							}
+					
+						while(rs.next());
+					request.setAttribute("fashions", fashions);
+					System.out.println("검색된 패션 어트리뷰트 생성!");
+					
+				} else {
+					getAllFashion(request); // 검색 결과가 없으면 getAllFashion() 호출
+		            request.setAttribute("message","No results were found for your search : " + search); // 메시지 설정
+		            System.out.println("검색결과없음");
+				}
+				
+				
+				
+			} catch (Exception e) {
+				e.printStackTrace();
+			} finally {
+				DBManager_khw.close(con, pstmt, rs);
+			}
+		
+			
 			
 		}
 	

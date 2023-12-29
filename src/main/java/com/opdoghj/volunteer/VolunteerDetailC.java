@@ -14,6 +14,7 @@ import com.opdoghw.login.LoginDAO;
 public class VolunteerDetailC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		LoginDAO.loginCheck(request);
 		VolunteerDAO.getPost(request);
 		System.out.println("11");
 		request.setAttribute("contentPage", "../3_volunteer/volunteerDetail.jsp");
