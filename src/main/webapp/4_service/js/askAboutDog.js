@@ -2,20 +2,22 @@ import config from "./config.js";
 const { API_KEY } = config;
 
 window.onload = function () {
-
-
+	var audiosend = new Audio('4_service/audio/send.m4a')
+	
   // 페이지가 로드될 때 input 값이 설정되어 있다면 비우기
   // 페이지가 로드될 때 'send' 버튼을 자동으로 클릭
   document.getElementById("send").click();
   if (document.getElementById("input").value.trim() !== "") {
     document.getElementById("input").value = "";
+	audiosend.play();
   }
 
   // 'send' 버튼 클릭 이벤트 핸들러
   document.getElementById("send").addEventListener("click", function () {
     // 'send' 버튼이 클릭되면 input 값 비우기
-
     document.getElementById("input").value = "";
+	audiosend.playbackRate = 1.2;
+	audiosend.play();
   });
 };
 
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("input").focus();
   document.querySelector("#send").addEventListener("click", async function () {
     document.getElementById("input").focus();
+	
     //이 코드는 템플릿 리터럴(template literal)을 사용하여 HTML 코드를 동적으로 생성하는 부분입니다.
     //여기서 생성된 HTML 코드는 사용자의 입력 값을 채팅 창에 표시하는 역할을 합니다.
     var template = `<div class="line"><span class="chat-box mine">${
@@ -78,6 +81,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const result = await response.json();
       console.log("API 호출 결과:", result);
+	  
 
       if (result.choices && result.choices.length > 0) {
         const chatgptMessage = result.choices[0].message.content;
@@ -92,7 +96,8 @@ document.addEventListener("DOMContentLoaded", function () {
         document
           .querySelector(".chat-box-wrap1-2")
           .insertAdjacentHTML("beforeend", assistantTemplate);
-
+		var audioreceive = new Audio('4_service/audio/receive.m4a');
+		audioreceive.play();
         //자동 스크롤!
         const chatBoxWrap = document.querySelector(".chat-box-wrap1-2");
         chatBoxWrap.scrollTop = chatBoxWrap.scrollHeight;
