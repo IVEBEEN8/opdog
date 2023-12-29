@@ -106,8 +106,9 @@
 			</div>
 
 			<div class="notice">
+			<img src="1_adopt/img/notice.jpeg">
 				<div class="notice-title">
-					<h2>Notice</h2>
+					<p>Notice</p>
 				</div>
 				<div class="notice-txt">
 					<ul>

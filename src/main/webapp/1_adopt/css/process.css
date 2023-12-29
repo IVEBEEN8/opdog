@@ -19,8 +19,8 @@ html, body {
 	padding-bottom: 2vw;
 }
 
-.first-title >img{
-	width:100vw;
+.first-title>img {
+	width: 100vw;
 	opacity: 0.8;
 }
 
@@ -39,7 +39,7 @@ html, body {
 	align-items: center;
 	border-radius: 2vw;
 	background: #faeab178;
-	border: none; 
+	border: none;
 }
 
 /* .second-title {
@@ -63,21 +63,21 @@ html, body {
 } */
 .checklist-set {
 	padding-top: 1.5vw;
-    display: flex;
-    flex-direction: column;
-    gap: 2vw;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	flex-direction: column;
+	gap: 2vw;
+	justify-content: center;
+	align-items: center;
 }
 
 .checklist {
 	display: flex;
-    width: 80vw;
-    background: #fdf9ec;
-    border-radius: 2vw;
-    flex-direction: column;
-    margin: 1vw;
-    padding: 1vw;
+	width: 80vw;
+	background: #fdf9ec;
+	border-radius: 2vw;
+	flex-direction: column;
+	margin: 1vw;
+	padding: 1vw;
 }
 
 .checklist-title {
@@ -120,13 +120,42 @@ li>img {
 }
 
 .notice {
-	border: 2px solid red;
+	position: relative;
+	top: 5vw;
+	border: solid 2px rgba(158, 111, 33, 1);
+	width: 60vw;
+	padding: 5vw 0;
+	margin-bottom: 5vw;
+	margin-top: 5vw;
+	border-radius: 2vw;
 }
 
-.notice-title {
-	background-color: yellow;
+.notice>img {
+	position: absolute;
+	top: -4vw;
+	left: 27vw;
 }
 
-.notice-txt {
-	background-color: yellowgreen;
+.notice-title>p {
+	font-size: 3vw;
+	font-weight: 700;
+	color: rgba(158, 111, 33, 1);
+}
+
+.notice-txt>ul>li {
+	color: #43311CE5;
+	font-size: 1.5vw;
+	font-weight: 400;
+}
+
+.notice-txt>p {
+	list-style: none;
+	font-size: 1.2vw;
+	display: flex;
+	font-family: "Poppins", sans-serif;
+	font-weight: 300;
+	margin: 3vw 0 0 0;
+	align-items: center;
+	color: #b20a0ae5;
+	font-weight: 500;
 }
