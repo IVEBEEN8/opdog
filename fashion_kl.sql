@@ -17,6 +17,9 @@ WHERE fs_no = 46;
 select * from fashion_kl;
 select * from fashion_kl order by fs_price asc;
 select * from fashion_kl order by fs_price desc;
+select * from fashion_kl where fs_brand like '%B%';
+
+select * from fashion_kl where lower(fs_title) like lower('%wrap%') or lower(fs_brand) like lower('%wrap%');
 
 
 
