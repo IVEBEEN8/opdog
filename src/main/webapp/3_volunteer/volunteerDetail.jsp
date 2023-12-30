@@ -22,7 +22,7 @@
 								icon : "success",
 								title : "Application Success - The shelter will contact you individually",
 								showConfirmButton : false,
-								timer : 1500
+								timer : 3000
 								});
 							});
 
