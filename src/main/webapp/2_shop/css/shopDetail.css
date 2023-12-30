@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+html, body {
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+}
+
+.main {
+	padding-top: 21.296296296296298vh;
+	padding-bottom: 25.925925925925924vh;
+}
+
+.item {
+	width: 57vw;
+	height: 50vh;
+	border-bottom: 2px solid rgba(228, 228, 230, 1);
+	border-top: 2px solid rgba(228, 228, 230, 1);
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.item-img-cover {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.item-img {
+	width: 20.833333333333336vw;
+}
+
+.item-info {
+	width: 27vw;
+}
+
+.item-brand {
+	color: rgba(82, 82, 82, 1);
+	font-family: Inter;
+	font-size: 1.5vw;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	letter-spacing: -0.052vw;
+	margin-top: 4vh;
+}
+
+.item-title {
+	font-family: Inter;
+	font-size: 1.3vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.052vw;
+	margin-top: 2vh;
+}
+
+.item-price-cover {
+	color: rgba(82, 82, 82, 1);
+	font-family: Inter;
+	font-size: 1.5vw;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+	letter-spacing: -0.052vw;
+	display: flex;
+	border-bottom: 2px solid rgba(228, 228, 230, 1);
+	border-top: 2px solid rgba(228, 228, 230, 1);
+	margin-top: 2vh;
+	margin-bottom: 1.5vh;
+	padding-top: 1.7vh;
+	padding-bottom: 1.7vh;
+}
+
+.item-price {
+	color: rgba(183, 39, 7, 1);
+	margin-left: 1.7vw;
+}
+
+.size-txt {
+	font-family: DM Sans;
+	font-size: 0.9375vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: 2.4074074074074074vh; /* 144.444% */
+	letter-spacing: -0.015625vw;
+	opacity: 0.5;
+}
+
+.size-box-cover {
+	display: flex;
+	border-bottom: 2px solid rgba(228, 228, 230, 1);
+	padding-bottom: 1.5vh;
+}
+
+.box {
+	width: 2.604166666666667vw;
+	height: 4.62962962962963vh;
+	border: 1px solid rgba(13, 13, 13, 1);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: DM Sans;
+	font-size: 0.8333333333333334vw;
+	font-weight: 600;
+	margin-right: 0.3vw;
+	margin-top: 0.5vh;
+	cursor: pointer;
+}
+
+.clicked {
+	background-color: black;
+}
+
+.sponsor-btn {
+	width: 18.229166666666664vw;
+	height: 4.62962962962963vh;
+	border: none;
+	background: #9e6f21;
+	color: white;
+	font-family: DM Sans;
+	font-size: 1.0416666666666665vw;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 2.037037037037037vh; /* 110% */
+	letter-spacing: -0.020833333333333336vw;
+	margin-left:1.2vw
+}
+
+.sponsor-btn-cover {
+	display: flex;
+	align-items: center;
+	height: 11.85vh;
+}

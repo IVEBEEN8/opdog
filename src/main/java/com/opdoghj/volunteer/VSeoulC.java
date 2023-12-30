@@ -17,9 +17,7 @@ public class VSeoulC extends HttpServlet {
 		// 게시글 전체 조회하는 일
 		LoginDAO.loginCheck(request);
 		VolunteerDAO.getAllpost(request);
-
 		VolunteerDAO.Paging(1, request);
-
 		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}

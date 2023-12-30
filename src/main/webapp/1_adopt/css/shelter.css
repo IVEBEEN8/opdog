@@ -57,17 +57,17 @@ body {
 }
 
 .centerinfo-print-wrap1-2{
-	position:relative;
-	border-radius: 20px;
-	background: #FFF;
-	box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
-	display: inline-flex;
-	margin-top:2vh;
-	margin-bottom:3vh;
-	width:27vw;
-	justify-content: center;
-	align-items: center;
-	gap: 11px;
+	height: max-content;
+    position: relative;
+    border-radius: 20px;
+    background: #FFF;
+    box-shadow: 0px 4px 15px 0px rgba(0, 0, 0, 0.15);
+    display: inline-flex;
+    margin-top: 2vh;
+    margin-bottom: 3vh;
+    width: 27vw;
+    justify-content: center;
+    align-items: center;
 	
 }
 .infobox-wrap1-2::-webkit-scrollbar {
@@ -97,16 +97,17 @@ body {
 	margin: 10px;
 }
 .center-title1-2{
-	margin: -3%;
-    position: absolute;
+    text-align: left;
+    margin: -3%;
+    position: relative;
     display: flex;
     margin-left: 0%;
     color: #000;
     font-family: Inter;
-    font-size: 114%;
+    font-size: 1vw;
     font-style: normal;
     font-weight: 700;
-    line-height: 136%;
+    line-height: 135%;
 }
 .center-icon1-2{	
 	width: 28px;
@@ -114,22 +115,22 @@ body {
 	margin-right: 1vw;
 }
 .icon2-1-2{
-	width:28px;
-	height:29px;
-	background-color: #5E81F4;
-	border-radius: 15px;
+	width: 1.5vw;
+    /* height: 29px; */
+    background-color: #5E81F4;
+    border-radius: 1vw;
 }
 .center-info1-2{
 	white-space:normal;
 	color: #3E4958;
 	font-family: Abel;
-	font-size: 15px;
+	font-size: 1vw;
 	font-style: normal;
 	font-weight: 400;
 	line-height: 136%; /* 20.4px */
 }
 .center-info-span1-2{
-	width: 114%;
+	width: 18vw;
 }
 .btn1-2{
 	text-align: right;
@@ -145,8 +146,9 @@ body {
     border-radius: 15px;
 }
 .icon1-2{
-	background-color: #5E81F4;
-	border-radius: 15px;
+	width: 1.5vw;
+    background-color: #5E81F4;
+    border-radius: 15px;
 }
 
 .showinthemap{
@@ -156,8 +158,9 @@ body {
 
 /* 여기서부턴 지도안에 박스!*/
 .overlaybox1-2 {
-	left: -18%;
-    top: -2vh;
+    border: 1px solid;
+       left: -19%;
+    top: -4vh;
     position: relative;
     width: 13vw;
     height: 35vh;
@@ -167,38 +170,31 @@ body {
     border-radius: 15px;
 }
 .mid-overlaybox1-2{
-	left: 0%;
+	
+    left: 0%;
     top: 7%;
-    position: absolute;
-    width: 91%;
-    height: 100%;
+    position: relative;
+    width: auto;
+    height: 31vh;
     text-align: left;
-    padding: 0% 5%;
-    padding-top: 0%;
-    padding-right: 5%;
-    padding-bottom: 0%;
-    padding-left: 5%;
     border-top: 1px solid gray;
-  	
-}
-.boxtitle1-2 {
-    height: 5%;
-    margin-top: 5.3%;
-    position: absolute;
-    z-index: 3;
-    margin-left: 22%;
-    background-color: white;
-    color: black;
-    font-size: 136%;
-    text-align: center;
-    font-weight: bold;
-    width: 45%;
 }
 
-.li-wrap1-2{
-	position: absolute;
-	width: 247px;
+.boxtitle1-2 {
+	height: 2vh;
+    margin-top: 1.2vh;
+    position: absolute;
+    z-index: 3;
+    margin-left: 3.4vw;
+    background-color: white;
+    color: black;
+    font-size: 1vw;
+    text-align: center;
+    font-weight: bold;
+    width: 6.2vw;
+
 }
+
 .first1-2 {
     position: relative;
     width: 247px;
@@ -207,13 +203,12 @@ body {
     background-size: cover; /* 이미지를 올바르게 표시하기 위해 필요한 경우 */
 }
 .overlaybox1-2 li {
-	
+	right: 19%;
+    width: 108%;
     white-space: normal;
     text-align: center;
-    top: 3vh;
     list-style: none;
     position: relative;
-    margin-bottom: 0.2vh;
     padding: 5px 10px;
     color: #2b2d36;
     line-height: 1;
@@ -234,13 +229,9 @@ body {
 } */
 
 .li-wrap1-2 {
-  	top: -2vh;
-    text-align: left;
+    height: 95%;
     position: relative;
-    width: 13vw;
-    margin-bottom: -4px;
-    margin-left: 0;
-    left: -40px;
+    width: auto;
  
 }
 .title-span1-2{
@@ -447,14 +438,16 @@ body {
     width: 10vw;
     top: -1vh;
     left: 0.3vh;
-    position: relative;
 }
 .red-col{
 	color: #771138;
 }
 .centername{
 	font-weight: bold;
-    	
+	font-size: 1vw;   	
+}
+.caretel operation closetime {
+	font-size: 0.7vw;
 }
 .centeraddr{
 	font-weight: bold;
@@ -463,17 +456,17 @@ body {
 .li1-2:hover {
 	color:rgba(250, 248, 241, 1);
 }
-.copylocationbtn-wrap{
-	text-align: center;
+
+
+.copybtn1-2{
+	width: 100%;
+    height: 100%;
+    border-radius: 16%;
+	background-color: #fff;
+    
 }
-.copylocationbtn{
-	margin-top: 2vh;
-    margin-left: -6vw;
-    position: absolute;
-    background-color: #fff;
-    width: 12vw;
-    height: 3vh;
-}
+
+
 .modal-title-color{
 	font-size: 14px;
 	color: #771138;
@@ -496,4 +489,28 @@ body {
     left: 32%;
     position: absolute;
     font-size: 236%;
+}
+/*리스트 크기조절*/
+.li-pic{
+	height:27%;
+}
+.li-centern{
+	height:14.17%;
+	overflow: auto;
+}
+.li-addr{
+	height:14.17%;
+	overflow: auto;
+}
+.li-tel{
+	height:4.43%;
+}
+.li-oper{
+	height:4.43%;
+}
+.li-clos{
+	height:4.43%;
+}
+.li-btn{
+	height:10.97%;
 }

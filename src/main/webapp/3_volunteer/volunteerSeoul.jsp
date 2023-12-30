@@ -13,6 +13,8 @@
 	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Kaisei+Decol:wght@400;500;700&family=Poppins:wght@100;200;300;400;800;900&display=swap"
 	rel="stylesheet" />
 <link rel="stylesheet" href="3_volunteer/css/volunteerNotice.css" />
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script src="3_volunteer/js/volunteer.js"></script>
 </head>
 <body>
 	<main>
@@ -55,7 +57,7 @@
 								</div>
 								<div class="post-info">
 									<div class="post-user">
-										<img src="3_volunteer/img/profileIcon.png" alt="" />id
+										<img src="3_volunteer/img/profileIcon.png" alt="" />${volunteer.a_email }
 										<div>| ${volunteer.v_created }</div>
 									</div>
 								</div>
@@ -69,9 +71,7 @@
 		</c:forEach>
 
 		<div class="bottom btn">
-			<form action="VtWriteC">
-				<button>Write</button>
-			</form>
+				<button id="regVol" value="${account.no}">Write</button>			
 		</div>
 
 		<div class="bottom paging">

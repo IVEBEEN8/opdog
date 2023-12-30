@@ -195,4 +195,11 @@ public class LoginDAO {
 //		loginCheck(request);
 
 	}
+
+	public static void updatePrevPage(HttpServletRequest request) {
+		HttpSession session = request.getSession();
+		String currentPage = request.getRequestURI();
+		session.setAttribute("prevPage", currentPage);
+		System.out.println("Updated PrevPage URL: " + currentPage);
+	}
 }
