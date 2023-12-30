@@ -35,10 +35,11 @@ ${sido} = 광역시 배열
 			<!-- <div class="#">시/도</div> -->
 			<input type="hidden" value="${uprCd }" id="defaultUpr">
 			<input type="hidden" value="${orgCd }" id="defaultOrg">
-			<div class="#">
-				<label id="sidolabel"><input type="radio" value="" checked="checked" name="sido" id="sidord">state</label>	  
+			<div class="sidoRadio">
 				<c:forEach var="sido" items="${sido }" >
-					<label id="sidolabel"><input type="radio" value="${sido.orgCd }" name="sido" id="sidord">${sido.orgdownNm }</label>	
+					<label id="sidolabel">
+					<input type="radio" value="${sido.orgCd }" name="sido" id="sidord">
+					<span>${sido.orgdownNm }</span></label>	
 				</c:forEach>
 			</div>
 		</div>

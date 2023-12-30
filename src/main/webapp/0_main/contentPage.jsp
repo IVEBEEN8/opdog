@@ -56,8 +56,8 @@
 				<div class="nav-items">
 					<a href="#" class="nav-text"><span>Services</span></a>
 					<div class="nav-subnav">
-						<a onclick="location.href='CheckRegNmC'">Check
-							Registration Number</a> <a onclick="location.href='NamingMainC'">Naming</a>
+						<a onclick="location.href='CheckRegNmC'">Check Registration
+							Number</a> <a onclick="location.href='NamingMainC'">Naming</a>
 					</div>
 				</div>
 			</div>
@@ -69,7 +69,7 @@
 	</header>
 
 	<!--  컨텐츠페이지 -->
-	<div align="center"  class="contentBox">
+	<div align="center" class="contentBox">
 		<div><jsp:include page="${contentPage }"></jsp:include></div>
 	</div>
 
@@ -84,7 +84,8 @@
 				<div class="ask-input">
 					<form action="AskAboutDogMainC" method="post">
 						<input class="askanything" name="askanything" id="input"
-							type="text" />
+							type="text" placeholder="
+Ask anything"  onfocus="this.placeholder = ''" />
 						<button class="send-btn">
 							<img src="0_main/img/send-icon.png" alt="보내기버튼" />
 						</button>

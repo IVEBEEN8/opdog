@@ -56,6 +56,10 @@ html, body {
 	width: 100%;
 }
 
+[type="radio"], span {
+  vertical-align: middle;
+}
+
 .sigunradiobox {
 	border: 1px solid black;
 	width: 100%;

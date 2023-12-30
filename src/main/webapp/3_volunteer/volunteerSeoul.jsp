@@ -35,7 +35,7 @@
 				<div class="search">
 					<img src="3_volunteer/img/SearchIcon.png" alt="돋보기" /> <input
 						name="searchTitle"
-						placeholder="Is there an article you are looking for?" type="text" />
+						placeholder="Is there an article you are looking for?" onfocus="this.placeholder = ''" type="text" />
 				</div>
 			</form>
 		</div>
