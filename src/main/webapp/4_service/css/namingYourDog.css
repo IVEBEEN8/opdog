@@ -128,6 +128,7 @@ body {
   border-radius: 2vw;
   text-align: center;
   font-family: "Poppins", sans-serif;	
+      margin-top: 1vw;
 }
 
 .loadingwords {
@@ -142,4 +143,25 @@ body {
   100% {
     transform: translate(-50%, -50%) rotate(360deg);
   }
+}
+
+.wrapper > h2{
+	color: #9E6F21;
+    font-size: 2vw;
+    width: 50vw;
+    position: relative;
+    margin: 4vw 0;
+}
+
+.line{    
+	width: 60vw;
+    padding: 2vw;
+}
+
+.chat-box{
+	color: #000;
+    font-size: 1.6vw;
+    width: 50vw;
+    position: relative;
+    margin: 4vw 0;
 }
