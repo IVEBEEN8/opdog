@@ -6,6 +6,27 @@ function deleteMovie(n){
 	}
 }
 console.log("ready to call");
+
+document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("btn").addEventListener("click", function () {
+        var accountNo = this.value;
+        console.log(accountNo);
+        // Check if the user is logged in
+        if (accountNo !== "") {
+            // User is logged in, proceed to "VtWriteC"
+            location.href = '';
+        } else {
+            // User is not logged in, redirect to "LoginMainHC"
+            var goLogin = confirm('You must login first.\nDo you want to login?');
+            if (goLogin) {
+                window.location.href = 'LoginMainHC';
+            }else{
+				location.href='VolunteerMainC';
+}
+        }
+    });
+});
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("regVol").addEventListener("click", function () {
         var accountNo = this.value;

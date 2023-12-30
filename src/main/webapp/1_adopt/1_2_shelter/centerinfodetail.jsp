@@ -271,7 +271,7 @@ $(document).ready(function() {
                 '		                   <span class="title closetime"><span>closed </span><span class="red-col">'+closeday+'</span>' +
                 ' 			           </li>' +
                 ' 			           <li class="li1-2 li-btn">' +
-                '						<button onclick="copyText()" class="copybtn1-2">Copy location</button>'	+
+                '						<button onclick="copyText()" class="copybtn1-2"><span class="copylocation">Copy location</span></button>'	+
                 ' 			           </li>' +
                 '    			</ul>'+
                 '</div>';

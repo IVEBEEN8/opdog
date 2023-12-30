@@ -19,13 +19,11 @@ public class VolunteerDAO {
 	private static ArrayList<volunteerDTO> volunteer;
 
 	public static void getAllpost(HttpServletRequest request) {
-
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT v.*, a.A_EMAIL " + "FROM VOLUNTEER v "
 				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO order by v_no";
-
 		try {
 			con = DBManager_khw.connect();
 			System.out.println("연결 성공~!");
@@ -114,7 +112,8 @@ public class VolunteerDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from volunteer where v_no=?";
+		String sql = "SELECT v.*, a.A_NO\n" + "FROM VOLUNTEER v\n" + "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n"
+				+ "WHERE v.V_NO = ?";
 
 		try {
 			con = DBManager_khw.connect();
@@ -139,6 +138,7 @@ public class VolunteerDAO {
 				v.setA_no(rs.getInt("a_no"));
 
 				request.setAttribute("vol", v);
+				System.out.println(v);
 				System.out.println("성공");
 			}
 
