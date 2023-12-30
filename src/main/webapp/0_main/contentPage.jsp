@@ -80,7 +80,7 @@
 				<img src="0_main/img/top.png" /> <a class="top" href="#top">Top</a>
 			</div>
 			<div class="footer2">
-				<div class="askMe">ask me</div>
+				<!-- <div class="askMe">ask me</div> -->
 				<div class="ask-input">
 					<form action="AskAboutDogMainC" method="post">
 						<input class="askanything" name="askanything" id="input"
