@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Fashion Detail</title>
+<title>Toy Detail</title>
 <script type="text/javascript" src="2_shop/js/checkOut.js?ver=2"></script>
 <script type="text/javascript" src="2_shop/js/shop.js"></script>
 <link rel="stylesheet" href="2_shop/css/shopDetail.css" />
@@ -15,17 +15,17 @@
 	<div class="main">
 		<div class="item">
 			<div class="item-img-cover">
-				<img class="item-img" src="${fashion.fs_img }">
+				<img class="item-img" src="${toy.t_img }">
 			</div>
 			<div class="item-info">
-				<div class="item-brand" id="itemBrand" align="left">${fashion.fs_brand}</div>
-				<div class="item-title" id="itemTitle" align="left">${fashion.fs_title}</div>
+				<div class="item-brand" id="itemBrand" align="left">${toy.t_brand}</div>
+				<div class="item-title" id="itemTitle" align="left">${toy.t_title}</div>
 				<div class="item-price-cover">
 					<div>Price</div>
-					<div class="item-price">${fashion.fs_price}&nbsp;&#8361;</div>
+					<div class="item-price">${toy.t_price}&nbsp;&#8361;</div>
 				</div>
-				<input type="hidden" id="itemPrice" value="${fashion.fs_price}">
-				<input type="hidden" id="itemSPrice" value="${fashion.fs_price/10}">
+				<input type="hidden" id="itemPrice" value="${toy.t_price}">
+				<input type="hidden" id="itemSPrice" value="${toy.t_price/10}">
 				<div>
 					<div class="size-txt" align="left">Size</div>
 					<div class="size-box-cover">

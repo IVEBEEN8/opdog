@@ -1,106 +1,151 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Toy</title>
+<link rel="stylesheet" href="2_shop/css/shop.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
+	rel="stylesheet" />
 </head>
 <body>
-	<!-- «Ï¥ı -->
+	<!-- Ìó§Îçî -->
 	<header></header>
-	
-	<!-- ∏ﬁ¿Œ -->
-	
-	<div class="ºÓ«Œ ƒ´≈◊∞Ì∏Æ">
-	
-		<a class="∆–º« ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='FashionC'">
-			<div class="∆–º« ƒ´≈◊∞Ì∏Æ">
-				<div class="∆–º« ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
-					<img alt="" src="https://shop-phinf.pstatic.net/20220704_292/16569175721794ENar_PNG/icon_14.png">
+
+	<!-- Î©îÏù∏ -->
+	<div class="shop-main">
+		<div class="shop-header">
+			<div>
+				<div class="shop-title-cover">
+					<div class="shop-title">SHOP</div>
 				</div>
-				<div class="∆–º« ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">fashion</div>
 			</div>
-		</a>
-		
-		<a class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='FeedC'">
-			<div class="ªÁ∑· ƒ´≈◊∞Ì∏Æ">
-				<div class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
-					<img alt="" src="https://shop-phinf.pstatic.net/20230119_57/1674087418600eO0eX_PNG/icon_04.png">
+		</div>
+
+
+		<div class="shop-cate">
+
+			<div class="item-cate">
+				<div class="cate-thumb">
+					<a class="cate-link" onclick="location.href='FashionC'"> <img
+						class="cate-img" alt="" src="2_shop/img/fashion_icon.png">
+						<div class="cate-txt">Fashion</div>
+					</a>
 				</div>
-				<div class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">feed</div>
 			</div>
-		</a>
-		
-		<a class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='SnackC'">
-		<div class="∞£Ωƒ ƒ´≈◊∞Ì∏Æ">
-			<div class="∞£Ωƒ ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
-				<img alt="" src="https://shop-phinf.pstatic.net/20220616_30/1655365227214qAvGJ_PNG/icon_05.png">
+
+			<div class="item-cate">
+				<div class="cate-thumb">
+					<a class="cate-link" onclick="location.href='FeedC'"> <img
+						class="cate-img" alt="" src="2_shop/img/feed_icon.png">
+						<div class="cate-txt">Feed</div>
+					</a>
+				</div>
 			</div>
-			<div class="∞£Ωƒ ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">snack</div>
+
+			<div class="item-cate">
+				<div class="cate-thumb">
+					<a class="cate-link" onclick="location.href='SnackC'"> <img
+						class="cate-img" alt="" src="2_shop/img/snack_icon.png">
+						<div class="cate-txt">Snack</div>
+					</a>
+				</div>
+			</div>
+
+			<div class="item-cate">
+				<div class="cate-thumb">
+					<a class="cate-link" onclick="location.href='ToyC'"> <img
+						class="cate-img" alt="" src="2_shop/img/toy_icon.png">
+						<div class="cate-txt">Toy</div>
+					</a>
+				</div>
+			</div>
 		</div>
-		</a>
-		
-		<a class="ªÁ∑· ƒ´≈◊∞Ì∏Æ ∏µ≈©" onclick="location.href='ToyC'">
-		<div class="¿Â≥≠∞® ƒ´≈◊∞Ì∏Æ">
-			<div class="¿Â≥≠∞® ƒ´≈◊∞Ì∏Æ ΩÊ≥◊¿œ">
-				<img alt="" src="https://shop-phinf.pstatic.net/20220616_176/1655365272658tuiIW_PNG/icon_13.png">
+		<div class="search-price">
+			<div class="search">
+				<div>
+					<input type="text" id="search" placeholder="Search">
+				</div>
+				<div class="search-img">
+					<img alt="" src="2_shop/img/Search.png"
+						onclick="location.href='ToySearchC?search='+document.getElementById('search').value">
+				</div>
 			</div>
-			<div class="¿Â≥≠∞® ƒ´≈◊∞Ì∏Æ ≈ÿΩ∫∆Æ">toy</div>
+			<div class="search-zero">${message}</div>
+			<div class="price-order" align="right">
+				<input type="radio" name="sort" value="low"
+					onclick="location.href='ToySortC?sort=low'"> High price
+				order &nbsp; <input type="radio" name="sort" value="high"
+					onclick="location.href='ToySortC?sort=high'"> Low price
+				order
+			</div>
 		</div>
-		</a>
-		
-		
+		<div class="items-container">
+			<div class="items">
+				<c:forEach varStatus="" var="t" items="${toys }">
+					<a href="ToyDetailC?no=${t.t_no }">
+						<div class="item">
+							<div class="ÏïÑÏù¥ÌÖú Ïç∏ÎÑ§Ïùº">
+								<img class="item-img" src="${t.t_img }">
+							</div>
+							<div class="item-info">
+								<div class="item-brand" align="left">${t.t_brand }</div>
+								<div class="item-title" align="left">${t.t_title }</div>
+							</div>
+							<div class="item-line-price">
+								<div class="item-line">
+									<div id="item-line"></div>
+								</div>
+								<div class="item-price" align="left">${t.t_price }
+									&#8361;</div>
+							</div>
+						</div>
+					</a>
+				</c:forEach>
+				<!-- <div> <button onclick="location.href='FashionRegC'">Îç∞Ïù¥ÌÑ∞ ÏûÖÎ†• </button> </div> -->
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="page-controller">
+			<!-- ÌéòÏù¥ÏßÄ Ï≤òÎ¶¨ -->
+			<a href="FashionPageC?p=1">[Îß®Ï≤òÏùå]</a>
+			<c:choose>
+				<c:when test="${curPageNo != 1 }">
+					<a href="FashionPageC?p=${curPageNo -1 }"><button>‚óÄ</button></a>
+				</c:when>
+				<c:otherwise>
+					<button class="Ïù¥Ï†ÑÎ≤ÑÌäº">‚óÄ</button>
+				</c:otherwise>
+			</c:choose>
+
+			<c:forEach begin="1" end="${pageCount }" var="n">
+				<a href="FashionPageC?p=${n }"> [${n }] </a>
+			</c:forEach>
+
+			<c:choose>
+				<c:when test="${pageCount != curPageNo }">
+					<a href="FashionPageC?p=${curPageNo +1 }"><button>‚ñ∂</button></a>
+				</c:when>
+				<c:otherwise>
+					<button class="Îã§ÏùåÎ≤ÑÌäº">‚ñ∂</button>
+				</c:otherwise>
+			</c:choose>
+			<a href="FashionPageC?p=${pageCount }">[Îß®ÎÅù]</a>
+		</div>
+
+
+
 	</div>
 
-	
-	<div class="æ∆¿Ã≈€µÈ">
-		<c:forEach  varStatus="" var="t" items="${toys }">
-		<div class="æ∆¿Ã≈€">	
-			<div class="æ∆¿Ã≈€ ΩÊ≥◊¿œ">
-		    	<img class="ΩÊ≥◊¿œ ¿ÃπÃ¡ˆ" src="${t.t_img }" >
-			</div>
-	    	<div class="æ∆¿Ã≈€ ¡§∫∏">	
-    			<div class="æ∆¿Ã≈€ ¡¶∏Ò">${t.t_title }</div>
-    			<div class="æ∆¿Ã≈€ ∞°∞›">${t.t_price } &#8361;</div>
-    			<div class="æ∆¿Ã≈€ ∫Í∑£µÂ">${t.t_brand }</div>
-    		</div>
-    	</div>	
-		</c:forEach>
-	</div>
-	
-	<hr>
-	
-	<!-- ∆‰¿Ã¡ˆ √≥∏Æ -->
-	<a href="ToyPageC?p=1">[∏«√≥¿Ω]</a>
-	<c:choose>
-		<c:when test="${curPageNo != 1 }">
-		<a href = "ToyPageC?p=${curPageNo -1 }"><button>¢∏</button></a>
-		</c:when>
-			<c:otherwise>
-				<button class="¿Ã¿¸πˆ∆∞">¢∏</button>
-			</c:otherwise>
-	</c:choose>
-	
-	<c:forEach begin="1" end="${pageCount }" var = "n">
-			<a href = "ToyPageC?p=${n }"> [${n }] </a>
-	</c:forEach>
-	
-	<c:choose>
-		<c:when test="${pageCount != curPageNo }">
-		<a href = "ToyPageC?p=${curPageNo +1 }"><button>¢∫</button></a>
-		</c:when>
-			<c:otherwise>
-				<button class="¥Ÿ¿Ωπˆ∆∞">¢∫</button>
-			</c:otherwise>
-	</c:choose>
-	<a href="ToyPageC?p=${pageCount }">[∏«≥°]</a>
-	
-	
-	<!-- «™≈Õ -->
-	<footer>
-	</footer>
 
+	<!-- Ìë∏ÌÑ∞ -->
+	<footer> </footer>
 </body>
 </html>

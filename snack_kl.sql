@@ -8,6 +8,10 @@ create table snack_kl(
 
 create sequence snack_kl_seq;
 insert into snack_kl VALUES (snack_kl_seq.nextval,?,?,?,?);
+UPDATE snack_kl
+SET s_title = 'Dental gum, which eats dog gum for a long time, is 100g of Korean beef''s Whoopi twisted chicken'
+WHERE s_no = 43;
+
 select * from snack_kl;
 drop table snack_kl;
 drop sequence snack_kl;
