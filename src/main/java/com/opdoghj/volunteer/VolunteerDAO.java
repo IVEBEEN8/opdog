@@ -182,9 +182,17 @@ public class VolunteerDAO {
 				volunteer.add(searchedItems);
 
 			}
-
 			System.out.println(volunteer);
-			request.setAttribute("volunteer", volunteer);
+
+			if (volunteer.isEmpty()) {
+				// 검색 결과가 없는 경우
+				String searchMessage = "찾는 기사가 없습니다.";
+				request.setAttribute("searchMessage", searchMessage);
+			} else {
+				// 검색 결과가 있는 경우
+				request.setAttribute("volunteer", volunteer);
+			}
+
 			System.out.println("성공");
 
 		} catch (Exception e) {
