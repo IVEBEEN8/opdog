@@ -73,15 +73,12 @@
 		<div class="bottom btn">
 				<button id="regVol" value="${account.no}">Write</button>			
 		</div>
-
 		<div class="bottom paging">
 			<a class="pagebox" href="VtPageC?p=1"><img
 				src="3_volunteer/img/firstpage.png" alt="맨처음" /></a>
-
 			<c:forEach begin="1" end="${pageCount }" var="n">
 				<a class="pagebox" href="VtPageC?p=${n }">[${n}]</a>
 			</c:forEach>
-
 
 			<a class="pagebox" href="VtPageC?p=${pageCount }"><img
 				src="3_volunteer/img/lastpage.png" alt="" /></a>

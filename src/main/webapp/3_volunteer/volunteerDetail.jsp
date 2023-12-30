@@ -39,41 +39,30 @@
 						<p>${vol.v_status }</p>
 					</div>
 				</div>
-
 				<div class="post-title">${vol.v_title }</div>
-
-
-
 				<div class="post-date">${vol.v_created }</div>
-
-
 				<div class="imgWrapper">
 					<img src="3_volunteer/newImg/${vol.v_img }" />
 				</div>
-
 				<div class="post-txt">
 					<p>${vol.v_txt }</p>
 				</div>
 				<div class="btnWrap">
 					<button type="button" onclick="location.href='VSeoulC'">Go
 						list</button>
-
 					<button type="button"
 						onclick="location.href='VolunteerModiC?no=${vol.v_no}'">
 						Modify</button>
-
 					<button type="button" onclick="deleteMovie('${vol.v_no}')">
 						Delete</button>
 				</div>
 			</div>
-
 			<div class="apply-btn">
-				<button type="button" id="btn">Apply for volunteer</button>
+				<button type="button" id="btn" value="${account.no }">Apply for volunteer</button>
 			</div>
 			<div class="img-wrap">
 				<img alt="" src="3_volunteer/img/click.png">
 			</div>
-
 		</main>
 	</form>
 
