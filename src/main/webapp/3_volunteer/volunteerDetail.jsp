@@ -14,19 +14,19 @@
 <script type="text/javascript">
 	$(function() {
 		$('#btn')
-				.click(
-						function() {
-							/* alert("Application Success - The shelter will contact you individually"); */
-							Swal
-									.fire({
-										icon : "success",
-										title : "Application Success - The shelter will contact you individually",
-										showConfirmButton : false,
-										timer : 1500
-									});
-						});
+			.click(
+				function() {
+					/* alert("Application Success - The shelter will contact you individually"); */
+						Swal
+							.fire({
+								icon : "success",
+								title : "Application Success - The shelter will contact you individually",
+								showConfirmButton : false,
+								timer : 1500
+								});
+							});
 
-	});
+				});
 </script>
 </head>
 <body>
