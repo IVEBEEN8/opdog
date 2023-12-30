@@ -42,8 +42,8 @@ body {
 }
 
 .content-frame {
-  margin: auto;
-  width: 1200px;
+  margin-bottom: 10vw;
+  width: 100vw;
 }
 
 .content-row {
@@ -70,10 +70,6 @@ body {
   background: rgba(67, 49, 28, 0.6);
 }
 
-.content-frame{
-	    margin-bottom: 10vw;
-	
-}
 
 .content-bg:hover {
   background: #e5ba73;

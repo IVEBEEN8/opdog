@@ -29,15 +29,17 @@ main {
 
 #DetailTbl {
 	position: relative;
-	border: 1.5px solid #43311ccc;
-	width: 46.875vw;
-	border-radius: 3vw;
-	display: flex;
-	flex-direction: column;
-	gap: 2vw;
-	justify-content: center;
-	align-items: center;
-	padding: 5vw;
+       border: dashed 6px #43311ccc;
+    background: none;
+    width: 46.875vw;
+    height: 60vw;
+    border-radius: 3vw;
+    display: flex;
+    flex-direction: column;
+    gap: 2vw;
+    justify-content: center;
+    align-items: center;
+    padding: 5vw;
 }
 
 .statusWrap {
@@ -59,13 +61,21 @@ main {
 }
 
 .post-title {
-	color: rgba(67, 49, 28, 0.9);
-	text-align: center;
-	font-family: "DM Sans", sans-serif;
-	font-size: 2vw;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
+color: #43311CE5;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 4vw;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: absolute;
+    top: 3vw;
+}
+
+.post-date{
+	color: #43311CE5;
+    position: absolute;
+    top: 8vw;
 }
 
 .title-bottom {
@@ -76,13 +86,15 @@ main {
 
 .imgWrapper {
 	position: relative;
-	width: 20vw;
-	height: 20vw;
+    width: 30vw;
+    height: 30vw;
+    top: -5vw;
 }
 
 .imgWrapper>img {
 	width: 100%;
 	height: 100%;
+	border-radius: 1vw;
 }
 
 .post-txt {
@@ -92,25 +104,60 @@ main {
 .post-txt>p {
 	font-family: "Inter", sans-serif;
 	font-size: 1vw;
+	color:#000;
 }
 
-.btnWrap{
-	display:flex;
-	    gap: 1vw;
+.btnWrap {
+	display: flex;
+	gap: 1vw;
+	position: absolute;
+    bottom: 2vw;
 }
 
-
-.btnWrap>button{
+.btnWrap>button {
 	width: 5vw;
-    height: 2vw;
-    background: rgba(67, 49, 28, 0.90);
-    color: white;
-    border-radius: 0.5vw;
-    font-size: 1vw;
-    font-family: "Poppins", sans-serif;
+	height: 2vw;
+	background: rgba(67, 49, 28, 0.90);
+	color: white;
+	border-radius: 0.5vw;
+	font-size: 1vw;
+	font-family: "Poppins", sans-serif;
 }
 
+.apply-btn {
+	    padding: 5vw 0 0 0;
+}
 
+.apply-btn>button {
+	cursor: pointer;
+    width: 20vw;
+    height: 5vw ;
+    font-size: 1.8vw;
+    font-weight: 700;
+    border: solid 3px #9a0606e5;
+    border-radius: 1vw;
+    color:white;
+	background:#9a0606e5;
+}
 
+.apply-btn>button:hover{
+	color:white;
+	text-shadow: 0px 2px 10px white;
+}
 
+.img-wrap {
+	text-align: center;
+	margin: 0 0 4vw 0;
+}
 
+.img-wrap>img {
+	animation: motion 0.3s linear 0s infinite alternate;
+	margin-bottom: 10px;
+}
+
+@keyframes motion { 0% {
+	margin-top: 0px;
+}100%
+{margin-top:10px;
+}
+}

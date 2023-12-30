@@ -25,10 +25,10 @@ prefix="c" %>
         <!-- 메뉴 -->
         <div class="nav-var">
           <div class="nav-items">
-            <a href="#" class="nav-text home"><span>Home</span></a>
+            <a href="HC" class="nav-text home"><span>Home</span></a>
           </div>
           <div class="nav-items">
-            <a href="#" class="nav-text"><span>Adopt</span></a>
+            <a onclick="location.href='DoginfoHC'" class="nav-text"><span>Adopt</span></a>
             <div class="nav-subnav">
               <a onclick="location.href='DoginfoHC'">Stary Dogs</a>
               <a onclick="location.href='CenterMainC'">Shelter Info</a>
@@ -46,13 +46,13 @@ prefix="c" %>
             </div>
           </div>
           <div class="nav-items">
-            <a href="#" class="nav-text"><span>Volunteer</span></a>
+            <a onclick="location.href='VolunteerMainC'" class="nav-text"><span>Volunteer</span></a>
             <div class="nav-subnav">
               <a onclick="location.href='VolunteerMainC'">Go Together</a>
             </div>
           </div>
           <div class="nav-items">
-            <a href="#" class="nav-text"><span>Services</span></a>
+            <a onclick="location.href='CheckRegNmC'" class="nav-text"><span>Services</span></a>
             <div class="nav-subnav">
               <a onclick="location.href='CheckRegNmC'"
                 >Check Registration Number</a
