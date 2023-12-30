@@ -30,9 +30,9 @@ ${sido} = 광역시 배열
 <div class="infocontainer">
 	<!-- radiobox div -->
 	<div class="radiocontainer">
-		<div class="titlebox"> stary dog</div>
+		<div class="titlebox"> <p>stary dog</p></div>
 		<div class="sidoradiobox"><!-- 시/도 radiobox -->
-			<div class="#">시/도</div>
+			<!-- <div class="#">시/도</div> -->
 			<input type="hidden" value="${uprCd }" id="defaultUpr">
 			<input type="hidden" value="${orgCd }" id="defaultOrg">
 			<div class="#">

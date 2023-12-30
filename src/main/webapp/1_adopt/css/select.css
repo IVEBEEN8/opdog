@@ -1,79 +1,103 @@
 @charset "UTF-8";
-html,
-body {
 
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  text-decoration: none;
-  font-family: "DM Sans", sans-serif;
-  font-family: "Inter", sans-serif;
-  font-family: "Poppins", sans-serif;
-  font-size: 10pt;
-  scroll-behavior: smooth;
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+	font-size: 10pt;
+	scroll-behavior: smooth;
 }
 
-.infocontainer{
+.infocontainer {
 	border: 1px solid black;
 	width: 100%;
-	height:220vh;
-	position:relative;
-	top:5vw;
+	height: 220vh;
+	position: relative;
+	top: 5vw;
 	justify-content: center;
 }
-.radiocontainer{
+
+.radiocontainer {
 	border: 1px solid black;
 	width: 70%;
 	height: 15%;
 	margin-top: 5%;
 }
-.titlebox{
-	border: 1px solid black;
-	width: 15%;
+
+.titlebox {
+	width: 169px;
+	border-radius: 50px;
+	background: rgba(250, 234, 177, 0.50);
+	height: 46px;
 }
-.sidoradiobox{
+
+.titlebox>p {
+	color: rgba(67, 49, 28, 0.90);
+	font-family: DM Sans;
+	font-size: 25px;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.75px;
+	margin: 0;
+    position: relative;
+    top: 0.3vw;
+	
+}
+
+.sidoradiobox {
 	border: 1px solid black;
 	width: 100%;
 }
-.sigunradiobox{
+
+.sigunradiobox {
 	border: 1px solid black;
 	width: 100%;
 }
-.shelterradiobox{
+
+.shelterradiobox {
 	border: 1px solid black;
 	width: 100%;
 }
-.selectcontainer{
+
+.selectcontainer {
 	border: 1px solid black;
 	width: 100%;
 	height: 3%;
 	background-color: gray;
 	position: sticky;
-    top: 7vh;
+	top: 7vh;
 }
-.infoouter{
+
+.infoouter {
 	border: 1px solid red;
 	width: 100%;
 	height: 75%;
 }
-.datacontainer{
+
+.datacontainer {
 	border: 1px solid blue;
 	width: 80%;
 	height: 90%;
 	display: flex;
 	margin-top: 4%;
 }
-.infoinnerbox{
+
+.infoinnerbox {
 	border: 1px solid black;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	
 }
-.doginfobox{
+
+.doginfobox {
 	border: 1px solid black;
 	width: 40%;
 	height: 18%;
@@ -81,17 +105,18 @@ body {
 	margin-top: 1%;
 	justify-content: space-between;
 }
-.infoimg{
+
+.infoimg {
 	border: 1px solid black;
 	width: 30%;
 }
-.infotext{
+
+.infotext {
 	border: 1px solid black;
 	width: 30%;
 }
-.infobutton{
+
+.infobutton {
 	border: 1px solid black;
-	width: 30%;	
+	width: 30%;
 }
-
-
