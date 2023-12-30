@@ -252,27 +252,28 @@ $(document).ready(function() {
             var content = '<div class="overlaybox1-2">' + 
                 '   			 <div class="boxtitle1-2">CENTER INFO</div>' + '<div class="mid-overlaybox1-2">' +
                 '    			<ul class="li-wrap1-2">'    + 
-                '        				<li class="li1-2">' +
-                '          				<span class="title"><img class="bitmap" src="1_adopt/img/Bitmap.png"></span>'  +
+                '        				<li class="li1-2 li-pic">' +
+                '          				<img class="bitmap" src="1_adopt/img/Bitmap.png">'  +
                 '        				</li>' +
-                '        				<li class="li1-2">' +
+                '        				<li class="li1-2 li-centern">' +
                 '            				<span class="title centername">'+centername+'</span>' +
                 '        				</li>' +    
-                '        				<li class="li1-2">' +
+                '        				<li class="li1-2 li-addr">' +
                 '            				<span class="title centeraddr" id="'+centeraddrId+'">'+centeraddr+'</span>' +
                 '        				</li>' +    
-                '   				    <li class="li1-2">'  +
+                '   				    <li class="li1-2 li-tel">'  +
                 '            				<span class="title caretel">'+caretel+'</span>' +
                 '			      	    </li>' +
-                '			           <li class="li1-2">' +
-                '		                     <span class="title"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
+                '			           <li class="li1-2 li-oper">' +
+                '		                     <span class="title operation"><span>Operation </span>'+opentime+'~'+closetime+'</span>' +
                 ' 			           </li>' +
-                '			           <li class="li1-2">'  +
-                '		                   <span class="title"><span>closed </span><span class="red-col">'+closeday+'</span>' +
+                '			           <li class="li1-2 li-clos">'  +
+                '		                   <span class="title closetime"><span>closed </span><span class="red-col">'+closeday+'</span>' +
+                ' 			           </li>' +
+                ' 			           <li class="li1-2 li-btn">' +
+                '						<button onclick="copyText()" class="copybtn1-2">Copy location</button>'	+
                 ' 			           </li>' +
                 '    			</ul>'+
-                '				<div class="copylocationbtn-wrap"><button onclick="copyText()" class="copylocationbtn">Copy location</button></div>'	+
-                '</div>' +
                 '</div>';
             
            
