@@ -23,7 +23,8 @@ public class VolunteerDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT v.*, a.A_EMAIL " + "FROM VOLUNTEER v " + "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO";
+		String sql = "SELECT v.*, a.A_EMAIL " + "FROM VOLUNTEER v "
+				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO order by v_no";
 
 		try {
 			con = DBManager_khw.connect();

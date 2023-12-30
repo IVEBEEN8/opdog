@@ -24,7 +24,7 @@ public class CenterInfoDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from centerinfo1";
+		String sql = "select * from centerinfo1 order by c_no";
 		CenterInfoDTO c = null;
 		ArrayList<CenterInfoDTO> center = new ArrayList<CenterInfoDTO>();
 		try {
