@@ -265,7 +265,7 @@ input:focus {
 	gap: 0.5vw;
 }
 
-.bottom>form>button {
+.bottom>button {
 	border: solid 4px #faeab1;
 	border-radius: 2.8vw;
 	width: 5vw;

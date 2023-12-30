@@ -48,7 +48,7 @@
           </tr>
           <tr>
             <td colspan="2" class="write-td">
-              <button >add</button>
+              <button type='submit' >add</button>
             </td>
           </tr>
         </table>

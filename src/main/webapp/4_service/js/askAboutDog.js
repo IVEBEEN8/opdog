@@ -9,6 +9,7 @@ window.onload = function () {
   document.getElementById("send").click();
   if (document.getElementById("input").value.trim() !== "") {
     document.getElementById("input").value = "";
+	audiosend.playbackRate =1.2;
 	audiosend.play();
   }
 
@@ -97,8 +98,9 @@ document.addEventListener("DOMContentLoaded", function () {
           .querySelector(".chat-box-wrap1-2")
           .insertAdjacentHTML("beforeend", assistantTemplate);
 		var audioreceive = new Audio('4_service/audio/receive.m4a');
+		audioreceive.playbackRate = 1.2;
 		audioreceive.play();
-        //자동 스크롤!
+        //자동 스크롤!s
         const chatBoxWrap = document.querySelector(".chat-box-wrap1-2");
         chatBoxWrap.scrollTop = chatBoxWrap.scrollHeight;
       } else {

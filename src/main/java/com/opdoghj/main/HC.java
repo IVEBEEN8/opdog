@@ -12,7 +12,6 @@ import com.opdoghw.login.LoginDAO;
 
 @WebServlet("/HC")
 public class HC extends HttpServlet {
-
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		LoginDAO.loginCheckMain(request);

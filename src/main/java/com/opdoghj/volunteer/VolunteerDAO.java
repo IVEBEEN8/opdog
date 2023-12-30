@@ -19,60 +19,59 @@ public class VolunteerDAO {
 	private static ArrayList<volunteerDTO> volunteer;
 
 	public static void getAllpost(HttpServletRequest request) {
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from volunteer";
+		String sql = "SELECT v.*, a.A_EMAIL " + "FROM VOLUNTEER v "
+				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO order by v_no";
 
 		try {
 			con = DBManager_khw.connect();
-			System.out.println("연결성공~!");
+			System.out.println("연결 성공~!");
 
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
 			volunteerDTO v = null;
-			volunteer = new ArrayList<volunteerDTO>();
+			volunteer = new ArrayList<>();
 			while (rs.next()) {
 				v = new volunteerDTO();
-				v.setV_no(rs.getInt("v_no"));
-				v.setV_title(rs.getString("v_title"));
-				v.setV_img(rs.getString("v_img"));
-				v.setV_txt(rs.getString("v_txt"));
-				v.setV_created(rs.getDate("v_created"));
-				v.setV_updated(rs.getDate("v_updated"));
-				v.setV_status(rs.getString("v_status"));
-				v.setA_no(rs.getInt("a_no"));
+				v.setV_no(rs.getInt("V_NO"));
+				v.setV_title(rs.getString("V_TITLE"));
+				v.setV_img(rs.getString("V_IMG"));
+				v.setV_txt(rs.getString("V_TXT"));
+				v.setV_created(rs.getDate("V_CREATED"));
+				v.setV_updated(rs.getDate("V_UPDATED"));
+				v.setV_status(rs.getString("V_STATUS"));
+				v.setA_no(rs.getInt("A_NO"));
+				String aEmail = rs.getString("A_EMAIL");
+				v.setA_email(aEmail);
 				volunteer.add(v);
+				request.setAttribute("volunteer", volunteer);
 
 			}
-
-			request.setAttribute("volunteer", volunteer);
-			System.out.println("성공");
-
 		} catch (Exception e) {
 			e.printStackTrace();
-			System.out.println("조회 실패");
 		} finally {
+			// 필요에 따라 close 작업 수행
 			DBManager_khw.close(con, pstmt, rs);
 		}
-
 	}
 
 	public static void WritePost(HttpServletRequest request) {
 		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
-		System.out.println(account.getNo());
+		System.out.println("어카운트넘버" + account.getNo());
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,sysdate,?,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
-			System.out.println("연결성공~!");
 
 			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
-			System.out.println(path);
+			// System.out.println(path);
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 
@@ -94,7 +93,7 @@ public class VolunteerDAO {
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setInt(5, account.getNo());
-			pstmt.executeUpdate();
+
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
@@ -183,9 +182,17 @@ public class VolunteerDAO {
 				volunteer.add(searchedItems);
 
 			}
-
 			System.out.println(volunteer);
-			request.setAttribute("volunteer", volunteer);
+
+			if (volunteer.isEmpty()) {
+				// 검색 결과가 없는 경우
+				String searchMessage = "찾는 기사가 없습니다.";
+				request.setAttribute("searchMessage", searchMessage);
+			} else {
+				// 검색 결과가 있는 경우
+				request.setAttribute("volunteer", volunteer);
+			}
+
 			System.out.println("성공");
 
 		} catch (Exception e) {
