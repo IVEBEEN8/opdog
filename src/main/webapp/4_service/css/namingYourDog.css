@@ -153,7 +153,8 @@ body {
     margin: 4vw 0;
 }
 
-.line{    
+.line1{
+	background-color: pink;
 	width: 60vw;
     padding: 2vw;
 }

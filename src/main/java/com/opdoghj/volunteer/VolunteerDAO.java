@@ -402,4 +402,40 @@ public class VolunteerDAO {
 			DBManager_khw.close(con, pstmt, null);
 		}
 	}
+
+	public static void appliedLoad(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+		String sql = "select * from appliedvol where a_no=?";
+
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account.getNo());
+			rs = pstmt.executeQuery();
+			ArrayList<appliedVol> reglist = new ArrayList<appliedVol>();
+			appliedVol like = null;
+			while (rs.next()) {
+
+				like = new appliedVol();
+				like.setTitle(rs.getString("ap_title"));
+				like.setEmail(rs.getString("a_email"));
+				like.setImgf(rs.getString("a_email"));
+				like.setTxt(rs.getString("ap_txt"));
+				like.setCreated(rs.getString("ap_postdate"));
+				like.setStatus(rs.getString("ap_status"));
+				reglist.add(like);
+			}
+			request.setAttribute("reglist", reglist);
+			System.out.println(reglist);
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
+
+	}
+
 }

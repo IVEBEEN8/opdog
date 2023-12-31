@@ -12,12 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 public class ApplyVolC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("거기가 어디오? ApplyVolC서블렛이오? 맞소!");
 		VolunteerDAO.applyVol(request, response);
 
 	}
