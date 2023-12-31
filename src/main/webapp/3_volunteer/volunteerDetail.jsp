@@ -11,23 +11,7 @@
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
-<script type="text/javascript">
-	$(function() {
-		$('#btn')
-			.click(
-				function() {
-					/* alert("Application Success - The shelter will contact you individually"); */
-						Swal
-							.fire({
-								icon : "success",
-								title : "Application Success - The shelter will contact you individually",
-								showConfirmButton : false,
-								timer : 3000
-								});
-							});
 
-				});
-</script>
 </head>
 <body>
 	<form class="container" action="VolunteerDetailC" method="post"
@@ -58,7 +42,7 @@
 				</div>
 			</div>
 			<div class="apply-btn">
-				<button type="button" id="btn" value="${account.no }">Apply for volunteer</button>
+				<button type="button" id="btn" value="${account.no }!${vol.v_no}!${vol.v_status}!${vol.v_title }!${vol.v_created }!${vol.v_img }!${vol.v_txt }!${account.email }">Apply for volunteer</button>
 			</div>
 			<div class="img-wrap">
 				<img alt="" src="3_volunteer/img/click.png">

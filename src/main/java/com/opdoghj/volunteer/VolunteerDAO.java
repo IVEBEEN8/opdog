@@ -268,7 +268,6 @@ public class VolunteerDAO {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
-
 		String path = request.getServletContext().getRealPath("3_volunteer/newImg");
 		String sql = "update volunteer" + " set v_title=?, v_img=?, v_txt=?, v_status=? where v_no=?";
 		try {
@@ -343,6 +342,62 @@ public class VolunteerDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 			System.out.println("삭제실패했습니다..");
+		} finally {
+			DBManager_khw.close(con, pstmt, null);
+		}
+	}
+
+	public static void applyVol(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "insert into appliedvol values(appliedvol_seq.nextval, ?,?,?,?,?,?,?,?)";
+		try {
+			request.setCharacterEncoding("utf-8");
+			con = DBManager_khw.connect();
+			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
+			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
+					new DefaultFileRenamePolicy());
+			String vNo1 = request.getParameter("vNo");
+			System.out.println("vNo from servlet: " + vNo1);
+			String accountNo1 = mr.getParameter("accountNo1");
+			String vNo = mr.getFilesystemName("vNo");
+			String vStatus = mr.getParameter("vStatus");
+			String vTitle = mr.getParameter("vTitle");
+			String vCreated = mr.getParameter("vCreated");
+			String vImg = mr.getParameter("vImg");
+			String vTxt = mr.getParameter("vTxt");
+			String aEmail = mr.getParameter("aEmail");
+
+			vTxt = vTxt.replaceAll("\r\n", "<br>");
+
+			System.out.println(accountNo1);
+			System.out.println(vNo);
+			System.out.println(vStatus);
+			System.out.println(vTitle);
+			System.out.println(vCreated);
+			System.out.println(vImg);
+			System.out.println(vTxt);
+			System.out.println(aEmail);
+
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, accountNo1);
+			pstmt.setString(2, vNo);
+			pstmt.setString(3, vStatus);
+			pstmt.setString(4, vTitle);
+			pstmt.setString(5, vCreated);
+			pstmt.setString(6, vImg);
+			pstmt.setString(7, vTxt);
+			pstmt.setString(8, aEmail);
+
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
+				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("업로드 실패..₍ᐢㅠ༝ㅠᐢ₎");
+			request.setAttribute("r", "업로드 실패..₍ᐢㅠ༝ㅠᐢ₎");
 		} finally {
 			DBManager_khw.close(con, pstmt, null);
 		}

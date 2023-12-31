@@ -6,27 +6,75 @@ function deleteMovie(n){
 	}
 }
 console.log("ready to call");
-
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("btn").addEventListener("click", function () {
-        var accountNo = this.value;
-        console.log(accountNo);
+        var selectedValue = $(this).val();
+        var san = selectedValue.split("!");
+        var accountNo1 = san[0];
+        var vNo = san[1];
+        var vStatus = san[2];
+        var vTitle = san[3];
+        var vCreated = san[4];
+        var vImg = san[5];
+        var vTxt = san[6];
+        var aEmail = san[7];
+
+        vTxt = vTxt.replaceAll("\r\n", "<br>");
+
+        var formData = new FormData();
+        formData.append("accountNo1", accountNo1);
+        formData.append("vNo", vNo);
+        formData.append("vStatus", vStatus);
+        formData.append("vTitle", vTitle);
+        formData.append("vCreated", vCreated);
+        formData.append("vImg", vImg);
+        formData.append("vTxt", vTxt);
+        formData.append("aEmail", aEmail);
+
+        console.log(san);
+        
         // Check if the user is logged in
-        if (accountNo !== "") {
-            // User is logged in, proceed to "VtWriteC"
-            location.href = '';
+        if (accountNo1 !== "") {
+            Swal.fire({
+                icon: "success",
+                title: "Application Success - The shelter will contact you individually",
+                showConfirmButton: false,
+                timer: 1500,
+                didClose: () => {
+                    var goMypage = confirm('Do you want to check MyPage?');
+                    if (goMypage) {
+                        console.log("gotomypage!!");
+                        location.href = 'MyPageHC';
+                    } else {
+                        location.href = 'VolunteerDetailC?no=' + vNo;
+                    }
+                }
+            }); 
+
+            $.ajax({
+                type: "POST",
+                url: "ApplyVolC",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function () {
+                    console.log("데이터 전송 성공!");
+                },
+                error: function () {
+                    console.log("데이터 전송 실패!");
+                }
+            });
         } else {
             // User is not logged in, redirect to "LoginMainHC"
-            var goLogin = confirm('You must login first.\nDo you want to login?');
-            if (goLogin) {
+            var goLogin1 = confirm('You must login first.\nDo you want to login?');
+            if (goLogin1) {
                 window.location.href = 'LoginMainHC';
-            }else{
-				location.href='VolunteerMainC';
-}
+            } else {
+                location.href = 'VolunteerDetailC?no=' + vNo;
+            }
         }
     });
 });
-
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("regVol").addEventListener("click", function () {
         var accountNo = this.value;
