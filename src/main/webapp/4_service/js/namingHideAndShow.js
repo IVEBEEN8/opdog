@@ -2,6 +2,8 @@ console.log("hide and show");
 
 let gender, color, hairLength, personality;
 
+
+
 function showLoading() {
   document.getElementById("loading").style.display = "block";
   document.getElementById("loadingwords").style.display = "block";
@@ -20,7 +22,9 @@ function hideButtom(){
 function showRetry(){
 	document.getElementById("resend").style.display = "block";
 }
-
+function hideTitle(){
+	document.getElementById("title").style.display = "none";
+}
 function selectGender(selectedGender) {
   gender = selectedGender;
   showOptions("colorOptions");
@@ -41,8 +45,9 @@ function selectPersonality(selectedPersonality) {
   showButtom();
   const generatedName = generateName();
   const personalityOptions = document.getElementById("personalityOptions");
-  personalityOptions.innerHTML = `<h2>You've just selected ${gender}, ${color} hair color, ${hairLength} style, and ${personality} personality! Can you push the generate button?!</h2>`
-  /* updateSelectedText(
+  hideTitle();
+  personalityOptions.innerHTML = `<h2>You've just selected ${gender}, ${color} hair color, ${hairLength} style, and ${personality} personality! Can you push the generate button?!</h2>`  
+/* updateSelectedText(
     `${generatedName}을(를) 선택했어여!! generate 버튼을 눌러주세용!!`
   ); */
   generateName();

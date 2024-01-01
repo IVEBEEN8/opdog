@@ -30,6 +30,7 @@
 				<div id="myPageButton" class="button" onclick="myPageButton()">my info</div>
 				<div id="likeButton" class="button" onclick="likeButton()">like</div>
 				<div id="pointButton" class="button" onclick="pointButton()">point</div>
+				<div id="volunteerButton" class="button" onclick="volunteerButton()">volunteer</div>
 			</div>
 
 			<div class="totalInnerPage">
@@ -69,6 +70,9 @@
 				</div>
 				<div id="pointPage" class="innerPage p3">
 					<div>point</div>
+				</div>
+				<div id="volunteerPage" class="innerPage p4">
+					<div>volunteer</div>
 				</div>
 			</div>
 

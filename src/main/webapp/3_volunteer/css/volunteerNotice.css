@@ -110,7 +110,7 @@ main {
 
 .search>img {
 	height: 3.4098148148148146vh;
-	margin: 2.3vw;
+	margin: 1.7vw;
 	margin-left: 3vw;
 }
 
@@ -265,7 +265,7 @@ input:focus {
 	gap: 0.5vw;
 }
 
-.bottom>form>button {
+.bottom>button {
 	border: solid 4px #faeab1;
 	border-radius: 2.8vw;
 	width: 5vw;

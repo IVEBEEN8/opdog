@@ -17,7 +17,7 @@
 </head>
 <body>
 	<div class="container">
-		<p>Dog name generator</p>
+		<p id ="title">Dog name generator</p>
 		<!-- 성별 선택 -->
 		<div class="wrapper" id="genderOptions">
 			<p>What is your pet's gender?</p>
