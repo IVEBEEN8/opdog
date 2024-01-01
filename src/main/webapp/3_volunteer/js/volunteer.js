@@ -18,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var vImg = san[5];
         var vTxt = san[6];
         var aEmail = san[7];
-
         vTxt = vTxt.replaceAll("\r\n", "<br>");
-
         var formData = new FormData();
         formData.append("accountNo1", accountNo1);
         formData.append("vNo", vNo);
@@ -30,9 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
         formData.append("vImg", vImg);
         formData.append("vTxt", vTxt);
         formData.append("aEmail", aEmail);
-
         console.log(san);
-        
         // Check if the user is logged in
         if (accountNo1 !== "") {
             Swal.fire({
@@ -50,7 +46,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     }
                 }
             }); 
-
             $.ajax({
                 type: "POST",
                 url: "ApplyVolC",
@@ -79,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("regVol").addEventListener("click", function () {
         var accountNo = this.value;

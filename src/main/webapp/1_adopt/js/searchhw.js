@@ -22,10 +22,10 @@ $(document).ready(function performSearch(){
 			console.log(data);
 				$("#modalBody1").empty();
 			for(var i = 0; i < data.length; i++){
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Center Name</div><div class="small-content1">:' + data[i].careNm + '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Address</div><div class="small-content1">:' + data[i].careAddr + '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Operation Time</div><div class="small-content1">:' + data[i].oprtime+'~'+data[i].closetime +'('+data[i].closeday+')'+ '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Tel</div><div class="small-content1">: ' + data[i].tel + '</div></div>');	
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Center Name</div><div class="small-content1">' + data[i].careNm + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Address</div><div class="small-content1">' + data[i].careAddr + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Operation Time</div><div class="small-content1">' + data[i].oprtime+'~'+data[i].closetime +'('+data[i].closeday+')'+ '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Tel</div><div class="small-content1">' + data[i].tel + '</div></div>');	
 				$("#modalBody1").append('<hr>')}
 				//모달
 		   	  $("#closeBtn1").on("click", function () {
