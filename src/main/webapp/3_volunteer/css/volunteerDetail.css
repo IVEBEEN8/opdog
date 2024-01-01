@@ -151,8 +151,10 @@ color: #43311CE5;
 }
 
 .img-wrap>img {
-	animation: motion 0.3s linear 0s infinite alternate;
-	margin-bottom: 10px;
+	left: 48vw;
+    position: relative;
+    animation: motion 0.3s linear 0s infinite alternate;
+    margin-bottom: 10px;
 }
 
 @keyframes motion { 0% {

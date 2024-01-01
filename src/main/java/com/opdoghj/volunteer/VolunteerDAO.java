@@ -157,7 +157,7 @@ public class VolunteerDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String searchTitle = request.getParameter("searchTitle");
-		String sql = "select * from volunteer where v_title like ?";
+		String sql = "select * from volunteer where v_title like ? order by v_no";
 
 		try {
 			System.out.println(searchTitle);
@@ -207,7 +207,7 @@ public class VolunteerDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String clickedBtn = request.getParameter("searchBtn");
-		String sql = "select * from volunteer where v_status like ?";
+		String sql = "select * from volunteer where v_status like ? order by v_no";
 
 		try {
 			System.out.println(clickedBtn);
@@ -357,8 +357,6 @@ public class VolunteerDAO {
 			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
-			String vNo1 = request.getParameter("vNo");
-			System.out.println("vNo from servlet: " + vNo1);
 			String accountNo1 = mr.getParameter("accountNo1");
 			String vNo = mr.getFilesystemName("vNo");
 			String vStatus = mr.getParameter("vStatus");

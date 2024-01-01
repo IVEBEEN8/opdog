@@ -45,10 +45,26 @@
 				<button type="button" id="btn" value="${account.no }!${vol.v_no}!${vol.v_status}!${vol.v_title }!${vol.v_created }!${vol.v_img }!${vol.v_txt }!${account.email }">Apply for volunteer</button>
 			</div>
 			<div class="img-wrap">
-				<img alt="" src="3_volunteer/img/click.png">
+				<img alt="" id="btnlogo" src="3_volunteer/img/click.png">
 			</div>
 		</main>
 	</form>
-
+	    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var statusValue = "${vol.v_status}";
+			console.log(statusValue);
+            var applyButton = document.getElementById('btn');
+            var buttonLogo = document.getElementById('btnlogo');
+            // Check the value of ${vol.v_status} and decide whether to show or hide the button
+            if (statusValue === 'Recruiting') { // replace 'some_condition' with the actual condition you want to check
+                applyButton.style.display = 'block'; // or 'inline' or 'inline-block' depending on your layout
+                buttonLogo.style.display = 'block';
+            } else {
+                applyButton.style.display = 'none';
+                buttonLogo.style.display = 'none';
+            }
+        });
+    </script>
+	
 </body>
 </html>
