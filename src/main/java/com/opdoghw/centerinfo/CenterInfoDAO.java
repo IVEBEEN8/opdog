@@ -264,7 +264,8 @@ public class CenterInfoDAO {
 		ResultSet rs = null;
 		String searchField = request.getParameter("searchField");
 		String searchText = request.getParameter("searchText");
-		String sql = "select * from centerinfo1 where " + searchField + " like ?";
+		// 대소문자 구분없이 변경가능하게..
+		String sql = "select * from centerinfo1 where UPPER(" + searchField + ") like UPPER(?)";
 
 		JSONArray searchedInfo = new JSONArray();
 		JSONObject si = null;
