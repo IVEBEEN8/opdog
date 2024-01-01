@@ -49,7 +49,8 @@
 			</div>
 		</main>
 	</form>
-	    <script>
+	 <script>
+	 	
         document.addEventListener('DOMContentLoaded', function () {
             var statusValue = "${vol.v_status}";
 			console.log(statusValue);

@@ -358,7 +358,7 @@ public class VolunteerDAO {
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 			String accountNo1 = mr.getParameter("accountNo1");
-			String vNo = mr.getFilesystemName("vNo");
+			String vNo = mr.getParameter("vNo");
 			String vStatus = mr.getParameter("vStatus");
 			String vTitle = mr.getParameter("vTitle");
 			String vCreated = mr.getParameter("vCreated");
