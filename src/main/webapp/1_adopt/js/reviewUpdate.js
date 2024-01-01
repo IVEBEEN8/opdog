@@ -62,5 +62,5 @@ function checkLength() {
             textarea.value = textarea.value.substring(0, maxLength);
         }
 
-        charCount.innerText = '글자 수: ' + textarea.value.length + ' / ' + maxLength;
+        charCount.innerText = 'Text length: ' + textarea.value.length + ' / ' + maxLength;
     }
