@@ -266,14 +266,15 @@ function pagination(json){
 			$.each(data, function (index,item){
 				dataHtml += '<div class="doginfobox" id="dog">'+
 								'<div class="infoimg"> <img alt="" src="'+ item.filename+'"></div>'+
+								'<div class="doginfoWrap">'+
 								'<div class="infotext">'+
 									'<div class="kind"> kind: '+ item.kindCd+'</div>'+
 									'<div class="etc"> age:'+ item.age+' sex:'+ item.sexCd+' neuter:'+ item.neuterYn+'</div>'+
 								'</div>'+
 								'<div class="infobutton">'+
-									'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>상세정보</button>'+
+									'<button id="detail"><p style="display:none;">'+JSON.stringify(item)+'</p>View More</button>'+
 									'<button id="liketrigger">like!</button>'+
-								'</div>'+
+								'</div>'+'</div>'+
 							'</div>';
 				console.log(item)
 			});
