@@ -22,6 +22,7 @@ public class LoginDAO {
 		try {
 			String email = request.getParameter("email");
 			String pw = request.getParameter("pw");
+			String previousPage = request.getParameter("previousPage");
 
 			String result = "";
 			String dbPW = "";
@@ -32,12 +33,14 @@ public class LoginDAO {
 			pstmt.setString(1, email);
 			rs = pstmt.executeQuery();
 			HttpSession hs = request.getSession();
+			HttpSession session = request.getSession();
 			LoginDTO account = new LoginDTO();
 
 			if (rs.next()) {
 				dbPW = rs.getString("a_password");
 				if (pw.equals(dbPW)) {
 					result = "로그인 성공!";
+					// 이전 페이지 정보를 세션에 저장
 
 					String upr[] = rs.getString("a_uprCd").split(",");
 					String org[] = rs.getString("a_orgCd").split(",");
@@ -54,17 +57,21 @@ public class LoginDAO {
 					account.setResult("ok");
 					// 세션에 account information 담아서 보내기.
 					hs.setAttribute("account", account);
+					session.setAttribute("previousPage", previousPage);
 					hs.setMaxInactiveInterval(60 * 60 * 12);
 					System.out.println("account정보:" + account);
+					System.out.println("previousPage정보:" + previousPage);
 				} else {
 					account.setResult("password");
 					hs.setAttribute("account", account);
+					session.setAttribute("previousPage", previousPage);
+					System.out.println("previousPage정보: " + previousPage);
 					System.out.println("비번 오류");
-
 				}
 			} else {
 				account.setResult("id");
 				hs.setAttribute("account", account);
+				session.setAttribute("previousPage", previousPage);
 				System.out.println("아이디 확인");
 			}
 			// 로그인 성공 실패 화면출력을 위함.

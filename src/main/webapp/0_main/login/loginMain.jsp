@@ -21,13 +21,26 @@
 			alert('${alert}')
 		}
 	}
+	
+    function rememberPreviousPage() {
+        // 현재 페이지 경로 가져오기
+        var currentPage = window.location.href;
+
+        // 이전 페이지를 hidden input에 설정
+        document.getElementById("previousPage").value = currentPage;
+
+        // true를 반환하면 폼이 제출되고, false를 반환하면 제출이 취소됩니다.
+        console.log("Previous Page: " + currentPage);
+        return true;
+    }
 </script>
 
 </head>
   <body onload="aa()">
 
     <!-- 로그인부분시작 -->
-    <form action="LoginMainHC" method="post">
+    <form action="LoginMainHC" method="post" onsubmit="rememberPreviousPage()">
+    	<input type="hidden" id="previousPage" name="previousPage" />
       <div class="containar-hw">
         <div class="sub-containar-hw">
           <div class="loginpage lp-title">
@@ -70,7 +83,6 @@
             </button>
           </div>
         </div>
-      </div>
     </form>
  
   </body>
