@@ -261,6 +261,7 @@ function pagination(json){
 	let container = $('#pagination');
 	container.pagination({
 		dataSource: json,
+		pageSize: 5,
 		callback: function(data, pagination){
 			var dataHtml = '<div class="infoinnerbox">';
 			$.each(data, function (index,item){
