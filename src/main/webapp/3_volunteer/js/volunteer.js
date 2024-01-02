@@ -1,10 +1,22 @@
-
-function deleteMovie(n){
+function modifyPost(accountNo, aNo, vNo ){
+	if(accountNo != aNo ){
+		alert("you can't modify the article");
+	}else{
+		location.href='VolunteerModic?no=' + vNo
+	}
+	
+}
+function deletePost(accountNo, aNo, n){
+	if(accountNo != aNo){
+		alert("you can't modify the article");
+	}else{
 	let ok = confirm ('Are you sure you want to delete?');
 	if(ok){
 		location.href='VolunteerDelC?no=' + n;
+		}
 	}
 }
+
 console.log("ready to call");
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("btn").addEventListener("click", function () {

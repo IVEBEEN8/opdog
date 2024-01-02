@@ -426,7 +426,27 @@ public class VolunteerDAO {
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
-
 	}
 
+	public static void deleteFromMyList(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String no = request.getParameter("no");
+		System.out.println(no);
+		String sql = "delete appliedvol where ap_no=?";
+
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제성공!");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("삭제실패했습니다..");
+		} finally {
+			DBManager_khw.close(con, pstmt, null);
+		}
+	}
 }
