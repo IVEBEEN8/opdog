@@ -49,7 +49,7 @@ public class MyPageDAO {
 		System.out.println("-----------");
 	}
 
-	public static void likeLoad(HttpServletRequest request) {
+	public static void likeLoad(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;

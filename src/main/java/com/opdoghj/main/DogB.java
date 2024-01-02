@@ -7,11 +7,11 @@ public class DogB {
 	private String age;
 	private String specialMark;
 	private int date;
-	private int Dday;
+	private long Dday;
 	public DogB() {
 		// TODO Auto-generated constructor stub
 	}
-	public DogB(String popfile, String kindCd, String sexCd, String age, String specialMark, int date, int dday) {
+	public DogB(String popfile, String kindCd, String sexCd, String age, String specialMark, int date, long dday) {
 		super();
 		this.popfile = popfile;
 		this.kindCd = kindCd;
@@ -57,10 +57,10 @@ public class DogB {
 	public void setDate(int date) {
 		this.date = date;
 	}
-	public int getDday() {
+	public long getDday() {
 		return Dday;
 	}
-	public void setDday(int dday) {
+	public void setDday(long dday) {
 		Dday = dday;
 	}
 	
