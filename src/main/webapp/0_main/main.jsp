@@ -36,7 +36,7 @@
 					</div>
 				</div>
 				<div class="nav-items">
-					<a href="#" class="nav-text"><span>Shop</span></a>
+					<a onclick="location.href='FashionC'" class="nav-text"><span>Shop</span></a>
 					<div class="nav-subnav">
 						<a onclick="location.href='FashionC'">Fashion</a> <a
 							onclick="location.href='FeedC'">Feed</a> <a
@@ -163,10 +163,10 @@
 				<div class="full4-bigTxt">About &nbsp;&nbsp;Us</div>
 				<div class="full4-smallTxt">
 					<div>
-						<a href="#">Checklist</a>
+						<a onclick="location.href='ProcessC'">Checklist</a>
 					</div>
 					<div>
-						<a href="#">Adopt Review</a>
+						<a onclick="location.href='ReviewC'">Adopt Review</a>
 					</div>
 				</div>
 			</div>
