@@ -190,3 +190,38 @@ html, body {
 	letter-spacing: 0.05vh;
 	margin-top: 5vh;
 }
+
+/* volunteer 부분 css 입니다~ 도죠 요로시쿠 오네가이시마스-!  */
+.vol-wrapper{
+	height: 90%;
+    margin: 4%;
+    padding: 2% 2%;
+    position: relative;
+    background-color: pink;
+    border-radius: 2%;
+}
+.vol-table{
+	border: 1px solid black;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+.vol-title{
+	font-size:2vw;
+	margin-top:2%;
+}
+.vol-semititle{
+	position: relative;
+	
+}
+.vol-btn{
+	background-color:gray;
+	border-radius: 1%;
+}
+.vol-th, .vol-td{
+	padding: 1%;
+	border: 1px solid black;
+}
+
+
+

@@ -6,7 +6,7 @@ function deleteMovie(n){
 	}
 }
 console.log("ready to call");
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("btn").addEventListener("click", function () {
         var selectedValue = $(this).val();
         var san = selectedValue.split("!");
@@ -18,9 +18,17 @@ document.addEventListener("DOMContentLoaded", function () {
         var vImg = san[5];
         var vTxt = san[6];
         var aEmail = san[7];
-        console.log(san);
         vTxt = vTxt.replaceAll("\r\n", "<br>");
-
+        var formData = new FormData();
+        formData.append("accountNo1", accountNo1);
+        formData.append("vNo", vNo);
+        formData.append("vStatus", vStatus);
+        formData.append("vTitle", vTitle);
+        formData.append("vCreated", vCreated);
+        formData.append("vImg", vImg);
+        formData.append("vTxt", vTxt);
+        formData.append("aEmail", aEmail);
+        console.log(san);
         // Check if the user is logged in
         if (accountNo1 !== "") {
             Swal.fire({
@@ -34,33 +42,25 @@ document.addEventListener("DOMContentLoaded", function () {
                         console.log("gotomypage!!");
                         location.href = 'MyPageHC';
                     } else {
-                        // Move the AJAX request here
-                        var formData = new FormData();
-                        formData.append("accountNo1", accountNo1);
-                        formData.append("vNo", vNo);
-                        formData.append("vStatus", vStatus);
-                        formData.append("vTitle", vTitle);
-                        formData.append("vCreated", vCreated);
-                        formData.append("vImg", vImg);
-                        formData.append("vTxt", vTxt);
-                        formData.append("aEmail", aEmail);
-
-                        $.ajax({
-                            type: "POST",
-                            url: "ApplyVolC",
-                            data: formData,
-                            contentType: false,
-                            processData: false,
-                            success: function () {
-                                console.log("데이터 전송 성공!");
-                                console.log(formData); // 이 부분으로 이동
-                            },
-                            error: function () {
-                                console.log("데이터 전송 실패!");
-                            }
-                        });
                         location.href = 'VolunteerDetailC?no=' + vNo;
                     }
+                }
+            }); 
+            $.ajax({
+                type: "POST",
+                url: "ApplyVolC",
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function () {
+					console.log("FormData contents:");
+					for (var pair of formData.entries()) {
+					    console.log(pair[0] + ': ' + pair[1]);
+					}
+                    console.log("데이터 전송 성공!");
+                },
+                error: function () {
+                    console.log("데이터 전송 실패!");
                 }
             });
         } else {
@@ -74,6 +74,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
 document.addEventListener("DOMContentLoaded", function() {
     document.getElementById("regVol").addEventListener("click", function () {
         var accountNo = this.value;

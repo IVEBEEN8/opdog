@@ -15,7 +15,6 @@ public class SignUpC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		DoginfoDAO.sido(request); // 시/도 어트리뷰 세팅 메서드
-
 		request.setAttribute("contentPage", "login/accountReg.jsp");
 		LoginDAO.loginCheck(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);

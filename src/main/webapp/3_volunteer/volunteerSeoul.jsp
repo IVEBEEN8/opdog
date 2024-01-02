@@ -39,6 +39,7 @@
 				</div>
 			</form>
 		</div>
+		
 		<c:forEach items="${volunteer}" var="volunteer">
 			<a href="VolunteerDetailC?no=${volunteer.v_no}">
 				<table id="middle">

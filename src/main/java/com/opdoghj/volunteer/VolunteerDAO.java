@@ -183,16 +183,6 @@ public class VolunteerDAO {
 
 			}
 			System.out.println(volunteer);
-
-			if (volunteer.isEmpty()) {
-				// 검색 결과가 없는 경우
-				String searchMessage = "찾는 기사가 없습니다.";
-				request.setAttribute("searchMessage", searchMessage);
-			} else {
-				// 검색 결과가 있는 경우
-				request.setAttribute("volunteer", volunteer);
-			}
-
 			System.out.println("성공");
 
 		} catch (Exception e) {
@@ -246,22 +236,22 @@ public class VolunteerDAO {
 
 	public static void Paging(int page, HttpServletRequest request) {
 		request.setAttribute("curPageNo", page);
-		int cnt = 5; // 한페이지당 보여줄 개수
+		int cnt = 5; // 한 페이지당 보여줄 개수
 		int total = volunteer.size(); // 총 데이터 개수
+
 		// 총 페이지
 		int pageCount = (int) Math.ceil((double) total / cnt);
 		request.setAttribute("pageCount", pageCount); // jsp에서 써야해서 실어줌..!
 
-		int start = total - (cnt * (page - 1));
-		int end = (page == pageCount) ? -1 : start - (cnt + 1);
+		// 페이지 계산
+		int start = (page - 1) * cnt;
+		int end = Math.min(start + cnt, total);
 
 		ArrayList<volunteerDTO> items = new ArrayList<volunteerDTO>();
-		for (int i = start - 1; i > end; i--) {
-			// 역순으로 계산하는걸로 가져왔기때문에 꺽새 뒤집어주고 --로 수정
+		for (int i = start; i < end; i++) {
 			items.add(volunteer.get(i));
 		}
 		request.setAttribute("volunteer", items);
-
 	}
 
 	public static void updatePost(HttpServletRequest request) {
@@ -350,7 +340,7 @@ public class VolunteerDAO {
 	public static void applyVol(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into appliedvol values(appliedvol_seq.nextval, ?,?,?,?,?,?,?,?)";
+		String sql = "insert into appliedvol values(appliedvol_seq.nextval, ?,?,?,?,?,sysdate,?,?,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
@@ -358,7 +348,7 @@ public class VolunteerDAO {
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 			String accountNo1 = mr.getParameter("accountNo1");
-			String vNo = mr.getFilesystemName("vNo");
+			String vNo = mr.getParameter("vNo");
 			String vStatus = mr.getParameter("vStatus");
 			String vTitle = mr.getParameter("vTitle");
 			String vCreated = mr.getParameter("vCreated");
@@ -416,18 +406,21 @@ public class VolunteerDAO {
 			ArrayList<appliedVol> reglist = new ArrayList<appliedVol>();
 			appliedVol like = null;
 			while (rs.next()) {
-
 				like = new appliedVol();
+				like.setAccountNo(rs.getInt("a_no"));
+				like.setPostNo(rs.getInt("v_no"));
+				like.setPreivateNo(rs.getInt("ap_no"));
 				like.setTitle(rs.getString("ap_title"));
 				like.setEmail(rs.getString("a_email"));
-				like.setImgf(rs.getString("a_email"));
+				like.setImgf(rs.getString("ap_img"));
 				like.setTxt(rs.getString("ap_txt"));
 				like.setCreated(rs.getString("ap_postdate"));
+				like.setApplied(rs.getString("ap_applieddate"));
 				like.setStatus(rs.getString("ap_status"));
 				reglist.add(like);
 			}
 			request.setAttribute("reglist", reglist);
-			System.out.println(reglist);
+			System.out.println("this is the reglist:" + reglist);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {

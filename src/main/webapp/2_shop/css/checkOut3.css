@@ -1,17 +1,15 @@
 @charset "UTF-8";
 
-.check3-container{
-	padding-bottom: 6vw;	
+.check3-container {
+	padding-bottom: 6vw;
 }
 
-.top-container{
+.top-container {
 	display: flex;
 	flex-direction: row-reverse;
 	padding-top: 27vh;
-	padding-right:28vw;
-	
+	padding-right: 28vw;
 }
-
 
 .mid-container {
 	display: flex;
@@ -31,9 +29,9 @@
 	letter-spacing: 0.827px;
 	padding-right: 8vw;
 	margin-bottom: 0.4vw;
-	
 }
-.opdog-baloon{
+
+.opdog-baloon {
 	background-color: rgba(158, 111, 33, 1);
 	border-radius: 1vw;
 	display: flex;
@@ -42,36 +40,37 @@
 	position: relative;
 }
 
-.opdog-arrow{
+.opdog-arrow {
 	position: absolute;
 	border-top: 0.5vw solid rgba(158, 111, 33, 1);
 	border-left: 0.5vw solid rgba(158, 111, 33, 1);
 	border-right: 0.5vw solid transparent;
 	border-bottom: 0.5vw solid transparent;
-	top:4vw;
-	left:1vw;
+	top: 4vw;
+	left: 1vw;
 }
 
-
-.opdog-txt{
+.opdog-txt {
 	color: white;
 	font-size: 1vw;
 	font-weight: 400;
 	letter-spacing: -0.4px;
-	padding:0.6vw;
+	padding: 0.6vw;
 }
+
 .dog-img-cover {
 	display: flex;
 	justify-content: center;
 }
-.dog-img{
-	width:12vw;
+
+.dog-img {
+	width: 12vw;
 }
 
 .btn-cover {
 	display: flex;
 	justify-content: center;
-	margin-top:5vh;
+	margin-top: 5vh;
 }
 
 .mypage-btn-kl {
@@ -81,12 +80,11 @@
 	flex-shrink: 0;
 	color: rgba(67, 49, 28, 0.9);
 	background-color: white;
-	margin-right:1vh;
-	margin-bottom:5vh;
-	font-size:0.8vw;
+	margin-right: 1vh;
+	margin-bottom: 5vh;
+	font-size: 0.8vw;
 	font-weight: 400;
 	font-family: "DM Sans", sans-serif;
-	
 }
 
 .moreshopping-btn {
@@ -95,9 +93,9 @@
 	flex-shrink: 0;
 	color: white;
 	background-color: rgba(67, 49, 28, 0.90);
-	margin-left:1vh;
-	font-size:0.8vw;
+	margin-left: 1vh;
+	font-size: 0.8vw;
 	font-weight: 400;
 	font-family: "DM Sans", sans-serif;
-	
+	border: none;
 }

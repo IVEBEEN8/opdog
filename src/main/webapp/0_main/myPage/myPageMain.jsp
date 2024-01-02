@@ -72,7 +72,25 @@
 					<div>point</div>
 				</div>
 				<div id="volunteerPage" class="innerPage p4">
-					<div>volunteer</div>
+					<div class="vol-wrapper">
+						<div class="vol-title"><span>Saved Volunteer List</span></div>
+						<table class="vol-table">
+								<tr class="vol-semititle">
+									<th class="vol-th">Post Number</th>
+									<th class="vol-th">Post Title</th>
+									<th class="vol-th">Applied Date</th>
+									<th class="vol-th">Detail/Cancel</th>
+								</tr>
+							<c:forEach var="reglist" items="${reglist }" varStatus="status">
+								<tr class="vol-semititle">
+									<td class="vol-td">${reglist.postNo }</td>
+									<td class="vol-td">${reglist.title }</td>
+									<td class="vol-td">${reglist.applied }</td>
+									<td class="vol-td"><button class="vol-btn">Detail</button> &nbsp <button class="vol-btn">Cancel</button></td>
+								</tr>
+							</c:forEach>
+						</table>
+					</div>
 				</div>
 			</div>
 

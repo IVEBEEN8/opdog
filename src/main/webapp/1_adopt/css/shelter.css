@@ -299,13 +299,15 @@ body {
 }
 
 #modalBody1 {
-	top: 11%;
-    width: 87%;
+	left: 2%;
+    top: 11%;
+    width: 83%;
     position: absolute;
-    border-top: 1px solid black;
+    border-top: 2px solid black;
     height: 75%;
     padding: 3% 6.5%;
     overflow-x: scroll;
+	
     
 }
 #modalBody1::-webkit-scrollbar {
@@ -345,9 +347,9 @@ body {
     font-size: 0.8vw;
 }
 .box-title1{
-	display: flex;
-    height: 3vh;
-    margin: 1vh;
+    margin-top: 0.7vh;
+    position: relative;
+    display: flex;
     text-align: left;
     font-size: 0.7vw;
 }
@@ -355,7 +357,10 @@ body {
 	width: 150px;	
 }
 .small-title1{
-	width: 30%;
+	font-size: 0.8vw;
+    color: brown;
+    font-weight: bold;
+    width: 30%;
 }
 .box-info{
 	font-size: 30px;
@@ -376,10 +381,11 @@ body {
 	white-space: normal;
 }
 .small-content1{
-	left: 34%;
-    position: absolute;
-    width: 59%;
-    white-space: normal
+	margin: auto;
+    overflow: scroll;
+    position: relative;
+    width: 78%;
+    white-space: normal;
 }
 
 .search-container1-2 {
