@@ -25,21 +25,22 @@
 }
 
 #modalBody {
-	width: 60vw;
-	height: 35vw;
+	width: 50vw;
+	height: 40vw;
 	padding: 1vw 1vw;
-	margin: 9vw auto;
+	margin: 2vw auto;
 	background-color: #fff;
 	border: 1px solid #777;
+	border-radius: 1vw;
 }
 
 .modalWrap {
 	margin: 4vw 2vw;
 	display: flex;
-	height: 20vw;
 }
 
 .modalImg {
+	margin: 4vw 0;
 	width: 30vw;
 	height: 22vw;
 }
@@ -52,7 +53,7 @@
 
 .modalInfoWrap {
 	width: 45vw;
-	font-size: 1.2vw;
+	font-size: 0.9vw;
 	font-family: "Poppins", sans-serif;
 }
 
@@ -63,10 +64,79 @@
 .modalInfoWrap>div>p {
 	color: #6f0401;
 	margin: 0 1vw;
+	font-size: 0.9vw;
+	font-weight: 600;
 }
 
-.Shelter, .agency{
+.modal-list {
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.Shelter, .agency {
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.spandesign {
+	border: 0.2vw solid rgba(0, 0, 0, 0.09);
+	background: #FFF;
+	height: 1.5vw;
+	width: 25vw;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2.2vw;
+}
+
+.spandesign2 {
+	border: 0.2vw solid rgba(0, 0, 0, 0.09);
+	background: #FFF;
+	height: 2.5vw;
+	width: 25vw;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 2.2vw;
+}
+
+.viewMap>button {
+	width: 3.1vw;
+	font-size: 0.5vw;
+	border: none;
+	border-radius: 3vw;
+	background: #FAEAB180;
+	color: #43311CE5;
+}
+
+.viewMap>button:hover {
+	box-shadow: 1px 1px 10px 1px #d1bc99;
+}
+
+.likebtn {
+	width: 12vw;
+	height: 2vw;
+	margin-top: 0.6vw;
+	gap: 0.5vw;
+}
+
+.likebtn>button {
+	border: none;
+	border-radius: 0.4vw;
+	font-size: 1.2vw;
+	font-weight: 700;
+	color: white;
+	background: #643f14;
+	width: 6vw;
+}
+
+.likebtn>button:hover{
+	background:#FAEAB182;
+	color:#643f14;
 }
 
 #closeBtn {

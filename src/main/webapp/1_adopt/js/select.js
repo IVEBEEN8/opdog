@@ -215,17 +215,16 @@ $(document).ready(function() {
 		$('div').remove('#detailinfo');
 		$('#modalBody').append('<div class="modalWrap" id="detailinfo">' +
 			'<div class="modalImg" id="detailinfo"><img src="' + items.popfile + '" style="width:300px;"></div>' +
-			'<div class="modalInfoWrap" id="detailinfo">' + '<div class="#" id="detailinfo"><p>Age</p>&nbsp;' + items.age + '</div>'
-			+ '<div class="#" id="detailinfo"><p>Number</p>&nbsp;' + items.desertionNo + '</div>'
-			+ '<div class="#" id="detailinfo"><p>Kind</p>&nbsp;' + items.kindCd + '</div>'
-			+ '<div class="#" id="detailinfo"><p>Color</p>&nbsp;' + items.colorCd + '</div>'
-			+ '<div class="#" id="detailinfo"><p>Gender</p>&nbsp;' + items.sexCd + '</div>'
-			+ '<div class="#" id="detailinfo"><p>Neutering</p>&nbsp;' + items.neuterYn + '</div>'
-			+ '<div class="#" id="detailinfo"><p>Characteristic</p>&nbsp;' + items.specialMark + '</div>'
-			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>&nbsp;' + items.careNm + 'phone ' + items.careTel + 'address ' + items.careAddr + '<div><button>View Map</button></div></div>' +
-			'<div class="agency" id="detailinfo"><p>agency</p>&nbsp;' + items.orgNm + 'Department ' + items.chargeNm + 'phone ' + items.officetel + '</div>'
-			+ '<div class="#" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button></div>' +
-			'<button id="liketrigger">spon</button>' +
+			'<div class="modalInfoWrap" id="detailinfo">' + '<div class="modal-list" id="detailinfo"><p>Age</p>' +'<span class="spandesign">'+ items.age+'</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Number</p>' + '<span class="spandesign">'+items.desertionNo+'</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Kind</p>' +'<span class="spandesign">'+ items.kindCd + '</span>'+'</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Color</p>' + '<span class="spandesign">'+items.colorCd +'</span>'+ '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Gender</p>' + '<span class="spandesign">'+items.sexCd+'</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Neutering</p>' + '<span class="spandesign">'+items.neuterYn+'</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Characteristic</p>' +'<span class="spandesign">'+ items.specialMark+'</span>' + '</div>'
+			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>' + '<span class="spandesign2">'+items.careNm + '(' + items.careTel + ')' + items.careAddr +'</span>'+ '<div class="viewMap"><button>View Map</button></div></div>' +
+			'<div class="agency" id="detailinfo"><p>agency</p>'+'<span class="spandesign2">' + items.orgNm + '&nbsp;' + items.chargeNm + '(' + items.officetel+')' + '</span>'+'</div>'
+			+ '<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button><button id="liketrigger">spon</button>' +'</div>' +
 			'</div>' + '</div>');
 		$('#modalWrap').css({ "display": "block" });
 	});
