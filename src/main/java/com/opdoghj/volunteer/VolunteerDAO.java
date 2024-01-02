@@ -340,7 +340,7 @@ public class VolunteerDAO {
 	public static void applyVol(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into appliedvol values(appliedvol_seq.nextval, ?,?,?,?,?,?,?,?)";
+		String sql = "insert into appliedvol values(appliedvol_seq.nextval, ?,?,?,?,?,sysdate,?,?,?)";
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
@@ -406,18 +406,21 @@ public class VolunteerDAO {
 			ArrayList<appliedVol> reglist = new ArrayList<appliedVol>();
 			appliedVol like = null;
 			while (rs.next()) {
-
 				like = new appliedVol();
+				like.setAccountNo(rs.getInt("a_no"));
+				like.setPostNo(rs.getInt("v_no"));
+				like.setPreivateNo(rs.getInt("ap_no"));
 				like.setTitle(rs.getString("ap_title"));
 				like.setEmail(rs.getString("a_email"));
-				like.setImgf(rs.getString("a_email"));
+				like.setImgf(rs.getString("ap_img"));
 				like.setTxt(rs.getString("ap_txt"));
 				like.setCreated(rs.getString("ap_postdate"));
+				like.setApplied(rs.getString("ap_applieddate"));
 				like.setStatus(rs.getString("ap_status"));
 				reglist.add(like);
 			}
 			request.setAttribute("reglist", reglist);
-			System.out.println(reglist);
+			System.out.println("this is the reglist:" + reglist);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
