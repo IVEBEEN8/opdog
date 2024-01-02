@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+html, body {
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+}
+
+.main {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 13vh;
+	padding-bottom: 15vh;
+}
+
+.container {
+	width: 45.57291666666667vw;
+	height: 83vh;
+	border-radius: 50px;
+	border: 1px dashed rgba(67, 49, 28, 0.80);
+}
+
+.review-title {
+	color: rgba(67, 49, 28, 0.90);
+	text-align: center;
+	font-family: DM Sans;
+	font-size: 1.5625vw;
+	font-style: normal;
+	font-weight: 500;
+	line-height: normal;
+	letter-spacing: -0.05vw;
+	border-bottom: 5px solid rgba(67, 49, 28, 0.6);
+	width: 15.625vw;
+	margin-top: 3.783102143757881vh;
+	padding-bottom: 0.5vh;
+}
+
+.review-info {
+	display: flex;
+	justify-content: center;
+	font-family: Inter;
+	font-size: 0.6770833333333334vw;
+	font-style: normal;
+	font-weight: 300;
+	line-height: normal;
+	letter-spacing: -0.0203125vw;
+	margin-top: 1.4754098360655736vh;
+}
+
+.review-vertical {
+	width: 0;
+	border-left: 0.5px solid rgba(67, 49, 28, 0.9);
+	margin-left: 1vw;
+	margin-right: 1vw;
+}
+
+.review-img {
+	height: 18.915510718789406vh;
+	margin-top: 2.837326607818411vh;
+	margin-bottom:1.5vh;
+}
+
+.review-txt {
+	width: 35.833333333333336vw;
+	height: 35.87641866330391vh;
+	border: none;
+	resize: none;
+	font-family: DM Sans;
+	font-size: 1.3020833333333335vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.04728877679697352vh;
+}
+.review-btn{
+	margin-top:2.5vh;
+	
+}
+
+.review-edit-btn {
+	width: 5.53vw;
+	height: 4vh;
+	border: 1px solid black;
+	background: white;
+	color: rgba(67, 49, 28, 0.9);
+	font-family: DM Sans;
+	font-size: 0.7291666666666666vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.015625vw;
+}
+
+.reiview-list-btn {
+	width: 5.53vw;
+	height: 4vh;
+	background: rgba(67, 49, 28, 0.9);
+	color: white;
+	font-family: DM Sans;
+	font-size: 0.7291666666666666vw;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	letter-spacing: -0.015625vw;
+	margin-left:0.4vw;
+	margin-right:0.4vw;
+}
