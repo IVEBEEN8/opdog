@@ -22,17 +22,26 @@
 		}
 	}
 	
-    function rememberPreviousPage() {
-        // 현재 페이지 경로 가져오기
-        var currentPage = window.location.href;
+	function rememberPreviousPages() {
+	    // 현재 페이지 경로 가져오기
+	    var currentPage = window.location.href;
 
-        // 이전 페이지를 hidden input에 설정
-        document.getElementById("previousPage").value = currentPage;
+	    // 이전 페이지를 세션 스토리지에서 가져오기
+	    var previousPage = sessionStorage.getItem("previousPage");
 
-        // true를 반환하면 폼이 제출되고, false를 반환하면 제출이 취소됩니다.
-        console.log("Previous Page: " + currentPage);
-        return true;
-    }
+	    // 전전 페이지를 세션 스토리지에서 가져오기
+	    var previousPage2 = sessionStorage.getItem("previousPage2");
+
+	    // 현재 페이지를 세션 스토리지에 저장
+	    sessionStorage.setItem("previousPage2", previousPage);
+	    sessionStorage.setItem("previousPage", currentPage);
+
+	    // true를 반환하면 폼이 제출되고, false를 반환하면 제출이 취소됩니다.
+	    console.log("Current Page: " + currentPage);
+	    console.log("Previous Page: " + previousPage);
+	    console.log("Previous Page 2: " + previousPage2);
+	    return true;
+	}
 </script>
 
 </head>

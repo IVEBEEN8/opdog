@@ -154,7 +154,8 @@ select {
 	appearance: none;
 }
 
-.infoouter {
+
+/* .infoouter {
 	width: 100%;
 }
 
@@ -244,5 +245,5 @@ select {
 #liketrigger {
 	background: #FAEAB182;
 	border: none;
-	color: #43311CE5;
-}
+	color: #43311CE5; */
+} 

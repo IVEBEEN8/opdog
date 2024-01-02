@@ -1,0 +1,129 @@
+@charset "UTF-8";
+
+.infoinnerbox {
+	margin: 0 auto;
+	padding-top: 1vh;
+	width: 92.5521vw;
+	overflow: hidden;
+}
+/*네번째페이지 호버효과*/
+.doginfobox {
+	float: left;
+	position: relative;
+	color: #ffffff;
+	text-align: left;
+	width: 22.5521vw;
+	height: 22.5521vw;
+	background-color: #000000;
+	margin-left: 0.5vw;
+	margin-bottom: 0.5vh;
+}
+
+.doginfobox * {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	-webkit-transition: all 0.4s ease-in;
+	transition: all 0.4s ease-in;
+}
+
+.doginfobox img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: block;
+	/* vertical-align: top; */
+}
+
+.doginfobox span {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	opacity: 0;
+}
+
+.doginfoWrap {
+	width: 22.5521vw;
+	height: 18vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.infotext {
+	font-size: 1vw;
+	font-family: "Inter", sans-serif;
+	text-align: center;
+}
+
+.doginfobox button {
+	position: absolute;
+	top: 52%;
+	left: 27%;
+	width: 10.104166666666666vw;
+	height: 4.62962962962963vh;
+	border: solid 0.3vw white;
+	border-radius: 30px;
+	background: none;
+	/*글씨*/
+	color: white;
+	text-align: center;
+	font-family: "Inter", sans-serif;
+	font-size: 1.25vw;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 2.037037037037037vh;
+	letter-spacing: -0.4px;
+}
+
+.doginfobox:before, .doginfobox:after, .doginfobox span:before,
+	.doginfobox span:after {
+	position: absolute;
+	content: "";
+	background-color: #ffffff;
+	z-index: 1;
+	-webkit-transition: all 0.4s ease-in;
+	transition: all 0.4s ease-in;
+	opacity: 0.8;
+}
+
+.doginfobox:before, .doginfobox:after {
+	height: 1px;
+	width: 0%;
+}
+
+.doginfobox:before {
+	top: 0;
+	left: 0;
+}
+
+.doginfobox:after {
+	bottom: 0;
+	right: 0;
+}
+
+.doginfobox:hover img, .doginfobox.hover img {
+	opacity: 0.4;
+}
+
+.doginfobox:hover span, .doginfobox.hover span {
+	opacity: 1;
+}
+
+.doginfobox:hover span:before, .doginfobox.hover span:before,
+	.doginfobox:hover span:after, .doginfoboxx.hover span:after {
+	height: 100%;
+}
+
+.doginfobox:hover:before, .doginfobox.hover:before, .doginfobox:hover:after,
+	.doginfobox.hover:after {
+	width: 100%;
+}
+
+.doginfobox:hover:before, .doginfobox.hover:before, .doginfobox:hover:after,
+	.doginfobox.hover:after, .doginfobox:hover span:before, .doginfobox.hover span:before,
+	.doginfobox:hover span:after, .doginfobox.hover span:after {
+	opacity: 0.1;
+}

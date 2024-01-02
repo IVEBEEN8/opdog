@@ -6,12 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Fashion</title>
-<link rel="stylesheet" href="2_shop/css/shop.css" />
+<link rel="stylesheet" href="2_shop/css/shop.css?ver=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link
 	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
 	rel="stylesheet" />
+<script type="text/javascript" src="2_shop/js/shop.js"></script>
+
 </head>
 <body>
 	<!-- 헤더 -->
@@ -79,10 +81,11 @@
 			<div class="search-zero">${message}</div>
 			<div class="price-order" align="right">
 				<input type="radio" name="sort" value="low"
-					onclick="location.href='FashionSortC?sort=low'"> High price
-				order &nbsp; <input type="radio" name="sort" value="high"
-					onclick="location.href='FashionSortC?sort=high'"> Low price
-				order
+					onclick="location.href='FashionSortC?sort=low'"> Highest
+				price &nbsp; <input type="radio" name="sort" value="high"
+					onclick="location.href='FashionSortC?sort=high'"> Lowest
+				price
+
 			</div>
 		</div>
 		<div class="items-container">
@@ -115,29 +118,40 @@
 
 		<div class="page-controller">
 			<!-- 페이지 처리 -->
-			<a href="FashionPageC?p=1">[맨처음]</a>
+			<!-- <a href="FashionPageC?p=1">[맨처음]</a> -->
 			<c:choose>
 				<c:when test="${curPageNo != 1 }">
-					<a href="FashionPageC?p=${curPageNo -1 }"><button>◀</button></a>
+					<div class="page-btn-left">
+						<a href="FashionPageC?p=${curPageNo -1 }"><button>◀</button></a>
+					</div>
 				</c:when>
 				<c:otherwise>
-					<button class="이전버튼">◀</button>
+					<div class="page-btn-left">
+						<button class="이전버튼">◀</button>
+					</div>
 				</c:otherwise>
 			</c:choose>
 
 			<c:forEach begin="1" end="${pageCount }" var="n">
-				<a href="FashionPageC?p=${n }"> [${n }] </a>
+
+				<div class="page-btn">
+					<a href="FashionPageC?p=${n }">${n} </a>
+				</div>
 			</c:forEach>
 
 			<c:choose>
 				<c:when test="${pageCount != curPageNo }">
-					<a href="FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
+					<div class="page-btn-right">
+						<a href="FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
+					</div>
 				</c:when>
 				<c:otherwise>
-					<button class="다음버튼">▶</button>
+					<div class="page-btn-right">
+						<button class="다음버튼">▶</button>
+					</div>
 				</c:otherwise>
 			</c:choose>
-			<a href="FashionPageC?p=${pageCount }">[맨끝]</a>
+			<%-- <a href="FashionPageC?p=${pageCount }">[맨끝]</a> --%>
 		</div>
 
 

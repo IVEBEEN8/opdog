@@ -30,7 +30,7 @@
 					<a href="HC" class="nav-text home"><span>Home</span></a>
 				</div>
 				<div class="nav-items">
-					<a href="#" class="nav-text"><span>Adopt</span></a>
+					<a onclick="location.href='DoginfoHC'" class="nav-text"><span>Adopt</span></a>
 					<div class="nav-subnav">
 						<a onclick="location.href='DoginfoHC'">Stary Dogs</a> <a
 							onclick="location.href='CenterMainC'">Shelter Info</a> <a
@@ -39,7 +39,7 @@
 					</div>
 				</div>
 				<div class="nav-items">
-					<a href="#" class="nav-text"><span>Shop</span></a>
+					<a onclick="location.href='FashionC'" class="nav-text"><span>Shop</span></a>
 					<div class="nav-subnav">
 						<a onclick="location.href='FashionC'">Fashion</a> <a
 							onclick="location.href='FeedC'">Feed</a> <a
@@ -48,13 +48,13 @@
 					</div>
 				</div>
 				<div class="nav-items">
-					<a href="#" class="nav-text"><span>Volunteer</span></a>
+					<a onclick="location.href='VolunteerMainC'" class="nav-text"><span>Volunteer</span></a>
 					<div class="nav-subnav">
 						<a onclick="location.href='VolunteerMainC'">Go Together</a>
 					</div>
 				</div>
 				<div class="nav-items">
-					<a href="#" class="nav-text"><span>Services</span></a>
+					<a onclick="location.href='CheckRegNmC'" class="nav-text"><span>Services</span></a>
 					<div class="nav-subnav">
 						<a onclick="location.href='CheckRegNmC'">Check Registration
 							Number</a> <a onclick="location.href='NamingMainC'">Naming</a>
