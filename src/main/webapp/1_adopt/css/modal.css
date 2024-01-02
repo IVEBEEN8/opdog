@@ -41,14 +41,16 @@
 
 .modalImg {
 	margin: 4vw 0;
-	width: 30vw;
-	height: 22vw;
+    width: 26vw;
+    height: 23vw;
+
 }
 
 .modalImg>img {
 	border-radius: 2vw;
 	height: 100%;
 	object-fit: cover;
+	width: 100% !important;
 }
 
 .modalInfoWrap {
@@ -134,9 +136,9 @@
 	width: 6vw;
 }
 
-.likebtn>button:hover{
-	background:#FAEAB182;
-	color:#643f14;
+.likebtn>button:hover {
+	background: #FAEAB182;
+	color: #643f14;
 }
 
 #closeBtn {

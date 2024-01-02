@@ -215,16 +215,16 @@ $(document).ready(function() {
 		$('div').remove('#detailinfo');
 		$('#modalBody').append('<div class="modalWrap" id="detailinfo">' +
 			'<div class="modalImg" id="detailinfo"><img src="' + items.popfile + '" style="width:300px;"></div>' +
-			'<div class="modalInfoWrap" id="detailinfo">' + '<div class="modal-list" id="detailinfo"><p>Age</p>' +'<span class="spandesign">'+ items.age+'</span>' + '</div>'
-			+ '<div class="modal-list" id="detailinfo"><p>Number</p>' + '<span class="spandesign">'+items.desertionNo+'</span>' + '</div>'
-			+ '<div class="modal-list" id="detailinfo"><p>Kind</p>' +'<span class="spandesign">'+ items.kindCd + '</span>'+'</div>'
-			+ '<div class="modal-list" id="detailinfo"><p>Color</p>' + '<span class="spandesign">'+items.colorCd +'</span>'+ '</div>'
-			+ '<div class="modal-list" id="detailinfo"><p>Gender</p>' + '<span class="spandesign">'+items.sexCd+'</span>' + '</div>'
-			+ '<div class="modal-list" id="detailinfo"><p>Neutering</p>' + '<span class="spandesign">'+items.neuterYn+'</span>' + '</div>'
-			+ '<div class="modal-list" id="detailinfo"><p>Characteristic</p>' +'<span class="spandesign">'+ items.specialMark+'</span>' + '</div>'
-			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>' + '<span class="spandesign2">'+items.careNm + '(' + items.careTel + ')' + items.careAddr +'</span>'+'</div>' +
-			'<div class="agency" id="detailinfo"><p>agency</p>'+'<span class="spandesign2">' + items.orgNm + '&nbsp;' + items.chargeNm + '(' + items.officetel+')' + '</span>'+'</div>'
-			+ '<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button><button id="liketrigger">spon</button>'  +
+			'<div class="modalInfoWrap" id="detailinfo">' + '<div class="modal-list" id="detailinfo"><p>Age</p>' + '<span class="spandesign">' + items.age + '</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Number</p>' + '<span class="spandesign">' + items.desertionNo + '</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Kind</p>' + '<span class="spandesign">' + items.kindCd + '</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Color</p>' + '<span class="spandesign">' + items.colorCd + '</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Gender</p>' + '<span class="spandesign">' + items.sexCd + '</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Neutering</p>' + '<span class="spandesign">' + items.neuterYn + '</span>' + '</div>'
+			+ '<div class="modal-list" id="detailinfo"><p>Characteristic</p>' + '<span class="spandesign">' + items.specialMark + '</span>' + '</div>'
+			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>' + '<span class="spandesign2">' + items.careNm + '(' + items.careTel + ')' + items.careAddr + '</span>' + '</div>' +
+			'<div class="agency" id="detailinfo"><p>agency</p>' + '<span class="spandesign2">' + items.orgNm + '&nbsp;' + items.chargeNm + '(' + items.officetel + ')' + '</span>' + '</div>'
+			+ '<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button><button id="liketrigger">spon</button>' +
 			'</div>' + '</div>');
 		$('#modalWrap').css({ "display": "block" });
 	});
@@ -261,6 +261,11 @@ function pagination(json) {
 	console.log(json)
 	console.log('---------')
 	let container = $('#pagination');
+	container.css({
+		display: 'flex',
+		justifyContent: 'center',
+		margin: '1vw 0'
+	});
 	container.pagination({
 		dataSource: json,
 		pageSize: 12,
@@ -269,13 +274,13 @@ function pagination(json) {
 			$.each(data, function(index, item) {
 				dataHtml += '<div class="doginfobox" id="dog">' +
 					'<div class="infoimg"> <img alt="" src="' + item.popfile + '"></div>' +
-					'<div class="doginfoWrap">' +
-					'<div class="infobutton">' + '<span>' +
+					'<div class="doginfoWrap">' + '<div class="infotext">' +
+					'<div class="kind"> kind: ' + item.kindCd + '</div>' +
+					'<div class="etc"> age:' + item.age + '<br> gender:' + item.sexCd + '&nbsp; neuter:' + item.neuterYn + '</div>' +
+					'</div>' + '<div class="infobutton">' + '<span>' +
 					'<button id="detail"><p style="display:none;">' + JSON.stringify(item) + '</p>View More</button>' +
 					'</span>' +
-					'</div>' + '</div>' +
-
-					'</div>';
+					'</div>' + '</div>' + '</div>';
 				console.log(item)
 			});
 			dataHtml += '</div>';
