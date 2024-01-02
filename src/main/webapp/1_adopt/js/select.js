@@ -222,9 +222,9 @@ $(document).ready(function() {
 			+ '<div class="modal-list" id="detailinfo"><p>Gender</p>' + '<span class="spandesign">'+items.sexCd+'</span>' + '</div>'
 			+ '<div class="modal-list" id="detailinfo"><p>Neutering</p>' + '<span class="spandesign">'+items.neuterYn+'</span>' + '</div>'
 			+ '<div class="modal-list" id="detailinfo"><p>Characteristic</p>' +'<span class="spandesign">'+ items.specialMark+'</span>' + '</div>'
-			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>' + '<span class="spandesign2">'+items.careNm + '(' + items.careTel + ')' + items.careAddr +'</span>'+ '<div class="viewMap"><button>View Map</button></div></div>' +
+			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>' + '<span class="spandesign2">'+items.careNm + '(' + items.careTel + ')' + items.careAddr +'</span>'+'</div>' +
 			'<div class="agency" id="detailinfo"><p>agency</p>'+'<span class="spandesign2">' + items.orgNm + '&nbsp;' + items.chargeNm + '(' + items.officetel+')' + '</span>'+'</div>'
-			+ '<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button><button id="liketrigger">spon</button>' +'</div>' +
+			+ '<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button><button id="liketrigger">spon</button>'  +
 			'</div>' + '</div>');
 		$('#modalWrap').css({ "display": "block" });
 	});
