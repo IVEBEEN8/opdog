@@ -213,19 +213,19 @@ $(document).ready(function() {
 		var values = $(this).children().text();
 		var items = JSON.parse(values);
 		$('div').remove('#detailinfo');
-		$('#modalBody').append('<div class="modalWrap">' +
+		$('#modalBody').append('<div class="modalWrap" id="detailinfo">' +
 			'<div class="modalImg" id="detailinfo"><img src="' + items.popfile + '" style="width:300px;"></div>' +
-			'<div class="modalInfoWrap" id="detailinfo">' + '<div class="#" id="detailinfo">Age:' + items.age + '</div>'
-			+ '<div class="#" id="detailinfo">Number:' + items.desertionNo + '</div>'
-			+ '<div class="#" id="detailinfo">Kind:' + items.kindCd + '</div>'
-			+ '<div class="#" id="detailinfo">Color:' + items.colorCd + '</div>'
-			+ '<div class="#" id="detailinfo">Gender:' + items.sexCd + '</div>'
-			+ '<div class="#" id="detailinfo"Neutering:' + items.neuterYn + '</div>'
-			+ '<div class="#" id="detailinfo"Characteristic: ' + items.specialMark + '</div>'
-			+ '<div class="#" id="detailinfo"Shelter: ' + items.careNm + 'phone ' + items.careTel + 'address ' + items.careAddr + '<button>View Map</button></div>' +
-			'<div class="#" id="detailinfo">agency: ' + items.orgNm + 'Department ' + items.chargeNm + 'phone ' + items.officetel + '</div>'
+			'<div class="modalInfoWrap" id="detailinfo">' + '<div class="#" id="detailinfo"><p>Age</p>&nbsp;' + items.age + '</div>'
+			+ '<div class="#" id="detailinfo"><p>Number</p>&nbsp;' + items.desertionNo + '</div>'
+			+ '<div class="#" id="detailinfo"><p>Kind</p>&nbsp;' + items.kindCd + '</div>'
+			+ '<div class="#" id="detailinfo"><p>Color</p>&nbsp;' + items.colorCd + '</div>'
+			+ '<div class="#" id="detailinfo"><p>Gender</p>&nbsp;' + items.sexCd + '</div>'
+			+ '<div class="#" id="detailinfo"><p>Neutering</p>&nbsp;' + items.neuterYn + '</div>'
+			+ '<div class="#" id="detailinfo"><p>Characteristic</p>&nbsp;' + items.specialMark + '</div>'
+			+ '<div class="Shelter" id="detailinfo"><p>Shelter</p>&nbsp;' + items.careNm + 'phone ' + items.careTel + 'address ' + items.careAddr + '<div><button>View Map</button></div></div>' +
+			'<div class="agency" id="detailinfo"><p>agency</p>&nbsp;' + items.orgNm + 'Department ' + items.chargeNm + 'phone ' + items.officetel + '</div>'
 			+ '<div class="#" id="detailinfo"><button id="like" ><p style="display:none;">' + values + '</p>Like</button></div>' +
-			'<button id="liketrigger">like!</button>' +
+			'<button id="liketrigger">spon</button>' +
 			'</div>' + '</div>');
 		$('#modalWrap').css({ "display": "block" });
 	});
