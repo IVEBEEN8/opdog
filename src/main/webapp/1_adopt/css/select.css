@@ -15,10 +15,10 @@ html, body {
 }
 
 .infocontainer {
-    width: 100%;
-    margin-bottom: 13vw;
-    position: relative;
-    top: 7vw;
+	width: 100%;
+	margin-bottom: 13vw;
+	position: relative;
+	top: 7vw;
 }
 
 .radiocontainer {
@@ -59,11 +59,11 @@ html, body {
 	height: 7vw;
 }
 
-.sidoRadio,#sigungudiv,#centerdiv {
+.sidoRadio, #sigungudiv, #centerdiv {
 	width: 53vw;
 }
 
-#sidolabel, #sigungulable,#centerdiv {
+#sidolabel, #sigungulable, #centerdiv {
 	margin-right: 0.5vw;
 }
 
@@ -128,8 +128,6 @@ html, body {
 	gap: 3vw;
 }
 
-
-
 #sidoSelect, #sigunSelect, #centerSelect {
 	width: 18.108802083333334vw;
 	height: 4.722222222222222vh;
@@ -146,24 +144,21 @@ html, body {
 	border: none;
 }
 
-#selectbutton{
-	border:none;
-	background:none;
+#selectbutton {
+	border: none;
+	background: none;
 	cursor: pointer;
 }
 
 select {
-    appearance:none;
+	appearance: none;
 }
 
 .infoouter {
-	border: 1px solid red;
 	width: 100%;
-
 }
 
 .datacontainer {
-	border: 1px solid blue;
 	width: 80%;
 	height: 90%;
 	display: flex;
@@ -171,33 +166,83 @@ select {
 }
 
 .infoinnerbox {
-	border: 1px solid black;
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-evenly;
+	gap: 4vw 6vw;
+	justify-content: center;
+	align-items: center;
 }
 
 .doginfobox {
-	border: 1px solid black;
-	width: 40%;
-	height: 18%;
+	border: none;
+	width: 37vw;
+	height: 25vw;
 	display: flex;
 	margin-top: 1%;
-	justify-content: space-between;
+	justify-content: center;
+	align-items: center;
+	box-shadow: 2px 2px 5px 0px #aaa;
+	border-radius: 1vw;
+	background: #fffefc;
 }
 
 .infoimg {
-	border: 1px solid black;
-	width: 30%;
+	width: 80%;
+	display: flex;
+	height: 100%;
+	 object-fit:cover;
+	justify-content: center;
+	align-items: center;
+}
+
+.infoimg>img {
+	width: 100%;
+	height: 100%;
+	border-radius: 1vw;
+	height: 100%;
+}
+
+.doginfoWrap {
+	width: 20vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2vw;
 }
 
 .infotext {
-	border: 1px solid black;
-	width: 30%;
+	font-family: "Poppins", sans-serif;
+	font-size: 1.4vw;
+	color: #302f2f;
+	padding: 1vw;
+	line-height: 2.1vw;
 }
 
 .infobutton {
-	border: 1px solid black;
-	width: 30%;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5vw;
+	width: 12vw;
+}
+
+.infobutton>button {
+	height: 3vw;
+	font-size: 1.3vw;
+	font-family: "Inter", sans-serif;
+	border-radius: 3vw;
+	font-weight: 400;
+}
+
+#detail {
+	background: #9E6F21;
+	border: none;
+	color: white;
+}
+
+#liketrigger {
+	background: #FAEAB182;
+	border: none;
+	color: #43311CE5;
 }
