@@ -32,7 +32,6 @@ html, body {
 }
 
 .infoTag {
-	border: 1px solid black;
 	width: 11.927083333333334vw;
 	height: 5.277777777777778vh;
 	margin: 6.203703703703703vh 54.947916666666664vw 76.66666666666667vh
@@ -47,7 +46,6 @@ html, body {
 }
 
 .tagText {
-	border: 1px solid black;
 	width: 8.854166666666668vw;
 	height: 5.277777777777778vh;
 	display: flex;
@@ -78,15 +76,41 @@ html, body {
 }
 
 .buttonBox {
-	border: 1px solid black;
-	width: 20%;
-	height: 100%;
+	width: 13.854166666666668vw;
+	margin: 14.25925925925926vh 1.40625vw;
+	gap: 0.05vh;
+	display: flex;
+	flex-direction: column;
+	
 }
 
 .button {
-	border: 1px solid black;
 	width: 100%;
-	height: 20%;
+	height: 4.444444444444445vh;
+	border-radius: 50px;
+	background: none;
+	display: flex;
+	align-items: center;
+}
+.button:hover{
+	background: rgba(67, 49, 28, 0.1);
+}
+.buttonText{
+	color: rgba(67, 49, 28, 0.90);
+	font-family: Poppins;
+	font-size: 1.3888888888888888vh;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.15px;
+	position: relative;
+	margin-left: 1.0416666666666665vw;
+}
+
+.buttonImg{
+	width: 1.0416666666666665vw;
+	position: relative;
+	margin-left: 2.65625vw;
 }
 
 .totalInnerPage {
