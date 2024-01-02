@@ -79,10 +79,10 @@
 			<div class="search-zero">${message}</div>
 			<div class="price-order" align="right">
 				<input type="radio" name="sort" value="low"
-					onclick="location.href='SnackSortC?sort=low'"> High price
-				order &nbsp; <input type="radio" name="sort" value="high"
-					onclick="location.href='SnackSortC?sort=high'"> Low price
-				order
+					onclick="location.href='SnackSortC?sort=low'"> Highest price
+				 &nbsp; <input type="radio" name="sort" value="high"
+					onclick="location.href='SnackSortC?sort=high'"> Lowest price
+				
 			</div>
 		</div>
 		<div class="items-container">

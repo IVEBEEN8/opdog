@@ -8,3 +8,5 @@ function changeColor(clickedElement) {
       // 클릭한 div의 색상을 변경
       clickedElement.style.backgroundColor = 'rgba(250, 234, 177, 0.51)'; // 변경할 색상
     }
+    
+    
