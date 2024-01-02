@@ -15,7 +15,7 @@ public class FashionC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 강아지 패션 전체 조회하는일
 		FashionDAO.getAllFashion(request);
-		FashionDAO.paging(1, request);
+//		FashionDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_1_fashion/fashion.jsp");
 		LoginDAO.loginCheck(request);
