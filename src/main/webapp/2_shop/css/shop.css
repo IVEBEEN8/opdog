@@ -229,13 +229,11 @@ input::placeholder {
 	left: 0.5vw
 }
 
-.page-controller {
-	margin-top: 5vh;
-	display: flex;
+.pagination-container {
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	display:flex;
+	justify-content:center;
 }
 
-.page-btn{
-	width:1.5625vw;
-	height:2.5925925925925926vh;
-	background: gray;
-}
+

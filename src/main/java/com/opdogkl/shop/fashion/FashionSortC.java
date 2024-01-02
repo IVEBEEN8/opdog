@@ -13,7 +13,7 @@ import com.opdoghw.login.LoginDAO;
 public class FashionSortC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FashionDAO.sortFashion(request);
-		FashionDAO.paging(1, request);
+//		FashionDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_1_fashion/fashion.jsp");
 		LoginDAO.loginCheck(request);
