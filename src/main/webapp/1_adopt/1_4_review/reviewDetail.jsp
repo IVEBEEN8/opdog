@@ -5,7 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>review detail</title>
-<script type="text/javascript" src="1_adopt/js/review.js"></script>
+<script type="text/javascript" src="1_adopt/js/review.js?ver=1"></script>
 <link rel="stylesheet" href="1_adopt/css/reviewDetail.css" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,7 +19,7 @@
 			<div>
 				<div class="review-title">${review.r_title}</div>
 				<div class="review-info">
-					<div class="review-id">ID : ${review.op_email}</div>
+					<div class="review-id">ID : ${review.a_no}</div>
 					<div class="review-vertical"></div>
 					<div class="review-created">${review.r_created}</div>
 				</div>
@@ -32,9 +32,9 @@
 				<textarea class="review-txt" rows="10" cols="50" readonly="readonly">${review.r_txt}</textarea>
 			</div>
 			<div class="review-btn">
-				<button class="review-edit-btn" onclick="location.href='ReviewUpC?id=${review.op_email}'">Edit</button>
+				<button class="review-edit-btn" onclick="location.href='ReviewUpC?no=${review.r_no}'">Edit</button>
 				<button class="reiview-list-btn" onclick="location.href='ReviewC'">Review List</button>
-				<button class="review-edit-btn" onclick="reviewDelete('${review.op_email}')">Delete</button>
+				<button class="review-edit-btn" onclick="reviewDelete('${review.r_no}')">Delete</button>
 			</div>
 		</div>
 	</div>

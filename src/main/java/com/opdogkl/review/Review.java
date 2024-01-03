@@ -3,25 +3,35 @@ package com.opdogkl.review;
 import java.util.Date;
 
 public class Review {
+	private int r_no;
 	private String r_img;
 	private String r_title;
 	private String r_txt;
 	private Date r_created;
 	private Date r_updated;
-	private String op_email;
+	private int a_no;
 	
 	public Review() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Review(String r_img, String r_title, String r_txt, Date r_created, Date r_updated, String op_email) {
+	public Review(int r_no, String r_img, String r_title, String r_txt, Date r_created, Date r_updated, int a_no) {
 		super();
+		this.r_no = r_no;
 		this.r_img = r_img;
 		this.r_title = r_title;
 		this.r_txt = r_txt;
 		this.r_created = r_created;
 		this.r_updated = r_updated;
-		this.op_email = op_email;
+		this.a_no = a_no;
+	}
+
+	public int getR_no() {
+		return r_no;
+	}
+
+	public void setR_no(int r_no) {
+		this.r_no = r_no;
 	}
 
 	public String getR_img() {
@@ -64,15 +74,14 @@ public class Review {
 		this.r_updated = r_updated;
 	}
 
-	public String getOp_email() {
-		return op_email;
+	public int getA_no() {
+		return a_no;
 	}
 
-	public void setOp_email(String op_email) {
-		this.op_email = op_email;
+	public void setA_no(int a_no) {
+		this.a_no = a_no;
 	}
 
-	
 	
 		
 }

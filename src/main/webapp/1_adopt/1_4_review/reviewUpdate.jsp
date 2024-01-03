@@ -12,7 +12,7 @@
 
 </head>
 <body>
-	<form action="ReviewUpC?id=${review.op_email }" method="post"
+	<form action="ReviewUpC?no=${review.r_no}" method="post"
 		enctype="multipart/form-data" onsubmit="return checkForm();">
 		<!-- reviewReg.jsp -->
 		<div class="main">
@@ -56,7 +56,7 @@
 				</div>
 
 				<div class="review-btn">
-					<button class="review-reg-btn" name="id" value="${review.op_email}">done</button>
+					<button class="review-reg-btn" name="id" value="${review.r_no}">done</button>
 				</div>
 
 			</div>

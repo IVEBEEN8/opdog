@@ -92,7 +92,7 @@ function checkLength() {
 function reviewDelete(n){
 	let ok = confirm('Are you sure you want to delete?');
 	if(ok){
-		location.href = 'ReviewDelC?id=' + n
+		location.href = 'ReviewDelC?no=' + n;
 	}
 	
 }
