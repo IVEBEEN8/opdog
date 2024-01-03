@@ -71,4 +71,5 @@ select {
 
 .pay-btn{
 	margin-top: 3vh;
+	cursor: pointer;
 }

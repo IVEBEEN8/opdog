@@ -55,7 +55,8 @@ function continueShopping() {
   for (let i = 0; i < inputs.length; i++) {
     const input = inputs[i];
     if (input.value.trim() === '') {
-	  alert('Please enter all required information');	
+	  //alert('Please enter all required information');
+	  swal('Notice','Please enter all required information', 'info')
       input.focus();
       emptyInputFound = true;
       break; // Stop checking after finding the first empty input
@@ -96,17 +97,32 @@ function continueShopping() {
 
 
 function payWithCard() {
-	// URL에 변수를 전달
-	var checkoutUrl = "/SemiProject/OrderedC?title=" + encodeURIComponent(title)
-		+ "&price=" + encodeURIComponent(price)
-		+ "&sPrice=" + encodeURIComponent(sPrice)
-		+ "&brand=" + encodeURIComponent(brand);
+  const inputs = document.querySelectorAll('.input-line input, .card-info select, .input-cvc'); // Select all relevant inputs and selects
 
-	// 새창을 닫음
-	window.close();
-	// 기존 창에서 움직임
-	window.opener.location.href = checkoutUrl;
+  let emptyFields = [];
 
+  for (let i = 0; i < inputs.length; i++) {
+    const input = inputs[i];
+    if (input.value.trim() === '') { // Check for empty values after trimming whitespace
+      emptyFields.push(input.placeholder || input.name); // Use placeholder or name for descriptive field names
+    }
+  }
+
+  if (emptyFields.length > 0) {
+     swal('Notice','Please enter all required information', 'info');
+    return; // Prevent payment processing if there are empty fields
+  } else {
+    // URL에 변수를 전달
+    var checkoutUrl = "/SemiProject/OrderedC?title=" + encodeURIComponent(title)
+      + "&price=" + encodeURIComponent(price)
+      + "&sPrice=" + encodeURIComponent(sPrice)
+      + "&brand=" + encodeURIComponent(brand);
+
+    // 새창을 닫음
+    window.close();
+    // 기존 창에서 움직임
+    window.opener.location.href = checkoutUrl;
+  }
 }
 
 

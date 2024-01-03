@@ -124,7 +124,8 @@ html, body {
 	font-weight: 600;
 	line-height: 2.037037037037037vh; /* 110% */
 	letter-spacing: -0.020833333333333336vw;
-	margin-left:1.2vw
+	margin-left:1.2vw;
+	cursor: pointer;
 }
 
 .sponsor-btn-cover {

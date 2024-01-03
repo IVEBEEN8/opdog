@@ -6,12 +6,13 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import com.opdoghw.centerinfo.DBManager_khw;
-
+import com.opdoghw.login.LoginDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
@@ -33,12 +34,13 @@ public class ReviewDAO {
 			
 			while(rs.next()) {
 				r = new Review();
+				r.setR_no(rs.getInt("r_no"));
 				r.setR_img(rs.getString("r_img"));
 				r.setR_title(rs.getString("r_title"));
 				r.setR_txt(rs.getString("r_txt"));
 				r.setR_created(rs.getDate("r_created"));
 				r.setR_updated(rs.getDate("r_updated"));
-				r.setOp_email(rs.getString("op_email"));
+				r.setA_no(rs.getInt("a_no"));
 				reviews.add(r);
 				System.out.println(rs.getString("r_img"));
 			}
@@ -60,7 +62,7 @@ public class ReviewDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 									// img/title/txt/created/updated/op_email(foreign key)
-		String sql = "insert into review_kl values (?,?,?,sysdate,sysdate,review_kl_seq.nextval)";
+		String sql = "insert into review_kl values (review_kl_seq.nextval,?,?,?,sysdate,sysdate,?)";
 
 		
 //		String path = "/Users/6oohye/Desktop/obdog/src/main/webapp/1_adopt/1_4_review/imgFolder";
@@ -72,15 +74,23 @@ public class ReviewDAO {
 			con = DBManager_khw.connect();
 			request.setCharacterEncoding("utf-8");	
 			
-			// 세션에서 op_email 값을 가져오기
-//	        HttpSession session = request.getSession();
-//	        String op_email = (String) session.getAttribute("op_email");
+			//세션에서 a_no 값을 가져오기
+			LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 			
-	        // 임시 email 
-//	        String op_email = "review_kl_seq.nextval";
-	        
-	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-			String img = mr.getFilesystemName("fileInput");
+			MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
+
+			// UUID를 사용하여 고유한 파일 이름 생성
+			String originalFileName = mr.getFilesystemName("fileInput");
+			String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+			String uniqueFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+			
+			// 파일 이름 변경
+			File f = new File(path, uniqueFileName);
+			mr.getFile("fileInput").renameTo(f);
+
+			
+
+			String img = uniqueFileName;
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			
@@ -90,7 +100,7 @@ public class ReviewDAO {
 			System.out.println(img);
 			pstmt.setString(2, title);
 			pstmt.setString(3, txt);
-//			pstmt.setString(4, op_email);	// 세션에서 가져온 op_email 값 사용
+			pstmt.setInt(4, account.getNo());	// 세션에서 가져온 op_email 값 사용
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("등록 성공");
@@ -101,7 +111,7 @@ public class ReviewDAO {
 			System.out.println("등록 실패");
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
-		}
+		}	
 
 	}
 
@@ -110,24 +120,25 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from review_kl where op_email=?";
+		String sql = "select * from review_kl where r_no=?";
 		Review r = null;
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("id"));
+			pstmt.setString(1, request.getParameter("no"));
 			rs = pstmt.executeQuery();	
 			
 			if (rs.next()) {
 				r = new Review();
+				r.setR_no(rs.getInt("r_no"));
 				r.setR_img(rs.getString("r_img"));
 				r.setR_title(rs.getString("r_title"));
 				r.setR_txt(rs.getString("r_txt"));
 				r.setR_created(rs.getDate("r_created"));
 				r.setR_updated(rs.getDate("r_updated"));
-				r.setOp_email(rs.getString("op_email"));
+				r.setA_no(rs.getInt("a_no"));
 				
 				request.setAttribute("review", r);
 				
@@ -146,7 +157,7 @@ public class ReviewDAO {
 		ResultSet rs = null;
 		String sql = "update review_kl"
 					+" set r_img=?, r_title=?, r_txt=?, r_updated=SYSDATE"
-					+" where op_email=?";
+					+" where r_no=?";
 		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
 		System.out.println(path);
 		try {
@@ -166,9 +177,8 @@ public class ReviewDAO {
 			pstmt.setString(1, newImg);
 			pstmt.setString(2, title);
 			pstmt.setString(3, txt);
-			pstmt.setString(4, mr.getParameter("id"));
-			System.out.println(mr.getParameter("id"));
-//			pstmt.setDate(4, op_email);	// 세션에서 가져온 op_email 값 사용
+			pstmt.setString(4, mr.getParameter("no"));
+			System.out.println(mr.getParameter("no"));
 			
 			if (newImg != null) {
 				pstmt.setString(1, newImg);
@@ -203,9 +213,9 @@ public class ReviewDAO {
 		
 		try {
 			con = DBManager_khw.connect();
-			String sql = "select r_img from review_kl where op_email=?"; // 필요한 열만 조회
+			String sql = "select r_img from review_kl where r_no=?"; // 필요한 열만 조회
 	        pstmt = con.prepareStatement(sql);
-	        pstmt.setString(1, request.getParameter("id"));
+	        pstmt.setString(1, request.getParameter("no"));
 	        rs = pstmt.executeQuery();
 
 	        String fileName = null;
@@ -216,9 +226,9 @@ public class ReviewDAO {
 	        rs.close();  // ResultSet 객체 닫기
 	        pstmt.close(); // PreparedStatement 객체 닫기
 
-	        sql = "delete review_kl where op_email=?";
+	        sql = "delete review_kl where r_no=?";
 	        pstmt = con.prepareStatement(sql); // PreparedStatement 객체 재사용
-	        pstmt.setString(1, request.getParameter("id"));
+	        pstmt.setString(1, request.getParameter("no"));
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("삭제 성공");

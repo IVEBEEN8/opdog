@@ -86,15 +86,35 @@ function checkLength() {
         charCount.innerText = 'Text length: ' + textarea.value.length + ' / ' + maxLength;
     }
 
+// 리뷰 업데이트
+function reviewUpdate(accountNo, rNo, n){
+	if(accountNo != rNo){
+		alert("Only the author can edit this review");
+	}else{
+		location.href='ReviewUpC?no=' + n;
+	}
+}
+
+
 
 
 // 리뷰 삭제
-function reviewDelete(n){
-	let ok = confirm('Are you sure you want to delete?');
-	if(ok){
-		location.href = 'ReviewDelC?id=' + n
+function reviewDelete(accountNo, rNo, n){
+	if(accountNo != rNo){
+		alert("Only the author can delete this review");
+	}else{
+		let ok = confirm('Are you sure you want to delete?');
+		if(ok){
+		location.href = 'ReviewDelC?no=' + n;
+		}
 	}
 	
+	
+	
+	
+	
 }
+
+
 
 
