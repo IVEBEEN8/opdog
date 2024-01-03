@@ -69,7 +69,7 @@ public class VolunteerDAO {
 			con = DBManager_khw.connect();
 
 			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
-			// System.out.println(path);
+			System.out.println(path);
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 
@@ -275,6 +275,10 @@ public class VolunteerDAO {
 			String content = mr.getParameter("content");
 			String status = mr.getParameter("chooseStatus");
 			String no = mr.getParameter("no");
+			String File1 = oldFile;
+			if (newFile != null) {
+				File1 = newFile;
+			}
 
 			content = content.replaceAll("\r\n", "<br>");
 
@@ -283,25 +287,21 @@ public class VolunteerDAO {
 			System.out.println(oldFile);
 			System.out.println(content);
 			System.out.println(status);
+			System.out.println(File1);
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
+			pstmt.setString(2, File1);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setString(5, no);
-
-			if (newFile != null) {
-				pstmt.setString(2, newFile);
-			} else {
-				pstmt.setString(2, oldFile);
-			}
 
 			pstmt.executeUpdate();
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				if (newFile != null) {
-					File f = new File(path + "/" + oldFile);
+					File f = new File(path + "/" + File1);
 					f.delete();
 				}
 			}
