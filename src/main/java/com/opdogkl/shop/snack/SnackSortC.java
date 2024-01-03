@@ -13,7 +13,7 @@ import com.opdoghw.login.LoginDAO;
 public class SnackSortC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		SnackDAO.sortSnack(request);
-		SnackDAO.paging(1, request);
+//		SnackDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_3_snack/snack.jsp");
 		LoginDAO.loginCheck(request);

@@ -9,6 +9,14 @@
 <link rel="stylesheet" href="2_shop/css/shop.css?ver=1" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
+
 <link
 	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
 	rel="stylesheet" />
@@ -80,17 +88,17 @@
 			</div>
 			<div class="search-zero">${message}</div>
 			<div class="price-order" align="right">
-				<input type="radio" name="sort" value="low"
-					onclick="location.href='FashionSortC?sort=low'"> Highest
-				price &nbsp; <input type="radio" name="sort" value="high"
-					onclick="location.href='FashionSortC?sort=high'"> Lowest
+				<input type="radio" name="sort" value="high"
+					onclick="location.href='FashionSortC?sort=high'"> Highest
+				price &nbsp; <input type="radio" name="sort" value="low"
+					onclick="location.href='FashionSortC?sort=low'"> Lowest
 				price
 
 			</div>
 		</div>
 		<div class="items-container">
-			<div class="items">
-				<c:forEach varStatus="" var="fs" items="${fashions }">
+			<div id="items" class="items">
+			 	 <%-- <c:forEach varStatus="" var="fs" items="${fashions }">
 					<a href="FashionDetailC?no=${fs.fs_no }">
 						<div class="item">
 							<div class="아이템 썸네일">
@@ -109,14 +117,57 @@
 							</div>
 						</div>
 					</a>
-				</c:forEach>
+				</c:forEach> --%>
 				<!-- <div> <button onclick="location.href='FashionRegC'">데이터 입력 </button> </div> -->
 			</div>
 		</div>
+			<div id="pagination-container" class="pagination-container"></div>
+
+<script type="text/javascript">
+$(document).ready(function () {
+    var dataSource = ${jsonFashions}; // 데이터 소스, 예: 페이지 번호의 배열
+
+    $('#pagination-container').pagination({
+        dataSource: dataSource,
+        pageSize: 12, // 페이지당 항목 수
+        callback: function (data, pagination) {
+            console.log(data); // 확인을 위한 로그
+            var dataHtml = '';
+            $.each(data, function (index, item) {
+                dataHtml += '<a href="FashionDetailC?no=' + item.fs_no + '">';
+                dataHtml += '<div class="item">';
+                dataHtml += '<div class="아이템 썸네일">';
+                dataHtml += '<img class="item-img" src="' + item.fs_img + '">';
+                dataHtml += '</div>';
+                dataHtml += '<div class="item-info">';
+                dataHtml += '<div class="item-brand" align="left">' + item.fs_brand + '</div>';
+                dataHtml += '<div class="item-title" align="left">' + item.fs_title + '</div>';
+                dataHtml += '</div>';
+                dataHtml += '<div class="item-line-price">';
+                dataHtml += '<div class="item-line">';
+                dataHtml += '<div id="item-line"></div>';
+                dataHtml += '</div>';
+                dataHtml += '<div class="item-price" align="left">' + item.fs_price + '₩</div>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</a>';
+            });
+
+            $('#items').html(dataHtml);
+        }
+    });
+});
+
+</script>
+
+
+
+
+
 
 		<hr>
 
-		<div class="page-controller">
+		<%-- <div class="page-controller">
 			<!-- 페이지 처리 -->
 			<!-- <a href="FashionPageC?p=1">[맨처음]</a> -->
 			<c:choose>
@@ -126,9 +177,7 @@
 					</div>
 				</c:when>
 				<c:otherwise>
-					<div class="page-btn-left">
-						<button class="이전버튼">◀</button>
-					</div>
+					<button class="이전버튼">◀</button>
 				</c:otherwise>
 			</c:choose>
 
@@ -141,18 +190,14 @@
 
 			<c:choose>
 				<c:when test="${pageCount != curPageNo }">
-					<div class="page-btn-right">
-						<a href="FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
-					</div>
+					<a href="FashionPageC?p=${curPageNo +1 }"><button>▶</button></a>
 				</c:when>
 				<c:otherwise>
-					<div class="page-btn-right">
-						<button class="다음버튼">▶</button>
-					</div>
+					<button class="다음버튼">▶</button>
 				</c:otherwise>
 			</c:choose>
-			<%-- <a href="FashionPageC?p=${pageCount }">[맨끝]</a> --%>
-		</div>
+			<a href="FashionPageC?p=${pageCount }">[맨끝]</a>
+		</div> --%>
 
 
 
