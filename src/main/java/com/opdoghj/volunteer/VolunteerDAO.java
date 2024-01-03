@@ -271,7 +271,7 @@ public class VolunteerDAO {
 
 			String title = mr.getParameter("title");
 			String newFile = mr.getFilesystemName("newFile");
-			String oldFile = mr.getFilesystemName("oldFile");
+			String oldFile = mr.getParameter("oldFile");
 			String content = mr.getParameter("content");
 			String status = mr.getParameter("chooseStatus");
 			String no = mr.getParameter("no");
@@ -301,7 +301,7 @@ public class VolunteerDAO {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				if (newFile != null) {
-					File f = new File(path + "/" + File1);
+					File f = new File(path + "/" + oldFile);
 					f.delete();
 				}
 			}
