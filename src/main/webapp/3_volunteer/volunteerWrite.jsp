@@ -15,9 +15,7 @@
             <td class="write-td">Status</td>
             <td>
               <select name="chooseStatus">
-              	<option >Select</option>
               	<option value="Recruiting">Recruiting</option>
-              	<option value="Completed">Completed</option>
               </select>
             </td>
           </tr>

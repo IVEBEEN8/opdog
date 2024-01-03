@@ -31,7 +31,7 @@
             <div class="pull-right-wrap1-2">
                     <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
-                            <option value="0">&nbsp;&nbsp; Select</option>
+              
                             <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
                             <option value="c_careAddr">&nbsp;&nbsp;Address</option>
                         </select>
