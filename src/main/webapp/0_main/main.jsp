@@ -21,6 +21,9 @@
 			<div class="header_logo">
 				<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
 			</div>
+			<div class="header_logo2">
+				<img style="width:9vw;" src="0_main/img/logoWhite2.5.png" alt="" />
+			</div>
 			<!-- 메뉴 -->
 			<div class="nav-var">
 				<div class="nav-items">
