@@ -1,39 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>review detail</title>
 <script type="text/javascript" src="1_adopt/js/review.js"></script>
+<link rel="stylesheet" href="1_adopt/css/reviewDetail.css" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
+	rel="stylesheet" />
 </head>
 <body>
-
-<h1>review detail</h1>
-	<div>등록날짜</div>
-	<div> ${review.r_created}</div>
-	<div>수정날짜</div>
-	<div> ${review.r_updated }</div>
-	<div>Id</div>
-	<div> ${review.op_email}</div>
-	
-	<div>Title</div>
-	<div>${review.r_title}	</div>
-	<div>
-	<img alt="" src="1_adopt/1_4_review/imgFolder/${review.r_img}">
+	<div class="main">
+		<div class="container">
+			<div>
+				<div class="review-title">${review.r_title}</div>
+				<div class="review-info">
+					<div class="review-id">ID : ${review.op_email}</div>
+					<div class="review-vertical"></div>
+					<div class="review-created">${review.r_created}</div>
+				</div>
+			</div>
+			<div>
+				<img class="review-img" alt=""
+					src="1_adopt/1_4_review/imgFolder/${review.r_img}">
+			</div>
+			<div>
+				<textarea class="review-txt" rows="10" cols="50" readonly="readonly">${review.r_txt}</textarea>
+			</div>
+			<div class="review-btn">
+				<button class="review-edit-btn" onclick="location.href='ReviewUpC?id=${review.op_email}'">Edit</button>
+				<button class="reiview-list-btn" onclick="location.href='ReviewC'">Review List</button>
+				<button class="review-edit-btn" onclick="reviewDelete('${review.op_email}')">Delete</button>
+			</div>
+		</div>
 	</div>
-	<div>Text</div>
-	<div>
-	<%-- <pre>${review.r_txt}</pre> --%>
-	<textarea rows="10" cols="50" readonly="readonly">${review.r_txt}</textarea>
-	</div>
-	<button onclick="location.href='ReviewUpC?id=${review.op_email}'">수정</button>
-	<button onclick="reviewDelete('${review.op_email}')">삭제</button>
-	<button onclick="location.href='ReviewC'">목록으로</button>
-
-<form action="putCenterInfoC" method="POST">
-<button>센터인터인포 db넣기!!</button>
-<!-- src/main/webapp/hw/putTheCenterInfo.jsp -->
-</form>
 </body>
 </html>
+				<!-- <form action="putCenterInfoC" method="POST">
+					<button>센터인터인포 db넣기!!</button>
+					src/main/webapp/hw/putTheCenterInfo.jsp
+				</form> -->

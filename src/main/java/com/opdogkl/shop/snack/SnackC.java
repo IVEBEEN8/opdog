@@ -16,7 +16,7 @@ public class SnackC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// 강아지 간식 전체 조회하는일
 		SnackDAO.getAllSnack(request);
-		SnackDAO.paging(1, request);
+//		SnackDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_3_snack/snack.jsp");
 		LoginDAO.loginCheck(request);

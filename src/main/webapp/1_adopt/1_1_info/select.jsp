@@ -10,6 +10,11 @@
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
 <script src="1_adopt/js/select.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+	href="https://fonts.googleapis.com/css2?family=Andika:wght@400;700&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;800;900&display=swap"
+	rel="stylesheet">
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
 <link rel="stylesheet"
@@ -21,6 +26,7 @@ ul {
 </style>
 <link rel="stylesheet" href="1_adopt/css/modal.css" />
 <link rel="stylesheet" href="1_adopt/css/select.css">
+<link rel="stylesheet" href="1_adopt/css/doginfo.css">
 </head>
 <body>
 	<!-- 동적으로 추가될 div, optioin, radiobox, button 등의 태그는 js에서 .html,.append로 태그 채로 생성되기 때문에 js에서 class부여 가능 -->

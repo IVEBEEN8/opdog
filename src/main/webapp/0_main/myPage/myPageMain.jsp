@@ -27,10 +27,22 @@
 				</div>
 			</div>
 			<div class="buttonBox">
-				<div id="myPageButton" class="button" onclick="myPageButton()">my info</div>
-				<div id="likeButton" class="button" onclick="likeButton()">like</div>
-				<div id="pointButton" class="button" onclick="pointButton()">point</div>
-				<div id="volunteerButton" class="button" onclick="volunteerButton()">volunteer</div>
+				<div id="myPageButton" class="button b1" onclick="myPageButton()">
+					<div class="buttonImg"> <img alt="" src="0_main/img/contacts.svg" style="width: 100%;"> </div>
+					<div class="buttonText">my info</div>
+				</div>
+				<div id="likeButton" class="button b2" onclick="likeButton()">
+					<div class="buttonImg"> <img alt="" src="0_main/img/dashboard.svg" style="width: 100%;"> </div>
+					<div class="buttonText">like</div>
+				</div>
+				<div id="pointButton" class="button b3" onclick="pointButton()">
+					<div class="buttonImg"> <img alt="" src="0_main/img/dashboard.svg" style="width: 100%;"> </div>
+					<div class="buttonText">point</div>
+				</div>
+				<div id="volunteerButton" class="button b4" onclick="volunteerButton()">
+					<div class="buttonImg"> <img alt="" src="0_main/img/dashboard.svg" style="width: 100%;"> </div>
+					<div class="buttonText">volunteer</div>
+				</div>
 			</div>
 
 			<div class="totalInnerPage">

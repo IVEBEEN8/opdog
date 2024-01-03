@@ -122,6 +122,31 @@ input::placeholder {
 	margin-right: 6vw;
 }
 
+[type="radio"] {
+	appearance: none;
+	border: max(2px, 0.1em) solid gray;
+	border-radius: 50%;
+	width: 1em;
+	height: 1em;
+	transition: border 0.5s ease-in-out;
+}
+
+[type="radio"]:checked {
+	border: 0.4em solid #FFCE1E;
+}
+
+[type="radio"]:focus-visible {
+	outline-offset: max(2px, 0.1em);
+	outline: max(2px, 0.1em) dotted #FFCE1E;
+}
+
+[type="radio"]:hover {
+	box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+	cursor: pointer;
+}
+
+
+
 .items {
 	display: flex;
 	flex-wrap: wrap;
@@ -204,7 +229,11 @@ input::placeholder {
 	left: 0.5vw
 }
 
-.page-controller {
-	margin-top: 5vh;
+.pagination-container {
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	display:flex;
+	justify-content:center;
 }
-}
+
+
