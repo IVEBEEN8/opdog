@@ -13,6 +13,7 @@ insert into review_kl values (?,?,?,?,?,?);
 insert into review_kl values ('이미지','제목','텍스트','2023-12-07','2023-12-08','dlrufp1213@naver.com');
 insert into review_kl values ('이미지','제목','텍스트','2023-12-07',sysdate,'dlrufp1211@naver.com');
 drop table review_kl;
+DROP SEQUENCE review_kl_seq;
 ALTER TABLE review_kl MODIFY r_txt VARCHAR2(4500 CHAR);
 ALTER TABLE review_kl RENAME COLUMN op_email TO a_no;
 alter table review_kl drop primary key;
