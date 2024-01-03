@@ -113,7 +113,7 @@
 		</div>
 		<button id="send" style="display:none;">Generate!</button>
 		<button onclick="location.href='NamingMainC'" id="resend" style="display:none;">Retry!</button>
-		<div class="loadingwords" id="loadingwords">"We are generating the name matched perfectly well with your lovely dog!"</div>
+		<div class="loadingwords" id="loadingwords"></div>
 	</div>
 </body>
 </html>
