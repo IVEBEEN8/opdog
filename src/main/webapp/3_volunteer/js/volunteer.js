@@ -2,7 +2,7 @@ function modifyPost(accountNo, aNo, vNo ){
 	if(accountNo != aNo ){
 		alert("you can't modify the article");
 	}else{
-		location.href='VolunteerModic?no=' + vNo
+		location.href='VolunteerModiC?no=' + vNo
 	}
 	
 }

@@ -17,7 +17,6 @@ public class VolunteerModiC extends HttpServlet {
 
 		LoginDAO.loginCheck(request);
 		VolunteerDAO.getPost(request);
-
 		request.setAttribute("contentPage", "../3_volunteer/volunteerUpdate.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 
