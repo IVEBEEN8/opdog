@@ -19,7 +19,7 @@
 			<div>
 				<div class="review-title">${review.r_title}</div>
 				<div class="review-info">
-					<div class="review-id">ID : ${review.a_no}</div>
+					<div class="review-id">ID : ${account.email}</div>
 					<div class="review-vertical"></div>
 					<div class="review-created">${review.r_created}</div>
 				</div>
