@@ -8,9 +8,9 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
-<script type="module" src="4_service/js/petNmCheck.js"></script>
+<script type="text/javascript" src="4_service/js/petNmCheck.js"></script>
+<script type="text/javascript" src="4_service/js/validCheck.js"></script>
 <link rel="stylesheet" href="4_service/css/petNmCheck.css">
-
 </head>
 <style>
 
@@ -51,16 +51,13 @@
 </div>
 </div>
 </div>
-
-
 <!--검색 모달! -->
 	<div id="printinfo1">
-  		<div id="modalContent1"><span class="mtitle">My Pet Info</span><div style="z-index:8;"id="closeBtn1">x</div>
-   			 <div id="modalBody1">
-    		</div>
+  		<div id="modalContent1">
+  			<span class="mtitle">My Pet Info</span>
+  			<div style="z-index:8;"id="closeBtn1">&times;</div>
+   			<div id="modalBody1"></div>
   		</div>
 	</div>
-
-	
 </body>
 </html>

@@ -24,8 +24,7 @@ body {
 	color: rgba(67, 49, 28, 0.9);
 }
 .yellow-bar{
-	top:6vw;
-    position: absolute;
+	position: relative;
     width: 100%;
     background: rgba(250, 234, 177, 1);
     height: 2px;
@@ -35,11 +34,12 @@ body {
 	text-align: left;
     top: 10%;
     position: relative;
-    max-width: 884px;
+    max-width: 48%;
     margin: 0px auto;
     padding: 60px 70px 0px;
     font-size: 200%;
     line-height: 111%;
+    line-height: 112%;
     font-weight: 600;
 }
 .paw-img{
@@ -127,9 +127,10 @@ rgba(197, 137, 64, 1);
 
 /* 출력화면 css입니다~ */
 #closeBtn1 {
-	top: 0vh;
-	left: 94%; 
-    position: absolute;
+	width: 97%;
+    text-align: right;
+    bottom: 5vh;
+    position: relative;
     font-weight: bold;
     stroke-width: 10px;
     stroke: #43311C;
@@ -166,13 +167,11 @@ rgba(197, 137, 64, 1);
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 .mtitle{
-	height: 6%;
 	background: #FAF8F1;
     z-index: 3;
     top: 6%;
-    left: 38%;
-    position: absolute;
-    font-size: 236%;
+    position: relative;
+    font-size: 250%;
 }
 .box-title1{
 	display: flex;
