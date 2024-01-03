@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 import com.oreilly.servlet.MultipartRequest;
@@ -27,7 +28,6 @@ public class VolunteerDAO {
 		try {
 			con = DBManager_khw.connect();
 			System.out.println("연결 성공~!");
-
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 
@@ -46,9 +46,12 @@ public class VolunteerDAO {
 				String aEmail = rs.getString("A_EMAIL");
 				v.setA_email(aEmail);
 				volunteer.add(v);
-				request.setAttribute("volunteer", volunteer);
 
 			}
+			request.setAttribute("volunteer", volunteer);
+			String jsonVolunteer = new Gson().toJson(volunteer);
+			request.setAttribute("jsonVolunteer", jsonVolunteer);
+			System.out.println(jsonVolunteer);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
