@@ -98,7 +98,8 @@
 									<td class="vol-td">${reglist.postNo }</td>
 									<td class="vol-td">${reglist.title }</td>
 									<td class="vol-td">${reglist.applied }</td>
-									<td class="vol-td"><button class="vol-btn">Detail</button> &nbsp <button class="vol-btn">Cancel</button></td>
+									<td class="vol-td"><button onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'" class="vol-btn">Detail</button> &nbsp 
+									<button onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'" class="vol-btn">Cancel</button></td>
 								</tr>
 							</c:forEach>
 						</table>

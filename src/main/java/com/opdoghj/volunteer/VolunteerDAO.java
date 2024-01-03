@@ -69,7 +69,7 @@ public class VolunteerDAO {
 			con = DBManager_khw.connect();
 
 			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
-			// System.out.println(path);
+			System.out.println(path);
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 
@@ -271,10 +271,14 @@ public class VolunteerDAO {
 
 			String title = mr.getParameter("title");
 			String newFile = mr.getFilesystemName("newFile");
-			String oldFile = mr.getFilesystemName("oldFile");
+			String oldFile = mr.getParameter("oldFile");
 			String content = mr.getParameter("content");
 			String status = mr.getParameter("chooseStatus");
 			String no = mr.getParameter("no");
+			String File1 = oldFile;
+			if (newFile != null) {
+				File1 = newFile;
+			}
 
 			content = content.replaceAll("\r\n", "<br>");
 
@@ -283,18 +287,14 @@ public class VolunteerDAO {
 			System.out.println(oldFile);
 			System.out.println(content);
 			System.out.println(status);
+			System.out.println(File1);
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
+			pstmt.setString(2, File1);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setString(5, no);
-
-			if (newFile != null) {
-				pstmt.setString(2, newFile);
-			} else {
-				pstmt.setString(2, oldFile);
-			}
 
 			pstmt.executeUpdate();
 			if (pstmt.executeUpdate() == 1) {
@@ -426,7 +426,27 @@ public class VolunteerDAO {
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
-
 	}
 
+	public static void deleteFromMyList(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String no = request.getParameter("no");
+		System.out.println(no);
+		String sql = "delete appliedvol where ap_no=?";
+
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제성공!");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("삭제실패했습니다..");
+		} finally {
+			DBManager_khw.close(con, pstmt, null);
+		}
+	}
 }
