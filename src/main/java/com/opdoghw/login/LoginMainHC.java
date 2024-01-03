@@ -31,13 +31,15 @@ public class LoginMainHC extends HttpServlet {
 			request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		} else if (result == 2) {
 			response.sendRedirect("HC");
-//			String previousPage = (String) request.getSession().getAttribute("previousPage");
-//			if (previousPage != null && !previousPage.isEmpty()) {
-//				response.sendRedirect(previousPage);
-//			} else {
-//				// 이동할 이전 페이지가 없을 경우 기본 페이지로 리다이렉트
-//				response.sendRedirect(request.getContextPath() + "home.jsp");
-//			}
+//			String currentPage = request.getRequestURI();
+//			String previousPage = SessionManager.getPreviousPage(request);
+//			String beforePreviousPage = SessionManager.getBeforePreviousPage(request);
+//			SessionManager.setBeforePreviousPage(request, previousPage);
+//			SessionManager.setPreviousPage(request, currentPage);
+//			System.out.println(currentPage);
+//			System.out.println(previousPage);
+//			System.out.println(beforePreviousPage);
+//			response.sendRedirect(previousPage != null ? previousPage : request.getContextPath() + "HC");
 
 		}
 	}

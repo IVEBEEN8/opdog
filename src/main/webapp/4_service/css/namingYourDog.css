@@ -95,7 +95,7 @@ body {
 .loading {
   display: none;
   border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
+  border-top: 16px solid #faeab1b1; /* Blue */
   border-radius: 50%;
   width: 120px;
   height: 120px;
@@ -154,10 +154,12 @@ body {
 }
 
 .line1{
-	background-color: pink;
-	width: 60vw;
+	border-radius: 50px;
+    border: 5px solid #faeab1b1;
+    width: 60vw;
     padding: 2vw;
 }
+
 
 .chat-box{
 	color: #000;

@@ -221,14 +221,15 @@ html, body {
     margin: 4%;
     padding: 2% 2%;
     position: relative;
-    background-color: pink;
+    background-color: #F8F8F8;
     border-radius: 2%;
 }
 .vol-table{
-	border: 1px solid black;
-	width: 100%;
-	text-align: center;
-	border-collapse: collapse;
+	position: relative;
+    top: 3%;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
 }
 .vol-title{
 	font-size:2vw;
@@ -239,12 +240,13 @@ html, body {
 	
 }
 .vol-btn{
-	background-color:gray;
-	border-radius: 1%;
+	border-radius: 45%;
+    height: 3vh;
+    width: 3vw;
 }
 .vol-th, .vol-td{
 	padding: 1%;
-	border: 1px solid black;
+	border-top:1px solid black;
 }
 
 
