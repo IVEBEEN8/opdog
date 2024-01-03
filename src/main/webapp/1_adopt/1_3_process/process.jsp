@@ -112,15 +112,9 @@
 				</div>
 				<div class="notice-txt">
 					<ul>
-						<li>If there are multiple applicants for adoption for one
-							dog, the selection will be made through a meeting with center
-							managers</li>
-						<li>Basic health care is provided at the protection center,
-							but in order to more accurately check the presence of disease, it
-							is recommended to undergo a detailed examination at a veterinary
-							hospital</li>
-						<li>Dismissal after adoption is not possible. All family
-							members must think carefully before deciding to adopt</li>
+						<li>If there are multiple applicants for adoption for one dog, the selection will be made through a meeting with center managers</li>
+						<li>Basic health care is provided at the protection center, but in order to more accurately check the presence of disease, it is recommended to undergo a detailed examination at a veterinary hospital</li>
+						<li>Dismissal after adoption is not possible. All family members must think carefully before deciding to adopt</li>
 					</ul>
 					<p>We hope this checklist will be helpful to those considering
 						adopting a stray dog. Please be sure to carefully check the above
