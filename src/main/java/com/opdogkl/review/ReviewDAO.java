@@ -17,6 +17,7 @@ import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 public class ReviewDAO {
+	private static ArrayList<Review> reviews;
 
 	public static void getAllReview(HttpServletRequest request) {
 		Connection con = null;
@@ -30,7 +31,7 @@ public class ReviewDAO {
 			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			Review r = null;
-			ArrayList<Review> reviews = new ArrayList<Review>();
+			reviews = new ArrayList<Review>();
 			
 			while(rs.next()) {
 				r = new Review();
@@ -246,5 +247,39 @@ public class ReviewDAO {
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
-	}	
+	}
+
+	public static void paging(int page, HttpServletRequest request) {
+		try {
+			request.setAttribute("curPageNo", page);
+			int cnt = 8; 		// 한페이지당 보여줄 개수
+			int total = reviews.size();		// 총 데이터 개수 
+			System.out.println("생성된 배열길이 : " + reviews.size());
+			// 총페이지수 
+			int pageCount = (int) Math.ceil((double)total/cnt);
+			System.out.println("생성된 총페이지수 : " + pageCount);
+			request.setAttribute("pageCount", pageCount);
+			
+			
+			int start = total - (cnt * (page - 1));
+			System.out.println("시작 : " + start);
+			// 현재페이지가 총페이지수와 같아?
+			int end = (page == pageCount) ? -1 : start - (cnt + 1);
+			System.out.println("끝 : " + end);
+			System.out.println();
+			ArrayList<Review> items = new ArrayList<Review>();
+			for (int i = start-1; i > end; i--)
+			{
+				items.add(reviews.get(i));
+				
+			}
+			request.setAttribute("reviews", items);
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("표시할 페이지가 없어요");
+		}
+		
+		
+	}
 }
