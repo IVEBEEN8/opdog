@@ -32,9 +32,10 @@
 				<textarea class="review-txt" rows="10" cols="50" readonly="readonly">${review.r_txt}</textarea>
 			</div>
 			<div class="review-btn">
-				<button class="review-edit-btn" onclick="location.href='ReviewUpC?no=${review.r_no}'">Edit</button>
+				<button class="review-edit-btn" onclick="reviewUpdate('${account.no }','${review.a_no }','${review.r_no}')">Edit</button>
 				<button class="reiview-list-btn" onclick="location.href='ReviewC'">Review List</button>
-				<button class="review-edit-btn" onclick="reviewDelete('${review.r_no}')">Delete</button>
+				<button class="review-edit-btn" onclick="reviewDelete('${account.no }','${review.a_no }','${review.r_no}')">Delete</button>
+																	
 			</div>
 		</div>
 	</div>
