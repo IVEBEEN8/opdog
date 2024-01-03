@@ -7,7 +7,8 @@ $(document).ready(function(){
 const API_KEY ="sJG8TCmXj96iwKxnSPRAaGazSqjp8g97CNLXDwtsv7BNaDo%2F6qhQtG3OIp0MAEreldhU5TicAqKPPvCVcrj7cA%3D%3D";
 var inputValueName = document.getElementById('name').value;
 var inputValuePetNm = document.getElementById('petnum').value;
-
+console.log(inputValueName);
+console.log(inputValuePetNm);
 var xhr = new XMLHttpRequest();
 var url = 'http://apis.data.go.kr/1543061/animalInfoSrvc/animalInfo'; /*URL*/
 var queryParams = '?' + encodeURIComponent('serviceKey') + '='+API_KEY; /*Service Key*/
@@ -23,11 +24,10 @@ xhr.onreadystatechange = function () {
 
 xhr.onreadystatechange = function () {
 	console.log('onreadystatechange event triggered');
-	
 	$("#submit").on("click",function(){
     if (xhr.readyState === XMLHttpRequest.DONE) {
+		console.log(xhr.status); //무조건 입력하면 200..
         if (xhr.status === 200) {
-			console.log(11);
             const response = JSON.parse(xhr.responseText);
             console.log(response);
             //화면출력 id 가져오기
@@ -37,7 +37,6 @@ xhr.onreadystatechange = function () {
             const reqNo = header.reqNo;
             const resultCode = header.resultCode;
             const resultMsg = header.resultMsg;
-
             const body = response.response.body;
             const item = body.item;
             const dogRegNo = item.dogRegNo;
@@ -48,11 +47,11 @@ xhr.onreadystatechange = function () {
             const neuterYn =item.neuterYn;
             const orgNm = item.orgNm;
             const officeTel = item.officeTel;
-            const aprGbNm = item.aprGbNm;
-     			
-		
+            const aprGbNm = item.aprGbNm;			
 				$("#printinfo1").show();
 				$("#modalBody1").empty();
+				
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Result Msg</div><div class="small-content1">:' + resultMsg + '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Name of the dog</div><div class="small-content1">:' + dogNm + '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Gender</div><div class="small-content1">:' + sexNm + '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Kind</div><div class="small-content1">:' + kindNm+ '</div></div>');
@@ -64,13 +63,13 @@ xhr.onreadystatechange = function () {
         		});
 
 				const printinfobox = document.getElementById('printinfo1');
-		
+
 				$(document).on("click", function(event) {
 					    if (event.target === printinfobox) {
 				        printinfobox.style.display = 'none';
 				    }
 				});
-			
+				
 			}
    		}
   })

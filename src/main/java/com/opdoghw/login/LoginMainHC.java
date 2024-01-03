@@ -12,6 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginMainHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String referer = request.getHeader("Referer");
+
+		if (referer != null) {
+			int last = referer.lastIndexOf("/");
+			if (last != -1) {
+				String ev = referer.substring(last + 1);
+				System.out.println(ev);
+				request.setAttribute("lastS", ev);
+			}
+		}
+
 		request.setAttribute("contentPage", "login/loginMain.jsp");
 		request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
@@ -30,16 +41,8 @@ public class LoginMainHC extends HttpServlet {
 			LoginDAO.loginCheck(request);
 			request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		} else if (result == 2) {
-			response.sendRedirect("HC");
-//			String currentPage = request.getRequestURI();
-//			String previousPage = SessionManager.getPreviousPage(request);
-//			String beforePreviousPage = SessionManager.getBeforePreviousPage(request);
-//			SessionManager.setBeforePreviousPage(request, previousPage);
-//			SessionManager.setPreviousPage(request, currentPage);
-//			System.out.println(currentPage);
-//			System.out.println(previousPage);
-//			System.out.println(beforePreviousPage);
-//			response.sendRedirect(previousPage != null ? previousPage : request.getContextPath() + "HC");
+			String url = request.getParameter("url");
+			response.sendRedirect(url);
 
 		}
 	}
