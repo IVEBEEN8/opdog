@@ -56,7 +56,6 @@ header {
 }
 
 .nav-items {
-  height: 1vw;
   justify-content: center;
   align-items: center;
   flex: 1 0 0;
@@ -694,3 +693,6 @@ li {
 .quick .on {
   background: #fff;
 }
+
+/* 반응형 모바일버전 */
+
