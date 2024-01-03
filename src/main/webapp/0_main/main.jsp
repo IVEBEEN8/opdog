@@ -24,7 +24,7 @@
 			<!-- 메뉴 -->
 			<div class="nav-var">
 				<div class="nav-items">
-					<a href="HC" class="nav-text home"><span>Home</span></a>
+					<a href="HC" class="nav-text home"><span>HOME</span></a>
 				</div>
 				<div class="nav-items">
 					<a onclick="location.href='DoginfoHC'" class="nav-text"><span>Adopt</span></a>
@@ -59,9 +59,12 @@
 				</div>
 			</div>
 			<!-- 회원가입 로그인 버튼 -->
-			<div>
+			<div class="header-r-wrap">
 				<div><jsp:include page="${mainLoginLogoutBtn}"></jsp:include></div>
 			</div>
+			 <a href="#" class="navbar_toogleBtn"
+          ><img style="width: 3vw" src="0_main/img/hambuger.svg" alt=""
+        /></a>
 		</nav>
 	</header>
 	<!-- 메인 컨텐츠 : 슬라이드로 1,2,3,4까지 넘어감. -->
@@ -178,4 +181,5 @@
 <script type="text/javascript"
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 <script src="0_main/js/main.js"></script>
+<script src="0_main/js/main_hambuger.js"></script>
 </html>
