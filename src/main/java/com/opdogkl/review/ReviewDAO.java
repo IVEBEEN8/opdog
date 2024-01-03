@@ -6,6 +6,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -75,9 +76,21 @@ public class ReviewDAO {
 			
 			//세션에서 a_no 값을 가져오기
 			LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+			
+			MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
 
-	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-			String img = mr.getFilesystemName("fileInput");
+			// UUID를 사용하여 고유한 파일 이름 생성
+			String originalFileName = mr.getFilesystemName("fileInput");
+			String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+			String uniqueFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+			
+			// 파일 이름 변경
+			File f = new File(path, uniqueFileName);
+			mr.getFile("fileInput").renameTo(f);
+
+			
+
+			String img = uniqueFileName;
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			
