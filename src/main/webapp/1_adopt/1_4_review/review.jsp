@@ -17,7 +17,7 @@
 				<div class="review-box">
 					<img class="review-img" 
 						src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <span>
-						<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">Read
+						<button onclick="location.href='ReviewDetailC?no=${r.r_no}'">Read
 							more</button>
 					</span>
 				</div>
