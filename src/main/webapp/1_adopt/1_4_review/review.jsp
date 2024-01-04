@@ -12,22 +12,55 @@
 <body>
 	<!-- 내가한거 -->
 	<div class="fullsection full4">
+		
 		<div class="review-box-wrap">
 			<c:forEach var="r" items="${reviews}">
 				<div class="review-box">
-					<img class="review-img" 
+					<img class="review-img"
 						src="1_adopt/1_4_review/imgFolder/${r.r_img}"> <span>
-						<button onclick="location.href='ReviewDetailC?id=${r.op_email}'">Read
+						<button onclick="location.href='ReviewDetailC?no=${r.r_no}'">Read
 							more</button>
 					</span>
 				</div>
 			</c:forEach>
 		</div>
+		
+		<!-- 페이지 처리 왼쪽 -->
+		<div class="page-controller">
+			<c:forEach begin="1" end="${pageCount}" var="n">
+			</c:forEach>
+			<c:choose>
+				<c:when test="${curPageNo != 1 }">
+					<a href="ReviewPageC?p=${curPageNo -1 }"><button>◀</button></a>
+				</c:when>
+				<c:otherwise>
+					<button class="이전버튼">◀</button>
+				</c:otherwise>
+			</c:choose>
+		</div>
+		<!-- 페이지 처리 오른쪽 -->
+		<div class="page-controller">
+			<c:choose>
+				<c:when test="${pageCount != curPageNo }">
+					<a href="ReviewPageC?p=${curPageNo +1 }"><button>▶</button></a>
+				</c:when>
+				<c:otherwise>
+					<button class="다음버튼">▶</button>
+				</c:otherwise>
+			</c:choose>
+		</div>
+
 	</div>
 	<div class="adopt-btn">
 		<button id="goReviewReg" value="${sessionScope.account}"
 			onclick="goReviewReg()">Write</button>
 	</div>
+
+
+
+
+
+
 
 
 

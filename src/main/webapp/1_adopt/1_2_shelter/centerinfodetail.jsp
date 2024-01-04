@@ -31,7 +31,7 @@
             <div class="pull-right-wrap1-2">
                     <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
-                            <option value="0">&nbsp;&nbsp; Select</option>
+              
                             <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
                             <option value="c_careAddr">&nbsp;&nbsp;Address</option>
                         </select>
@@ -121,7 +121,31 @@ async function fetchData() {
     }
 }
 
+function translateText(text, targetLang, callback) {
+    // 파파고 API 키를 여기에 입력하세요
+    var apiKey = 'YOUR_PAPAGO_API_KEY';
 
+    // 파파고 API 요청 주소
+    var apiUrl = 'https://openapi.naver.com/v1/papago/n2mt';
+
+    // AJAX를 사용하여 파파고 API에 번역 요청 보내기
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', apiUrl, true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+    xhr.setRequestHeader('X-Naver-Client-Id', apiKey);
+    xhr.setRequestHeader('X-Naver-Client-Secret', apiKey);
+
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+            var response = JSON.parse(xhr.responseText);
+            var translatedText = response.message.result.translatedText;
+            callback(translatedText);
+        }
+    };
+
+    var params = 'source=ko&target=' + targetLang + '&text=' + encodeURIComponent(text);
+    xhr.send(params);
+}
 
 function createMarker(lat, lng, data) {
     var marker = new kakao.maps.Marker({

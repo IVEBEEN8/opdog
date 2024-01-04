@@ -30,7 +30,7 @@
 			<div>
 				<div class="dog-img-cover">
 					<div>
-						<img class="dog-img" alt="" src="2_shop/img/결제완료강아지.png">
+						<img class="dog-img" alt="" src="2_shop/img/checkDog.png">
 					</div>
 				</div>
 

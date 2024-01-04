@@ -12,7 +12,7 @@ import com.opdoghw.login.LoginDAO;
 public class ToySearchC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ToyDAO.searchToy(request);
-		ToyDAO.paging(1, request);
+//		ToyDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_4_toy/toy.jsp");
 		LoginDAO.loginCheck(request);

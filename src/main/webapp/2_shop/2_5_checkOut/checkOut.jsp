@@ -12,7 +12,8 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
 	rel="stylesheet" />
-<script type="text/javascript" src="../js/checkOut.js"></script>
+<script type="text/javascript" src="../js/checkOut.js?ver=6"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
 </head>
 <body>
@@ -30,30 +31,30 @@
 			<div class="input-group">
 				<div class="full-name">
 					<div>
-						<input class="input-name" type="text" placeholder="First Name" />
+						<input class="input-name" id="firstName" type="text" placeholder="First Name" />
 					</div>
 					<div>
-						<input class="input-name" type="text" placeholder="Last Name" />
+						<input class="input-name" id="lastName" type="text" placeholder="Last Name" />
 					</div>
 				</div>
 				<div>
-					<input class="input-box" type="text"
+					<input class="input-box" id="optional" type="text"
 						placeholder="Apartment,suite,etc(optional)" />
 				</div>
 				<div>
-					<input class="input-box" type="text" placeholder="Street address" />
+					<input class="input-box" id="adress" type="text" placeholder="Street address" />
 				</div>
 				<div>
-					<input class="input-box" type="text" placeholder="City" />
+					<input class="input-box" id="city" type="text" placeholder="City" />
 				</div>
 				<div>
-					<input class="input-box" type="text" placeholder="Country" />
+					<input class="input-box" id="country" type="text" placeholder="Country" />
 				</div>
 				<div>
-					<input class="input-box" type="text" placeholder="Zip Code" />
+					<input class="input-box" id="zipCode" type="text" placeholder="Zip Code" />
 				</div>
 				<div>
-					<input class="input-box" type="text" placeholder="Phone number" />
+					<input class="input-box" id="phoneNumber" type="text" placeholder="Phone number" />
 				</div>
 				<input id="itemTitle" type="hidden" value="${param.title}">
 				<input id="itemPrice" type="hidden" value="${param.price}">

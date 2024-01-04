@@ -137,7 +137,9 @@ function quickClick() {
     } else if (gnbindex === 4) {
       // 마지막 페이지에 대한 처리 추가
       $(".main_header").css("background", "rgba(28, 28, 28, 0.3)");
-    }
+    }  else if (gnbindex === 1) {
+      $(".main_header").css("background", "rgba(255, 255, 255, 0.1)");
+}
 
 	//퀵 마우스휠 선택했을때 숫자 로딩 
 	if (gnbindex === 3) {

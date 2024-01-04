@@ -12,7 +12,7 @@ import com.opdoghw.login.LoginDAO;
 public class FeedSearchC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		FeedDAO.searchFeed(request);
-		FeedDAO.paging(1, request);
+//		FeedDAO.paging(1, request);
 		
 		request.setAttribute("contentPage", "../2_shop/2_2_feed/feed.jsp");
 		LoginDAO.loginCheck(request);

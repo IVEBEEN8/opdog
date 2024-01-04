@@ -24,6 +24,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 
 import com.opdogkl.shop.NaverAPI;
@@ -67,6 +68,13 @@ public class FashionDAO {
 			}
 			request.setAttribute("fashions", fashions);
 			System.out.println("어트리뷰트 생성!");
+			
+			
+			// fashions 리스트를 JSON 형식으로 변환
+		    String jsonFashions = new Gson().toJson(fashions);
+		    // JSON 데이터를 request에 추가
+		    request.setAttribute("jsonFashions", jsonFashions);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -361,6 +369,14 @@ public static void getFashion(HttpServletRequest request) {
 				}
 				request.setAttribute("fashions", fashions);
 				System.out.println("어트리뷰트 생성!");
+				
+				// fashions 리스트를 JSON 형식으로 변환
+			    String jsonFashions = new Gson().toJson(fashions);
+			    // JSON 데이터를 request에 추가
+			    request.setAttribute("jsonFashions", jsonFashions);
+				
+				
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {
@@ -404,6 +420,12 @@ public static void getFashion(HttpServletRequest request) {
 						while(rs.next());
 					request.setAttribute("fashions", fashions);
 					System.out.println("검색된 패션 어트리뷰트 생성!");
+					
+					// fashions 리스트를 JSON 형식으로 변환
+				    String jsonFashions = new Gson().toJson(fashions);
+				    // JSON 데이터를 request에 추가
+				    request.setAttribute("jsonFashions", jsonFashions);
+					
 					
 				} else {
 					getAllFashion(request); // 검색 결과가 없으면 getAllFashion() 호출

@@ -14,7 +14,7 @@
 
 </head>
 <body>
-	<form class="container" action="VolunteerDetailC" method="post"
+	<form class="container" action="VolunteerDetailC" method="post" 
 		enctype="multipart/form-data">
 		<main>
 			<div id="DetailTbl">
@@ -34,10 +34,9 @@
 				<div class="btnWrap">
 					<button type="button" onclick="location.href='VSeoulC'">Go
 						list</button>
-					<button type="button"
-						onclick="location.href='VolunteerModiC?no=${vol.v_no}'">
+					<button type="button" onclick="modifyPost('${account.no}','${vol.a_no }','${vol.v_no }')">
 						Modify</button>
-					<button type="button" onclick="deleteMovie('${vol.v_no}')">
+					<button type="button" onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}')">
 						Delete</button>
 				</div>
 			</div>
@@ -50,7 +49,6 @@
 		</main>
 	</form>
 	 <script>
-	 	
         document.addEventListener('DOMContentLoaded', function () {
             var statusValue = "${vol.v_status}";
 			console.log(statusValue);

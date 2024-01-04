@@ -6,6 +6,10 @@
 <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>LoginMain</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
+    <script src="0_main/js/loginMain.js"></script>
     <link rel="stylesheet" href="0_main/css/header.css" />
     <link rel="stylesheet" href="0_main/css/loginMain.css" />
     <link rel="stylesheet" href="0_main/css/footer.css" />
@@ -21,35 +25,14 @@
 			alert('${alert}')
 		}
 	}
-	
-	function rememberPreviousPages() {
-	    // 현재 페이지 경로 가져오기
-	    var currentPage = window.location.href;
-
-	    // 이전 페이지를 세션 스토리지에서 가져오기
-	    var previousPage = sessionStorage.getItem("previousPage");
-
-	    // 전전 페이지를 세션 스토리지에서 가져오기
-	    var previousPage2 = sessionStorage.getItem("previousPage2");
-
-	    // 현재 페이지를 세션 스토리지에 저장
-	    sessionStorage.setItem("previousPage2", previousPage);
-	    sessionStorage.setItem("previousPage", currentPage);
-
-	    // true를 반환하면 폼이 제출되고, false를 반환하면 제출이 취소됩니다.
-	    console.log("Current Page: " + currentPage);
-	    console.log("Previous Page: " + previousPage);
-	    console.log("Previous Page 2: " + previousPage2);
-	    return true;
-	}
 </script>
 
 </head>
   <body onload="aa()">
-
     <!-- 로그인부분시작 -->
-    <form action="LoginMainHC" method="post" onsubmit="rememberPreviousPage()">
-    	<input type="hidden" id="previousPage" name="previousPage" />
+    <!-- action="LoginMainHC" method="post" --> 
+    <form action="LoginMainHC" method="post" onsubmit="login();">
+    <input type="hidden" name="url" value ="${lastS }">
       <div class="containar-hw">
         <div class="sub-containar-hw">
           <div class="loginpage lp-title">

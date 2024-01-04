@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 import com.oreilly.servlet.MultipartRequest;
@@ -18,17 +19,23 @@ import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 public class VolunteerDAO {
 	private static ArrayList<volunteerDTO> volunteer;
 
-	public static void getAllpost(HttpServletRequest request) {
+	public static void getAllpost(HttpServletRequest request, HttpServletResponse res) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "SELECT v.*, a.A_EMAIL " + "FROM VOLUNTEER v "
-				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO order by v_no";
+				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO and v.v_title like '%'||?||'%' and v.v_status like '%'||?||'%' and v.v_locate = ? order by v_no";
 		try {
+			String search = request.getParameter("search");
+			String status = request.getParameter("status");
+			String locate = request.getParameter("locate");
+
 			con = DBManager_khw.connect();
 			System.out.println("연결 성공~!");
-
 			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, search);
+			pstmt.setString(2, status);
+			pstmt.setString(3, locate);
 			rs = pstmt.executeQuery();
 
 			volunteerDTO v = null;
@@ -40,15 +47,21 @@ public class VolunteerDAO {
 				v.setV_img(rs.getString("V_IMG"));
 				v.setV_txt(rs.getString("V_TXT"));
 				v.setV_created(rs.getDate("V_CREATED"));
-				v.setV_updated(rs.getDate("V_UPDATED"));
 				v.setV_status(rs.getString("V_STATUS"));
 				v.setA_no(rs.getInt("A_NO"));
 				String aEmail = rs.getString("A_EMAIL");
 				v.setA_email(aEmail);
 				volunteer.add(v);
-				request.setAttribute("volunteer", volunteer);
 
 			}
+//			request.setAttribute("volunteer", volunteer);
+			String jsonVolunteer = new Gson().toJson(volunteer);
+//			request.setAttribute("jsonVolunteer", jsonVolunteer);
+//			System.out.println(jsonVolunteer);
+			System.out.println(jsonVolunteer);
+			res.setContentType("application/json");
+			res.getWriter().write(jsonVolunteer);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -69,7 +82,7 @@ public class VolunteerDAO {
 			con = DBManager_khw.connect();
 
 			String path = request.getServletContext().getRealPath("3_volunteer/newImg");
-			// System.out.println(path);
+			System.out.println(path);
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "UTF-8",
 					new DefaultFileRenamePolicy());
 
@@ -271,10 +284,14 @@ public class VolunteerDAO {
 
 			String title = mr.getParameter("title");
 			String newFile = mr.getFilesystemName("newFile");
-			String oldFile = mr.getFilesystemName("oldFile");
+			String oldFile = mr.getParameter("oldFile");
 			String content = mr.getParameter("content");
 			String status = mr.getParameter("chooseStatus");
 			String no = mr.getParameter("no");
+			String File1 = oldFile;
+			if (newFile != null) {
+				File1 = newFile;
+			}
 
 			content = content.replaceAll("\r\n", "<br>");
 
@@ -283,18 +300,14 @@ public class VolunteerDAO {
 			System.out.println(oldFile);
 			System.out.println(content);
 			System.out.println(status);
+			System.out.println(File1);
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
+			pstmt.setString(2, File1);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setString(5, no);
-
-			if (newFile != null) {
-				pstmt.setString(2, newFile);
-			} else {
-				pstmt.setString(2, oldFile);
-			}
 
 			pstmt.executeUpdate();
 			if (pstmt.executeUpdate() == 1) {
@@ -426,7 +439,27 @@ public class VolunteerDAO {
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
-
 	}
 
+	public static void deleteFromMyList(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String no = request.getParameter("no");
+		System.out.println(no);
+		String sql = "delete appliedvol where ap_no=?";
+
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, no);
+			if (pstmt.executeUpdate() == 1) {
+				System.out.println("삭제성공!");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("삭제실패했습니다..");
+		} finally {
+			DBManager_khw.close(con, pstmt, null);
+		}
+	}
 }

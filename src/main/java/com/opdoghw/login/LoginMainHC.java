@@ -12,6 +12,17 @@ import javax.servlet.http.HttpServletResponse;
 public class LoginMainHC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		String referer = request.getHeader("Referer");
+
+		if (referer != null) {
+			int last = referer.lastIndexOf("/");
+			if (last != -1) {
+				String ev = referer.substring(last + 1);
+				System.out.println(ev);
+				request.setAttribute("lastS", ev);
+			}
+		}
+
 		request.setAttribute("contentPage", "login/loginMain.jsp");
 		request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
@@ -30,14 +41,8 @@ public class LoginMainHC extends HttpServlet {
 			LoginDAO.loginCheck(request);
 			request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		} else if (result == 2) {
-			response.sendRedirect("HC");
-//			String previousPage = (String) request.getSession().getAttribute("previousPage");
-//			if (previousPage != null && !previousPage.isEmpty()) {
-//				response.sendRedirect(previousPage);
-//			} else {
-//				// 이동할 이전 페이지가 없을 경우 기본 페이지로 리다이렉트
-//				response.sendRedirect(request.getContextPath() + "home.jsp");
-//			}
+			String url = request.getParameter("url");
+			response.sendRedirect(url);
 
 		}
 	}

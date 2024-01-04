@@ -7,6 +7,7 @@ import java.util.ArrayList;
 
 import javax.servlet.http.HttpServletRequest;
 
+import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 
 public class ToyDAO {
@@ -44,6 +45,12 @@ public class ToyDAO {
 			}
 			request.setAttribute("toys", toys);
 			System.out.println("어트리뷰트 생성!");
+			
+			// fashions 리스트를 JSON 형식으로 변환
+		    String jsonToys = new Gson().toJson(toys);
+		    // JSON 데이터를 request에 추가
+		    request.setAttribute("jsonToys", jsonToys);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -148,6 +155,11 @@ public static void searchToy(HttpServletRequest request) {
 			request.setAttribute("toys", toys);
 			System.out.println("검색된 사료 어트리뷰트 생성!");
 			
+			// fashions 리스트를 JSON 형식으로 변환
+		    String jsonToys = new Gson().toJson(toys);
+		    // JSON 데이터를 request에 추가
+		    request.setAttribute("jsonToys", jsonToys);
+			
 		} else {
 			getAllToy(request); // 검색 결과가 없으면 getAllFashion() 호출
             request.setAttribute("message","No results were found for your search : " + search); // 메시지 설정
@@ -209,6 +221,12 @@ public static void sortToy(HttpServletRequest request) {
 				}
 				request.setAttribute("toys", toys);
 				System.out.println("어트리뷰트 생성!");
+				
+				// fashions 리스트를 JSON 형식으로 변환
+			    String jsonToys = new Gson().toJson(toys);
+			    // JSON 데이터를 request에 추가
+			    request.setAttribute("jsonToys", jsonToys);
+				
 			} catch (Exception e) {
 				e.printStackTrace();
 			} finally {

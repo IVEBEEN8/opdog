@@ -116,4 +116,5 @@ input::placeholder {
 	background: #9e6f21;
 	color: white;
 	font-family: "DM Sans", sans-serif;
+	cursor: pointer;
 }
