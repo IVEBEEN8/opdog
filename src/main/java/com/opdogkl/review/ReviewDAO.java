@@ -161,7 +161,7 @@ public class ReviewDAO {
 		ResultSet rs = null;
 		String sql = "update review_kl"
 					+" set r_img=?, r_title=?, r_txt=?, r_updated=SYSDATE"
-					+"where r_no=?";
+					+" where r_no=?";
 		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
 		System.out.println(path);
 		try {
@@ -170,20 +170,8 @@ public class ReviewDAO {
 			request.setCharacterEncoding("utf-8");	
 	        
 	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-	     // UUID를 사용하여 고유한 파일 이름 생성
-	     String originalFileName = mr.getFilesystemName("newImg");
-	     String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
-	     String uniqueFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
-	     			
-	     // 파일 이름 변경
-	     File f1 = new File(path, uniqueFileName);
-	     mr.getFile("newImg").renameTo(f1);
-
-	     			
-
-	     	String newImg = uniqueFileName;
-	        
-	        String oldImg = mr.getParameter("oldImg");
+			String oldImg = mr.getParameter("oldImg");
+			String newImg = mr.getFilesystemName("newImg");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			String no = mr.getParameter("no");
@@ -191,7 +179,6 @@ public class ReviewDAO {
 			if (newImg != null) {
 				File1 = newImg;
 			}
-			
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, File1);
 			pstmt.setString(2, title);
