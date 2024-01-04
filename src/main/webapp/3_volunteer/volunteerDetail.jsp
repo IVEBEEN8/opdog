@@ -32,11 +32,11 @@
 					<p>${vol.v_txt }</p>
 				</div>
 				<div class="btnWrap">
-					<button type="button" onclick="location.href='VSeoulC'">Go
+					<button type="button" onclick="location.href='VPostC?locate=${vol.v_locate}'">Go
 						list</button>
 					<button type="button" onclick="modifyPost('${account.no}','${vol.a_no }','${vol.v_no }')">
 						Modify</button>
-					<button type="button" onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}')">
+					<button type="button" onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}','${vol.v_locate }')">
 						Delete</button>
 				</div>
 			</div>
