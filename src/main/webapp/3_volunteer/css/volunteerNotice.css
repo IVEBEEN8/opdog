@@ -145,6 +145,7 @@ input:focus {
 
 /* middle ( 게시판 포스트 항목 ) */
 #middle {
+	margin-top: 3vh;
 	border-radius: 30px;
 	border: 1px solid #c1c1c1;
 }
@@ -294,4 +295,10 @@ input:focus {
 	width: 4.333px;
 	height: 12.571px;
 	flex-shrink: 0;
+}
+.pagination-container {
+	margin-top: 10vh;
+	margin-bottom: 10vh;
+	display:flex;
+	justify-content:center;
 }

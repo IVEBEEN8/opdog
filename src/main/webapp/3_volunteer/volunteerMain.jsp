@@ -23,26 +23,24 @@
       </div>
       <div class="content-frame">
         <div class="content-row">
-          <a href="VSeoulC" class="content-bg">
+          <a href="VPostC?locate=Seoul" class="content-bg">
             <img style="width: 7.3vw;" src="3_volunteer/img/SeoulIcon.png" alt="" />
             <div>
               <p>Seoul</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-         <a href="vtBusanC"class="content-bg">
+         <a href="VPostC?locate=Busan"class="content-bg">
             <img style="width: 7.3vw;" src="3_volunteer/img/busanIcon.png" alt="" />
             <div>
-            
               <p>Busan</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a href="vtDaeguC"class="content-bg">
+          <a href="VPostC?locate=Daegu"class="content-bg">
             <img
               style="width: 7.3vw;"
-              src="3_volunteer/img/DaeguIcon.png"
-            />
+              src="3_volunteer/img/DaeguIcon.png"/>
             <div>
               <p>Daegu</p>
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
@@ -50,7 +48,7 @@
           </a>
         </div>
         <div class="content-row">
-          <a href="vtInsheonC" class="content-bg">
+          <a href="VPostC?locate=Incheon" class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/IncheonIcon.png"
@@ -60,7 +58,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Daejeon"  class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/DaejeonIcon.png"
@@ -70,7 +68,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Gyeongnam"  class="content-bg">
             <img
              style="width: 7.3vw;"
               src="3_volunteer/img/GyeongnamIcon.png"
@@ -82,7 +80,7 @@
           </a>
         </div>
         <div class="content-row">
-          <a class="content-bg">
+          <a href="VPostC?locate=Gyeongbuk"  class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/GyeongbukIcon.png"
@@ -92,7 +90,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Jeonnam"  class="content-bg">
             <img
               style="width: 7.3vw;"
               src="3_volunteer/img/JeonnamIcon.png"
@@ -102,7 +100,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Jeonbuk"  class="content-bg">
             <img
              style="width: 7.3vw;"
               src="3_volunteer/img/JeonbukIcon.png"
@@ -114,7 +112,7 @@
           </a>
         </div>
         <div class="content-row">
-          <a class="content-bg">
+          <a href="VPostC?locate=Chungnam"  class="content-bg">
             <img
              style="width: 7.3vw;"
               src="3_volunteer/img/ChungnamIcon.png"
@@ -124,7 +122,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Chungbuk"  class="content-bg">
             <img
               style="width:6.8vw;"
               src="3_volunteer/img/ChungbukIcon.png"
@@ -134,7 +132,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Jeju"  class="content-bg">
             <img
               style="width: 9.3vw;"
               src="3_volunteer/img/JejuIcon.png"
@@ -146,7 +144,7 @@
           </a>
         </div>
         <div class="content-row">
-          <a class="content-bg">
+          <a href="VPostC?locate=Gyeonggi"  class="content-bg">
             <img
              style="width: 6.8vw;"
               src="3_volunteer/img/GyeonggiIcon.png"
@@ -156,7 +154,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a  href="VPostC?locate=Gangwon"  class="content-bg">
             <img
             style="width: 9.3vw;"
               src="3_volunteer/img/GangwonIcon.png"
@@ -166,7 +164,7 @@
               <img src="3_volunteer/img/volunteerIcon.svg" alt="" />
             </div>
           </a>
-          <a class="content-bg">
+          <a href="VPostC?locate=Gwangju"  class="content-bg">
             <img
              style="width: 9.3vw; height:7vw;"
               src="3_volunteer/img/GwangjuIcon.png"
