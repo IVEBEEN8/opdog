@@ -87,17 +87,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("regVol").addEventListener("click", function () {
-        var accountNo = this.value;
-        console.log(accountNo);
-        // Check if the user is logged in
+        var selectedValue = this.value;
+        var dsv = selectedValue.split("!");
+        var locate = dsv[0];
+        var accountNo = dsv[1];
+
+        // 사용자가 로그인했는지 확인
         if (accountNo !== "") {
-            // User is logged in, proceed to "VtWriteC"
-            location.href = 'VtWriteC';
+           window.location.href= 'VtWriteC?locate=' + locate
+            
         } else {
-            // User is not logged in, redirect to "LoginMainHC"
-            var goLogin = confirm('You must login first.\nDo you want to login?');
+            // 사용자가 로그인하지 않았을 경우 "LoginMainHC"로 리디렉션
+            var goLogin = confirm('먼저 로그인해야 합니다.\n로그인하시겠습니까?');
             if (goLogin) {
                 window.location.href = 'LoginMainHC';
             }
@@ -120,8 +123,6 @@ function getPost(status){
 	
 }
 function paging(json){
-	
-	
 	$('#pagination-container').pagination({
 		dataSource: json,
 		pageSize: 5,

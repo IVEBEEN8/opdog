@@ -12,7 +12,6 @@ import javax.servlet.http.HttpServletResponse;
 public class VolunteerAPI extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
 		VolunteerDAO.getAllpost(request, response);
 	}
 
