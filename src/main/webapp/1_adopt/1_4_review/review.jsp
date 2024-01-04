@@ -10,7 +10,6 @@
 <link rel="stylesheet" href="1_adopt/css/adoptReview.css" />
 </head>
 <body>
-	<!-- 내가한거 -->
 	<div class="fullsection full4">
 		
 		<div class="review-box-wrap">
@@ -31,10 +30,10 @@
 			</c:forEach>
 			<c:choose>
 				<c:when test="${curPageNo != 1 }">
-					<a href="ReviewPageC?p=${curPageNo -1 }"><button>◀</button></a>
+					<a href="ReviewPageC?p=${curPageNo -1 }"><button class="left">◀</button></a>
 				</c:when>
 				<c:otherwise>
-					<button class="이전버튼">◀</button>
+					<button onclick="dontMove()" class="left">◀</button>
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -42,10 +41,10 @@
 		<div class="page-controller">
 			<c:choose>
 				<c:when test="${pageCount != curPageNo }">
-					<a href="ReviewPageC?p=${curPageNo +1 }"><button>▶</button></a>
+					<a href="ReviewPageC?p=${curPageNo +1 }"><button class="right">▶</button></a>
 				</c:when>
 				<c:otherwise>
-					<button class="다음버튼">▶</button>
+					<button onclick="dontMove()" class="right">▶</button>
 				</c:otherwise>
 			</c:choose>
 		</div>

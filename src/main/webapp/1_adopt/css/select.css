@@ -2,7 +2,6 @@
 
 html, body {
 	width: 100%;
-	height: 100%;
 	margin: 0px;
 	padding: 0px;
 	box-sizing: border-box;
@@ -15,9 +14,10 @@ html, body {
 }
 
 .infocontainer {
+	position:relative;
 	width: 100%;
+	height:100%;
 	margin-bottom: 13vw;
-	position: relative;
 	top: 7vw;
 }
 
@@ -57,6 +57,7 @@ html, body {
 	width: 100%;
 	padding: 0.5vw 0;
 	height: 7vw;
+	font-size: 0.9vw;
 }
 
 .sidoRadio, #sigungudiv, #centerdiv {
@@ -75,13 +76,13 @@ html, body {
 	appearance: none;
 	border: max(2px, 0.1em) solid gray;
 	border-radius: 50%;
-	width: 1.25em;
-	height: 1.25em;
+	width: 1vw;
+    height: 1vw ;
 	transition: border 0.5s ease-in-out;
 }
 
 [type="radio"]:checked {
-	border: 0.4em solid #FFCE1E;
+	    border: 0.3vw solid #FFCE1E;
 }
 
 [type="radio"]:focus-visible {
@@ -245,5 +246,5 @@ select {
 #liketrigger {
 	background: #FAEAB182;
 	border: none;
-	color: #43311CE5; */
-} 
+	color: #43311CE5; 
+}*/
