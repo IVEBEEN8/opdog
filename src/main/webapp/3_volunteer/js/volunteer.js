@@ -104,3 +104,93 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 });
+
+function getPost(status){
+	let search = $('input[name="searchTitle"]').val();
+	let locate = $("#locate").text();
+	$.ajax({
+		url : 'VolunteerAPI',
+		data : {search,status,locate},
+		datatype : 'json'
+	})
+	.done(function(json){
+		console.log(json)
+		paging(json);
+	});
+	
+}
+function paging(json){
+	
+	
+	$('#pagination-container').pagination({
+		dataSource: json,
+		pageSize: 5,
+		callback: function(data, pagination){
+			console.log(data);
+			var dataHtml ='';
+			$.each(data, function (index, item){
+				dataHtml += '<a href="VolunteerDetailC?no=' + item.v_no + '">';
+                dataHtml += '<table id="middle">';
+                dataHtml += '<tr class="middle-post">';
+                dataHtml += '<td class="post-left">';
+                dataHtml += '<div class="td-wrapper">';
+                dataHtml += '<div class="post-btn">';
+                dataHtml += '<div class="Recruiting post-btn-txt">';
+                dataHtml += '<p>' + item.v_status + '</p>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '<div class="post-text">';
+                dataHtml += '<div class="bigTxt">' + item.v_title + '</div>';
+                dataHtml += '<div class="smallTxt">' + item.v_txt + '</div>'; // 중괄호를 닫아주는 부분 수정
+                dataHtml += '</div>';
+                dataHtml += '<div class="post-info">';
+                dataHtml += '<div class="post-user">';
+                dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
+                dataHtml += '<div>|' + item.v_created + '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</td>';
+                dataHtml += '<td class="post-img">';
+                dataHtml += '<img src="3_volunteer/newImg/' + item.v_img + '">';
+                dataHtml += '</td>';
+                dataHtml += '</tr>';
+                dataHtml += '</table>';
+                dataHtml += '</a>';
+				
+			})
+			$('#volList').html(dataHtml);
+		}
+		
+	})
+	
+	
+	
+}
+
+
+
+$(document).ready(function (){
+	console.log("I am ready!!");
+	getPost("");
+	
+	$("input[name='searchTitle']").keyup(function (e) {
+		getPost("");
+	});
+	
+	$("button[name='searchBtn']").click(function(){
+		let status = $(this).val();
+		console.log(status)
+		getPost(status);
+	})
+	
+	
+});
+
+
+
+
+
+
+
+
