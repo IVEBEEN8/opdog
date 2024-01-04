@@ -126,7 +126,7 @@
 <script type="text/javascript">
 $(document).ready(function () {
     var dataSource = ${jsonFashions}; // 데이터 소스, 예: 페이지 번호의 배열
-
+	console.log(dataSource);
     $('#pagination-container').pagination({
         dataSource: dataSource,
         pageSize: 12, // 페이지당 항목 수
