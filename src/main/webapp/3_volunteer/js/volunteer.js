@@ -1,90 +1,90 @@
-function modifyPost(accountNo, aNo, vNo ){
-	if(accountNo != aNo ){
-		alert("you can't modify the article");
-	}else{
-		location.href='VolunteerModiC?no=' + vNo
-	}
-	
+function modifyPost(accountNo, aNo, vNo) {
+  if (accountNo != aNo) {
+    alert("you can't modify the article");
+  } else {
+    location.href = "VolunteerModiC?no=" + vNo;
+  }
 }
-function deletePost(accountNo, aNo, n){
-	if(accountNo != aNo){
-		alert("you can't modify the article");
-	}else{
-	let ok = confirm ('Are you sure you want to delete?');
-	if(ok){
-		location.href='VolunteerDelC?no=' + n;
-		}
-	}
+function deletePost(accountNo, aNo, n) {
+  if (accountNo != aNo) {
+    alert("you can't modify the article");
+  } else {
+    let ok = confirm("Are you sure you want to delete?");
+    if (ok) {
+      location.href = "VolunteerDelC?no=" + n;
+    }
+  }
 }
 
 console.log("ready to call");
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("btn").addEventListener("click", function () {
-        var selectedValue = $(this).val();
-        var san = selectedValue.split("!");
-        var accountNo1 = san[0];
-        var vNo = san[1];
-        var vStatus = san[2];
-        var vTitle = san[3];
-        var vCreated = san[4];
-        var vImg = san[5];
-        var vTxt = san[6];
-        var aEmail = san[7];
-        vTxt = vTxt.replaceAll("\r\n", "<br>");
-        var formData = new FormData();
-        formData.append("accountNo1", accountNo1);
-        formData.append("vNo", vNo);
-        formData.append("vStatus", vStatus);
-        formData.append("vTitle", vTitle);
-        formData.append("vCreated", vCreated);
-        formData.append("vImg", vImg);
-        formData.append("vTxt", vTxt);
-        formData.append("aEmail", aEmail);
-        console.log(san);
-        // Check if the user is logged in
-        if (accountNo1 !== "") {
-            Swal.fire({
-                icon: "success",
-                title: "Application Success - The shelter will contact you individually",
-                showConfirmButton: false,
-                timer: 1500,
-                didClose: () => {
-                    var goMypage = confirm('Do you want to check MyPage?');
-                    if (goMypage) {
-                        console.log("gotomypage!!");
-                        location.href = 'MyPageHC';
-                    } else {
-                        location.href = 'VolunteerDetailC?no=' + vNo;
-                    }
-                }
-            }); 
-            $.ajax({
-                type: "POST",
-                url: "ApplyVolC",
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function () {
-					console.log("FormData contents:");
-					for (var pair of formData.entries()) {
-					    console.log(pair[0] + ': ' + pair[1]);
-					}
-                    console.log("데이터 전송 성공!");
-                },
-                error: function () {
-                    console.log("데이터 전송 실패!");
-                }
-            });
-        } else {
-            // User is not logged in, redirect to "LoginMainHC"
-            var goLogin1 = confirm('You must login first.\nDo you want to login?');
-            if (goLogin1) {
-                window.location.href = 'LoginMainHC';
-            } else {
-                location.href = 'VolunteerDetailC?no=' + vNo;
-            }
-        }
-    });
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("btn").addEventListener("click", function () {
+    var selectedValue = $(this).val();
+    var san = selectedValue.split("!");
+    var accountNo1 = san[0];
+    var vNo = san[1];
+    var vStatus = san[2];
+    var vTitle = san[3];
+    var vCreated = san[4];
+    var vImg = san[5];
+    var vTxt = san[6];
+    var aEmail = san[7];
+    vTxt = vTxt.replaceAll("\r\n", "<br>");
+    var formData = new FormData();
+    formData.append("accountNo1", accountNo1);
+    formData.append("vNo", vNo);
+    formData.append("vStatus", vStatus);
+    formData.append("vTitle", vTitle);
+    formData.append("vCreated", vCreated);
+    formData.append("vImg", vImg);
+    formData.append("vTxt", vTxt);
+    formData.append("aEmail", aEmail);
+    console.log(san);
+    // Check if the user is logged in
+    if (accountNo1 !== "") {
+      Swal.fire({
+        icon: "success",
+        title:
+          "Application Success - The shelter will contact you individually",
+        showConfirmButton: false,
+        timer: 1500,
+        didClose: () => {
+          var goMypage = confirm("Do you want to check MyPage?");
+          if (goMypage) {
+            console.log("gotomypage!!");
+            location.href = "MyPageHC";
+          } else {
+            location.href = "VolunteerDetailC?no=" + vNo;
+          }
+        },
+      });
+      $.ajax({
+        type: "POST",
+        url: "ApplyVolC",
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function () {
+          console.log("FormData contents:");
+          for (var pair of formData.entries()) {
+            console.log(pair[0] + ": " + pair[1]);
+          }
+          console.log("데이터 전송 성공!");
+        },
+        error: function () {
+          console.log("데이터 전송 실패!");
+        },
+      });
+    } else {
+      // User is not logged in, redirect to "LoginMainHC"
+      var goLogin1 = confirm("You must login first.\nDo you want to login?");
+      if (goLogin1) {
+        window.location.href = "LoginMainHC";
+      } else {
+        location.href = "VolunteerDetailC?no=" + vNo;
+      }
+    }
+  });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -108,19 +108,17 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-function getPost(status){
-	let search = $('input[name="searchTitle"]').val();
-	let locate = $("#locate").text();
-	$.ajax({
-		url : 'VolunteerAPI',
-		data : {search,status,locate},
-		datatype : 'json'
-	})
-	.done(function(json){
-		console.log(json)
-		paging(json);
-	});
-	
+function getPost(status) {
+  let search = $('input[name="searchTitle"]').val();
+  let locate = $("#locate").text();
+  $.ajax({
+    url: "VolunteerAPI",
+    data: { search, status, locate },
+    datatype: "json",
+  }).done(function (json) {
+    console.log(json);
+    paging(json);
+  });
 }
 function paging(json){
 	$('#pagination-container').pagination({
@@ -169,29 +167,17 @@ function paging(json){
 	
 }
 
+$(document).ready(function () {
+  console.log("I am ready!!");
+  getPost("");
 
+  $("input[name='searchTitle']").keyup(function (e) {
+    getPost("");
+  });
 
-$(document).ready(function (){
-	console.log("I am ready!!");
-	getPost("");
-	
-	$("input[name='searchTitle']").keyup(function (e) {
-		getPost("");
-	});
-	
-	$("button[name='searchBtn']").click(function(){
-		let status = $(this).val();
-		console.log(status)
-		getPost(status);
-	})
-	
-	
+  $("button[name='searchBtn']").click(function () {
+    let status = $(this).val();
+    console.log(status);
+    getPost(status);
+  });
 });
-
-
-
-
-
-
-
-
