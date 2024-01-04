@@ -8,7 +8,7 @@
 </head>
 <body>
 <form action="putCenterInfoC" method="post">
-	<button>get the fxxking translated center info</button>
+	<button>get the translated center info</button>
 </form>
 </body>
 </html>
