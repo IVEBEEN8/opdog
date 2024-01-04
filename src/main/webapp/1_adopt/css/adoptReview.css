@@ -1,5 +1,21 @@
 @charset "UTF-8";
 
+body {
+	width: 100%;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	text-decoration: none;
+	font-family: "DM Sans", sans-serif;
+	font-family: "Inter", sans-serif;
+	font-family: "Poppins", sans-serif;
+	font-size: 10pt;
+	scroll-behavior: smooth;
+	font-family: "Arial", sans-serif;
+	text-align: center;
+}
+
 .full4 {
 	background: white;
 	position: relative;
@@ -17,11 +33,14 @@
 	position: relative;
 	color: #ffffff;
 	text-align: left;
-	width: 22.5521vw;
-	height: 22.5521vw;
+	width: 22vw;
+	left: 0.8vw;
+	height: 22vw;
 	background-color: #000000;
 	margin-left: 0.5vw;
 	margin-bottom: 0.5vh;
+	left: 0.8vw;
+	height: 22vw;
 }
 
 .review-box * {
@@ -120,20 +139,20 @@
 }
 
 /*입양후기 작성버튼*/
-.adopt-btn{
-	padding: 2vw;	
-	
+.adopt-btn {
+	padding: 2vw;
 }
 
 .adopt-btn>button {
 	border: solid 4px #faeab1;
 	border-radius: 2.8vw;
-	width: 5vw;
-	height: 1.8vw;
+	width: 6vw;
+	height: 2.2vw;
 	background: none;
 	color: #9e6f21;
 	font-family: "DM Sans", sans-serif;
-	font-size: 1vw;
+	font-size: 1.3vw;
+	font-weight: 500;
 	line-height: 50%;
 	cursor: pointer;
 }
@@ -141,4 +160,21 @@
 .adopt-btn>button:hover {
 	background: rgba(67, 49, 28, 0.7);
 	color: white;
+}
+
+/*버튼*/
+.page-controller {
+	width: 2vw;
+}
+
+button.left {
+	position: absolute;
+	left: 2vw;
+	top: 30vw;
+}
+
+button.right {
+	position: absolute;
+    right: 2vw;
+    top: 30vw;
 }
