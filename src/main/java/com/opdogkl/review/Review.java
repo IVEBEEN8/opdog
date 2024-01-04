@@ -10,12 +10,14 @@ public class Review {
 	private Date r_created;
 	private Date r_updated;
 	private int a_no;
+	private String a_email;
 	
 	public Review() {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Review(int r_no, String r_img, String r_title, String r_txt, Date r_created, Date r_updated, int a_no) {
+	public Review(int r_no, String r_img, String r_title, String r_txt, Date r_created, Date r_updated, int a_no,
+			String a_email) {
 		super();
 		this.r_no = r_no;
 		this.r_img = r_img;
@@ -24,6 +26,7 @@ public class Review {
 		this.r_created = r_created;
 		this.r_updated = r_updated;
 		this.a_no = a_no;
+		this.a_email = a_email;
 	}
 
 	public int getR_no() {
@@ -81,6 +84,16 @@ public class Review {
 	public void setA_no(int a_no) {
 		this.a_no = a_no;
 	}
+
+	public String getA_email() {
+		return a_email;
+	}
+
+	public void setA_email(String a_email) {
+		this.a_email = a_email;
+	}
+
+	
 
 	
 		
