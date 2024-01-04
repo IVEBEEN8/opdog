@@ -23,7 +23,7 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from review_kl";
+		String sql = "select * from review_kl order by r_no";
 		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
@@ -127,8 +127,11 @@ public class ReviewDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DBManager_khw.connect();
+			String paramNo = request.getParameter("no");
+			String attrNo = (String) request.getAttribute("no");
+			String no = paramNo != null ? paramNo : attrNo;
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("no"));
+			pstmt.setString(1,no);
 			rs = pstmt.executeQuery();	
 			
 			if (rs.next()) {
@@ -158,7 +161,7 @@ public class ReviewDAO {
 		ResultSet rs = null;
 		String sql = "update review_kl"
 					+" set r_img=?, r_title=?, r_txt=?, r_updated=SYSDATE"
-					+" where r_no=?";
+					+"where r_no=?";
 		String path = request.getServletContext().getRealPath("1_adopt/1_4_review/imgFolder");
 		System.out.println(path);
 		try {
@@ -167,25 +170,35 @@ public class ReviewDAO {
 			request.setCharacterEncoding("utf-8");	
 	        
 	        MultipartRequest mr  = new MultipartRequest(request, path, 30*1024*1024,"utf-8", new DefaultFileRenamePolicy());
-			String oldImg = mr.getParameter("oldImg");
-			String newImg = mr.getFilesystemName("newImg");
+	     // UUID를 사용하여 고유한 파일 이름 생성
+	     String originalFileName = mr.getFilesystemName("newImg");
+	     String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+	     String uniqueFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+	     			
+	     // 파일 이름 변경
+	     File f1 = new File(path, uniqueFileName);
+	     mr.getFile("newImg").renameTo(f1);
+
+	     			
+
+	     	String newImg = uniqueFileName;
+	        
+	        String oldImg = mr.getParameter("oldImg");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
-			System.out.println(oldImg);
-			System.out.println(newImg);
+			String no = mr.getParameter("no");
+			String File1 = oldImg;
+			if (newImg != null) {
+				File1 = newImg;
+			}
 			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, newImg);
+			pstmt.setString(1, File1);
 			pstmt.setString(2, title);
 			pstmt.setString(3, txt);
-			pstmt.setString(4, mr.getParameter("no"));
-			System.out.println(mr.getParameter("no"));
+			pstmt.setString(4, no);
+			System.out.println(File1);
 			
-			if (newImg != null) {
-				pstmt.setString(1, newImg);
-			}else {
-				pstmt.setString(1, oldImg);
-			}
 			
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("수정 성공");
@@ -195,6 +208,7 @@ public class ReviewDAO {
 					f.delete();
 				}
 			}
+			request.setAttribute("no", no);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
