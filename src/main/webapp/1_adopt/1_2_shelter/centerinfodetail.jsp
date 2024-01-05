@@ -27,11 +27,9 @@
 	<div class="map" id="map"></div>
 	<!--검색창!-->
 	<div class="row">
-        <form action="SearchC" method="post" name="keywords-serch" id="searchForm">
             <div class="pull-right-wrap1-2">
                     <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
-              
                             <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
                             <option value="c_careAddr">&nbsp;&nbsp;Address</option>
                         </select>
@@ -43,7 +41,6 @@
                         <button type="button" class="searchButton1-2" id="searchButton"><img class="searchi" src="1_adopt/img/search.png"></button>
                    </div>
             </div>
-        </form>
     </div>
     <!-- 인풋박스 시작! -->
 	<div class="infobox-wrap1-2">
@@ -81,7 +78,7 @@
 	
 <!--검색 모달! -->
 	<div id="printinfo1">
-  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">x</div>
+  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">&times;</div>
    			 <div id="modalBody1">
     		</div>
   		</div>
@@ -119,32 +116,6 @@ async function fetchData() {
         console.error('데이터를 가져오는 중 오류 발생:', error);
         return null;
     }
-}
-
-function translateText(text, targetLang, callback) {
-    // 파파고 API 키를 여기에 입력하세요
-    var apiKey = 'YOUR_PAPAGO_API_KEY';
-
-    // 파파고 API 요청 주소
-    var apiUrl = 'https://openapi.naver.com/v1/papago/n2mt';
-
-    // AJAX를 사용하여 파파고 API에 번역 요청 보내기
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', apiUrl, true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    xhr.setRequestHeader('X-Naver-Client-Id', apiKey);
-    xhr.setRequestHeader('X-Naver-Client-Secret', apiKey);
-
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            var translatedText = response.message.result.translatedText;
-            callback(translatedText);
-        }
-    };
-
-    var params = 'source=ko&target=' + targetLang + '&text=' + encodeURIComponent(text);
-    xhr.send(params);
 }
 
 function createMarker(lat, lng, data) {
@@ -248,8 +219,6 @@ $(document).ready(function() {
         for(let i =0; i<scv.length; i++){
             console.log(scv[i]);
         }
-      
-      
         if (scv.length === 8 && scv[2] !== "" && scv[3] !== "") {
             // 좌표값이 유효한 경우에만 지도를 생성하고 이동시킵니다.
             var centername = scv[0]; // 보호소이름

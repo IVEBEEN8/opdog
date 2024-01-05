@@ -1,30 +1,38 @@
 import config from "./config.js";
 const { API_KEY } = config;
 
-window.onload = function () {
+window.onload = function send() {
+  document.getElementById("send").click();
 	var audiosend = new Audio('4_service/audio/send.m4a')
 	
   // 페이지가 로드될 때 input 값이 설정되어 있다면 비우기
   // 페이지가 로드될 때 'send' 버튼을 자동으로 클릭
-  document.getElementById("send").click();
   if (document.getElementById("input").value.trim() !== "") {
     document.getElementById("input").value = "";
 	audiosend.playbackRate =1.2;
 	audiosend.play();
   }
 
-  // 'send' 버튼 클릭 이벤트 핸들러
-  document.getElementById("send").addEventListener("click", function () {
-    // 'send' 버튼이 클릭되면 input 값 비우기
-    document.getElementById("input").value = "";
-	audiosend.playbackRate = 1.2;
-	audiosend.play();
-  });
-};
+
+ console.log("imhere~")
+document.getElementById("input").addEventListener("keyup", function (event) {
+   	var inputValue = document.getElementById("input").value;
+	if(inputValue.trim() != ""){
+	if (event.keyCode === 13) {
+     // 두 번째 클릭 이벤트 핸들러에서의 호출 부분을 삭제
+     document.getElementById("send").click();
+			document.getElementById("input").value = "";
+			audiosend.playbackRate = 1.2;
+			audiosend.play();
+        }
+	 }
+    });
+  };
 
 //HTML 문서가 완전히 로드되었을 때 지정된 함수를 실행하도록 하는 이벤트 리스너
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("input").focus();
+   
   document.querySelector("#send").addEventListener("click", async function () {
     document.getElementById("input").focus();
 	
@@ -46,7 +54,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const prompt = document.querySelector("#input").value;
     console.log(prompt);
-    //const apiKey = "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" // open ai_KEY
     //const apiKey = config.API_KEY;
     if (prompt == null) {
       prompt = document.querySelector("#input").value;

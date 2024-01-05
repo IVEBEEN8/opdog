@@ -296,11 +296,10 @@ body {
     border-radius: 20px;
 }
 
-#modalBody1 {
-	left: 2%;
-    top: 11%;
-    width: 83%;
-    position: absolute;
+#modalBody1 {	   
+	bottom: 3.1vh;  
+    width: 80%;
+    position: relative;
     border-top: 2px solid black;
     height: 75%;
     padding: 3% 6.5%;
@@ -325,8 +324,10 @@ body {
 }
 
 #closeBtn1 {
-	left: 94%; 
-    position: absolute;
+    bottom: 3vh;
+    right: 1vw;
+    text-align: right;
+    position: relative;
     font-weight: bold;
     stroke-width: 10px;
     stroke: #43311C;
@@ -494,13 +495,11 @@ body {
 	font-size: 2vh;
 }
 .mtitle{
-	height: 6%;
 	background: #FAF8F1;
     z-index: 3;
-    top: 6%;
-    left: 32%;
-    position: absolute;
-    font-size: 236%;
+    top: 2.8vh;
+    position: relative;
+    font-size: 2vh;
 }
 /*리스트 크기조절*/
 .li-pic{
