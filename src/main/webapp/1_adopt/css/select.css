@@ -119,11 +119,11 @@ html, body {
 /* selectbox div */
 
 .selectcontainer {
-width: 100%;
+    width: 100%;
     background-color: rgb(217 217 217 / 62%);
     position: sticky;
     top: 4.5vw;
-    z-index: 99;
+    z-index: 3;
     padding: 1vw 0;
     display: flex;
     justify-content: center;
