@@ -88,21 +88,26 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("regVol").addEventListener("click", function () {
-    var accountNo = this.value;
-    console.log(accountNo);
-    // Check if the user is logged in
-    if (accountNo !== "") {
-      // User is logged in, proceed to "VtWriteC"
-      location.href = "VtWriteC";
-    } else {
-      // User is not logged in, redirect to "LoginMainHC"
-      var goLogin = confirm("You must login first.\nDo you want to login?");
-      if (goLogin) {
-        window.location.href = "LoginMainHC";
-      }
-    }
-  });
+
+    document.getElementById("regVol").addEventListener("click", function () {
+        var selectedValue = this.value;
+        var dsv = selectedValue.split("!");
+        var locate = dsv[0];
+        var accountNo = dsv[1];
+
+        // 사용자가 로그인했는지 확인
+        if (accountNo !== "") {
+           window.location.href= 'VtWriteC?locate=' + locate
+            
+        } else {
+            // 사용자가 로그인하지 않았을 경우 "LoginMainHC"로 리디렉션
+            var goLogin = confirm('먼저 로그인해야 합니다.\n로그인하시겠습니까?');
+            if (goLogin) {
+                window.location.href = 'LoginMainHC';
+            }
+        }
+    });
+
 });
 
 function getPost(status) {
@@ -117,47 +122,51 @@ function getPost(status) {
     paging(json);
   });
 }
-function paging(json) {
-  $("#pagination-container").pagination({
-    dataSource: json,
-    pageSize: 5,
-    callback: function (data, pagination) {
-      console.log(data);
-      var dataHtml = "";
-      $.each(data, function (index, item) {
-        dataHtml += '<a href="VolunteerDetailC?no=' + item.v_no + '">';
-        dataHtml += '<table id="middle">';
-        dataHtml += '<tr class="middle-post">';
-        dataHtml += '<td class="post-left">';
-        dataHtml += '<div class="td-wrapper">';
-        dataHtml += '<div class="post-btn">';
-        dataHtml += '<div class="Recruiting post-btn-txt">';
-        dataHtml += "<p>" + item.v_status + "</p>";
-        dataHtml += "</div>";
-        dataHtml += "</div>";
-        dataHtml += '<div class="post-text">';
-        dataHtml += '<div class="bigTxt">' + item.v_title + "</div>";
-        dataHtml += '<div class="smallTxt">' + item.v_txt + "</div>"; // 중괄호를 닫아주는 부분 수정
-        dataHtml += "</div>";
-        dataHtml += '<div class="post-info">';
-        dataHtml += '<div class="post-user">';
-        dataHtml +=
-          '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
-        dataHtml += "<div>|" + item.v_created + "</div>";
-        dataHtml += "</div>";
-        dataHtml += "</div>";
-        dataHtml += "</div>";
-        dataHtml += "</td>";
-        dataHtml += '<td class="post-img">';
-        dataHtml += '<img src="3_volunteer/newImg/' + item.v_img + '">';
-        dataHtml += "</td>";
-        dataHtml += "</tr>";
-        dataHtml += "</table>";
-        dataHtml += "</a>";
-      });
-      $("#volList").html(dataHtml);
-    },
-  });
+
+function paging(json){
+	$('#pagination-container').pagination({
+		dataSource: json,
+		pageSize: 5,
+		callback: function(data, pagination){
+			console.log(data);
+			var dataHtml ='';
+			$.each(data, function (index, item){
+				dataHtml += '<a href="VolunteerDetailC?no=' + item.v_no + '">';
+                dataHtml += '<table id="middle">';
+                dataHtml += '<tr class="middle-post">';
+                dataHtml += '<td class="post-left">';
+                dataHtml += '<div class="td-wrapper">';
+                dataHtml += '<div class="post-btn">';
+                dataHtml += '<div class="Recruiting post-btn-txt">';
+                dataHtml += '<p>' + item.v_status + '</p>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '<div class="post-text">';
+                dataHtml += '<div class="bigTxt">' + item.v_title + '</div>';
+                dataHtml += '<div class="smallTxt">' + item.v_txt + '</div>'; // 중괄호를 닫아주는 부분 수정
+                dataHtml += '</div>';
+                dataHtml += '<div class="post-info">';
+                dataHtml += '<div class="post-user">';
+                dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
+                dataHtml += '<div>|' + item.v_created + '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</div>';
+                dataHtml += '</td>';
+                dataHtml += '<td class="post-img">';
+                dataHtml += '<img src="3_volunteer/newImg/' + item.v_img + '">';
+                dataHtml += '</td>';
+                dataHtml += '</tr>';
+                dataHtml += '</table>';
+                dataHtml += '</a>';
+				
+			})
+			$('#volList').html(dataHtml);
+		}
+		
+	})
+	
+	
 }
 
 $(document).ready(function () {

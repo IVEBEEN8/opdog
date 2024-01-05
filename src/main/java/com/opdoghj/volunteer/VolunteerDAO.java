@@ -54,7 +54,7 @@ public class VolunteerDAO {
 				volunteer.add(v);
 
 			}
-//			request.setAttribute("volunteer", volunteer);
+
 			String jsonVolunteer = new Gson().toJson(volunteer);
 //			request.setAttribute("jsonVolunteer", jsonVolunteer);
 //			System.out.println(jsonVolunteer);
@@ -70,13 +70,14 @@ public class VolunteerDAO {
 		}
 	}
 
-	public static void WritePost(HttpServletRequest request) {
+	public static void WritePost(HttpServletRequest request, HttpServletResponse response) {
 		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		System.out.println("어카운트넘버" + account.getNo());
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,sysdate,?,?)";
+		String sql = "insert into volunteer values(volunteer_seq.nextval,?,?,?,sysdate,?,?,?)";
+
 		try {
 			request.setCharacterEncoding("utf-8");
 			con = DBManager_khw.connect();
@@ -90,6 +91,8 @@ public class VolunteerDAO {
 			String file = mr.getFilesystemName("file");
 			String content = mr.getParameter("content");
 			String status = mr.getParameter("chooseStatus");
+			String locate = mr.getParameter("locate");
+			System.out.println("이건내가 사랑하는 위치!:" + locate);
 
 			content = content.replaceAll("\r\n", "<br>");
 
@@ -97,13 +100,16 @@ public class VolunteerDAO {
 			System.out.println(title);
 			System.out.println(content);
 			System.out.println(status);
+			System.out.println(locate);
 
+			request.setAttribute("locate", locate);
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
 			pstmt.setString(2, file);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setInt(5, account.getNo());
+			pstmt.setString(6, locate);
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
@@ -146,9 +152,9 @@ public class VolunteerDAO {
 				v.setV_img(rs.getString("v_img"));
 				v.setV_txt(rs.getString("v_txt"));
 				v.setV_created(rs.getDate("v_created"));
-				v.setV_updated(rs.getDate("v_updated"));
 				v.setV_status(rs.getString("v_status"));
 				v.setA_no(rs.getInt("a_no"));
+				v.setV_locate(rs.getString("v_locate"));
 
 				request.setAttribute("vol", v);
 				System.out.println(v);
@@ -189,7 +195,6 @@ public class VolunteerDAO {
 				searchedItems.setV_img(rs.getString("v_img"));
 				searchedItems.setV_txt(rs.getString("v_txt"));
 				searchedItems.setV_created(rs.getDate("v_created"));
-				searchedItems.setV_updated(rs.getDate("v_updated"));
 				searchedItems.setV_status(rs.getString("v_status"));
 				searchedItems.setA_no(rs.getInt("a_no"));
 				volunteer.add(searchedItems);
@@ -229,7 +234,6 @@ public class VolunteerDAO {
 				searchedItems.setV_img(rs.getString("v_img"));
 				searchedItems.setV_txt(rs.getString("v_txt"));
 				searchedItems.setV_created(rs.getDate("v_created"));
-				searchedItems.setV_updated(rs.getDate("v_updated"));
 				searchedItems.setV_status(rs.getString("v_status"));
 				searchedItems.setA_no(rs.getInt("a_no"));
 				volunteer.add(searchedItems);
