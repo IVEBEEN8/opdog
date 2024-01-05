@@ -85,6 +85,12 @@
 	font-weight: 600;
 	line-height: 2.037037037037037vh;
 	letter-spacing: -0.4px;
+	cursor: pointer;
+}
+
+.doginfobox button:hover{
+	background:white;
+	color:#43311CE5;
 }
 
 .doginfobox:before, .doginfobox:after, .doginfobox span:before,
