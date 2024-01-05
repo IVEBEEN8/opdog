@@ -1,4 +1,3 @@
-console.log("hello?");
 function goReviewReg() {
 		// 서버에서 세션 정보를 가져옴
 		var sessionAccount = document.getElementById("goReviewReg").value;
@@ -110,13 +109,12 @@ function reviewDelete(accountNo, rNo, n){
 		}
 	}
 	
+	
+	
+	
+	
 }
 
-
-function dontMove(){
-	console.log(11);
-	alert("There isn't any other pages")
-}
 
 
 
