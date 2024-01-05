@@ -117,16 +117,18 @@ html, body {
 } */
 
 /* selectbox div */
+
 .selectcontainer {
-	width: 100%;
-	background-color: rgba(217, 217, 217, 0.50);
-	position: sticky;
-	padding: 1vw 0;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	gap: 3vw;
+width: 100%;
+    background-color: rgb(217 217 217 / 62%);
+    position: sticky;
+    top: 4.5vw;
+    z-index: 99;
+    padding: 1vw 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3vw;
 }
 
 #sidoSelect, #sigunSelect, #centerSelect {
