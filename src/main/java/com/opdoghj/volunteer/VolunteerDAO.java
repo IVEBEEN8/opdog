@@ -131,7 +131,7 @@ public class VolunteerDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT v.*, a.A_NO\n" + "FROM VOLUNTEER v\n" + "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n"
+		String sql = "SELECT v.*, a.A_NO, a.A_EMAIL\n" + "FROM VOLUNTEER v\n" + "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n"
 				+ "WHERE v.V_NO = ?";
 
 		try {
@@ -155,6 +155,8 @@ public class VolunteerDAO {
 				v.setV_status(rs.getString("v_status"));
 				v.setA_no(rs.getInt("a_no"));
 				v.setV_locate(rs.getString("v_locate"));
+				String aEmail = rs.getString("A_EMAIL");
+				v.setA_email(aEmail);
 
 				request.setAttribute("vol", v);
 				System.out.println(v);
