@@ -46,21 +46,30 @@
 
 .doginfoWrap {
 	width: 22.5521vw;
-	height: 18vw;
+	height: 22.5vw;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.dDay{
+	color:#b50000;
+	font-size:2vw;
+	font-weight:800;
+	margin-bottom:0.5vw;
 }
 
 .infotext {
 	font-size: 1vw;
 	font-family: "Inter", sans-serif;
 	text-align: center;
+	margin-bottom:2vw;
+	gap:0.5vw;
 }
 
 .doginfobox button {
 	position: absolute;
-	top: 52%;
+	top: 65%;
 	left: 27%;
 	width: 10.104166666666666vw;
 	height: 4.62962962962963vh;
