@@ -25,7 +25,7 @@ public class ReviewDAO {
 		ResultSet rs = null;
 
 		String sql = "select * from review_kl order by r_no";
-		
+
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DBManager_khw.connect();
@@ -130,9 +130,8 @@ public class ReviewDAO {
 			String no = paramNo != null ? paramNo : attrNo;
 			pstmt = con.prepareStatement(sql);
 
-			pstmt.setString(1,no);
-			rs = pstmt.executeQuery();	
-			
+			pstmt.setString(1, no);
+			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 				r = new Review();
@@ -170,41 +169,47 @@ public class ReviewDAO {
 
 			MultipartRequest mr = new MultipartRequest(request, path, 30 * 1024 * 1024, "utf-8",
 					new DefaultFileRenamePolicy());
+			
+			// UUID를 사용하여 고유한 파일 이름 생성
+			String originalFileName = mr.getFilesystemName("newImg");
+			String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+			String uniqueFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+
+			// 파일 이름 변경
+			File f = new File(path, uniqueFileName);
+			mr.getFile("newImg").renameTo(f);
+
+			String newImg = uniqueFileName;
+
 			String oldImg = mr.getParameter("oldImg");
-			String newImg = mr.getFilesystemName("newImg");
+//			String newImg = mr.getFilesystemName("newImg");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
 			String no = mr.getParameter("no");
-			String File1 = oldImg;
-			if (newImg != null) {
-				File1 = newImg;
-			}
+//			String File1 = oldImg;
+//			if (newImg != null) {
+//				File1 = newImg;
+//			}
 			System.out.println(oldImg);
 			System.out.println(newImg);
-
+			
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, File1);
+			pstmt.setString(1, oldImg);
+			if (newImg != null) {
+				pstmt.setString(1, newImg);
+				} 			
 			pstmt.setString(2, title);
 			pstmt.setString(3, txt);
 			pstmt.setString(4, no);
-			System.out.println(File1);
+
 			
-			
-
-
-			if (newImg != null) {
-				pstmt.setString(1, newImg);
-			} else {
-				pstmt.setString(1, oldImg);
-			}
-
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("수정 성공");
 				// 사진 교체시 기존파일 삭제
 				if (newImg != null) {
-					File f = new File(path + "/" + oldImg);
-					f.delete();
+					File d = new File(path + "/" + oldImg);
+					d.delete();
 				}
 			}
 

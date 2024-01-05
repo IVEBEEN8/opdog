@@ -86,6 +86,7 @@ body {
 	font-weight: 600;
 	line-height: 2.037037037037037vh;
 	letter-spacing: -0.4px;
+	cursor: pointer;
 }
 
 .review-box:before, .review-box:after, .review-box span:before,
@@ -169,12 +170,22 @@ body {
 
 button.left {
 	position: absolute;
-	left: 2vw;
+	left: 1vw;
 	top: 30vw;
+	border: none;
+	background: white;
+	font-size: 2vw;
+	font-weight: bold;
+	cursor: pointer;
 }
 
 button.right {
 	position: absolute;
     right: 2vw;
     top: 30vw;
+    border: none;
+	background: white;
+	font-size: 2vw;
+	font-weight: bold;
+	cursor: pointer;
 }
