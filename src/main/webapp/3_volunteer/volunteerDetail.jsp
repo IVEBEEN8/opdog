@@ -41,12 +41,12 @@
 							readonly="readonly">${vol.v_txt }</textarea>
 					</div>
 					<div class="review-btn">
-						<button class="review-edit-btn"
+						<button type="button" class="review-edit-btn"
 							onclick="modifyPost('${account.no}','${vol.a_no }','${vol.v_no }')">Modify</button>
-						<button class="reiview-list-btn" onclick="location.href='VSeoulC'">Go
+						<button type="button" class="reiview-list-btn" onclick="location.href='VPostC?locate=${vol.v_locate}'">Go
 							list</button>
-						<button class="review-edit-btn"
-							onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}')">Delete</button>
+						<button type="button" class="review-edit-btn"
+							onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}','${vol.v_locate }')">Delete</button>
 					</div>
 					<div class="apply-btn">
 						<button type="button" id="btn"
@@ -75,13 +75,17 @@
 					<p>${vol.v_txt }</p>
 				</div>
 				<div class="btnWrap">
-					<button type="button" onclick="location.href='VSeoulC'">Go
+					<button type="button" onclick="location.href='VPostC?locate=${vol.v_locate}'">Go
 						list</button>
 					<button type="button"
 						onclick="modifyPost('${account.no}','${vol.a_no }','${vol.v_no }')">
 						Modify</button>
+<<<<<<< HEAD
+					<button type="button" onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}','${vol.v_locate }')">
+=======
 					<button type="button"
 						onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}')">
+>>>>>>> e1a90c4d46711dfa664ba3bfa73373c312be66fd
 						Delete</button>
 				</div>
 			</div>

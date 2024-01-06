@@ -7,6 +7,9 @@
 <html>
 <script type="module" src="4_service/js/askAboutDog.js"></script>
 <script type="text/javascript" src="4_service/js/getTheDate.js"></script>
+<script src="https://code.jquery.com/jquery-3.7.1.js"
+	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
+	crossorigin="anonymous"></script>
 <link rel="stylesheet" href="4_service/css/askAboutDog.css">
 
 <head>
@@ -23,7 +26,7 @@
     	     		<span class="chat-box">Let's talk about dogs!</span>
       			</div>
       			<div class="line">
-        			<span class="chat-box mine">>_<</span>
+        			<span class="chat-box mine"> sure>_< </span>
       			</div>
     		</div>
     		<div class="chat-bottom-wrap1-2">
