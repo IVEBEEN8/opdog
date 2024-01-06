@@ -152,6 +152,7 @@ input:focus {
 }
 
 .middle-post {
+	    width: 60vw;
 	height: 20vw;
 	display: flex;
 	gap: 2vw;

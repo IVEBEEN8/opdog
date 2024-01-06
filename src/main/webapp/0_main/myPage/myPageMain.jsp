@@ -78,7 +78,7 @@
 								<div class="columnP1">address</div>
 								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.uprText }&nbsp;${account.orgText }</div>
 							</div>
-							<div class="columnBoxP2">
+							<!-- <div class="columnBoxP2">
 								<div class="columnP1">Password</div>
 								<div class="textP1">
 									<input class="password">
@@ -96,7 +96,7 @@
 									<input class="password">
 								</div>
 							</div>
-						</div>
+						</div> -->
 						<button class="updateButton" onclick="location.href='UpdateInfoC'">Update</button>
 					</div>
 				</div>
