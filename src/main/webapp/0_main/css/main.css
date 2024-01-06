@@ -782,10 +782,10 @@ ul, li {
 		font-size: 2vw;
 	}
 	.full1-txtFrame {
-		top: 40vh;
-		left: 5vw;
-		width: 70vw;
-		gap: 2vw;
+		top: 60vh;
+    left: 25vw;
+    width: 70vw;
+    gap: 2vw;
 	}
 	.full1-smallTxt {
 		width: 60vw;

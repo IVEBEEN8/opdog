@@ -88,6 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+
     document.getElementById("regVol").addEventListener("click", function () {
         var selectedValue = this.value;
         var dsv = selectedValue.split("!");
@@ -106,6 +107,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
     });
+
 });
 
 function getPost(status) {
@@ -120,6 +122,7 @@ function getPost(status) {
     paging(json);
   });
 }
+
 function paging(json){
 	$('#pagination-container').pagination({
 		dataSource: json,
@@ -161,6 +164,7 @@ function paging(json){
 			$('#volList').html(dataHtml);
 		}	
 	})
+
 }
 
 $(document).ready(function () {

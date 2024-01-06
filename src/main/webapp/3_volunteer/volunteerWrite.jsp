@@ -29,6 +29,35 @@ pageEncoding="UTF-8"%>
                   <option class="" value="Recruiting">Recruiting</option>
                 </select>
               </div>
+=======
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet" href="3_volunteer/css/volunteerWrite.css" />
+<script src="3_volunteer/js/volunteerReg.js"></script>
+</head>
+<body>
+	<form action="VtWriteC" method="post" enctype="multipart/form-data"
+		onsubmit="return checkForm();">
+		<main>
+			<div class="main">
+				<!-- 제목 삭제 -->
+				<!-- <div class="main-title">Recruiting Volunteer</div> -->
+				<div class="container">
+					<div class="sub-container">
+						<div>
+							<input name="locate" type="hidden" value="${locate }">
+							<div class="review-title">Status</div>
+							<select class="chooseStatus" name="chooseStatus">
+								<option class="" value="Recruiting">Recruiting</option>
+							</select>
+						</div>
+>>>>>>> e1a90c4d46711dfa664ba3bfa73373c312be66fd
 
               <div class="review-title-cover">
                 <div class="review-title">Title</div>
@@ -122,7 +151,14 @@ pageEncoding="UTF-8"%>
 					</td>
 				</tr>
 			</table> -->
+<<<<<<< HEAD
       </main>
     </form>
   </body>
 </html>
+=======
+		</main>
+	</form>
+</body>
+</html>
+>>>>>>> e1a90c4d46711dfa664ba3bfa73373c312be66fd

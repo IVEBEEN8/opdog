@@ -47,17 +47,17 @@ html, body {
 
 .tagText {
 	width: 8.854166666666668vw;
-	height: 5.277777777777778vh;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+    height: 5.277777777777778vh;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3vw;
 }
 
 .tagText-name {
 	width: 6.510416666666667vw;
-	color: var(- -Secondary-crypto, #333);
+	color: #333;
 	font-family: "Poppins", sans-serif;
-	font-size: 18px;
+	font-size: 1.1vw;
 	font-weight: 800;
 	line-height: normal;
 	letter-spacing: 0.18px;
@@ -67,7 +67,7 @@ html, body {
 	width: 6.510416666666667vw;
 	color: var(- -Secondary-crypto, #333);
 	font-family: Poppins;
-	font-size: 11px;
+	font-size: 0.8vw;
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
@@ -185,6 +185,16 @@ html, body {
 	height: 2vw;
 	border: none;
 	margin-left: 1vw;
+	color: #000;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 1.2vw;
+    font-style: normal;
+    font-weight: 275;
+    line-height: normal;
+    letter-spacing: 0.05vh;
 }
 
 .columnP1 {

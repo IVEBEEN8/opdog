@@ -1,5 +1,6 @@
-function check(){
-	
+
+function check() {
+
 	let firstName = document.querySelector("input[name='firstName']");
 	let lastName = document.querySelector("input[name='lastName']");
 	let id = document.querySelector("input[name='id']");
@@ -8,9 +9,9 @@ function check(){
 	let uprCd = document.getElementById("sidoSelect");
 	let orgCd = document.getElementById("sigunSelect");
 	let checkbox = document.querySelector("input[type='checkbox'][name='agree']");
-  
 
-	
+
+
 	console.log(firstName);
 	console.log(lastName);
 	console.log(id);
@@ -18,76 +19,114 @@ function check(){
 	console.log(pwCheck);
 	console.log(uprCd);
 	console.log(orgCd);
-	
-	
-	
-	if (isEmpty(firstName)){
-		alert('Type your firstname');
+
+
+
+	if (isEmpty(firstName)) {
+		firstName.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		firstName.setAttribute('placeholder', 'Enter your First name (required)');
 		firstName.focus();
 		return false;
 	}
-	
-	if (isEmpty(lastName)){
-		alert('Type your lastname');
+
+	if (isEmpty(lastName)) {
+		lastName.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		lastName.setAttribute('placeholder', 'Enter your Last name (required)');
 		lastName.focus();
 		return false;
 	}
-	
-	if (isEmpty(id)){
-		alert('Type your email address');
+
+	if (isEmpty(id)) {
+		id.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		id.setAttribute('placeholder', 'Enter your e-mail (required)');
 		id.focus();
 		return false;
 	}
-	
-	if (isEmpty(pw)){
-		alert('Type your password');
+
+	if (isEmpty(pw)) {
+		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.setAttribute('placeholder', 'Enter your password (required)');
 		pw.focus();
-		return false;
-	}
-	
-	if (notContains(pw, "1234567890") ||notContains(pw,"QWERTYUIOPASDFGHJKLZXCVBNM")) {
-    alert('Password must have at least a capital letter and a number. Please re-enter pasword.');
-    pw.focus();
-    pw.value = "";
-	return false;
-	}
-	
-	
-	if(lessThan(pw,8)){
-		alert('Type more than 8 characters');
-		pw.focus();
-		pw.value="";
 		return false;
 	}
 
-	if (isEmpty(pwCheck)){
-		alert('Check your password');
+	if (notContains(pw, "1234567890") || notContains(pw, "QWERTYUIOPASDFGHJKLZXCVBNM")) {
+		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.setAttribute('placeholder', 'Password must have capital letter and a number');
+		pw.focus();
+		pw.value = "";
+		return false;
+	}
+
+
+	if (lessThan(pw, 8)) {
+		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.setAttribute('placeholder', 'Type more than 8 characters');
+		pw.focus();
+		pw.value = "";
+		return false;
+	}
+
+	if (isEmpty(pwCheck)) {
+		pwCheck.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pwCheck.setAttribute('placeholder', 'Enter your password check (required)');
 		pwCheck.focus();
 		return false;
 	}
-	
-	
-	if(notEquals(pw, pwCheck)){
-		alert("Passwords do not match");
+
+
+	if (notEquals(pw, pwCheck)) {
+		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pwCheck.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.setAttribute('placeholder', 'Passwords do not match');
+		pwCheck.setAttribute('placeholder', 'Passwords do not match');
 		pw.focus();
-		pw.value="";
-		pwCehck.value="";
+		pw.value = "";
+		pwCheck.value = "";
 		return false;
 	}
-	
-	if(notSelect(uprCd)){
-		alert("check your state");
+
+	if (notSelect(uprCd)) {
+		//uprCd.classList.add('error-color');
+		uprCd.focus();
 		return false;
 	}
-	if(notSelect(orgCd)){
-		alert("check your city");
+	if (notSelect(orgCd)) {
+		orgCd.focus();
 		return false;
 	}
-	if(!isCheckboxChecked(checkbox)){
-		alert("agree to the terms");
+	if (!isCheckboxChecked(checkbox)) {
+		checkbox.focus();
 		return false;
 	}
-	
 }
-	
-	
+
+/*
+function check() {
+  var form = document.querySelector('form');
+  var inputs = form.querySelectorAll('input[placeholder]');
+  var firstEmptyInput = null; // 첫 번째 비어 있는 입력 필드
+
+  var isValid = true;
+
+  inputs.forEach(function(input) {
+	if (input.value.trim() === '') {
+	  isValid = false;
+	  input.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+	  input.setAttribute('placeholder', 'Enter your ' + input.name + ' (required)');
+
+	  if (!firstEmptyInput) {
+		firstEmptyInput = input;
+	  }
+	} else {
+	  input.classList.remove('error-placeholder'); // 빈 필드가 아닌 경우 클래스 제거
+	}
+  });
+
+  if (firstEmptyInput) {
+	firstEmptyInput.focus(); // 첫 번째 비어 있는 입력 필드에 포커스 주기
+  }
+
+  return isValid;
+}*/
+

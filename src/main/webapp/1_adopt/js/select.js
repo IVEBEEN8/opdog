@@ -410,7 +410,7 @@ function pagination(json) {
           '"></div>' +
           '<div class="doginfoWrap">' +
           '<div class="infotext">' +
-		  '<div class=dDay>d-10day</div>'+
+		  '<div class="dDay">d-10day</div>'+
           '<div class="kind"> kind: ' +
           item.kindCd +
           "</div>" +

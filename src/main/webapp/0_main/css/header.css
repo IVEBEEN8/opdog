@@ -20,6 +20,7 @@ header {
   position: fixed;
   width: 100vw;
   text-align: center;
+  top: 0;
 }
 
 #all_header {

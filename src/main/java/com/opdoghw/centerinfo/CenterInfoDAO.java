@@ -19,7 +19,7 @@ import org.json.simple.parser.JSONParser;
 
 public class CenterInfoDAO {
 
-	public static void getCenterInfo(HttpServletRequest request) {
+	public static void getCenterInfo(HttpServletRequest request, HttpServletResponse response) {
 
 		Connection con = null;
 		PreparedStatement pstmt = null;
