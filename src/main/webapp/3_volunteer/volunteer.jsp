@@ -44,7 +44,7 @@
 		</div>
 		<div id="volList" class="volList"></div>
 		<div class="bottom btn">
-				<button id="regVol" value="${account.no}">Write</button>			
+				<button id="regVol" value="${param.locate }!${account.no}">Write</button>			
 		</div>
 		<div id="pagination-container" class="pagination-container">
 		</div>

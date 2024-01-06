@@ -23,8 +23,9 @@ public class ReviewDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from review_kl";
 
+		String sql = "select * from review_kl order by r_no";
+		
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DBManager_khw.connect();
@@ -124,9 +125,14 @@ public class ReviewDAO {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			con = DBManager_khw.connect();
+			String paramNo = request.getParameter("no");
+			String attrNo = (String) request.getAttribute("no");
+			String no = paramNo != null ? paramNo : attrNo;
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, request.getParameter("no"));
-			rs = pstmt.executeQuery();
+
+			pstmt.setString(1,no);
+			rs = pstmt.executeQuery();	
+			
 
 			if (rs.next()) {
 				r = new Review();
@@ -168,21 +174,30 @@ public class ReviewDAO {
 			String newImg = mr.getFilesystemName("newImg");
 			String title = mr.getParameter("title");
 			String txt = mr.getParameter("txt");
+			String no = mr.getParameter("no");
+			String File1 = oldImg;
+			if (newImg != null) {
+				File1 = newImg;
+			}
 			System.out.println(oldImg);
 			System.out.println(newImg);
 
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, newImg);
+			pstmt.setString(1, File1);
 			pstmt.setString(2, title);
 			pstmt.setString(3, txt);
-			pstmt.setString(4, mr.getParameter("no"));
-			System.out.println(mr.getParameter("no"));
+			pstmt.setString(4, no);
+			System.out.println(File1);
+			
+			
+
 
 			if (newImg != null) {
 				pstmt.setString(1, newImg);
 			} else {
 				pstmt.setString(1, oldImg);
 			}
+
 
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("수정 성공");
@@ -192,6 +207,8 @@ public class ReviewDAO {
 					f.delete();
 				}
 			}
+
+			request.setAttribute("no", no);
 
 		} catch (Exception e) {
 			e.printStackTrace();

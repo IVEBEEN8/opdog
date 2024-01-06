@@ -782,10 +782,10 @@ ul, li {
 		font-size: 2vw;
 	}
 	.full1-txtFrame {
-		top: 40vh;
-		left: 5vw;
-		width: 70vw;
-		gap: 2vw;
+		top: 60vh;
+    left: 25vw;
+    width: 70vw;
+    gap: 2vw;
 	}
 	.full1-smallTxt {
 		width: 60vw;
@@ -833,5 +833,26 @@ ul, li {
 	
 	.header_logo2{
 	display:block;
+	}
+		.full4-bigTxt {
+       font-size: 5vw;
+	}
+	
+	.full4-smallTxt>div>a {
+	font-size: 2vw;
+	}
+	
+	.full4-smallTxt {
+	display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2vw;
+    gap: 1vw;
+	}
+	
+	#background_video{
+	position:relative;
+	left:-450px;
 	}
 }

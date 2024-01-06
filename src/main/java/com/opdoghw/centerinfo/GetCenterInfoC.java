@@ -13,7 +13,7 @@ public class GetCenterInfoC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		CenterInfoDAO.getCenterInfo(request);
+		CenterInfoDAO.getCenterInfo(request, response);
 		request.setAttribute("contentPage", "1_adopt/1_2_shelter/centerinfodetail.jsp");
 		request.getRequestDispatcher("index.jsp").forward(request, response);
 

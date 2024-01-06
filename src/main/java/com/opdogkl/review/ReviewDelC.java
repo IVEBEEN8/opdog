@@ -12,9 +12,10 @@ public class ReviewDelC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		ReviewDAO.delReview(request);
-		ReviewDAO.getAllReview(request);
-		request.setAttribute("contentPage", "../1_adopt/1_4_review/review.jsp");
-		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+//		ReviewDAO.getAllReview(request);
+//		request.setAttribute("contentPage", "../1_adopt/1_4_review/review.jsp");
+//		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+		response.sendRedirect("ReviewC");
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	}

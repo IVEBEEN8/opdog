@@ -16,6 +16,9 @@ public class VtWriteC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		LoginDAO.loginCheck(request);
+		String locate = request.getParameter("locate");
+		System.out.println("this is the location :" + locate);
+		request.setAttribute("locate", locate);
 		request.setAttribute("contentPage", "../3_volunteer/volunteerWrite.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
@@ -23,10 +26,9 @@ public class VtWriteC extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		LoginDAO.loginCheck(request);
-		VolunteerDAO.WritePost(request);
-//		VolunteerDAO.getAllpost(request);
-//		VolunteerDAO.Paging(1, request);
-		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
-		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
+		VolunteerDAO.WritePost(request, response);
+		VolunteerDAO.getAllpost(request, response);
+		System.out.println("난여기!");
+		response.sendRedirect("VPostC?locate=" + request.getAttribute("locate"));
 	}
 }

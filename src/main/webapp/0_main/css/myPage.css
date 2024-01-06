@@ -50,16 +50,15 @@ html, body {
 	height: 5.277777777777778vh;
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	gap: 0.3vw;
 }
 
 .tagText-name {
 	width: 6.510416666666667vw;
-	color: var(- -Secondary-crypto, #333);
-	font-family: Poppins;
-	font-size: 18px;
-	font-style: normal;
-	font-weight: 700;
+	color: #333;
+	font-family: "Poppins", sans-serif;
+	font-size: 1.1vw;
+	font-weight: 800;
 	line-height: normal;
 	letter-spacing: 0.18px;
 }
@@ -68,7 +67,7 @@ html, body {
 	width: 6.510416666666667vw;
 	color: var(- -Secondary-crypto, #333);
 	font-family: Poppins;
-	font-size: 11px;
+	font-size: 0.8vw;
 	font-style: normal;
 	font-weight: 700;
 	line-height: normal;
@@ -81,7 +80,6 @@ html, body {
 	gap: 0.05vh;
 	display: flex;
 	flex-direction: column;
-	
 }
 
 .button {
@@ -92,10 +90,12 @@ html, body {
 	display: flex;
 	align-items: center;
 }
-.button:hover{
+
+.button:hover {
 	background: rgba(67, 49, 28, 0.1);
 }
-.buttonText{
+
+.buttonText {
 	color: rgba(67, 49, 28, 0.90);
 	font-family: Poppins;
 	font-size: 1.3888888888888888vh;
@@ -105,9 +105,10 @@ html, body {
 	letter-spacing: 0.15px;
 	position: relative;
 	margin-left: 1.0416666666666665vw;
+	margin-bottom: 0.2vw;
 }
 
-.buttonImg{
+.buttonImg {
 	width: 1.0416666666666665vw;
 	position: relative;
 	margin-left: 2.65625vw;
@@ -140,6 +141,13 @@ html, body {
 	display: none;
 }
 
+
+/*MY INFO*/
+
+.p4{
+	display: none;
+}
+
 .p1Inner {
 	width: 100%;
 	height: 100%;
@@ -150,10 +158,19 @@ html, body {
 	justify-content: center;
 }
 
+.title {
+	font-size: 1.6vw;
+	margin: 0.5vw 0;
+	padding: 0;
+	font-weight: 800;
+}
+
 .itemBoxP1 {
 	gap: 1.6666666666666667vh;
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 .columnBoxP1 {
@@ -164,14 +181,40 @@ html, body {
 	display: flex;
 }
 
+.columnBoxP2 {
+	width: 22.34375vw;
+	height: 5.555555555555555vh;
+	border-radius: 30px;
+	background: #FAEAB159;
+	display: flex;
+}
+
+.yellowBox {
+	width: 13vw;
+	height: 2vw;
+	border: none;
+	margin-left: 1vw;
+	color: #000;
+	display: flex;
+	align-items: center;
+	text-align: center;
+	font-family: Poppins;
+	font-size: 1.2vw;
+	font-style: normal;
+	font-weight: 275;
+	line-height: normal;
+	letter-spacing: 0.05vh;
+	background: none;
+}
+
 .columnP1 {
 	align-self: center;
-	width: 3vw;
-	margin-left: 2vw;
+	width: 5vw;
+	margin-left: 1.2vw;
 	color: #000;
 	text-align: center;
 	font-family: Poppins;
-	font-size: 1.05vw;
+	font-size: 0.8vw;
 	font-style: normal;
 	font-weight: 275;
 	line-height: normal;
@@ -202,52 +245,298 @@ html, body {
 .updateButton {
 	border-radius: 20px;
 	border: 1px solid rgba(67, 49, 28, 0.90);
-	width: 6.25vw;
+	width: 8.25vw;
 	height: 3.3333333333333335vh;
 	background-color: white;
 	color: rgba(67, 49, 28, 0.90);
 	font-family: Poppins;
-	font-size: 1.2vh;
+	font-size: 1vw;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	letter-spacing: 0.05vh;
+	margin-top: 3vh;
+}
+
+.container {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.7vw;
+}
+
+.selectBox-wrap {
+	width: 22.34375vw;
+	height: 5.555555555555555vh;
+	display: flex;
+	background: #FAEAB159;
+	justify-content: center;
+	align-items: center;
+	border-radius: 30px;
+	gap: 1vw;
+}
+
+.selectBox {
+	width: 9vw;
+	height: 2.5vw;
+	border-radius: 30px;
+	background: white;
+	border: none;
+}
+
+.notice {
+	font-size: 0.8vw;
+	color: #6f0202;
+	font-style: "Inter", sans-serif;
+}
+
+.changeBtn {
+	border-radius: 20px;
+	border: 1px solid rgba(67, 49, 28, 0.90);
+	width: 8.25vw;
+	height: 3.3333333333333335vh;
+	background-color: white;
+	color: rgba(67, 49, 28, 0.90);
+	font-family: Poppins;
+	font-size: 1vw;
+	font-style: normal;
+	font-weight: 800;
+	line-height: normal;
+	letter-spacing: 0.05vh;
+}
+
+/* volunteer css */
+.vol-wrapper {
+	height: 90%;
+	margin: 4%;
+	padding: 2% 2%;
+	position: relative;
+	background-color: #F8F8F8;
+	border-radius: 2%;
+}
+
+.vol-table {
+	position: relative;
+	top: 3%;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
+}
+
+.vol-title {
+	font-size: 2vw;
+	font-family: "Poppins", sans-serif;
+	color: rgba(67, 49, 28, 0.90);
+	text-align: center;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.23px;
+}
+
+.vol-semititle {
+	position: relative;
+	height: 3vw;
+	border-radius: 10px;
+	background: rgba(47, 128, 237, 0.10);
+}
+
+.vol-btn {
+	border-radius: 10px;
+	height: 3vh;
+	width: 3.3vw;
+	border: 1px solid #000;
+}
+
+.vol-btn>span {
+	font-size: 0.8vw;
+	font-family: Poppins;
+}
+
+.cancle {
+	position: relative;
+	right: 0.2vw;
+}
+
+.vol-th, .vol-td {
+	padding: 1%;
+	border-top: 1px solid black;
+}
+
+
+/* point 부분 */
+.point-wrapper {
+	height: 90%;
+	margin: 4%;
+	padding: 2% 2%;
+	position: relative;
+	background-color: #F8F8F8;
+	border-radius: 2%;
+}
+
+.point-title {
+	font-size: 2vw;
+	font-family: "Poppins", sans-serif;
+	color: rgba(67, 49, 28, 0.90);
+	text-align: center;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.23px;
+}
+/*현재포인트 애니메이트*/
+.pointMoveWrap {
+	width: 41.354166666666664vw;
+	height: 3.1vw;
+	position: relative;
+	top: 1vw;
+	border-radius: 30px;
+	background: rgba(224, 223, 219, 0.40);
+}
+
+.pointMove {
+	position: absolute;
+	left: 0;
+	width: 27.864583333333332vw;
+	height: 3.1vw;
+	border-radius: 30px;
+	background: #FAEAB1;
+	display: flex;
+	justify-content: end;
+    align-items: center;
+	animation:Move 2s;
+}
+
+@keyframes Move{
+	from{width:0vw}to{width: 27.864583333333332vw;}
+	}
+
+
+.nowPoint {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: rgba(67, 49, 28, 0.90);
+	text-align: center
+	font-family: "Poppins", sans-serif;
+	font-size: 1.2vw;
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
-	letter-spacing: 0.05vh;
-	margin-top: 5vh;
+	letter-spacing: 0.2px;
+	margin-right:1vw;
 }
 
-/* volunteer 부분 css 입니다~ 도죠 요로시쿠 오네가이시마스-!  */
-.vol-wrapper{
-	height: 90%;
-    margin: 4%;
-    padding: 2% 2%;
-    position: relative;
-    background-color: #F8F8F8;
-    border-radius: 2%;
-}
-.vol-table{
+/*서치라인*/
+.search-wrap {
+	width: 45vw;
+	height: 3vw;
+	border-radius: 80px;
+	background: rgba(47, 128, 237, 0.05);
 	position: relative;
-    top: 3%;
-    width: 100%;
-    text-align: center;
-    border-collapse: collapse;
+	top: 2vw;
 }
-.vol-title{
-	font-size:2vw;
-	margin-top:2%;
+
+.searchIcon {
+	width: 1vw;
+	position: absolute;
+	left: 1vw;
+	top: 1vw;
+	z-index: 2;
 }
-.vol-semititle{
+
+.search-content {
+	position: absolute;
+	top: 0.6vw;
+	left: 0.5vw;
+	display: flex;
+	width: 18.020833333333332vw;
+	padding: 0.6vw 0.6vw 0.6vw 1.2vw;
+	align-items: center;
+	border-radius: 100px;
+	background: #FFF;
+	box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.09);
+	border: none;
+}
+
+.dateRadio1 {
+	width: 10vw;
+	font-size: 0.6vw;
+	right: 2vw;
+	top: 0.9vw;
+	position: absolute;
+	display: flex;
+	gap: 0.1vw;
+}
+
+.dateRadio1>label, .dateRadio2>label {
+	font-size: 0.6vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.dateRadio2 {
+	width: 10vw;
+	font-size: 0.6vw;
+	right: -3vw;
+	top: 0.9vw;
+	position: absolute;
+	display: flex;
+	gap: 0.1vw;
+}
+
+[type="radio"] {
+	vertical-align: middle;
+	appearance: none;
+	border: max(2px, 0.1em) solid gray;
+	border-radius: 50%;
+	width: 1vw;
+	height: 1vw;
+	transition: border 0.5s ease-in-out;
+}
+
+[type="radio"]:checked {
+	border: 0.3vw solid #FFCE1E;
+}
+
+[type="radio"]:focus-visible {
+	outline-offset: max(2px, 0.1em);
+	outline: max(2px, 0.1em) dotted #FFCE1E;
+}
+
+[type="radio"]:hover {
+	box-shadow: 0 0 0 max(4px, 0.2em) lightgray;
+	cursor: pointer;
+}
+
+/*포인트 리스트*/
+.point-table {
 	position: relative;
-	
+	top: 4vw;
+	width: 100%;
+	text-align: center;
+	border-collapse: collapse;
 }
-.vol-btn{
-	border-radius: 45%;
-    height: 3vh;
-    width: 3vw;
+
+.point-semititle {
+	position: relative;
+	height: 3vw;
+	border-radius: 10px;
+	background: rgba(47, 128, 237, 0.10);
 }
-.vol-th, .vol-td{
+
+.point-th, .point-td {
 	padding: 1%;
-	border-top:1px solid black;
+	border-top: 1px solid black;
 }
 
+.history {
+	width: 25vw;
+}
 
-
+.date, .point {
+	width: 10vw;

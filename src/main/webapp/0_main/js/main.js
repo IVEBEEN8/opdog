@@ -143,14 +143,14 @@ function quickClick() {
 
 	//퀵 마우스휠 선택했을때 숫자 로딩 
 	if (gnbindex === 3) {
-	const $counter = document.querySelector(".count");
-	const max = totalCount;
-	counter($counter, max);
+	  const $counter = document.querySelector(".count");
+        const max = totalCount;
+        counter($counter, max);
 	//alert("₍ᐢ. ̫.ᐢ₎♡");
 	 }
 
 
-    return false;
+   // return false;
   });
 }
 

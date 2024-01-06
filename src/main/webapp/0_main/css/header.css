@@ -20,16 +20,17 @@ header {
   position: fixed;
   width: 100vw;
   text-align: center;
+  top: 0;
 }
 
 #all_header {
 /*   position: absolute;
   top: 1vh; */
-  display: flex;
-  border-bottom: solid 1px rgb(255, 255, 255, 0.5);
-  height: 4vh;
-  width: 100vw;
-  padding: 1vw 8.3vw;
+ display: flex;
+    border-bottom: solid 1px rgb(255, 255, 255, 0.5);
+    height: 4vh;
+    width: 100vw;
+    padding: 1vw 7.5vw;
   /* justify-content: space-between; */
   gap: 15.104166666666666vw;
   align-items: center;
