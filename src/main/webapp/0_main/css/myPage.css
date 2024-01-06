@@ -287,7 +287,7 @@ html, body {
 	border: none;
 }
 
-notice {
+.notice {
 	font-size: 0.8vw;
 	color: #6f0202;
 	font-style: "Inter", sans-serif;
@@ -420,7 +420,7 @@ notice {
 	flex-direction: column;
 	justify-content: center;
 	color: rgba(67, 49, 28, 0.90);
-	text-align: center;
+	text-align: center
 	font-family: "Poppins", sans-serif;
 	font-size: 1.2vw;
 	font-style: normal;
