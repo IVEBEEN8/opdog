@@ -16,6 +16,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 
@@ -29,8 +30,7 @@ public class DoginfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = "select*from sido";
-		LoginDTO account = (LoginDTO)request.getSession().getAttribute("account");
-
+		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 
 		try {
 			con = DBManager_khw.connect();
@@ -45,17 +45,15 @@ public class DoginfoDAO {
 				s.setOrgCd(rs.getString("s_orgCd"));
 				s.setOrgdownNm(rs.getString("s_orgdownNm"));
 				sido.add(s);
-				
+
 			}
-			if (account!=null) {
+			if (account != null) {
 				request.setAttribute("defaultsido", account.getUprCd());
 				request.setAttribute("defaultsigun", account.getOrgCd());
 			}
 			request.setAttribute("sido", sido);
 			System.out.println(sido.toString());
-			
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -86,9 +84,7 @@ public class DoginfoDAO {
 
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(sigungu);
-			
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -122,8 +118,6 @@ public class DoginfoDAO {
 
 			response.setContentType("application/json; charset=utf-8");
 			response.getWriter().print(center);
-			
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -134,61 +128,79 @@ public class DoginfoDAO {
 	}
 
 	public static void search(HttpServletRequest request, HttpServletResponse response) {
-		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
-		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url = null;
-		String a = request.getParameter("value2");
-		String Cd[] = a.split("!");
-		if (request.getParameter("value2") == "" || request.getParameter("value2") == null) {
-			System.out.println(request.getParameter("value1"));
-			url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="
-					+ request.getParameter("value1") + "&pageNo=1&numOfRows=1000&serviceKey=" + encodeKey;
-			System.out.println("11");
-		} else if (request.getParameter("value3") == "" || request.getParameter("value3") == null) {
-			System.out.println(Cd[1]);
-			url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="
-					+ request.getParameter("value1") + "&org_cd=" + Cd[1] + "&pageNo=1&numOfRows=1000&serviceKey="
-					+ encodeKey;
-			System.out.println("22");
-		} else {
-			System.out.println(request.getParameter("value3"));
-			url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?_type=json&upkind=417000&state=protect&upr_cd="
-					+ request.getParameter("value1") + "&org_cd=" + Cd[1] + "&care_reg_no="
-					+ request.getParameter("value3") + "&pageNo=1&numOfRows=1000&serviceKey=" + encodeKey;
-			System.out.println("33");
-		}
-		response.setContentType("application/json; charset=utf-8");
-		
-		
-		
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = null;
+
+		String sido = request.getParameter("value1");
+		System.out.println(sido);
+		String sigun = request.getParameter("value2");
+		System.out.println(sigun);
+		String center = request.getParameter("value3");
+		System.out.println(center);
+		// 시,도만 있을 때
 		try {
-			URL u = new URL(url);
-			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
-			if(huc.getResponseCode() == 200) {
-				InputStream is = huc.getInputStream();
-				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
-//				System.out.println(isr);
-			
-				JSONParser jp = new JSONParser();
-				JSONObject dogs = (JSONObject) jp.parse(isr);
-			
-				System.out.println(dogs);
-				System.out.println("여기서 터진거면 오브젝트 나눌 때");
-				dogs = (JSONObject) dogs.get("response");
-				dogs = (JSONObject) dogs.get("body");
-				dogs = (JSONObject) dogs.get("items");
-				System.out.println("여기서 터진거면 어레이 만들 때");
-				JSONArray dog = (JSONArray) dogs.get("item");
-					if(dog != null) {
-						System.out.println("여기서 터진거면 어레이 담을 때 ");
-						System.out.println(dog);
-						response.getWriter().print(dog);
-					}else {
-						response.getWriter().print(0);
-					}
+			con = DBManager_khw.connect();
+			if (sigun == "" || sigun == null || sigun.equals("city") ) {
+				sql = "select * from dogInfo where d_careaddr like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+sido+"%");
+				System.out.println("11");
+			} else if (center == "" || center == null || center.equals("shelter")) {
+				// 군,구까지 있을 때
+				sql = "select * from dogInfo where d_careaddr like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+sigun+"%");
+				System.out.println("22");
+			} else {
+				// 센터까지 있을 때
+				sql = "select * from dogInfo where d_carenm like ?";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, "%"+center+"%");
+				System.out.println("33");
+			}
+			response.setContentType("application/json; charset=utf-8");
+
+			rs = pstmt.executeQuery();
+			ArrayList<dogInfo> doginfos = new ArrayList<dogInfo>();
+			dogInfo d = null;
+			while (rs.next()) {
+				d = new dogInfo();
+				d.setAge(rs.getString("d_age"));
+				d.setCareAddr(rs.getString("d_careaddr"));
+				d.setCareNm(rs.getString("d_careNm"));
+				d.setCareTel(rs.getString("d_careNm"));
+				d.setChargeNm(rs.getString("d_chargeNm"));
+				d.setDesertionNo(rs.getString("d_desertionNo"));
+				d.setFilename(rs.getString("d_filename"));
+				d.setHappenDt(rs.getString("d_happenDt"));
+				d.setKindCd(rs.getString("d_kindcd"));
+				d.setNeuterYn(rs.getString("d_neuterYn"));
+				d.setNoticeEdt(rs.getInt("d_noticeEdt"));
+				d.setNoticeNo(rs.getString("d_noticeNo"));
+				d.setOfficeTel(rs.getString("d_officetel"));
+				d.setOrgNm(rs.getString("d_orgNm"));
+				d.setPopfile(rs.getString("d_popFile"));
+				d.setProcessState(rs.getString("d_Processstate"));
+				d.setSexCd(rs.getString("d_SexCd"));
+				d.setWeight(rs.getString("d_weight"));
+				doginfos.add(d);
+			}
+			Gson gson = new Gson();
+			String jsonDoginfo = gson.toJson(doginfos);
+			if (jsonDoginfo != null) {
+				System.out.println("여기서 터진거면 어레이 담을 때 ");
+				System.out.println(jsonDoginfo);
+				response.getWriter().print(jsonDoginfo);
+			} else {
+				response.getWriter().print(0);
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
 		}
 
 	}

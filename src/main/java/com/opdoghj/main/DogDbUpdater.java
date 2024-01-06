@@ -47,9 +47,7 @@ public class DogDbUpdater {
 				dogs = (JSONObject) dogs.get("body");
 				System.out.println(dogs.get("totalCount"));
 				double totalCount = (double) Integer.parseInt(String.valueOf(dogs.get("totalCount")));
-//				System.out.println("total" + totalCount);
 				double pageCounter = Math.ceil(totalCount / 1000);
-//				System.out.println("page" + pageCounter);
 				newList = new ArrayList<String>();
 
 				for (int i = 1; i <= pageCounter; i++) {
@@ -58,7 +56,6 @@ public class DogDbUpdater {
 
 			}
 //			오래된 데이터 삭제
-//			System.out.println(newList.size());
 		
 		sql = "select d_desertionno from dogInfo";
 		pstmt = con.prepareStatement(sql);
@@ -79,7 +76,6 @@ public class DogDbUpdater {
 			
 			
 			String delListStr = "("+String.join(",", delList)+")";
-//			System.out.println(delListStr);
 			sql = "delete from dogInfo where d_desertionNo in ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, delListStr);
@@ -118,7 +114,6 @@ public class DogDbUpdater {
 				JSONObject dogs = (JSONObject) jp.parse(isr);
 				dogs = (JSONObject) dogs.get("response");
 				dogs = (JSONObject) dogs.get("body");
-//				System.out.println(dogs.get("totalCount"));
 				dogs = (JSONObject) dogs.get("items");
 				JSONArray dog = (JSONArray) dogs.get("item");
 				String no[] = new String[dog.size()];
@@ -135,6 +130,9 @@ public class DogDbUpdater {
 					newList.add((String) aa.get("desertionNo"));
 					String kind = (String)aa.get("kindCd");
 					String kind2[]= kind.split("]");
+					String age = (String) aa.get("age");
+					int splitIndex = age.indexOf('(');
+					String age2 = age.substring(0,splitIndex);
 					if (!rs.next()) {
 						sql = "insert into dogInfo values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 						pstmt = con.prepareStatement(sql);
@@ -156,13 +154,12 @@ public class DogDbUpdater {
 						pstmt.setInt(16, Integer.parseInt((String)aa.get("noticeEdt")));
 						pstmt.setString(17, (String) aa.get("neuterYn"));
 						pstmt.setString(18, (String) aa.get("happenDt"));
-						pstmt.setString(19, (String) aa.get("age"));
+						pstmt.setString(19, age2);
 						pstmt.executeUpdate();
 						System.out.println("업데이트중~");
 					}
 				}
 				System.out.println(page + "페이지 업데이트 완료!");
-//				System.out.println("리스트 갱신?" + newList.size());
 
 			}
 		} catch (Exception e) {

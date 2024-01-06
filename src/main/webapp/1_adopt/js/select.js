@@ -243,9 +243,9 @@ $(document).ready(function () {
   });
 
   $(document).on("click", "button[id=selectbutton]", function () {
-    var sidoVal = $("#sidoSelect").val();
-    var gunguVal = $("#sigunSelect").val();
-    var centerVal = $("#centerSelect").val();
+    var sidoVal = $("#sidoSelect").text();
+    var gunguVal = $("#sigunSelect").text();
+    var centerVal = $("#centerSelect").text();
     console.log(sidoVal);
     console.log(gunguVal);
     console.log(centerVal);
@@ -260,9 +260,9 @@ $(document).ready(function () {
     });
   });
   $(document).on("click", "button[id=radiobutton]", function () {
-    var sidoVal = $("input[name='sido']:checked").val();
-    var gunguVal = $("input[name='sigungu']:checked").val();
-    var centerVal = $("input[name='center']:checked").val();
+    var sidoVal = $("input[name='sido']:checked").parent('label').text().trim();
+    var gunguVal = $("input[name='sigungu']:checked").parent('label').text().trim();
+    var centerVal = $("input[name='center']:checked").parent('label').text().trim();
     console.log(sidoVal);
     console.log(gunguVal);
     console.log(centerVal);
@@ -314,11 +314,6 @@ $(document).ready(function () {
         items.kindCd +
         "</span>" +
         "</div>" +
-        '<div class="modal-list" id="detailinfo"><p>Color</p>' +
-        '<span class="spandesign">' +
-        items.colorCd +
-        "</span>" +
-        "</div>" +
         '<div class="modal-list" id="detailinfo"><p>Gender</p>' +
         '<span class="spandesign">' +
         items.sexCd +
@@ -327,11 +322,6 @@ $(document).ready(function () {
         '<div class="modal-list" id="detailinfo"><p>Neutering</p>' +
         '<span class="spandesign">' +
         items.neuterYn +
-        "</span>" +
-        "</div>" +
-        '<div class="modal-list" id="detailinfo"><p>Characteristic</p>' +
-        '<span class="spandesign">' +
-        items.specialMark +
         "</span>" +
         "</div>" +
         '<div class="Shelter" id="detailinfo"><p>Shelter</p>' +
@@ -349,7 +339,7 @@ $(document).ready(function () {
         "&nbsp;" +
         items.chargeNm +
         "(" +
-        items.officetel +
+        items.officeTel +
         ")" +
         "</span>" +
         "</div>" +
