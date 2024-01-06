@@ -29,10 +29,7 @@ pageEncoding="UTF-8"%>
                   <option class="" value="Recruiting">Recruiting</option>
                 </select>
               </div>
-=======
-	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-	
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -57,7 +54,6 @@ pageEncoding="UTF-8"%>
 								<option class="" value="Recruiting">Recruiting</option>
 							</select>
 						</div>
->>>>>>> e1a90c4d46711dfa664ba3bfa73373c312be66fd
 
               <div class="review-title-cover">
                 <div class="review-title">Title</div>
@@ -151,14 +147,13 @@ pageEncoding="UTF-8"%>
 					</td>
 				</tr>
 			</table> -->
-<<<<<<< HEAD
+
       </main>
     </form>
   </body>
 </html>
-=======
 		</main>
 	</form>
 </body>
 </html>
->>>>>>> e1a90c4d46711dfa664ba3bfa73373c312be66fd
+

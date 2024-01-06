@@ -2,6 +2,9 @@ function modifyPost(accountNo, aNo, vNo) {
   if (accountNo != aNo) {
     alert("you can't modify the article");
   } else {
+	console.log(accountNo);
+	console.log(aNo);
+	console.log(vNo);
     location.href = "VolunteerModiC?no=" + vNo;
   }
 }

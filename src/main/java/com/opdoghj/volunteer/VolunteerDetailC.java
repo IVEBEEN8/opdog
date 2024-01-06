@@ -24,7 +24,7 @@ public class VolunteerDetailC extends HttpServlet {
 			throws ServletException, IOException {
 		LoginDAO.loginCheck(request);
 		VolunteerDAO.getAllpost(request, response);
-		request.setAttribute("contentPage", "../3_volunteer/volunteerSeoul.jsp");
+		request.setAttribute("contentPage", "../3_volunteer/volunteer.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 	}
 

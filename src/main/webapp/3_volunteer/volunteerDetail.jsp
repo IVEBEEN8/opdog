@@ -41,11 +41,11 @@
 							readonly="readonly">${vol.v_txt }</textarea>
 					</div>
 					<div class="review-btn">
-						<button class="review-edit-btn"
+						<button type="button" class="review-edit-btn"
 							onclick="modifyPost('${account.no}','${vol.a_no }','${vol.v_no }')">Modify</button>
-						<button class="reiview-list-btn" onclick="location.href='VPostC?locate=${vol.v_locate}'">Go
+						<button type="button" class="reiview-list-btn" onclick="location.href='VPostC?locate=${vol.v_locate}'">Go
 							list</button>
-						<button class="review-edit-btn"
+						<button type="button" class="review-edit-btn"
 							onclick="deletePost('${account.no }','${vol.a_no }','${vol.v_no}','${vol.v_locate }')">Delete</button>
 					</div>
 					<div class="apply-btn">
