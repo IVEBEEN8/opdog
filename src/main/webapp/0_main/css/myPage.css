@@ -141,6 +141,12 @@ html, body {
 	display: none;
 }
 
+.p4 {
+	display: none;
+}
+
+
+/*MY INFO*/
 .p1Inner {
 	width: 100%;
 	height: 100%;
@@ -182,7 +188,7 @@ html, body {
 	display: flex;
 }
 
-.password {
+.yellowBox {
 	width: 13vw;
 	height: 2vw;
 	border: none;
@@ -197,6 +203,7 @@ html, body {
     font-weight: 275;
     line-height: normal;
     letter-spacing: 0.05vh;
+    background: none;
 }
 
 .columnP1 {
@@ -237,7 +244,7 @@ html, body {
 .updateButton {
 	border-radius: 20px;
 	border: 1px solid rgba(67, 49, 28, 0.90);
-	width: 6.25vw;
+	width: 8.25vw;
 	height: 3.3333333333333335vh;
 	background-color: white;
 	color: rgba(67, 49, 28, 0.90);
@@ -249,6 +256,58 @@ html, body {
 	letter-spacing: 0.05vh;
 	margin-top: 3vh;
 }
+
+.container{
+	width:100%;
+	height: 100%;
+	display:flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 0.7vw;
+}
+
+.selectBox-wrap{
+	    width: 22.34375vw;
+    height: 5.555555555555555vh;
+    display: flex;
+    background: #FAEAB159;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+        gap: 1vw;
+}
+
+.selectBox{
+	width: 9vw;
+    height: 2.5vw;
+    border-radius: 30px;
+    background: white;
+    border: none;
+}
+
+span{
+	font-size: 0.8vw;
+    color: #6f0202;
+   font-style:  "Inter", sans-serif;
+}
+
+.changeBtn{
+	border-radius: 20px;
+    border: 1px solid rgba(67, 49, 28, 0.90);
+    width: 8.25vw;
+    height: 3.3333333333333335vh;
+    background-color: white;
+    color: rgba(67, 49, 28, 0.90);
+    font-family: Poppins;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: 0.05vh;
+}
+
+
 
 /* volunteer 부분 css 입니다~ 도죠 요로시쿠 오네가이시마스-!  */
 .vol-wrapper {

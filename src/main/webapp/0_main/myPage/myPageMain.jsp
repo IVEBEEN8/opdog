@@ -7,6 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="0_main/css/myPage.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
+	rel="stylesheet" />
+</head>
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
@@ -95,9 +101,9 @@
 								<div class="textP1">
 									<input class="password">
 								</div>
-							</div>
-						</div> -->
-						<button class="updateButton" onclick="location.href='UpdateInfoC'">Update</button>
+							</div> -->
+						</div>
+						<button class="updateButton" onclick="location.href='UpdateInfoC'">Change Info</button>
 					</div>
 				</div>
 				<div id="likePage" class="innerPage p2">
