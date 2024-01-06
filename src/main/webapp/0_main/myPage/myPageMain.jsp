@@ -156,10 +156,10 @@
 									<td class="vol-td">${reglist.applied }</td>
 									<td class="vol-td"><button
 											onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
-											class="vol-btn">Detail</button> &nbsp
+											class="vol-btn"><span class="vol-btn">Detail</span></button> &nbsp;
 										<button
 											onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
-											class="vol-btn">Cancel</button></td>
+											class="vol-btn"><span class="vol-btn">Cancel</span></button></td>
 								</tr>
 							</c:forEach>
 						</table>

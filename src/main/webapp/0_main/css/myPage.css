@@ -140,7 +140,9 @@ html, body {
 .p3 {
 	display: none;
 }
-
+.p4{
+	display: none;
+}
 .p1Inner {
 	width: 100%;
 	height: 100%;
@@ -284,4 +286,8 @@ html, body {
 .vol-th, .vol-td {
 	padding: 1%;
 	border-top: 1px solid black;
+}
+.vol-btn{
+	font-size: 0.7vw;
+    position: relative;
 }

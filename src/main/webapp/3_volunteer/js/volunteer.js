@@ -140,10 +140,17 @@ function paging(json){
                 dataHtml += '<td class="post-left">';
                 dataHtml += '<div class="td-wrapper">';
                 dataHtml += '<div class="post-btn">';
-                dataHtml += '<div class="Recruiting post-btn-txt">';
-                dataHtml += '<p>' + item.v_status + '</p>';
+				if (item.v_status === 'Recruiting') {
+                dataHtml += '<div class="Recruiting post-btn-txt" style="background-color:rgba(250, 234, 177, 0.8);">';
+				    dataHtml += '<p>' + item.v_status + '</p>';
                 dataHtml += '</div>';
+				} else if (item.v_status === 'Completed') {
+                dataHtml += '<div class="Recruiting post-btn-txt" style="background-color: #9e6f21;color: white;">';
+				    dataHtml += '<p>' + item.v_status + '</p>';
                 dataHtml += '</div>';
+				} else {
+					console.log("heehee never be here");
+				}
                 dataHtml += '<div class="post-text">';
                 dataHtml += '<div class="bigTxt">' + item.v_title + '</div>';
                 dataHtml += '<div class="smallTxt">' + item.v_txt + '</div>'; // 중괄호를 닫아주는 부분 수정
