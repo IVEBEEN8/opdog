@@ -246,16 +246,17 @@ body {
 
 /*모달 css*/
 #modalContent{
-  margin-top: 10vh;
-  width: 500px;
-  height: 300px;
-  border-radius: 15px;
+    position: relative;
+    margin-top: 10vh;
+    width: 31vw;
+    height: 35vh;
+    border-radius: 2vw;
 }
 
 #printinfo {
   display: none;
   position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
+  z-index: 999; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -337,7 +338,6 @@ body {
 
 .box-title{
     white-space: normal;
-    margin-bottom: 2.1vh;
     margin-left: 10vw;
     position: relative;
     width: 19vw;
@@ -385,6 +385,9 @@ body {
     position: relative;
     width: 78%;
     white-space: normal;
+}
+.small-content1::-webkit-scrollbar {
+    display: none; 
 }
 
 .search-container1-2 {
@@ -492,7 +495,15 @@ body {
  
 }
 .modal-carenm{
-	font-size: 2vh;
+	width: 17vw;
+    height: 6vh;
+    font-size: 2vh;
+}
+.modal-careAddr{
+	width: 17vw;
+    height: 6vh;
+    font-size: 1.5vh;
+    overflow: auto;
 }
 .mtitle{
 	background: #FAF8F1;

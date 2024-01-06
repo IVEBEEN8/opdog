@@ -48,6 +48,11 @@ public class CenterInfoDAO {
 				center.add(c);
 			}
 			request.setAttribute("centers", center);
+//			String jsonCenter = new Gson().toJson(center);
+//			System.out.println(jsonCenter);
+			// response.setContentType("application/json");
+			// response.getWriter().write(jsonCenter);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -57,7 +62,6 @@ public class CenterInfoDAO {
 
 	@SuppressWarnings("unchecked")
 	public static void sendMarker(HttpServletRequest request, HttpServletResponse response) {
-
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -78,7 +82,6 @@ public class CenterInfoDAO {
 			rs = pstmt.executeQuery();
 
 			if (rs.next()) {
-				result = "값받아오기성공!!!!!!!!!";
 				System.out.println(result);
 				JSONArray mydbCenterData = new JSONArray();
 				JSONObject obj = new JSONObject();

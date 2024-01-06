@@ -20,6 +20,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 <script src="1_adopt/js/searchhw.js"></script>
+<script src="1_adopt/js/centerinfo.js"></script>
+
 </head>
 <body>
 <div class="containar1-2">
@@ -103,35 +105,106 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 //클러스터링을 위한 마커배열생성!
 var markers = [];
 
-//공공데이터 api를 가져와서 사용!	
-async function fetchData() {
-    var apiUrl = 'https://apis.data.go.kr/1543061/animalShelterSrvc/shelterInfo?serviceKey=sJG8TCmXj96iwKxnSPRAaGazSqjp8g97CNLXDwtsv7BNaDo%2F6qhQtG3OIp0MAEreldhU5TicAqKPPvCVcrj7cA%3D%3D&numOfRows=1000&pageNo=1&_type=json';
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('네트워크 응답이 올바르지 않습니다.');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('데이터를 가져오는 중 오류 발생:', error);
-        return null;
+var apiUrl = 'https://apis.data.go.kr/1543061/animalShelterSrvc/shelterInfo?serviceKey=sJG8TCmXj96iwKxnSPRAaGazSqjp8g97CNLXDwtsv7BNaDo%2F6qhQtG3OIp0MAEreldhU5TicAqKPPvCVcrj7cA%3D%3D&numOfRows=1000&pageNo=1&_type=json';
+console.log(apiUrl);
+	
+fetch(apiUrl)
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
     }
-}
+    return response.json();
+})
+.then(data => {
+    console.log("Data received successfully:");
 
-function createMarker(lat, lng, data) {
-    var marker = new kakao.maps.Marker({
-        position: new kakao.maps.LatLng(lat, lng),
-        clickable: true
+    var markers = [];
+
+    function createMarker(lat, lng) {
+        var marker = new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(lat, lng),
+            clickable: true,
+        });
+    
+        
+        marker.setMap(map);
+
+        markers.push(marker);
+
+        kakao.maps.event.addListener(marker, 'click', function () {
+        	
+        	
+        	console.log("마커를 클릭했어요~");
+        	console.log($("#printinfo")); 
+            $("#printinfo").show();
+            
+            $.ajax({
+                url: "SendMarkC",
+                data: {
+                    lat: lat, lng: lng
+                },
+                success: function (data) {
+                    $("#modalBody").empty();
+                    
+                    for (var i = 0; i < data.length; i++) {
+                    	console.log(data[i].careNm);
+                    	console.log(data[i].careAddr);
+                    	console.log(data[i].tel);
+                    	console.log(data[i].oprtime);
+                    	console.log(data[i].closetime);
+                    	console.log(data[i].close);
+                    	
+                        $("#modalBody").append('<div id="closeBtn">&times;<div>')
+                        $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
+	                    $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
+	                    $("#modalBody").append('<div class="box-title modal-carenm">' + data[i].careNm + '</div>');
+	                    $("#modalBody").append('<div class="box-title modal-careAddr">' + data[i].careAddr + '</div></div>');
+	                    $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Tel&nbsp;</span>' + data[i].tel + '</div></div>');
+	                    $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Operation</span>	' + data[i].oprtime +'~'+ data[i].closetime + '</div>');
+	                    $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Closed</span>	' + data[i].closeday + '</div>');
+                    }
+
+                    $("#closeBtn").on("click", function () {
+                        $("#printinfo").hide();
+                        console.log(22);
+                    });
+
+                },
+                error: function (request, status, error) {
+                    console.error('Error sending marker coordinates to server:', error);
+                }
+            });
+        });
+    }
+
+    
+    for (var i = 0; i < data.response.body.items.item.length; i++) {
+        var item = data.response.body.items.item[i];
+        createMarker(parseFloat(item.lat), parseFloat(item.lng));
+    }
+
+    var clusterer = new kakao.maps.MarkerClusterer({
+        map: map,
+        averageCenter: true,
+        minLevel: 10,
+        markers: markers,
+    });
+
+    console.log("done!");
+});
+
+/*  	
     });
     marker.data = data;  // 데이터를 마커에 연결
     markers.push(marker);
+   	
     
     kakao.maps.event.addListener(marker, 'click', function () {
         var markerData = marker.data;
-       
         //이전 모달데이터 초기화~	
         $("#modalBody").empty();
-        //전화번호 대체처리! 
+        //전화번호 대체처리!
+        
         const tel = markerData.careTel === "***********" ? "1577-0954" : markerData.careTel;
         //수의사 정보 대체처리!
         const vet = markerData.vetPersonCnt === 0 ? "vet service not available" : markerData.vetPersonCnt + "명";
@@ -139,7 +212,7 @@ function createMarker(lat, lng, data) {
         const modifiedCloseDay = markerData.closeDay.replace(/\+/g, ', ').replace(/0/g, 'Open Always');
         // 모댤에에 나올정보!
         
-        $("#modalBody").append('<div id="closeBtn">x<div>')
+        $("#modalBody").append('<div id="closeBtn">&times;<div>')
         $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
         $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
         $("#modalBody").append('<div class="box-title modal-carenm">' + markerData.careNm + '</div>');
@@ -156,6 +229,8 @@ function createMarker(lat, lng, data) {
     });
     marker.setMap(map);
 }
+ */
+
 
 // 닫기 버튼 클릭 이벤트 핸들러
 const printinfobox = document.getElementById('printinfo');

@@ -157,12 +157,13 @@ input:focus {
 }
 
 .td-wrapper {
-	display: flex;
-	gap: 3.5vw;
-	flex-direction: column;
-	position: relative;
-	top: 3vw;
-	margin-left: 1vw;
+	height: 99%;
+    display: flex;
+    gap: 3.5vw;
+    flex-direction: column;
+    position: relative;
+    /* top: 3vw; */
+    margin-left: 1vw;
 }
 
 .post-left {
@@ -177,18 +178,18 @@ input:focus {
 }
 
 .post-btn-txt {
-	position: absolute;
-	border-radius: 30vw;
-	border: none;
-	width: 6.8vw;
-	height: 2.6vw;
-	font-family: "Poppins", sans-serif;
-	font-size: 1vw;
-	font-style: normal;
-	font-weight: 600;
-	line-height: normal;
-	text-align: center;
-	top:-17px;
+	top: 1vh;
+    position: relative;
+    border-radius: 30vw;
+    border: none;
+    width: 6.8vw;
+    height: 2.6vw;
+    font-family: "Poppins", sans-serif;
+    font-size: 1vw;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
 }
 
 .post-btn-txt>p {
@@ -197,10 +198,9 @@ input:focus {
 }
 
 .post-text{
-	display:flex;
-	flex-direction: column;
-	gap:1vw;
-	margin-left: 0.5vw;
+	overflow: hidden;
+    white-space: normal;
+    position: relative;
 }
 
 .bigTxt {
@@ -213,11 +213,13 @@ input:focus {
 }
 
 .smallTxt {
-	color: #000;
-	font-family: "DM Sans", sans-serif;
-	font-size: 0.9vw;
-	font-style: normal;
-	line-height: normal;
+	height: 34%;
+    position: relative;
+    color: #000;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.9vw;
+    font-style: normal;
+    line-height: normal;
 }
 
 .post-info {
