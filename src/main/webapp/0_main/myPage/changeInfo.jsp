@@ -72,7 +72,7 @@
 			<input name="newPWCheck" type="password" class="yellowBox">
 		</div>
 	</div>
-	<span>marked elements are essential</span>
+	<span class="notice">marked elements are essential</span>
 	<button class="changeBtn" id="change">change</button>
 </div>
 </body>
