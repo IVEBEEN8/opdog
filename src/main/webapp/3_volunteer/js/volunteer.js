@@ -2,16 +2,19 @@ function modifyPost(accountNo, aNo, vNo) {
   if (accountNo != aNo) {
     alert("you can't modify the article");
   } else {
+	console.log(accountNo);
+	console.log(aNo);
+	console.log(vNo);
     location.href = "VolunteerModiC?no=" + vNo;
   }
 }
-function deletePost(accountNo, aNo, n) {
+function deletePost(accountNo, aNo, n, locate) {
   if (accountNo != aNo) {
-    alert("you can't modify the article");
+    alert("you can't delete the article");
   } else {
     let ok = confirm("Are you sure you want to delete?");
     if (ok) {
-      location.href = "VolunteerDelC?no=" + n;
+      location.href = "VolunteerDelC?no=" + n + "&locate=" + locate;
     }
   }
 }
@@ -162,11 +165,9 @@ function paging(json){
 				
 			})
 			$('#volList').html(dataHtml);
-		}
-		
+		}	
 	})
-	
-	
+
 }
 
 $(document).ready(function () {
