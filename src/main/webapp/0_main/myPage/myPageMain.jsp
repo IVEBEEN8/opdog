@@ -7,6 +7,12 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="0_main/css/myPage.css">
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
+	rel="stylesheet" />
+</head>
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
@@ -59,7 +65,8 @@
 				<div id="infoPage" class="innerPage p1">
 					<div class="p1Inner">
 						<div>
-							<p class="title">My info<p>
+							<p class="title">My info
+							<p>
 						</div>
 						<div class="itemBoxP1">
 							<div class="columnBoxP1">
@@ -78,7 +85,7 @@
 								<div class="columnP1">address</div>
 								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.uprText }&nbsp;${account.orgText }</div>
 							</div>
-							<div class="columnBoxP2">
+							<!-- <div class="columnBoxP2">
 								<div class="columnP1">Password</div>
 								<div class="textP1">
 									<input class="password">
@@ -95,9 +102,10 @@
 								<div class="textP1">
 									<input class="password">
 								</div>
-							</div>
+							</div> -->
 						</div>
-						<button class="updateButton" onclick="location.href='UpdateInfoC'">Update</button>
+						<button class="updateButton" onclick="location.href='UpdateInfoC'">Change
+							Info</button>
 					</div>
 				</div>
 				<div id="likePage" class="innerPage p2">
@@ -109,65 +117,84 @@
 					</c:forEach>
 				</div>
 				<div id="pointPage" class="innerPage p3">
-<%-- 					<div class="po-wrapper">
-						<div class="po-title">
-							<span>Point</span>
+					<div class="point-wrapper">
+						<div class="point-title">
+							<span>My Point</span>
 						</div>
-						<table class="po-table">
-							<tr class="po-semititle">
-								<th class="po-th">Number</th>
-								<th class="po-th">Post Title</th>
-								<th class="po-th">Applied Date</th>
-								<th class="po-th">Detail/Cancel</th>
-							</tr>
-							<c:forEach var="reglist" items="${reglist }" varStatus="status">
-								<tr class="vol-semititle">
-									<td class="vol-td">${reglist.postNo }</td>
-									<td class="vol-td">${reglist.title }</td>
-									<td class="vol-td">${reglist.applied }</td>
-									<td class="vol-td"><button
-											onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
-											class="vol-btn">Detail</button> &nbsp
-										<button
-											onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
-											class="vol-btn">Cancel</button></td>
-								</tr>
-							</c:forEach>
-						</table>
-					</div> --%>
+						<div class="pointMoveWrap">
+							<div class="pointMove">
+								<div class="nowPoint">34,000 point</div>
+							</div>
+						</div>
 
-				</div>
-				<div id="volunteerPage" class="innerPage p4">
-					<div class="vol-wrapper">
-						<div class="vol-title">
-							<span>Saved Volunteer List</span>
-						</div>
-						<table class="vol-table">
-							<tr class="vol-semititle">
-								<th class="vol-th">Post Number</th>
-								<th class="vol-th">Post Title</th>
-								<th class="vol-th">Applied Date</th>
-								<th class="vol-th">Detail/Cancel</th>
-							</tr>
-							<c:forEach var="reglist" items="${reglist }" varStatus="status">
-								<tr class="vol-semititle">
-									<td class="vol-td">${reglist.postNo }</td>
-									<td class="vol-td">${reglist.title }</td>
-									<td class="vol-td">${reglist.applied }</td>
-									<td class="vol-td"><button
-											onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
-											class="vol-btn"><span class="vol-btn">Detail</span></button> &nbsp;
-										<button
-											onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
-											class="vol-btn"><span class="vol-btn">Cancel</span></button></td>
+						<div class="search-wrap">
+							<img class="searchIcon" src="0_main/img/SearchIcon.png"> <input
+								class="search-content">
+
+							<div class="dateRadio1 ">
+								<input type="radio" id="" name="Date" value="" checked /> <label
+									for="lowDate">low Date</label>
+							</div>
+							<div class="dateRadio2">
+								<input type="radio" id="" name="Date" value="" /> <label
+									for="highDate">high Date</label>
+							</div>
+
+
+							<table class="point-table">
+								<tr class="point-semititle">
+									<th class="point-th date">Date</th>
+									<th class="point-th history">History</th>
+									<th class="point-th point">Point</th>
 								</tr>
-							</c:forEach>
-						</table>
+
+								<tr class="point-list">
+									<td class="point-td">날짜</td>
+									<td class="point-td">사용처</td>
+									<td class="point-td">+/- 포인</td>
+								</tr>
+
+							</table>
+						</div>
 					</div>
 				</div>
-			</div>
 
+			</div>
+			<div id="volunteerPage" class="innerPage p4">
+				<div class="vol-wrapper">
+					<div class="vol-title">
+						<span>Saved Volunteer List</span>
+					</div>
+					<table class="vol-table">
+						<tr class="vol-semititle">
+							<th class="vol-th">Post Number</th>
+							<th class="vol-th">Post Title</th>
+							<th class="vol-th">Applied Date</th>
+							<th class="vol-th">Detail/Cancel</th>
+						</tr>
+						<c:forEach var="reglist" items="${reglist }" varStatus="status">
+							<tr class="vol-list">
+								<td class="vol-td">${reglist.postNo }</td>
+								<td class="vol-td">${reglist.title }</td>
+								<td class="vol-td">${reglist.applied }</td>
+								<td class="vol-td"><button
+										onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
+										class="vol-btn">
+										<span>Detail</span>
+									</button> &nbsp
+									<button
+										onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
+										class="vol-btn">
+										<span class="cancle">Cancel</span>
+									</button></td>
+							</tr>
+						</c:forEach>
+					</table>
+				</div>
+			</div>
 		</div>
+
+	</div>
 	</div>
 
 
