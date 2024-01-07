@@ -9,10 +9,10 @@ $(document).ready(function() {
 				type: "GET",
 				data: { value: desertionNo },
 				success: function(response) {
-					$('button[value='+desertionNo+']').parent().remove();
+					$('button[value=' + desertionNo + ']').parent().remove();
 				},
 			})
-		} else{
+		} else {
 			return false;
 		}
 
@@ -23,7 +23,7 @@ $(document).ready(function() {
 });
 function myPageButton() {
 	innerPageOff()
-	$('#infoPage').css({  "display": "block" })
+	$('#infoPage').css({ "display": "block" })
 	buttonCss()
 	$('.b1').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
 
@@ -31,16 +31,16 @@ function myPageButton() {
 
 function likeButton() {
 	innerPageOff()
-	$('#likePage').css({  "display": "block" })
+	$('#likePage').css({ "display": "block" })
 	buttonCss()
-	$('.b2').css({  "background-color": "rgba(67, 49, 28, 0.1)" })
+	$('.b2').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
 }
 
 function pointButton() {
 	innerPageOff()
 	$('#pointPage').css({ "display": "block" })
 	buttonCss()
-	$('.b3').css({ "background-color": "rgba(67, 49, 28, 0.1)"  })
+	$('.b3').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
 }
 function volunteerButton() {
 	innerPageOff()
@@ -52,10 +52,13 @@ function innerPageOff() {
 	$('#infoPage').css({ "display": "none" })
 	$('#likePage').css({ "display": "none" })
 	$('#pointPage').css({ "display": "none" })
-	$('#volunteerPage').css({  "display":  "none" })
+	$('#volunteerPage').css({ "display": "none" })
 }
 
 function buttonCss() {
 	$('.button').css({ "background-color": "transparent" })
 
 }
+
+
+
