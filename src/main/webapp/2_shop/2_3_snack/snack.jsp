@@ -85,9 +85,9 @@
 			</div>
 			<div class="search-zero">${message}</div>
 			<div class="price-order" align="right">
-				<input type="radio" name="sort" value="high"
+				<input type="radio" name="sort" value="high" id="radio-high-price"
 					onclick="location.href='SnackSortC?sort=high'"> Highest
-				price &nbsp; <input type="radio" name="sort" value="low"
+				price &nbsp; <input type="radio" name="sort" value="low" id="radio-low-price"
 					onclick="location.href='SnackSortC?sort=low'"> Lowest price
 
 			</div>
@@ -173,6 +173,15 @@
 												});
 							});
 		</script>
+		<script>
+  // Controller에서 전달된 체크된 radio button 적용
+  const checkedRadio = "${checkedRadio}";
+  if (checkedRadio === "high") {
+    document.getElementById("radio-high-price").checked = true;
+  } else if (checkedRadio === "low") {
+    document.getElementById("radio-low-price").checked = true;
+  }
+</script>
 
 
 

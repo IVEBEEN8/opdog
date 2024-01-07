@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +31,7 @@
 					</div>
 					<div class="statusWrap">
 						<div class="post-status">
-							<p>${vol.v_status }</p>
+							<div class="recruiting"> ${vol.v_status }</div>
 						</div>
 					</div>
 					<div>
