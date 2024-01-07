@@ -152,31 +152,29 @@ input:focus {
 }
 
 .middle-post {
-	    width: 60vw;
-	height: 20vw;
-	display: flex;
-	gap: 2vw;
+	position: relative;
+    width: 60vw;
+    display: flex;
+    gap: 2vw;
 }
 
 .td-wrapper {
-	height: 99%;
-    display: flex;
-    gap: 3.5vw;
+    height: 100%;
+    gap: 11%;
     flex-direction: column;
     position: relative;
-    /* top: 3vw; */
     margin-left: 1vw;
 }
 
 .post-left {
-	width: 57vw;
-	margin-left: 1vw;
+    width:60vw;
 }
 
 .post-btn {
-	display: flex;
-	position: relative;
-	gap: 0.5vw;
+	width: 43vw;
+    display: flex;
+    position: relative;
+    gap: 0.5vw;
 }
 
 .post-btn-txt {
@@ -184,7 +182,7 @@ input:focus {
     position: relative;
     border-radius: 30vw;
     border: none;
-    width: 6.8vw;
+    padding: 0 0.7vw;
     height: 2.6vw;
     font-family: "Poppins", sans-serif;
     font-size: 1vw;
@@ -200,7 +198,8 @@ input:focus {
 }
 
 .post-text{
-	overflow: hidden;
+	height: 30%;
+    overflow: hidden;
     white-space: normal;
     position: relative;
 }
@@ -215,7 +214,7 @@ input:focus {
 }
 
 .smallTxt {
-	height: 34%;
+    height: 26vh;
     position: relative;
     color: #000;
     font-family: "DM Sans", sans-serif;
@@ -243,7 +242,6 @@ input:focus {
 
 /*포스트 이미지*/
 .post-img {
-	/* border: solid 1px pink; */
 	width: 20.052083333333336vw;
 	height: 20vw;
 	border-radius: 30px;
