@@ -308,6 +308,41 @@ html, body {
 	letter-spacing: 0.05vh;
 }
 
+/* 라이크독 css */
+.like-wrapper{
+	height: 90%;
+    margin: 4%;
+    padding: 2% 2%;
+    position: relative;
+    background-color: #F8F8F8;
+    border-radius: 2%;
+}
+
+.like-title{
+	font-size: 2vw;
+	font-family: "Poppins", sans-serif;
+	color: rgba(67, 49, 28, 0.90);
+	text-align: center;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.23px;
+	
+}
+
+.likecontent-wrapper {
+    display: flex;
+        display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.likecontent-wrapper>img{
+	width: 10vw;
+    height: 10vw;
+}
+
+
 /* volunteer css */
 .vol-wrapper {
 	height: 90%;
@@ -420,7 +455,7 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	color: rgba(67, 49, 28, 0.90);
-	text-align: center
+	text-align: center;
 	font-family: "Poppins", sans-serif;
 	font-size: 1.2vw;
 	font-style: normal;

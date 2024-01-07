@@ -109,13 +109,22 @@
 					</div>
 				</div>
 				<div id="likePage" class="innerPage p2">
-					<div>my booked dog</div>
+				<div class="like-wrapper">
+					<div class="like-title">my booked dog</div>
 					<c:forEach var="list" items="${list }" varStatus="status">
-						<div> <img alt="" src="${list.img }"> 나이: ${list.age } 품종: ${list.kind } 성별: ${list.sex }
-							중성화: ${list.neuter }</div>
+						<div class="likecontent-wrapper">
+							<img alt="" src="${list.img }">
+							<div class="likecontent">
+							<p>Age: ${list.age }</p>
+							<p>Kind: ${list.kind }</p>
+							<p>Gender: ${list.sex }</p>
+							<p>Neuter: ${list.neuter }</p>
+							</div>
+						</div>
 						<button id="detail" value="${status.count }">상세보기</button>
-						<button id="cancel"> cancel</button>
+						<button id="cancel">cancel</button>
 					</c:forEach>
+					</div>
 				</div>
 				<div id="pointPage" class="innerPage p3">
 					<div class="point-wrapper">
