@@ -127,9 +127,9 @@ rgba(197, 137, 64, 1);
 
 /* 출력화면 css입니다~ */
 #closeBtn1 {
-	width: 97%;
+	width: 92%;
     text-align: right;
-    bottom: 5vh;
+    bottom: 4vh;
     position: relative;
     font-weight: bold;
     stroke-width: 10px;
@@ -138,12 +138,12 @@ rgba(197, 137, 64, 1);
     cursor: pointer;
 }
 #modalBody1 {
-	top: 11%;
-    width: 87%;
-    position: absolute;
+    top: -5.3vh;
+    width: 23vw;
+    position: relative;
     border-top: 1px solid black;
-    height: 75%;
-    padding: 3% 6.5%;
+    height: 37vh;
+    /* padding: 3% 6.5%; */
     overflow-x: scroll;
 }
 #modalContent1{
@@ -169,9 +169,9 @@ rgba(197, 137, 64, 1);
 .mtitle{
 	background: #FAF8F1;
     z-index: 3;
-    top: 6%;
+    top: 1.4vh;
     position: relative;
-    font-size: 250%;
+    font-size: 3vh;
 }
 .box-title1{
 	display: flex;
@@ -179,16 +179,35 @@ rgba(197, 137, 64, 1);
     margin: 2.6vh;
     text-align: left;
     font-size: 0.9vw;
+    position: relative;
+    top: 2vh;
 }
 
 .small-title1{
-	width: 30%;
+	color: brown;
+    font-weight: bold;
+    font-size: 0.9vw;
+    width: 40%;
 }
 .small-content1{
-	left: 34%;
-    position: absolute;
-    width: 59%;
-    white-space: normal
+	position: relative;
+    width: 60%;
+    white-space: normal;
+}
+.small-title2{
+	margin-top: 7vh;
+    text-align: center;
+    font-size: 2vw;
+    position: relative;
+    white-space: normal;
+}
+.modalContent2{
+	background: #FAF8F1;
+    position: relative;
+    margin-top: 30vh;
+    width: 32vw;
+    height: 28vh;
+    border-radius: 20px;
 }
 
 
