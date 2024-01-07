@@ -146,7 +146,6 @@ function quickClick() {
 	  const $counter = document.querySelector(".count");
         const max = totalCount;
         counter($counter, max);
-	
 	//alert("₍ᐢ. ̫.ᐢ₎♡");
 	 }
 

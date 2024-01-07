@@ -20,6 +20,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
 <script src="1_adopt/js/searchhw.js"></script>
+<script src="1_adopt/js/centerinfo.js"></script>
+
 </head>
 <body>
 <div class="containar1-2">
@@ -27,11 +29,9 @@
 	<div class="map" id="map"></div>
 	<!--검색창!-->
 	<div class="row">
-        <form action="SearchC" method="post" name="keywords-serch" id="searchForm">
             <div class="pull-right-wrap1-2">
                     <div class="pull-right1-2">
                         <select class="form-control" name="searchField">
-              
                             <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
                             <option value="c_careAddr">&nbsp;&nbsp;Address</option>
                         </select>
@@ -43,7 +43,6 @@
                         <button type="button" class="searchButton1-2" id="searchButton"><img class="searchi" src="1_adopt/img/search.png"></button>
                    </div>
             </div>
-        </form>
     </div>
     <!-- 인풋박스 시작! -->
 	<div class="infobox-wrap1-2">
@@ -81,7 +80,7 @@
 	
 <!--검색 모달! -->
 	<div id="printinfo1">
-  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">x</div>
+  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">&times;</div>
    			 <div id="modalBody1">
     		</div>
   		</div>
@@ -106,61 +105,106 @@ map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);
 //클러스터링을 위한 마커배열생성!
 var markers = [];
 
-//공공데이터 api를 가져와서 사용!	
-async function fetchData() {
-    var apiUrl = 'https://apis.data.go.kr/1543061/animalShelterSrvc/shelterInfo?serviceKey=sJG8TCmXj96iwKxnSPRAaGazSqjp8g97CNLXDwtsv7BNaDo%2F6qhQtG3OIp0MAEreldhU5TicAqKPPvCVcrj7cA%3D%3D&numOfRows=1000&pageNo=1&_type=json';
-    try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error('네트워크 응답이 올바르지 않습니다.');
-        }
-        return await response.json();
-    } catch (error) {
-        console.error('데이터를 가져오는 중 오류 발생:', error);
-        return null;
+var apiUrl = 'https://apis.data.go.kr/1543061/animalShelterSrvc/shelterInfo?serviceKey=sJG8TCmXj96iwKxnSPRAaGazSqjp8g97CNLXDwtsv7BNaDo%2F6qhQtG3OIp0MAEreldhU5TicAqKPPvCVcrj7cA%3D%3D&numOfRows=1000&pageNo=1&_type=json';
+console.log(apiUrl);
+	
+fetch(apiUrl)
+.then(response => {
+    if (!response.ok) {
+        throw new Error('Network response was not ok');
     }
-}
+    return response.json();
+})
+.then(data => {
+    console.log("Data received successfully:");
 
-function translateText(text, targetLang, callback) {
-    // 파파고 API 키를 여기에 입력하세요
-    var apiKey = 'YOUR_PAPAGO_API_KEY';
+    var markers = [];
 
-    // 파파고 API 요청 주소
-    var apiUrl = 'https://openapi.naver.com/v1/papago/n2mt';
+    function createMarker(lat, lng) {
+        var marker = new kakao.maps.Marker({
+            position: new kakao.maps.LatLng(lat, lng),
+            clickable: true,
+        });
+    
+        
+        marker.setMap(map);
 
-    // AJAX를 사용하여 파파고 API에 번역 요청 보내기
-    var xhr = new XMLHttpRequest();
-    xhr.open('POST', apiUrl, true);
-    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-    xhr.setRequestHeader('X-Naver-Client-Id', apiKey);
-    xhr.setRequestHeader('X-Naver-Client-Secret', apiKey);
+        markers.push(marker);
 
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            var response = JSON.parse(xhr.responseText);
-            var translatedText = response.message.result.translatedText;
-            callback(translatedText);
-        }
-    };
+        kakao.maps.event.addListener(marker, 'click', function () {
+        	
+        	
+        	console.log("마커를 클릭했어요~");
+        	console.log($("#printinfo")); 
+            $("#printinfo").show();
+            
+            $.ajax({
+                url: "SendMarkC",
+                data: {
+                    lat: lat, lng: lng
+                },
+                success: function (data) {
+                    $("#modalBody").empty();
+                    
+                    for (var i = 0; i < data.length; i++) {
+                    	console.log(data[i].careNm);
+                    	console.log(data[i].careAddr);
+                    	console.log(data[i].tel);
+                    	console.log(data[i].oprtime);
+                    	console.log(data[i].closetime);
+                    	console.log(data[i].close);
+                    	
+                        $("#modalBody").append('<div id="closeBtn">&times;<div>')
+                        $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
+	                    $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
+	                    $("#modalBody").append('<div class="box-title modal-carenm">' + data[i].careNm + '</div>');
+	                    $("#modalBody").append('<div class="box-title modal-careAddr">' + data[i].careAddr + '</div></div>');
+	                    $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Tel&nbsp;</span>' + data[i].tel + '</div></div>');
+	                    $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Operation</span>	' + data[i].oprtime +'~'+ data[i].closetime + '</div>');
+	                    $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Closed</span>	' + data[i].closeday + '</div>');
+                    }
 
-    var params = 'source=ko&target=' + targetLang + '&text=' + encodeURIComponent(text);
-    xhr.send(params);
-}
+                    $("#closeBtn").on("click", function () {
+                        $("#printinfo").hide();
+                        console.log(22);
+                    });
 
-function createMarker(lat, lng, data) {
-    var marker = new kakao.maps.Marker({
-        position: new kakao.maps.LatLng(lat, lng),
-        clickable: true
+                },
+                error: function (request, status, error) {
+                    console.error('Error sending marker coordinates to server:', error);
+                }
+            });
+        });
+    }
+
+    
+    for (var i = 0; i < data.response.body.items.item.length; i++) {
+        var item = data.response.body.items.item[i];
+        createMarker(parseFloat(item.lat), parseFloat(item.lng));
+    }
+
+    var clusterer = new kakao.maps.MarkerClusterer({
+        map: map,
+        averageCenter: true,
+        minLevel: 10,
+        markers: markers,
+    });
+
+    console.log("done!");
+});
+
+/*  	
     });
     marker.data = data;  // 데이터를 마커에 연결
     markers.push(marker);
+   	
     
     kakao.maps.event.addListener(marker, 'click', function () {
         var markerData = marker.data;
-       
         //이전 모달데이터 초기화~	
         $("#modalBody").empty();
-        //전화번호 대체처리! 
+        //전화번호 대체처리!
+        
         const tel = markerData.careTel === "***********" ? "1577-0954" : markerData.careTel;
         //수의사 정보 대체처리!
         const vet = markerData.vetPersonCnt === 0 ? "vet service not available" : markerData.vetPersonCnt + "명";
@@ -168,7 +212,7 @@ function createMarker(lat, lng, data) {
         const modifiedCloseDay = markerData.closeDay.replace(/\+/g, ', ').replace(/0/g, 'Open Always');
         // 모댤에에 나올정보!
         
-        $("#modalBody").append('<div id="closeBtn">x<div>')
+        $("#modalBody").append('<div id="closeBtn">&times;<div>')
         $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
         $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
         $("#modalBody").append('<div class="box-title modal-carenm">' + markerData.careNm + '</div>');
@@ -185,6 +229,8 @@ function createMarker(lat, lng, data) {
     });
     marker.setMap(map);
 }
+ */
+
 
 // 닫기 버튼 클릭 이벤트 핸들러
 const printinfobox = document.getElementById('printinfo');
@@ -248,8 +294,6 @@ $(document).ready(function() {
         for(let i =0; i<scv.length; i++){
             console.log(scv[i]);
         }
-      
-      
         if (scv.length === 8 && scv[2] !== "" && scv[3] !== "") {
             // 좌표값이 유효한 경우에만 지도를 생성하고 이동시킵니다.
             var centername = scv[0]; // 보호소이름

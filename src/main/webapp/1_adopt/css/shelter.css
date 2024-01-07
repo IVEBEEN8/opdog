@@ -246,16 +246,17 @@ body {
 
 /*모달 css*/
 #modalContent{
-  margin-top: 10vh;
-  width: 500px;
-  height: 300px;
-  border-radius: 15px;
+    position: relative;
+    margin-top: 10vh;
+    width: 31vw;
+    height: 35vh;
+    border-radius: 2vw;
 }
 
 #printinfo {
   display: none;
   position: fixed; /* Stay in place */
-  z-index: 2; /* Sit on top */
+  z-index: 999; /* Sit on top */
   padding-top: 100px; /* Location of the box */
   left: 0;
   top: 0;
@@ -296,11 +297,10 @@ body {
     border-radius: 20px;
 }
 
-#modalBody1 {
-	left: 2%;
-    top: 11%;
-    width: 83%;
-    position: absolute;
+#modalBody1 {	   
+	bottom: 3.1vh;  
+    width: 80%;
+    position: relative;
     border-top: 2px solid black;
     height: 75%;
     padding: 3% 6.5%;
@@ -325,8 +325,10 @@ body {
 }
 
 #closeBtn1 {
-	left: 94%; 
-    position: absolute;
+    bottom: 3vh;
+    right: 1vw;
+    text-align: right;
+    position: relative;
     font-weight: bold;
     stroke-width: 10px;
     stroke: #43311C;
@@ -336,7 +338,6 @@ body {
 
 .box-title{
     white-space: normal;
-    margin-bottom: 2.1vh;
     margin-left: 10vw;
     position: relative;
     width: 19vw;
@@ -384,6 +385,9 @@ body {
     position: relative;
     width: 78%;
     white-space: normal;
+}
+.small-content1::-webkit-scrollbar {
+    display: none; 
 }
 
 .search-container1-2 {
@@ -491,16 +495,22 @@ body {
  
 }
 .modal-carenm{
-	font-size: 2vh;
+	width: 17vw;
+    height: 6vh;
+    font-size: 2vh;
+}
+.modal-careAddr{
+	width: 17vw;
+    height: 6vh;
+    font-size: 1.5vh;
+    overflow: auto;
 }
 .mtitle{
-	height: 6%;
 	background: #FAF8F1;
     z-index: 3;
-    top: 6%;
-    left: 32%;
-    position: absolute;
-    font-size: 236%;
+    top: 2.8vh;
+    position: relative;
+    font-size: 2vh;
 }
 /*리스트 크기조절*/
 .li-pic{
