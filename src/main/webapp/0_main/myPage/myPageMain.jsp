@@ -123,6 +123,12 @@
 						</div>
 						<button id="detail" value="${status.count }">상세보기</button>
 						<button id="cancel">cancel</button>
+						<%-- <div>
+							<img alt="" src="${list.img }" style="width: 100px;"> 나이:
+							${list.age } 품종: ${list.kind } 성별: ${list.sex } 중성화:
+							${list.neuter }
+							<button id="cancel" value="${list.no }">cancel</button>
+						</div> --%>
 					</c:forEach>
 					</div>
 				</div>
