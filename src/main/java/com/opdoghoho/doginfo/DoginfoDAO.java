@@ -7,7 +7,11 @@ import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.stream.Collectors;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -17,6 +21,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
+import com.opdoghj.main.DogB;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 
@@ -133,6 +138,10 @@ public class DoginfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
+		
+		Date currenDate = new Date();
+		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
+
 
 		String sido = request.getParameter("value1");
 		System.out.println(sido);
@@ -167,6 +176,17 @@ public class DoginfoDAO {
 			ArrayList<dogInfo> doginfos = new ArrayList<dogInfo>();
 			dogInfo d = null;
 			while (rs.next()) {
+				int noticeEdt = rs.getInt("d_noticeEdt");
+				String noticeEdtStr = String.valueOf(noticeEdt);
+				Date noticeEdtDate = dateFormat.parse(noticeEdtStr);
+				long diffMS = currenDate.getTime() - noticeEdtDate.getTime();
+				long diffdays = 10 - (diffMS / (24 * 60 * 60 * 1000L)) % 365;
+				String Dday = "";
+				if (diffdays>=0) {
+					Dday = "-" + diffdays;
+				} else {
+					Dday = "+" + Math.abs(diffdays);
+				}
 				d = new dogInfo();
 				d.setAge(rs.getString("d_age"));
 				d.setCareAddr(rs.getString("d_careaddr"));
@@ -186,10 +206,16 @@ public class DoginfoDAO {
 				d.setProcessState(rs.getString("d_Processstate"));
 				d.setSexCd(rs.getString("d_SexCd"));
 				d.setWeight(rs.getString("d_weight"));
+				d.setdDay(Dday);
 				doginfos.add(d);
 			}
+			
+			Comparator<dogInfo> comparedDate = Comparator.comparing(dogInfo::getNoticeEdt, Comparator.naturalOrder());
+			ArrayList<dogInfo> comparedDogInfoList = (ArrayList<dogInfo>) doginfos.stream().sorted(comparedDate)
+					.collect(Collectors.toList());
+			
 			Gson gson = new Gson();
-			String jsonDoginfo = gson.toJson(doginfos);
+			String jsonDoginfo = gson.toJson(comparedDogInfoList);
 			if (jsonDoginfo != null) {
 				System.out.println("여기서 터진거면 어레이 담을 때 ");
 				System.out.println(jsonDoginfo);

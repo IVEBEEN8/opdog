@@ -10,13 +10,14 @@ public class dogLikeList {
 	private String mark;
 	private String center;
 	private String org;
+	private String img;
 	
 	public dogLikeList() {
 		// TODO Auto-generated constructor stub
 	}
 
 	public dogLikeList(String age, String no, String kind, String color, String sex, String neuter, String mark,
-			String center, String org) {
+			String center, String org, String img) {
 		super();
 		this.age = age;
 		this.no = no;
@@ -27,6 +28,7 @@ public class dogLikeList {
 		this.mark = mark;
 		this.center = center;
 		this.org = org;
+		this.img = img;
 	}
 
 	public String getAge() {
@@ -100,6 +102,15 @@ public class dogLikeList {
 	public void setOrg(String org) {
 		this.org = org;
 	}
+
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 	
 	
 	

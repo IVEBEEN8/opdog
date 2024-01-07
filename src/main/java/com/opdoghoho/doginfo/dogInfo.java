@@ -19,6 +19,7 @@ public class dogInfo {
 	private String neuterYn;
 	private String happenDt;
 	private String age;
+	private String dDay;
 	
 	public dogInfo() {
 		// TODO Auto-generated constructor stub
@@ -26,7 +27,7 @@ public class dogInfo {
 
 	public dogInfo(String sexCd, String kindCd, String noticeNo, String processState, String careAddr, String weight,
 			String chargeNm, String desertionNo, String careNm, String careTel, String officeTel, String orgNm,
-			String filename, String popfile, int noticeEdt, String neuterYn, String happenDt, String age) {
+			String filename, String popfile, int noticeEdt, String neuterYn, String happenDt, String age, String dDay) {
 		super();
 		this.sexCd = sexCd;
 		this.kindCd = kindCd;
@@ -46,6 +47,7 @@ public class dogInfo {
 		this.neuterYn = neuterYn;
 		this.happenDt = happenDt;
 		this.age = age;
+		this.dDay = dDay;
 	}
 
 	public String getSexCd() {
@@ -190,6 +192,14 @@ public class dogInfo {
 
 	public void setAge(String age) {
 		this.age = age;
+	}
+
+	public String getdDay() {
+		return dDay;
+	}
+
+	public void setdDay(String dDay) {
+		this.dDay = dDay;
 	}
 
 	

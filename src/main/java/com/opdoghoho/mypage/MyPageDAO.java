@@ -24,7 +24,7 @@ public class MyPageDAO {
 		String aa = request.getParameter("value");
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?)";
+		String sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?,?,?)";
 		try {
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
@@ -38,7 +38,9 @@ public class MyPageDAO {
 			pstmt.setString(7, (String) bb.get("specialMark"));
 			pstmt.setString(8, (String) bb.get("careNm") + "!" + bb.get("careTel") + "!" + bb.get("careAddr"));
 			pstmt.setString(9, (String) bb.get("orgNm") + "!" + bb.get("chargeNm") + "!" + bb.get("officetel"));
-			pstmt.setInt(10, account.getNo());
+			pstmt.setString(10, (String) bb.get("popfile"));
+			pstmt.setString(11, (String) bb.get("filename"));
+			pstmt.setInt(12, account.getNo());
 			System.out.println(account.getNo());
 			pstmt.executeUpdate();
 
@@ -75,6 +77,7 @@ public class MyPageDAO {
 				like.setMark(rs.getString("d_mark"));
 				like.setCenter(rs.getString("d_center"));
 				like.setOrg(rs.getString("d_org"));
+				like.setImg(rs.getString("d_thunbnail"));
 				list.add(like);
 			}
 			request.setAttribute("list", list);
