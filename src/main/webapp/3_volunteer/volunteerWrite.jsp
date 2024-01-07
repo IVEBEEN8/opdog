@@ -1,34 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="3_volunteer/css/volunteerWrite.css" />
-    <script src="3_volunteer/js/volunteerReg.js"></script>
-  </head>
-  <body>
-    <form
-      action="VtWriteC"
-      method="post"
-      enctype="multipart/form-data"
-      onsubmit="return checkForm();"
-    >
-      <main>
-        <input name="locate" type="hidden" value="${locate }" />
-        <div class="main">
-          <!-- 제목 삭제 -->
-          <!-- <div class="main-title">Recruiting Volunteer</div> -->
-          <div class="container">
-            <div class="sub-container">
-              <div>
-                <div class="review-title">Status</div>
-                <select class="chooseStatus" name="chooseStatus">
-                  <option class="" value="Recruiting">Recruiting</option>
-                </select>
-              </div>
 
 <!DOCTYPE html>
 <html>
@@ -151,9 +123,5 @@ pageEncoding="UTF-8"%>
       </main>
     </form>
   </body>
-</html>
-		</main>
-	</form>
-</body>
 </html>
 

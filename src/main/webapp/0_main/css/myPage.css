@@ -57,7 +57,7 @@ html, body {
 	width: 6.510416666666667vw;
 	color: #333;
 	font-family: "Poppins", sans-serif;
-	font-size: 1.1vw;
+	font-size: 0.7vw;
 	font-weight: 800;
 	line-height: normal;
 	letter-spacing: 0.18px;
@@ -420,7 +420,7 @@ html, body {
 	flex-direction: column;
 	justify-content: center;
 	color: rgba(67, 49, 28, 0.90);
-	text-align: center
+	text-align: center;
 	font-family: "Poppins", sans-serif;
 	font-size: 1.2vw;
 	font-style: normal;
@@ -540,3 +540,38 @@ html, body {
 
 .date, .point {
 	width: 10vw;
+}
+
+/* 모달.. */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

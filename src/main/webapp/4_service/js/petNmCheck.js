@@ -29,21 +29,17 @@ $(document).ready(function(){
 	            // 특정 값 액세스!
 				if(resultMsg != "NORMAL SERVICE."){
 					$("#modalBody1").empty();
-					$("#span-title").empty();
 					$("#span-title").append('OOPS!');
 					$("#modalBody1").append('<div class="box-title1"><div class="small-title2">You mistype the information.\nPlease check it again.</div><div class="small-content2"></div></div>');
 	            }
 				const body = response.response.body;
-				console.log(body);
 	            const item = body.item;
-				console.log(item);
 	            const rfidCd = item.rfidCd;
 	            const dogNm = item.dogNm;
 	            const sexNm = item.sexNm;
 	            const kindNm = item.kindNm;
 				const orgNm = item.orgNm;
 	            const officeTel = item.officeTel;
-	            const aprGbNm = item.aprGbNm;
 				
 				$.ajax({
                 url: "TranslateInfoC",
@@ -51,7 +47,7 @@ $(document).ready(function(){
                    dogNm, sexNm, kindNm, orgNm
                 },
                 success: function (data) {
-						console.log(data);
+			
 				const translatedDogNm = data[0].dogNm;
 				const translatedSexNm = data[0].sexNm;	
 				const translatedKindNm = data[0].kindNm;	
@@ -62,7 +58,7 @@ $(document).ready(function(){
 				$("#span-title").empty();
 				$("#span-title").append('MY  PET INFO');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> ID Number</div><div class="small-content1">' + rfidCd + '</div></div>');
-		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Name of the dog</div><div class="small-content1">' + translatedDogNm  + '</div></div>');
+		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Name</div><div class="small-content1">' + translatedDogNm  + '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Gender</div><div class="small-content1">' + translatedSexNm + '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> Kind</div><div class="small-content1">' + translatedKindNm+ '</div></div>');
 		        $("#modalBody1").append('<div class="box-title1"><div class="small-title1"> OrgNm</div><div class="small-content1"> ' + translatedOrgNm + '</div></div>');	
@@ -72,7 +68,7 @@ $(document).ready(function(){
 			
 				}
 				
-   			}	$("#closeBtn1").on("click", function () {
+   				}	$("#closeBtn1").on("click", function () {
             		$("#printinfo1").hide();
         		});
 
