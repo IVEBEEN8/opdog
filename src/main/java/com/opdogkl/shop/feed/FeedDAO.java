@@ -188,6 +188,8 @@ public static void sortFeed(HttpServletRequest request) {
 			
 			// 요청에서 정렬 값 가져오기
 		    String sort = request.getParameter("sort");
+		    // 체크된 radio button 정보 전달
+		    request.setAttribute("checkedRadio", sort);
 			
 			if ("high".equals(sort)) {
 		        sql = "select * from feed_kl order by f_price desc"; // 낮은가격순

@@ -30,10 +30,10 @@
 			</c:forEach>
 			<c:choose>
 				<c:when test="${curPageNo != 1 }">
-					<a href="ReviewPageC?p=${curPageNo -1 }"><button class="left">◀</button></a>
+					<a href="ReviewPageC?p=${curPageNo -1 }"><button class="left">&lt;</button></a>
 				</c:when>
 				<c:otherwise>
-					<button onclick="dontMove()" class="left">◀</button>
+					<button onclick="dontMove()" class="left">&lt;</button>
 				</c:otherwise>
 			</c:choose>
 		</div>
@@ -41,10 +41,10 @@
 		<div class="page-controller">
 			<c:choose>
 				<c:when test="${pageCount != curPageNo }">
-					<a href="ReviewPageC?p=${curPageNo +1 }"><button class="right">▶</button></a>
+					<a href="ReviewPageC?p=${curPageNo +1 }"><button class="right">&gt;</button></a>
 				</c:when>
 				<c:otherwise>
-					<button onclick="dontMove()" class="right">▶</button>
+					<button onclick="dontMove()" class="right">&gt;</button>
 				</c:otherwise>
 			</c:choose>
 		</div>
