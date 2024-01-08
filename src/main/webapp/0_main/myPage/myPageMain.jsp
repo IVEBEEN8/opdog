@@ -133,7 +133,6 @@
 											<p>Neuter</p>${list.neuter }</div>
 									</div>
 									<div class="btn-wrapper">
-										<button class="like-btn" id="detail" value="${status.count }">Detail</button>
 										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
 									</div>
 								</div>
