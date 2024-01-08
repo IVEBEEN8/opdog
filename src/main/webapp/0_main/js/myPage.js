@@ -1,93 +1,83 @@
-$(document).ready(function() {
-	$(document).on("click", "button[id=cancel]", function() {
-		var desertionNo = $(this).val();
-		var button = $(this)
-		console.log(desertionNo);
-		if (confirm("취소하시겠습니까?")) {
-			$.ajax({
-				url: "DelLikeC",
-				type: "GET",
-				data: { value: desertionNo },
-				success: function(response) {
-<<<<<<< HEAD
-					alert('삭제완료되었습니다.')
-=======
->>>>>>> 37d32d5a753ef84896f5d9a8438665a8881a45ca
-					$('button[value=' + desertionNo + ']').parent().remove();
-				},
-			})
-		} else {
-			return false;
-		}
-	});
+$(document).ready(function () {
+  $(document).on("click", "button[id=cancel]", function () {
+    var desertionNo = $(this).val();
+    var button = $(this);
+    console.log(desertionNo);
+    if (confirm("취소하시겠습니까?")) {
+      $.ajax({
+        url: "DelLikeC",
+        type: "GET",
+        data: { value: desertionNo },
+        success: function (response) {
+          $("button[value=" + desertionNo + "]")
+            .parent()
+            .remove();
+        },
+      });
+    } else {
+      return false;
+    }
+  });
 });
 function myPageButton() {
-	innerPageOff()
-	$('#infoPage').css({ "display": "block" })
-	buttonCss()
-	$('.b1').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
-
+  innerPageOff();
+  $("#infoPage").css({ display: "block" });
+  buttonCss();
+  $(".b1").css({ "background-color": "rgba(67, 49, 28, 0.1)" });
 }
 
 function likeButton() {
-	innerPageOff()
-	$('#likePage').css({ "display": "block" })
-	buttonCss()
-	$('.b2').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
+  innerPageOff();
+  $("#likePage").css({ display: "block" });
+  buttonCss();
+  $(".b2").css({ "background-color": "rgba(67, 49, 28, 0.1)" });
 }
 
 function pointButton() {
-	innerPageOff()
-	$('#pointPage').css({ "display": "block" })
-	buttonCss()
-	$('.b3').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
-<<<<<<< HEAD
-	// 카운트를 표시할 요소
-	const $counter = document.querySelector(".nowPoint");
+  innerPageOff();
+  $("#pointPage").css({ display: "block" });
+  buttonCss();
+  $(".b3").css({ "background-color": "rgba(67, 49, 28, 0.1)" });
 
-	// 목표수치
-	const max = $('#max').val();
+  // 카운트를 표시할 요소
+  const $counter = document.querySelector(".nowPoint");
 
-	counter($counter, max);
-=======
->>>>>>> 37d32d5a753ef84896f5d9a8438665a8881a45ca
+  // 목표수치
+  const max = $("#max").val();
+
+  counter($counter, max);
 }
 function volunteerButton() {
-	innerPageOff()
-	$('#volunteerPage').css({ "display": "block" })
-	buttonCss()
-	$('.b4').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
+  innerPageOff();
+  $("#volunteerPage").css({ display: "block" });
+  buttonCss();
+  $(".b4").css({ "background-color": "rgba(67, 49, 28, 0.1)" });
 }
 function innerPageOff() {
-	$('#infoPage').css({ "display": "none" })
-	$('#likePage').css({ "display": "none" })
-	$('#pointPage').css({ "display": "none" })
-	$('#volunteerPage').css({ "display": "none" })
+  $("#infoPage").css({ display: "none" });
+  $("#likePage").css({ display: "none" });
+  $("#pointPage").css({ display: "none" });
+  $("#volunteerPage").css({ display: "none" });
 }
 
 function buttonCss() {
-	$('.button').css({ "background-color": "transparent" })
-
+  $(".button").css({ "background-color": "transparent" });
 }
-<<<<<<< HEAD
+
 function counter($counter, max) {
   let now = max;
 
   const handle = setInterval(() => {
     $counter.innerHTML = Math.ceil(max - now);
-  
+
     // 목표에 도달하면 정지
     if (now < 1) {
       clearInterval(handle);
     }
-  
+
     // 적용될 수치, 점점 줄어듬
     const step = now / 10;
 
     now -= step;
   }, 50);
 }
-=======
-
-
->>>>>>> 37d32d5a753ef84896f5d9a8438665a8881a45ca

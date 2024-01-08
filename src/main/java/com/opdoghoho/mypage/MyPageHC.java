@@ -18,8 +18,8 @@ public class MyPageHC extends HttpServlet {
 			throws ServletException, IOException {
 		request.setAttribute("contentPage", "../0_main/myPage/myPageMain.jsp");
 		LoginDAO.loginCheck(request);
-		MyPageDAO.likeLoad(request,response);
-//		MyPageDAO.pointLoad(request,response);
+		DoginfoDAO.sido(request);
+		MyPageDAO.likeLoad(request, response);
 		VolunteerDAO.appliedLoad(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 
