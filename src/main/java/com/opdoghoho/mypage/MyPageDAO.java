@@ -124,4 +124,33 @@ public class MyPageDAO {
 		}
 	}
 
+	public static void delLike(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = "delete from opdoglike where d_no in ?";
+		
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, request.getParameter("value"));
+			pstmt.executeQuery();
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

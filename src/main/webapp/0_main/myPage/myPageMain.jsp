@@ -16,6 +16,12 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
+	<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
+
+	
 <script src="0_main/js/myPage.js"></script>
 <script src="0_main/js/changeInfo.js"></script>
 
@@ -110,13 +116,31 @@
 					</div>
 				</div>				
 				<div id="likePage" class="innerPage p2">
-					<div>my booked dog</div>
-					<c:forEach var="list" items="${list }" varStatus="status">
-						<div> <img alt="" src="${list.img }"> 나이: ${list.age } 품종: ${list.kind } 성별: ${list.sex }
-							중성화: ${list.neuter }</div>
-						<button id="detail" value="${status.count }">상세보기</button>
-						<button id="cancel"> cancel</button>
-					</c:forEach>
+					<div class="like-wrapper">
+						<div class="like-title">my booked dog</div>
+					 <div id="data-container" class="foreach-size">
+						<c:forEach var="list" items="${list }" varStatus="status">
+								<div class="likecontent-wrapper">
+									<img alt="" src="${list.img }">
+									<div class="likecontent">
+										<div>
+											<p>Age</p>${list.age }</div>
+										<div>
+											<p>Kind</p>${list.kind }</div>
+										<div>
+											<p>Gender</p>${list.sex }</div>
+										<div>
+											<p>Neuter</p>${list.neuter }</div>
+									</div>
+									<div class="btn-wrapper">
+										<button class="like-btn" id="detail" value="${status.count }">Detail</button>
+										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+						<div id="pagination" class="pagination"></div>
+					</div>
 				</div>
 				<div id="pointPage" class="innerPage p3">
 					<div class="point-wrapper">
