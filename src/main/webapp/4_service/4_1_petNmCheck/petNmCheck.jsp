@@ -46,7 +46,7 @@
 		<input class="petnm-input" id= "petnum">
 	</div>
 	
-	<button class="find-btn4_1" id="submit">Search</button>
+	<button class="find-btn4_1" id="submit" onclick="checkingInfo();">Search</button>
 	<div id="resultContainer"></div>
 </div>
 </div>
@@ -54,7 +54,7 @@
 <!--검색 모달! -->
 	<div id="printinfo1">
   		<div id="modalContent1">
-  			<span class="mtitle">My Pet Info</span>
+  			<span id="span-title" class="mtitle">My Pet Info</span>
   			<div style="z-index:8;"id="closeBtn1">&times;</div>
    			<div id="modalBody1"></div>
   		</div>

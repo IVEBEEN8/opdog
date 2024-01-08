@@ -136,31 +136,31 @@ function paging(json){
 			$.each(data, function (index, item){
 				dataHtml += '<a href="VolunteerDetailC?no=' + item.v_no + '">';
                 dataHtml += '<table id="middle">';
-                dataHtml += '<tr class="middle-post">';
-                dataHtml += '<td class="post-left">';
-                dataHtml += '<div class="td-wrapper">';
-                dataHtml += '<div class="post-btn">';
+                	dataHtml += '<tr class="middle-post">';
+               			 dataHtml += '<td class="post-left">';
+                			dataHtml += '<div class="td-wrapper">';
+               				 	dataHtml += '<div class="post-btn">';
 				if (item.v_status === 'Recruiting') {
-                dataHtml += '<div class="Recruiting post-btn-txt" style="background-color:rgba(250, 234, 177, 0.8);">';
+                					dataHtml += '<div class="Recruiting post-btn-txt">';
 				    dataHtml += '<p>' + item.v_status + '</p>';
-                dataHtml += '</div>';
+                					dataHtml += '</div>';
 				} else if (item.v_status === 'Completed') {
-                dataHtml += '<div class="Recruiting post-btn-txt" style="background-color: #9e6f21;color: white;">';
+                					dataHtml += '<div class="Completed post-btn-txt">';
 				    dataHtml += '<p>' + item.v_status + '</p>';
-                dataHtml += '</div>';
+                					dataHtml += '</div>';
 				} else {
 					console.log("heehee never be here");
 				}
-                dataHtml += '<div class="post-text">';
-                dataHtml += '<div class="bigTxt">' + item.v_title + '</div>';
-                dataHtml += '<div class="smallTxt">' + item.v_txt + '</div>'; // 중괄호를 닫아주는 부분 수정
-                dataHtml += '</div>';
-                dataHtml += '<div class="post-info">';
-                dataHtml += '<div class="post-user">';
-                dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
-                dataHtml += '<div>|' + item.v_created + '</div>';
-                dataHtml += '</div>';
-                dataHtml += '</div>';
+                				dataHtml += '<div class="post-text">';
+                					dataHtml += '<div class="bigTxt">' + item.v_title + '</div>';
+                					dataHtml += '<div class="smallTxt">' + item.v_txt + '</div>'; // 중괄호를 닫아주는 부분 수정
+                				dataHtml += '</div>';
+                				dataHtml += '</div>';
+               					 dataHtml += '<div class="post-info">';
+               					 dataHtml += '<div class="post-user">';
+               						 dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
+               						 dataHtml += '<div>|&nbsp;&nbsp;' +  item.v_created + '</div>';
+                	dataHtml += '</div>';
                 dataHtml += '</div>';
                 dataHtml += '</td>';
                 dataHtml += '<td class="post-img">';
