@@ -9,7 +9,10 @@ $(document).ready(function() {
 				type: "GET",
 				data: { value: desertionNo },
 				success: function(response) {
+<<<<<<< HEAD
 					alert('삭제완료되었습니다.')
+=======
+>>>>>>> 37d32d5a753ef84896f5d9a8438665a8881a45ca
 					$('button[value=' + desertionNo + ']').parent().remove();
 				},
 			})
@@ -38,6 +41,7 @@ function pointButton() {
 	$('#pointPage').css({ "display": "block" })
 	buttonCss()
 	$('.b3').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
+<<<<<<< HEAD
 	// 카운트를 표시할 요소
 	const $counter = document.querySelector(".nowPoint");
 
@@ -45,6 +49,8 @@ function pointButton() {
 	const max = $('#max').val();
 
 	counter($counter, max);
+=======
+>>>>>>> 37d32d5a753ef84896f5d9a8438665a8881a45ca
 }
 function volunteerButton() {
 	innerPageOff()
@@ -63,6 +69,7 @@ function buttonCss() {
 	$('.button').css({ "background-color": "transparent" })
 
 }
+<<<<<<< HEAD
 function counter($counter, max) {
   let now = max;
 
@@ -80,3 +87,7 @@ function counter($counter, max) {
     now -= step;
   }, 50);
 }
+=======
+
+
+>>>>>>> 37d32d5a753ef84896f5d9a8438665a8881a45ca

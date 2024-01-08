@@ -49,8 +49,6 @@
 		<div id="pagination-container" class="pagination-container">
 		</div>
 	</main>	
-	
-
 </body>
 	<script src="3_volunteer/js/volunteer.js"></script>
 </html>
