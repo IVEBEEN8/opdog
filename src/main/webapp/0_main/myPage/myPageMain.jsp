@@ -126,7 +126,7 @@
 						</div>
 						<div class="pointMoveWrap">
 							<div class="pointMove">
-								<div class="nowPoint">34,000 point</div>
+								<div class="nowPoint">0</div> <input id="max" type="hidden" value="1000">
 							</div>
 						</div>
 

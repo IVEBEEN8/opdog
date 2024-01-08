@@ -21,14 +21,26 @@ public class MyPageDAO {
 		HttpSession hs = request.getSession();
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		JSONParser jp = new JSONParser();
-		String aa = request.getParameter("value");
 		Connection con = null;
 		PreparedStatement pstmt = null;
-		String sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?,?,?)";
+		ResultSet rs = null;
+		String sql = "";
+		response.setCharacterEncoding("utf-8");
 		try {
-			con = DBManager_khw.connect();
-			pstmt = con.prepareStatement(sql);
+			String aa = request.getParameter("value");
 			JSONObject bb = (JSONObject) jp.parse(aa);
+
+			con = DBManager_khw.connect();
+			
+			sql = "select d_no from opdoglike where d_no =?";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, (String) bb.get("desertionNo"));
+			rs = pstmt.executeQuery();
+		if (rs.next()) {
+			response.getWriter().print("이미 등록된 강아지입니다.");
+		} else {
+			sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?,?,?)";
+			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, (String) bb.get("age"));
 			pstmt.setString(2, (String) bb.get("desertionNo"));
 			pstmt.setString(3, (String) bb.get("kindCd"));
@@ -43,6 +55,8 @@ public class MyPageDAO {
 			pstmt.setInt(12, account.getNo());
 			System.out.println(account.getNo());
 			pstmt.executeUpdate();
+			response.getWriter().print("등록이 완료되었습니다.");
+		}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -141,6 +155,28 @@ public class MyPageDAO {
 		}
 		
 		
+		
+	}
+
+	public static void pointLoad(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+		String sql = "select * from ordered_kl where a_no=?";
+		
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account.getNo());
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 

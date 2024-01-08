@@ -13,7 +13,7 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.opdoghoho.doginfo.DogB;
 import com.opdoghw.centerinfo.DBManager_khw;
 
 public class MainDAO {

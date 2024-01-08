@@ -21,7 +21,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
-import com.opdoghj.main.DogB;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 

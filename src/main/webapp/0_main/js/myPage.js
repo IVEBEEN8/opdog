@@ -9,21 +9,18 @@ $(document).ready(function() {
 				type: "GET",
 				data: { value: desertionNo },
 				success: function(response) {
-					$('button[value='+desertionNo+']').parent().remove();
+					alert('삭제완료되었습니다.')
+					$('button[value=' + desertionNo + ']').parent().remove();
 				},
 			})
-		} else{
+		} else {
 			return false;
 		}
-
-
-
-
 	});
 });
 function myPageButton() {
 	innerPageOff()
-	$('#infoPage').css({  "display": "block" })
+	$('#infoPage').css({ "display": "block" })
 	buttonCss()
 	$('.b1').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
 
@@ -31,16 +28,23 @@ function myPageButton() {
 
 function likeButton() {
 	innerPageOff()
-	$('#likePage').css({  "display": "block" })
+	$('#likePage').css({ "display": "block" })
 	buttonCss()
-	$('.b2').css({  "background-color": "rgba(67, 49, 28, 0.1)" })
+	$('.b2').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
 }
 
 function pointButton() {
 	innerPageOff()
 	$('#pointPage').css({ "display": "block" })
 	buttonCss()
-	$('.b3').css({ "background-color": "rgba(67, 49, 28, 0.1)"  })
+	$('.b3').css({ "background-color": "rgba(67, 49, 28, 0.1)" })
+	// 카운트를 표시할 요소
+	const $counter = document.querySelector(".nowPoint");
+
+	// 목표수치
+	const max = $('#max').val();
+
+	counter($counter, max);
 }
 function volunteerButton() {
 	innerPageOff()
@@ -52,10 +56,27 @@ function innerPageOff() {
 	$('#infoPage').css({ "display": "none" })
 	$('#likePage').css({ "display": "none" })
 	$('#pointPage').css({ "display": "none" })
-	$('#volunteerPage').css({  "display":  "none" })
+	$('#volunteerPage').css({ "display": "none" })
 }
 
 function buttonCss() {
 	$('.button').css({ "background-color": "transparent" })
 
+}
+function counter($counter, max) {
+  let now = max;
+
+  const handle = setInterval(() => {
+    $counter.innerHTML = Math.ceil(max - now);
+  
+    // 목표에 도달하면 정지
+    if (now < 1) {
+      clearInterval(handle);
+    }
+  
+    // 적용될 수치, 점점 줄어듬
+    const step = now / 10;
+
+    now -= step;
+  }, 50);
 }

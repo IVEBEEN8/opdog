@@ -411,16 +411,15 @@ html, body {
 }
 
 @keyframes Move{
-	from{width:0vw}to{width: 27.864583333333332vw;}
-	}
-
+	from{width:0vw;}to{width: 27.864583333333332vw;}
+}
 
 .nowPoint {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	color: rgba(67, 49, 28, 0.90);
-	text-align: center
+	text-align: center;
 	font-family: "Poppins", sans-serif;
 	font-size: 1.2vw;
 	font-style: normal;

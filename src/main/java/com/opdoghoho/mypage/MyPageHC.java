@@ -19,6 +19,7 @@ public class MyPageHC extends HttpServlet {
 		request.setAttribute("contentPage", "../0_main/myPage/myPageMain.jsp");
 		LoginDAO.loginCheck(request);
 		MyPageDAO.likeLoad(request,response);
+//		MyPageDAO.pointLoad(request,response);
 		VolunteerDAO.appliedLoad(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 
