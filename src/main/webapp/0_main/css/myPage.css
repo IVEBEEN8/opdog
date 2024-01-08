@@ -89,6 +89,7 @@ html, body {
 	background: none;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .button:hover {
@@ -338,15 +339,19 @@ html, body {
 }
 
 .likecontent-wrapper {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    padding-bottom: 1vw;
+    background: rgb(67 49 28 / 6%);
+    flex-direction: column;
 }
 
 .likecontent-wrapper>img {
 	width: 10vw;
 	height: 10vw;
+	border-radius: 0.3vw;
 }
 
 .likecontent{
