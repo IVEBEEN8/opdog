@@ -20,7 +20,6 @@ public class HC extends HttpServlet {
 //			DogDbUpdater.updateDb(request);
 			firstLoading = false;
 		}
-
 		LoginDAO.loginCheckMain(request);
 		MainDAO.totalCountLoading(request);
 		MainDAO.listLoading(request, response);

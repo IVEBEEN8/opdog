@@ -15,7 +15,7 @@ $(document).ready(function(){
 		xhr.open('GET', url + queryParams);
 		xhr.onreadystatechange = function () {
 		console.log('onreadystatechange event triggered');
-		$("#printinfo1").show();
+		
 	    if (xhr.readyState === XMLHttpRequest.DONE) {
 			console.log(xhr.status); //무조건 입력하면 200..
 	        if (xhr.status === 200) {
@@ -28,6 +28,7 @@ $(document).ready(function(){
 				console.log(resultMsg)
 	            // 특정 값 액세스!
 				if(resultMsg != "NORMAL SERVICE."){
+					$("#printinfo1").show();
 					$("#modalBody1").empty();
 					$("#span-title").append('OOPS!');
 					$("#modalBody1").append('<div class="box-title1"><div class="small-title2">You mistype the information.\nPlease check it again.</div><div class="small-content2"></div></div>');
@@ -53,7 +54,7 @@ $(document).ready(function(){
 				const translatedKindNm = data[0].kindNm;	
 				const translatedOrgNm = data[0].orgNm;	
 				
-              
+            	$("#printinfo1").show();  
 				$("#modalBody1").empty();
 				$("#span-title").empty();
 				$("#span-title").append('MY  PET INFO');

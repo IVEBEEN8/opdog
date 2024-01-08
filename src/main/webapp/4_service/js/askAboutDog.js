@@ -32,7 +32,7 @@ document.getElementById("input").addEventListener("keyup", function (event) {
 //HTML 문서가 완전히 로드되었을 때 지정된 함수를 실행하도록 하는 이벤트 리스너
 document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("input").focus();
-   
+
   document.querySelector("#send").addEventListener("click", async function () {
     document.getElementById("input").focus();
 	
