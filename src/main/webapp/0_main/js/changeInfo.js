@@ -1,12 +1,11 @@
 $(document).ready(function(){
-
-	
 	$('button[id="change"]').on("click",function(){
 		var oldpw = $('input[name="oldPW"]').val();		
 		var oldpwch = $('input[name="oldPWCheck"]').val();
 		var newpw = $('input[name="newPW"]').val();
 		var newpwch = $('input[name="newPWCheck"]').val();
 		var id = $('input[name="email"]').val();
+		console.log(id);
 		var fn = $('input[name="firstName"]').val();
 		var ln = $('input[name="lastName"]').val();
 		var uprCd = $('input[id="sido"]').val();
@@ -119,4 +118,18 @@ $(window).on('load',function(){
 			$('option').remove('#sigunop');
 		};
 });
+
+function openModal() {
+  document.getElementById('myModal').style.display = 'block';
+}
+function closeModal() {
+  document.getElementById('myModal').style.display = 'none';
+}
+
+window.addEventListener('click', function (event) {
+  if (event.target === document.getElementById('myModal')) {
+    document.getElementById('myModal').style.display = 'none';
+  }
+});
+
 

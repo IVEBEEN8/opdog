@@ -57,7 +57,7 @@ html, body {
 	width: 6.510416666666667vw;
 	color: #333;
 	font-family: "Poppins", sans-serif;
-	font-size: 1.1vw;
+	font-size: 0.7vw;
 	font-weight: 800;
 	line-height: normal;
 	letter-spacing: 0.18px;
@@ -89,6 +89,7 @@ html, body {
 	background: none;
 	display: flex;
 	align-items: center;
+	cursor: pointer;
 }
 
 .button:hover {
@@ -141,10 +142,8 @@ html, body {
 	display: none;
 }
 
-
 /*MY INFO*/
-
-.p4{
+.p4 {
 	display: none;
 }
 
@@ -308,6 +307,95 @@ html, body {
 	letter-spacing: 0.05vh;
 }
 
+/* 라이크독 css */
+.like-wrapper {
+	height: 90%;
+	margin: 4%;
+	padding: 2% 2%;
+	position: relative;
+	background-color: #F8F8F8;
+	border-radius: 2%;
+}
+
+.like-title {
+	font-size: 2vw;
+	font-family: "Poppins", sans-serif;
+	color: rgba(67, 49, 28, 0.90);
+	text-align: center;
+	font-style: normal;
+	font-weight: 700;
+	line-height: normal;
+	letter-spacing: 0.23px;
+	    position: relative;
+    top: 2vw;
+}
+
+.foreach-size {
+	display: flex;
+    margin-top: 6vw;
+    gap: 1vw;
+    justify-content: center;
+    align-items: center;
+}
+
+.likecontent-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2vw;
+    padding-bottom: 1vw;
+    background: rgb(67 49 28 / 6%);
+    flex-direction: column;
+}
+
+.likecontent-wrapper>img {
+	width: 10vw;
+	height: 10vw;
+	border-radius: 0.3vw;
+}
+
+.likecontent{
+		width: 10vw;
+
+}
+
+.likecontent>div{
+    display: flex;
+    width: 10vw;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.7vw;
+    letter-spacing: 0.03vw;
+}
+
+.likecontent>div>p{
+	color:#6a0101;
+
+}
+
+.btn-wrapper{
+	display: flex;
+	gap: 0.6vw;
+}
+
+.like-btn {
+	height: 1.2vw;
+    margin-top: 0.6vw;
+    border: none;
+    border-radius: 0.4vw;
+    font-size: 0.6vw;
+    font-weight: 700;
+    color: white;
+    background: #643f14;
+    width: 3vw;
+}
+
+.like-btn:hover {
+	background: #FAEAB182;
+	color: #643f14;
+}
 /* volunteer css */
 .vol-wrapper {
 	height: 90%;
@@ -366,7 +454,6 @@ html, body {
 	border-top: 1px solid black;
 }
 
-
 /* point 부분 */
 .point-wrapper {
 	height: 90%;
@@ -406,28 +493,32 @@ html, body {
 	background: #FAEAB1;
 	display: flex;
 	justify-content: end;
-    align-items: center;
-	animation:Move 2s;
+	align-items: center;
+	animation: Move 2s;
 }
 
-@keyframes Move{
-	from{width:0vw}to{width: 27.864583333333332vw;}
+@keyframes Move {
+	from {width: 0vw
 	}
+to {
+	width: 27.864583333333332vw;
+}
 
-
+}
 .nowPoint {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	color: rgba(67, 49, 28, 0.90);
-	text-align: center
+	text-align: center;
 	font-family: "Poppins", sans-serif;
 	font-size: 1.2vw;
 	font-style: normal;
 	font-weight: 500;
 	line-height: normal;
 	letter-spacing: 0.2px;
-	margin-right:1vw;
+	margin-right: 1vw;
+	font-family: "Poppins", sans-serif;
 }
 
 /*서치라인*/
@@ -540,3 +631,39 @@ html, body {
 
 .date, .point {
 	width: 10vw;
+
+}
+
+/* 모달.. */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+

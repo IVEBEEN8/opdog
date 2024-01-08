@@ -16,7 +16,14 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
+	<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
+
+	
 <script src="0_main/js/myPage.js"></script>
+<script src="0_main/js/changeInfo.js"></script>
 
 </head>
 <body>
@@ -28,7 +35,7 @@
 					<img alt="" src="0_main/img/profileIcon.png" style="width: 100%;">
 				</div>
 				<div class="tagText">
-					<div class="tagText-name">id들어가야</div>
+					<div class="tagText-name">ID:&nbsp;${account.email }</div>
 					<div class="tagText-op">Open The Dog</div>
 				</div>
 			</div>
@@ -104,18 +111,35 @@
 								</div>
 							</div> -->
 						</div>
-						<button class="updateButton" onclick="location.href='UpdateInfoC'">Change
+						<button class="updateButton" onclick="openModal();" >Change
 							Info</button>
 					</div>
-				</div>
+				</div>				
 				<div id="likePage" class="innerPage p2">
-					<div>my booked dog</div>
-					<c:forEach var="list" items="${list }" varStatus="status">
-						<div> <img alt="" src="${list.img }"> 나이: ${list.age } 품종: ${list.kind } 성별: ${list.sex }
-							중성화: ${list.neuter }</div>
-						<button id="detail" value="${status.count }">상세보기</button>
-						<button id="cancel"> cancel</button>
-					</c:forEach>
+					<div class="like-wrapper">
+						<div class="like-title">my booked dog</div>
+					 <div id="data-container" class="foreach-size">
+						<c:forEach var="list" items="${list }" varStatus="status">
+								<div class="likecontent-wrapper">
+									<img alt="" src="${list.img }">
+									<div class="likecontent">
+										<div>
+											<p>Age</p>${list.age }</div>
+										<div>
+											<p>Kind</p>${list.kind }</div>
+										<div>
+											<p>Gender</p>${list.sex }</div>
+										<div>
+											<p>Neuter</p>${list.neuter }</div>
+									</div>
+									<div class="btn-wrapper">
+										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
+									</div>
+								</div>
+							</c:forEach>
+						</div>
+						<div id="pagination" class="pagination"></div>
+					</div>
 				</div>
 				<div id="pointPage" class="innerPage p3">
 					<div class="point-wrapper">
@@ -194,15 +218,69 @@
 				</div>
 			</div>
 		</div>
-
 	</div>
+	
+<!--모달작업-->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+		<span class="close" onclick="closeModal();">&times;</span>
+		<div class="container">
+		<p class="title">ChangeInfo</p>
+	<div class="columnBoxP1">
+		<div class="columnP1">ID</div>
+		<div class="textP1">&nbsp;&nbsp;${account.email }</div>
 	</div>
-
-
-
-
-
-
-
+	<div class="columnBoxP1">
+		<div class="columnP1">First Name</div>
+		<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.firstname }</div>
+	</div>
+	<div class="columnBoxP1">
+		<div class="columnP1">Last Name</div>
+		<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
+	</div>
+	<div class="columnBoxP2">
+		<div class="columnP1">Password</div>
+		<div class="textP1">
+			<input name="oldPW" value="${account.pw }" 
+				disabled="disabled" class="yellowBox" type="password">
+		</div>
+	</div>
+	<div class="columnBoxP2">
+		<div class="columnP1">Password check</div>
+		<div class="textP1">
+			<input name="oldPWCheck"  class="yellowBox" type="password">
+		</div>
+	</div>
+	<div class="selectBox-wrap">
+		<input type="hidden" value="${uprCd }" id="defaultUpr"> <input
+			type="hidden" value="${orgCd }" id="defaultOrg"> 
+			<select class="selectBox"
+			name="sido" id="sidoSelect">
+			<option value="">state</option>
+			<c:forEach var="sido" items="${sido }">
+				<option value="${sido.orgCd }">${sido.orgdownNm }</option>
+			</c:forEach>
+		</select> 
+		<select class="selectBox" name="sigun" id="sigunSelect">
+			<option value="">city</option>
+		</select>
+	</div>
+	<div class="columnBoxP2">
+		<div class="columnP1">New password</div>
+		<div class="textP1">
+			<input name="newPW" type="password" class="yellowBox">
+		</div>
+	</div>
+	<div class="columnBoxP2">
+		<div class="columnP1">New password check</div>
+		<div class="textP1">
+			<input name="newPWCheck" type="password" class="yellowBox">
+		</div>
+	</div>
+	<span class="notice">marked elements are essential</span>
+  	<button class="changeBtn" id="change">change</button>
+   </div>
+  </div>
+</div>
 </body>
 </html>

@@ -19,7 +19,8 @@
 <link rel="stylesheet" href="0_main/css/myPage.css">
 </head>
 <body>
-	<div class="container">
+
+<div class="container">
 	<p class="title">ChangeInfo</p>
 	<div class="columnBoxP1">
 		<div class="columnP1">ID</div>

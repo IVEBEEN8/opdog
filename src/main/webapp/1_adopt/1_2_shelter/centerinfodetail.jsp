@@ -155,7 +155,7 @@ fetch(apiUrl)
                     	console.log(data[i].close);
                     	
                         $("#modalBody").append('<div id="closeBtn">&times;<div>')
-                        $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
+                        $("#modalBody").append('<div class="box-info box-center-info">CENTER INFO</div>')
 	                    $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
 	                    $("#modalBody").append('<div class="box-title modal-carenm">' + data[i].careNm + '</div>');
 	                    $("#modalBody").append('<div class="box-title modal-careAddr">' + data[i].careAddr + '</div></div>');
