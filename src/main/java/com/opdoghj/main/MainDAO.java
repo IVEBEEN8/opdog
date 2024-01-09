@@ -27,13 +27,19 @@ public class MainDAO {
 		calendar2.setTime(currenDate);
 		calendar2.add(calendar2.DAY_OF_MONTH, -10);
 		Date dDay = calendar2.getTime();
+		
+		Calendar calendar = Calendar.getInstance();
+		calendar.setTime(dDay);
+		calendar.add(calendar.DAY_OF_MONTH, +5);
+		Date searchEdt = calendar.getTime();
 
 		System.out.println(currenDate);
 		System.out.println(dDay);
 
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		int noticeEdt = Integer.parseInt(dateFormat.format(dDay));
-
+		int searchEdtInt = Integer.parseInt(dateFormat.format(searchEdt));
+		
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -43,7 +49,7 @@ public class MainDAO {
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, noticeEdt);
-			pstmt.setInt(2, noticeEdt+2);
+			pstmt.setInt(2, searchEdtInt);
 			rs = pstmt.executeQuery();
 			ArrayList<DogB> doglist = new ArrayList<DogB>();
 			DogB d = null;
