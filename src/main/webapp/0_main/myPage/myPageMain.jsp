@@ -16,12 +16,10 @@
 <script src="https://code.jquery.com/jquery-3.7.1.js"
 	integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4="
 	crossorigin="anonymous"></script>
-	<script
+<script
 	src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.min.js"></script>
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.4/pagination.css" />
-
-	
 <script src="0_main/js/myPage.js"></script>
 <script src="0_main/js/changeInfo.js"></script>
 
@@ -111,15 +109,15 @@
 								</div>
 							</div> -->
 						</div>
-						<button class="updateButton" onclick="openModal();" >Change
+						<button class="updateButton" onclick="openModal();">Change
 							Info</button>
 					</div>
-				</div>				
+				</div>
 				<div id="likePage" class="innerPage p2">
 					<div class="like-wrapper">
 						<div class="like-title">my booked dog</div>
-					 <div id="data-container" class="foreach-size">
-						<c:forEach var="list" items="${list }" varStatus="status">
+						<div id="data-container" class="foreach-size">
+							<%-- <c:forEach var="list" items="${list }" varStatus="status">
 								<div class="likecontent-wrapper">
 									<img alt="" src="${list.img }">
 									<div class="likecontent">
@@ -136,9 +134,10 @@
 										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
 									</div>
 								</div>
-							</c:forEach>
+							</c:forEach> --%>
 						</div>
-						<div id="pagination" class="pagination"></div>
+						<div id="pagination-container" class="pagination"></div>
+						
 					</div>
 				</div>
 				<div id="pointPage" class="innerPage p3">
@@ -219,68 +218,94 @@
 			</div>
 		</div>
 	</div>
+
+	<!--모달작업-->
+	<div id="myModal" class="modal">
+		<div class="modal-content">
+			<span class="close" onclick="closeModal();">&times;</span>
+			<div class="container">
+				<p class="title">ChangeInfo</p>
+				<div class="columnBoxP1">
+					<div class="columnP1">ID</div>
+					<div class="textP1">&nbsp;&nbsp;${account.email }</div>
+				</div>
+				<div class="columnBoxP1">
+					<div class="columnP1">First Name</div>
+					<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.firstname }</div>
+				</div>
+				<div class="columnBoxP1">
+					<div class="columnP1">Last Name</div>
+					<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
+				</div>
+				<div class="columnBoxP2">
+					<div class="columnP1">Password</div>
+					<div class="textP1">
+						<input name="oldPW" value="${account.pw }" disabled="disabled"
+							class="yellowBox" type="password">
+					</div>
+				</div>
+				<div class="columnBoxP2">
+					<div class="columnP1">Password check</div>
+					<div class="textP1">
+						<input name="oldPWCheck" class="yellowBox" type="password">
+					</div>
+				</div>
+				<div class="selectBox-wrap">
+					<input type="hidden" value="${uprCd }" id="defaultUpr"> <input
+						type="hidden" value="${orgCd }" id="defaultOrg"> <select
+						class="selectBox" name="sido" id="sidoSelect">
+						<option value="">state</option>
+						<c:forEach var="sido" items="${sido }">
+							<option value="${sido.orgCd }">${sido.orgdownNm }</option>
+						</c:forEach>
+					</select> <select class="selectBox" name="sigun" id="sigunSelect">
+						<option value="">city</option>
+					</select>
+				</div>
+				<div class="columnBoxP2">
+					<div class="columnP1">New password</div>
+					<div class="textP1">
+						<input name="newPW" type="password" class="yellowBox">
+					</div>
+				</div>
+				<div class="columnBoxP2">
+					<div class="columnP1">New password check</div>
+					<div class="textP1">
+						<input name="newPWCheck" type="password" class="yellowBox">
+					</div>
+				</div>
+				<span class="notice">marked elements are essential</span>
+				<button class="changeBtn" id="change">change</button>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+			console.log("hi?");		
+			$(document).ready(function(){
+				 var dataSource = ${jsonLikedog}; // 데이터 소스, 예: 페이지 번호의 배열
+					console.log(dataSource);
+					$('#pagination-container').pagination({
+						dataSource: json,
+						pageSize: 4,
+						callback: function(data, pagination){
+							console.log(data);
+							console.log(data[0]);
+							var dataHtml ='';
+							$.each(data, function (index, list){
+								dataHtml += '<div class="likecontent-wrapper">' + list.d_thunbnail + '">';
+				                dataHtml += '<div class="likecontent">';
+								dataHtml += '<div><p>Age</p>'+list.d_age +'</div>'; 
+								dataHtml += '<div><p>Kind</p>'+list.d_kind + '</div>';
+								dataHtml += '<div><p>Gender</p>'+list.d_sex+ '</div>';
+								dataHtml += '<div><p>Neuter</p>'+list.d_neuter+ '</div>';
+								dataHtml += '</div><div class="btn-wrapper">';
+								dataHtml += '<button class="like-btn" id="cancel" value="'+list.d_no+'">Cancel</button></div></div>';
+							})
+							$('#data-container').html(dataHtml);
+						}	
+			})
+})
 	
-<!--모달작업-->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-		<span class="close" onclick="closeModal();">&times;</span>
-		<div class="container">
-		<p class="title">ChangeInfo</p>
-	<div class="columnBoxP1">
-		<div class="columnP1">ID</div>
-		<div class="textP1">&nbsp;&nbsp;${account.email }</div>
-	</div>
-	<div class="columnBoxP1">
-		<div class="columnP1">First Name</div>
-		<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.firstname }</div>
-	</div>
-	<div class="columnBoxP1">
-		<div class="columnP1">Last Name</div>
-		<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
-	</div>
-	<div class="columnBoxP2">
-		<div class="columnP1">Password</div>
-		<div class="textP1">
-			<input name="oldPW" value="${account.pw }" 
-				disabled="disabled" class="yellowBox" type="password">
-		</div>
-	</div>
-	<div class="columnBoxP2">
-		<div class="columnP1">Password check</div>
-		<div class="textP1">
-			<input name="oldPWCheck"  class="yellowBox" type="password">
-		</div>
-	</div>
-	<div class="selectBox-wrap">
-		<input type="hidden" value="${uprCd }" id="defaultUpr"> <input
-			type="hidden" value="${orgCd }" id="defaultOrg"> 
-			<select class="selectBox"
-			name="sido" id="sidoSelect">
-			<option value="">state</option>
-			<c:forEach var="sido" items="${sido }">
-				<option value="${sido.orgCd }">${sido.orgdownNm }</option>
-			</c:forEach>
-		</select> 
-		<select class="selectBox" name="sigun" id="sigunSelect">
-			<option value="">city</option>
-		</select>
-	</div>
-	<div class="columnBoxP2">
-		<div class="columnP1">New password</div>
-		<div class="textP1">
-			<input name="newPW" type="password" class="yellowBox">
-		</div>
-	</div>
-	<div class="columnBoxP2">
-		<div class="columnP1">New password check</div>
-		<div class="textP1">
-			<input name="newPWCheck" type="password" class="yellowBox">
-		</div>
-	</div>
-	<span class="notice">marked elements are essential</span>
-  	<button class="changeBtn" id="change">change</button>
-   </div>
-  </div>
-</div>
+	</script>
 </body>
 </html>
