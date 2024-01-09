@@ -169,6 +169,15 @@ $(document).ready(function () {
   }
 </script>
 
+<script>
+  document.getElementById("search").addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) { // Enter key pressed
+      event.preventDefault(); // Prevent default form submission
+      location.href = 'FashionSearchC?search='+document.getElementById('search').value;
+    }
+  });
+</script>
+
 
 
 
