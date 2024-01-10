@@ -118,6 +118,7 @@
 				<div id="likePage" class="innerPage p2">
 					<div class="like-wrapper">
 						<div class="like-title">my booked dog</div>
+						<div id="likeList" class="likeList"> 
 					 <div id="data-container" class="foreach-size">
 						<c:forEach var="list" items="${list }" varStatus="status">
 								<div class="likecontent-wrapper">

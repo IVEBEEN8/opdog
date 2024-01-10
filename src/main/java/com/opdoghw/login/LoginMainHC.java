@@ -24,7 +24,6 @@ public class LoginMainHC extends HttpServlet {
 
 			}
 		}
-
 		request.setAttribute("contentPage", "login/loginMain.jsp");
 		request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
