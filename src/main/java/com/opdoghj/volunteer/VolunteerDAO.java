@@ -94,7 +94,7 @@ public class VolunteerDAO {
 			String locate = mr.getParameter("locate");
 			System.out.println("이건내가 사랑하는 위치!:" + locate);
 
-			content = content.replaceAll("\r\n", "<br>");
+			content = content.replaceAll("<br>","\r\n");
 
 			System.out.println(file);
 			System.out.println(title);
@@ -131,8 +131,8 @@ public class VolunteerDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT v.*, a.A_NO, a.A_EMAIL\n" + "FROM VOLUNTEER v\n" + "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n"
-				+ "WHERE v.V_NO = ?";
+		String sql = "SELECT v.*, a.A_NO, a.A_EMAIL\n" + "FROM VOLUNTEER v\n"
+				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n" + "WHERE v.V_NO = ?";
 
 		try {
 			con = DBManager_khw.connect();
@@ -159,7 +159,6 @@ public class VolunteerDAO {
 				v.setA_email(aEmail);
 
 				request.setAttribute("vol", v);
-				System.out.println(v);
 				System.out.println("성공");
 			}
 
@@ -198,7 +197,7 @@ public class VolunteerDAO {
 				File1 = newFile;
 			}
 
-			content = content.replaceAll("\r\n", "<br>");
+			content = content.replaceAll( "<br>","\r\n");
 
 			System.out.println(title);
 			System.out.println(newFile);

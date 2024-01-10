@@ -127,11 +127,13 @@ function getPost(status) {
 }
 
 function paging(json){
+	console.log("hellow?");
 	$('#pagination-container').pagination({
 		dataSource: json,
 		pageSize: 5,
 		callback: function(data, pagination){
 			console.log(data);
+			
 			var dataHtml ='';
 			$.each(data, function (index, item){
 				dataHtml += '<a href="VolunteerDetailC?no=' + item.v_no + '">';
@@ -161,7 +163,7 @@ function paging(json){
                					 dataHtml += '<div class="post-user">';
                						 dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
                						 dataHtml += '<div>|&nbsp;&nbsp;' +  item.v_created + '</div>';
-                	dataHtml += '</div>';
+                dataHtml += '</div>';
                 dataHtml += '</div>';
                 dataHtml += '</td>';
                 dataHtml += '<td class="post-img">';

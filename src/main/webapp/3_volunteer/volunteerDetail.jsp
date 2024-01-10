@@ -31,7 +31,7 @@
 					</div>
 					<div class="statusWrap">
 						<div class="post-status">
-							<div class="recruiting"> ${vol.v_status }</div>
+							<div class="recruiting"><span class="vol-status">${vol.v_status }</span></div>
 						</div>
 					</div>
 					<div>
