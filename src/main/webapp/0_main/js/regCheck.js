@@ -10,48 +10,36 @@ function check() {
 	let orgCd = document.getElementById("sigunSelect");
 	let checkbox = document.querySelector("input[type='checkbox'][name='agree']");
 
-
-
-	console.log(firstName);
-	console.log(lastName);
-	console.log(id);
-	console.log(pw);
-	console.log(pwCheck);
-	console.log(uprCd);
-	console.log(orgCd);
-
-
-
 	if (isEmpty(firstName)) {
-		firstName.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		firstName.classList.add('error-placeholder'); 
 		firstName.setAttribute('placeholder', 'Enter your First name (required)');
 		firstName.focus();
 		return false;
 	}
 
 	if (isEmpty(lastName)) {
-		lastName.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		lastName.classList.add('error-placeholder'); 
 		lastName.setAttribute('placeholder', 'Enter your Last name (required)');
 		lastName.focus();
 		return false;
 	}
 
 	if (isEmpty(id)) {
-		id.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		id.classList.add('error-placeholder'); 
 		id.setAttribute('placeholder', 'Enter your e-mail (required)');
 		id.focus();
 		return false;
 	}
 
 	if (isEmpty(pw)) {
-		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.classList.add('error-placeholder'); 
 		pw.setAttribute('placeholder', 'Enter your password (required)');
 		pw.focus();
 		return false;
 	}
 
 	if (notContains(pw, "1234567890") || notContains(pw, "QWERTYUIOPASDFGHJKLZXCVBNM")) {
-		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.classList.add('error-placeholder'); 
 		pw.setAttribute('placeholder', 'Password must have capital letter and a number');
 		pw.focus();
 		pw.value = "";
@@ -60,7 +48,7 @@ function check() {
 
 
 	if (lessThan(pw, 8)) {
-		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.classList.add('error-placeholder');
 		pw.setAttribute('placeholder', 'Type more than 8 characters');
 		pw.focus();
 		pw.value = "";
@@ -68,7 +56,7 @@ function check() {
 	}
 
 	if (isEmpty(pwCheck)) {
-		pwCheck.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pwCheck.classList.add('error-placeholder'); 
 		pwCheck.setAttribute('placeholder', 'Enter your password check (required)');
 		pwCheck.focus();
 		return false;
@@ -76,8 +64,8 @@ function check() {
 
 
 	if (notEquals(pw, pwCheck)) {
-		pw.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
-		pwCheck.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
+		pw.classList.add('error-placeholder'); 
+		pwCheck.classList.add('error-placeholder'); 
 		pw.setAttribute('placeholder', 'Passwords do not match');
 		pwCheck.setAttribute('placeholder', 'Passwords do not match');
 		pw.focus();
@@ -87,7 +75,7 @@ function check() {
 	}
 
 	if (notSelect(uprCd)) {
-		//uprCd.classList.add('error-color');
+		
 		uprCd.focus();
 		return false;
 	}
