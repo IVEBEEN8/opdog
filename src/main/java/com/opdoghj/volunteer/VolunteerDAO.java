@@ -94,7 +94,7 @@ public class VolunteerDAO {
 			String locate = mr.getParameter("locate");
 			System.out.println("이건내가 사랑하는 위치!:" + locate);
 
-			content = content.replaceAll("\r\n", "<br>");
+			content = content.replaceAll("<br>","\r\n");
 
 			System.out.println(file);
 			System.out.println(title);
@@ -197,7 +197,7 @@ public class VolunteerDAO {
 				File1 = newFile;
 			}
 
-			content = content.replaceAll("\r\n", "<br>");
+			content = content.replaceAll( "<br>","\r\n");
 
 			System.out.println(title);
 			System.out.println(newFile);
