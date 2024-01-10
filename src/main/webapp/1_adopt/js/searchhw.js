@@ -1,7 +1,7 @@
 $(document).ready(function performSearch() {
     $("input[name='searchText']").on("keyup", function (event) {
-        if (event.keyCode === 13) { // 13은 엔터 키의 키코드입니다
-            event.preventDefault(); // 기본 동작 중지
+        if (event.keyCode === 13) { 
+            event.preventDefault();
             performSearchAction();
         }
     });

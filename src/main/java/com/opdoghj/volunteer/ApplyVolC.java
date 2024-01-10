@@ -16,7 +16,9 @@ public class ApplyVolC extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
+		System.out.println(11);
 		VolunteerDAO.applyVol(request, response);
+		System.out.println(22);
 	}
 
 }
