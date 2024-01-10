@@ -153,9 +153,9 @@ input:focus {
 
 .middle-post {
 	position: relative;
-    width: 60vw;
     display: flex;
     gap: 2vw;
+    width: 70vw;
 }
 
 .td-wrapper {
@@ -178,7 +178,8 @@ input:focus {
 }
 
 .post-btn-txt {
-	top: 1vh;
+	top: 2vh;
+    left: 1vw;
     position: relative;
     border-radius: 30vw;
     border: none;
@@ -189,6 +190,9 @@ input:focus {
     font-style: normal;
     font-weight: 600;
     line-height: normal;
+    display: flex;
+    justify-content: center;
+    width: 6vw;
     text-align: center;
 }
 
@@ -198,10 +202,13 @@ input:focus {
 }
 
 .post-text{
-	height: 30%;
+	height: 10vw;
     overflow: hidden;
     white-space: normal;
     position: relative;
+    top: 2vw;
+    left: 2vw;
+    width: 40vw;
 }
 
 .bigTxt {
@@ -214,8 +221,9 @@ input:focus {
 }
 
 .smallTxt {
-    height: 26vh;
+      height: 20vh;
     position: relative;
+    top: 3vw;
     color: #000;
     font-family: "DM Sans", sans-serif;
     font-size: 0.9vw;
@@ -225,15 +233,19 @@ input:focus {
 
 .post-info {
 	display: flex;
-	gap: 1vw;
-	align-items: center;
-	font-size: 0.8vw;
+    gap: 1vw;
+    align-items: center;
+    font-size: 0.8vw;
+    position: absolute;
+    bottom: 1vw;
 }
 
 .post-user {
 	display: flex;
-	align-items: center;
-	gap: 0.5vw;
+    align-items: center;
+    gap: 0.5vw;
+    position: relative;
+    left: 1.3vw;
 }
 
 .post-user>img {

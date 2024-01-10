@@ -15,7 +15,7 @@ html, body {
 
 .vol-container {
 	width: 45.57291666666667vw;
-	height: 83vh;
+	/* height: 100vh; */
 	border-radius: 50px;
 	border: 1px dashed rgba(67, 49, 28, 0.80);
 }
@@ -145,7 +145,7 @@ background: rgba(250, 234, 177, 0.8);
 }
 
 .apply-btn {
-	margin-top: 10vh;
+	margin-top: 8vh;
 }	
 
 .apply-btn>button {
