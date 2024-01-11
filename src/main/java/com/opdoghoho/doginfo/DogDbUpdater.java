@@ -1,4 +1,4 @@
-package com.opdoghj.main;
+package com.opdoghoho.doginfo;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;

@@ -12,6 +12,7 @@
 <link
 	href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,600;9..40,700&family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&display=swap"
 	rel="stylesheet" />
+<link rel="stylesheet" href="1_adopt/css/modal.css" />
 </head>
 <body>
 	<!-- 메인 상단 : 헤더 -->
@@ -110,8 +111,10 @@
 			<div class="styling-tv">
 				<div class="animation-list animation">
 					<div class="img-list">
+					<p style="display: none;" id="account">${account.no }</p>
 						<c:forEach var="dogs" items="${dog }" varStatus="status" end="9">
 							<div class="img-box">
+								<input type="hidden" value="${dogs.no }">
 								<div class="img-wrap">
 									<div class="slide-img">
 										<img src="${dogs.popfile }" alt="유기견${status.count }" />
@@ -176,6 +179,23 @@
 					</div>
 				</div>
 			</div>
+		</div>
+	</div>
+	<div id="modalWrap" style="z-index: 1000;">
+		<div id="modalBody">
+			<span id="closeBtn">&times;</span>
+		</div>
+	</div>
+	<div id="pointWrap">
+		<div id="givePoint">
+			<span id="pointClose">&times;</span>
+			<div id="totalPoint"></div>
+			<div>얼마를 후원하시겠습니까?</div>
+			<div>
+				<input type="text" name="point" value="0">point
+			</div>
+			<button id="doSupport">후원하기</button>
+			<input type="hidden" value="">
 		</div>
 	</div>
 </body>
