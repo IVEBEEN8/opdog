@@ -1,4 +1,4 @@
-package com.opdoghoho.mypage;
+package com.opdoghoho.doginfo;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.opdoghoho.mypage.MyPageDAO;
 @WebServlet("/MyPageLikeC")
 public class MyPageLikeC extends HttpServlet {
 

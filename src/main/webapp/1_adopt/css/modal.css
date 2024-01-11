@@ -148,3 +148,26 @@
 	font-size: 25px;
 	cursor: pointer;
 }
+
+/*아래는 후원 모달*/
+#pointWrap {
+	position: fixed; /* Stay in place */
+	z-index: 100; /* Sit on top */
+	padding-top: 100px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	display: none;
+}
+
+#givePoint{
+	width: 15vw;
+	height: 8vw;
+	padding: 1vw 1vw;
+	margin: 17vw auto;
+	background-color: #fff;
+	border: 1px solid #777;
+	border-radius: 1vw;
+}
