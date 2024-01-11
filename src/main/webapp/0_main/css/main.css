@@ -508,15 +508,15 @@ header {
 	color: rgb(174 34 34);
     font-family: "Inter", sans-serif;
     text-align: center;
-    font-size: 2vw;
+    font-size:2vw;
     font-weight: 700;
     letter-spacing: 0.20000000298023224px;
-    line-height: 1.4vw;
+    line-height: 30px;
 }
 
 .img-name >span{
-color: rgba(67, 49, 28, 0.9);
-	font-size: 1.5vw;
+ color: rgba(67, 49, 28, 0.9);
+    font-size: 1.6vw;
 }
 
 .img-info {
