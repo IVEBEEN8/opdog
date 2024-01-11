@@ -19,7 +19,7 @@ $(document).ready(function() {
 	});
 });
 
-function paging(json){
+/*function paging(json){
 	console.log("hello?");
 	$('#pagination-container').pagination({
 		dataSource: json,
@@ -45,7 +45,7 @@ function paging(json){
 }
 $(document).ready(function(){
 	paging(json);
-});
+}); */
 
 
 

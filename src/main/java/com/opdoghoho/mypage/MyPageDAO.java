@@ -12,7 +12,6 @@ import javax.servlet.http.HttpSession;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 
@@ -84,10 +83,10 @@ public class MyPageDAO {
 			request.setAttribute("list", list);
 
 			// 어레이리스트를 지슨파일에 담아서 js로 보낸다
-			String jsonLikedog = new Gson().toJson(list);
-			System.out.println(jsonLikedog);
-			response.setContentType("application/json");
-			response.getWriter().write(jsonLikedog);
+			// String jsonLikedog = new Gson().toJson(list);
+			// System.out.println(jsonLikedog);
+			// response.setContentType("application/json");
+			// response.getWriter().write(jsonLikedog);
 
 		} catch (Exception e) {
 			e.printStackTrace();
