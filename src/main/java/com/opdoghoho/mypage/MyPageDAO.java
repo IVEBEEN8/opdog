@@ -95,6 +95,15 @@ public class MyPageDAO {
 				list.add(like);
 			}
 			request.setAttribute("list", list);
+<<<<<<< HEAD
+=======
+
+			// 어레이리스트를 지슨파일에 담아서 js로 보낸다
+			String jsonLikedog = new Gson().toJson(list);
+			System.out.println(jsonLikedog);
+			response.setContentType("application/json");
+			response.getWriter().write(jsonLikedog);
+>>>>>>> 04c11e8a33815720cda12ce0154b86c9950aecf9
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -113,6 +122,7 @@ public class MyPageDAO {
 		}
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		try {
+
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 
@@ -132,6 +142,7 @@ public class MyPageDAO {
 				HttpSession hs = request.getSession();
 				hs.setAttribute("account", null);
 			}
+			System.out.println("updated info" + account);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -153,6 +164,7 @@ public class MyPageDAO {
 			e.printStackTrace();
 		}
 
+<<<<<<< HEAD
 	}
 
 	public static void pointLoad(HttpServletRequest request, HttpServletResponse response) {
@@ -189,6 +201,8 @@ public class MyPageDAO {
 			DBManager_khw.close(con, pstmt, rs);
 		}
 
+=======
+>>>>>>> 04c11e8a33815720cda12ce0154b86c9950aecf9
 	}
 
 }
