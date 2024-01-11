@@ -49,12 +49,13 @@ document.addEventListener("DOMContentLoaded", function () {
 		
 		document.querySelector(".chat-content").innerHTML = "";
 		
-        const chatgptMessage = result.choices[0].message.content;
-        console.log("gpt응답", chatgptMessage);
+        /* const chatgptMessage = result.choices[0].message.content;
+        console.log("gpt응답", chatgptMessage); */
 
         const assistantMessage = result.choices.find(
           (choice) => choice.message.role === "assistant"
         ).message.content;
+		console.log(assistantMessage);
 		
         var assistantTemplate = `<div class="line1">
                     <span class="chat-box">${assistantMessage}</span>

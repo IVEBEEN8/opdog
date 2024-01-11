@@ -13,6 +13,7 @@ function hideLoading() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("loadingwords").style.display = "none";
 }
+
 function showButtom(){
 	document.getElementById("send").style.display = "block";
 }
