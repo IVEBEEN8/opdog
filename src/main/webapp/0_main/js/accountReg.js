@@ -1,5 +1,34 @@
 $(document).ready(function() {
 	
+	
+	$('#idcheck').on('click', function(){
+    var checkingValue = $("input[name='id']").val();
+	var inputbox =$("input[name='id']");
+    console.log(checkingValue);
+	var result ='';
+	 $.ajax({
+		url : 'IdCheckC',
+		type : 'POST',
+		data : {checkingValue, result},
+		success : function(data) {
+			console.log(data);
+			console.log(data[0].result);
+			console.log(data[0].checkingValue);
+			if(data[0].result === "email o"){
+				alert(data[0].checkingValue  + " is already in use. Please register with a different Email.")
+				inputbox.focus();
+				inputbox.val("");
+				return false;
+			}else if(data[0].result === "email x"){
+				alert("You can register with " + data[0].checkingValue + "")
+			}
+		}
+	}) 
+
+	
+	});
+	
+	
     $('#sidoSelect').on('change', function() {
 	/*
 		response = 시/군/구 배열

@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
     document.getElementById("regVol").addEventListener("click", function () {
         var selectedValue = this.value;
         var dsv = selectedValue.split("!");
@@ -118,7 +117,7 @@ function getPost(status) {
   let locate = $("#locate").text();
   $.ajax({
     url: "VolunteerAPI",
-    data: { search, status, locate },
+    data: { search , status, locate },
     datatype: "json",
   }).done(function (json) {
     console.log(json);
@@ -127,11 +126,13 @@ function getPost(status) {
 }
 
 function paging(json){
+	console.log("hello?");
 	$('#pagination-container').pagination({
 		dataSource: json,
 		pageSize: 5,
 		callback: function(data, pagination){
 			console.log(data);
+			
 			var dataHtml ='';
 			$.each(data, function (index, item){
 				dataHtml += '<a href="VolunteerDetailC?no=' + item.v_no + '">';
@@ -141,9 +142,9 @@ function paging(json){
                 			dataHtml += '<div class="td-wrapper">';
                				 	dataHtml += '<div class="post-btn">';
 				if (item.v_status === 'Recruiting') {
+                					dataHtml += '</div>';
                 					dataHtml += '<div class="Recruiting post-btn-txt">';
 				    dataHtml += '<p>' + item.v_status + '</p>';
-                					dataHtml += '</div>';
 				} else if (item.v_status === 'Completed') {
                 					dataHtml += '<div class="Completed post-btn-txt">';
 				    dataHtml += '<p>' + item.v_status + '</p>';
@@ -151,16 +152,17 @@ function paging(json){
 				} else {
 					console.log("heehee never be here");
 				}
+									dataHtml += '</div>';
                 				dataHtml += '<div class="post-text">';
                 					dataHtml += '<div class="bigTxt">' + item.v_title + '</div>';
                 					dataHtml += '<div class="smallTxt">' + item.v_txt + '</div>'; // 중괄호를 닫아주는 부분 수정
                 				dataHtml += '</div>';
-                				dataHtml += '</div>';
+                			
                					 dataHtml += '<div class="post-info">';
                					 dataHtml += '<div class="post-user">';
                						 dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
                						 dataHtml += '<div>|&nbsp;&nbsp;' +  item.v_created + '</div>';
-                	dataHtml += '</div>';
+                dataHtml += '</div>';
                 dataHtml += '</div>';
                 dataHtml += '</td>';
                 dataHtml += '<td class="post-img">';
@@ -190,4 +192,6 @@ $(document).ready(function () {
     console.log(status);
     getPost(status);
   });
+
 });
+

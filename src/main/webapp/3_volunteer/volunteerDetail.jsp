@@ -31,10 +31,10 @@
 					</div>
 					<div class="statusWrap">
 						<div class="post-status">
-							<div class="recruiting"> ${vol.v_status }</div>
+							<div class="recruiting"><span id = "detailv-status" value=${vol.v_status } class="vol-status">${vol.v_status }</span></div>
 						</div>
 					</div>
-					<div>
+					<div class="img-wrapper">
 						<img class="review-img" alt=""
 							src="3_volunteer/newImg/${vol.v_img }">
 					</div>
@@ -105,6 +105,19 @@
 		document.addEventListener('DOMContentLoaded', function() {
 			var statusValue = "${vol.v_status}";
 			console.log(statusValue);
+			
+			if(statusValue==="Completed"){
+				
+				var changeBackground = document.querySelector('.recruiting');
+				changeBackground.style.backgroundColor = '#9e6f21';
+		        
+		        var statusSpan = document.getElementById('detailv-status');
+		        statusSpan.style.color = 'white';
+		        statusSpan.style.fontWeight = 'bold';
+				
+			}
+		
+			
 			var applyButton = document.getElementById('btn');
 			var buttonLogo = document.getElementById('btnlogo');
 			// Check the value of ${vol.v_status} and decide whether to show or hide the button

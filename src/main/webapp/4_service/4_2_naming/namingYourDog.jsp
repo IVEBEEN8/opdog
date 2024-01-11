@@ -101,6 +101,8 @@
 				</button>
 			</div>
 		</div>
+	
+		<!--대화형 방식 -->
 		<div class="chat-content">
 			<div class="loading" id="loading">Loading...</div>
 			<div class="line">

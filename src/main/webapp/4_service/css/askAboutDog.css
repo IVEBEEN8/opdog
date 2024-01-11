@@ -85,8 +85,8 @@ body {
 }
 #send{
 	border: none;
-    padding: 0; /* padding을 0으로 설정하여 내부 공간을 없앨 수 있습니다. */
-    background: none; /* 배경을 없애거나 원하는 스타일로 지정할 수 있습니다. */
+    padding: 0;
+    background: none;
 	background: url('../img/sendbtn.png') center center no-repeat;
 	margin-left: 0.8vw;
     height: 38px;

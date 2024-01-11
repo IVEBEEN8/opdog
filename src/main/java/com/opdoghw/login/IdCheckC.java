@@ -1,4 +1,4 @@
-package com.opdoghw.kakaologin;
+package com.opdoghw.login;
 
 import java.io.IOException;
 
@@ -8,16 +8,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet("/KakaoLoginC")
-public class KakaoLoginC extends HttpServlet {
-
+@WebServlet("/IdCheckC")
+public class IdCheckC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		request.getRequestDispatcher("99_kakaologin/kakaologin.jsp").forward(request, response);
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
+		System.out.println("check1");
+		LoginDAO.emailCehck(request, response);
+		System.out.println("check2");
 	}
+
 }
