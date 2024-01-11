@@ -85,6 +85,7 @@
 	font-size: 0.8vw;
 	font-weight: 400;
 	font-family: "DM Sans", sans-serif;
+	cursor: pointer;
 }
 
 .moreshopping-btn {
@@ -98,4 +99,5 @@
 	font-weight: 400;
 	font-family: "DM Sans", sans-serif;
 	border: none;
+	cursor: pointer;
 }
