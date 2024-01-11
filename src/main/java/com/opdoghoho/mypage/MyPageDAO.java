@@ -82,13 +82,12 @@ public class MyPageDAO {
 				list.add(like);
 			}
 			request.setAttribute("list", list);
-			
-			//어레이리스트를 지슨파일에 담아서 js로 보낸다
+
+			// 어레이리스트를 지슨파일에 담아서 js로 보낸다
 			String jsonLikedog = new Gson().toJson(list);
 			System.out.println(jsonLikedog);
 			response.setContentType("application/json");
 			response.getWriter().write(jsonLikedog);
-			
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -107,6 +106,7 @@ public class MyPageDAO {
 		}
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		try {
+
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 
@@ -126,6 +126,7 @@ public class MyPageDAO {
 				HttpSession hs = request.getSession();
 				hs.setAttribute("account", null);
 			}
+			System.out.println("updated info" + account);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -136,29 +137,17 @@ public class MyPageDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "delete from opdoglike where d_no in ?";
-		
+
 		try {
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("value"));
 			pstmt.executeQuery();
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }
