@@ -3,6 +3,7 @@ $(document).ready(function() {
 	
 	$('#idcheck').on('click', function(){
     var checkingValue = $("input[name='id']").val();
+	var inputbox =$("input[name='id']");
     console.log(checkingValue);
 	var result ='';
 	 $.ajax({
@@ -14,9 +15,12 @@ $(document).ready(function() {
 			console.log(data[0].result);
 			console.log(data[0].checkingValue);
 			if(data[0].result === "email o"){
-				alert(data[0].checkingValue  + " is not available")
+				alert(data[0].checkingValue  + " is already in use. Please register with a different Email.")
+				inputbox.focus();
+				inputbox.val("");
+				return false;
 			}else if(data[0].result === "email x"){
-				alert(data[0].checkingValue + " is available")
+				alert("You can register with " + data[0].checkingValue + "")
 			}
 		}
 	}) 

@@ -43,7 +43,7 @@ public class LoginMainHC extends HttpServlet {
 			request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 		} else if (result == 2) {
 			String url = request.getParameter("url");
-			if (url.equals("") || url.equals("SignUpC")) {
+			if (url.equals("") || url.equals("SignUpC") || url.equals("MyPageHC")) {
 				response.sendRedirect("HC");
 			} else {
 				System.out.println("URL입니다:" + url);
