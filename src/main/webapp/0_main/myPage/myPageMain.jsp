@@ -149,7 +149,7 @@
 						</div>
 						<div class="pointMoveWrap">
 							<div class="pointMove">
-								<div class="nowPoint">0</div> <input id="max" type="hidden" value="1000">
+								<div class="nowPoint">0</div> <input id="max" type="hidden" value="${totalpoint }">
 							</div>
 						</div>
 
@@ -173,13 +173,13 @@
 									<th class="point-th history">History</th>
 									<th class="point-th point">Point</th>
 								</tr>
-
+							<c:forEach var="totalpoint" items="${pointlist }">
 								<tr class="point-list">
-									<td class="point-td">날짜</td>
-									<td class="point-td">사용처</td>
-									<td class="point-td">+/- 포인</td>
+									<td class="point-td">${totalpoint.date }</td>
+									<td class="point-td">${totalpoint.text }</td>
+									<td class="point-td">${totalpoint.point }</td>
 								</tr>
-
+							</c:forEach>
 							</table>
 						</div>
 					</div>

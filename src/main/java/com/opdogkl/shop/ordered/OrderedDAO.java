@@ -36,6 +36,16 @@ public class OrderedDAO {
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("등록 성공");
 			}
+			sql = "insert into totalpoint values (sysdate,?,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, title+"["+brand+"]");
+			pstmt.setInt(2, sPrice);
+			pstmt.setInt(3, account.getNo());
+			if (pstmt.executeUpdate()==1) {
+				System.out.println("포인트 적립 완료!");
+			}
+			
+			
 			
 			
 			

@@ -347,7 +347,8 @@ $(document).ready(function() {
 			values +
 			'</p>Like</button><button id="liketrigger">spon</button>' +
 			"</div>" +
-			"</div>"
+			"</div>" +
+			"<input id='detailinfo' name='desertionNo' type='hidden' value='" + items.desertionNo + "'>"
 		);
 		$("#modalWrap").css({ display: "block" });
 	});
@@ -374,6 +375,45 @@ $(document).ready(function() {
 			if (goLogin) {
 				location.href = "LoginMainHC";
 			}
+		}
+	});
+
+	$(document).on("click", "button[id=liketrigger]", function() {
+		$.ajax({
+			url: "SupportPetC",
+			type: "GET",
+			success: function(response) {
+				$("div[id=totalPoint]").html("My point: " + response + " point");
+				$("#pointWrap").css({ display: "block" });
+			}
+		})
+	})
+	$(document).on("click", "button[id=doSupport]", function() {
+		var desertionNo = $("input[name=desertionNo]").val();
+		var point = $("input[name=point]").val();
+		console.log(point)
+		$.ajax({
+			url: "SupportPetC",
+			type: "POST",
+			data: { value: desertionNo, value2: point },
+			success: function(response) {
+				alert(point+"포인트가 기부 완료되었습니다.");
+				$("input[name=point]").val(0);
+				$("#pointWrap").css({ display: "none" });
+			}
+		})
+
+	})
+	$(document).on("click", "span[id=pointClose]", function() {
+		$("#pointWrap").css({
+			display: "none",
+		});
+	});
+	$(window).on("click", function(event) {
+		if ($(event.target).is("#pointWrap")) {
+			$("#pointWrap").css({
+				display: "none",
+			});
 		}
 	});
 });

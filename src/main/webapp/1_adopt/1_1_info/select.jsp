@@ -109,7 +109,18 @@ ${sido} = 광역시 배열
 			<span id="closeBtn">&times;</span>
 		</div>
 	</div>
-	<p style="">
+	<div id="pointWrap">
+		<div id="givePoint">
+			<span id="pointClose">&times;</span>
+			<div id="totalPoint"></div>
+			<div>얼마를 후원하시겠습니까?</div>
+			<div>
+				<input type="text" name="point" value="0">point
+			</div>
+			<button id="doSupport">후원하기</button>
+			<input type="hidden" value="">
+		</div>
+	</div>
 </body>
 
 </html>

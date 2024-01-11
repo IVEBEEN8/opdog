@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	$('button[id="change"]').on("click",function(){
+		console.log("btn clicked");
 		var oldpw = $('input[name="oldPW"]').val();		
 		var oldpwch = $('input[name="oldPWCheck"]').val();
 		var newpw = $('input[name="newPW"]').val();
@@ -7,7 +8,9 @@ $(document).ready(function(){
 		var id = $('input[name="email"]').val();
 		console.log(id);
 		var fn = $('input[name="firstName"]').val();
+		console.log(fn);
 		var ln = $('input[name="lastName"]').val();
+		console.log(ln);
 		var uprCd = $('input[id="sido"]').val();
 		var orgCd = $('input[id="sigun"]').val();
 		if(id==""||fn==""||ln==""||oldpwch==""||uprCd==""||orgCd==""){
@@ -25,7 +28,7 @@ $(document).ready(function(){
 							type: 'POST',
 							data: { newpw, id, fn, ln, uprCd, orgCd},
 							success: function(){
-								alert('회원정보 변경이 완료되었습니다.');
+								alert('회원정보 변경이 완료되었습니다');
 								location.href="LoginMainHC";
 							},
 							error: function(error) {

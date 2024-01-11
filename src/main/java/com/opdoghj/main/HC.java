@@ -18,7 +18,7 @@ public class HC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		if (firstLoading) {
-//			DogDbUpdater.updateDb(request);
+			DogDbUpdater.startDbUpdater();
 			firstLoading = false;
 		}
 		

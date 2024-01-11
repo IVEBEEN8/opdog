@@ -163,19 +163,32 @@ public class MyPageDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
-		String sql = "select * from ordered_kl where a_no=?";
+		String sql = "select * from totalpoint where a_no=? order by p_date asc";
 		
 		try {
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setInt(1, account.getNo());
 			rs = pstmt.executeQuery();
+			ArrayList<TotalPoint> point = new ArrayList<TotalPoint>();
 			while (rs.next()) {
-				
+				TotalPoint p = new TotalPoint();
+				p.setDate(String.valueOf(rs.getDate("p_date")));
+				p.setText(rs.getString("p_text"));
+				p.setPoint(rs.getInt("p_point"));
+				point.add(p);
 			}
+			sql = "SELECT SUM(p_point) AS total FROM totalpoint";
+			pstmt = con.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			rs.next();
+			request.setAttribute("pointlist", point);
+			request.setAttribute("totalpoint", rs.getInt("total"));
 			
 		} catch (Exception e) {
 			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
 		}
 		
 	}
