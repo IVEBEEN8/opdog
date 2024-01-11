@@ -76,21 +76,22 @@
 						<div class="itemBoxP1">
 							<div class="columnBoxP1">
 								<div class="columnP1">ID</div>
-								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
+								<div class="textP1">&nbsp;&nbsp;<span class="columnP1css">${account.email }</span></div>
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">First Name</div>
-								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.firstname }</div>
+								<div class="textP1">&nbsp;&nbsp;<span class="columnP1css">${account.firstname }</span></div>
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">Last Name</div>
-								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
+								<div class="textP1">&nbsp;&nbsp;<span class="columnP1css">${account.lastname }</span></div>
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">address</div>
-								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.uprText }&nbsp;${account.orgText }</div>
-							</div>
-							<!-- <div class="columnBoxP2">
+								<div class="textP1">
+								    &nbsp;&nbsp;<span class="columnP1css">${account.uprText}&nbsp;${account.orgText}</span>
+								</div>
+							<!-- <div class="columnBoxP2">s
 								<div class="columnP1">Password</div>
 								<div class="textP1">
 									<input class="password">
@@ -205,7 +206,7 @@
 										onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
 										class="vol-btn">
 										<span>Detail</span>
-									</button> &nbsp
+									</button>
 									<button
 										onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
 										class="vol-btn">
@@ -227,7 +228,7 @@
 				<p class="title">ChangeInfo</p>
 				<div class="columnBoxP1">
 					<div class="columnP1">ID</div>
-					<div class="textP1">&nbsp;&nbsp;${account.email }</div>
+					<div class="textP1" >&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
 				</div>
 				<div class="columnBoxP1">
 					<div class="columnP1">First Name</div>
@@ -235,7 +236,7 @@
 				</div>
 				<div class="columnBoxP1">
 					<div class="columnP1">Last Name</div>
-					<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
+					<div class="textP1"  >&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
 				</div>
 				<div class="columnBoxP2">
 					<div class="columnP1">Password</div>

@@ -666,4 +666,11 @@ to {
   text-decoration: none;
   cursor: pointer;
 }
+.columnP1css{
+	text-align: left;
+    width: 14vw;
+    font-size: 1vw;
+    position: relative;
+    overflow: hidden;
+}
 
