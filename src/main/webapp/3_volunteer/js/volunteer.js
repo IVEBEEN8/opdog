@@ -91,7 +91,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-
     document.getElementById("regVol").addEventListener("click", function () {
         var selectedValue = this.value;
         var dsv = selectedValue.split("!");
@@ -193,4 +192,6 @@ $(document).ready(function () {
     console.log(status);
     getPost(status);
   });
+
 });
+
