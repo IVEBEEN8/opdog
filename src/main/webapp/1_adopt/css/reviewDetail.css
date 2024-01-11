@@ -90,6 +90,7 @@ html, body {
 	font-weight: 400;
 	line-height: normal;
 	letter-spacing: -0.015625vw;
+	cursor: pointer;
 }
 
 .reiview-list-btn {
@@ -105,4 +106,5 @@ html, body {
 	letter-spacing: -0.015625vw;
 	margin-left:0.4vw;
 	margin-right:0.4vw;
+	cursor: pointer;
 }

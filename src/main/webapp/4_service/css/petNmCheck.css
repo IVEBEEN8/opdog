@@ -145,7 +145,12 @@ rgba(197, 137, 64, 1);
     height: 37vh;
     /* padding: 3% 6.5%; */
     overflow-x: scroll;
+
 }
+#modalBody1::-webkit-scrollbar {
+    display: none; 
+}
+
 #modalContent1{
     background: #FAF8F1;
     position: relative;

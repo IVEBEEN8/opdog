@@ -11,15 +11,8 @@ function goCheckOut() {
 			location.href = "LoginMainHC";
 		}
 	} else {
-		// 로그인 되어 있으면 size 선택 여부 확인
-		var selectedBox = document.querySelector(".box.selected"); // Find the selected box
-		if (!selectedBox) {
-			// Size가 선택되지 않았으면 alert
-			alert("Please select a size");
-		} else {
-			// Size가 선택되었으면 checkOut() 실행
-			checkOut();
-		}
+		// Size가 선택되었으면 checkOut() 실행
+		checkOut();
 	}
 }
 

@@ -6,9 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Snack Detail</title>
-<script type="text/javascript" src="2_shop/js/checkOut.js?ver=2"></script>
+<script type="text/javascript" src="2_shop/js/checkOut2.js"></script>
 <script type="text/javascript" src="2_shop/js/shop.js"></script>
-<link rel="stylesheet" href="2_shop/css/shopDetail.css" />
+<link rel="stylesheet" href="2_shop/css/shopDetail2.css" />
 </head>
 <body>
 
@@ -26,7 +26,7 @@
 				</div>
 				<input type="hidden" id="itemPrice" value="${snack.s_price}">
 				<input type="hidden" id="itemSPrice" value="${snack.s_price/10}">
-				<div>
+				<!-- <div>
 					<div class="size-txt" align="left">Size</div>
 					<div class="size-box-cover">
 						<div class="box" onclick="changeColor(this)">
@@ -39,7 +39,7 @@
 							<div>L</div>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<div class="sponsor-btn-cover">
 					<div>
 						<button class="sponsor-btn" id="goCheckOut"

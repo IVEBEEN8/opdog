@@ -48,7 +48,7 @@ function previewSelectedImage(input) {
     document.getElementById("oldImg").value = file.name;
   } else {
     // 파일 선택이 취소된 경우
-    preview.src = "3_volunteer/img/" + document.getElementById("oldImg").value;
+    preview.src = "3_volunteer/newImg/" + document.getElementById("oldImg").value;
   }
 }
 

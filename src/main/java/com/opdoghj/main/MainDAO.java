@@ -41,7 +41,6 @@ public class MainDAO {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		int noticeEdt = Integer.parseInt(dateFormat.format(dDay));
 		int searchEdtInt = Integer.parseInt(dateFormat.format(searchEdt));
-		System.out.println(noticeEdt);
 
 		Connection con = null;
 		PreparedStatement pstmt = null;

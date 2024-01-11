@@ -5,32 +5,33 @@ $(document).ready(function(){
 		var inputValueName = document.getElementById('name').value;
 		var inputValuePetNm = document.getElementById('petnum').value;
 		var xhr = new XMLHttpRequest();
-		var url = 'http://apis.data.go.kr/1543061/animalInfoSrvc/animalInfo'; /*URL*/
-		var queryParams = '?' + encodeURIComponent('serviceKey') + '='+API_KEY; /*Service Key*/
-		queryParams += '&' + encodeURIComponent('dog_reg_no') + '=' + encodeURIComponent(inputValuePetNm); /**/
-		queryParams += '&' + encodeURIComponent('rfid_cd') + '=' + encodeURIComponent(inputValuePetNm); /**/
-		queryParams += '&' + encodeURIComponent('owner_nm') + '=' + encodeURIComponent(inputValueName); /**/
-		queryParams += '&' + encodeURIComponent('owner_birth') + '=' + encodeURIComponent(''); /**/
-		queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('json'); /**/
+		var url = 'http://apis.data.go.kr/1543061/animalInfoSrvc/animalInfo';
+		var queryParams = '?' + encodeURIComponent('serviceKey') + '='+API_KEY; 
+		queryParams += '&' + encodeURIComponent('dog_reg_no') + '=' + encodeURIComponent(inputValuePetNm);
+		queryParams += '&' + encodeURIComponent('rfid_cd') + '=' + encodeURIComponent(inputValuePetNm);
+		queryParams += '&' + encodeURIComponent('owner_nm') + '=' + encodeURIComponent(inputValueName);
+		queryParams += '&' + encodeURIComponent('owner_birth') + '=' + encodeURIComponent('');
+		queryParams += '&' + encodeURIComponent('_type') + '=' + encodeURIComponent('json');
 		xhr.open('GET', url + queryParams);
 		xhr.onreadystatechange = function () {
 		console.log('onreadystatechange event triggered');
-		$("#printinfo1").show();
+		
 	    if (xhr.readyState === XMLHttpRequest.DONE) {
 			console.log(xhr.status); //무조건 입력하면 200..
 	        if (xhr.status === 200) {
 				
 	            const response = JSON.parse(xhr.responseText);
 		        console.log(response);
-	            //화면출력 id 가져오기
 				const header = response.response.header;
 				const resultMsg = header.resultMsg;
 				console.log(resultMsg)
-	            // 특정 값 액세스!
 				if(resultMsg != "NORMAL SERVICE."){
+					$("#printinfo1").show();
 					$("#modalBody1").empty();
+					$("#span-title").empty();
 					$("#span-title").append('OOPS!');
-					$("#modalBody1").append('<div class="box-title1"><div class="small-title2">You mistype the information.\nPlease check it again.</div><div class="small-content2"></div></div>');
+					$("#modalBody1").append('<div class="box-title1"><div class="small-title2">You mistype the information.'+
+					'\nPlease check it again.</div><div class="small-content2"></div></div>');
 	            }
 				const body = response.response.body;
 	            const item = body.item;
@@ -53,7 +54,7 @@ $(document).ready(function(){
 				const translatedKindNm = data[0].kindNm;	
 				const translatedOrgNm = data[0].orgNm;	
 				
-              
+            	$("#printinfo1").show();  
 				$("#modalBody1").empty();
 				$("#span-title").empty();
 				$("#span-title").append('MY  PET INFO');

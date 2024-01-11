@@ -15,7 +15,7 @@ html, body {
 
 .vol-container {
 	width: 45.57291666666667vw;
-	height: 83vh;
+	/* height: 100vh; */
 	border-radius: 50px;
 	border: 1px dashed rgba(67, 49, 28, 0.80);
 }
@@ -56,24 +56,33 @@ html, body {
 
 .recruiting{
 background: rgba(250, 234, 177, 0.8);
-	color: #000;
-	border-radius: 30vw;
+    color: #000;
+    border-radius: 30vw;
     border: none;
     width: 6.8vw;
-    height: 2.6vw;
+    /* height: 2.6vw; */
     font-family: "Poppins", sans-serif;
-    font-size: 1vw;
+
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     margin-top: 2vh;
     padding-top: 2vh;
-	
+}
+.vol-status{
+	bottom: 0.6vw;
+    position: relative;
+    text-align: center;
+    font-size: 1vw;
+}
+
+.img-wrapper{
+	width:40vw;
 }
 
 .review-img {
-	height: 18vh;
-	margin-top: 2vh;
+	width: 100%;
+    margin-top: 2vh;
 	margin-bottom:1.5vh;
 }
 
@@ -140,7 +149,7 @@ background: rgba(250, 234, 177, 0.8);
 }
 
 .apply-btn {
-	margin-top: 10vh;
+	margin-top: 8vh;
 }	
 
 .apply-btn>button {

@@ -13,6 +13,7 @@ function hideLoading() {
   document.getElementById("loading").style.display = "none";
   document.getElementById("loadingwords").style.display = "none";
 }
+
 function showButtom(){
 	document.getElementById("send").style.display = "block";
 }
@@ -47,7 +48,7 @@ function selectPersonality(selectedPersonality) {
   const personalityOptions = document.getElementById("personalityOptions");
   hideTitle();
   personalityOptions.innerHTML = `<div style="display:block;" class="resultImg">
-			<img style="width: 50vw;" src="4_service/img/naming1.png">
+			<img src="4_service/img/naming1.png">
 		</div><h2>You've just selected ${gender}, ${color} hair color, ${hairLength} style, and ${personality} personality! Can you push the generate button?!</h2>`  
 /* updateSelectedText(
     `${generatedName}을(를) 선택했어여!! generate 버튼을 눌러주세용!!`

@@ -31,7 +31,7 @@
   <body onload="aa()">
     <!-- 로그인부분시작 -->
     <!-- action="LoginMainHC" method="post" --> 
-    <form action="LoginMainHC" method="post" onsubmit="login();">
+    <form action="LoginMainHC" method="post">
     <input type="hidden" name="url" value ="${lastS }">
       <div class="containar-hw">
         <div class="sub-containar-hw">

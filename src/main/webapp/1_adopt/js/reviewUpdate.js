@@ -45,7 +45,8 @@ function previewSelectedImage(input) {
     reader.readAsDataURL(file);
 
     // 선택한 파일의 이름으로 oldImg 업데이트
-    document.getElementById("oldImg").value = file.name;
+//    document.getElementById("oldImg").value = file.name;
+//    console.log(file.name)
   } else {
     // 파일 선택이 취소된 경우
     preview.src = "1_adopt/1_4_review/imgFolder/" + document.getElementById("oldImg").value;

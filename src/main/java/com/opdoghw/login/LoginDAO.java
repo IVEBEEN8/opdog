@@ -5,7 +5,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 
 import com.opdoghw.centerinfo.DBManager_khw;
 
@@ -157,6 +161,7 @@ public class LoginDAO {
 
 	public static void loginCheck(HttpServletRequest request) {
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+		System.out.println("this is the account" + account);
 		if (account == null) {
 			request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 			request.setAttribute("uprCd", "");
@@ -201,5 +206,46 @@ public class LoginDAO {
 		String currentPage = request.getRequestURI();
 		session.setAttribute("prevPage", currentPage);
 		System.out.println("Updated PrevPage URL: " + currentPage);
+	}
+
+	@SuppressWarnings("unchecked")
+	public static void emailCehck(HttpServletRequest request, HttpServletResponse response) {
+
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from opdogaccount where a_email=?";
+
+		try {
+			String checkingValue = request.getParameter("checkingValue");
+			String result = request.getParameter("result");
+			System.out.println(checkingValue);
+
+			JSONArray emailCheck = new JSONArray();
+			JSONObject obj = new JSONObject();
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			System.out.println("연결성공!!");
+			pstmt.setString(1, checkingValue);
+			rs = pstmt.executeQuery();
+			obj.put("checkingValue", checkingValue);
+			if (rs.next()) {
+				result = "email o";
+				obj.put("result", result);
+			} else {
+				result = "email x";
+				obj.put("result", result);
+			}
+
+			emailCheck.add(obj);
+			response.setContentType("application/json; charset=utf-8");
+			response.getWriter().print(emailCheck);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
+
 	}
 }

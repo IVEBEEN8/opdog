@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+import com.google.gson.Gson;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 
@@ -31,32 +32,32 @@ public class MyPageDAO {
 			JSONObject bb = (JSONObject) jp.parse(aa);
 
 			con = DBManager_khw.connect();
-			
+
 			sql = "select d_no from opdoglike where d_no =?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, (String) bb.get("desertionNo"));
 			rs = pstmt.executeQuery();
-		if (rs.next()) {
-			response.getWriter().print("이미 등록된 강아지입니다.");
-		} else {
-			sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?,?,?)";
-			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, (String) bb.get("age"));
-			pstmt.setString(2, (String) bb.get("desertionNo"));
-			pstmt.setString(3, (String) bb.get("kindCd"));
-			pstmt.setString(4, (String) bb.get("colorCd"));
-			pstmt.setString(5, (String) bb.get("sexCd"));
-			pstmt.setString(6, (String) bb.get("neuterYn"));
-			pstmt.setString(7, (String) bb.get("specialMark"));
-			pstmt.setString(8, (String) bb.get("careNm") + "!" + bb.get("careTel") + "!" + bb.get("careAddr"));
-			pstmt.setString(9, (String) bb.get("orgNm") + "!" + bb.get("chargeNm") + "!" + bb.get("officetel"));
-			pstmt.setString(10, (String) bb.get("popfile"));
-			pstmt.setString(11, (String) bb.get("filename"));
-			pstmt.setInt(12, account.getNo());
-			System.out.println(account.getNo());
-			pstmt.executeUpdate();
-			response.getWriter().print("등록이 완료되었습니다.");
-		}
+			if (rs.next()) {
+				response.getWriter().print("이미 등록된 강아지입니다.");
+			} else {
+				sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?,?,?)";
+				pstmt = con.prepareStatement(sql);
+				pstmt.setString(1, (String) bb.get("age"));
+				pstmt.setString(2, (String) bb.get("desertionNo"));
+				pstmt.setString(3, (String) bb.get("kindCd"));
+				pstmt.setString(4, (String) bb.get("colorCd"));
+				pstmt.setString(5, (String) bb.get("sexCd"));
+				pstmt.setString(6, (String) bb.get("neuterYn"));
+				pstmt.setString(7, (String) bb.get("specialMark"));
+				pstmt.setString(8, (String) bb.get("careNm") + "!" + bb.get("careTel") + "!" + bb.get("careAddr"));
+				pstmt.setString(9, (String) bb.get("orgNm") + "!" + bb.get("chargeNm") + "!" + bb.get("officetel"));
+				pstmt.setString(10, (String) bb.get("popfile"));
+				pstmt.setString(11, (String) bb.get("filename"));
+				pstmt.setInt(12, account.getNo());
+				System.out.println(account.getNo());
+				pstmt.executeUpdate();
+				response.getWriter().print("등록이 완료되었습니다.");
+			}
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -96,6 +97,14 @@ public class MyPageDAO {
 			}
 			request.setAttribute("list", list);
 
+
+			// 어레이리스트를 지슨파일에 담아서 js로 보낸다
+			String jsonLikedog = new Gson().toJson(list);
+			System.out.println(jsonLikedog);
+			response.setContentType("application/json");
+			response.getWriter().write(jsonLikedog);
+
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -113,6 +122,7 @@ public class MyPageDAO {
 		}
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		try {
+
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 
@@ -132,6 +142,7 @@ public class MyPageDAO {
 				HttpSession hs = request.getSession();
 				hs.setAttribute("account", null);
 			}
+			System.out.println("updated info" + account);
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -142,20 +153,17 @@ public class MyPageDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		String sql = "delete from opdoglike where d_no in ?";
-		
+
 		try {
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, request.getParameter("value"));
 			pstmt.executeQuery();
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		
+
 	}
 
 	public static void pointLoad(HttpServletRequest request, HttpServletResponse response) {
@@ -164,7 +172,7 @@ public class MyPageDAO {
 		ResultSet rs = null;
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		String sql = "select * from totalpoint where a_no=? order by p_date asc";
-		
+
 		try {
 			con = DBManager_khw.connect();
 			pstmt = con.prepareStatement(sql);
@@ -178,28 +186,21 @@ public class MyPageDAO {
 				p.setPoint(rs.getInt("p_point"));
 				point.add(p);
 			}
-			sql = "SELECT SUM(p_point) AS total FROM totalpoint";
+			sql = "SELECT SUM(p_point) AS total FROM totalpoint where a_no =?";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account.getNo());
 			rs = pstmt.executeQuery();
 			rs.next();
 			request.setAttribute("pointlist", point);
 			request.setAttribute("totalpoint", rs.getInt("total"));
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
-		
+
+
 	}
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
 }

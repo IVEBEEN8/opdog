@@ -40,10 +40,10 @@
 			<div class="third-title">Payment Details</div>
 
 			<div class="input-line">
-				<input class="input-box2" type="text" placeholder="Cardholder Name" />
+				<input class="input-box2" type="text" placeholder="Cardholder Name" id="cardHolderName"/>
 			</div>
 			<div class="input-line">
-				<input class="input-box2" type="text" placeholder="Card Number" />
+				<input class="input-box2" type="text" placeholder="Card Number" id="cardNumber"/>
 			</div>
 			<div class="card-info">
 				<div>
@@ -63,7 +63,7 @@
 					</select>
 				</div>
 				<div>
-					<input class="input-cvc" type="text" placeholder="CVC">
+					<input class="input-cvc" type="text" placeholder="CVC" id="cvc">
 				</div>
 			</div>
 

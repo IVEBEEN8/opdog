@@ -12,9 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class TranslateInfoC extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		System.out.println("check1");
 		CheckRegNmDAO.translateInfo(request, response);
-		System.out.println("check2");
 
 	}
 

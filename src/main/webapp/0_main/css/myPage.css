@@ -89,6 +89,7 @@ body {
   background: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .button:hover {
@@ -341,12 +342,16 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 2vw;
+  padding-bottom: 1vw;
+  background: rgb(67 49 28 / 6%);
   flex-direction: column;
 }
 
 .likecontent-wrapper > img {
   width: 10vw;
   height: 10vw;
+  border-radius: 0.3vw;
 }
 
 .likecontent {
@@ -661,4 +666,11 @@ body {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+.columnP1css {
+  text-align: left;
+  width: 14vw;
+  font-size: 1vw;
+  position: relative;
+  overflow: hidden;
 }

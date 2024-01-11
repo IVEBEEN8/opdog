@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
+import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -29,6 +30,7 @@ public class VolunteerDAO {
 			String search = request.getParameter("search");
 			String status = request.getParameter("status");
 			String locate = request.getParameter("locate");
+			
 
 			con = DBManager_khw.connect();
 			System.out.println("연결 성공~!");
@@ -49,8 +51,7 @@ public class VolunteerDAO {
 				v.setV_created(rs.getDate("V_CREATED"));
 				v.setV_status(rs.getString("V_STATUS"));
 				v.setA_no(rs.getInt("A_NO"));
-				String aEmail = rs.getString("A_EMAIL");
-				v.setA_email(aEmail);
+				v.setA_email(rs.getString("A_EMAIL"));
 				volunteer.add(v);
 
 			}
@@ -94,7 +95,7 @@ public class VolunteerDAO {
 			String locate = mr.getParameter("locate");
 			System.out.println("이건내가 사랑하는 위치!:" + locate);
 
-			content = content.replaceAll("\r\n", "<br>");
+			content = content.replaceAll("<br>","\r\n");
 
 			System.out.println(file);
 			System.out.println(title);
@@ -131,8 +132,8 @@ public class VolunteerDAO {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "SELECT v.*, a.A_NO, a.A_EMAIL\n" + "FROM VOLUNTEER v\n" + "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n"
-				+ "WHERE v.V_NO = ?";
+		String sql = "SELECT v.*, a.A_NO, a.A_EMAIL\n" + "FROM VOLUNTEER v\n"
+				+ "JOIN OPDOGACCOUNT a ON v.A_NO = a.A_NO\n" + "WHERE v.V_NO = ?";
 
 		try {
 			con = DBManager_khw.connect();
@@ -159,7 +160,6 @@ public class VolunteerDAO {
 				v.setA_email(aEmail);
 
 				request.setAttribute("vol", v);
-				System.out.println(v);
 				System.out.println("성공");
 			}
 
@@ -188,28 +188,35 @@ public class VolunteerDAO {
 					new DefaultFileRenamePolicy());
 
 			String title = mr.getParameter("title");
-			String newFile = mr.getFilesystemName("newFile");
-			String oldFile = mr.getParameter("oldFile");
 			String content = mr.getParameter("content");
 			String status = mr.getParameter("chooseStatus");
 			String no = mr.getParameter("no");
-			String File1 = oldFile;
-			if (newFile != null) {
-				File1 = newFile;
+			String oldFile = mr.getParameter("oldFile");
+			String newFile= oldFile;
+			String originalFileName = mr.getFilesystemName("newFile");
+			if (originalFileName != null) {
+				// UUID를 사용하여 고유한 파일 이름 생성
+				String fileExtension = originalFileName.substring(originalFileName.lastIndexOf("."));
+				String uniqueFileName = UUID.randomUUID().toString().replaceAll("-", "") + fileExtension;
+
+				// 파일 이름 변경
+				File f = new File(path, uniqueFileName);
+				mr.getFile("newFile").renameTo(f);
+				newFile = uniqueFileName;
 			}
 
-			content = content.replaceAll("\r\n", "<br>");
+			content = content.replaceAll( "<br>","\r\n");
 
 			System.out.println(title);
 			System.out.println(newFile);
 			System.out.println(oldFile);
 			System.out.println(content);
 			System.out.println(status);
-			System.out.println(File1);
+			System.out.println(newFile);
 
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, title);
-			pstmt.setString(2, File1);
+			pstmt.setString(2, newFile);
 			pstmt.setString(3, content);
 			pstmt.setString(4, status);
 			pstmt.setString(5, no);
@@ -219,8 +226,8 @@ public class VolunteerDAO {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				if (newFile != null) {
-					File f = new File(path + "/" + oldFile);
-					f.delete();
+					File d = new File(path + "/" + oldFile);
+					d.delete();
 				}
 			}
 			request.setAttribute("no", no);

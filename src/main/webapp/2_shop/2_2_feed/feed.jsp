@@ -85,10 +85,11 @@
 			</div>
 			<div class="search-zero">${message}</div>
 			<div class="price-order" align="right">
-				<input type="radio" name="sort" value="high" id="radio-high-price"
+				<label class="price-label" for="radio-high-price"><input type="radio" name="sort" value="high" id="radio-high-price"
 					onclick="location.href='FeedSortC?sort=high'"> Highest
-				price &nbsp; <input type="radio" name="sort" value="low" id="radio-low-price"
-					onclick="location.href='FeedSortC?sort=low'"> Lowest price
+				price &nbsp; </label>
+				<label class="price-label" for="radio-low-price"><input type="radio" name="sort" value="low" id="radio-low-price"
+					onclick="location.href='FeedSortC?sort=low'"> Lowest price</label>
 
 			</div>
 		</div>
@@ -182,6 +183,14 @@
   } else if (checkedRadio === "low") {
     document.getElementById("radio-low-price").checked = true;
   }
+</script>
+<script>
+  document.getElementById("search").addEventListener("keydown", function(event) {
+    if (event.keyCode === 13) { // Enter key pressed
+      event.preventDefault(); // Prevent default form submission
+      location.href = 'FeedSearchC?search='+document.getElementById('search').value;
+    }
+  });
 </script>
 
 
