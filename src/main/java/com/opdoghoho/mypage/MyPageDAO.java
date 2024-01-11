@@ -175,8 +175,9 @@ public class MyPageDAO {
 				p.setPoint(rs.getInt("p_point"));
 				point.add(p);
 			}
-			sql = "SELECT SUM(p_point) AS total FROM totalpoint";
+			sql = "SELECT SUM(p_point) AS total FROM totalpoint where a_no =?";
 			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account.getNo());
 			rs = pstmt.executeQuery();
 			rs.next();
 			request.setAttribute("pointlist", point);
