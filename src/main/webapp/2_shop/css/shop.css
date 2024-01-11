@@ -149,6 +149,10 @@ input::placeholder {
 	cursor: pointer;
 }
 
+.price-label{
+	cursor: pointer;
+}
+
 
 
 .items {
