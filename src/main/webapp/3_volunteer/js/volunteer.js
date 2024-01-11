@@ -113,6 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
+//에이젝스는 제이슨을 기본으로 많이 씀. 
 function getPost(status) {
   let search = $('input[name="searchTitle"]').val();
   let locate = $("#locate").text();
