@@ -479,7 +479,7 @@ header {
 	position: relative;
 	background-color: rgba(250, 248, 241, 0.8);
 	width: 400px;
-	height: 55.55555555555556vh;
+	height: 48vh;
 	border-radius: 76px;
 	/* margin-left: 20px; */
 }
@@ -515,7 +515,7 @@ header {
 }
 
 .img-name >span{
-	color:black;
+color: rgba(67, 49, 28, 0.9);
 	font-size: 1.5vw;
 }
 

@@ -117,11 +117,11 @@
 										<img src="${dogs.popfile }" alt="유기견${status.count }" />
 									</div>
 									<div class="txt-box">
-										<div class="img-name">${dogs.dday }<span> days left<br> in the protection period.</span></div>
-										<div class="img-info">
+										<div class="img-name">${dogs.dday }<span> day left<br> in the protection period.</span></div>
+							<%-- 			<div class="img-info">
 											${dogs.age }<br /> ${dogs.sexCd },<br /> ${dogs.specialMark }<br />
 											${dogs.date }
-										</div>
+										</div> --%>
 									</div>
 								</div>
 							</div>
@@ -135,11 +135,11 @@
 										<img src="${dogs.popfile }" alt="유기견${status.count }" />
 									</div>
 									<div class="txt-box">
-										<div class="img-name">${dogs.dday }<span> days left<br> in the protection period.</span></div>
-										<div class="img-info">
+										<div class="img-name">${dogs.dday }<span> day left<br> in the protection period.</span></div>
+										<%-- <div class="img-info">
 											${dogs.age }<br /> ${dogs.sexCd },<br /> ${dogs.specialMark }<br />
 											${dogs.date }
-										</div>
+										</div> --%>
 									</div>
 								</div>
 							</div>
