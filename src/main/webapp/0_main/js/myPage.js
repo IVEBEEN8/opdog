@@ -60,7 +60,7 @@ function innerPageOff() {
 	$("#infoPage").css({ display: "none" });
 	$("#likePage").css({ display: "none" });
 	$("#pointPage").css({ display: "none" });
-	$("#volunteerPage").css({ display: "none" });
+	$("#volunteerPage").css({ display: "none" }); //ㅁㅁㅁ
 }
 
 function buttonCss() {
