@@ -10,23 +10,28 @@ function check() {
 	let orgCd = document.getElementById("sigunSelect");
 	let checkbox = document.querySelector("input[type='checkbox'][name='agree']");
 
-	if (isEmpty(firstName)) {
+	if (isEmpty(firstName)|| !isValidName(firstName.value)) {
 		firstName.classList.add('error-placeholder'); 
-		firstName.setAttribute('placeholder', 'Enter your First name (required)');
+		firstName.setAttribute('placeholder', 'Enter your First name with no numbers');
 		firstName.focus();
+		firstName.value = "";
+		lastName.value="";
 		return false;
 	}
+	
 
-	if (isEmpty(lastName)) {
+	if (isEmpty(lastName)|| !isValidName(lastName.value)) {
 		lastName.classList.add('error-placeholder'); 
-		lastName.setAttribute('placeholder', 'Enter your Last name (required)');
+		lastName.setAttribute('placeholder', 'Enter your Last name with no numbers');
 		lastName.focus();
+		lastName.value ="";
 		return false;
 	}
 
-	if (isEmpty(id)) {
-		id.classList.add('error-placeholder'); 
-		id.setAttribute('placeholder', 'Enter your e-mail (required)');
+	if (isEmpty(id) || !isValidEmail(id.value)) {
+		id.classList.add('error-placeholder');
+		id.value ="";
+		id.setAttribute('placeholder', '[hello@world.com] check the format');
 		id.focus();
 		return false;
 	}

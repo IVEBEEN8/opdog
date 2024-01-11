@@ -55,7 +55,15 @@ function isCheckboxChecked(checkbox) {
     return checkbox.checked;
 }
 
+function isValidEmail(email) {
+    const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+    return emailRegex.test(email);
+}
 
+function isValidName(name) {
+    const nameRegex = /^[^\d]+$/;
+    return nameRegex.test(name);
+}
 
 
 
