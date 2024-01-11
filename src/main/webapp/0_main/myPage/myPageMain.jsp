@@ -280,10 +280,7 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-
-=======
-	<!-- 	<script type="text/javascript">
+ 	<script type="text/javascript">
 			console.log("hi?");		
 			$(document).ready(function(){
 				 var dataSource = ${jsonLikedog}; // 데이터 소스, 예: 페이지 번호의 배열
@@ -310,7 +307,6 @@
 			})
 })
 	
-	</script> -->
->>>>>>> 569bf23ac19b22dd38bb748ebbf27e3480d922c8
+	</script> 
 </body>
 </html>
