@@ -161,6 +161,7 @@ public class LoginDAO {
 
 	public static void loginCheck(HttpServletRequest request) {
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+		System.out.println("this is the account" + account);
 		if (account == null) {
 			request.setAttribute("loginLogoutBtn", "login/header-loginSignup.jsp");
 			request.setAttribute("uprCd", "");

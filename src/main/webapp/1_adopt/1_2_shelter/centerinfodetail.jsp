@@ -18,75 +18,96 @@
 <!--폰트 적용 -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap" rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap"
+	rel="stylesheet">
 <script src="1_adopt/js/searchhw.js"></script>
 <script src="1_adopt/js/centerinfo.js"></script>
 
 </head>
 <body>
-<div class="containar1-2">
-	<button class="reload-map1-2"><img class="reloadi" src="1_adopt/img/reloadi.png"><span class="wordReload">Reload</span></button>
-	<div class="map" id="map"></div>
-	<!--검색창!-->
-	<div class="row">
-            <div class="pull-right-wrap1-2">
-                    <div class="pull-right1-2">
-                        <select class="form-control" name="searchField">
-                            <option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
-                            <option value="c_careAddr">&nbsp;&nbsp;Address</option>
-                        </select>
-                    </div>
-                    <div class="pull-right1-2">
-                        <input type="text" id ="inputSearch" class="form-control input-search1-2" placeholder=" Put Keywords" name="searchText" maxlength="100">
-                    </div>
-                    <div class="pull-right1-2">
-                        <button type="button" class="searchButton1-2" id="searchButton"><img class="searchi" src="1_adopt/img/search.png"></button>
-                   </div>
-            </div>
-    </div>
-    <!-- 인풋박스 시작! -->
-	<div class="infobox-wrap1-2">
-	 <c:forEach var="c" items="${centers}" varStatus="status">
-	 	<button class="showinthemap" value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }!${c.careTel}">
-	 	<div class="centerinfo-print-wrap1-2">
-	 		<div class="centerinfo-print1-2">
-	 			<div class="center-title1-2">${c.careNm }</div>
-	 			<div class="center-info-wrap1-2">
-	 				<div class="center-icon1-2"><img class="icon1-2" src="1_adopt/img/markicon.png" alt="address" /></div>
-	 				<div class="center-info1-2"><div class="center-info-span1-2">${c.careAddr }</div></div>
-	 			</div>
-	 			<div class="center-info-wrap1-2">
-	 				<div class="center-icon1-2"><img class="icon1-2" src="1_adopt/img/clockicon.png" alt="time" /></div>
-	 				<div class="center-info1-2">${c.oprtime}~${c.closetime } (${c.closeday })</div>
-	 			</div>
-	 			<div class="center-info-wrap1-2">
-	 				<div class="center-icon1-2"><img class="icon2-1-2" src="1_adopt/img/phoneicon.svg" alt="time" /></div>
-	 				<div class="center-info1-2">${c.careTel}</div>
-	 			</div>
-	 		</div>
-	 	</div>
-	 	</button>
-       </c:forEach>
+	<div class="containar1-2">
+		<button class="reload-map1-2">
+			<img class="reloadi" src="1_adopt/img/reloadi.png"><span
+				class="wordReload">Reload</span>
+		</button>
+		<div class="map" id="map"></div>
+		<!--검색창!-->
+		<div class="row">
+			<div class="pull-right-wrap1-2">
+				<div class="pull-right1-2">
+					<select class="form-control" name="searchField">
+						<option value="c_careNm">&nbsp;&nbsp;ShelterName</option>
+						<option value="c_careAddr">&nbsp;&nbsp;Address</option>
+					</select>
+				</div>
+				<div class="pull-right1-2">
+					<input type="text" id="inputSearch"
+						class="form-control input-search1-2" placeholder=" Put Keywords"
+						name="searchText" maxlength="100">
+				</div>
+				<div class="pull-right1-2">
+					<button type="button" class="searchButton1-2" id="searchButton">
+						<img class="searchi" src="1_adopt/img/search.png">
+					</button>
+				</div>
+			</div>
+		</div>
+		<!-- 인풋박스 시작! -->
+		<div class="infobox-wrap1-2">
+			<c:forEach var="c" items="${centers}" varStatus="status">
+				<button class="showinthemap"
+					value="${c.careNm }!${c.careAddr }!${c.lat}!${c.lng}!${c.oprtime}!${c.closetime }!${c.closeday }!${c.careTel}">
+					<div class="centerinfo-print-wrap1-2">
+						<div class="centerinfo-print1-2">
+							<div class="center-title1-2">${c.careNm }</div>
+							<div class="center-info-wrap1-2">
+								<div class="center-icon1-2">
+									<img class="icon1-2" src="1_adopt/img/markicon.png"
+										alt="address" />
+								</div>
+								<div class="center-info1-2">
+									<div class="center-info-span1-2">${c.careAddr }</div>
+								</div>
+							</div>
+							<div class="center-info-wrap1-2">
+								<div class="center-icon1-2">
+									<img class="icon1-2" src="1_adopt/img/clockicon.png" alt="time" />
+								</div>
+								<div class="center-info1-2">${c.oprtime}~${c.closetime }
+									(${c.closeday })</div>
+							</div>
+							<div class="center-info-wrap1-2">
+								<div class="center-icon1-2">
+									<img class="icon2-1-2" src="1_adopt/img/phoneicon.svg"
+										alt="time" />
+								</div>
+								<div class="center-info1-2">${c.careTel}</div>
+							</div>
+						</div>
+					</div>
+				</button>
+			</c:forEach>
+		</div>
 	</div>
-</div>
 
-<!-- 모달! -->
+	<!-- 모달! -->
 	<div id="printinfo">
-  		<div id="modalContent">
-   			 <div id="modalBody">
-    		</div>
-  		</div>
-	</div>
-	
-<!--검색 모달! -->
-	<div id="printinfo1">
-  		<div id="modalContent1"><span class="mtitle">Searched Info</span><div style="z-index:8;"id="closeBtn1">&times;</div>
-   			 <div id="modalBody1">
-    		</div>
-  		</div>
+		<div id="modalContent">
+			<div id="modalBody"></div>
+		</div>
 	</div>
 
-<script>
+	<!--검색 모달! -->
+	<div id="printinfo1">
+		<div id="modalContent1">
+			<span class="mtitle">Searched Info</span>
+			<div style="z-index: 8;" id="closeBtn1">&times;</div>
+			<div id="modalBody1"></div>
+		</div>
+	</div>
+
+	<script>
 
 var mapContainer = document.getElementById('map'); //지도를 표시할 div id
 var mapOption = {

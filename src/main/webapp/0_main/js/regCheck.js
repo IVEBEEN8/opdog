@@ -78,7 +78,6 @@ function check() {
 		pwCheck.value = "";
 		return false;
 	}
-
 	if (notSelect(uprCd)) {
 		
 		uprCd.focus();
@@ -94,32 +93,5 @@ function check() {
 	}
 }
 
-/*
-function check() {
-  var form = document.querySelector('form');
-  var inputs = form.querySelectorAll('input[placeholder]');
-  var firstEmptyInput = null; // 첫 번째 비어 있는 입력 필드
 
-  var isValid = true;
-
-  inputs.forEach(function(input) {
-	if (input.value.trim() === '') {
-	  isValid = false;
-	  input.classList.add('error-placeholder'); // 빈 필드에 대한 클래스 추가
-	  input.setAttribute('placeholder', 'Enter your ' + input.name + ' (required)');
-
-	  if (!firstEmptyInput) {
-		firstEmptyInput = input;
-	  }
-	} else {
-	  input.classList.remove('error-placeholder'); // 빈 필드가 아닌 경우 클래스 제거
-	}
-  });
-
-  if (firstEmptyInput) {
-	firstEmptyInput.focus(); // 첫 번째 비어 있는 입력 필드에 포커스 주기
-  }
-
-  return isValid;
-}*/
 

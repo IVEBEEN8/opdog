@@ -20,6 +20,7 @@ public class MyPageHC extends HttpServlet {
 		LoginDAO.loginCheck(request);
 		DoginfoDAO.sido(request);
 		MyPageDAO.likeLoad(request, response);
+		MyPageDAO.pointLoad(request, response);
 		VolunteerDAO.appliedLoad(request);
 		request.getRequestDispatcher("0_main/contentPage.jsp").forward(request, response);
 

@@ -88,11 +88,12 @@
 			</div>
 			<div class="search-zero">${message}</div>
 			<div class="price-order" align="right">
-				<input type="radio" name="sort" value="high" id="radio-high-price"
+				<label class="price-label" for="radio-high-price"><input type="radio" name="sort" value="high" id="radio-high-price"
 					onclick="location.href='FashionSortC?sort=high'"> Highest
-				price &nbsp; <input type="radio" name="sort" value="low" id="radio-low-price"
+				price &nbsp;</label> 
+				<label class="price-label" for="radio-low-price"><input type="radio" name="sort" value="low" id="radio-low-price"
 					onclick="location.href='FashionSortC?sort=low'"> Lowest
-				price
+				price</label> 
 
 			</div>
 		</div>

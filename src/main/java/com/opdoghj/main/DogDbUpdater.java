@@ -9,8 +9,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.TimeUnit;
 
-import javax.servlet.http.HttpServletRequest;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
@@ -22,7 +24,16 @@ public class DogDbUpdater {
 
 	public static List<String> newList;
 
-	public static void updateDb(HttpServletRequest request) {
+	public static void startDbUpdater() {
+		ScheduledExecutorService scheduler = Executors.newScheduledThreadPool(1);
+
+		scheduler.scheduleAtFixedRate(() -> {
+			updateDb();
+		}, 0, 1, TimeUnit.HOURS);
+
+	}
+
+	public static void updateDb() {
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -30,7 +41,8 @@ public class DogDbUpdater {
 
 		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
 		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?pageNo=1&numOfRows=1000&upkind=417000&state=protect&_type=json&serviceKey=" + encodeKey;
+		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?pageNo=1&numOfRows=1000&upkind=417000&state=protect&_type=json&serviceKey="
+				+ encodeKey;
 
 		try {
 			con = DBManager_khw.connect();
@@ -38,7 +50,7 @@ public class DogDbUpdater {
 			URL u = new URL(url);
 			HttpURLConnection huc = (HttpURLConnection) u.openConnection();
 			if (huc.getResponseCode() == 200) {
-//				중복데이터 조회
+//				중복데이터 조회, 신규데이터 삽입
 				InputStream is = huc.getInputStream();
 				InputStreamReader isr = new InputStreamReader(is, "UTF-8");
 				JSONParser jp = new JSONParser();
@@ -56,26 +68,23 @@ public class DogDbUpdater {
 
 			}
 //			오래된 데이터 삭제
-		
-		sql = "select d_desertionno from dogInfo";
-		pstmt = con.prepareStatement(sql);
+
+			sql = "select d_desertionno from dogInfo";
+			pstmt = con.prepareStatement(sql);
 			rs = pstmt.executeQuery();
 			ArrayList<String> dbList = new ArrayList<String>();
 			while (rs.next()) {
 				dbList.add(rs.getString("d_desertionno"));
 			}
-			
+
 			ArrayList<String> delList = new ArrayList<String>();
 			for (String s : dbList) {
-				if(!newList.contains(s)) { 
+				if (!newList.contains(s)) {
 					delList.add(s);
 				}
 			}
-			System.out.println(delList);
-			
-			
-			
-			String delListStr = "("+String.join(",", delList)+")";
+
+			String delListStr = "(" + String.join(",", delList) + ")";
 			sql = "delete from dogInfo where d_desertionNo in ?";
 			pstmt = con.prepareStatement(sql);
 			pstmt.setString(1, delListStr);
@@ -98,8 +107,8 @@ public class DogDbUpdater {
 
 		String encodeKey = "I0hU0%2BkJjjUJgSP2JDRG%2BB0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR%2BiMQ%3D%3D"; // 인증키
 		String decodeKey = "I0hU0+kJjjUJgSP2JDRG+B0keboYbyMGx9zmERg13WAwHhmlLgpJ4zk1Uyy7cvWmN9hKEzIGdunsMPK7SR+iMQ==";
-		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?pageNo=" + page + "&numOfRows=1000&upkind=417000&state=protect&_type=json&serviceKey="
-				+ encodeKey;
+		String url = "http://apis.data.go.kr/1543061/abandonmentPublicSrvc/abandonmentPublic?pageNo=" + page
+				+ "&numOfRows=1000&upkind=417000&state=protect&_type=json&serviceKey=" + encodeKey;
 
 		String sql = "";
 		try {
@@ -128,11 +137,11 @@ public class DogDbUpdater {
 					rs = pstmt.executeQuery();
 					no[i] = (String) aa.get("desertionNo");
 					newList.add((String) aa.get("desertionNo"));
-					String kind = (String)aa.get("kindCd");
-					String kind2[]= kind.split("]");
+					String kind = (String) aa.get("kindCd");
+					String kind2[] = kind.split("]");
 					String age = (String) aa.get("age");
 					int splitIndex = age.indexOf('(');
-					String age2 = age.substring(0,splitIndex);
+					String age2 = age.substring(0, splitIndex);
 					if (!rs.next()) {
 						sql = "insert into dogInfo values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 						pstmt = con.prepareStatement(sql);
@@ -151,7 +160,7 @@ public class DogDbUpdater {
 						pstmt.setString(13, (String) aa.get("orgNm"));
 						pstmt.setString(14, (String) aa.get("filename"));
 						pstmt.setString(15, (String) aa.get("popfile"));
-						pstmt.setInt(16, Integer.parseInt((String)aa.get("noticeEdt")));
+						pstmt.setInt(16, Integer.parseInt((String) aa.get("noticeEdt")));
 						pstmt.setString(17, (String) aa.get("neuterYn"));
 						pstmt.setString(18, (String) aa.get("happenDt"));
 						pstmt.setString(19, age2);
