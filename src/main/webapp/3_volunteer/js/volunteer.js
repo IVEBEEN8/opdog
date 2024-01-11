@@ -118,7 +118,7 @@ function getPost(status) {
   let locate = $("#locate").text();
   $.ajax({
     url: "VolunteerAPI",
-    data: { search, status, locate },
+    data: { search , status, locate },
     datatype: "json",
   }).done(function (json) {
     console.log(json);
@@ -127,7 +127,7 @@ function getPost(status) {
 }
 
 function paging(json){
-	console.log("hellow?");
+	console.log("hello?");
 	$('#pagination-container').pagination({
 		dataSource: json,
 		pageSize: 5,

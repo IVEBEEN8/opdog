@@ -34,7 +34,7 @@
 							<div class="recruiting"><span class="vol-status">${vol.v_status }</span></div>
 						</div>
 					</div>
-					<div>
+					<div class="img-wrapper">
 						<img class="review-img" alt=""
 							src="3_volunteer/newImg/${vol.v_img }">
 					</div>

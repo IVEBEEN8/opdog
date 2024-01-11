@@ -58,7 +58,8 @@
 								</div>
 								<div class="preview-img-cover">
 									<img class="preview-img" id="previewImage"
-										src="3_volunteer/img/${vol.v_img }"> <input
+										src="3_volunteer/newImg/${vol.v_img }"> 
+										<input
 										id="oldImg" name="oldFile" value="${vol.v_img }"
 										style="display: none">
 								</div>
