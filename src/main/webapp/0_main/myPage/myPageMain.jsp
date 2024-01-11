@@ -117,7 +117,7 @@
 					<div class="like-wrapper">
 						<div class="like-title">my booked dog</div>
 						<div id="data-container" class="foreach-size">
-							 <c:forEach var="list" items="${list }" varStatus="status">
+							<c:forEach var="list" items="${list }" varStatus="status">
 								<div class="likecontent-wrapper">
 									<img alt="" src="${list.img }">
 									<div class="likecontent">
@@ -134,10 +134,10 @@
 										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
 									</div>
 								</div>
-							</c:forEach> 
+							</c:forEach>
 						</div>
 						<div id="pagination-container" class="pagination"></div>
-						
+
 					</div>
 				</div>
 				<div id="pointPage" class="innerPage p3">
@@ -147,7 +147,8 @@
 						</div>
 						<div class="pointMoveWrap">
 							<div class="pointMove">
-								<div class="nowPoint">0</div> <input id="max" type="hidden" value="${totalpoint }">
+								<div class="nowPoint">0</div>
+								<input id="max" type="hidden" value="${totalpoint }">
 							</div>
 						</div>
 
@@ -171,13 +172,13 @@
 									<th class="point-th history">History</th>
 									<th class="point-th point">Point</th>
 								</tr>
-							<c:forEach var="totalpoint" items="${pointlist }">
-								<tr class="point-list">
-									<td class="point-td">${totalpoint.date }</td>
-									<td class="point-td">${totalpoint.text }</td>
-									<td class="point-td">${totalpoint.point }</td>
-								</tr>
-							</c:forEach>
+								<c:forEach var="totalpoint" items="${pointlist }">
+									<tr class="point-list">
+										<td class="point-td">${totalpoint.date }</td>
+										<td class="point-td">${totalpoint.text }</td>
+										<td class="point-td">${totalpoint.point }</td>
+									</tr>
+								</c:forEach>
 							</table>
 						</div>
 					</div>
@@ -279,7 +280,7 @@
 			</div>
 		</div>
 	</div>
-<!-- 	<script type="text/javascript">
+	<!-- 	<script type="text/javascript">
 			console.log("hi?");		
 			$(document).ready(function(){
 				 var dataSource = ${jsonLikedog}; // 데이터 소스, 예: 페이지 번호의 배열
