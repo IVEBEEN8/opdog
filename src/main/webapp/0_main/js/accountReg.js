@@ -1,5 +1,30 @@
 $(document).ready(function() {
 	
+	
+	$('#idcheck').on('click', function(){
+    var checkingValue = $("input[name='id']").val();
+    console.log(checkingValue);
+	var result ='';
+	 $.ajax({
+		url : 'IdCheckC',
+		type : 'POST',
+		data : {checkingValue, result},
+		success : function(data) {
+			console.log(data);
+			console.log(data[0].result);
+			console.log(data[0].checkingValue);
+			if(data[0].result === "email o"){
+				alert(data[0].checkingValue  + " is not available")
+			}else if(data[0].result === "email x"){
+				alert(data[0].checkingValue + " is available")
+			}
+		}
+	}) 
+
+	
+	});
+	
+	
     $('#sidoSelect').on('change', function() {
 	/*
 		response = 시/군/구 배열
