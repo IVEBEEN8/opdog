@@ -1,4 +1,4 @@
-package com.opdoghj.main;
+package com.opdoghoho.doginfo;
 
 public class DogB {
 	private String popfile;

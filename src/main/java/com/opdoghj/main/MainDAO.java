@@ -13,11 +13,13 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import com.opdoghoho.doginfo.DogB;
 import com.opdoghw.centerinfo.DBManager_khw;
 
 public class MainDAO {
-
+	
+	
+	
 	public static void listLoading(HttpServletRequest request, HttpServletResponse response) {
 
 		Date currenDate = new Date();
@@ -39,7 +41,7 @@ public class MainDAO {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
 		int noticeEdt = Integer.parseInt(dateFormat.format(dDay));
 		int searchEdtInt = Integer.parseInt(dateFormat.format(searchEdt));
-		
+
 		Connection con = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -68,6 +70,7 @@ public class MainDAO {
 				d.setDday(diffdays);
 				doglist.add(d);
 			}
+			
 			
 			Comparator<DogB> comparedDate = Comparator.comparing(DogB::getDate, Comparator.naturalOrder());
 			ArrayList<DogB> comparedDogList = (ArrayList<DogB>) doglist.stream().sorted(comparedDate)
