@@ -13,7 +13,9 @@ import java.util.stream.Collectors;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.google.gson.Gson;
 import com.opdoghoho.doginfo.DogB;
+import com.opdoghoho.doginfo.dogInfo;
 import com.opdoghw.centerinfo.DBManager_khw;
 
 public class MainDAO {
@@ -60,6 +62,7 @@ public class MainDAO {
 				int noticeEdtInt = rs.getInt("d_noticeEdt");
 				String noticeEdtStr = String.valueOf(noticeEdtInt);
 				Date noticeEdtDate = dateFormat.parse(noticeEdtStr);
+				d.setNo(rs.getString("d_desertionNo"));
 				d.setAge(rs.getString("d_age"));
 				d.setKindCd(rs.getString("d_kindCd"));
 				d.setPopfile(rs.getString("d_popfile"));
@@ -108,5 +111,61 @@ public class MainDAO {
 			DBManager_khw.close(con, pstmt, rs);
 		}
 
+	}
+
+	public static void loadDetail(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select * from dogInfo where d_desertionNO = ?";
+		
+		
+		
+		String desertionNo = request.getParameter("desertionNo");
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, desertionNo);
+			rs = pstmt.executeQuery();
+			dogInfo d = null;
+			if (rs.next()) {
+				System.out.println("있긴 있음");
+				d = new dogInfo();
+				d.setAge(rs.getString("d_age"));
+				System.out.println(d.getAge());
+				d.setCareAddr(rs.getString("d_careaddr"));
+				d.setCareNm(rs.getString("d_careNm"));
+				d.setCareTel(rs.getString("d_careNm"));
+				d.setChargeNm(rs.getString("d_chargeNm"));
+				d.setDesertionNo(rs.getString("d_desertionNo"));
+				d.setFilename(rs.getString("d_filename"));
+				d.setHappenDt(rs.getString("d_happenDt"));
+				d.setKindCd(rs.getString("d_kindcd"));
+				d.setNeuterYn(rs.getString("d_neuterYn"));
+				d.setNoticeEdt(rs.getInt("d_noticeEdt"));
+				d.setNoticeNo(rs.getString("d_noticeNo"));
+				d.setOfficeTel(rs.getString("d_officetel"));
+				d.setOrgNm(rs.getString("d_orgNm"));
+				d.setPopfile(rs.getString("d_popFile"));
+				d.setProcessState(rs.getString("d_Processstate"));
+				d.setSexCd(rs.getString("d_SexCd"));
+				d.setWeight(rs.getString("d_weight"));
+			}
+			System.out.println(d);
+			System.out.println("1번 완료");
+		    String dog = new Gson().toJson(d);
+
+			response.setContentType("application/json; charset=utf-8");
+			response.getWriter().print(dog);
+			System.out.println("2번 완료");
+
+			
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
+		
 	}
 }
