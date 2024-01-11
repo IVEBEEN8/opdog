@@ -97,24 +97,6 @@
 								<div class="textP1">
 									&nbsp;&nbsp;<span class="columnP1css">${account.uprText}&nbsp;${account.orgText}</span>
 								</div>
-								<!-- <div class="columnBoxP2">s
-								<div class="columnP1">Password</div>
-								<div class="textP1">
-									<input class="password">
-								</div>
-							</div>
-							<div class="columnBoxP2">
-								<div class="columnP1">new Password</div>
-								<div class="textP1">
-									<input class="password">
-								</div>
-							</div>
-							<div class="columnBoxP2">
-								<div class="columnP1">Password check</div>
-								<div class="textP1">
-									<input class="password">
-								</div>
-							</div> -->
 							</div>
 							<button class="updateButton" onclick="openModal();">Change
 								Info</button>
