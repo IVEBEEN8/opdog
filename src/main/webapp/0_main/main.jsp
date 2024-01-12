@@ -22,7 +22,7 @@
 				<img src="0_main/img/logo-OPEN THE DOG-light.svg" alt="" />
 			</div>
 			<div class="header_logo2">
-				<img style="width:9vw;" src="0_main/img/logoWhite2.5.png" alt="" />
+				<img style="width: 9vw;" src="0_main/img/logoWhite2.5.png" alt="" />
 			</div>
 			<!-- 메뉴 -->
 			<div class="nav-var">
@@ -56,8 +56,8 @@
 				<div class="nav-items">
 					<a onclick="location.href='CheckRegNmC'" class="nav-text"><span>Services</span></a>
 					<div class="nav-subnav">
-						<a onclick="location.href='CheckRegNmC'">Check
-							Registration Number</a> <a onclick="location.href='NamingMainC'">Naming</a>
+						<a onclick="location.href='CheckRegNmC'">Check Registration
+							Number</a> <a onclick="location.href='NamingMainC'">Naming</a>
 					</div>
 				</div>
 			</div>
@@ -65,9 +65,8 @@
 			<div class="header-r-wrap">
 				<div><jsp:include page="${mainLoginLogoutBtn}"></jsp:include></div>
 			</div>
-			 <a href="#" class="navbar_toogleBtn"
-          ><img style="width: 3vw" src="0_main/img/hambuger.svg" alt=""
-        /></a>
+			<a href="#" class="navbar_toogleBtn"><img
+				style="width: 3vw" src="0_main/img/hambuger.svg" alt="" /></a>
 		</nav>
 	</header>
 	<!-- 메인 컨텐츠 : 슬라이드로 1,2,3,4까지 넘어감. -->
@@ -117,8 +116,11 @@
 										<img src="${dogs.popfile }" alt="유기견${status.count }" />
 									</div>
 									<div class="txt-box">
-										<div class="img-name">${dogs.dday }<span> day left<br> in the protection period.</span></div>
-							<%-- 			<div class="img-info">
+										<div class="img-name">${dogs.dday }<span> day
+												left<br> in the protection period.
+											</span>
+										</div>
+										<%-- 			<div class="img-info">
 											${dogs.age }<br /> ${dogs.sexCd },<br /> ${dogs.specialMark }<br />
 											${dogs.date }
 										</div> --%>
@@ -135,7 +137,10 @@
 										<img src="${dogs.popfile }" alt="유기견${status.count }" />
 									</div>
 									<div class="txt-box">
-										<div class="img-name">${dogs.dday }<span> day left<br> in the protection period.</span></div>
+										<div class="img-name">${dogs.dday }<span> day
+												left<br> in the protection period.
+											</span>
+										</div>
 										<%-- <div class="img-info">
 											${dogs.age }<br /> ${dogs.sexCd },<br /> ${dogs.specialMark }<br />
 											${dogs.date }
@@ -166,7 +171,7 @@
 			</div>
 			<!-- 텍스트부분 -->
 			<div class="full4-txtFrame">
-				<div class="full4-bigTxt">About &nbsp;&nbsp;Us</div>
+				<div class="full4-bigTxt">Before adoption</div>
 				<div class="full4-smallTxt">
 					<div>
 						<a onclick="location.href='ProcessC'">Checklist</a>
