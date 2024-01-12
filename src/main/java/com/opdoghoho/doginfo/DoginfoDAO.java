@@ -21,7 +21,6 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 import com.google.gson.Gson;
-import com.opdoghj.main.DogB;
 import com.opdoghw.centerinfo.DBManager_khw;
 import com.opdoghw.login.LoginDTO;
 
@@ -138,10 +137,9 @@ public class DoginfoDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		String sql = null;
-		
+
 		Date currenDate = new Date();
 		SimpleDateFormat dateFormat = new SimpleDateFormat("yyyyMMdd");
-
 
 		String sido = request.getParameter("value1");
 		System.out.println(sido);
@@ -152,22 +150,22 @@ public class DoginfoDAO {
 		// 시,도만 있을 때
 		try {
 			con = DBManager_khw.connect();
-			if (sigun == "" || sigun == null || sigun.equals("city") ) {
+			if (sigun == "" || sigun == null || sigun.equals("city")) {
 				sql = "select * from dogInfo where d_careaddr like ?";
 				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%"+sido+"%");
+				pstmt.setString(1, "%" + sido + "%");
 				System.out.println("11");
 			} else if (center == "" || center == null || center.equals("shelter")) {
 				// 군,구까지 있을 때
 				sql = "select * from dogInfo where d_careaddr like ?";
 				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%"+sigun+"%");
+				pstmt.setString(1, "%" + sigun + "%");
 				System.out.println("22");
 			} else {
 				// 센터까지 있을 때
 				sql = "select * from dogInfo where d_carenm like ?";
 				pstmt = con.prepareStatement(sql);
-				pstmt.setString(1, "%"+center+"%");
+				pstmt.setString(1, "%" + center + "%");
 				System.out.println("33");
 			}
 			response.setContentType("application/json; charset=utf-8");
@@ -182,7 +180,7 @@ public class DoginfoDAO {
 				long diffMS = currenDate.getTime() - noticeEdtDate.getTime();
 				long diffdays = 10 - (diffMS / (24 * 60 * 60 * 1000L)) % 365;
 				String Dday = "";
-				if (diffdays>=0) {
+				if (diffdays >= 0) {
 					Dday = "-" + diffdays;
 				} else {
 					Dday = "+" + Math.abs(diffdays);
@@ -209,11 +207,11 @@ public class DoginfoDAO {
 				d.setdDay(Dday);
 				doginfos.add(d);
 			}
-			
+
 			Comparator<dogInfo> comparedDate = Comparator.comparing(dogInfo::getNoticeEdt, Comparator.naturalOrder());
 			ArrayList<dogInfo> comparedDogInfoList = (ArrayList<dogInfo>) doginfos.stream().sorted(comparedDate)
 					.collect(Collectors.toList());
-			
+
 			Gson gson = new Gson();
 			String jsonDoginfo = gson.toJson(comparedDogInfoList);
 			if (jsonDoginfo != null) {
@@ -231,4 +229,84 @@ public class DoginfoDAO {
 
 	}
 
+	public static void loadPoint(HttpServletRequest request, HttpServletResponse response) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		String sql = "select sum(p_point) as total from totalpoint where a_no = ?";
+		
+		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+		try {
+			con = DBManager_khw.connect();
+			pstmt = con.prepareStatement(sql);
+			pstmt.setInt(1, account.getNo());
+			rs = pstmt.executeQuery();
+			System.out.println(account.getNo());
+			if (rs.next()) {
+				response.getWriter().print(rs.getInt("total"));
+			} else {
+				response.getWriter().print(rs.getInt(0));
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, rs);
+		}
+	}
+
+	public static void supportPoint(HttpServletRequest request) {
+		Connection con = null;
+		PreparedStatement pstmt = null;
+		String sql = null;
+		
+		
+
+		System.out.println(request.getParameter("value"));
+		System.out.println(request.getParameter("value2"));
+		
+		String desertionNo = request.getParameter("value");
+		int point = Integer.parseInt(request.getParameter("value2")); 
+		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
+		try {
+			con = DBManager_khw.connect();
+			
+			sql = "insert into petpoint values(sysdate,?,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, desertionNo);
+			pstmt.setInt(2, point);
+			pstmt.setInt(3, account.getNo());
+			pstmt.executeUpdate();
+			
+			sql = "insert into totalpoint values(sysdate,?,?,?)";
+			pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, "유기번호["+desertionNo+"] 를 후원하셨습니다.");
+			pstmt.setInt(2, point*-1);
+			pstmt.setInt(3, account.getNo());
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			DBManager_khw.close(con, pstmt, null);
+		}
+		
+	}
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

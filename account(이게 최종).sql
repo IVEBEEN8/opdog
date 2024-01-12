@@ -18,9 +18,9 @@ create table opdoglike (
     d_mark varchar2 (2000),
     d_center varchar2 (2000),
     d_org varchar2 (2000),
-    a_no number(3),
-    
-    constraint fk_a_no foreign key(a_no) references opdogaccount (a_no)
+    d_thunbnail varchar2 (2000),
+    d_img varchar2 (2000),
+    a_no number(3)   
 );
 
 create sequence opdogaccount_seq;
@@ -34,6 +34,10 @@ select * from opdogaccount;
 select* from opdoglike;
 
 update opdogaccount set a_firstname='kim' where a_no=1;
+
+select * from ordered_kl; 
+
+
 
 
 

@@ -76,28 +76,21 @@
 						<div class="itemBoxP1">
 							<div class="columnBoxP1">
 								<div class="columnP1">ID</div>
-								<div class="textP1">
-									&nbsp;&nbsp;<span class="columnP1css">${account.email }</span>
-								</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">First Name</div>
-								<div class="textP1">
-									&nbsp;&nbsp;<span class="columnP1css">${account.firstname }</span>
-								</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.firstname }</div>
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">Last Name</div>
-								<div class="textP1">
-									&nbsp;&nbsp;<span class="columnP1css">${account.lastname }</span>
-								</div>
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.lastname }</div>
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">address</div>
-								<div class="textP1">
-									&nbsp;&nbsp;<span class="columnP1css">${account.uprText}&nbsp;${account.orgText}</span>
-								</div>
-								<!-- <div class="columnBoxP2">s
+								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.uprText }&nbsp;${account.orgText }</div>
+							</div>
+							<!-- <div class="columnBoxP2">
 								<div class="columnP1">Password</div>
 								<div class="textP1">
 									<input class="password">
@@ -115,113 +108,115 @@
 									<input class="password">
 								</div>
 							</div> -->
-							</div>
-							<button class="updateButton" onclick="openModal();">Change
-								Info</button>
 						</div>
+						<button class="updateButton" onclick="openModal();">Change
+							Info</button>
 					</div>
-					<div id="likePage" class="innerPage p2">
-						<div class="like-wrapper">
-							<div class="like-title">my booked dog</div>
-							<div id="data-container" class="foreach-size">
-								<c:forEach var="list" items="${list }" varStatus="status">
-									<div class="likecontent-wrapper">
-										<img alt="" src="${list.img }">
-										<div class="likecontent">
-											<div>
-												<p>Age</p>${list.age }</div>
-											<div>
-												<p>Kind</p>${list.kind }</div>
-											<div>
-												<p>Gender</p>${list.sex }</div>
-											<div>
-												<p>Neuter</p>${list.neuter }</div>
-										</div>
-										<div class="btn-wrapper">
-											<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
-										</div>
-									</div>
-								</c:forEach>
-							</div>
-							<!-- <div id="pagination-container" class="pagination"></div> -->
-
-						</div>
-					</div>
-					<div id="pointPage" class="innerPage p3">
-						<div class="point-wrapper">
-							<div class="point-title">
-								<span>My Point</span>
-							</div>
-							<div class="pointMoveWrap">
-								<div class="pointMove">
-									<div class="nowPoint">34,000 point</div>
-								</div>
-							</div>
-
-							<div class="search-wrap">
-								<img class="searchIcon" src="0_main/img/SearchIcon.png"> <input
-									class="search-content">
-
-								<div class="dateRadio1 ">
-									<input type="radio" id="" name="Date" value="" checked /> <label
-										for="lowDate">low Date</label>
-								</div>
-								<div class="dateRadio2">
-									<input type="radio" id="" name="Date" value="" /> <label
-										for="highDate">high Date</label>
-								</div>
-
-
-								<table class="point-table">
-									<tr class="point-semititle">
-										<th class="point-th date">Date</th>
-										<th class="point-th history">History</th>
-										<th class="point-th point">Point</th>
-									</tr>
-
-									<tr class="point-list">
-										<td class="point-td">날짜</td>
-										<td class="point-td">사용처</td>
-										<td class="point-td">+/- 포인</td>
-									</tr>
-
-								</table>
-							</div>
-						</div>
-					</div>
-
 				</div>
-				<div id="volunteerPage" class="innerPage p4">
-					<div class="vol-wrapper">
-						<div class="vol-title">
-							<span>Saved Volunteer List</span>
-						</div>
-						<table class="vol-table">
-							<tr class="vol-semititle">
-								<th class="vol-th">Post Number</th>
-								<th class="vol-th">Post Title</th>
-								<th class="vol-th">Applied Date</th>
-								<th class="vol-th">Detail/Cancel</th>
-							</tr>
-							<c:forEach var="reglist" items="${reglist }" varStatus="status">
-								<tr class="vol-list">
-									<td class="vol-td">${reglist.postNo }</td>
-									<td class="vol-td">${reglist.title }</td>
-									<td class="vol-td">${reglist.applied }</td>
-									<td class="vol-td"><button
-											onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
-											class="vol-btn">
-											<span>Detail</span>
-										</button>
-										<button
-											onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
-											class="vol-btn">
-											<span class="cancle">Cancel</span>
-										</button></td>
-								</tr>
+				<div id="likePage" class="innerPage p2">
+					<div class="like-wrapper">
+						<div class="like-title">my booked dog</div>
+						<div id="data-container" class="foreach-size">
+							<c:forEach var="list" items="${list }" varStatus="status">
+								<div class="likecontent-wrapper">
+									<img alt="" src="${list.img }">
+									<div class="likecontent">
+										<div>
+											<p>Age</p>${list.age }</div>
+										<div>
+											<p>Kind</p>${list.kind }</div>
+										<div>
+											<p>Gender</p>${list.sex }</div>
+										<div>
+											<p>Neuter</p>${list.neuter }</div>
+									</div>
+
+									<div class="btn-wrapper">
+										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
+									</div>
+								</div>
 							</c:forEach>
-						</table>
+
+						</div>
+						<div id="pagination-container" class="pagination"></div>
+
 					</div>
+				</div>
+				<div id="pointPage" class="innerPage p3">
+					<div class="point-wrapper">
+						<div class="point-title">
+							<span>My Point</span>
+						</div>
+						<div class="pointMoveWrap">
+							<div class="pointMove">
+								<div class="nowPoint">0</div>
+								<input id="max" type="hidden" value="${totalpoint }">
+							</div>
+						</div>
+
+						<div class="search-wrap">
+							<img class="searchIcon" src="0_main/img/SearchIcon.png"> <input
+								class="search-content">
+
+							<div class="dateRadio1 ">
+								<input type="radio" id="" name="Date" value="" checked /> <label
+									for="lowDate">low Date</label>
+							</div>
+							<div class="dateRadio2">
+								<input type="radio" id="" name="Date" value="" /> <label
+									for="highDate">high Date</label>
+							</div>
+
+
+							<table class="point-table">
+								<tr class="point-semititle">
+									<th class="point-th date">Date</th>
+									<th class="point-th history">History</th>
+									<th class="point-th point">Point</th>
+								</tr>
+								<c:forEach var="totalpoint" items="${pointlist }">
+									<tr class="point-list">
+										<td class="point-td">${totalpoint.date }</td>
+										<td class="point-td">${totalpoint.text }</td>
+										<td class="point-td">${totalpoint.point }</td>
+									</tr>
+								</c:forEach>
+							</table>
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<div id="volunteerPage" class="innerPage p4">
+				<div class="vol-wrapper">
+					<div class="vol-title">
+						<span>Saved Volunteer List</span>
+					</div>
+					<table class="vol-table">
+						<tr class="vol-semititle">
+							<th class="vol-th">Post Number</th>
+							<th class="vol-th">Post Title</th>
+							<th class="vol-th">Applied Date</th>
+							<th class="vol-th">Detail/Cancel</th>
+						</tr>
+						<c:forEach var="reglist" items="${reglist }" varStatus="status">
+							<tr class="vol-list">
+								<td class="vol-td">${reglist.postNo }</td>
+								<td class="vol-td">${reglist.title }</td>
+								<td class="vol-td">${reglist.applied }</td>
+								<td class="vol-td"><button
+										onclick="location.href='VolunteerDetailC?no=${reglist.postNo}'"
+										class="vol-btn">
+										<span>Detail</span>
+									</button> &nbsp;
+									<button
+										onclick="location.href='DeleteFromMyListC?no=${reglist.preivateNo}'"
+										class="vol-btn">
+										<span class="cancle">Cancel</span>
+									</button></td>
+							</tr>
+						</c:forEach>
+					</table>
 				</div>
 			</div>
 		</div>
@@ -235,7 +230,10 @@
 				<p class="title">ChangeInfo</p>
 				<div class="columnBoxP1">
 					<div class="columnP1">ID</div>
+
+
 					<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
+
 				</div>
 				<div class="columnBoxP1">
 					<div class="columnP1">First Name</div>
@@ -287,5 +285,6 @@
 			</div>
 		</div>
 	</div>
+
 </body>
 </html>

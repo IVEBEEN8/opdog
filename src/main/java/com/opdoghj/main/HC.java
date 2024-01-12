@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.opdoghoho.doginfo.DogDbUpdater;
 import com.opdoghw.login.LoginDAO;
 
 @WebServlet("/HC")
@@ -16,10 +17,10 @@ public class HC extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-		if (firstLoading) {
-//			DogDbUpdater.updateDb(request);
-			firstLoading = false;
-		}
+//		if (firstLoading) {
+//			DogDbUpdater.startDbUpdater();
+//			firstLoading = false;
+//		}
 		LoginDAO.loginCheckMain(request);
 		MainDAO.totalCountLoading(request);
 		MainDAO.listLoading(request, response);
