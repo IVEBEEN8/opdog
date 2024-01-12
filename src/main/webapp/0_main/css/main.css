@@ -479,7 +479,7 @@ header {
 	position: relative;
 	background-color: rgba(250, 248, 241, 0.8);
 	width: 400px;
-	height: 55.55555555555556vh;
+	height: 48vh;
 	border-radius: 76px;
 	/* margin-left: 20px; */
 }
@@ -505,13 +505,18 @@ header {
 }
 
 .img-name {
-	color: rgba(67, 49, 28, 0.9);
-	width: 400px;
-	font-family: "Inter", sans-serif;
-	text-align: center;
-	font-size: 30px;
-	font-weight: 700;
-	letter-spacing: 0.20000000298023224px;
+	color: rgb(174 34 34);
+    font-family: "Inter", sans-serif;
+    text-align: center;
+    font-size:2vw;
+    font-weight: 700;
+    letter-spacing: 0.20000000298023224px;
+    line-height: 30px;
+}
+
+.img-name >span{
+ color: rgba(67, 49, 28, 0.9);
+    font-size: 1.6vw;
 }
 
 .img-info {
@@ -640,7 +645,6 @@ header {
 	font-weight: 600;
 	line-height: 5vw;
 	text-align: center;
-	letter-spacing: -1.92px;
 }
 
 .full4-smallTxt {

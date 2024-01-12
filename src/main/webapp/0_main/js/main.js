@@ -169,3 +169,166 @@ function counter($counter, max) {
 		now -= step;
 	}, 50);
 };
+$(document).ready(function() {
+	$(".img-box").on("click", function() {
+		var desertionNo = $(this).children('input').val();
+		console.log(desertionNo);
+		$.ajax({
+			url: "MainDetailC",
+			type: "GET",
+			data: { desertionNo },
+			success: function(items) {
+				console.log(11)
+				$("div").remove("#detailinfo");
+				$("#modalBody").append(
+					'<div class="modalWrap" id="detailinfo">' +
+					'<div class="modalImg" id="detailinfo"><img src="' +
+					items.popfile +
+					'" style="width:300px;"></div>' +
+					'<div class="modalInfoWrap" id="detailinfo">' +
+					'<div class="modal-list" id="detailinfo"><p>Age</p>' +
+					'<span class="spandesign">' +
+					items.age +
+					"</span>" +
+					"</div>" +
+					'<div class="modal-list" id="detailinfo"><p>Number</p>' +
+					'<span class="spandesign">' +
+					items.desertionNo +
+					"</span>" +
+					"</div>" +
+					'<div class="modal-list" id="detailinfo"><p>Kind</p>' +
+					'<span class="spandesign">' +
+					items.kindCd +
+					"</span>" +
+					"</div>" +
+					'<div class="modal-list" id="detailinfo"><p>Gender</p>' +
+					'<span class="spandesign">' +
+					items.sexCd +
+					"</span>" +
+					"</div>" +
+					'<div class="modal-list" id="detailinfo"><p>Neutering</p>' +
+					'<span class="spandesign">' +
+					items.neuterYn +
+					"</span>" +
+					"</div>" +
+					'<div class="Shelter" id="detailinfo"><p>Shelter</p>' +
+					'<span class="spandesign2">' +
+					items.careNm +
+					"(" +
+					items.careTel +
+					")" +
+					items.careAddr +
+					"</span>" +
+					"</div>" +
+					'<div class="agency" id="detailinfo"><p>agency</p>' +
+					'<span class="spandesign2">' +
+					items.orgNm +
+					"&nbsp;" +
+					items.chargeNm +
+					"(" +
+					items.officeTel +
+					")" +
+					"</span>" +
+					"</div>" +
+					'<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' +
+					JSON.stringify(items) +
+					'</p>Like</button><button id="liketrigger">spon</button>' +
+					"</div>" +
+					"</div>" +
+					"<input id='detailinfo' name='desertionNo' type='hidden' value='" + items.desertionNo + "'>"
+				);
+				$("#modalWrap").css({ display: "block" });
+			}
+		})
+	})
+
+	$(document).on("click", "span[id=closeBtn]", function() {
+		$("#modalWrap").css({
+			display: "none",
+		});
+	});
+	$(window).on("click", function(event) {
+		if ($(event.target).is("#modalWrap")) {
+			$("#modalWrap").css({
+				display: "none",
+			});
+		}
+	});
+	$(document).on("click", "button[id=like]", function() {
+		var selectedValue = $(this).children().text();
+		var id = $("#account").text();
+
+		if (id != "") {
+			$.ajax({
+				url: "MyPageLikeC",
+				type: "GET",
+				data: { value: selectedValue },
+				success: function(response) {
+					alert(response);
+				},
+				error: function(error) {
+					console.log("Ajax 요청 에러:", error);
+				},
+			});
+		} else {
+			let goLogin = confirm(
+				"로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?"
+			);
+			if (goLogin) {
+				location.href = "LoginMainHC";
+			}
+		}
+	});
+
+	$(document).on("click", "button[id=liketrigger]", function() {
+		var id = $("#account").text();
+		if (id != "") {
+			$.ajax({
+				url: "SupportPetC",
+				type: "GET",
+				success: function(response) {
+					$("div[id=totalPoint]").html("My point: " + response + " point");
+					$("#pointWrap").css({ display: "block" });
+				}
+			})
+		} else {
+			let goLogin = confirm(
+				"로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?"
+			);
+			if (goLogin) {
+				location.href = "LoginMainHC";
+			}
+		}
+	})
+
+	$(document).on("click", "button[id=doSupport]", function() {
+		var desertionNo = $("input[name=desertionNo]").val();
+		var point = $("input[name=point]").val();
+		console.log(point)
+		$.ajax({
+			url: "SupportPetC",
+			type: "POST",
+			data: { value: desertionNo, value2: point },
+			success: function(response) {
+				alert(point + "포인트가 기부 완료되었습니다.");
+				$("input[name=point]").val(0);
+				$("#pointWrap").css({ display: "none" });
+			}
+		})
+
+	})
+
+	$(document).on("click", "span[id=pointClose]", function() {
+		$("#pointWrap").css({
+			display: "none",
+		});
+	});
+
+	$(window).on("click", function(event) {
+		if ($(event.target).is("#pointWrap")) {
+			$("#pointWrap").css({
+				display: "none",
+			});
+		}
+	});
+})

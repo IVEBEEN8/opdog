@@ -1,6 +1,7 @@
 package com.opdoghoho.doginfo;
 
 public class DogB {
+	private String no;
 	private String popfile;
 	private String kindCd;
 	private String sexCd;
@@ -11,8 +12,10 @@ public class DogB {
 	public DogB() {
 		// TODO Auto-generated constructor stub
 	}
-	public DogB(String popfile, String kindCd, String sexCd, String age, String specialMark, int date, long dday) {
+	public DogB(String no, String popfile, String kindCd, String sexCd, String age, String specialMark, int date,
+			long dday) {
 		super();
+		this.no = no;
 		this.popfile = popfile;
 		this.kindCd = kindCd;
 		this.sexCd = sexCd;
@@ -20,6 +23,12 @@ public class DogB {
 		this.specialMark = specialMark;
 		this.date = date;
 		Dday = dday;
+	}
+	public String getNo() {
+		return no;
+	}
+	public void setNo(String no) {
+		this.no = no;
 	}
 	public String getPopfile() {
 		return popfile;
@@ -63,8 +72,5 @@ public class DogB {
 	public void setDday(long dday) {
 		Dday = dday;
 	}
-	
-	
-	
 	
 }

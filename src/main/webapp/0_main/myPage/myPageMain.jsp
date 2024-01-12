@@ -130,11 +130,13 @@
 										<div>
 											<p>Neuter</p>${list.neuter }</div>
 									</div>
+
 									<div class="btn-wrapper">
 										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
 									</div>
 								</div>
 							</c:forEach>
+
 						</div>
 						<div id="pagination-container" class="pagination"></div>
 
@@ -228,7 +230,10 @@
 				<p class="title">ChangeInfo</p>
 				<div class="columnBoxP1">
 					<div class="columnP1">ID</div>
-					<div class="textP1">&nbsp;&nbsp;${account.email }</div>
+
+
+					<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
+
 				</div>
 				<div class="columnBoxP1">
 					<div class="columnP1">First Name</div>
@@ -280,33 +285,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- 	<script type="text/javascript">
-			console.log("hi?");		
-			$(document).ready(function(){
-				 var dataSource = ${jsonLikedog}; // 데이터 소스, 예: 페이지 번호의 배열
-					console.log(dataSource);
-					$('#pagination-container').pagination({
-						dataSource: json,
-						pageSize: 4,
-						callback: function(data, pagination){
-							console.log(data);
-							console.log(data[0]);
-							var dataHtml ='';
-							$.each(data, function (index, list){
-								dataHtml += '<div class="likecontent-wrapper">' + list.d_thunbnail + '">';
-				                dataHtml += '<div class="likecontent">';
-								dataHtml += '<div><p>Age</p>'+list.d_age +'</div>'; 
-								dataHtml += '<div><p>Kind</p>'+list.d_kind + '</div>';
-								dataHtml += '<div><p>Gender</p>'+list.d_sex+ '</div>';
-								dataHtml += '<div><p>Neuter</p>'+list.d_neuter+ '</div>';
-								dataHtml += '</div><div class="btn-wrapper">';
-								dataHtml += '<button class="like-btn" id="cancel" value="'+list.d_no+'">Cancel</button></div></div>';
-							})
-							$('#data-container').html(dataHtml);
-						}	
-			})
-})
-	
-	</script> -->
+
 </body>
 </html>

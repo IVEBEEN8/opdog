@@ -225,10 +225,10 @@ public class VolunteerDAO {
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
 				request.setAttribute("r", "업로드성공입니동₍ᐢ. ̫.ᐢ₎♡");
-				if (newFile != null) {
-					File d = new File(path + "/" + oldFile);
-					d.delete();
-				}
+//				if (newFile != null) {
+//					File f = new File(path + "/" + oldFile);
+//					f.delete();
+//				}
 			}
 			request.setAttribute("no", no);
 		} catch (Exception e) {
