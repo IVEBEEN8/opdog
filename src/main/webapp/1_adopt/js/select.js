@@ -370,7 +370,7 @@ $(document).ready(function() {
 			});
 		} else {
 			let goLogin = confirm(
-				"로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?"
+				"This is a menu that requires login \nWould you like to go to the login page?"
 			);
 			if (goLogin) {
 				location.href = "LoginMainHC";
@@ -391,7 +391,7 @@ $(document).ready(function() {
 			})
 		} else {
 			let goLogin = confirm(
-				"로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?"
+				"This is a menu that requires login \nWould you like to go to the login page?"
 			);
 			if (goLogin) {
 				location.href = "LoginMainHC";
@@ -407,7 +407,7 @@ $(document).ready(function() {
 			type: "POST",
 			data: { value: desertionNo, value2: point },
 			success: function(response) {
-				alert(point+"포인트가 기부 완료되었습니다.");
+				alert(point+"Points have been donated");
 				$("input[name=point]").val(0);
 				$("#pointWrap").css({ display: "none" });
 			}
