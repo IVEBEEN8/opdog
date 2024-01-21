@@ -96,13 +96,11 @@ public class MyPageDAO {
 			}
 			request.setAttribute("list", list);
 
-
 			// 어레이리스트를 지슨파일에 담아서 js로 보낸다
 			// String jsonLikedog = new Gson().toJson(list);
 			// System.out.println(jsonLikedog);
 			// response.setContentType("application/json");
 			// response.getWriter().write(jsonLikedog);
-
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -165,6 +163,7 @@ public class MyPageDAO {
 
 	}
 
+	@SuppressWarnings("resource")
 	public static void pointLoad(HttpServletRequest request, HttpServletResponse response) {
 		Connection con = null;
 		PreparedStatement pstmt = null;
@@ -198,7 +197,6 @@ public class MyPageDAO {
 		} finally {
 			DBManager_khw.close(con, pstmt, rs);
 		}
-
 
 	}
 

@@ -137,8 +137,7 @@ fetch(apiUrl)
     return response.json();
 })
 .then(data => {
-    console.log("Data received successfully:");
-
+	console.log(data)
     var markers = [];
 
     function createMarker(lat, lng) {

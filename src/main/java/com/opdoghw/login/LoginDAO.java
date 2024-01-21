@@ -231,11 +231,10 @@ public class LoginDAO {
 			obj.put("checkingValue", checkingValue);
 			if (rs.next()) {
 				result = "email o";
-				obj.put("result", result);
 			} else {
 				result = "email x";
-				obj.put("result", result);
 			}
+			obj.put("result", result);
 
 			emailCheck.add(obj);
 			response.setContentType("application/json; charset=utf-8");

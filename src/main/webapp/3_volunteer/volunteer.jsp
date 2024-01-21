@@ -46,7 +46,7 @@
 		<div class="bottom btn">
 				<button id="regVol" value="${param.locate }!${account.no}">Write</button>			
 		</div>
-		<div id="pagination-container" class="pagination-container"></div>
+		  <div id="pagination-container" class="pagination-container"></div>
 	</main>	
 </body>
 	<script src="3_volunteer/js/volunteer.js"></script>

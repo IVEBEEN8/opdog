@@ -17,10 +17,6 @@ $(document).ready(function() {
 		}
 	});
 });
-<<<<<<< HEAD
-
-=======
->>>>>>> 569bf23ac19b22dd38bb748ebbf27e3480d922c8
 function myPageButton() {
 	innerPageOff();
 	$("#infoPage").css({ display: "block" });

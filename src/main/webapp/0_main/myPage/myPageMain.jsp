@@ -88,14 +88,6 @@
 							</div>
 							<div class="columnBoxP1">
 								<div class="columnP1">address</div>
-<<<<<<< HEAD
-								<div class="textP1">
-									&nbsp;&nbsp;<span class="columnP1css">${account.uprText}&nbsp;${account.orgText}</span>
-								</div>
-							</div>
-							<button class="updateButton" onclick="openModal();">Change
-								Info</button>
-=======
 								<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${account.uprText }&nbsp;${account.orgText }</div>
 							</div>
 							<!-- <div class="columnBoxP2">
@@ -116,7 +108,6 @@
 									<input class="password">
 								</div>
 							</div> -->
->>>>>>> 569bf23ac19b22dd38bb748ebbf27e3480d922c8
 						</div>
 						<button class="updateButton" onclick="openModal();">Change
 							Info</button>
@@ -139,18 +130,11 @@
 										<div>
 											<p>Neuter</p>${list.neuter }</div>
 									</div>
-<<<<<<< HEAD
-								</c:forEach>
-							</div>
-							<!-- <div id="pagination-container" class="pagination"></div> -->
-
-=======
 									<div class="btn-wrapper">
 										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
 									</div>
 								</div>
 							</c:forEach>
->>>>>>> 569bf23ac19b22dd38bb748ebbf27e3480d922c8
 						</div>
 						<div id="pagination-container" class="pagination"></div>
 
@@ -199,21 +183,6 @@
 						</div>
 					</div>
 				</div>
-<<<<<<< HEAD
-			</div>
-		</div>
-	</div>
-
-	<!--모달작업-->
-	<div id="myModal" class="modal">
-		<div class="modal-content">
-			<span class="close" onclick="closeModal();">&times;</span>
-			<div class="container">
-				<p class="title">ChangeInfo</p>
-				<div class="columnBoxP1">
-					<div class="columnP1">ID</div>
-					<div class="textP1">&nbsp;&nbsp;&nbsp;&nbsp;${account.email }</div>
-=======
 
 			</div>
 			<div id="volunteerPage" class="innerPage p4">
@@ -246,7 +215,6 @@
 							</tr>
 						</c:forEach>
 					</table>
->>>>>>> 569bf23ac19b22dd38bb748ebbf27e3480d922c8
 				</div>
 				<div class="columnBoxP1">
 					<div class="columnP1">First Name</div>
@@ -298,8 +266,6 @@
 			</div>
 		</div>
 	</div>
-<<<<<<< HEAD
-=======
 
 	<!--모달작업-->
 	<div id="myModal" class="modal">
@@ -389,6 +355,5 @@
 })
 	
 	</script> -->
->>>>>>> 569bf23ac19b22dd38bb748ebbf27e3480d922c8
 </body>
 </html>
