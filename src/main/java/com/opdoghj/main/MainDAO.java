@@ -71,7 +71,7 @@ public class MainDAO {
 				long diffMS = currenDate.getTime() - noticeEdtDate.getTime();
 				long diffdays = 10 - (diffMS / (24 * 60 * 60 * 1000L)) % 365;
 				d.setDate(noticeEdtInt);
-				d.setDday(diffdays);
+				d.setDday(diffdays+1);
 				doglist.add(d);
 			}
 			

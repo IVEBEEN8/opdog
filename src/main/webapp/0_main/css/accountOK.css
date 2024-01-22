@@ -12,6 +12,7 @@ body {
   font-family: "Inter", sans-serif;
   font-family: "Poppins", sans-serif;
   font-size: 10pt;
+  cursor: pointer;
 }
 .account-container {
   background: url(../img/cutebaby-dog.jpeg);

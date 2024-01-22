@@ -62,16 +62,13 @@ background: rgba(250, 234, 177, 0.8);
     width: 6.8vw;
     /* height: 2.6vw; */
     font-family: "Poppins", sans-serif;
-
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     margin-top: 2vh;
-    padding-top: 2vh;
+    padding: 0.5vw 0;
 }
 .vol-status{
-	bottom: 0.6vw;
-    position: relative;
     text-align: center;
     font-size: 1vw;
 }
@@ -88,7 +85,7 @@ background: rgba(250, 234, 177, 0.8);
 
 .review-txt {
 	width: 50vw;
-    height: 50vh;
+    height: 30vh;
 	border: none;
 	resize: none;
 	font-family: DM Sans;

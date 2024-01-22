@@ -12,6 +12,7 @@ html, body {
 	font-family: "Poppins", sans-serif;
 	font-size: 10pt;
 	scroll-behavior: smooth;
+	cursor: pointer;
 }
 
 .container {

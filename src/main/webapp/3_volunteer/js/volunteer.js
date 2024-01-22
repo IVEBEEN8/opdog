@@ -162,7 +162,7 @@ function paging(json){
                					 dataHtml += '<div class="post-info">';
                					 dataHtml += '<div class="post-user">';
                						 dataHtml += '<img src="3_volunteer/img/profileIcon.png" alt="" />' + item.a_email;
-               						 dataHtml += '<div>|&nbsp;&nbsp;' +  item.v_created + '</div>';
+               						 dataHtml += '<div>|&nbsp;&nbsp;' +  item.v_updated + '</div>';
                 dataHtml += '</div>';
                 dataHtml += '</div>';
                 dataHtml += '</td>';
