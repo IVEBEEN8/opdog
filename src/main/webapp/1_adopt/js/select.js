@@ -379,14 +379,24 @@ $(document).ready(function() {
 	});
 
 	$(document).on("click", "button[id=liketrigger]", function() {
-		$.ajax({
-			url: "SupportPetC",
-			type: "GET",
-			success: function(response) {
-				$("div[id=totalPoint]").html("My point: " + response + " point");
-				$("#pointWrap").css({ display: "block" });
+		var id = $("#account").text();
+		if (id != "") {
+			$.ajax({
+				url: "SupportPetC",
+				type: "GET",
+				success: function(response) {
+					$("div[id=totalPoint]").html("My point: " + response + " point");
+					$("#pointWrap").css({ display: "block" });
+				}
+			})
+		} else {
+			let goLogin = confirm(
+				"로그인이 필요한 메뉴입니다.\n로그인하러 가시겠습니까?"
+			);
+			if (goLogin) {
+				location.href = "LoginMainHC";
 			}
-		})
+		}
 	})
 	$(document).on("click", "button[id=doSupport]", function() {
 		var desertionNo = $("input[name=desertionNo]").val();

@@ -260,9 +260,12 @@ public class DoginfoDAO {
 		PreparedStatement pstmt = null;
 		String sql = null;
 		
-		String desertionNo = request.getParameter("value");
+		
+
 		System.out.println(request.getParameter("value"));
 		System.out.println(request.getParameter("value2"));
+		
+		String desertionNo = request.getParameter("value");
 		int point = Integer.parseInt(request.getParameter("value2")); 
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
 		try {
@@ -270,7 +273,7 @@ public class DoginfoDAO {
 			
 			sql = "insert into petpoint values(sysdate,?,?,?)";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, "유기번호["+desertionNo+"] 를 후원하셨습니다.");
+			pstmt.setString(1, desertionNo);
 			pstmt.setInt(2, point);
 			pstmt.setInt(3, account.getNo());
 			pstmt.executeUpdate();
