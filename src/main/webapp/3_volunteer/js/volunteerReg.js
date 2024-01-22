@@ -5,7 +5,7 @@ function goReviewReg() {
 		// 세션 정보가 있는지 확인
 		if (!sessionAccount) {
 			// 로그인 되어 있지 않으면 로그인 여부를 확인
-			var result = confirm('This is a menu that requires login \n Would you like to go to the login page?');
+			var result = confirm('This is a menu that requires login \nWould you like to go to the login page?');
 			if (result) {
 				// 로그인 페이지로 이동
 				location.href = "LoginMainHC";
