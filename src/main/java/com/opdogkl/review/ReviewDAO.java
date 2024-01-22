@@ -205,7 +205,7 @@ public class ReviewDAO {
 			if (pstmt.executeUpdate() == 1) {
 				System.out.println("수정 성공");
 				// 사진 교체시 기존파일 삭제
-				if (newImg != null) {
+				if (newImg != null && !newImg.equals(oldImg)) {
 					File d = new File(path + "/" + oldImg);
 					d.delete();
 				}

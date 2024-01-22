@@ -103,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function () {
             
         } else {
             // 사용자가 로그인하지 않았을 경우 "LoginMainHC"로 리디렉션
-            var goLogin = confirm('먼저 로그인해야 합니다.\n로그인하시겠습니까?');
+            var goLogin = confirm('This is a menu that requires login \nWould you like to go to the login page?');
             if (goLogin) {
                 window.location.href = 'LoginMainHC';
             }
