@@ -37,7 +37,7 @@ public class MyPageDAO {
 			pstmt.setString(1, (String) bb.get("desertionNo"));
 			rs = pstmt.executeQuery();
 			if (rs.next()) {
-				response.getWriter().print("이미 등록된 강아지입니다.");
+				response.getWriter().print("This puppy is already registered.");
 			} else {
 				sql = "insert into opdoglike values(?,?,?,?,?,?,?,?,?,?,?,?)";
 				pstmt = con.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class MyPageDAO {
 				pstmt.setInt(12, account.getNo());
 				System.out.println(account.getNo());
 				pstmt.executeUpdate();
-				response.getWriter().print("등록이 완료되었습니다.");
+				response.getWriter().print("Registration has been completed");
 			}
 
 		} catch (Exception e) {

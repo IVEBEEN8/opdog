@@ -63,6 +63,7 @@ public class MainDAO {
 				String noticeEdtStr = String.valueOf(noticeEdtInt);
 				Date noticeEdtDate = dateFormat.parse(noticeEdtStr);
 				d.setNo(rs.getString("d_desertionNo"));
+				System.out.println(rs.getString("d_desertionNo"));
 				d.setAge(rs.getString("d_age"));
 				d.setKindCd(rs.getString("d_kindCd"));
 				d.setPopfile(rs.getString("d_popfile"));
@@ -70,7 +71,7 @@ public class MainDAO {
 				long diffMS = currenDate.getTime() - noticeEdtDate.getTime();
 				long diffdays = 10 - (diffMS / (24 * 60 * 60 * 1000L)) % 365;
 				d.setDate(noticeEdtInt);
-				d.setDday(diffdays);
+				d.setDday(diffdays+1);
 				doglist.add(d);
 			}
 			

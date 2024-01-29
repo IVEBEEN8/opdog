@@ -4,7 +4,9 @@ import java.io.File;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
@@ -39,20 +41,25 @@ public class VolunteerDAO {
 			pstmt.setString(2, status);
 			pstmt.setString(3, locate);
 			rs = pstmt.executeQuery();
-
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+			
 			volunteerDTO v = null;
 			volunteer = new ArrayList<>();
 			while (rs.next()) {
+				String day = sdf.format(rs.getDate("V_CREATED"));
 				v = new volunteerDTO();
 				v.setV_no(rs.getInt("V_NO"));
 				v.setV_title(rs.getString("V_TITLE"));
 				v.setV_img(rs.getString("V_IMG"));
 				v.setV_txt(rs.getString("V_TXT"));
-				v.setV_created(rs.getDate("V_CREATED"));
+				v.setV_updated(day);
 				v.setV_status(rs.getString("V_STATUS"));
 				v.setA_no(rs.getInt("A_NO"));
 				v.setA_email(rs.getString("A_EMAIL"));
 				volunteer.add(v);
+				System.out.println(rs.getDate("V_CREATED"));
+				System.out.println("day="+day);
+				
 
 			}
 

@@ -230,7 +230,7 @@ $(document).ready(function() {
 					")" +
 					"</span>" +
 					"</div>" +
-					'<div class="likebtn" id="detailinfo"><button id="like" ><p style="display:none;">' +
+					'<div class="mainLikebtn" id="detailinfo"><button id="like" ><p style="display:none;">' +
 					JSON.stringify(items) +
 					'</p>Like</button><button id="liketrigger">spon</button>' +
 					"</div>" +

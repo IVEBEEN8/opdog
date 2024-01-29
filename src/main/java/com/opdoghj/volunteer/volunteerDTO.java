@@ -8,6 +8,7 @@ public class volunteerDTO {
 	private String v_title;
 	private String v_img;
 	private String v_txt;
+	private String v_updated;
 	private Date v_created;
 	private String v_status;
 	private String a_email;
@@ -17,19 +18,24 @@ public class volunteerDTO {
 		// TODO Auto-generated constructor stub
 	}
 
-	public volunteerDTO(int a_no, int v_no, String v_title, String v_img, String v_txt, Date v_created, String a_email,
-			String v_status, String v_locate) {
+
+
+	public volunteerDTO(int a_no, int v_no, String v_title, String v_img, String v_txt, String v_updated,
+			Date v_created, String v_status, String a_email, String v_locate) {
 		super();
 		this.a_no = a_no;
 		this.v_no = v_no;
 		this.v_title = v_title;
 		this.v_img = v_img;
 		this.v_txt = v_txt;
+		this.v_updated = v_updated;
 		this.v_created = v_created;
-		this.a_email = a_email;
 		this.v_status = v_status;
+		this.a_email = a_email;
 		this.v_locate = v_locate;
 	}
+
+
 
 	public int getA_no() {
 		return a_no;
@@ -71,13 +77,31 @@ public class volunteerDTO {
 		this.v_txt = v_txt;
 	}
 
+
+
+	public String getV_updated() {
+		return v_updated;
+	}
+
+
+
+	public void setV_updated(String v_updated) {
+		this.v_updated = v_updated;
+	}
+
+
+
 	public Date getV_created() {
 		return v_created;
 	}
 
+
+
 	public void setV_created(Date v_created) {
 		this.v_created = v_created;
 	}
+
+
 
 	public String getA_email() {
 		return a_email;
