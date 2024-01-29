@@ -14,6 +14,7 @@ body {
 	scroll-behavior: smooth;
 	font-family: "Arial", sans-serif;
 	text-align: center;
+	cursor: pointer;
 }
 
 .full4 {

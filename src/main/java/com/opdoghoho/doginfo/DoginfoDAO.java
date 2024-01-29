@@ -280,7 +280,7 @@ public class DoginfoDAO {
 			
 			sql = "insert into totalpoint values(sysdate,?,?,?)";
 			pstmt = con.prepareStatement(sql);
-			pstmt.setString(1, "유기번호["+desertionNo+"] 를 후원하셨습니다.");
+			pstmt.setString(1, "You donated to organic number"+desertionNo);
 			pstmt.setInt(2, point*-1);
 			pstmt.setInt(3, account.getNo());
 			pstmt.executeUpdate();
