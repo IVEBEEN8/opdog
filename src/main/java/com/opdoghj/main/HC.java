@@ -21,7 +21,7 @@ public class HC extends HttpServlet {
 			DogDbUpdater.startDbUpdater();
 			firstLoading = false;
 		}
-		
+
 		LoginDAO.loginCheckMain(request);
 		MainDAO.totalCountLoading(request);
 		MainDAO.listLoading(request, response);

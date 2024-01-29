@@ -130,13 +130,11 @@
 										<div>
 											<p>Neuter</p>${list.neuter }</div>
 									</div>
-
 									<div class="btn-wrapper">
 										<button class="like-btn" id="cancel" value="${list.no }">Cancel</button>
 									</div>
 								</div>
 							</c:forEach>
-
 						</div>
 						<div id="pagination-container" class="pagination"></div>
 
@@ -285,6 +283,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

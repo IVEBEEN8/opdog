@@ -118,3 +118,4 @@ function counter($counter, max) {
 		now -= step;
 	}, 50);
 }
+

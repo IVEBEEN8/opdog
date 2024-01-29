@@ -68,6 +68,7 @@ body {
     width: 27vw;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 	
 }
 .infobox-wrap1-2::-webkit-scrollbar {
@@ -414,6 +415,7 @@ body {
 	border: none;
 	border-radius: 6px;
 	background: rgba(217, 217, 217, 0.30);
+	cursor: pointer;
 	}
 
 .input-search1-2{
@@ -425,6 +427,7 @@ body {
 	border-radius: 15px;
     height: 4vh;
     border: none;
+    cursor: pointer;
 }
 /*reload icon!  */
 .reloadi{
@@ -481,6 +484,7 @@ body {
     height: 100%;
     border-radius: 16%;
     background-color: #fff;
+    cursor: pointer;
     
 }
 .modal-title-color{
