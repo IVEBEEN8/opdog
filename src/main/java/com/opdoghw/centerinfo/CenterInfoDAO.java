@@ -47,9 +47,10 @@ public class CenterInfoDAO {
 				c.setCareTel(rs.getString("c_caretel")); // 보호소전화번호
 				center.add(c);
 			}
+			// String jsonCenterinfo = new Gson().toJson(center);
+			// System.out.println(jsonCenterinfo);
 			request.setAttribute("centers", center);
-//			String jsonCenter = new Gson().toJson(center);
-//			System.out.println(jsonCenter);
+
 			// response.setContentType("application/json");
 			// response.getWriter().write(jsonCenter);
 

@@ -213,43 +213,6 @@ fetch(apiUrl)
     console.log("done!");
 });
 
-/*  	
-    });
-    marker.data = data;  // 데이터를 마커에 연결
-    markers.push(marker);
-   	
-    
-    kakao.maps.event.addListener(marker, 'click', function () {
-        var markerData = marker.data;
-        //이전 모달데이터 초기화~	
-        $("#modalBody").empty();
-        //전화번호 대체처리!
-        
-        const tel = markerData.careTel === "***********" ? "1577-0954" : markerData.careTel;
-        //수의사 정보 대체처리!
-        const vet = markerData.vetPersonCnt === 0 ? "vet service not available" : markerData.vetPersonCnt + "명";
-        //휴업일 대체처리!
-        const modifiedCloseDay = markerData.closeDay.replace(/\+/g, ', ').replace(/0/g, 'Open Always');
-        // 모댤에에 나올정보!
-        
-        $("#modalBody").append('<div id="closeBtn">&times;<div>')
-        $("#modalBody").append('<div class="box-info box-center-info">Center Info</div>')
-        $("#modalBody").append('<div class="box-info"><img class="bitmap1" src="1_adopt/img/Bitmap.png"></div>')        
-        $("#modalBody").append('<div class="box-title modal-carenm">' + markerData.careNm + '</div>');
-        $("#modalBody").append('<div class="box-title">' + markerData.careAddr + '</div></div>');
-        $("#modalBody").append('<div class="box-title">' + tel + '</div></div>');
-        $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Operation</span>	' + markerData.weekOprStime +'~'+ markerData.weekOprEtime + '</div>');
-        $("#modalBody").append('<div class="box-title"><span class="modal-title-color">Closed</span>	' + modifiedCloseDay + '</div>');
-        
-        // 모달 보이기
-        $("#printinfo").show();
-        $("#closeBtn").on("click", function () {
-            $("#printinfo").hide();
-        });
-    });
-    marker.setMap(map);
-}
- */
 
 
 // 닫기 버튼 클릭 이벤트 핸들러
