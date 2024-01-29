@@ -43,13 +43,15 @@ header {
   position: relative;
   display: flex;
   width: 10vw;
+  cursor: pointer;
 }
 
 .header_logo > img {
   position: absolute;
   top: -10px;
   left: -10px;
-  width: 13vw;
+  width: 13vw; 
+  cursor: pointer;
 }
 
 .nav-var {

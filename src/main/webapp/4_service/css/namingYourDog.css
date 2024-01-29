@@ -58,7 +58,9 @@ body {
 .wrapper>.choice-wrap>button {
 	display: flex;
 	flex-direction: column;
+	cursor: pointer;
 }
+
 
 .choice-wrap {
 	display: flex;
@@ -118,6 +120,7 @@ body {
 	border-radius: 2vw;
 	text-align: center;
 	font-family: "Poppins", sans-serif;
+	cursor: pointer;
 }
 
 #resend {
@@ -131,6 +134,7 @@ body {
     text-align: center;
     font-family: "Poppins", sans-serif;
     margin-top: 1vw;
+    cursor: pointer;
 }
 
 #resend:hover{
@@ -140,6 +144,7 @@ body {
 .loadingwords {
 	display: none;
 	color: black;
+	cursor: pointer;
 }
 
 @keyframes spin { 0% {
