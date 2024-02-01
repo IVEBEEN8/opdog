@@ -49,10 +49,10 @@ public class CheckRegNmDAO {
 	@SuppressWarnings("unused")
 	private static String papagoTranslate(String text) {
 		try {
-			String clientId = "G_LumDg1eMO6O8wBrhcP";
-			String clientSecret = "WAFpoo4142";
-			// String clientId = "f8E1dHSfLIZGwep16ykM";// 애플리케이션 클라이언트 아이디값";
-			// String clientSecret = "g9Ae4Vludr";
+			//String clientId = "G_LumDg1eMO6O8wBrhcP";
+			//String clientSecret = "WAFpoo4142";
+			String clientId = "f8E1dHSfLIZGwep16ykM";// 애플리케이션 클라이언트 아이디값";
+			String clientSecret = "g9Ae4Vludr";
 			// String clientId = "6c4er8GLss670lWmpB12";
 			// String clientSecret = "wONSCvVVKS";
 			String apiURL = "https://openapi.naver.com/v1/papago/n2mt";
