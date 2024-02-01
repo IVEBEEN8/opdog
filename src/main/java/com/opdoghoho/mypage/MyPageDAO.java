@@ -169,7 +169,7 @@ public class MyPageDAO {
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		LoginDTO account = (LoginDTO) request.getSession().getAttribute("account");
-		String sql = "select * from totalpoint where a_no=? order by p_date asc";
+		String sql = "select * from totalpoint where a_no=? order by p_date desc";
 
 		try {
 			con = DBManager_khw.connect();
