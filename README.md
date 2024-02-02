@@ -1,4 +1,4 @@
-# 🐶 유기견 입양 장려 웹페이지 'OPEN THE DOG' 🐶
+# 🐶 Web page to encourage adoption of abandoned dogs 'OPEN THE DOG' 🐶
 
 ## Main Web Page
 
@@ -9,52 +9,52 @@
 ![readme_mockup2](https://cdn.discordapp.com/attachments/1178600686359949343/1202450708108939264/2024-02-01_11.15.29.gif?ex=65cd807d&is=65bb0b7d&hm=cf44b1118d5c1b8e3e5498ffd4ee05ab4f1efe4132cf4877cc0420c091f8fe0d&)
 <br>
 
-## 🎯 개발목적 및 주제선정이유
+## 🎯 Development purpose and reason for topic selection
 
-매년 10만마리가 넘은 유기동물들이 보호센터로 구조되지만, 
-보호센터에서는 최초 공고를 하는 것 외에는 구조 동물의 입양을 홍보하기 위한 추가적 노력이 이뤄지지 않는 것이 현실입니다.
-때문에 저희팀은 이러한 점을 해결하고자 유기견 입양 장려 웹페이지를 개설하여 유기견들의 정보 를 지속적으로 홍보하여 유기견과 입양자 간의 소중한 연결을 이끌어내고, 유기견에 대한 그릇된 선입견을 바로 잡고, 책임감 있는 반려동물 문화를 만들어 사회적인 변화를 도모하고자 합니다.
-유기견들에 대한 인식 개선과 반려동물 입양문화가 활성화되어 유기견 후원과 유기견 보호를 위해 더 많은 사람들이 함께 동참할 수 있도록 이끌어내는 것이 저희 팀의 최종 목표입니다.
-
-
-<br>
-
-## ℹ️ 프로젝트 소개
-
-- OPEN THE DOG는 유기견 입양 장려 웹페이지 입니다.
-- 유기견 등록 현황 및 센터정보를 지역별로 제공하였습니다.
-- 쇼핑페이지를 통해 반려견을 위한 용품구매가 가능합니다.
-- 유기견에게 직접적으로 영향력을 발휘할 수 있는 후원기능을 도입했습니다.
-- 봉사활동페이지에서 지역별 커뮤니티에 참여할 수 있습니다.
-- 반려견 등록번호조회 및 이름짓기 서비스를 제공합니다.
-- 마이페이지를 통해 후원내역, 물품구매내역(적립내역), 봉사활동신청현황 그리고 좋아요한 강아지목록을 확인할 수 있습니다.
-
-<br>
-
-##  👥 팀원 구성
-
- Yook Hyejin(👩🏻‍💼Team Leader)  : [6oohye@naver.com](mailto:6oohye@naver.com) <br> 
-Kang Heewon (👩🏻‍💻): ivebeen888@gmail.com <br>
-Jeong Howon (🧑🏻‍💻): [byulbor@naver.com](mailto:6oohye@naver.com)<br>
-Lee kyeole(👨🏻‍💻):[dlrufp1213@naver.com](mailto:lrufp1213@naver.com)
+Every year, over 100,000 abandoned animals are rescued at conservation centers.
+The reality is that no additional efforts are made to promote the adoption of rescue animals at shelter centers other than making an initial announcement.
+Therefore, in order to solve this problem, our team create a webpage to encourage adoption of abandoned dogs and continuously promote information about abandoned dogs to have valuable connections between abandoned dogs and adopters, correct misconceptions about abandoned dogs, and promote a responsible pet culture. We hope people change the perspective on abandoned dog and encourage social change.
+Our team's ultimate goal is to improve awareness of abandoned dogs and revitalize the pet adoption culture so that more people can join in supporting abandoned dogs and protecting abandoned dogs.
 
 
 <br>
 
-## 🛠️ 개발 환경
+## ℹ️ Project Introduction
+
+- OPEN THE DOG is a webpage that encourages adoption of abandoned dogs.
+- Abandoned dog registration status and center information are provided by region.
+- You can purchase supplies for your dog through the shopping page.
+- We have created a sponsorship function that can directly influence abandoned dogs.
+- You can participate in local communities on the volunteer activity page.
+- We provide dog registration number inquiry and naming services.
+- Through My Page section, you can check your sponsorship history, product purchase history (accumulation history), volunteer activity application status, and list of liked dogs.
+
+<br>
+
+##  👥 Team Members' Contacts
+
+Hyejin Yook (👩🏻‍💼Team Leader)  : [6oohye@naver.com](mailto:6oohye@naver.com) <br> 
+Heewon Kang (👩🏻‍💻): ivebeen888@gmail.com <br>
+Howon Jeong (🧑🏻‍💻): [byulbor@naver.com](mailto:6oohye@naver.com)<br>
+kyeole Lee  (👨🏻‍💻):[dlrufp1213@naver.com](mailto:lrufp1213@naver.com)
+
+
+<br>
+
+## 🛠️ Development Environment
 
 ![readme_mockup2](https://cdn.discordapp.com/attachments/1171279239325167616/1202887815889952768/Screenshot_2024-02-01_at_12.43.59_PM.png?ex=65cf1793&is=65bca293&hm=a9212b0d0ecc3f86051b43f5b69abd502676f62ebc201e5a1fc5818ebd33b9da&)
 
 <br>
-### 💼 역할 분담
+### 💼 Distributing Roles
 
-### 🐯 육혜진
+### 🐯 Hyejin Yook
 - 프로젝트 전반 지원
 - 디자인 전반
 - 프론트 업무 (css, html)
 - 봉사활동, 이름짓기 서비스 기능
 <br>
-###  🦊 강희원
+###  🦊 Heewon Kang
 - 로그인 회원가입 기능
 - 보호소 정보 출력 기능
 - 동물등록번호 조회 서비스
