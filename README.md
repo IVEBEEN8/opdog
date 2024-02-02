@@ -76,7 +76,7 @@ Lee kyeole(👨🏻‍💻):[dlrufp1213@naver.com](mailto:lrufp1213@naver.com)
 ## 🗓️ 개발 기간 및 작업 관리
 <br>
 
-![readme_mockup2](https://cdn.discordapp.com/attachments/1171279239325167616/1202887815889952768/Screenshot_2024-02-01_at_12.43.59_PM.png?ex=65cf1793&is=65bca293&hm=a9212b0d0ecc3f86051b43f5b69abd502676f62ebc201e5a1fc5818ebd33b9da&)
+![readme_mockup2](https://cdn.discordapp.com/attachments/1171279239325167616/1202889485948289075/Screenshot_2024-02-01_at_12.58.31_PM.png?ex=65cf1922&is=65bca422&hm=255d841de550eb77e9b4a85b7ce898475faf26cce993e67cbef8b9cb732ba668&)
 
 <br>
 ## ❤️‍🔥 프로젝트 후기
