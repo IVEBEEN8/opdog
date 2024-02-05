@@ -54,7 +54,7 @@ kyeole Lee  (👨🏻‍💻):[dlrufp1213@naver.com](mailto:lrufp1213@naver.com)
 - Front work (css, html)
 - Volunteer work and naming service functions
 <br>
-### 🦊 Heewon Kang
+## 🦊 Heewon Kang
 - Login sign-up function
 - Shelter information output function
 - Animal registration number inquiry service
